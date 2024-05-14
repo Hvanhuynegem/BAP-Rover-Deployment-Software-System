@@ -1,5 +1,16 @@
-"./main.obj"
+"./src/communication/comProtocols.obj"
+"./src/communication/masterComm.obj"
+"./src/communication/slaveComm.obj"
+"./src/deployment/DeploymentControl.obj"
+"./src/deployment/actuatorControl.obj"
+"./src/deployment/umbilicalCordManagement.obj"
 "./src/main.obj"
+"./src/powerManagement/batteryManagement.obj"
+"./src/powerManagement/powerControl.obj"
+"./src/powerManagement/sensorData.obj"
+"./src/systemHealth/temperatureControl.obj"
+"./src/utilities/errorHandler.obj"
+"./src/utilities/logger.obj"
 "../lnk_msp430fr5969.cmd"
 -llibmpu_init.a
 -llibmath.a

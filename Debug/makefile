@@ -8,8 +8,19 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./main.obj" \
+"./src/communication/comProtocols.obj" \
+"./src/communication/masterComm.obj" \
+"./src/communication/slaveComm.obj" \
+"./src/deployment/DeploymentControl.obj" \
+"./src/deployment/actuatorControl.obj" \
+"./src/deployment/umbilicalCordManagement.obj" \
 "./src/main.obj" \
+"./src/powerManagement/batteryManagement.obj" \
+"./src/powerManagement/powerControl.obj" \
+"./src/powerManagement/sensorData.obj" \
+"./src/systemHealth/temperatureControl.obj" \
+"./src/utilities/errorHandler.obj" \
+"./src/utilities/logger.obj" \
 "../lnk_msp430fr5969.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibmpu_init.a \
@@ -24,9 +35,19 @@ RMDIR := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include src/communication/subdir_vars.mk
+-include src/deployment/subdir_vars.mk
 -include src/subdir_vars.mk
+-include src/powerManagement/subdir_vars.mk
+-include src/systemHealth/subdir_vars.mk
+-include src/utilities/subdir_vars.mk
 -include subdir_rules.mk
+-include src/communication/subdir_rules.mk
+-include src/deployment/subdir_rules.mk
 -include src/subdir_rules.mk
+-include src/powerManagement/subdir_rules.mk
+-include src/systemHealth/subdir_rules.mk
+-include src/utilities/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -144,9 +165,8 @@ rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "src/main.obj" 
-	-$(RM) "main.d" 
-	-$(RM) "src/main.d" 
+	-$(RM) "src/communication/comProtocols.obj" "src/communication/masterComm.obj" "src/communication/slaveComm.obj" "src/deployment/DeploymentControl.obj" "src/deployment/actuatorControl.obj" "src/deployment/umbilicalCordManagement.obj" "src/main.obj" "src/powerManagement/batteryManagement.obj" "src/powerManagement/powerControl.obj" "src/powerManagement/sensorData.obj" "src/systemHealth/temperatureControl.obj" "src/utilities/errorHandler.obj" "src/utilities/logger.obj" 
+	-$(RM) "src/communication/comProtocols.d" "src/communication/masterComm.d" "src/communication/slaveComm.d" "src/deployment/DeploymentControl.d" "src/deployment/actuatorControl.d" "src/deployment/umbilicalCordManagement.d" "src/main.d" "src/powerManagement/batteryManagement.d" "src/powerManagement/powerControl.d" "src/powerManagement/sensorData.d" "src/systemHealth/temperatureControl.d" "src/utilities/errorHandler.d" "src/utilities/logger.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker Unix v21.6.1                   
 ******************************************************************************
->> Linked Mon May 13 16:39:55 2024
+>> Linked Tue May 14 09:57:56 2024
 
 OUTPUT FILE NAME:   <rover deployment software system.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs_mpu"  address: 00004400
@@ -223,7 +223,7 @@ SYSNMI     0    0000fffc    00000002
 
 .text      0    00010000    0000006c     
                   00010000    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
-                  0001002c    0000001c     main.obj (.text:delay)
+                  0001002c    0000001c     main.obj (.text:_Z5delayv)
                   00010048    0000001a     main.obj (.text:main)
                   00010062    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
                   00010068    00000004                            : pre_init.c.obj (.text:_system_pre_init)
@@ -232,7 +232,7 @@ MODULE SUMMARY
 
        Module             code   ro data   rw data
        ------             ----   -------   -------
-    ./
+    ./src/
        main.obj           54     0         0      
     +--+------------------+------+---------+---------+
        Total:             54     0         0      
@@ -1064,6 +1064,7 @@ address   name
 0000015c  WDTCTL                    
 0000015d  WDTCTL_H                  
 0000015c  WDTCTL_L                  
+0001002c  _Z5delayv                 
 00002400  __STACK_END               
 000000a0  __STACK_SIZE              
 00004400  __TI_CINIT_Base           
@@ -1106,7 +1107,6 @@ ffffffff  __c_args__
 00002360  _stack                    
 00010068  _system_pre_init          
 00010062  abort                     
-0001002c  delay                     
 00004400  fram_ipe_end              
 00004400  fram_ipe_start            
 00004400  fram_rw_start             
@@ -1945,7 +1945,7 @@ address   name
 0000fffc  __TI_int54                
 0000fffe  _reset_vector             
 00010000  __mpu_init                
-0001002c  delay                     
+0001002c  _Z5delayv                 
 00010048  main                      
 00010062  C$$EXIT                   
 00010062  abort                     
