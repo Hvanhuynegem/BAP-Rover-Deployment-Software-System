@@ -9,6 +9,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./src/communication/comProtocols.obj" \
+"./src/communication/landerComm.obj" \
 "./src/communication/masterComm.obj" \
 "./src/communication/slaveComm.obj" \
 "./src/deployment/actuatorControl.obj" \
@@ -165,8 +166,8 @@ rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "src/communication/comProtocols.obj" "src/communication/masterComm.obj" "src/communication/slaveComm.obj" "src/deployment/actuatorControl.obj" "src/deployment/deploymentControl.obj" "src/deployment/umbilicalCordManagement.obj" "src/main.obj" "src/powerManagement/batteryManagement.obj" "src/powerManagement/powerControl.obj" "src/powerManagement/sensorData.obj" "src/systemHealth/temperatureControl.obj" "src/utilities/errorHandler.obj" "src/utilities/logger.obj" 
-	-$(RM) "src/communication/comProtocols.d" "src/communication/masterComm.d" "src/communication/slaveComm.d" "src/deployment/actuatorControl.d" "src/deployment/deploymentControl.d" "src/deployment/umbilicalCordManagement.d" "src/main.d" "src/powerManagement/batteryManagement.d" "src/powerManagement/powerControl.d" "src/powerManagement/sensorData.d" "src/systemHealth/temperatureControl.d" "src/utilities/errorHandler.d" "src/utilities/logger.d" 
+	-$(RM) "src/communication/comProtocols.obj" "src/communication/landerComm.obj" "src/communication/masterComm.obj" "src/communication/slaveComm.obj" "src/deployment/actuatorControl.obj" "src/deployment/deploymentControl.obj" "src/deployment/umbilicalCordManagement.obj" "src/main.obj" "src/powerManagement/batteryManagement.obj" "src/powerManagement/powerControl.obj" "src/powerManagement/sensorData.obj" "src/systemHealth/temperatureControl.obj" "src/utilities/errorHandler.obj" "src/utilities/logger.obj" 
+	-$(RM) "src/communication/comProtocols.d" "src/communication/landerComm.d" "src/communication/masterComm.d" "src/communication/slaveComm.d" "src/deployment/actuatorControl.d" "src/deployment/deploymentControl.d" "src/deployment/umbilicalCordManagement.d" "src/main.d" "src/powerManagement/batteryManagement.d" "src/powerManagement/powerControl.d" "src/powerManagement/sensorData.d" "src/systemHealth/temperatureControl.d" "src/utilities/errorHandler.d" "src/utilities/logger.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
