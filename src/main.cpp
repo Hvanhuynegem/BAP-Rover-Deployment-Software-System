@@ -21,6 +21,4 @@ int main(void) {
         P1OUT ^= BIT0;         // Toggle P1.0 using exclusive-OR
         delay();               // Wait
     }
-
-    return 0;
 }
