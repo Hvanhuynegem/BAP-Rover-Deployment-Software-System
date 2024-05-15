@@ -20,17 +20,18 @@ void slip_encode(uint8_t *buffer, uint16_t length);
 void slip_decode(uint8_t *buffer, uint16_t *received_length);
 
 void initialize_UART(int baudrate){
-    // Assuming SMCLK has been configured to 1MHz, calculate BRW for 9600 baud
+    // Assuming SMCLK has been configured to 16MHz, calculate BRW for 9600 baud
     UCA0CTL1 |= UCSWRST;        // Put eUSCI in reset
     UCA0CTL1 |= UCSSEL__SMCLK;  // SMCLK
 
     // Configure baud rate
-    UCA0BR0 = 104;              // 9600 baud if SMCLK = 1MHz
-    UCA0BR1 = 0;
-    UCA0MCTLW = 0x5551; // Modulation UCBRSx=0, UCBRFx=1, oversampling
+    UCA0BR0 = 1667;     // 9600 baud if SMCLK = 16MHz (16MHz/9600 = 1667)
+    UCA0BR1 = 0;        // Baud Rate Control
+    UCA0MCTLW = 0x2000 | UCOS16 | UCBRF_1; // Modulation UCBRSx=0, UCBRFx=1, oversampling
+    //UCA0MCTLW = 0x5551; // Modulation UCBRSx=0, UCBRFx=1, oversampling
 
-    UCA0CTL1 &= ~UCSWRST;       // Initialize eUSCI
-    UCA0IE |= UCRXIE;           // Enable USCI_A0 RX interrupt
+    UCA0CTL1 &= ~UCSWRST;   // Initialize eUSCI
+    UCA0IE |= UCRXIE;       // Enable USCI_A0 RX interrupt
 };
 
 void slip_encode(uint8_t *buffer, uint16_t length) {
