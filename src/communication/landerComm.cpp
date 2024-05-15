@@ -2,19 +2,30 @@
 #include <msp430.h>
 #include <stdint.h>
 
+
+#define TX_BUFFER_SIZE 1024
+volatile uint8_t tx_buffer[TX_BUFFER_SIZE];
+volatile uint16_t tx_in_index = 0;  // Index where data is added to the buffer
+volatile uint16_t tx_out_index = 0; // Index where data is sent from the buffer
+
+// Function to add data to the transmit buffer
+void tx_buffer_add_byte(uint8_t byte) {
+    tx_buffer[tx_in_index++] = byte;
+    if (tx_in_index >= TX_BUFFER_SIZE) tx_in_index = 0; // Circular buffer
+}
+
+
 void initialize_UART(int baudrate);
 void slip_encode(uint8_t *buffer, uint16_t length);
 void slip_decode(uint8_t *buffer, uint16_t *received_length);
-void uart_send_byte(uint8_t byte);
-uint8_t uart_receive_byte();
 
 void initialize_UART(int baudrate){
-    // Assuming SMCLK has been configured to 16MHz, calculate BRW for 9600 baud
+    // Assuming SMCLK has been configured to 1MHz, calculate BRW for 9600 baud
     UCA0CTL1 |= UCSWRST;        // Put eUSCI in reset
     UCA0CTL1 |= UCSSEL__SMCLK;  // SMCLK
 
     // Configure baud rate
-    UCA0BR0 = 104;              // 9600 baud if SMCLK = 16MHz
+    UCA0BR0 = 104;              // 9600 baud if SMCLK = 1MHz
     UCA0BR1 = 0;
     UCA0MCTLW = 0x5551; // Modulation UCBRSx=0, UCBRFx=1, oversampling
 
@@ -22,69 +33,91 @@ void initialize_UART(int baudrate){
     UCA0IE |= UCRXIE;           // Enable USCI_A0 RX interrupt
 };
 
-void slip_encode(uint8_t *buffer, uint16_t length){
-    const uint8_t END = 0xC0;     // End of packet character
-    const uint8_t ESC = 0xDB;     // Escape character
-    const uint8_t ESC_END = 0xDC; // Escaped substitution for the END data byte
-    const uint8_t ESC_ESC = 0xDD; // Escaped substitution for the ESC data byte
+void slip_encode(uint8_t *buffer, uint16_t length) {
+    const uint8_t END = 0xC0;
+    const uint8_t ESC = 0xDB;
+    const uint8_t ESC_END = 0xDC;
+    const uint8_t ESC_ESC = 0xDD;
 
-    uart_send_byte(END); // Send initial END character to flush any data
+    tx_buffer_add_byte(END);  // Start with END to flush any previous data
 
     for (uint16_t i = 0; i < length; i++) {
         switch (buffer[i]) {
             case END:
-                uart_send_byte(ESC);
-                uart_send_byte(ESC_END);
+                tx_buffer_add_byte(ESC);
+                tx_buffer_add_byte(ESC_END);
                 break;
             case ESC:
-                uart_send_byte(ESC);
-                uart_send_byte(ESC_ESC);
+                tx_buffer_add_byte(ESC);
+                tx_buffer_add_byte(ESC_ESC);
                 break;
             default:
-                uart_send_byte(buffer[i]);
+                tx_buffer_add_byte(buffer[i]);
         }
     }
 
-    uart_send_byte(END); // End the packet
-};
+    tx_buffer_add_byte(END);  // End with END to mark packet completion
+    UCA0IE |= UCTXIE;         // Enable transmit interrupt
+}
 
-void slip_decode(uint8_t *buffer, uint16_t *received_length){
-    const uint8_t END = 0xC0;     // End of packet character
-        const uint8_t ESC = 0xDB;     // Escape character
-        const uint8_t ESC_END = 0xDC; // Escaped substitution for the END data byte
-        const uint8_t ESC_ESC = 0xDD; // Escaped substitution for the ESC data byte
 
-        uint8_t c;
-        bool is_escaped = false;
-        *received_length = 0;
+void slip_decode(uint8_t *buffer, uint16_t *received_length) {
+    const uint8_t END = 0xC0;
+    const uint8_t ESC = 0xDB;
+    const uint8_t ESC_END = 0xDC;
+    const uint8_t ESC_ESC = 0xDD;
 
-        while ((c = uart_receive_byte())) {
-            if (c == END) {
-                if (*received_length) // If there's meaningful data, return
-                    return;
-                else // If no data, keep looking for start of next packet
-                    continue;
-            }
+    uint8_t c;
+    bool is_escaped = false;
+    *received_length = 0;
 
-            if (is_escaped) {
-                if (c == ESC_END) c = END;
-                else if (c == ESC_ESC) c = ESC;
-                is_escaped = false;
-            } else if (c == ESC) {
-                is_escaped = true;
+    for (uint16_t i = 0; i < rx_index; i++) {
+        c = rx_buffer[i];
+
+        if (c == END) {
+            if (*received_length) {  // If there's meaningful data, clear buffer and return
+                rx_index = 0;  // Clear the buffer index for new data
+                return;
+            } else {  // Continue if packet is empty (just an END received)
                 continue;
             }
-
-            buffer[(*received_length)++] = c;
         }
-};
 
-void uart_send_byte(uint8_t byte){
-    while (!(UCA0IFG & UCTXIFG)); // Wait for the transmit buffer to be ready
-        UCA0TXBUF = byte;
-};
+        if (is_escaped) {
+            if (c == ESC_END) c = END;
+            else if (c == ESC_ESC) c = ESC;
+            is_escaped = false;
+        } else if (c == ESC) {
+            is_escaped = true;
+            continue;
+        }
 
-uint8_t uart_receive_byte(){
-    while (!(UCA0IFG & UCRXIFG)); // Wait for a receive buffer to be ready
-        return UCA0RXBUF;
-};
+        buffer[(*received_length)++] = c;
+    }
+
+    rx_index = 0;  // Reset buffer index after processing
+}
+
+
+// ISR for receiving UART data
+#pragma vector=USCI_A0_VECTOR
+__interrupt void USCI_A0_ISR(void) {
+    switch(__even_in_range(UCA0IV, USCI_UART_UCTXCPTIFG)) {
+        case USCI_NONE: break;
+        case USCI_UART_UCRXIFG: // receive interrupt
+            rx_buffer[rx_index++] = UCA0RXBUF;  // Read RX buffer and increment index
+            if (rx_index >= BUFFER_SIZE) {
+                rx_index = 0;  // Reset index if buffer is full
+            }
+            break;
+        case USCI_UART_UCTXIFG: // transmit interrupt
+                    if (tx_out_index != tx_in_index) {
+                        UCA0TXBUF = tx_buffer[tx_out_index++];
+                        if (tx_out_index >= TX_BUFFER_SIZE) tx_out_index = 0;  // Circular buffer
+                    } else {
+                        UCA0IE &= ~UCTXIE;  // Disable TX interrupt if no more data to send
+                    }
+                    break;
+                default: break;
+    }
+}
