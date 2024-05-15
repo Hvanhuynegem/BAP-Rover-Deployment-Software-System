@@ -27,18 +27,3 @@ void slip_encode(uint8_t *buffer, uint16_t length);
 */
 void slip_decode(uint8_t *buffer, uint16_t *received_length);
 
-/*
- * This function sends a byte via the UART TX port.
- *
- * parameters
- *  uint8_t byte : the to be transmitted byte
- */
-void uart_send_byte(uint8_t byte);
-
-/*
- * This function receives a byte via the UART RX port.
- *
- * returns
- *  uint8_t byte : the received byte
- */
-uint8_t uart_receive_byte();
