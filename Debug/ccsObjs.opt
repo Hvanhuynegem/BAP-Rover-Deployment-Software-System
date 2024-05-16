@@ -1,5 +1,6 @@
 "./src/communication/comProtocols.obj"
 "./src/communication/landerComm.obj"
+"./src/communication/landerCommInterrupts.obj"
 "./src/communication/masterComm.obj"
 "./src/communication/slaveComm.obj"
 "./src/deployment/actuatorControl.obj"
