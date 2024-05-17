@@ -3,6 +3,8 @@
 "./src/communication/landerCommInterrupts.obj"
 "./src/communication/masterComm.obj"
 "./src/communication/slaveComm.obj"
+"./src/communication/learning to use UART/PinHigh.obj"
+"./src/communication/learning to use UART/UART communication.obj"
 "./src/deployment/actuatorControl.obj"
 "./src/deployment/deploymentControl.obj"
 "./src/deployment/umbilicalCordManagement.obj"

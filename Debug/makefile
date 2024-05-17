@@ -13,6 +13,8 @@ ORDERED_OBJS += \
 "./src/communication/landerCommInterrupts.obj" \
 "./src/communication/masterComm.obj" \
 "./src/communication/slaveComm.obj" \
+"./src/communication/learning to use UART/PinHigh.obj" \
+"./src/communication/learning to use UART/UART communication.obj" \
 "./src/deployment/actuatorControl.obj" \
 "./src/deployment/deploymentControl.obj" \
 "./src/deployment/umbilicalCordManagement.obj" \
@@ -38,6 +40,7 @@ RMDIR := rm -rf
 -include sources.mk
 -include subdir_vars.mk
 -include src/communication/subdir_vars.mk
+-include src/communication/learning\ to\ use\ UART/subdir_vars.mk
 -include src/deployment/subdir_vars.mk
 -include src/subdir_vars.mk
 -include src/powerManagement/subdir_vars.mk
@@ -45,6 +48,7 @@ RMDIR := rm -rf
 -include src/utilities/subdir_vars.mk
 -include subdir_rules.mk
 -include src/communication/subdir_rules.mk
+-include src/communication/learning\ to\ use\ UART/subdir_rules.mk
 -include src/deployment/subdir_rules.mk
 -include src/subdir_rules.mk
 -include src/powerManagement/subdir_rules.mk
@@ -167,8 +171,8 @@ rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "src/communication/comProtocols.obj" "src/communication/landerComm.obj" "src/communication/landerCommInterrupts.obj" "src/communication/masterComm.obj" "src/communication/slaveComm.obj" "src/deployment/actuatorControl.obj" "src/deployment/deploymentControl.obj" "src/deployment/umbilicalCordManagement.obj" "src/main.obj" "src/powerManagement/batteryManagement.obj" "src/powerManagement/powerControl.obj" "src/powerManagement/sensorData.obj" "src/systemHealth/temperatureControl.obj" "src/utilities/errorHandler.obj" "src/utilities/logger.obj" 
-	-$(RM) "src/communication/comProtocols.d" "src/communication/landerComm.d" "src/communication/landerCommInterrupts.d" "src/communication/masterComm.d" "src/communication/slaveComm.d" "src/deployment/actuatorControl.d" "src/deployment/deploymentControl.d" "src/deployment/umbilicalCordManagement.d" "src/main.d" "src/powerManagement/batteryManagement.d" "src/powerManagement/powerControl.d" "src/powerManagement/sensorData.d" "src/systemHealth/temperatureControl.d" "src/utilities/errorHandler.d" "src/utilities/logger.d" 
+	-$(RM) "src/communication/comProtocols.obj" "src/communication/landerComm.obj" "src/communication/landerCommInterrupts.obj" "src/communication/masterComm.obj" "src/communication/slaveComm.obj" "src/communication/learning to use UART/PinHigh.obj" "src/communication/learning to use UART/UART communication.obj" "src/deployment/actuatorControl.obj" "src/deployment/deploymentControl.obj" "src/deployment/umbilicalCordManagement.obj" "src/main.obj" "src/powerManagement/batteryManagement.obj" "src/powerManagement/powerControl.obj" "src/powerManagement/sensorData.obj" "src/systemHealth/temperatureControl.obj" "src/utilities/errorHandler.obj" "src/utilities/logger.obj" 
+	-$(RM) "src/communication/comProtocols.d" "src/communication/landerComm.d" "src/communication/landerCommInterrupts.d" "src/communication/masterComm.d" "src/communication/slaveComm.d" "src/communication/learning to use UART/PinHigh.d" "src/communication/learning to use UART/UART communication.d" "src/deployment/actuatorControl.d" "src/deployment/deploymentControl.d" "src/deployment/umbilicalCordManagement.d" "src/main.d" "src/powerManagement/batteryManagement.d" "src/powerManagement/powerControl.d" "src/powerManagement/sensorData.d" "src/systemHealth/temperatureControl.d" "src/utilities/errorHandler.d" "src/utilities/logger.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

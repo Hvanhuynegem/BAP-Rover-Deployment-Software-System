@@ -4,6 +4,8 @@
 
 #define TX_BUFFER_SIZE 256   // Reduced buffer size
 #define RX_BUFFER_SIZE 256   // Reduced buffer size
+#define RX_BIT BIT6
+#define TX_BIT BIT5
 
 volatile uint8_t tx_buffer[TX_BUFFER_SIZE];
 volatile uint16_t tx_in_index = 0;  // Index where data is added to the buffer
@@ -23,45 +25,55 @@ void initialize_UART(int baudrate) {
     UCA0CTLW0_L |= UCSWRST;        // Put eUSCI in reset
     UCA0CTL1 |= UCSSEL__SMCLK;  // Select SMCLK
 
+    // Configure GPIO
+    P2SEL1 |= RX_BIT | TX_BIT;       // Sets pins 2.1 and 2.0 to function in
+    P2SEL0 &= ~(RX_BIT | TX_BIT);    // secondary mode (assumed to be UART)
+
     // Configure baud rate for 9600 with 1MHz clock
     UCA0BR0 = 6;                // Baud rate setting
     UCA0BR1 = 0;                // Baud Rate Control
     UCA0MCTLW = 0x2081;         // Modulation UCBRSx=0x20, UCBRFx=8, oversampling
 
     UCA0CTL1 &= ~UCSWRST;       // Initialize eUSCI
-    UCA0IE |= UCRXIE;           // Enable USCI_A0 RX interrupt
-    UCA0IE |= UCTXIE;           // Enable USCI_A0 TX interrupt
 }
 
-// SLIP encoding function
+// SLIP encoding function with polling
 void slip_encode(uint8_t *buffer, uint16_t length) {
     const uint8_t END = 0xC0;
     const uint8_t ESC = 0xDB;
     const uint8_t ESC_END = 0xDC;
     const uint8_t ESC_ESC = 0xDD;
 
-    tx_buffer_add_byte(END);  // Start with END to flush any previous data
+    // Send initial END character to flush any previous data
+    while (!(UCA0IFG & UCTXIFG));
+    UCA0TXBUF = END;
 
     for (uint16_t i = 0; i < length; i++) {
         switch (buffer[i]) {
             case END:
-                tx_buffer_add_byte(ESC);
-                tx_buffer_add_byte(ESC_END);
+                while (!(UCA0IFG & UCTXIFG));
+                UCA0TXBUF = ESC;
+                while (!(UCA0IFG & UCTXIFG));
+                UCA0TXBUF = ESC_END;
                 break;
             case ESC:
-                tx_buffer_add_byte(ESC);
-                tx_buffer_add_byte(ESC_ESC);
+                while (!(UCA0IFG & UCTXIFG));
+                UCA0TXBUF = ESC;
+                while (!(UCA0IFG & UCTXIFG));
+                UCA0TXBUF = ESC_ESC;
                 break;
             default:
-                tx_buffer_add_byte(buffer[i]);
+                while (!(UCA0IFG & UCTXIFG));
+                UCA0TXBUF = buffer[i];
         }
     }
 
-    tx_buffer_add_byte(END);  // End with END to mark packet completion
-    UCA0IE |= UCTXIE;         // Enable transmit interrupt
+    // Send final END character to mark packet completion
+    while (!(UCA0IFG & UCTXIFG));
+    UCA0TXBUF = END;
 }
 
-// SLIP decoding function
+// SLIP decoding function with polling
 void slip_decode(uint8_t *buffer, uint16_t *received_length) {
     const uint8_t END = 0xC0;
     const uint8_t ESC = 0xDB;
@@ -72,12 +84,12 @@ void slip_decode(uint8_t *buffer, uint16_t *received_length) {
     bool is_escaped = false;
     *received_length = 0;
 
-    for (uint16_t i = 0; i < rx_index; i++) {
-        c = rx_buffer[i];
+    while (1) {
+        while (!(UCA0IFG & UCRXIFG));  // Wait for data
+        c = UCA0RXBUF;
 
         if (c == END) {
-            if (*received_length) {  // If there's meaningful data, clear buffer and return
-                rx_index = 0;  // Clear the buffer index for new data
+            if (*received_length) {  // If there's meaningful data, return
                 return;
             } else {  // Continue if packet is empty (just an END received)
                 continue;
@@ -94,31 +106,5 @@ void slip_decode(uint8_t *buffer, uint16_t *received_length) {
         }
 
         buffer[(*received_length)++] = c;
-    }
-
-    rx_index = 0;  // Reset buffer index after processing
-}
-
-
-// ISR for receiving and transmitting UART data
-#pragma vector=USCI_A0_VECTOR
-__interrupt void USCI_A0_ISR(void) {
-    switch(__even_in_range(UCA0IV, USCI_UART_UCTXCPTIFG)) {
-        case USCI_NONE: break;
-        case USCI_UART_UCRXIFG: // receive interrupt
-            rx_buffer[rx_index++] = UCA0RXBUF;  // Read RX buffer and increment index
-            if (rx_index >= RX_BUFFER_SIZE) {
-                rx_index = 0;  // Reset index if buffer is full
-            }
-            break;
-        case USCI_UART_UCTXIFG: // transmit interrupt
-            if (tx_out_index != tx_in_index) {
-                UCA0TXBUF = tx_buffer[tx_out_index++];
-                if (tx_out_index >= TX_BUFFER_SIZE) tx_out_index = 0;  // Circular buffer
-            } else {
-                UCA0IE &= ~UCTXIE;  // Disable TX interrupt if no more data to send
-            }
-            break;
-        default: break;
     }
 }

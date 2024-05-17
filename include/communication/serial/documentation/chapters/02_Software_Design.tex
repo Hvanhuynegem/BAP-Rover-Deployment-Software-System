@@ -1,0 +1,118 @@
+\chapter{Software Design}
+
+This section highlights the Software Design by providing an overview of both
+the Serial library as well as the MSP-Serial library. Diagrams and design
+decisions will be shown and elaborated here.
+
+\section{Serial}
+
+The Serial library offers three major components which are configuring, writing
+and reading. Lets go over each one of them and explain in further detail how
+that looks like 
+
+\subsection{Configuring a File Descriptor}
+
+In Linux or any Unix-like operating system, file descriptors have to be
+configured. The Serial library offers some level of flexibility in terms of
+options to configure like blocking (return until all bytes have been send or
+return until something has been read) or non-blocking mode, the baudrate of the
+file descriptor and more. There is also some device-specific settings like physical I/O
+pins that needs to be configured. The Serial library uses the Linux RS-485
+kernel module because toggling the RS-485 DE pin in software turned out to be
+too slow (See Appendix entry in Subsection \ref{subsec:de-bug}).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=2cm, scale=1, transform shape]
+
+    ¦   \node (decision1) [decision, align=center] {Blocked mode};
+    ¦   \node (process1) [process, below left=of decision1, align=center] {blocked FD};
+    ¦   \node (process2) [process, below right=of decision1, align=center] {non-blocked FD};
+
+    ¦   \draw [arrow] (decision1) -| node [anchor=south west] {yes} (process1);
+    ¦   \draw [arrow] (decision1) -| node [anchor=south east] {no} (process2);
+
+        \node (process3) [process, below of=decision1, xshift=-0.4cm, yshift=-2cm, align=center] {Set baudrate};
+
+        \draw [arrow] (process1) |- node [anchor=south west] {} (process3);
+        \draw [arrow] (process2) |- node [anchor=south west] {} (process3);
+
+        \node (stop) [startstop, below of=process3, align=center] {device-specific config};
+        
+        \draw [arrow] (process3) -- node [anchor=south west] {} (stop);
+
+
+\end{tikzpicture}
+
+\caption{Flow-chart showing the high-level overview of configuring a file descriptor}
+\label{fig:serialsocketconfig}
+
+\end{figure}
+
+\newpage
+\subsection{Writing}
+
+Writing is fairly easy as it uses the file descriptor to write to the file descriptor
+whatever data and length is given.  This means that it is the responsibility of
+the user of the Serial library to make sure that no write-overflow will happen
+(length is greater than the amount of bytes to write).
+
+\subsection{Reading}
+TODO after bug is fixed.
+
+\newpage
+\section{MSP-Serial}
+
+The MSP430FR5969 microcontroller has two eUSCI peripherals, namely eUSCI\_A0
+and eUSCI\_A1 which can and will be configured to be in UART mode. Each UART
+peripheral will be wired to an RS-485 transceiver and hooked to a RS-485 bus.
+COMMs is the only exception compared to the rest of the subsystems as it will
+have full-duplex RS-485 communication to the OBC. \newline
+
+\subsection{Configuration and setting up}
+
+The first step is configuring the I/O pin and the eUSCI\_$ \text{A}_x$
+peripheral attached to the pin. This is shown in Figure
+\ref{fig:mspuartconfig}. As of now, the baudrate is configured to be 115200. 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=2cm, scale=1, transform shape]
+
+    ¦   \node (process1) [process, align=center] {Configure I/O pins};
+    ¦   \node (process2) [process, below of=process1, align=center] {Configure UART peripheral};
+    ¦   \node (process3) [process, below of=process2, align=center] {Enable Rx/Tx interrupt};
+    ¦   \node (process4) [startstop, below of=process3, align=center] {Enable UART};
+
+
+    ¦   \draw [arrow] (process1) -- node [anchor=south west] {} (process2);
+    ¦   \draw [arrow] (process2) -- node [anchor=south west] {} (process3);
+    ¦   \draw [arrow] (process3) -- node [anchor=south west] {} (process4);
+
+\end{tikzpicture}
+
+\caption{Flow-chart showing the high-level overview of configuring a UART
+    peripheral}
+\label{fig:mspuartconfig}
+
+\end{figure}
+
+\subsection{Writing}
+
+Writing is fairly easy. Data is written to the UCAxTXBUF register in
+a busy-wait fashion. 
+
+\subsection{Reading}
+
+The biggest design is contained in the reading off Serial. That is because the
+MSP430 will receive an arbitrary amount of bytes and we need to buffer them.
+The Bus Manager can determine how many bytes will be received but that is part
+of the Lunar Zebro Bus Manager protocol. After all, after receiving all bytes
+the CRC can be calculated and it can be validated if the packet is valid. But
+before all of that has happened in the Bus Manager, the MSP-Serial library
+needs to have received all the bytes. \newline
+
+The Interrupt-Service-Routine (ISR) is used to read a single byte from the UART
+peripheral and buffered. A state-machine is used as well as a timeout.
+
+%TODO: Add the UML state diagram

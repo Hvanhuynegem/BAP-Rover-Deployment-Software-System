@@ -1,0 +1,163 @@
+\documentclass{tudelft-report}
+
+%% We need to increase the paper size to slightly larger than twice A4 to make
+%% room for a front and back cover, including the spine.
+
+
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{todonotes}
+
+\usepackage{float}
+\usepackage{csquotes}
+
+\usepackage{listings}       % Lstlisting code viewer
+
+\usepackage{longtable}      % Multipage tables
+
+\usepackage{bytefield}
+
+\newcommand{\fakeeighteenbits}[1]{%
+    \tiny
+    \ifnum#1=1234567890
+        #1
+    \else
+        \ifnum#1<5
+            #1%
+        \else
+            \ifnum#1<13
+                $\cdots$%
+            \else
+                \ifnum#1=13
+                    $N-1$
+                \else
+                    \ifnum#1=14
+                        $N$
+                    \else
+                        \ifnum#1=15
+                            $N+1$
+                        \else
+                            \ifnum#1=16
+                                $N+2$
+                            \else
+                                $N+3$
+                            \fi
+                        \fi
+                    \fi
+                \fi
+            \fi
+        \fi
+    \fi
+}
+
+\newcommand{\fakeeighteenbitss}[1]{%
+    \tiny
+    \ifnum#1=1234567890
+        #1
+    \else
+        \ifnum#1<5
+            #1%
+        \else
+            \ifnum#1<13
+                $\cdots$%
+            \else
+                \ifnum#1=13
+                    $\cdots$%
+                \else
+                    \ifnum#1=14
+                        $\cdots$%
+                    \else
+                        \ifnum#1=15
+                            $N-2$
+                        \else
+                            \ifnum#1=16
+                                $N-1$
+                            \else
+                                $N$
+                            \fi
+                        \fi
+                    \fi
+                \fi
+            \fi
+        \fi
+    \fi
+}
+
+\addtolength{\headheight}{0.9cm} % make more space for the header
+\pagestyle{fancyplain} % use fancy for all pages except chapter start
+\lfoot{\includegraphics[height=1.3cm]{figures/colortudelft.png}} % left logo
+\rhead{\includegraphics[height=1.3cm]{figures/projectluna.png}} % right logo
+\renewcommand{\headrulewidth}{0pt} % remove rule below header
+
+\setlength\parindent{0pt}       % Do not indent a new paragraph
+
+\def\iic{\texorpdfstring{I$^2$C}{I2C}}  % I2C text format
+
+
+\definecolor{darkpink}{rgb}{1.0, 0.13, 0.32}
+
+
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\scriptsize\color{white}\ttfamily
+}
+
+
+\begin{document}
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+% \frontmatter
+
+%% Uncomment following 19 lines for a cover with a picture on the lower half only
+\title[tudelft-white]{Bus Manager}
+\subtitle[tudelft-cyan]{Lunar Zebro}
+\author[tudelft-white]{Software Department}
+\affiliation{-}
+\coverimage{figures/page1background.png}
+\titleoffsetx{2cm}
+\titleoffsety{8cm}
+\afiloffsetx{1cm}
+\afiloffsety{18cm}
+\covertext[tudelft-white]{
+    \textbf{Cover Text} \\
+    possibly \\
+    spanning
+    multiple
+    lines
+    \vfill
+    ISBN 000-00-0000-000-0
+}
+\setpagecolor{black}
+\makecover
+
+
+
+%
+%% Include an optional title page.
+\input{title}
+
+\tableofcontents
+
+%% Use Arabic numerals for the page numbers of the chapters.
+% \mainmatter
+
+\input{Chapters/01_Introduction.tex}
+
+\input{Chapters/02_Overall_Design.tex}
+
+\input{Chapters/03_Message_Format.tex}
+
+\input{Chapters/04_Appendix.tex}
+
+%% Use letters for the chapter numbers of the appendices.
+\appendix
+
+%\input{appendix-a}
+
+\bibliography{report}
+
+
+
+
+\end{document}

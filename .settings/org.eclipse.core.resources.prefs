@@ -1,7 +1,17 @@
 eclipse.preferences.version=1
+encoding//Debug/include/communication/bus_manager/documentation/subdir_rules.mk=UTF-8
+encoding//Debug/include/communication/bus_manager/documentation/subdir_vars.mk=UTF-8
+encoding//Debug/include/communication/bus_manager/src/subdir_rules.mk=UTF-8
+encoding//Debug/include/communication/bus_manager/src/subdir_vars.mk=UTF-8
+encoding//Debug/include/communication/message_manager/src/subdir_rules.mk=UTF-8
+encoding//Debug/include/communication/message_manager/src/subdir_vars.mk=UTF-8
+encoding//Debug/include/communication/serial/src/subdir_rules.mk=UTF-8
+encoding//Debug/include/communication/serial/src/subdir_vars.mk=UTF-8
 encoding//Debug/makefile=UTF-8
 encoding//Debug/objects.mk=UTF-8
 encoding//Debug/sources.mk=UTF-8
+encoding//Debug/src/communication/learning\ to\ use\ UART/subdir_rules.mk=UTF-8
+encoding//Debug/src/communication/learning\ to\ use\ UART/subdir_vars.mk=UTF-8
 encoding//Debug/src/communication/subdir_rules.mk=UTF-8
 encoding//Debug/src/communication/subdir_vars.mk=UTF-8
 encoding//Debug/src/deployment/subdir_rules.mk=UTF-8

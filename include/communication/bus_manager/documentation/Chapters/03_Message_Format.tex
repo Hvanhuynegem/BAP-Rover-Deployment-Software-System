@@ -1,0 +1,158 @@
+\chapter{Message Format}
+\label{ch:message_format}
+The message format described in this section is derived from the Bluetooth Low Energy (BLE) protocol but customised to the specific needs for Lunar Zebro and its subsystems.
+The level of abstraction allows this message format to be used with all subsystems onboard.
+Lets now describe from a top-bottom approach how this message format looks like.
+Figure \ref{fig:prop5_1} shows how the message format looks like.
+Each message starts with a preset preamble {\scriptsize (PRMBL)} that is equal to $0x3A_{16}$.
+The source {\scriptsize (SRC)} field indicates the source address of the message whereas the
+destination {\scriptsize (DST)} field indicates the destination address of the message.
+The Packet Data Unit (PDU) {\scriptsize (PDU)} field is what we will describe in greater detail in the next paragraph.
+The CRC {\scriptsize (CRC)} field holds the CRC calculation over all the previous fields.
+
+\begin{figure}[H]
+\vspace{.5cm}
+\begin{bytefield}[endianness=little,bitwidth=0.057\textwidth,
+bitformatting=\fakeeighteenbits]{18}
+\bitheader{0-17}\\
+\bitbox{1}{\scriptsize PRMBL} &
+\bitbox{1}{\scriptsize SRC} &
+\bitbox{1}{\scriptsize DST} &
+\bitbox{12}{\scriptsize PDU} &
+\bitbox{3}{\scriptsize CRC} &
+\end{bytefield}
+
+\caption{Generic message format}
+\label{fig:prop5_1}
+
+\end{figure}
+
+The PDU {\scriptsize (PDU)} field itself is split up in a header {\scriptsize (HEADER)} field consisting of two bytes which holds data-link layer information and a payload {\scriptsize (PAYLOAD)} field. This payload field is the data of interest being transferred.
+The format of the {\scriptsize (PAYLOAD)} field depends on the message type which is defined in the  {\scriptsize (HEADER)} field.
+Figure \ref{fig:prop5_2} shows the message format of the {\scriptsize (PDU)} field.
+
+\begin{figure}[H]
+\vspace{.5cm}
+\begin{bytefield}[endianness=little,bitwidth=0.057\textwidth,
+bitformatting=\fakeeighteenbitss]{18}
+\bitheader{0-17}\\
+\bitbox{2}{\scriptsize HEADER} &
+\bitbox{16}{\scriptsize PAYLOAD} &
+\end{bytefield}
+
+\caption{The PDU consists of a header- and a payload part}
+\label{fig:prop5_2}
+
+\end{figure}
+
+The {\scriptsize (HEADER)} field, which are the first two bytes of the {\scriptsize (PDU)}, contain information that the data-link layer use. Figure \ref{fig:prop5_3} shows the bitrepresentation of the {\scriptsize (HEADER)} field. Since the {\scriptsize (HEADER)} field is 2 bytes in size means that there are 16 bits in this field.
+
+\begin{figure}[H]
+\vspace{.5cm}
+\begin{bytefield}[endianness=little, bitwidth=6em]{8}
+\bitheader[lsb=0]{0-7}\\
+\bitbox{2}{TYPE} &
+\bitbox{1}{NESN} &
+\bitbox{1}{SN} &
+\bitbox{1}{MD} &
+\bitbox{3}{RFU} \\[3ex]
+
+\bitheader[lsb=8]{8-15} \\
+\bitbox{8}{LENGTH} &
+
+\end{bytefield}
+
+\caption{Header field of the PDU in detail}
+\label{fig:prop5_3}
+
+\end{figure}
+
+
+Table \ref{tab:regdesc1} list the description of each bitfield.
+
+\begin{longtable}{ p{0.1\textwidth} p{0.1\textwidth} p{0.75\textwidth} }
+
+    \textcolor{red}{Field} & \textcolor{red}{Bit(s)} & \textcolor{red}{Decription}\\
+
+    \textbf{TYPE} & [0..1] & Defines the type of the message \newline $00_{2}$: Command \newline $01_{2}$: Retransmission \newline $10_{2}$: Reply \newline $11_{2}$: N(ack)\\
+    \textbf{NESN} & 2 & Next Expected Sequence Number  \newline See \enquote{Subsystem Message Format Proposal} on Teams\\
+    \textbf{SN} & 3 & Sequence Number  \newline See \enquote{Subsystem Message Format Proposal} on Teams \\
+    \textbf{MD} & 4 & More Data \newline $0_{2}$: No more data is coming. Last message of the device \newline $1_{2}$: More data is coming. This is not the last message\\
+    \textbf{RFU} & [5..7] & Reserved for Future Use  \\
+    \textbf{LENGTH} & [8..15] & Length $l$ of the payload section \newline $0 \leq l \leq 255$ are valid values\\
+
+
+\caption{Bitfield description of the {\scriptsize HEADER} field}
+\label{tab:regdesc1}
+
+\end{longtable}
+
+As mentioned earlier in this Chapter, the {\scriptsize (PAYLOAD)} section depends on the type of the message.
+the following few sections will list how the {\scriptsize (PAYLOAD)} field looks like for each type of message.
+
+\section{Command-type PDU}
+\label{sec:cmd}
+
+A command is a message type that always goes from the host (OBC, PPU) to the controller (other subsystems).
+It tells the subsystem to perform a certain functionality.
+A command may require an argument or additional data. This is where the {\scriptsize DATA/PARAM} field comes in.
+
+\begin{figure}[H]
+\vspace{.5cm}
+\begin{bytefield}[endianness=little,bitwidth=0.057\textwidth,
+bitformatting=\fakeeighteenbitss]{18}
+\bitheader{0-17}\\
+\bitbox{2}{\scriptsize COMMAND} &
+\bitbox{16}{\scriptsize DATA/PARAM} &
+\end{bytefield}
+
+\caption{The {\scriptsize PAYLOAD} section of the PDU when the message type is a command}
+\label{fig:prop5_4}
+
+\end{figure}
+
+Table \ref{tab:regdesc2} lists the descriptions of each bit field regarding the {\scriptsize (PAYLOAD)} field.
+
+\begin{longtable}{ p{0.2\textwidth} p{0.1\textwidth} p{0.75\textwidth} }
+
+    \textcolor{red}{Field} & \textcolor{red}{Byte(s)} & \textcolor{red}{Decription}\\
+
+    \textbf{COMMAND} & [0..1] & Defines which command of the subsystem should be executed. \newline The \enquote{Subsystem Message Format Proposal} document hosts a list of commands for each subsystem. \\
+    \textbf{DATA/PARAM} & [2..N] & Additional data or parameters concerning the command \newline $0 \leq l \leq 254$ is a valid range and it depends on each command of the subsystem. \newline See the subsystem specific docuementation to see how each command devides \newline the {\scriptsize (DATA/PARAM)} field \\
+
+
+\caption{Bitfield description of the {\scriptsize PAYLOAD} field}
+\label{tab:regdesc2}
+
+\end{longtable}
+
+
+\section{Retransmission-type PDU}
+\label{sec:retrans}
+
+When a host or controller calculates the CRC over the PDU section and detects a mismatch, it can request a retransmission by sending a retransmission-type message.
+The \textbf{NESN} and \textbf{SN} have to reflect a retransmission request as well. More about these bits in \enquote{Subsystem Message Format Proposal} on Teams.
+There is no need to supply any data for a retransmission request. Hence why \textbf{LENGTH} should be equal to zero and the {\scriptsize (PAYLOAD)} section is empty.
+
+\newpage
+\section{Reply-type PDU}
+
+A reply-type message is send by the controller to the host as a response of a command-type message. \newline
+Not all commands will return something to the host.
+This means that the reply-type message is optional and depends on the subsystem- and command.
+Figure \ref{fig:prop5_5} shows the {\scriptsize (PAYLOAD)} field when the message is a reply-type.
+The vast majority of commands return data of a small size. Usually in the order of \texttt{uint8\_t} and \texttt{uint32\_t}.
+$N$ can be up to 255 bytes which is enough for almost all commands.
+
+\begin{figure}[H]
+\vspace{.5cm}
+\begin{bytefield}[endianness=little,bitwidth=0.057\textwidth,
+bitformatting=\fakeeighteenbitss]{18}
+\bitheader{0-17}\\
+\bitbox{18}{\scriptsize DATA} &
+\end{bytefield}
+
+\caption{The {\scriptsize PAYLOAD} section of the PDU when the message type is a reply}
+\label{fig:prop5_5}
+
+\end{figure}

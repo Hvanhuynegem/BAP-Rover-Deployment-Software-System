@@ -113,6 +113,7 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 src/communication \
+src/communication/learning\ to\ use\ UART \
 src/deployment \
 src \
 src/powerManagement \
