@@ -23,6 +23,7 @@ void initialize_clock(void);
 void start_timer(void);
 
 
+
 void initialize_clock(void){
     PJSEL0 |= BIT4 | BIT5;                  // Configure XT1 pins
 
@@ -62,9 +63,6 @@ void initialize_UART(void){
 void tx_buffer_add_byte(uint8_t byte) {
     tx_buffer[tx_in_index++] = byte;
     if (tx_in_index >= TX_BUFFER_SIZE) tx_in_index = 0; // Circular buffer
-
-    // Enable TX interrupt to start sending data
-    UCA1IE |= UCTXIE;
 }
 
 
@@ -74,26 +72,33 @@ void slip_encode(const uint8_t *buffer, uint16_t length) {
     const uint8_t ESC_END = 0xDC;
     const uint8_t ESC_ESC = 0xDD;
 
-    // Add initial END character to flush any previous data
-    tx_buffer_add_byte(END);
+    // Send initial END character to flush any previous data
+    while (!(UCA1IFG & UCTXIFG));
+    UCA1TXBUF = END;
 
     for (uint16_t i = 0; i < length; i++) {
         switch (buffer[i]) {
             case END:
-                tx_buffer_add_byte(ESC);
-                tx_buffer_add_byte(ESC_END);
+                while (!(UCA1IFG & UCTXIFG));
+                UCA1TXBUF = ESC;
+                while (!(UCA1IFG & UCTXIFG));
+                UCA1TXBUF = ESC_END;
                 break;
             case ESC:
-                tx_buffer_add_byte(ESC);
-                tx_buffer_add_byte(ESC_ESC);
+                while (!(UCA1IFG & UCTXIFG));
+                UCA1TXBUF = ESC;
+                while (!(UCA1IFG & UCTXIFG));
+                UCA1TXBUF = ESC_ESC;
                 break;
             default:
-                tx_buffer_add_byte(buffer[i]);
+                while (!(UCA1IFG & UCTXIFG));
+                UCA1TXBUF = buffer[i];
         }
     }
 
-    // Add final END character to mark packet completion
-    tx_buffer_add_byte(END);
+    // Send final END character to mark packet completion
+    while (!(UCA1IFG & UCTXIFG));
+    UCA1TXBUF = END;
 }
 
 
@@ -144,6 +149,8 @@ __interrupt void Timer_A(void) {
 }
 
 
+
+
 int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;  // Stop watchdog timer
@@ -154,18 +161,16 @@ int main(void)
 
     __bis_SR_register(GIE);  // Enable global interrupts
 
+    // Test SLIP encode and send data
+    const unsigned char testMessage[] = "Hello, SLIP! The message has been retransmitted!";
     while (1) {
-        // Enter low power mode and wait for RX interrupt
-        __bis_SR_register(LPM0_bits + GIE); // Enter LPM0 and wait for RX interrupt
-
-        // Decode received data
-        uint16_t received_length;
-        slip_decode((uint8_t*)rx_buffer, &received_length);
-
-        // Encode and retransmit received data
-        slip_encode((const uint8_t*)rx_buffer, received_length);
+        slip_encode(testMessage, sizeof(testMessage) - 1);
+        __bis_SR_register(LPM3_bits + GIE); // Enter LPM3 and wait for timer interrupt
     }
 }
+
+
+
 
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
@@ -179,13 +184,9 @@ void __attribute__ ((interrupt(USCI_A1_VECTOR))) USCI_A1_ISR (void)
 {
     switch (__even_in_range(UCA1IV, 18)) {
         case 0x00: break;  // Vector 0: No interrupts
-        case 0x02:         // Vector 2: UCRXIFG - The UCRXIFG interrupt flag is set each time a character is received and loaded into UCAxRXBUF.
-            // Store received byte in RX buffer
+        case 0x02:         // Vector 2: UCRXIFG
             rx_buffer[rx_index++] = UCA1RXBUF;
             if (rx_index >= RX_BUFFER_SIZE) rx_index = 0;  // Circular buffer
-
-            // Exit low power mode to process received data
-            __bic_SR_register_on_exit(LPM0_bits);
             break;
         case 0x04:        // Vector 4: UCTXIFG
             if (tx_out_index != tx_in_index) {

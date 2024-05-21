@@ -2,9 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-SHELL = cmd.exe
-
-CG_TOOL_ROOT := C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS
+CG_TOOL_ROOT := /Applications/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -38,8 +36,8 @@ $(GEN_CMDS__FLAG) \
 
 -include ../makefile.init
 
-RM := DEL /F
-RMDIR := RMDIR /S/Q
+RM := rm -rf
+RMDIR := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
@@ -169,15 +167,15 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5969__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"rover deployment software system.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs1271/ccs/ccs_base/msp430/include" -i"C:/ti/ccs1271/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs1271/ccs/ccs_base/msp430/lib/FR59xx" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --priority --reread_libs --define=_MPU_ENABLE --diag_wrap=off --display_error_number --warn_sections --xml_link_info="rover deployment software system_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "rover deployment software system.out" $(ORDERED_OBJS)
+	"/Applications/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5969__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"rover deployment software system.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/Applications/ti/ccs1271/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs1271/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"/Applications/ti/ccs1271/ccs/ccs_base/msp430/lib/FR59xx" -i"/Applications/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/Applications/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --priority --reread_libs --define=_MPU_ENABLE --diag_wrap=off --display_error_number --warn_sections --xml_link_info="rover deployment software system_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "rover deployment software system.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "src\communication\comProtocols.obj" "src\communication\landerComm.obj" "src\communication\landerCommInterrupts.obj" "src\communication\masterComm.obj" "src\communication\slaveComm.obj" "src\communication\learning to use UART\PinHigh.obj" "src\communication\learning to use UART\SLIP encoding.obj" "src\communication\learning to use UART\SLIP retransmission.obj" "src\communication\learning to use UART\UART transmission using buffer.obj" "src\communication\learning to use UART\UART transmit pin test.obj" "src\deployment\actuatorControl.obj" "src\deployment\deploymentControl.obj" "src\deployment\umbilicalCordManagement.obj" "src\main.obj" "src\powerManagement\batteryManagement.obj" "src\powerManagement\powerControl.obj" "src\powerManagement\sensorData.obj" "src\systemHealth\temperatureControl.obj" "src\utilities\errorHandler.obj" "src\utilities\logger.obj" 
-	-$(RM) "src\communication\comProtocols.d" "src\communication\landerComm.d" "src\communication\landerCommInterrupts.d" "src\communication\masterComm.d" "src\communication\slaveComm.d" "src\communication\learning to use UART\PinHigh.d" "src\communication\learning to use UART\SLIP encoding.d" "src\communication\learning to use UART\SLIP retransmission.d" "src\communication\learning to use UART\UART transmission using buffer.d" "src\communication\learning to use UART\UART transmit pin test.d" "src\deployment\actuatorControl.d" "src\deployment\deploymentControl.d" "src\deployment\umbilicalCordManagement.d" "src\main.d" "src\powerManagement\batteryManagement.d" "src\powerManagement\powerControl.d" "src\powerManagement\sensorData.d" "src\systemHealth\temperatureControl.d" "src\utilities\errorHandler.d" "src\utilities\logger.d" 
+	-$(RM) "src/communication/comProtocols.obj" "src/communication/landerComm.obj" "src/communication/landerCommInterrupts.obj" "src/communication/masterComm.obj" "src/communication/slaveComm.obj" "src/communication/learning to use UART/PinHigh.obj" "src/communication/learning to use UART/SLIP encoding.obj" "src/communication/learning to use UART/SLIP retransmission.obj" "src/communication/learning to use UART/UART transmission using buffer.obj" "src/communication/learning to use UART/UART transmit pin test.obj" "src/deployment/actuatorControl.obj" "src/deployment/deploymentControl.obj" "src/deployment/umbilicalCordManagement.obj" "src/main.obj" "src/powerManagement/batteryManagement.obj" "src/powerManagement/powerControl.obj" "src/powerManagement/sensorData.obj" "src/systemHealth/temperatureControl.obj" "src/utilities/errorHandler.obj" "src/utilities/logger.obj" 
+	-$(RM) "src/communication/comProtocols.d" "src/communication/landerComm.d" "src/communication/landerCommInterrupts.d" "src/communication/masterComm.d" "src/communication/slaveComm.d" "src/communication/learning to use UART/PinHigh.d" "src/communication/learning to use UART/SLIP encoding.d" "src/communication/learning to use UART/SLIP retransmission.d" "src/communication/learning to use UART/UART transmission using buffer.d" "src/communication/learning to use UART/UART transmit pin test.d" "src/deployment/actuatorControl.d" "src/deployment/deploymentControl.d" "src/deployment/umbilicalCordManagement.d" "src/main.d" "src/powerManagement/batteryManagement.d" "src/powerManagement/powerControl.d" "src/powerManagement/sensorData.d" "src/systemHealth/temperatureControl.d" "src/utilities/errorHandler.d" "src/utilities/logger.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
