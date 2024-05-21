@@ -23,7 +23,6 @@ void initialize_clock(void);
 void start_timer(void);
 
 
-
 void initialize_clock(void){
     PJSEL0 |= BIT4 | BIT5;                  // Configure XT1 pins
 
@@ -73,7 +72,7 @@ void slip_encode(const uint8_t *buffer, uint16_t length) {
     const uint8_t ESC_ESC = 0xDD;
 
     // Send initial END character to flush any previous data
-    while (!(UCA1IFG & UCTXIFG));
+    while (!(UCA1IFG & UCTXIFG)); // FIX INTERRUPTS HERE!!!!
     UCA1TXBUF = END;
 
     for (uint16_t i = 0; i < length; i++) {
@@ -149,8 +148,6 @@ __interrupt void Timer_A(void) {
 }
 
 
-
-
 int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;  // Stop watchdog timer
@@ -161,16 +158,18 @@ int main(void)
 
     __bis_SR_register(GIE);  // Enable global interrupts
 
-    // Test SLIP encode and send data
-    const unsigned char testMessage[] = "Hello, SLIP! The message has been retransmitted!";
     while (1) {
-        slip_encode(testMessage, sizeof(testMessage) - 1);
-        __bis_SR_register(LPM3_bits + GIE); // Enter LPM3 and wait for timer interrupt
+        // Enter low power mode and wait for RX interrupt
+        __bis_SR_register(LPM0_bits + GIE); // Enter LPM0 and wait for RX interrupt
+
+        // Decode received data
+        uint16_t received_length;
+        slip_decode((uint8_t*)rx_buffer, &received_length);
+
+        // Encode and retransmit received data
+        slip_encode((const uint8_t*)rx_buffer, received_length);
     }
 }
-
-
-
 
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
@@ -184,9 +183,13 @@ void __attribute__ ((interrupt(USCI_A1_VECTOR))) USCI_A1_ISR (void)
 {
     switch (__even_in_range(UCA1IV, 18)) {
         case 0x00: break;  // Vector 0: No interrupts
-        case 0x02:         // Vector 2: UCRXIFG
+        case 0x02:         // Vector 2: UCRXIFG - The UCRXIFG interrupt flag is set each time a character is received and loaded into UCAxRXBUF.
+            // Store received byte in RX buffer
             rx_buffer[rx_index++] = UCA1RXBUF;
             if (rx_index >= RX_BUFFER_SIZE) rx_index = 0;  // Circular buffer
+
+            // Exit low power mode to process received data
+            __bic_SR_register_on_exit(LPM0_bits);
             break;
         case 0x04:        // Vector 4: UCTXIFG
             if (tx_out_index != tx_in_index) {
