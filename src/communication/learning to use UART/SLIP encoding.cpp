@@ -162,7 +162,7 @@
 //    __bis_SR_register(GIE);  // Enable global interrupts
 //
 //    // Test SLIP encode and send data
-//    const unsigned char testMessage[] = "Hello, SLIP! The message has been retransmitted!";
+//    const unsigned char testMessage[] = "Hello, SLIP!";
 //    while (1) {
 //        slip_encode(testMessage, sizeof(testMessage) - 1);
 //        __bis_SR_register(LPM3_bits + GIE); // Enter LPM3 and wait for timer interrupt

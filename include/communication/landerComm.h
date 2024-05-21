@@ -40,6 +40,6 @@ void initialize_clock(void);
  * parameters:
  *  int cycles: the amount of cycles that need to be run.
  */
-void start_timer(unsigned int  cycles);
+void start_timer(unsigned int cycles);
 
 #endif // LANDER_COMM_H
