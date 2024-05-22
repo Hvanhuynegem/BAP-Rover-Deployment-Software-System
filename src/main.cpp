@@ -1,9 +1,7 @@
+#include "communication/landerComm.h"
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>
-
-#define TX_BIT BIT5  // Define TXD as P2.5
-#define RX_BIT BIT6  // Define RXD as P2.6
 
 #define TX_BUFFER_SIZE 256
 #define RX_BUFFER_SIZE 256
@@ -16,7 +14,8 @@ volatile uint8_t rx_buffer[RX_BUFFER_SIZE];
 volatile uint16_t rx_index = 0;     // Index for receiving data
 
 void tx_buffer_add_byte(uint8_t byte);
-void initialize_UART(void);
+void initialize_UART_A0(void);
+void initialize_UART_A1(void);
 void slip_encode(const uint8_t *buffer, uint16_t length);
 void slip_decode(uint8_t *buffer, uint16_t *received_length);
 void initialize_clock(void);
@@ -43,10 +42,10 @@ void initialize_clock(void){
 }
 
 
-void initialize_UART(void){
+void initialize_UART_A1(void){
     // Configure GPIO for UART
-    P2SEL1 |= RX_BIT | TX_BIT;        // Sets pins 2.5 and 2.6 to function in
-    P2SEL0 &= ~(RX_BIT | TX_BIT);     // secondary mode (assumed to be UART)
+    P2SEL1 |= BIT6 | BIT5;        // Sets pins 2.5 and 2.6 to function in
+    P2SEL0 &= ~(BIT6 | BIT5);     // secondary mode (assumed to be UART)
 
     PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
 
@@ -57,6 +56,22 @@ void initialize_UART(void){
     UCA1MCTLW |= 0x5300;              // Modulation settings for 9600 baud
     UCA1BR1 = 0;
     UCA1CTL1 &= ~UCSWRST;             // Initialize eUSCI (release from reset)
+}
+
+void initialize_UART_A0(void){
+    // Configure GPIO for UART
+    P2SEL1 |= BIT0 | BIT1;        // Sets pins 2.0 and 2.1 to function in
+    P2SEL0 &= ~(BIT0 | BIT1);     // secondary mode (assumed to be UART)
+
+    PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
+
+    // Configure USCI_A0 for UART mode
+    UCA0CTL1 |= UCSWRST;              // Put eUSCI in reset
+    UCA0CTL1 = UCSSEL__ACLK;          // Select ACLK as the clock source
+    UCA0BR0 = 3;                      // Set baud rate to 9600
+    UCA0MCTLW |= 0x5300;              // Modulation settings for 9600 baud
+    UCA0BR1 = 0;
+    UCA0CTL1 &= ~UCSWRST;             // Initialize eUSCI (release from reset)
 }
 
 void tx_buffer_add_byte(uint8_t byte) {
@@ -153,7 +168,7 @@ int main(void)
     WDTCTL = WDTPW | WDTHOLD;  // Stop watchdog timer
 
     initialize_clock();
-    initialize_UART();
+    initialize_UART_A1();
     start_timer();
 
     __bis_SR_register(GIE);  // Enable global interrupts
