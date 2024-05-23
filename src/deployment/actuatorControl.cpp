@@ -57,14 +57,14 @@ bool read_NEAready_status(volatile uint8_t *port_in, uint8_t pin) {
 void RDS_electronics_status_check(void){
     //initialize the umbilicalcord pin and all the NEA pins
     initialize_umbilicalcord_pin_rover();
-    initialize_all_neas();
+    initialize_all_nea_pins();
 
     //Send a different massage to the lander depending on the status of the umbilical cord to the rover
     if(read_umbilicalcord_pin_rover()){
-        send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) //TBD massage and data format
+//        send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) //TBD massage and data format
     }
     else{
-        send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) //TBD massage and data format
+//        send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) //TBD massage and data format
     }
 
 

@@ -1,192 +1,188 @@
-//#include "communication/landerComm.h"
-//#include <msp430.h>
-//#include <stdint.h>
-//#include <stdbool.h>
-//
-//void tx_buffer_add_byte(uint8_t byte);
-//void initialize_UART_A0(void);
-//void initialize_UART_A1(void);
-//void slip_encode(const uint8_t *buffer, uint16_t length);
-//void slip_decode(uint8_t *buffer, uint16_t *received_length);
-//void initialize_clock(void);
-//void start_timer(void);
-//
-//
-//void initialize_clock(void){
-//    PJSEL0 |= BIT4 | BIT5;                  // Configure XT1 pins
-//
-//    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
-//
-//    // XT1 Setup
-//    CSCTL0_H = CSKEY >> 8;                    // Unlock CS registers
-//    CSCTL1 = DCOFSEL_0;                       // Set DCO to 1MHz
-//    CSCTL2 = SELA__LFXTCLK | SELS__DCOCLK | SELM__DCOCLK;
-//    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;     // Set all dividers
-//    CSCTL4 &= ~LFXTOFF;                       // Enable LFXT1
-//    do
-//    {
-//        CSCTL5 &= ~LFXTOFFG;                    // Clear XT1 fault flag
-//        SFRIFG1 &= ~OFIFG;
-//    } while (SFRIFG1 & OFIFG);                // Test oscillator fault flag
-//    CSCTL0_H = 0;                             // Lock CS registers
-//}
-//
-//
-//void initialize_UART_A1(void){
-//    // Configure GPIO for UART
-//    P2SEL1 |= BIT6 | BIT5;        // Sets pins 2.5 and 2.6 to function in
-//    P2SEL0 &= ~(BIT6 | BIT5);     // secondary mode (assumed to be UART)
-//
-//    PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
-//
-//    // Configure USCI_A1 for UART mode
-//    UCA1CTL1 |= UCSWRST;              // Put eUSCI in reset
-//    UCA1CTL1 = UCSSEL__ACLK;          // Select ACLK as the clock source
-//    UCA1BR0 = 3;                      // Set baud rate to 9600
-//    UCA1MCTLW |= 0x5300;              // Modulation settings for 9600 baud
-//    UCA1BR1 = 0;
-//    UCA1CTL1 &= ~UCSWRST;             // Initialize eUSCI (release from reset)
-//}
-//
-//void initialize_UART_A0(void){
-//    // Configure GPIO for UART
-//    P2SEL1 |= BIT0 | BIT1;        // Sets pins 2.0 and 2.1 to function in
-//    P2SEL0 &= ~(BIT0 | BIT1);     // secondary mode (assumed to be UART)
-//
-//    PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
-//
-//    // Configure USCI_A0 for UART mode
-//    UCA0CTL1 |= UCSWRST;              // Put eUSCI in reset
-//    UCA0CTL1 = UCSSEL__ACLK;          // Select ACLK as the clock source
-//    UCA0BR0 = 3;                      // Set baud rate to 9600
-//    UCA0MCTLW |= 0x5300;              // Modulation settings for 9600 baud
-//    UCA0BR1 = 0;
-//    UCA0CTL1 &= ~UCSWRST;             // Initialize eUSCI (release from reset)
-//}
-//
-//void tx_buffer_add_byte(uint8_t byte) {
-//    tx_buffer[tx_in_index++] = byte;
-//    if (tx_in_index >= TX_BUFFER_SIZE) tx_in_index = 0; // Circular buffer
-//}
-//
-//
-//void slip_encode(const uint8_t *buffer, uint16_t length) {
-//    const uint8_t END = 0xC0;
-//    const uint8_t ESC = 0xDB;
-//    const uint8_t ESC_END = 0xDC;
-//    const uint8_t ESC_ESC = 0xDD;
-//
-//    // Send initial END character to flush any previous data
-//    while (!(UCA1IFG & UCTXIFG));
-//    UCA1TXBUF = END;
-//
-//    for (uint16_t i = 0; i < length; i++) {
-//        switch (buffer[i]) {
-//            case END:
-//                while (!(UCA1IFG & UCTXIFG));
-//                UCA1TXBUF = ESC;
-//                while (!(UCA1IFG & UCTXIFG));
-//                UCA1TXBUF = ESC_END;
-//                break;
-//            case ESC:
-//                while (!(UCA1IFG & UCTXIFG));
-//                UCA1TXBUF = ESC;
-//                while (!(UCA1IFG & UCTXIFG));
-//                UCA1TXBUF = ESC_ESC;
-//                break;
-//            default:
-//                while (!(UCA1IFG & UCTXIFG));
-//                UCA1TXBUF = buffer[i];
-//        }
-//    }
-//
-//    // Send final END character to mark packet completion
-//    while (!(UCA1IFG & UCTXIFG));
-//    UCA1TXBUF = END;
-//}
-//
-//
-//void slip_decode(uint8_t *buffer, uint16_t *received_length) {
-//    const uint8_t END = 0xC0;
-//    const uint8_t ESC = 0xDB;
-//    const uint8_t ESC_END = 0xDC;
-//    const uint8_t ESC_ESC = 0xDD;
-//
-//    uint8_t c;
-//    bool is_escaped = false;
-//    *received_length = 0;
-//
-//    while (1) {
-//        while (!(UCA1IFG & UCRXIFG));  // Wait for data
-//        c = UCA1RXBUF;
-//
-//        if (c == END) {
-//            if (*received_length) {  // If there's meaningful data, return
-//                return;
-//            } else {  // Continue if packet is empty (just an END received)
-//                continue;
-//            }
-//        }
-//
-//        if (is_escaped) {
-//            if (c == ESC_END) c = END;
-//            else if (c == ESC_ESC) c = ESC;
-//            is_escaped = false;
-//        } else if (c == ESC) {
-//            is_escaped = true;
-//            continue;
-//        }
-//
-//        buffer[(*received_length)++] = c;
-//    }
-//}
-//
-//void start_timer(void) {
-//    TA0CCR0 = 32767;          // Set timer count for approximately 1 second (assuming 32.768 kHz ACLK)
-//    TA0CCTL0 |= CCIE;         // Enable timer interrupt
-//    TA0CTL = TASSEL_1 | MC_1; // ACLK, up mode
-//}
-//
-//#pragma vector = TIMER0_A0_VECTOR
-//__interrupt void Timer_A(void) {
-//    __bic_SR_register_on_exit(LPM3_bits); // Exit low power mode on interrupt exit
-//}
-//
-//
-//#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-//#pragma vector = USCI_A1_VECTOR
-//__interrupt void USCI_A1_ISR(void)
-//#elif defined(__GNUC__)
-//void __attribute__ ((interrupt(USCI_A1_VECTOR))) USCI_A1_ISR (void)
-//#else
-//#error Compiler not supported!
-//#endif
-//{
-//    switch (__even_in_range(UCA1IV, 18)) {
-//        case 0x00: break;  // Vector 0: No interrupts
-//        case 0x02:         // Vector 2: UCRXIFG - The UCRXIFG interrupt flag is set each time a character is received and loaded into UCAxRXBUF.
-//            // Store received byte in RX buffer
-//            rx_buffer[rx_index++] = UCA1RXBUF;
-//            if (rx_index >= RX_BUFFER_SIZE) rx_index = 0;  // Circular buffer
-//
-//            // Exit low power mode to process received data
-//            __bic_SR_register_on_exit(LPM0_bits);
-//            break;
-//        case 0x04:        // Vector 4: UCTXIFG
-//            if (tx_out_index != tx_in_index) {
-//                UCA1TXBUF = tx_buffer[tx_out_index++];
-//                if (tx_out_index >= TX_BUFFER_SIZE) tx_out_index = 0; // Circular buffer
-//            } else {
-//                UCA1IE &= ~UCTXIE; // Disable TX interrupt when done
-//            }
-//            break;
-//        case 0x06:  // Vector 6: UCSTTIFG: START byte received interrupt. This flag is set when the UART module receives a START byte. This flag can be cleared by writing 0 to it.
-//            UCA1IFG &= ~UCSTTIFG;
-//            break;
-//        case 0x08:  // Vector 8: UCTXCPTIFG: Transmit complete interrupt. This flag is set after the complete UART byte in the internal shift register including STOP bit is shifted out. This flag can be cleared by writing 0 to it.
-//            UCA1IFG &= ~UCTXCPTIFG;
-//            break;
-//        default: break;
-//    }
-//}
-//
+/*
+ * LanderComm.cpp file
+ *
+ * This file will include all functionality regarding communication with the lander. The SLIP protocol is being used as communication protocol.
+ * Within this communication protocol we designed another communication protocol that makes it easier to parse received messages such that the handler can handle data more effectively.
+ *
+ * Author: Henri Vanhuynegem
+ * Date: 23/05/2024
+ *
+ */
+
+#include "communication/landerComm.h"
+
+
+uint8_t TX_buffer[UART_BUFFER_SIZE];
+volatile uint16_t TX_start = 0;
+volatile uint16_t TX_end = 0;
+
+uint8_t RX_buffer[UART_BUFFER_SIZE];
+volatile uint16_t RX_start = 0;
+volatile uint16_t RX_end = 0;
+
+void initialize_UART_A1(void) {
+    // Configure GPIO for UART
+    P2SEL1 |= BIT6 | BIT5;        // Sets pins 2.5 and 2.6 to function in
+    P2SEL0 &= ~(BIT6 | BIT5);     // secondary mode (assumed to be UART)
+
+    PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
+
+    // Configure USCI_A1 for UART mode
+    UCA1CTL1 |= UCSWRST;              // Put eUSCI in reset
+    UCA1CTL1 = UCSSEL__ACLK;          // Select ACLK as the clock source
+    UCA1BR0 = 3;                      // Set baud rate to 9600
+    UCA1MCTLW |= 0x5300;              // Modulation settings for 9600 baud
+
+    UCA1BR1 = 0;
+    UCA1CTL1 &= ~UCSWRST;                     // release from reset
+    UCA1IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+}
+
+void initialize_clock(void){
+    PJSEL0 |= BIT4 | BIT5;                  // Configure XT1 pins
+
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
+
+    // XT1 Setup
+    CSCTL0_H = CSKEY >> 8;                    // Unlock CS registers
+    CSCTL1 = DCOFSEL_0;                       // Set DCO to 1MHz
+    CSCTL2 = SELA__LFXTCLK | SELS__DCOCLK | SELM__DCOCLK;
+    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;     // Set all dividers
+    CSCTL4 &= ~LFXTOFF;                       // Enable LFXT1
+    do
+    {
+        CSCTL5 &= ~LFXTOFFG;                    // Clear XT1 fault flag
+        SFRIFG1 &= ~OFIFG;
+    } while (SFRIFG1 & OFIFG);                // Test oscillator fault flag
+    CSCTL0_H = 0;                             // Lock CS registers
+}
+
+void slip_encode(const uint8_t *buffer, uint16_t length, uint8_t *output_buffer, uint16_t *received_length) {
+    const uint8_t END = 0xC0;
+    const uint8_t ESC = 0xDB;
+    const uint8_t ESC_END = 0xDC;
+    const uint8_t ESC_ESC = 0xDD;
+
+    uint16_t index = 0;
+
+    output_buffer[index++] = END;
+
+    for (uint16_t i = 0; i < length; i++) {
+        switch (buffer[i]) {
+            case END:
+                output_buffer[index++] = ESC;
+                output_buffer[index++] = ESC_END;
+                break;
+            case ESC:
+                output_buffer[index++] = ESC;
+                output_buffer[index++] = ESC_ESC;
+                break;
+            default:
+                output_buffer[index++] = buffer[i];
+        }
+    }
+
+    output_buffer[index++] = END;
+
+    *received_length = index;
+}
+
+
+void slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *output_buffer, uint16_t *output_length) {
+    const uint8_t END = 0xC0;
+    const uint8_t ESC = 0xDB;
+    const uint8_t ESC_END = 0xDC;
+    const uint8_t ESC_ESC = 0xDD;
+
+    bool is_escaped = false;
+    *output_length = 0;
+
+    for (uint16_t i = 0; i < input_length; i++) {
+        uint8_t c = input_buffer[i];
+
+        if (c == END) {
+            if (*output_length > 0) {
+                // End of packet
+                return;
+            } else {
+                // Start of packet, skip
+                continue;
+            }
+        }
+
+        if (is_escaped) {
+            if (c == ESC_END) {
+                c = END;
+            } else if (c == ESC_ESC) {
+                c = ESC;
+            }
+            is_escaped = false;
+        } else if (c == ESC) {
+            is_escaped = true;
+            continue;
+        }
+
+        output_buffer[(*output_length)++] = c;
+    }
+}
+
+
+void send_message(const Message* msg) {
+    uint8_t encoded_msg[UART_BUFFER_SIZE];
+    uint16_t encoded_length;
+
+    // Encode the message using SLIP
+    slip_encode((uint8_t*)msg, sizeof(Message), encoded_msg, &encoded_length);
+
+    // Send the encoded message
+    uart_send_data(encoded_msg, encoded_length);
+}
+
+void uart_send_data(const uint8_t* data, uint16_t length) {
+    for (uint16_t i = 0; i < length; i++) {
+        add_to_TX_buffer(data[i]);
+    }
+    process_TX_buffer();
+}
+
+void add_to_TX_buffer(uint8_t byte) {
+    TX_buffer[TX_end] = byte;
+    TX_end = (TX_end + 1) % UART_BUFFER_SIZE;
+    UCA1IE |= UCTXIE; // Enable TX interrupt
+}
+
+void process_TX_buffer(void) {
+    if (TX_start != TX_end) {
+        UCA1TXBUF = TX_buffer[TX_start];
+        TX_start = (TX_start + 1) % UART_BUFFER_SIZE;
+    } else {
+        UCA1IE &= ~UCTXIE; // Disable TX interrupt if buffer is empty
+    }
+}
+
+// Interrupt service routine for UART
+#pragma vector=USCI_A1_VECTOR
+__interrupt void USCI_A1_ISR(void) {
+    switch (__even_in_range(UCA1IV, 4)) {
+        case 0: break;        // Vector 0 - no interrupt
+        case 2:               // Vector 2 - RXIFG
+            RX_buffer[RX_end] = UCA1RXBUF;
+            RX_end = (RX_end + 1) % UART_BUFFER_SIZE;
+            if (RX_buffer[(RX_end - 1) % UART_BUFFER_SIZE] == 0xC0) {
+                // Process received data
+                uint8_t decoded_msg[UART_BUFFER_SIZE];
+                uint16_t input_length = RX_end;
+                uint16_t decoded_length;
+                slip_decode(RX_buffer, input_length, decoded_msg, &decoded_length);
+                if (decoded_length == sizeof(Message)) {
+                    handle_message((const Message *)decoded_msg);
+                }
+                RX_start = RX_end = 0;  // Reset RX buffer
+            }
+            break;
+        case 4:               // Vector 4 - TXIFG
+            process_TX_buffer();
+            break;
+        default: break;
+    }
+}
