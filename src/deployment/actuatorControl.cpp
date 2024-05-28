@@ -114,10 +114,10 @@ void RDS_electronics_status_check(void){
     }
 
     //Check the status of the 4 NEA's
-    bool status_NEA_1 = read_NEAready_status(P1IN, BIT2)
-    bool status_NEA_2 = read_NEAready_status(P3IN, BIT3)
-    bool status_NEA_3 = read_NEAready_status(P4IN, BIT7)
-    bool status_NEA_4 = read_NEAready_status(P1IN, BIT7)
+    bool status_NEA_1 = read_NEAready_status(&P1IN, BIT2);
+    bool status_NEA_2 = read_NEAready_status(&P3IN, BIT3);
+    bool status_NEA_3 = read_NEAready_status(&P4IN, BIT7);
+    bool status_NEA_4 = read_NEAready_status(&P1IN, BIT7);
 
     if (status_NEA_1 && status_NEA_2 && status_NEA_3 && status_NEA_4){
         // Send message that non of the NEA's is activated already
@@ -155,30 +155,33 @@ void RDS_electronics_status_check(void){
     __delay_cycles(1000);                  // Ensure that the temperature sensors give a proper read out
 
     //Read out the three temperature sensors and sent message when defect.
-    float frq_temp_sens_1 = frequency_of_temperature_pin(P3IN, BIT6); // Determine the frequency of your selected temp_sens
+    float frq_temp_sens_1 = frequency_of_temperature_pin(&P3IN, BIT6); // Determine the frequency of your selected temp_sens
     if(5000 <= frq_temp_sens_1 <= 15000){
-        float temp_sens_1 = transform_frequency_to_temperature(float frq_temp_sens_1)
+        float temp_sens_1 = transform_frequency_to_temperature(frq_temp_sens_1);
         bool temp_sens_1_def = false;
+        //Send message with the actual temperature
     }
     else{
         bool temp_sens_1_def = true;
         //Send message that Temp sens 1 is defect.
     }
 
-    float frq_temp_sens_2 = frequency_of_temperature_pin(P3IN, BIT5); // Determine the frequency of your selected temp_sens
+    float frq_temp_sens_2 = frequency_of_temperature_pin(&P3IN, BIT5); // Determine the frequency of your selected temp_sens
     if(5000 <= frq_temp_sens_2 <= 15000){
-        float temp_sens_2 = transform_frequency_to_temperature(float frq_temp_sens_2)
+        float temp_sens_2 = transform_frequency_to_temperature(frq_temp_sens_2);
         bool temp_sens_2_def = false;
+        //Send message with the actual temperature
     }
     else{
         bool temp_sens_2_def = true;
         //Send message that Temp sens 1 is defect.
     }
 
-    float frq_temp_sens_3 = frequency_of_temperature_pin(P2IN, BIT2); // Determine the frequency of your selected temp_sens
+    float frq_temp_sens_3 = frequency_of_temperature_pin(&P2IN, BIT2); // Determine the frequency of your selected temp_sens
     if(5000 <= frq_temp_sens_2 <= 15000){
-        float temp_sens_3 = transform_frequency_to_temperature(float frq_temp_sens_3)
+        float temp_sens_3 = transform_frequency_to_temperature(frq_temp_sens_3);
         bool temp_sens_3_def = false;
+        //Send message with the actual temperature
     }
     else{
         bool temp_sens_3_def = true;
