@@ -10,6 +10,7 @@
 #include <stdint.h>
 #include <string.h>
 
+uint8_t received_buffer[UART_BUFFER_SIZE];
 
 // Function prototypes
 void initialize_system(void);
@@ -22,6 +23,9 @@ int main(void) {
     // Initialize system (clock, UART)
     initialize_system();
 
+    // initialize led
+    P1DIR |= BIT0;
+    P1OUT &= ~BIT0;
 
 
     // Send initialization message
@@ -33,15 +37,18 @@ int main(void) {
     // Main loop (not used in this example)
     while (1) {
         // Do nothing, wait for interrupts
+        __delay_cycles(1000000);
+        // Copy RX_buffer to received_buffer
+        memcpy(received_buffer, RX_buffer, UART_BUFFER_SIZE);
     }
 }
 
 void initialize_system(void) {
     // Initialize clock
-    initialize_clock();
+//    initialize_clock();
 
     // Initialize UART
-    initialize_UART_A1();
+    initialize_UART_A1_115200();
 }
 
 void send_init_message(void) {

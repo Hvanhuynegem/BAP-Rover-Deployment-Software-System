@@ -13,6 +13,8 @@
 
 #include <msp430.h>
 #include <stdint.h>
+#include <vector>
+#include <cstring> // for memcpy
 #include "landerCommProtocol.h"
 
 // UART buffers and state variables
@@ -28,12 +30,40 @@ extern volatile uint16_t RX_end;
 /*
  * Initializes the UART ports for pins 2.5 and 2.6 at a baud rate of 9600 baud/s.
  */
-void initialize_UART_A1(void);
+void initialize_UART_A1_9600(void);
+
+/*
+ * Initializes the UART ports for pins 2.5 and 2.6 at a baud rate of 115200 baud/s.
+ */
+void initialize_UART_A1_115200(void);
 
 /*
  * Initializes the clock (ACLK) at frequency 32.768Hz.
  */
 void initialize_clock(void);
+
+/*
+ * This method serializes the Message struct such that the data is entered into a buffer
+ *
+ * parameters:
+ *  const Message* msg: message struct
+ *  uint8_t* buffer: buffer address
+ *  uint16_t* length: length of buffer
+ */
+void serialize_message(const Message* msg, uint8_t* buffer, uint16_t* length);
+
+/*
+ * This method deserializes the Message struct such that the data is entered into a buffer
+ *
+ * parameters:
+ *  const uint8_t* buffer: buffer address
+ *  uint16_t* length: length of buffer
+ *
+ *  Returns:
+ *      Message* : message adress
+ */
+Message* deserialize_message(const uint8_t* buffer, uint16_t length);
+
 
 /*
  * SLIP encoding.

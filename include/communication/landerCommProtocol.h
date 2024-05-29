@@ -12,6 +12,7 @@
 #define PROTOCOL_H
 
 #include <stdint.h>
+#include <vector>
 
 // Message type codes
 #define MSG_TYPE_INIT        0x01
@@ -25,15 +26,12 @@
 #define START_BYTE  0x7E
 #define END_BYTE    0x7F
 
-// Define payload size
-#define PAYLOAD_SIZE 32
-
 // Message structure
 typedef struct {
     uint8_t start_byte;
     uint8_t msg_type;
     uint8_t length;
-    uint8_t payload[PAYLOAD_SIZE]; // Adjust size as needed
+    std::vector<uint8_t> payload;
     uint8_t checksum;
     uint8_t end_byte;
 } Message;
@@ -80,6 +78,6 @@ uint8_t calculate_checksum(const Message *msg);
  * Returns:
  *  uint8_t: the calculated checksum
  */
-uint8_t calculate_checksum(const uint8_t *buffer, uint8_t length);
+uint8_t calculate_checksum_helper(const uint8_t *buffer, uint8_t length);
 
 #endif // PROTOCOL_H
