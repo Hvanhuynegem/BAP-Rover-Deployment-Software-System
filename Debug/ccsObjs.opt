@@ -12,7 +12,7 @@
 "./src/powerManagement/batteryManagement.obj"
 "./src/powerManagement/powerControl.obj"
 "./src/powerManagement/sensorData.obj"
-"./src/systemHealth/temperatureControl.obj"
+"./src/systemHealth/heatResistorControl.obj"
 "./src/utilities/errorHandler.obj"
 "./src/utilities/logger.obj"
 "../lnk_msp430fr5969.cmd"
