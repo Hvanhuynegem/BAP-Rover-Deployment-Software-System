@@ -5,8 +5,7 @@
  * Within this communication protocol we designed another communication protocol that makes it easier to parse received messages such that the handler can handle data more effectively.
  *
  * Author: Henri Vanhuynegem
- * created: 23/05/2024
- * Last edited: 3/06/2024
+ * Date: 23/05/2024
  *
  */
 
@@ -19,7 +18,7 @@ volatile uint16_t TX_end = 0;
 uint8_t RX_buffer[UART_BUFFER_SIZE];
 volatile uint16_t RX_start = 0;
 volatile uint16_t RX_end = 0;
-volatile bool receiving_message = false;
+bool receiving_message = false;
 
 void initialize_UART_A1_115200(void) {
     // Configure GPIO for UART
@@ -29,54 +28,52 @@ void initialize_UART_A1_115200(void) {
     PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
 
     // Configure USCI_A1 for UART mode
-    UCA1CTLW0 = UCSWRST;                      // Put eUSCI in reset
-    UCA1CTL1 |= UCSSEL__SMCLK;                // CLK = SMCLK
-    UCA1BR0 = 8;                              // 1000000/115200 = 8.68
-    UCA1MCTLW = 0xD600;                       // 1000000/115200 - INT(1000000/115200)=0.68
-                                            // UCBRSx value = 0xD6 (See UG)
-    UCA1BR1 = 0;
-    UCA1CTL1 &= ~UCSWRST;                     // release from reset
-    UCA1IE |= UCRXIE;                         // Enable USCI_A1 RX interrupt
+      UCA1CTLW0 = UCSWRST;                      // Put eUSCI in reset
+      UCA1CTL1 |= UCSSEL__SMCLK;                // CLK = SMCLK
+      UCA1BR0 = 8;                              // 1000000/115200 = 8.68
+      UCA1MCTLW = 0xD600;                       // 1000000/115200 - INT(1000000/115200)=0.68
+                                                // UCBRSx value = 0xD6 (See UG)
+      UCA1BR1 = 0;
+      UCA1CTL1 &= ~UCSWRST;                     // release from reset
+      UCA1IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
 }
 
-uint16_t read_RX_buffer(uint16_t start, uint16_t end){
-    // Process received data
-    uint16_t input_length = (end >= start) ? (end - start) : (UART_BUFFER_SIZE - start + end);
-    uint8_t decoded_msg[UART_BUFFER_SIZE];
-    uint16_t decoded_length;
 
-    // Temporary buffer to hold the data from the circular buffer
-    uint8_t temp_buffer[UART_BUFFER_SIZE];
-    uint16_t temp_length = 0;
+void initialize_UART_A1_9600(void) {
+    // Configure GPIO for UART
+    P2SEL1 |= BIT6 | BIT5;        // Sets pins 2.5 and 2.6 to function in
+    P2SEL0 &= ~(BIT6 | BIT5);     // secondary mode (assumed to be UART)
 
-    // Copy data from the circular buffer to the temporary buffer
-    if (end >= start) {
-        memcpy(temp_buffer, &RX_buffer[start], input_length);
-        temp_length = input_length;
-    } else {
-        uint16_t first_part_length = UART_BUFFER_SIZE - start;
-        memcpy(temp_buffer, &RX_buffer[start], first_part_length);
-        memcpy(temp_buffer + first_part_length, RX_buffer, end);
-        temp_length = first_part_length + end;
-    }
+    PM5CTL0 &= ~LOCKLPM5;             // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
 
-    // Decode the SLIP-encoded message
-    slip_decode(temp_buffer, temp_length, decoded_msg, &decoded_length);
+    // Configure USCI_A1 for UART mode
+    UCA1CTL1 |= UCSWRST;              // Put eUSCI in reset
+    UCA1CTL1 = UCSSEL__ACLK;          // Select ACLK as the clock source
+    UCA1BR0 = 3;                      // Set baud rate to 9600
+    UCA1MCTLW |= 0x5300;              // Modulation settings for 9600 baud
 
-    // Deserialize the message
-    Message* msg_pointer = deserialize_message(decoded_msg, decoded_length);
+    UCA1BR1 = 0;
+    UCA1CTL1 &= ~UCSWRST;                     // release from reset
+    UCA1IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+}
 
-    // Handle the message
-    handle_message(msg_pointer);
+void initialize_clock(void){
+    PJSEL0 |= BIT4 | BIT5;                  // Configure XT1 pins
 
-    // Clean up the dynamically allocated message
-    delete msg_pointer;
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode to activate previously configured port settings
 
-    // reset the start index
-    start = end;
-
-    // return the updated start index
-    return start;
+    // XT1 Setup
+    CSCTL0_H = CSKEY >> 8;                    // Unlock CS registers
+    CSCTL1 = DCOFSEL_0;                       // Set DCO to 1MHz
+    CSCTL2 = SELA__LFXTCLK | SELS__DCOCLK | SELM__DCOCLK;
+    CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;     // Set all dividers
+    CSCTL4 &= ~LFXTOFF;                       // Enable LFXT1
+    do
+    {
+        CSCTL5 &= ~LFXTOFFG;                    // Clear XT1 fault flag
+        SFRIFG1 &= ~OFIFG;
+    } while (SFRIFG1 & OFIFG);                // Test oscillator fault flag
+    CSCTL0_H = 0;                             // Lock CS registers
 }
 
 void serialize_message(const Message* msg, uint8_t* buffer, uint16_t* length) {
@@ -208,7 +205,7 @@ void slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *ou
 }
 
 
-void send_message_struct(const Message* msg) {
+void send_message(const Message* msg) {
     uint8_t serialized_msg[UART_BUFFER_SIZE];
     uint16_t serialized_length;
 
@@ -223,13 +220,6 @@ void send_message_struct(const Message* msg) {
 
     // Send the encoded message
     uart_send_data(encoded_msg, encoded_length);
-}
-
-void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){
-    Message msg = create_message(MSG_TYPE_INIT, payload, strlen((const char*)payload));
-
-    // Send the message
-    send_message_struct(&msg);
 }
 
 void uart_send_data(const uint8_t* data, uint16_t length) {
@@ -269,9 +259,33 @@ __interrupt void USCI_A1_ISR(void) {
                     if (!receiving_message) {
                         // Start of a new message
                         receiving_message = true;
-                    } else {
+                        RX_start = RX_end - 1;
+                    } else if (((RX_end - 1) % UART_BUFFER_SIZE != RX_start)) {
                         // End of a message
                         receiving_message = false;
+
+                        // Process received data
+                        uint8_t decoded_msg[UART_BUFFER_SIZE];
+                        uint16_t input_length = (RX_end >= RX_start) ? (RX_end - RX_start) : (UART_BUFFER_SIZE - RX_start + RX_end);
+                        uint16_t decoded_length;
+
+                        slip_decode(RX_buffer, input_length, decoded_msg, &decoded_length);
+
+//                        Message init_msg = create_message(MSG_TYPE_RESPONSE, decoded_msg, decoded_length);
+//
+//                        // Send the initialization message
+//                        send_message(&init_msg);
+
+                        // Deserialize the message
+                        Message* msg_pointer = deserialize_message(decoded_msg, decoded_length);
+
+                        // Handle the message
+                        handle_message(msg_pointer);
+
+                        // Clean up the dynamically allocated message
+                        delete msg_pointer;
+
+                        RX_start = RX_end = 0;  // Reset RX buffer
                     }
                 }
             }

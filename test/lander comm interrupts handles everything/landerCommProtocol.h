@@ -4,8 +4,7 @@
  * This file includes the internal communication protocol for communication with the lander. It is a self-made protocol that uses message type codes to handle incoming data more efficiently.
  *
  * Author: Henri Vanhuynegem
- * created: 23/05/2024
- * Last edited: 3/06/2024
+ * Date: 23/05/2024
  *
  */
 
@@ -23,7 +22,6 @@
 #define MSG_TYPE_RESPONSE    0x05
 #define MSG_TYPE_DEPLOYMENT  0x06
 #define MSG_TYPE_MODE        0x07
-#define MSG_TYPE_ERROR       0x08
 
 #define START_BYTE  0x7E
 #define END_BYTE    0x7F

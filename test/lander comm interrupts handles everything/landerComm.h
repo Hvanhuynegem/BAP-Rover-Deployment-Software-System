@@ -5,8 +5,7 @@
  * Within this communication protocol we designed another communication protocol that makes it easier to parse received messages such that the handler can handle data more effectively.
  *
  * Author: Henri Vanhuynegem
- * created: 23/05/2024
- * Last edited: 3/06/2024
+ * Date: 23/05/2024
  *
  */
 #ifndef LANDER_COMM_H
@@ -27,42 +26,29 @@ extern volatile uint16_t TX_end;
 extern uint8_t RX_buffer[UART_BUFFER_SIZE];
 extern volatile uint16_t RX_start;
 extern volatile uint16_t RX_end;
-extern volatile bool receiving_message;
 
+/*
+ * Initializes the UART ports for pins 2.5 and 2.6 at a baud rate of 9600 baud/s.
+ */
+void initialize_UART_A1_9600(void);
 
 /*
  * Initializes the UART ports for pins 2.5 and 2.6 at a baud rate of 115200 baud/s.
- *
- * parameters:
- *  void
- *
- * returns:
- *  void
  */
 void initialize_UART_A1_115200(void);
 
 /*
- * Read the data out of the RX buffer and handle the message
- *
- *  parameters:
- *      uint16_t start: start index of message from RX_buffer to read
- *      uint16_t end: end index of message from RX_buffer to read
- *
- *  returns:
- *      uint16_t : end index of the message from RX_buffer.
+ * Initializes the clock (ACLK) at frequency 32.768Hz.
  */
-uint16_t read_RX_buffer(uint16_t start, uint16_t end);
+void initialize_clock(void);
 
 /*
  * This method serializes the Message struct such that the data is entered into a buffer
  *
  * parameters:
- *  Message* msg : message adress
- *  const uint8_t* buffer: buffer address
+ *  const Message* msg: message struct
+ *  uint8_t* buffer: buffer address
  *  uint16_t* length: length of buffer
- *
- * Returns:
- *  void
  */
 void serialize_message(const Message* msg, uint8_t* buffer, uint16_t* length);
 
@@ -101,21 +87,12 @@ void slip_encode(const uint8_t *buffer, uint16_t length, uint8_t *output_buffer,
 void slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *output_buffer, uint16_t *output_length);
 
 /*
- * Send a message structure using UART TX
+ * Send a message using UART
  *
  * parameters:
  *  const Message* msg: message to be sent via UART TXD pin
  */
-void send_message_struct(const Message* msg);
-
-/*
- * Send a message using UART TX
- * parameters:
- *  uint8_t msg_type : message type
- *  const uint8_t *payload: pointer to array to be sent
- *  uint8_t length: length of array to be sent
- */
-void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length);
+void send_message(const Message* msg);
 
 /*
  * This method is able to send an array of data through the UART output pin by using the add to TX buffer method.

@@ -4,8 +4,7 @@
  * This file includes the internal communication protocol for communication with the lander. It is a self-made protocol that uses message type codes to handle incoming data more efficiently.
  *
  * Author: Henri Vanhuynegem
- * created: 23/05/2024
- * Last edited: 3/06/2024
+ * Date: 23/05/2024
  *
  */
 
@@ -60,23 +59,25 @@ uint8_t calculate_checksum(const Message *msg) {
 void handle_message(const Message *msg) {
     if (msg->start_byte != START_BYTE || msg->end_byte != END_BYTE) {
         // Invalid message
-        uint8_t payload[] = "INVALID_MESSAGE";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        P1OUT ^= BIT0; // Toggle LED as an error indicator
         return;
     }
 
     if (msg->checksum != calculate_checksum(msg)) {
         // Invalid checksum
-        uint8_t payload[] = "INVALID_CHECKSUM";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+//        P1OUT ^= BIT0; // Toggle LED as an error indicator
         return;
     }
 
     switch (msg->msg_type) {
         case MSG_TYPE_INIT:
             // Handle initialization sequence
-            uint8_t ack_payload[] = "ACK";
-            send_message(MSG_TYPE_ACK, ack_payload, strlen((const char*)ack_payload));
+            {
+                P1OUT ^= BIT0; // Toggle LED as an error indicator
+                uint8_t ack_payload[] = "ACK";
+                Message ack_msg = create_message(MSG_TYPE_ACK, ack_payload, strlen((const char*)ack_payload));
+                send_message(&ack_msg);
+            }
             break;
         case MSG_TYPE_ACK:
             // Handle acknowledgment
