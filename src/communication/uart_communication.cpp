@@ -22,7 +22,7 @@
  *
  */
 
-#include "uart_communication.h"
+#include <lander_communication_lib/uart_communication.h>
 #include <cstring>
 
 
@@ -43,17 +43,14 @@
  *   The tick rate is tied to SMCLK, which in current implementation is configured to ~16Mhz.
  *   The clock is further divided by 8 and only triggers a tick on the rising edge.
  *   The time for the timer to expire is calculated by  TIMEOUT_TICKS / (CLOCK_FREQUENCY / DIVIDER)
- *   Current timeout = 10000 / (16M / 8) = 10000 / 2M = 0.005s = 5 ms = 5000 ms
+ *   Current timeout = 2000 / (16M / 8) = 10000 / 2M = 0.001s = 1 ms
  */
-#define DEFAULT_TIMEOUT_TICKS 65000
+#define DEFAULT_TIMEOUT_TICKS 2000
 
 
 uint8_t RX_buffer[UART_BUFFER_SIZE];
 volatile uint16_t RX_start = 0;
 volatile uint16_t RX_end = 0;
-
-/* Timeout variables */
-volatile uint8_t timeout_active;
 
 /* size of incoming message */
 volatile uint16_t message_pointer;
@@ -61,6 +58,10 @@ volatile uint16_t message_pointer;
 /* uart state definition */
 volatile UART_states UART_state;
 
+/* bools for uart states*/
+bool buffer_full_state = false;
+bool error_state = false;
+bool timeout_state = false;
 
 
 /**
@@ -117,7 +118,6 @@ inline static void start_timeout(void)
     // SMCLK, UP mode, divide the clock by 64 (8 from ID and 8 from TAIDEX)
     TA3CTL = TASSEL__SMCLK | MC__UP | ID__8;
     TA3EX0 |= 8; // Further divide by 8
-    timeout_active = 1;
 }
 
 inline static void reset_timeout(void)
@@ -135,23 +135,23 @@ inline static void stop_timeout(void)
 {
     // Stops the timer
     TA3CTL = MC__STOP | TACLR;
-    timeout_active = 0;
 }
 
-//// Timer A3 interrupt service routine
-//#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-//#pragma vector = TIMER3_A0_VECTOR
-//__interrupt void Timer3_A0_ISR(void)
-//#elif defined(__GNUC__)
-//void __attribute__ ((interrupt(TIMER3_A0_VECTOR))) Timer3_A0_ISR (void)
-//#else
-//#error Compiler not supported!
-//#endif
-//{
-//    UART_state = TIMEOUT; // should be TIMEOUT
-//    stop_timeout();
-//
-//}
+// Timer A3 interrupt service routine
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = TIMER3_A0_VECTOR
+__interrupt void Timer3_A0_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(TIMER3_A0_VECTOR))) Timer3_A0_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    UART_state = TIMEOUT; // should be TIMEOUT
+    timeout_state = true;
+    stop_timeout();
+
+}
 
 
 /**
@@ -174,7 +174,6 @@ void __attribute__((interrupt(USCI_A1_VECTOR))) USCI_A1_ISR(void)
         {
             uint8_t character = UCA1RXBUF; // save incoming character
             uart_interrupt_handler(character); // handle the incoming character
-            __bic_SR_register_on_exit(LPM3_bits);    // Exits low power mode
         }
         break;
         case USCI_UART_UCTXIFG: // vector 4 - TXIFG
@@ -224,7 +223,6 @@ void uart_init(void)
 void uart_configure(void)
 {
     UART_state = IDLE;
-    timeout_active = 0;
     uart_init();
 }
 
@@ -254,22 +252,20 @@ inline static void uart_interrupt_handler(uint8_t character)
             RX_end = (RX_end + 1) % UART_BUFFER_SIZE;
             message_pointer++;
             UART_state = RECEIVING;
-//            start_timeout();
+            start_timeout();
         }
     }
     // Check if state is in receiving mode to receive messages
     else if(UART_state == RECEIVING)
     {
 
-//        // If timer is active, reset it, to not cause a timeout
-//        if(timeout_active == (uint8_t)1)
-//        {
-//            reset_timeout();
-//        }
+        // reset timeout, to not cause a timeout
+        reset_timeout();
 
         if(message_pointer >= UART_BUFFER_SIZE - 1)
         {
             UART_state = BUFFER_FULL;
+            buffer_full_state = true;
         }
         else
         {
@@ -280,7 +276,7 @@ inline static void uart_interrupt_handler(uint8_t character)
             // If this is the last byte, set state to RECEIVED
             if (character == 0xC0)
             {
-//                stop_timeout();
+                stop_timeout();
                 UART_state = RECEIVED;
             }
         }
@@ -293,6 +289,7 @@ inline static void uart_interrupt_handler(uint8_t character)
         RX_start = 0;
         RX_end = 0;
         // send ERROR msg
+        stop_timeout();
         UART_state == IDLE;
     }
     else if (UART_state == ERROR)
@@ -302,17 +299,19 @@ inline static void uart_interrupt_handler(uint8_t character)
         RX_start = 0;
         RX_end = 0;
         // send ERROR msg
+        stop_timeout();
         UART_state == IDLE;
     }
-//    else if (UART_state == TIMEOUT)
-//    {
-//        // Handle timeout state if needed
-//        // For example, log an error or reset the state
-//        RX_start = 0;
-//        RX_end = 0;
-//        // send ERROR msg
-//        UART_state == IDLE;
-//    }
+    else if (UART_state == TIMEOUT)
+    {
+        // Handle timeout state if needed
+        // For example, log an error or reset the state
+        RX_start = 0;
+        RX_end = 0;
+        // send ERROR msg
+        stop_timeout();
+        UART_state == IDLE;
+    }
     else {}
 }
 

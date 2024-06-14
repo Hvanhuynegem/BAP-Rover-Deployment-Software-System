@@ -9,8 +9,8 @@
  *
  */
 
-#include "lander_communication_protocol.h"
-#include "lander_communication.h"
+#include <lander_communication_lib/lander_communication.h>
+#include <lander_communication_lib/lander_communication_protocol.h>
 #include <cstring>
 //#include <msp430.h>
 
@@ -78,10 +78,13 @@ void handle_message(const Message *msg) {
         case MSG_TYPE_RESPONSE:
             // Handle response
             break;
-        case MSG_TYPE_DEPLOYMENT:
+        case MSG_TYPE_DEPLOY:
             // Handle deployment
             break;
-        case MSG_TYPE_MODE:
+        case MSG_TYPE_TRANSIT_MODE:
+            // Handle mode
+            break;
+        case MSG_TYPE_ERROR:
             // Handle mode
             break;
         default:

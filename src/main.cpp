@@ -38,9 +38,9 @@ int main(void) {
 
     // Main loop (not used in this example)
     while (1) {
-//        process_received_data();
-        send_init_message();
-        __delay_cycles(3000);
+        process_received_data();
+//        send_init_message();
+//        __delay_cycles(3000);
         // Do nothing, wait for interrupts
     }
 }
@@ -52,15 +52,3 @@ void send_init_message(void) {
     send_message(MSG_TYPE_INIT, payload, strlen((const char*)payload));
 }
 
-void process_received_data(void) {
-    __disable_interrupt();
-    uint16_t start = RX_start;
-    uint16_t end = RX_end;
-    UART_states state = UART_state;
-    __enable_interrupt();
-
-    if (UART_state == RECEIVED && start != end) {
-        UART_state = IDLE;
-        RX_start = read_RX_buffer(start, end);
-    }
-}

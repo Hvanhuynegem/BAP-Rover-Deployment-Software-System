@@ -10,7 +10,7 @@
  *
  */
 
-#include "lander_communication.h"
+#include <lander_communication_lib/lander_communication.h>
 #include <cstring>
 
 
@@ -205,5 +205,33 @@ void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){
 
     // Send the message
     send_message_struct(&msg);
+}
+
+void process_received_data(void) {
+    __disable_interrupt();
+    uint16_t start = RX_start;
+    uint16_t end = RX_end;
+    UART_states state = UART_state;
+    __enable_interrupt();
+
+    if (UART_state == RECEIVED && start != end) {
+        UART_state = IDLE;
+        RX_start = read_RX_buffer(start, end);
+    } else if (buffer_full_state){
+        // Create a ERROR message
+        uint8_t payload[] = "MESSAGE_TOO_LARGE";
+        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        buffer_full_state = false;
+    } else if(error_state){
+        // Create a ERROR message
+        uint8_t payload[] = "";
+        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        error_state = false;
+    } else if (timeout_state) {
+        // Create a NACK message
+        uint8_t payload[] = "";
+        send_message(MSG_TYPE_NACK, payload, strlen((const char*)payload));
+        timeout_state = false;
+    } else {}
 }
 

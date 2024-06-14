@@ -1,5 +1,6 @@
-"./src/communication/LanderCommProtocol.obj"
-"./src/communication/landerComm.obj"
+"./src/communication/lander_communication.obj"
+"./src/communication/lander_communication_protocol.obj"
+"./src/communication/uart_communication.obj"
 "./src/communication/learning to use UART/PinHigh.obj"
 "./src/communication/learning to use UART/SLIP encoding.obj"
 "./src/communication/learning to use UART/SLIP retransmission.obj"
