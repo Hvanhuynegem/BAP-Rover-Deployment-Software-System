@@ -6,37 +6,41 @@
  * Last edited: 3/06/2024
  */
 
-#include "communication/landerCommProtocol.h"
-#include "communication/landerComm.h"
 #include <msp430.h>
 #include <stdint.h>
 #include <string.h>
+
+#include "lander_communication_lib/lander_communication.h"
+#include "lander_communication_lib/lander_communication_protocol.h"
+#include "lander_communication_lib/uart_communication.h"
 
 // Function prototypes
 void initialize_system(void);
 void send_init_message(void);
 void process_received_data(void);
 
+
 int main(void) {
     // Stop watchdog timer
     WDTCTL = WDTPW | WDTHOLD;
 
-    // Initialize UART
-    initialize_UART_A1_115200();
+    // digital clk
+    setup_SMCLK();
+    // Initialise UART
+    uart_configure();
 
-    // Enter low-power mode and enable global interrupts
+    // Pins start in high-impedance mode on wake-up, this enables them again
+    // and activates our port configurations
+    PM5CTL0 &= ~LOCKLPM5;
+
+    // enable global interrupts
     __bis_SR_register(GIE);
 
     // Main loop (not used in this example)
     while (1) {
 //        process_received_data();
-
-        if(TX_start == TX_end){
-            //delay
-            __delay_cycles(1000000); // 1 second == 1000000
-            // Send initialization message
-            send_init_message();
-        }
+        send_init_message();
+        __delay_cycles(3000);
         // Do nothing, wait for interrupts
     }
 }
@@ -52,10 +56,11 @@ void process_received_data(void) {
     __disable_interrupt();
     uint16_t start = RX_start;
     uint16_t end = RX_end;
-    bool receiving_flag = receiving_message;
+    UART_states state = UART_state;
     __enable_interrupt();
 
-    if (!receiving_flag && start != end) {
+    if (UART_state == RECEIVED && start != end) {
+        UART_state = IDLE;
         RX_start = read_RX_buffer(start, end);
     }
 }

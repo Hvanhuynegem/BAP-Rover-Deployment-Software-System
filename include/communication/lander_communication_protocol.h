@@ -1,5 +1,5 @@
 /*
- * LanderCommProtocol.h file
+ * lander_communication_protocol.h file
  *
  * This file includes the internal communication protocol for communication with the lander. It is a self-made protocol that uses message type codes to handle incoming data more efficiently.
  *
@@ -9,11 +9,11 @@
  *
  */
 
-#ifndef PROTOCOL_H
-#define PROTOCOL_H
+#ifndef LANDER_COMMUNICATION_PROTOCOL_H
+#define LANDER_COMMUNICATION_PROTOCOL_H
 
-#include <stdint.h>
-#include <vector>
+
+#include <cstdint>
 
 // Message type codes
 #define MSG_TYPE_INIT        0x01
@@ -25,15 +25,17 @@
 #define MSG_TYPE_MODE        0x07
 #define MSG_TYPE_ERROR       0x08
 
-#define START_BYTE  0x7E
-#define END_BYTE    0x7F
+#define MSG_START_BYTE  0x7E
+#define MSG_END_BYTE    0x7F
+
+#define MAX_PAYLOAD_SIZE 249  // UART buffer size - 7 (extra bytes)
 
 // Message structure
 typedef struct {
     uint8_t start_byte;
     uint8_t msg_type;
     uint8_t length;
-    std::vector<uint8_t> payload; // pointer to array
+    uint8_t payload[MAX_PAYLOAD_SIZE]; // pointer to payload array
     uint8_t checksum;
     uint8_t end_byte;
 } Message;
@@ -63,23 +65,24 @@ void handle_message(const Message *msg);
  * Calculates the checksum of a message to check for errors during transmission.
  *
  * Parameters:
- *  const Message *msg: the message to be used for calculating a checksum
+ *  uint8_t msg_type: message type
+ *  uint8_t length: length of the message
+ *  const uint8_t *payload: the message to be used for calculating a checksum
+ *
+ * Returns:
+ *  uint8_t: the calculated checksum
+ */
+uint8_t calculate_checksum_helper(uint8_t msg_type, uint8_t length, const uint8_t *payload);
+
+/*
+ * Calculates the checksum of a message to check for errors during transmission.
+ *
+ * Parameters:
+ *  const Message *msg : message structure
  *
  * Returns:
  *  uint8_t: the calculated checksum
  */
 uint8_t calculate_checksum(const Message *msg);
 
-/*
- * Calculates the checksum of a message to check for errors during transmission.
- *
- * Parameters:
- *  const uint8_t *buffer: the message to be used for calculating a checksum
- *  uint8_t length: length of the message
- *
- * Returns:
- *  uint8_t: the calculated checksum
- */
-uint8_t calculate_checksum_helper(const uint8_t *buffer, uint8_t length);
-
-#endif // PROTOCOL_H
+#endif // LANDER_COMMUNICATION_PROTOCOL_H
