@@ -1,0 +1,13 @@
+# ninja log v6
+18	191	1717745977893609105	lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.o	2d55d6a6004acd98
+1315	1421	1717684216604418307	lib/libgtest_main.a	2cc3c6d061b36794
+15	5810	1717684153283972725	Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	aba0dd283d4fdd36
+20	333	1717752296331507856	CMakeFiles/lander_communication_run.dir/main.cpp.o	e92864e1918c68ae
+5	408	1718026424890788052	build.ninja	69359a5f7e072040
+191	307	1717745978066385647	lander_communication_lib/liblander_communication_lib.a	abd5fc9e061ad75a
+14	2458	1717753160823192343	Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.o	7c68083594cbd72b
+4	1314	1717684215294134061	Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	f7e6324b1cd55d65
+10	100	1717752794421215068	Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.o	dc99b2c3e885f1bf
+334	467	1717752296645295325	lander_communication_run	d238c6ed1dc628ad
+2459	2565	1717753163267788820	Google_tests/Google_Tests_run	7d45fcd1e0a1ee2a
+4	214	1717684215293628042	lib/libgtest.a	c6f01884f2718f79
