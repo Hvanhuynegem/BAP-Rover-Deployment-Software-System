@@ -1,6 +1,19 @@
+/*
+ * temp_sensors.cpp file
+ *
+ * This file includes the functionalities for reading a frequency from an oscillator to determine the temperature in the environment where the oscillator is situated.
+ *
+ * Author: Diederik Aris
+ * created: 28/05/2024
+ * Last edited: 15/06/2024
+ *
+ */
+
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>
+
+#include "system_health_lib/temp_sensors.h"
 
 // Define the number of runs for the measurement
 #define numberOfRuns 9
@@ -49,7 +62,7 @@ void initialize_temperature_pins(void) {
 }
 
 // Function to start the timeout timer
-void startTimeoutTimer()
+void startTimeoutTimer_TA2()
 {
     timeoutOccurred = false;  // Reset timeout flag
     TA2CTL = TASSEL_2 + MC_1 + ID__4 + TACLR; // SMCLK = 16 MHz, up mode, input divider by 4, clear TAR
@@ -58,7 +71,7 @@ void startTimeoutTimer()
 }
 
 // Function to stop the timeout timer
-void stopTimeoutTimer()
+void stopTimeoutTimer_TA2()
 {
     TA2CTL = MC_0;       // Stop the timer
     TA2CCTL0 = ~CCIE;    // Disable interrupt
@@ -109,7 +122,7 @@ void readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsi
 
     // Loop to take numberOfRuns period measurements
     for (i = 0; i < numberOfRuns; i++) {
-        startTimeoutTimer();  // Start the timeout timer
+        startTimeoutTimer_TA2();  // Start the timeout timer
 
         // Wait for the first capture or timeout
         while (!(*TxxCCTLx & CCIFG) && !timeoutOccurred);
@@ -124,10 +137,10 @@ void readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsi
         *TxxCCTLx &= ~CCIFG;       // Clear interrupt flag
 
         if (timeoutOccurred) {
-            stopTimeoutTimer();  // Stop the timer if timeout occurred
+            stopTimeoutTimer_TA2();  // Stop the timer if timeout occurred
             singlePeriodMeasurements[i] = 1; // Set period to 1 if timeout occurred
         } else {
-            stopTimeoutTimer();  // Stop the timer since measurement completed within time
+            stopTimeoutTimer_TA2();  // Stop the timer since measurement completed within time
 
             // Calculate the period
             if (secondCapture >= firstCapture) {

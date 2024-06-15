@@ -23,11 +23,16 @@ src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/string.h
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/string.h
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/xlocale/_string.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/general_startup.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication_protocol.h
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/cstdint
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/uart_communication.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/temp_sensors.h
+src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/stdbool.h
+src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/stdbool.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/umbilical_cord.h
 
 ../src/main.cpp:
 
@@ -75,6 +80,8 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/string.h:
 
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/xlocale/_string.h:
 
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/general_startup.h:
+
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication.h:
 
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication_protocol.h:
@@ -84,4 +91,12 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/cstdint
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/uart_communication.h:
 
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/temp_sensors.h:
+
+C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/stdbool.h:
+
+C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/stdbool.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/umbilical_cord.h:
 

@@ -1,9 +1,8 @@
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <actuatorControl.h>
 
-void initializa_heat_resistor_pins(void){
+void initialize_heat_resistor_pins(void){
 
     //MCU Heater off
     P1DIR |= BIT6;  // Set P1.6 as output pin (heater off)
@@ -20,9 +19,6 @@ void initializa_heat_resistor_pins(void){
 }
 
 void heat_resistor_control(void){
-
-
-
     if(temp_sens_1_def && temp_sens_2_def && temp_sens_3_def){
         // All temp sensors are defect leave it to analog
         P3OUT &= ~BIT4;

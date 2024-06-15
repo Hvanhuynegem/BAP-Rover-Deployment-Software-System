@@ -1,3 +1,15 @@
+/*
+ * supercap_readout.cpp
+ *
+ * This file includes the functions needed to read an analogue voltage from a pin
+ *
+ *
+ * Author: Diederik Aris
+ * created: 28/05/2024
+ * Last edited: 15/06/2024
+ *
+ */
+
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>

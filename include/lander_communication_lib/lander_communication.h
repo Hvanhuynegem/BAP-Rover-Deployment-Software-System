@@ -15,8 +15,12 @@
 
 #include <lander_communication_lib/lander_communication_protocol.h>
 #include <lander_communication_lib/uart_communication.h>
+#include <system_health_lib/temp_sensors.h>
 #include <msp430.h>
 #include <cstdint>
+
+// External global variables
+extern bool ack_received;
 
 /*
  * This method serializes the Message struct such that the data is entered into a buffer
@@ -88,6 +92,19 @@ void send_message_struct(const Message* msg);
  *  uint8_t length: length of array to be sent
  */
 void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length);
+
+/*
+ * Sends a message and waits for an ACK response.
+ *
+ * Parameters:
+ *  uint8_t msg_type : message type
+ *  const uint8_t *payload : pointer to array to be sent
+ *  uint8_t length : length of array to be sent
+ *
+ * Returns:
+ *  void
+ */
+void send_message_and_wait_for_ACK(uint8_t msg_type, const uint8_t *payload, uint8_t length);
 
 /*
  * process the RX_buffer

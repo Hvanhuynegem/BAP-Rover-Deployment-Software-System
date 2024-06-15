@@ -13,6 +13,9 @@
 #include <lander_communication_lib/lander_communication.h>
 #include <cstring>
 
+// Global variables
+bool ack_received = false;
+
 
 void convert_message_to_array(const Message* msg, uint8_t* buffer, uint8_t* length) {
 
@@ -205,6 +208,25 @@ void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){
 
     // Send the message
     send_message_struct(&msg);
+}
+
+void send_message_and_wait_for_ACK(uint8_t msg_type, const uint8_t *payload, uint8_t length){
+    // Initialize connection with the lander
+    bool acknowledgement = false;
+    while(!acknowledgement){
+        // send an initialisation message to the lander
+        send_message(msg_type, payload, length);
+        // start a timeout using timer TA2
+        startTimeoutTimer_TA2();
+        // wait until timeout is done
+        while(!timeoutOccurred){}
+        // check whether the response is an ACK
+        process_received_data();
+        if(ack_received){
+            acknowledgement = true;
+            ack_received = false;
+        }
+    }
 }
 
 void process_received_data(void) {

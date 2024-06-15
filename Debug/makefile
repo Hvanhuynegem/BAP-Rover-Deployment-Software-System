@@ -10,24 +10,20 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./src/communication/lander_communication.obj" \
-"./src/communication/lander_communication_protocol.obj" \
-"./src/communication/uart_communication.obj" \
-"./src/communication/learning to use UART/PinHigh.obj" \
-"./src/communication/learning to use UART/SLIP encoding.obj" \
-"./src/communication/learning to use UART/SLIP retransmission.obj" \
-"./src/communication/learning to use UART/UART transmission using buffer.obj" \
-"./src/communication/learning to use UART/UART transmit pin test.obj" \
-"./src/deployment/actuatorControl.obj" \
-"./src/deployment/deploymentControl.obj" \
-"./src/deployment/umbilicalCordManagement.obj" \
+"./src/lander_communication/lander_communication.obj" \
+"./src/lander_communication/lander_communication_protocol.obj" \
+"./src/lander_communication/uart_communication.obj" \
+"./src/lander_communication/learning to use UART/PinHigh.obj" \
+"./src/lander_communication/learning to use UART/SLIP encoding.obj" \
+"./src/lander_communication/learning to use UART/SLIP retransmission.obj" \
+"./src/lander_communication/learning to use UART/UART transmission using buffer.obj" \
+"./src/lander_communication/learning to use UART/UART transmit pin test.obj" \
 "./src/main.obj" \
-"./src/powerManagement/batteryManagement.obj" \
-"./src/powerManagement/powerControl.obj" \
-"./src/powerManagement/sensorData.obj" \
-"./src/systemHealth/heatResistorControl.obj" \
-"./src/utilities/errorHandler.obj" \
-"./src/utilities/logger.obj" \
+"./src/system_health/supercap_readout.obj" \
+"./src/system_health/temp_sensors.obj" \
+"./src/system_health/umbilical_cord.obj" \
+"./src/transit_modes/deployment.obj" \
+"./src/transit_modes/general_startup.obj" \
 "../lnk_msp430fr5969.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibmpu_init.a \
@@ -42,21 +38,17 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include src/communication/subdir_vars.mk
--include src/communication/learning\ to\ use\ UART/subdir_vars.mk
--include src/deployment/subdir_vars.mk
+-include src/lander_communication/subdir_vars.mk
+-include src/lander_communication/learning\ to\ use\ UART/subdir_vars.mk
 -include src/subdir_vars.mk
--include src/powerManagement/subdir_vars.mk
--include src/systemHealth/subdir_vars.mk
--include src/utilities/subdir_vars.mk
+-include src/system_health/subdir_vars.mk
+-include src/transit_modes/subdir_vars.mk
 -include subdir_rules.mk
--include src/communication/subdir_rules.mk
--include src/communication/learning\ to\ use\ UART/subdir_rules.mk
--include src/deployment/subdir_rules.mk
+-include src/lander_communication/subdir_rules.mk
+-include src/lander_communication/learning\ to\ use\ UART/subdir_rules.mk
 -include src/subdir_rules.mk
--include src/powerManagement/subdir_rules.mk
--include src/systemHealth/subdir_rules.mk
--include src/utilities/subdir_rules.mk
+-include src/system_health/subdir_rules.mk
+-include src/transit_modes/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -160,22 +152,22 @@ EXE_OUTPUTS__QUOTED += \
 
 
 # All Target
-all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+all: $(OBJS) $(CMD_SRCS) $(A_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "rover deployment software system.out"
 
 # Tool invocations
-rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(A_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5969__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"rover deployment software system.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs1271/ccs/ccs_base/msp430/include" -i"C:/ti/ccs1271/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs1271/ccs/ccs_base/msp430/lib/FR59xx" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --priority --reread_libs --define=_MPU_ENABLE --diag_wrap=off --display_error_number --warn_sections --xml_link_info="rover deployment software system_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "rover deployment software system.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5969__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"rover deployment software system.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs1271/ccs/ccs_base/msp430/include" -i"C:/ti/ccs1271/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs1271/ccs/ccs_base/msp430/lib/FR59xx" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --priority --reread_libs --define=_MPU_ENABLE --diag_wrap=off --display_error_number --warn_sections --xml_link_info="rover deployment software system_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "rover deployment software system.out" $(ORDERED_OBJS) $(A_SRCS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "src\communication\lander_communication.obj" "src\communication\lander_communication_protocol.obj" "src\communication\uart_communication.obj" "src\communication\learning to use UART\PinHigh.obj" "src\communication\learning to use UART\SLIP encoding.obj" "src\communication\learning to use UART\SLIP retransmission.obj" "src\communication\learning to use UART\UART transmission using buffer.obj" "src\communication\learning to use UART\UART transmit pin test.obj" "src\deployment\actuatorControl.obj" "src\deployment\deploymentControl.obj" "src\deployment\umbilicalCordManagement.obj" "src\main.obj" "src\powerManagement\batteryManagement.obj" "src\powerManagement\powerControl.obj" "src\powerManagement\sensorData.obj" "src\systemHealth\heatResistorControl.obj" "src\utilities\errorHandler.obj" "src\utilities\logger.obj" 
-	-$(RM) "src\communication\lander_communication.d" "src\communication\lander_communication_protocol.d" "src\communication\uart_communication.d" "src\communication\learning to use UART\PinHigh.d" "src\communication\learning to use UART\SLIP encoding.d" "src\communication\learning to use UART\SLIP retransmission.d" "src\communication\learning to use UART\UART transmission using buffer.d" "src\communication\learning to use UART\UART transmit pin test.d" "src\deployment\actuatorControl.d" "src\deployment\deploymentControl.d" "src\deployment\umbilicalCordManagement.d" "src\main.d" "src\powerManagement\batteryManagement.d" "src\powerManagement\powerControl.d" "src\powerManagement\sensorData.d" "src\systemHealth\heatResistorControl.d" "src\utilities\errorHandler.d" "src\utilities\logger.d" 
+	-$(RM) "src\lander_communication\lander_communication.obj" "src\lander_communication\lander_communication_protocol.obj" "src\lander_communication\uart_communication.obj" "src\lander_communication\learning to use UART\PinHigh.obj" "src\lander_communication\learning to use UART\SLIP encoding.obj" "src\lander_communication\learning to use UART\SLIP retransmission.obj" "src\lander_communication\learning to use UART\UART transmission using buffer.obj" "src\lander_communication\learning to use UART\UART transmit pin test.obj" "src\main.obj" "src\system_health\supercap_readout.obj" "src\system_health\temp_sensors.obj" "src\system_health\umbilical_cord.obj" "src\transit_modes\deployment.obj" "src\transit_modes\general_startup.obj" 
+	-$(RM) "src\lander_communication\lander_communication.d" "src\lander_communication\lander_communication_protocol.d" "src\lander_communication\uart_communication.d" "src\lander_communication\learning to use UART\PinHigh.d" "src\lander_communication\learning to use UART\SLIP encoding.d" "src\lander_communication\learning to use UART\SLIP retransmission.d" "src\lander_communication\learning to use UART\UART transmission using buffer.d" "src\lander_communication\learning to use UART\UART transmit pin test.d" "src\main.d" "src\system_health\supercap_readout.d" "src\system_health\temp_sensors.d" "src\system_health\umbilical_cord.d" "src\transit_modes\deployment.d" "src\transit_modes\general_startup.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

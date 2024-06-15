@@ -9,16 +9,11 @@
 #include <msp430.h>
 #include <stdint.h>
 #include <string.h>
+#include <transit_modes_lib/general_startup.h>
 
 #include "lander_communication_lib/lander_communication.h"
 #include "lander_communication_lib/lander_communication_protocol.h"
 #include "lander_communication_lib/uart_communication.h"
-
-// Function prototypes
-void initialize_system(void);
-void send_init_message(void);
-void process_received_data(void);
-
 
 int main(void) {
     // Stop watchdog timer
@@ -38,17 +33,9 @@ int main(void) {
 
     // Main loop (not used in this example)
     while (1) {
-        process_received_data();
-//        send_init_message();
-//        __delay_cycles(3000);
-        // Do nothing, wait for interrupts
+        general_startup();
     }
 }
 
 
-void send_init_message(void) {
-    // Create an initialization message
-    uint8_t payload[] = "Initialization payload";
-    send_message(MSG_TYPE_INIT, payload, strlen((const char*)payload));
-}
 
