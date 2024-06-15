@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target lander_communication_run
 
@@ -49,12 +49,14 @@ cmake_ninja_workdir = /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP
 
 build cmake_object_order_depends_target_lander_communication_run: phony || cmake_object_order_depends_target_lander_communication_lib
 
-build CMakeFiles/lander_communication_run.dir/main.cpp.o: CXX_COMPILER__lander_communication_run_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/main.cpp || cmake_object_order_depends_target_lander_communication_run
-  DEP_FILE = CMakeFiles/lander_communication_run.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib
-  OBJECT_DIR = CMakeFiles/lander_communication_run.dir
-  OBJECT_FILE_DIR = CMakeFiles/lander_communication_run.dir
+build CMakeFiles/lander_communication_run.dir/main.cpp.obj: CXX_COMPILER__lander_communication_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/main.cpp || cmake_object_order_depends_target_lander_communication_run
+  DEP_FILE = CMakeFiles\lander_communication_run.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  OBJECT_DIR = CMakeFiles\lander_communication_run.dir
+  OBJECT_FILE_DIR = CMakeFiles\lander_communication_run.dir
+  TARGET_COMPILE_PDB = CMakeFiles\lander_communication_run.dir\
+  TARGET_PDB = lander_communication_run.pdb
 
 
 # =============================================================================
@@ -62,23 +64,25 @@ build CMakeFiles/lander_communication_run.dir/main.cpp.o: CXX_COMPILER__lander_c
 
 
 #############################################
-# Link the executable lander_communication_run
+# Link the executable lander_communication_run.exe
 
-build lander_communication_run: CXX_EXECUTABLE_LINKER__lander_communication_run_Debug CMakeFiles/lander_communication_run.dir/main.cpp.o | lander_communication_lib/liblander_communication_lib.a || lander_communication_lib/liblander_communication_lib.a
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
-  LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a
-  OBJECT_DIR = CMakeFiles/lander_communication_run.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lander_communication_run
-  TARGET_PDB = lander_communication_run.dbg
+build lander_communication_run.exe: CXX_EXECUTABLE_LINKER__lander_communication_run_Debug CMakeFiles/lander_communication_run.dir/main.cpp.obj | lander_communication_lib/liblander_communication_lib.a || lander_communication_lib/liblander_communication_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lander_communication_run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\lander_communication_run.dir\
+  TARGET_FILE = lander_communication_run.exe
+  TARGET_IMPLIB = liblander_communication_run.dll.a
+  TARGET_PDB = lander_communication_run.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -89,7 +93,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP -B/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -107,7 +111,7 @@ build list_install_components: phony
 # Utility command for install
 
 build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -119,7 +123,7 @@ build install: phony CMakeFiles/install.util
 # Utility command for install/local
 
 build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -131,7 +135,7 @@ build install/local: phony CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -140,7 +144,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/CMakeLists.txt
+# C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -152,19 +156,23 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 build cmake_object_order_depends_target_lander_communication_lib: phony || lander_communication_lib/CMakeFiles/lander_communication_lib.dir
 
-build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.o: CXX_COMPILER__lander_communication_lib_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib/lander_communication.cpp || cmake_object_order_depends_target_lander_communication_lib
-  DEP_FILE = lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.o.d
-  FLAGS = -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib
-  OBJECT_DIR = lander_communication_lib/CMakeFiles/lander_communication_lib.dir
-  OBJECT_FILE_DIR = lander_communication_lib/CMakeFiles/lander_communication_lib.dir
+build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.obj: CXX_COMPILER__lander_communication_lib_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/lander_communication.cpp || cmake_object_order_depends_target_lander_communication_lib
+  DEP_FILE = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  OBJECT_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
+  OBJECT_FILE_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
+  TARGET_COMPILE_PDB = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_lib.pdb
+  TARGET_PDB = lander_communication_lib\liblander_communication_lib.pdb
 
-build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication_protocol.cpp.o: CXX_COMPILER__lander_communication_lib_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib/lander_communication_protocol.cpp || cmake_object_order_depends_target_lander_communication_lib
-  DEP_FILE = lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication_protocol.cpp.o.d
-  FLAGS = -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib
-  OBJECT_DIR = lander_communication_lib/CMakeFiles/lander_communication_lib.dir
-  OBJECT_FILE_DIR = lander_communication_lib/CMakeFiles/lander_communication_lib.dir
+build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication_protocol.cpp.obj: CXX_COMPILER__lander_communication_lib_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/lander_communication_protocol.cpp || cmake_object_order_depends_target_lander_communication_lib
+  DEP_FILE = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_protocol.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  OBJECT_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
+  OBJECT_FILE_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
+  TARGET_COMPILE_PDB = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_lib.pdb
+  TARGET_PDB = lander_communication_lib\liblander_communication_lib.pdb
 
 
 # =============================================================================
@@ -172,23 +180,23 @@ build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_co
 
 
 #############################################
-# Link the static library lander_communication_lib/liblander_communication_lib.a
+# Link the static library lander_communication_lib\liblander_communication_lib.a
 
-build lander_communication_lib/liblander_communication_lib.a: CXX_STATIC_LIBRARY_LINKER__lander_communication_lib_Debug lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.o lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication_protocol.cpp.o
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
+build lander_communication_lib/liblander_communication_lib.a: CXX_STATIC_LIBRARY_LINKER__lander_communication_lib_Debug lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.obj lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication_protocol.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = lander_communication_lib/CMakeFiles/lander_communication_lib.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lander_communication_lib/liblander_communication_lib.a
-  TARGET_PDB = lander_communication_lib.a.dbg
+  OBJECT_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_lib.pdb
+  TARGET_FILE = lander_communication_lib\liblander_communication_lib.a
+  TARGET_PDB = lander_communication_lib\liblander_communication_lib.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build lander_communication_lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\lander_communication_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -199,7 +207,7 @@ build lander_communication_lib/edit_cache: phony lander_communication_lib/CMakeF
 # Utility command for rebuild_cache
 
 build lander_communication_lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP -B/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\lander_communication_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -217,7 +225,7 @@ build lander_communication_lib/list_install_components: phony
 # Utility command for install
 
 build lander_communication_lib/CMakeFiles/install.util: CUSTOM_COMMAND lander_communication_lib/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\lander_communication_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -229,7 +237,7 @@ build lander_communication_lib/install: phony lander_communication_lib/CMakeFile
 # Utility command for install/local
 
 build lander_communication_lib/CMakeFiles/install/local.util: CUSTOM_COMMAND lander_communication_lib/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\lander_communication_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -241,7 +249,7 @@ build lander_communication_lib/install/local: phony lander_communication_lib/CMa
 # Utility command for install/strip
 
 build lander_communication_lib/CMakeFiles/install/strip.util: CUSTOM_COMMAND lander_communication_lib/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\lander_communication_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -250,7 +258,7 @@ build lander_communication_lib/install/strip: phony lander_communication_lib/CMa
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/CMakeLists.txt
+# C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -262,40 +270,50 @@ build lander_communication_lib/install/strip: phony lander_communication_lib/CMa
 
 build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_lander_communication_lib
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/slip_decoding_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/slip_decoding_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\slip_decoding_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
+  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/slip_encoding_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/slip_encoding_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\slip_encoding_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
+  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/convert_array_to_message_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/convert_array_to_message_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\convert_array_to_message_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
+  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/convert_message_to_array_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/convert_message_to_array_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\convert_message_to_array_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
+  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/send_message_struct_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/send_message_struct_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\send_message_struct_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
+  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
 
 # =============================================================================
@@ -303,23 +321,25 @@ build Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp
 
 
 #############################################
-# Link the executable Google_tests/Google_Tests_run
+# Link the executable Google_tests\Google_Tests_run.exe
 
-build Google_tests/Google_Tests_run: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.o Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.o Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.o Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.o Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.o | lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
-  LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Google_tests/Google_Tests_run
-  TARGET_PDB = Google_Tests_run.dbg
+build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.obj | lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g
+  LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
+  TARGET_FILE = Google_tests\Google_Tests_run.exe
+  TARGET_IMPLIB = Google_tests\libGoogle_Tests_run.dll.a
+  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build Google_tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -330,7 +350,7 @@ build Google_tests/edit_cache: phony Google_tests/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build Google_tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP -B/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -348,7 +368,7 @@ build Google_tests/list_install_components: phony
 # Utility command for install
 
 build Google_tests/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -360,7 +380,7 @@ build Google_tests/install: phony Google_tests/CMakeFiles/install.util
 # Utility command for install/local
 
 build Google_tests/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -372,7 +392,7 @@ build Google_tests/install/local: phony Google_tests/CMakeFiles/install/local.ut
 # Utility command for install/strip
 
 build Google_tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -381,7 +401,7 @@ build Google_tests/install/strip: phony Google_tests/CMakeFiles/install/strip.ut
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/CMakeLists.txt
+# C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt
 # =============================================================================
 
 
@@ -389,7 +409,7 @@ build Google_tests/install/strip: phony Google_tests/CMakeFiles/install/strip.ut
 # Utility command for edit_cache
 
 build Google_tests/lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -400,7 +420,7 @@ build Google_tests/lib/edit_cache: phony Google_tests/lib/CMakeFiles/edit_cache.
 # Utility command for rebuild_cache
 
 build Google_tests/lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP -B/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -418,7 +438,7 @@ build Google_tests/lib/list_install_components: phony
 # Utility command for install
 
 build Google_tests/lib/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/lib/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -430,7 +450,7 @@ build Google_tests/lib/install: phony Google_tests/lib/CMakeFiles/install.util
 # Utility command for install/local
 
 build Google_tests/lib/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/lib/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -442,7 +462,7 @@ build Google_tests/lib/install/local: phony Google_tests/lib/CMakeFiles/install/
 # Utility command for install/strip
 
 build Google_tests/lib/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/lib/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -451,7 +471,7 @@ build Google_tests/lib/install/strip: phony Google_tests/lib/CMakeFiles/install/
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt
+# C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -463,12 +483,14 @@ build Google_tests/lib/install/strip: phony Google_tests/lib/CMakeFiles/install/
 
 build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depends_target_gtest
 
-build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
-  DEP_FILE = Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/include -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src
+build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: CXX_COMPILER__gmock_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
+  DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj.d
+  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/include -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir\src
+  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -476,16 +498,16 @@ build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_C
 
 
 #############################################
-# Link the static library lib/libgmock.a
+# Link the static library lib\libgmock.a
 
-build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o || lib/libgtest.a
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
+build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj || lib/libgtest.a
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgmock.a
-  TARGET_PDB = gmock.a.dbg
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_FILE = lib\libgmock.a
+  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock_main
@@ -496,12 +518,14 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/go
 
 build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
 
-build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
-  DEP_FILE = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src
+build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_COMPILER__gmock_main_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
+  DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d
+  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src
+  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -509,23 +533,23 @@ build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o:
 
 
 #############################################
-# Link the static library lib/libgmock_main.a
+# Link the static library lib\libgmock_main.a
 
-build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o || lib/libgmock.a lib/libgtest.a
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
+build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj || lib/libgmock.a lib/libgtest.a
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgmock_main.a
-  TARGET_PDB = gmock_main.a.dbg
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_FILE = lib\libgmock_main.a
+  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build Google_tests/lib/googlemock/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googlemock && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -536,7 +560,7 @@ build Google_tests/lib/googlemock/edit_cache: phony Google_tests/lib/googlemock/
 # Utility command for rebuild_cache
 
 build Google_tests/lib/googlemock/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP -B/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googlemock && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -554,7 +578,7 @@ build Google_tests/lib/googlemock/list_install_components: phony
 # Utility command for install
 
 build Google_tests/lib/googlemock/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/lib/googlemock/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googlemock && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -566,7 +590,7 @@ build Google_tests/lib/googlemock/install: phony Google_tests/lib/googlemock/CMa
 # Utility command for install/local
 
 build Google_tests/lib/googlemock/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/lib/googlemock/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googlemock && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -578,7 +602,7 @@ build Google_tests/lib/googlemock/install/local: phony Google_tests/lib/googlemo
 # Utility command for install/strip
 
 build Google_tests/lib/googlemock/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/lib/googlemock/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googlemock && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -587,7 +611,7 @@ build Google_tests/lib/googlemock/install/strip: phony Google_tests/lib/googlemo
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt
+# C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -599,12 +623,14 @@ build Google_tests/lib/googlemock/install/strip: phony Google_tests/lib/googlemo
 
 build cmake_object_order_depends_target_gtest: phony || Google_tests/lib/googletest/CMakeFiles/gtest.dir
 
-build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
-  DEP_FILE = Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googletest/CMakeFiles/gtest.dir/src
+build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = Google_tests\lib\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
+  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir\src
+  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -612,16 +638,16 @@ build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_C
 
 
 #############################################
-# Link the static library lib/libgtest.a
+# Link the static library lib\libgtest.a
 
-build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
+build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgtest.a
-  TARGET_PDB = gtest.a.dbg
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_FILE = lib\libgtest.a
+  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest_main
@@ -632,12 +658,14 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/go
 
 build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
 
-build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
-  DEP_FILE = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src
+build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_COMPILER__gtest_main_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  DEP_FILE = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj.d
+  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir\src
+  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -645,23 +673,23 @@ build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o:
 
 
 #############################################
-# Link the static library lib/libgtest_main.a
+# Link the static library lib\libgtest_main.a
 
-build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || lib/libgtest.a
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
+build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj || lib/libgtest.a
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgtest_main.a
-  TARGET_PDB = gtest_main.a.dbg
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_FILE = lib\libgtest_main.a
+  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build Google_tests/lib/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -672,7 +700,7 @@ build Google_tests/lib/googletest/edit_cache: phony Google_tests/lib/googletest/
 # Utility command for rebuild_cache
 
 build Google_tests/lib/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP -B/Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -690,7 +718,7 @@ build Google_tests/lib/googletest/list_install_components: phony
 # Utility command for install
 
 build Google_tests/lib/googletest/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/lib/googletest/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -702,7 +730,7 @@ build Google_tests/lib/googletest/install: phony Google_tests/lib/googletest/CMa
 # Utility command for install/local
 
 build Google_tests/lib/googletest/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/lib/googletest/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -714,7 +742,7 @@ build Google_tests/lib/googletest/install/local: phony Google_tests/lib/googlete
 # Utility command for install/strip
 
 build Google_tests/lib/googletest/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/lib/googletest/all
-  COMMAND = cd /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\Google_tests\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -724,7 +752,9 @@ build Google_tests/lib/googletest/install/strip: phony Google_tests/lib/googlete
 # =============================================================================
 # Target aliases.
 
-build Google_Tests_run: phony Google_tests/Google_Tests_run
+build Google_Tests_run: phony Google_tests/Google_Tests_run.exe
+
+build Google_Tests_run.exe: phony Google_tests/Google_Tests_run.exe
 
 build gmock: phony lib/libgmock.a
 
@@ -735,6 +765,8 @@ build gtest: phony lib/libgtest.a
 build gtest_main: phony lib/libgtest_main.a
 
 build lander_communication_lib: phony lander_communication_lib/liblander_communication_lib.a
+
+build lander_communication_run: phony lander_communication_run.exe
 
 build libgmock.a: phony lib/libgmock.a
 
@@ -752,42 +784,42 @@ build liblander_communication_lib.a: phony lander_communication_lib/liblander_co
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug
 
-build all: phony lander_communication_run lander_communication_lib/all Google_tests/all
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests
-
-build Google_tests/all: phony Google_tests/Google_Tests_run Google_tests/lib/all
+build all: phony lander_communication_run.exe lander_communication_lib/all Google_tests/all
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests
+
+build Google_tests/all: phony Google_tests/Google_Tests_run.exe Google_tests/lib/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib
 
 build Google_tests/lib/all: phony Google_tests/lib/googlemock/all
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock
 
 build Google_tests/lib/googlemock/all: phony lib/libgmock.a lib/libgmock_main.a Google_tests/lib/googletest/all
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googletest
 
 build Google_tests/lib/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib
 
 build lander_communication_lib/all: phony lander_communication_lib/liblander_communication_lib.a
 
@@ -798,14 +830,14 @@ build lander_communication_lib/all: phony lander_communication_lib/liblander_com
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake /Users/henrivanhuynegem/CLionProjects/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
 
 
 #############################################

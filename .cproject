@@ -100,6 +100,13 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-bcoznf"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kpbc9w"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/lander_communication_run.dir"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/.cmake/api/v1/reply"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/lander_communication_run.dir"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug/.cmake/api/v1/reply"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
