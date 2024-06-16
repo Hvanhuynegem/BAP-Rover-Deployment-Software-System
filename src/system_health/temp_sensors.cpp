@@ -89,6 +89,9 @@ void initializeDCO(void) {
 
 // Function to convert frequency to temperature
 float frequency_to_temperature(float frequency) {
+    if (frequency == 0.0) {
+            return -99.0; // returns an error value that is impossible to record
+        }
     float capacitance = 0.0000022; // Capacitance in Farads
     float x = 1.0 / (0.4055 * 2.0 * capacitance * frequency); // Intermediate calculation using the frequency
     float temperature = (x - 1000.0) / 3.85; // Convert intermediate value to temperature
