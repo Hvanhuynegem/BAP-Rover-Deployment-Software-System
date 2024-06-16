@@ -353,3 +353,2061 @@ events:
         
       exitCode: 1
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -Aa 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      gcc.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      gcc.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --c++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--c++'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --ec++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      g++.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-k9kxoo"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-k9kxoo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-k9kxoo'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_ea71b
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_ea71b.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        FAILED: CMakeFiles/cmTC_ea71b.dir/CMakeCCompilerABI.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_ea71b.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --build=x86_64-alpine-linux-musl --prefix=/win --enable-checking=release --enable-fully-dynamic-string --enable-languages=c,c++ --with-arch=nocona --with-tune=generic --enable-libatomic --enable-libgomp --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --enable-seh-exceptions --enable-shared --enable-static --enable-threads=posix --enable-version-specific-runtime-libs --disable-bootstrap --disable-graphite --disable-libada --disable-libstdcxx-pch --disable-libstdcxx-debug --disable-libquadmath --disable-lto --disable-nls --disable-multilib --disable-rpath --disable-symvers --disable-werror --disable-win32-registry --with-gnu-as --with-gnu-ld --with-system-libiconv --with-system-libz --with-gmp=/win/makedepends --with-mpfr=/win/makedepends --with-mpc=/win/makedepends
+        Thread model: posix\x0d
+        Supported LTO compression algorithms: zlib\x0d
+        gcc version 13.1.0 (GCC) \x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9vngnu"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9vngnu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9vngnu'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_39f35
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_39f35.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9vngnu/testCCompiler.c
+        FAILED: CMakeFiles/cmTC_39f35.dir/testCCompiler.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_39f35.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9vngnu/testCCompiler.c
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -Aa 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      gcc.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      gcc.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --c++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--c++'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --ec++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      g++.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-6dsxq7"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-6dsxq7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-6dsxq7'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_c4712
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_c4712.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        FAILED: CMakeFiles/cmTC_c4712.dir/CMakeCCompilerABI.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_c4712.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --build=x86_64-alpine-linux-musl --prefix=/win --enable-checking=release --enable-fully-dynamic-string --enable-languages=c,c++ --with-arch=nocona --with-tune=generic --enable-libatomic --enable-libgomp --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --enable-seh-exceptions --enable-shared --enable-static --enable-threads=posix --enable-version-specific-runtime-libs --disable-bootstrap --disable-graphite --disable-libada --disable-libstdcxx-pch --disable-libstdcxx-debug --disable-libquadmath --disable-lto --disable-nls --disable-multilib --disable-rpath --disable-symvers --disable-werror --disable-win32-registry --with-gnu-as --with-gnu-ld --with-system-libiconv --with-system-libz --with-gmp=/win/makedepends --with-mpfr=/win/makedepends --with-mpc=/win/makedepends
+        Thread model: posix\x0d
+        Supported LTO compression algorithms: zlib\x0d
+        gcc version 13.1.0 (GCC) \x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-190dmi"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-190dmi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-190dmi'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_89c4f
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_89c4f.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-190dmi/testCCompiler.c
+        FAILED: CMakeFiles/cmTC_89c4f.dir/testCCompiler.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_89c4f.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-190dmi/testCCompiler.c
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -Aa 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      gcc.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      gcc.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --c++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--c++'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --ec++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      g++.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-vkd8g7"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-vkd8g7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-vkd8g7'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_c834a
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_c834a.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        FAILED: CMakeFiles/cmTC_c834a.dir/CMakeCCompilerABI.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_c834a.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --build=x86_64-alpine-linux-musl --prefix=/win --enable-checking=release --enable-fully-dynamic-string --enable-languages=c,c++ --with-arch=nocona --with-tune=generic --enable-libatomic --enable-libgomp --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --enable-seh-exceptions --enable-shared --enable-static --enable-threads=posix --enable-version-specific-runtime-libs --disable-bootstrap --disable-graphite --disable-libada --disable-libstdcxx-pch --disable-libstdcxx-debug --disable-libquadmath --disable-lto --disable-nls --disable-multilib --disable-rpath --disable-symvers --disable-werror --disable-win32-registry --with-gnu-as --with-gnu-ld --with-system-libiconv --with-system-libz --with-gmp=/win/makedepends --with-mpfr=/win/makedepends --with-mpc=/win/makedepends
+        Thread model: posix\x0d
+        Supported LTO compression algorithms: zlib\x0d
+        gcc version 13.1.0 (GCC) \x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-362sqq"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-362sqq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-362sqq'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_7fa25
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_7fa25.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-362sqq/testCCompiler.c
+        FAILED: CMakeFiles/cmTC_7fa25.dir/testCCompiler.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_7fa25.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-362sqq/testCCompiler.c
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -Aa 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      gcc.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      gcc.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --c++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--c++'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --ec++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      g++.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-z6kk38"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-z6kk38"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-z6kk38'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_06d58
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_06d58.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        FAILED: CMakeFiles/cmTC_06d58.dir/CMakeCCompilerABI.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_06d58.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --build=x86_64-alpine-linux-musl --prefix=/win --enable-checking=release --enable-fully-dynamic-string --enable-languages=c,c++ --with-arch=nocona --with-tune=generic --enable-libatomic --enable-libgomp --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --enable-seh-exceptions --enable-shared --enable-static --enable-threads=posix --enable-version-specific-runtime-libs --disable-bootstrap --disable-graphite --disable-libada --disable-libstdcxx-pch --disable-libstdcxx-debug --disable-libquadmath --disable-lto --disable-nls --disable-multilib --disable-rpath --disable-symvers --disable-werror --disable-win32-registry --with-gnu-as --with-gnu-ld --with-system-libiconv --with-system-libz --with-gmp=/win/makedepends --with-mpfr=/win/makedepends --with-mpc=/win/makedepends
+        Thread model: posix\x0d
+        Supported LTO compression algorithms: zlib\x0d
+        gcc version 13.1.0 (GCC) \x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-4guuiu"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-4guuiu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-4guuiu'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_0c001
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_0c001.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-4guuiu/testCCompiler.c
+        FAILED: CMakeFiles/cmTC_0c001.dir/testCCompiler.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_0c001.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-4guuiu/testCCompiler.c
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -Aa 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      gcc.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      gcc.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --c++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--c++'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --ec++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      g++.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-rlnywz"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-rlnywz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-rlnywz'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_688b8
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_688b8.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        FAILED: CMakeFiles/cmTC_688b8.dir/CMakeCCompilerABI.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_688b8.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --build=x86_64-alpine-linux-musl --prefix=/win --enable-checking=release --enable-fully-dynamic-string --enable-languages=c,c++ --with-arch=nocona --with-tune=generic --enable-libatomic --enable-libgomp --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --enable-seh-exceptions --enable-shared --enable-static --enable-threads=posix --enable-version-specific-runtime-libs --disable-bootstrap --disable-graphite --disable-libada --disable-libstdcxx-pch --disable-libstdcxx-debug --disable-libquadmath --disable-lto --disable-nls --disable-multilib --disable-rpath --disable-symvers --disable-werror --disable-win32-registry --with-gnu-as --with-gnu-ld --with-system-libiconv --with-system-libz --with-gmp=/win/makedepends --with-mpfr=/win/makedepends --with-mpc=/win/makedepends
+        Thread model: posix\x0d
+        Supported LTO compression algorithms: zlib\x0d
+        gcc version 13.1.0 (GCC) \x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_fd329
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_fd329.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81/testCCompiler.c
+        FAILED: CMakeFiles/cmTC_fd329.dir/testCCompiler.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_fd329.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81/testCCompiler.c
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -Aa 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -D__CLASSIC_C__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      gcc.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      gcc.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags:  
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --c++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--c++'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --ec++ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+      
+      The output was:
+      1
+      g++.exe: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      g++.exe: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: -fcoverage-mapping;-fprofile-instr-generate
+      Id flags: -c;-I__does_not_exist__ 
+      
+      The output was:
+      1
+      g++.exe: error: unrecognized command-line option '-fcoverage-mapping'
+      g++.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9rfjku"
+      binary: "C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9rfjku"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fcoverage-mapping -fprofile-instr-generate"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-9rfjku'
+        
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_a9023
+        [1/2] C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_a9023.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        FAILED: CMakeFiles/cmTC_a9023.dir/CMakeCCompilerABI.c.obj 
+        C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_a9023.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=C:\\PROGRA~1\\JETBRA~1\\CLION2~1.3\\bin\\mingw\\bin\\gcc.exe
+        gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
+        gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
+        Target: x86_64-w64-mingw32
+        Configured with: ../gcc-13.1.0/configure --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --build=x86_64-alpine-linux-musl --prefix=/win --enable-checking=release --enable-fully-dynamic-string --enable-languages=c,c++ --with-arch=nocona --with-tune=generic --enable-libatomic --enable-libgomp --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --enable-seh-exceptions --enable-shared --enable-static --enable-threads=posix --enable-version-specific-runtime-libs --disable-bootstrap --disable-graphite --disable-libada --disable-libstdcxx-pch --disable-libstdcxx-debug --disable-libquadmath --disable-lto --disable-nls --disable-multilib --disable-rpath --disable-symvers --disable-werror --disable-win32-registry --with-gnu-as --with-gnu-ld --with-system-libiconv --with-system-libz --with-gmp=/win/makedepends --with-mpfr=/win/makedepends --with-mpc=/win/makedepends
+        Thread model: posix\x0d
+        Supported LTO compression algorithms: zlib\x0d
+        gcc version 13.1.0 (GCC) \x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1

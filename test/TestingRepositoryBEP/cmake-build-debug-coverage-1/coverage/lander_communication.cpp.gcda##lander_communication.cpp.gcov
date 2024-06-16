@@ -1,0 +1,301 @@
+        -:    0:Source:C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/lander_communication.cpp
+        -:    0:Graph:C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage-1\lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication.cpp.gcno
+        -:    0:Data:C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage-1\lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*
+        -:    2: * lander_communication.cpp file
+        -:    3: *
+        -:    4: * This file will include all functionality regarding communication with the lander. The SLIP protocol is being used as communication protocol.
+        -:    5: * Within this communication protocol we designed another communication protocol that makes it easier to parse received messages such that the handler can handle data more effectively.
+        -:    6: *
+        -:    7: * Author: Henri Vanhuynegem
+        -:    8: * created: 23/05/2024
+        -:    9: * Last edited: 10/06/2024
+        -:   10: *
+        -:   11: */
+        -:   12:
+        -:   13:#include "lander_communication.h"
+        -:   14:#include <cstring>
+        -:   15:
+        -:   16:
+function _Z24convert_message_to_arrayPK7MessagePhS2_ called 10 returned 100% blocks executed 100%
+       10:   17:void convert_message_to_array(const Message* msg, uint8_t* buffer, uint8_t* length) {
+        -:   18:
+       10:   19:    uint16_t index = 0;
+        -:   20:
+        -:   21:    // Copy start_byte
+       10:   22:    buffer[index++] = msg->start_byte;
+        -:   23:
+        -:   24:    // Copy msg_type
+       10:   25:    buffer[index++] = msg->msg_type;
+        -:   26:
+        -:   27:    // Copy length and ensure msg length is smaller than max payload size
+       10:   28:    if(msg->length > MAX_PAYLOAD_SIZE){
+       10:   28-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 9
+        1:   29:        buffer[index++] = MAX_PAYLOAD_SIZE;
+        -:   30:        // Copy payload
+        1:   31:        memcpy(&buffer[index], msg->payload, MAX_PAYLOAD_SIZE);
+        1:   32:        index += MAX_PAYLOAD_SIZE;
+        1:   32-block  0
+        -:   33:    } else {
+        9:   34:        buffer[index++] = msg->length;
+        -:   35:        // Copy payload
+        9:   36:        memcpy(&buffer[index], msg->payload, msg->length);
+        9:   37:        index += msg->length;
+        9:   37-block  0
+        -:   38:    }
+        -:   39:
+        -:   40:    // Copy checksum
+       10:   41:    buffer[index++] = msg->checksum;
+        -:   42:
+        -:   43:    // Copy end_byte
+       10:   44:    buffer[index++] = msg->end_byte;
+        -:   45:
+        -:   46:    // Set the total length of the serialized message
+       10:   47:    *length = index;
+       10:   48:}
+        -:   49:
+        -:   50:
+function _Z24convert_array_to_messagePKhtP7Message called 11 returned 100% blocks executed 100%
+       11:   51:bool convert_array_to_message(const uint8_t* buffer, uint16_t length, Message* msg) {
+       11:   52:    if (length < 5) {
+       11:   52-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 10
+        1:   53:        return false; // Handle invalid length
+        1:   53-block  0
+        -:   54:    }
+        -:   55:
+       10:   56:    uint16_t index = 0;
+        -:   57:
+        -:   58:    // Extract start_byte
+       10:   59:    msg->start_byte = buffer[index++];
+        -:   60:
+        -:   61:    // Extract msg_type
+       10:   62:    msg->msg_type = buffer[index++];
+        -:   63:
+        -:   64:    //temp length
+        -:   65:    uint8_t temp_length;
+       10:   66:    temp_length = buffer[index++];
+        -:   67:
+        -:   68:    // Check if the length is valid
+       10:   69:    if (temp_length > MAX_PAYLOAD_SIZE) {
+       10:   69-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 8
+        -:   70:        // Extract length
+        2:   71:        temp_length = buffer[index++];
+        2:   72:        msg->length = MAX_PAYLOAD_SIZE;
+        -:   73:        // Extract payload
+        2:   74:        memcpy(msg->payload, &buffer[index], MAX_PAYLOAD_SIZE);
+        2:   75:        index += temp_length;
+        2:   75-block  0
+        -:   76:    } else {
+        -:   77:        // Extract length
+        8:   78:        msg->length = temp_length;
+        -:   79:        // Extract payload
+        8:   80:        memcpy(msg->payload, &buffer[index], msg->length);
+        8:   81:        index += msg->length;
+        8:   81-block  0
+        -:   82:    }
+        -:   83:
+        -:   84:    // Extract checksum
+       10:   85:    msg->checksum = buffer[index++];
+        -:   86:
+        -:   87:    // Extract end_byte
+       10:   88:    msg->end_byte = buffer[index++];
+        -:   89:
+       10:   90:    return true;
+       10:   90-block  0
+        -:   91:}
+        -:   92:
+        -:   93:
+function _Z11slip_encodePKhtPhPt called 16 returned 100% blocks executed 100%
+       16:   94:bool slip_encode(const uint8_t *buffer, uint16_t length, uint8_t *output_buffer, uint16_t *received_length) {
+        -:   95:    // definition of slip encoding characters
+       16:   96:    const uint8_t END = 0xC0;
+       16:   97:    const uint8_t ESC = 0xDB;
+       16:   98:    const uint8_t ESC_END = 0xDC;
+       16:   99:    const uint8_t ESC_ESC = 0xDD;
+        -:  100:
+       16:  101:    uint16_t index = 0;
+       16:  102:    output_buffer[index++] = END;
+        -:  103:
+     1179:  104:    for (uint16_t i = 0; i < length; i++) {
+       16:  104-block  0
+     1163:  104-block  1
+     1179:  104-block  2
+branch  0 taken 1167
+branch  1 taken 12 (fallthrough)
+     1167:  105:        switch (buffer[i]) {
+     1167:  105-block  0
+branch  0 taken 261
+branch  1 taken 134
+branch  2 taken 772
+      261:  106:            case END:
+      261:  107:                if (index + 2 >= UART_BUFFER_SIZE) {
+      261:  107-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 260
+        -:  108:                    // Prevent overflow if there is not enough space for ESC and ESC_END
+        1:  109:                    return false;
+        1:  109-block  0
+        -:  110:                }
+      260:  111:                output_buffer[index++] = ESC;
+      260:  112:                output_buffer[index++] = ESC_END;
+      260:  113:                break;
+      260:  113-block  0
+      134:  114:            case ESC:
+      134:  115:                if (index + 2 >= UART_BUFFER_SIZE) {
+      134:  115-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 133
+        -:  116:                    // Prevent overflow if there is not enough space for ESC and ESC_ESC
+        1:  117:                    return false;
+        1:  117-block  0
+        -:  118:                }
+      133:  119:                output_buffer[index++] = ESC;
+      133:  120:                output_buffer[index++] = ESC_ESC;
+      133:  121:                break;
+      133:  121-block  0
+      772:  122:            default:
+      772:  123:                if (index >= UART_BUFFER_SIZE - 1) {
+      772:  123-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 770
+        -:  124:                    // Prevent overflow if there is not enough space for the byte and the final END
+        2:  125:                    return false;
+        2:  125-block  0
+        -:  126:                }
+      770:  127:                output_buffer[index++] = buffer[i];
+      770:  127-block  0
+        -:  128:        }
+        -:  129:    }
+        -:  130:
+       12:  131:    output_buffer[index++] = END;
+        -:  132:
+       12:  133:    *received_length = index;
+       12:  134:    return true;
+       12:  134-block  0
+        -:  135:}
+        -:  136:
+        -:  137:
+function _Z11slip_decodePKhtPhPt called 14 returned 100% blocks executed 100%
+       14:  138:bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *output_buffer, uint16_t *output_length) {
+        -:  139:    // Check input length and start/end bytes
+       14:  140:    if (input_length < 2 || input_buffer[0] != 0xC0 || input_buffer[input_length - 1] != 0xC0) {
+       14:  140-block  0
+branch  0 taken 13 (fallthrough)
+branch  1 taken 1
+       13:  140-block  1
+branch  2 taken 12 (fallthrough)
+branch  3 taken 1
+       12:  140-block  2
+branch  4 taken 0 (fallthrough)
+branch  5 taken 12
+        2:  141:        return false;
+        2:  141-block  0
+        -:  142:    }
+        -:  143:    // check if data is within acceptable buffer size
+       12:  144:    if (input_length > UART_BUFFER_SIZE){
+       12:  144-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 11
+        1:  145:        return false;
+        1:  145-block  0
+        -:  146:    }
+        -:  147:    // Definition of slip encoding characters
+       11:  148:    const uint8_t END = 0xC0;
+       11:  149:    const uint8_t ESC = 0xDB;
+       11:  150:    const uint8_t ESC_END = 0xDC;
+       11:  151:    const uint8_t ESC_ESC = 0xDD;
+        -:  152:
+       11:  153:    bool is_escaped = false;
+       11:  154:    *output_length = 0;
+        -:  155:
+        -:  156:    // Run through buffer to replace potential END and ESC
+      297:  157:    for (uint16_t i = 1; i < input_length - 1; i++) {
+       11:  157-block  0
+      286:  157-block  1
+      297:  157-block  2
+branch  0 taken 286
+branch  1 taken 11 (fallthrough)
+      286:  158:        uint8_t c = input_buffer[i];
+        -:  159:
+      286:  160:        if (is_escaped) {
+      286:  160-block  0
+branch  0 taken 12 (fallthrough)
+branch  1 taken 274
+       12:  161:            if (c == ESC_END) {
+       12:  161-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 6
+        6:  162:                c = END;
+        6:  162-block  0
+        6:  163:            } else if (c == ESC_ESC) {
+        6:  163-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 0
+        6:  164:                c = ESC;
+        6:  164-block  0
+        -:  165:            }
+       12:  166:            is_escaped = false;
+       12:  166-block  0
+      274:  167:        } else if (c == ESC) {
+      274:  167-block  0
+branch  0 taken 12 (fallthrough)
+branch  1 taken 262
+       12:  168:            is_escaped = true;
+       12:  169:            continue;
+       12:  169-block  0
+        -:  170:        }
+        -:  171:
+      274:  172:        output_buffer[(*output_length)++] = c;
+      274:  172-block  0
+        -:  173:    }
+       11:  174:    return true;
+       11:  174-block  0
+        -:  175:}
+        -:  176:
+        -:  177:
+        -:  178:
+function _Z19send_message_structPK7Message called 0 returned 0% blocks executed 0%
+    #####:  179:void send_message_struct(const Message* msg) {
+        -:  180:    // Static buffer to hold serialized and encoded data
+        -:  181:    static uint8_t buffer[UART_BUFFER_SIZE];
+        -:  182:    static uint8_t temp_buffer[UART_BUFFER_SIZE];
+        -:  183:    uint8_t serialized_length;
+        -:  184:    uint16_t encoded_length;
+        -:  185:    bool result;
+        -:  186:
+        -:  187:    // Serialize the message into the first part of the buffer
+    #####:  188:    convert_message_to_array(msg, temp_buffer, &serialized_length);
+    %%%%%:  188-block  0
+call    0 never executed
+        -:  189:
+        -:  190:    // Encode the message using SLIP into the second part of the buffer
+    #####:  191:    result = slip_encode(temp_buffer, serialized_length, buffer, &encoded_length);
+call    0 never executed
+    #####:  192:    if (!result) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  193:        // Handle encoding failure
+    #####:  194:        return;
+    %%%%%:  194-block  0
+        -:  195:    }
+        -:  196:
+        -:  197:    // Send the encoded message
+        -:  198://    uart_write(buffer, encoded_length);
+        -:  199:}
+        -:  200://
+        -:  201://
+        -:  202://void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){
+        -:  203://    // Create a message structure
+        -:  204://    Message msg = create_message(msg_type, payload, length);
+        -:  205://
+        -:  206://    // Send the message
+        -:  207://    send_message_struct(&msg);
+        -:  208://}
+        -:  209:

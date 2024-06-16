@@ -1,0 +1,102 @@
+        -:    0:Source:C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/lander_communication_protocol.cpp
+        -:    0:Graph:C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage-1\lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_protocol.cpp.gcno
+        -:    0:Data:C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage-1\lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_protocol.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*
+        -:    2: * lander_communication_protocol.cpp file
+        -:    3: *
+        -:    4: * This file includes the internal communication protocol for communication with the lander. It is a self-made protocol that uses message type codes to handle incoming data more efficiently.
+        -:    5: *
+        -:    6: * Author: Henri Vanhuynegem
+        -:    7: * created: 23/05/2024
+        -:    8: * Last edited: 3/06/2024
+        -:    9: *
+        -:   10: */
+        -:   11:
+        -:   12:#include "lander_communication_protocol.h"
+        -:   13:#include "lander_communication.h"
+        -:   14:#include <cstring>
+        -:   15://#include <msp430.h>
+        -:   16:
+        -:   17:// Helper function to calculate checksum
+function _Z25calculate_checksum_helperhhPKh called 12 returned 100% blocks executed 100%
+       12:   18:uint8_t calculate_checksum_helper(uint8_t msg_type, uint8_t length, const uint8_t *payload) {
+       12:   19:    uint8_t checksum = msg_type ^ length;
+      301:   20:    for (uint8_t i = 0; i < length; i++) {
+       12:   20-block  0
+      301:   20-block  1
+branch  0 taken 289
+branch  1 taken 12 (fallthrough)
+      289:   21:        checksum ^= payload[i];
+      289:   21-block  0
+        -:   22:    }
+       12:   23:    return checksum;
+       12:   23-block  0
+        -:   24:}
+        -:   25:
+        -:   26://Message create_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) {
+        -:   27://    Message msg;
+        -:   28://    msg.start_byte = MSG_START_BYTE;
+        -:   29://    msg.msg_type = msg_type;
+        -:   30://    msg.length = length;
+        -:   31://
+        -:   32://    if(payload != nullptr)
+        -:   33://    {
+        -:   34://        memcpy(msg.payload, payload, length);
+        -:   35://    }
+        -:   36://
+        -:   37://
+        -:   38://    // Calculate checksum
+        -:   39://    msg.checksum = calculate_checksum_helper(msg_type, length, payload);
+        -:   40://    msg.end_byte = MSG_END_BYTE;
+        -:   41://    return msg;
+        -:   42://}
+        -:   43://
+        -:   44://uint8_t calculate_checksum(const Message *msg){
+        -:   45://    return calculate_checksum_helper(msg->msg_type, msg->length, msg->payload);
+        -:   46://}
+        -:   47:
+        -:   48://void handle_message(const Message *msg) {
+        -:   49://    if (msg->start_byte != MSG_START_BYTE || msg->end_byte != MSG_END_BYTE) {
+        -:   50://        // Invalid message
+        -:   51://        uint8_t payload[] = "INVALID_MESSAGE";
+        -:   52://        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        -:   53://        return;
+        -:   54://    }
+        -:   55://
+        -:   56://    if (msg->checksum != calculate_checksum(msg)) {
+        -:   57://        // Invalid checksum
+        -:   58://        uint8_t payload[] = "INVALID_CHECKSUM";
+        -:   59://        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        -:   60://        return;
+        -:   61://    }
+        -:   62://
+        -:   63://    switch (msg->msg_type) {
+        -:   64://        case MSG_TYPE_INIT:
+        -:   65://            // Handle initialization sequence
+        -:   66://            uint8_t ack_payload[] = "ACK";
+        -:   67://            send_message(MSG_TYPE_ACK, ack_payload, strlen((const char*)ack_payload));
+        -:   68://            break;
+        -:   69://        case MSG_TYPE_ACK:
+        -:   70://            // Handle acknowledgment
+        -:   71://            break;
+        -:   72://        case MSG_TYPE_REQUEST:
+        -:   73://            // Handle request
+        -:   74://            break;
+        -:   75://        case MSG_TYPE_DATA:
+        -:   76://            // Handle data
+        -:   77://            break;
+        -:   78://        case MSG_TYPE_RESPONSE:
+        -:   79://            // Handle response
+        -:   80://            break;
+        -:   81://        case MSG_TYPE_DEPLOYMENT:
+        -:   82://            // Handle deployment
+        -:   83://            break;
+        -:   84://        case MSG_TYPE_MODE:
+        -:   85://            // Handle mode
+        -:   86://            break;
+        -:   87://        default:
+        -:   88://            // Unknown message type
+        -:   89://            break;
+        -:   90://    }
+        -:   91://}

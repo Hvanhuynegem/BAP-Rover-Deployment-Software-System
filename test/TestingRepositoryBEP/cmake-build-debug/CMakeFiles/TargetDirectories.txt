@@ -1,4 +1,5 @@
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/lander_communication_run.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/electronics_run.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/list_install_components.dir
@@ -12,6 +13,13 @@ C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/Testin
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib/CMakeFiles/install.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib/CMakeFiles/install/local.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib/CMakeFiles/install/strip.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/electronics_components_control_system_lib.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/edit_cache.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/rebuild_cache.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/list_install_components.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/install.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/install/local.dir
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib/CMakeFiles/install/strip.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/CMakeFiles/edit_cache.dir
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/CMakeFiles/rebuild_cache.dir

@@ -23,27 +23,27 @@ uint8_t calculate_checksum_helper(uint8_t msg_type, uint8_t length, const uint8_
     return checksum;
 }
 
-Message create_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) {
-    Message msg;
-    msg.start_byte = MSG_START_BYTE;
-    msg.msg_type = msg_type;
-    msg.length = length;
-
-    if(payload != nullptr)
-    {
-        memcpy(msg.payload, payload, length);
-    }
-
-
-    // Calculate checksum
-    msg.checksum = calculate_checksum_helper(msg_type, length, payload);
-    msg.end_byte = MSG_END_BYTE;
-    return msg;
-}
-
-uint8_t calculate_checksum(const Message *msg){
-    return calculate_checksum_helper(msg->msg_type, msg->length, msg->payload);
-}
+//Message create_message(uint8_t msg_type, const uint8_t *payload, uint8_t length) {
+//    Message msg;
+//    msg.start_byte = MSG_START_BYTE;
+//    msg.msg_type = msg_type;
+//    msg.length = length;
+//
+//    if(payload != nullptr)
+//    {
+//        memcpy(msg.payload, payload, length);
+//    }
+//
+//
+//    // Calculate checksum
+//    msg.checksum = calculate_checksum_helper(msg_type, length, payload);
+//    msg.end_byte = MSG_END_BYTE;
+//    return msg;
+//}
+//
+//uint8_t calculate_checksum(const Message *msg){
+//    return calculate_checksum_helper(msg->msg_type, msg->length, msg->payload);
+//}
 
 //void handle_message(const Message *msg) {
 //    if (msg->start_byte != MSG_START_BYTE || msg->end_byte != MSG_END_BYTE) {

@@ -100,6 +100,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="src/system_health/heat_resistor_control.cpp|test|src/system_health/actuatorControl.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/.cmake/api/v1/reply"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-bcoznf"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/lander_communication_run.dir"/>

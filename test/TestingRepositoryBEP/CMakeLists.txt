@@ -4,11 +4,18 @@ project(TestingRepositoryBEP)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp)
-add_executable(lander_communication_run ${SOURCE_FILES})
 
+add_executable(lander_communication_run ${SOURCE_FILES})
+add_executable(electronics_run ${SOURCE_FILES})
+
+include_directories(electronics_components_control_system_lib)
 include_directories(lander_communication_lib)
+
 add_subdirectory(lander_communication_lib)
+add_subdirectory(electronics_components_control_system_lib)
 
 target_link_libraries(lander_communication_run lander_communication_lib)
+target_link_libraries(electronics_run electronics_components_control_system_lib)
 
 add_subdirectory(Google_tests)
+

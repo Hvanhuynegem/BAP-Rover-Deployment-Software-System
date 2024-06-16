@@ -1,36 +1,46 @@
 "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" "-DCMAKE_CXX_FLAGS=-fcoverage-mapping -fprofile-instr-generate" "-DCMAKE_C_FLAGS=-fcoverage-mapping -fprofile-instr-generate" -G Ninja -S C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -B C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage
--- The C compiler identification is GNU 13.1.0
--- The CXX compiler identification is GNU 13.1.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - failed
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe - broken
-CMake Error at C:/Program Files/JetBrains/CLion 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:67 (message):
-  The C compiler
+CMake Error at Google_tests/lib/googletest/cmake/internal_utils.cmake:198 (target_compile_features):
+  target_compile_features no known features for CXX compiler
 
-    "C:/Program Files/JetBrains/CLion 2024.1.3/bin/mingw/bin/gcc.exe"
+  "GNU"
 
-  is not able to compile a simple test program.
-
-  It fails with the following output:
-
-    Change Dir: 'C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-vcg0a2'
-    
-    Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.1.3/bin/ninja/win/x64/ninja.exe" -v cmTC_06364
-    [1/2] C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_06364.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-vcg0a2/testCCompiler.c
-    FAILED: CMakeFiles/cmTC_06364.dir/testCCompiler.c.obj 
-    C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe   -fcoverage-mapping -fprofile-instr-generate  -fdiagnostics-color=always -o CMakeFiles/cmTC_06364.dir/testCCompiler.c.obj -c C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-vcg0a2/testCCompiler.c
-    gcc.exe: error: unrecognized command-line option '-fcoverage-mapping'
-    gcc.exe: error: unrecognized command-line option '-fprofile-instr-generate'; did you mean '-fprofile-generate'?
-    ninja: build stopped: subcommand failed.
-    
-    
-
-  
-
-  CMake will not be able to correctly generate this project.
+  version 13.1.0.
 Call Stack (most recent call first):
-  CMakeLists.txt:2 (project)
+  Google_tests/lib/googletest/cmake/internal_utils.cmake:210 (cxx_library_with_type)
+  Google_tests/lib/googletest/CMakeLists.txt:123 (cxx_library)
+
+
+CMake Error at Google_tests/lib/googletest/cmake/internal_utils.cmake:198 (target_compile_features):
+  target_compile_features no known features for CXX compiler
+
+  "GNU"
+
+  version 13.1.0.
+Call Stack (most recent call first):
+  Google_tests/lib/googletest/cmake/internal_utils.cmake:210 (cxx_library_with_type)
+  Google_tests/lib/googletest/CMakeLists.txt:141 (cxx_library)
+
+
+CMake Error at Google_tests/lib/googletest/cmake/internal_utils.cmake:198 (target_compile_features):
+  target_compile_features no known features for CXX compiler
+
+  "GNU"
+
+  version 13.1.0.
+Call Stack (most recent call first):
+  Google_tests/lib/googletest/cmake/internal_utils.cmake:210 (cxx_library_with_type)
+  Google_tests/lib/googlemock/CMakeLists.txt:97 (cxx_library)
+
+
+CMake Error at Google_tests/lib/googletest/cmake/internal_utils.cmake:198 (target_compile_features):
+  target_compile_features no known features for CXX compiler
+
+  "GNU"
+
+  version 13.1.0.
+Call Stack (most recent call first):
+  Google_tests/lib/googletest/cmake/internal_utils.cmake:210 (cxx_library_with_type)
+  Google_tests/lib/googlemock/CMakeLists.txt:100 (cxx_library)
 
 
 -- Configuring incomplete, errors occurred!

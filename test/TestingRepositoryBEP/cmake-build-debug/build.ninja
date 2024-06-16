@@ -52,11 +52,9 @@ build cmake_object_order_depends_target_lander_communication_run: phony || cmake
 build CMakeFiles/lander_communication_run.dir/main.cpp.obj: CXX_COMPILER__lander_communication_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/main.cpp || cmake_object_order_depends_target_lander_communication_run
   DEP_FILE = CMakeFiles\lander_communication_run.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
   OBJECT_DIR = CMakeFiles\lander_communication_run.dir
   OBJECT_FILE_DIR = CMakeFiles\lander_communication_run.dir
-  TARGET_COMPILE_PDB = CMakeFiles\lander_communication_run.dir\
-  TARGET_PDB = lander_communication_run.pdb
 
 
 # =============================================================================
@@ -72,10 +70,43 @@ build lander_communication_run.exe: CXX_EXECUTABLE_LINKER__lander_communication_
   OBJECT_DIR = CMakeFiles\lander_communication_run.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\lander_communication_run.dir\
   TARGET_FILE = lander_communication_run.exe
   TARGET_IMPLIB = liblander_communication_run.dll.a
-  TARGET_PDB = lander_communication_run.pdb
+  TARGET_PDB = lander_communication_run.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target electronics_run
+
+
+#############################################
+# Order-only phony target for electronics_run
+
+build cmake_object_order_depends_target_electronics_run: phony || cmake_object_order_depends_target_electronics_components_control_system_lib
+
+build CMakeFiles/electronics_run.dir/main.cpp.obj: CXX_COMPILER__electronics_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/main.cpp || cmake_object_order_depends_target_electronics_run
+  DEP_FILE = CMakeFiles\electronics_run.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  OBJECT_DIR = CMakeFiles\electronics_run.dir
+  OBJECT_FILE_DIR = CMakeFiles\electronics_run.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target electronics_run
+
+
+#############################################
+# Link the executable electronics_run.exe
+
+build electronics_run.exe: CXX_EXECUTABLE_LINKER__electronics_run_Debug CMakeFiles/electronics_run.dir/main.cpp.obj | electronics_components_control_system_lib/libelectronics_components_control_system_lib.a || electronics_components_control_system_lib/libelectronics_components_control_system_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = electronics_components_control_system_lib/libelectronics_components_control_system_lib.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\electronics_run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = electronics_run.exe
+  TARGET_IMPLIB = libelectronics_run.dll.a
+  TARGET_PDB = electronics_run.exe.dbg
 
 
 #############################################
@@ -159,20 +190,16 @@ build cmake_object_order_depends_target_lander_communication_lib: phony || lande
 build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication.cpp.obj: CXX_COMPILER__lander_communication_lib_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/lander_communication.cpp || cmake_object_order_depends_target_lander_communication_lib
   DEP_FILE = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
   OBJECT_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
   OBJECT_FILE_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
-  TARGET_COMPILE_PDB = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_lib.pdb
-  TARGET_PDB = lander_communication_lib\liblander_communication_lib.pdb
 
 build lander_communication_lib/CMakeFiles/lander_communication_lib.dir/lander_communication_protocol.cpp.obj: CXX_COMPILER__lander_communication_lib_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/lander_communication_protocol.cpp || cmake_object_order_depends_target_lander_communication_lib
   DEP_FILE = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_protocol.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
   OBJECT_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
   OBJECT_FILE_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
-  TARGET_COMPILE_PDB = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_lib.pdb
-  TARGET_PDB = lander_communication_lib\liblander_communication_lib.pdb
 
 
 # =============================================================================
@@ -187,9 +214,8 @@ build lander_communication_lib/liblander_communication_lib.a: CXX_STATIC_LIBRARY
   OBJECT_DIR = lander_communication_lib\CMakeFiles\lander_communication_lib.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lander_communication_lib\CMakeFiles\lander_communication_lib.dir\lander_communication_lib.pdb
   TARGET_FILE = lander_communication_lib\liblander_communication_lib.a
-  TARGET_PDB = lander_communication_lib\liblander_communication_lib.pdb
+  TARGET_PDB = lander_communication_lib.a.dbg
 
 
 #############################################
@@ -262,58 +288,143 @@ build lander_communication_lib/install/strip: phony lander_communication_lib/CMa
 # =============================================================================
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target electronics_components_control_system_lib
+
+
+#############################################
+# Order-only phony target for electronics_components_control_system_lib
+
+build cmake_object_order_depends_target_electronics_components_control_system_lib: phony || electronics_components_control_system_lib/CMakeFiles/electronics_components_control_system_lib.dir
+
+build electronics_components_control_system_lib/CMakeFiles/electronics_components_control_system_lib.dir/supercap_readout.cpp.obj: CXX_COMPILER__electronics_components_control_system_lib_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib/supercap_readout.cpp || cmake_object_order_depends_target_electronics_components_control_system_lib
+  DEP_FILE = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir\supercap_readout.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  OBJECT_DIR = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir
+  OBJECT_FILE_DIR = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir
+
+build electronics_components_control_system_lib/CMakeFiles/electronics_components_control_system_lib.dir/temp_sensors.cpp.obj: CXX_COMPILER__electronics_components_control_system_lib_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib/temp_sensors.cpp || cmake_object_order_depends_target_electronics_components_control_system_lib
+  DEP_FILE = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir\temp_sensors.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib
+  OBJECT_DIR = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir
+  OBJECT_FILE_DIR = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target electronics_components_control_system_lib
+
+
+#############################################
+# Link the static library electronics_components_control_system_lib\libelectronics_components_control_system_lib.a
+
+build electronics_components_control_system_lib/libelectronics_components_control_system_lib.a: CXX_STATIC_LIBRARY_LINKER__electronics_components_control_system_lib_Debug electronics_components_control_system_lib/CMakeFiles/electronics_components_control_system_lib.dir/supercap_readout.cpp.obj electronics_components_control_system_lib/CMakeFiles/electronics_components_control_system_lib.dir/temp_sensors.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = electronics_components_control_system_lib\libelectronics_components_control_system_lib.a
+  TARGET_PDB = electronics_components_control_system_lib.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build electronics_components_control_system_lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\electronics_components_control_system_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build electronics_components_control_system_lib/edit_cache: phony electronics_components_control_system_lib/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build electronics_components_control_system_lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\electronics_components_control_system_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP -BC:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build electronics_components_control_system_lib/rebuild_cache: phony electronics_components_control_system_lib/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build electronics_components_control_system_lib/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build electronics_components_control_system_lib/CMakeFiles/install.util: CUSTOM_COMMAND electronics_components_control_system_lib/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\electronics_components_control_system_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build electronics_components_control_system_lib/install: phony electronics_components_control_system_lib/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build electronics_components_control_system_lib/CMakeFiles/install/local.util: CUSTOM_COMMAND electronics_components_control_system_lib/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\electronics_components_control_system_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build electronics_components_control_system_lib/install/local: phony electronics_components_control_system_lib/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build electronics_components_control_system_lib/CMakeFiles/install/strip.util: CUSTOM_COMMAND electronics_components_control_system_lib/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug\electronics_components_control_system_lib && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build electronics_components_control_system_lib/install/strip: phony electronics_components_control_system_lib/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Google_Tests_run
 
 
 #############################################
 # Order-only phony target for Google_Tests_run
 
-build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_lander_communication_lib
+build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_electronics_components_control_system_lib cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_lander_communication_lib
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/slip_decoding_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\slip_decoding_tests.cpp.obj.d
+build Google_tests/CMakeFiles/Google_Tests_run.dir/all_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/all_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\all_tests.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/slip_encoding_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\slip_encoding_tests.cpp.obj.d
+build Google_tests/CMakeFiles/Google_Tests_run.dir/temp_sensors_test.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/temp_sensors_test.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\temp_sensors_test.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/convert_array_to_message_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\convert_array_to_message_tests.cpp.obj.d
+build Google_tests/CMakeFiles/Google_Tests_run.dir/supercap_readout_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/supercap_readout_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\supercap_readout_tests.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = Google_tests\Google_Tests_run.pdb
-
-build Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/convert_message_to_array_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\convert_message_to_array_tests.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = Google_tests\Google_Tests_run.pdb
-
-build Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/send_message_struct_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\send_message_struct_tests.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = Google_tests\Google_Tests_run.pdb
 
 
 # =============================================================================
@@ -323,16 +434,15 @@ build Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp
 #############################################
 # Link the executable Google_tests\Google_Tests_run.exe
 
-build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/slip_decoding_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/slip_encoding_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/convert_array_to_message_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/convert_message_to_array_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/send_message_struct_tests.cpp.obj | lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a
+build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/all_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/temp_sensors_test.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/supercap_readout_tests.cpp.obj | lander_communication_lib/liblander_communication_lib.a electronics_components_control_system_lib/libelectronics_components_control_system_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || electronics_components_control_system_lib/libelectronics_components_control_system_lib.a lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
-  LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a  electronics_components_control_system_lib/libelectronics_components_control_system_lib.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = Google_tests\CMakeFiles\Google_Tests_run.dir\
   TARGET_FILE = Google_tests\Google_Tests_run.exe
   TARGET_IMPLIB = Google_tests\libGoogle_Tests_run.dll.a
-  TARGET_PDB = Google_tests\Google_Tests_run.pdb
+  TARGET_PDB = Google_Tests_run.exe.dbg
 
 
 #############################################
@@ -486,11 +596,9 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: CXX_COMPILER__gmock_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj.d
   FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/include -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/include -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir
   OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir\src
-  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -505,9 +613,8 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/go
   OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgmock.a
-  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gmock.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock_main
@@ -521,11 +628,9 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_COMPILER__gmock_main_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d
   FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
-  INCLUDES = -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
   OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src
-  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -540,9 +645,8 @@ build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_te
   OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgmock_main.a
-  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gmock_main.a.dbg
 
 
 #############################################
@@ -626,11 +730,9 @@ build cmake_object_order_depends_target_gtest: phony || Google_tests/lib/googlet
 build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = Google_tests\lib\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
   FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir
   OBJECT_FILE_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir\src
-  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -645,9 +747,8 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/go
   OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgtest.a
-  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gtest.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest_main
@@ -661,11 +762,9 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_COMPILER__gtest_main_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj.d
   FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir
   OBJECT_FILE_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir\src
-  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -680,9 +779,8 @@ build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_te
   OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgtest_main.a
-  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gtest_main.a.dbg
 
 
 #############################################
@@ -756,6 +854,10 @@ build Google_Tests_run: phony Google_tests/Google_Tests_run.exe
 
 build Google_Tests_run.exe: phony Google_tests/Google_Tests_run.exe
 
+build electronics_components_control_system_lib: phony electronics_components_control_system_lib/libelectronics_components_control_system_lib.a
+
+build electronics_run: phony electronics_run.exe
+
 build gmock: phony lib/libgmock.a
 
 build gmock_main: phony lib/libgmock_main.a
@@ -767,6 +869,8 @@ build gtest_main: phony lib/libgtest_main.a
 build lander_communication_lib: phony lander_communication_lib/liblander_communication_lib.a
 
 build lander_communication_run: phony lander_communication_run.exe
+
+build libelectronics_components_control_system_lib.a: phony electronics_components_control_system_lib/libelectronics_components_control_system_lib.a
 
 build libgmock.a: phony lib/libgmock.a
 
@@ -786,7 +890,7 @@ build liblander_communication_lib.a: phony lander_communication_lib/liblander_co
 #############################################
 # Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug
 
-build all: phony lander_communication_run.exe lander_communication_lib/all Google_tests/all
+build all: phony lander_communication_run.exe electronics_run.exe lander_communication_lib/all electronics_components_control_system_lib/all Google_tests/all
 
 # =============================================================================
 
@@ -819,6 +923,13 @@ build Google_tests/lib/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 # =============================================================================
 
 #############################################
+# Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib
+
+build electronics_components_control_system_lib/all: phony electronics_components_control_system_lib/libelectronics_components_control_system_lib.a
+
+# =============================================================================
+
+#############################################
 # Folder: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/lander_communication_lib
 
 build lander_communication_lib/all: phony lander_communication_lib/liblander_communication_lib.a
@@ -830,14 +941,14 @@ build lander_communication_lib/all: phony lander_communication_lib/liblander_com
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.3/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib/CMakeLists.txt C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
 
 
 #############################################

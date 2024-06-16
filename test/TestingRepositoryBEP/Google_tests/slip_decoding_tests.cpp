@@ -6,20 +6,20 @@
  * Last edited: 07/06/2024.
  *
  * Tests:
- * - Check normal data: Ensure regular data bytes are passed through unchanged after decoding.
- * - Check start byte removed: Verify the payload has the start byte removed.
- * - Check end byte removed: Verify the payload has the end byte removed.
- * - Check empty buffer: Handle decoding when the input buffer is empty.
- * - Check empty payload: Handle decoding when the payload is empty.
- * - Check input length larger than UART buffer: Handle decoding when the input length exceeds the UART buffer size.
- * - Check ESC + ESC_END replacement: Replace ESC + ESC_END bytes in the input buffer with END.
- * - Check ESC + ESC_ESC replacement: Replace ESC + ESC_ESC bytes in the input buffer with ESC.
- * - Check sequential END bytes: Handle sequential END bytes correctly.
- * - Check sequential ESC bytes: Handle sequential ESC bytes correctly.
- * - Check mixed ESC + ESC_END and ESC + ESC_ESC bytes: Handle a mixture of ESC + ESC_END and ESC + ESC_ESC bytes correctly.
- * - Check maximum buffer size: Verify decoding with the maximum allowable input buffer size.
- * - Check all four different characters for decoding.
- * - Check for length 0: It should correctly return false if the input length is smaller than 2 and if the start or end byte are not equal to END.
+ * - Normal data test: Ensure regular data bytes are passed through unchanged after decoding.
+ * - Start byte removed test: Verify the payload has the start byte removed.
+ * - End byte removed test: Verify the payload has the end byte removed.
+ * - Empty buffer test: Handle decoding when the input buffer is empty.
+ * - Empty payload test: Handle decoding when the payload is empty.
+ * - Input length larger than UART buffer test: Handle decoding when the input length exceeds the UART buffer size.
+ * - ESC + ESC_END replacement test: Replace ESC + ESC_END bytes in the input buffer with END.
+ * - ESC + ESC_ESC replacement test: Replace ESC + ESC_ESC bytes in the input buffer with ESC.
+ * - Sequential END bytes test: Handle sequential END bytes correctly.
+ * - Sequential ESC bytes test: Handle sequential ESC bytes correctly.
+ * - Mixed ESC + ESC_END and ESC + ESC_ESC bytes test: Handle a mixture of ESC + ESC_END and ESC + ESC_ESC bytes correctly.
+ * - Maximum buffer size test: Verify decoding with the maximum allowable input buffer size.
+ * - Check all four different characters for decoding: Verify decoding for all special character sequences.
+ * - Length zero test: Correctly return false if the input length is smaller than 2 or if the start or end byte is not equal to END.
  */
 
 #include "gtest/gtest.h"

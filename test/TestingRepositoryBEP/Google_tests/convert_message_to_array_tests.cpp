@@ -6,7 +6,7 @@
  * Last edited: 10/06/2024.
  *
  * Tests:
- * - Normal test: Verify a normal message is correctly converted to an array.
+ * - Convert normal message to array test: Verify a normal message is correctly converted to an array.
  * - Start byte test: Ensure the start byte is correctly placed in the output array.
  * - Message type test: Verify the message type is correctly placed in the output array.
  * - Message length test: Ensure the message length is correctly placed in the output array.

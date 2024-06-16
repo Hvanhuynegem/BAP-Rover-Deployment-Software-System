@@ -335,6 +335,15 @@ TestingRepositoryBEP_IS_TOP_LEVEL:STATIC=ON
 TestingRepositoryBEP_SOURCE_DIR:STATIC=C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP
 
 //Value Computed by CMake
+electronics_BINARY_DIR:STATIC=C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/electronics_components_control_system_lib
+
+//Value Computed by CMake
+electronics_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+electronics_SOURCE_DIR:STATIC=C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib
+
+//Value Computed by CMake
 gmock_BINARY_DIR:STATIC=C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/cmake-build-debug/Google_tests/lib/googlemock
 
 //Value Computed by CMake
@@ -524,7 +533,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -51,7 +51,7 @@ typedef struct {
  * Returns:
  *  Message: the constructed message struct
  */
-Message create_message(uint8_t msg_type, const uint8_t *payload, uint8_t length);
+//Message create_message(uint8_t msg_type, const uint8_t *payload, uint8_t length);
 
 /*
  * Reads a message struct and handles each type of response using a switch statement.
@@ -83,6 +83,6 @@ uint8_t calculate_checksum_helper(uint8_t msg_type, uint8_t length, const uint8_
  * Returns:
  *  uint8_t: the calculated checksum
  */
-uint8_t calculate_checksum(const Message *msg);
+//uint8_t calculate_checksum(const Message *msg);
 
 #endif // LANDER_COMMUNICATION_PROTOCOL_H

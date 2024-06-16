@@ -6,22 +6,22 @@
  * Last edited: 07/06/2024.
  *
  * Tests:
- * - Check normal data: Ensure regular data bytes are passed through unchanged.
- * - Check start byte: Verify the output starts with the END byte.
- * - Check end byte: Verify the output ends with the END byte.
- * - Check empty buffer: Handle encoding when the input buffer is empty.
- * - Check buffer larger than UART buffer: Handle encoding when the input buffer exceeds the UART buffer size.
- * - Check if buffer is smaller than UART buffer but after encoding, it is larger. How to deal with data.
- * - Check END replacement: Replace END bytes in the input buffer with ESC + ESC_END.
- * - Check ESC replacement: Replace ESC bytes in the input buffer with ESC + ESC_ESC.
- * - Check sequential END bytes: Handle sequential END bytes correctly.
- * - Check sequential ESC bytes: Handle sequential ESC bytes correctly.
- * - Check mixed END and ESC bytes: Handle a mixture of END and ESC bytes correctly.
- * - Check maximum buffer size: Verify encoding with the maximum allowable input buffer size.
- * - Check for a buffer overflow: this test checks whether the default case statement works.
- * - Check for not enough space for the ESC and ESC_ESC sequence.
- * - Check edge case for encoding expansion until UART BUFFER
- * - Check all four different characters for encoding.
+ * - Normal data test: Ensure regular data bytes are passed through unchanged.
+ * - Start byte test: Verify the output starts with the END byte.
+ * - End byte test: Verify the output ends with the END byte.
+ * - Empty buffer test: Handle encoding when the input buffer is empty.
+ * - Buffer larger than UART buffer test: Handle encoding when the input buffer exceeds the UART buffer size.
+ * - Buffer smaller than UART buffer but after encoding, it is larger: Handle encoding when input buffer expands and exceeds UART buffer size after encoding.
+ * - END replacement test: Replace END bytes in the input buffer with ESC + ESC_END.
+ * - ESC replacement test: Replace ESC bytes in the input buffer with ESC + ESC_ESC.
+ * - Sequential END bytes test: Handle sequential END bytes correctly.
+ * - Sequential ESC bytes test: Handle sequential ESC bytes correctly.
+ * - Mixed END and ESC bytes test: Handle a mixture of END and ESC bytes correctly.
+ * - Maximum payload size test: Verify encoding with the maximum allowable input buffer size.
+ * - Buffer overflow test: Check for buffer overflow when encoding.
+ * - ESC overflow test: Check for not enough space for the ESC and ESC_ESC sequence.
+ * - Maximum encodable data test: Handle encoding expansion up to UART buffer size.
+ * - Mixed special characters test: Check encoding of a mixture of special characters.
  */
 
 #include "gtest/gtest.h"

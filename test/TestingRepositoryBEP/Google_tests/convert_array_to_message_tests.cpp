@@ -7,16 +7,16 @@
  *
  * Tests:
  * - Normal test: Verify a normal array is correctly converted to a message.
- * - length smaller than five: Handle a array that is smaller than length 5.
+ * - Length smaller than five: Handle an array that is smaller than length 5.
  * - Start byte test: Ensure the start byte is correctly placed in the message.
  * - Message type test: Verify the message type is correctly placed in the message.
  * - Message length test: Ensure the message length is correctly placed in the message.
- * - Message length longer than max payload size:ensure that the message length longer than payload size is handled
- * - Message length smaller than zero: if the message length is smaller than zero return false
+ * - Message length longer than max payload size: Ensure that the message length longer than payload size is handled.
+ * - Message length smaller than zero: Handle the case where the message length is smaller than zero.
  * - Empty payload test: Handle conversion when the payload is empty.
- * - Checksum test: Verify the checksum is correctly place in the message.
+ * - Checksum test: Verify the checksum is correctly placed in the message.
  * - End byte test: Ensure the end byte is correctly placed in the message.
- * - Check whether the checksum is correct.
+ * - Checksum verification test: Check whether the checksum is correct.
  */
 
 #include "gtest/gtest.h"
