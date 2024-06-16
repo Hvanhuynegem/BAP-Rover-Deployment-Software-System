@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v21.6.1                     
 ******************************************************************************
->> Linked Sat Jun 15 21:44:03 2024
+>> Linked Sun Jun 16 11:00:21 2024
 
 OUTPUT FILE NAME:   <rover deployment software system.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs_mpu"  address: 000048fc
@@ -18,8 +18,8 @@ MEMORY CONFIGURATION
   INFOC                 00001880   00000080  00000000  00000080  RWIX
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
-  RAM                   00001c00   00000800  000003ba  00000446  RWIX
-  FRAM                  00004400   0000bb80  0000062c  0000b554  RWIX
+  RAM                   00001c00   00000800  000003bc  00000444  RWIX
+  FRAM                  00004400   0000bb80  00000669  0000b517  RWIX
   JTAGSIGNATURE         0000ff80   00000004  00000004  00000000  RWIX  ffff 
   BSLSIGNATURE          0000ff84   00000004  00000004  00000000  RWIX  ffff 
   IPESIGNATURE          0000ff88   00000008  00000008  00000000  RWIX  ffff 
@@ -79,7 +79,7 @@ MEMORY CONFIGURATION
   INT53                 0000fffa   00000002  00000002  00000000  RWIX
   INT54                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FRAM2                 00010000   00003ff8  00000a00  000035f8  RWIX
+  FRAM2                 00010000   00003ff8  00000b9e  0000345a  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -110,12 +110,12 @@ section   page    origin      length       input sections
 .ipe_vars 
 *          0    00004800    00000000     UNINITIALIZED
 
-.cinit     0    000049fa    00000032     
-                  000049fa    0000000f     (.cinit..data.load) [load image, compression = lzss]
-                  00004a09    00000001     --HOLE-- [fill = 0]
-                  00004a0a    0000000c     (__TI_handler_table)
-                  00004a16    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  00004a1c    00000010     (__TI_cinit_table)
+.cinit     0    00004a38    00000032     
+                  00004a38    0000000f     (.cinit..data.load) [load image, compression = lzss]
+                  00004a47    00000001     --HOLE-- [fill = 0]
+                  00004a48    0000000c     (__TI_handler_table)
+                  00004a54    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004a5a    00000010     (__TI_cinit_table)
 
 .binit     0    00004400    00000000     
 
@@ -131,21 +131,22 @@ section   page    origin      length       input sections
                   0000493c    00000010     supercap_readout.obj (.text:_isr:_Z9ADC12_ISRv)
                   0000494c    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
-.bss       0    00001c00    00000308     UNINITIALIZED
+.bss       0    00001c00    0000030a     UNINITIALIZED
                   00001c00    00000100     lander_communication.obj (.bss:buffer$1)
                   00001d00    00000100     lander_communication.obj (.bss:temp_buffer$2)
                   00001e00    00000100     (.common:RX_buffer)
                   00001f00    00000004     rts430x_lc_rd_eabi.lib : memory.c.obj (.bss)
                   00001f04    00000002     (.common:UART_state)
                   00001f06    00000002     (.common:message_pointer)
+                  00001f08    00000002     (.common:transit_state)
 
-.data      0    00001f08    00000012     UNINITIALIZED
-                  00001f08    00000007     uart_communication.obj (.data)
-                  00001f0f    00000001     lander_communication.obj (.data)
-                  00001f10    00000004     rts430x_lc_rd_eabi.lib : _lock.c.obj (.data:_lock)
-                  00001f14    00000004                            : _lock.c.obj (.data:_unlock)
-                  00001f18    00000001     supercap_readout.obj (.data)
-                  00001f19    00000001     temp_sensors.obj (.data)
+.data      0    00001f0a    00000012     UNINITIALIZED
+                  00001f0a    00000007     uart_communication.obj (.data)
+                  00001f11    00000001     lander_communication.obj (.data)
+                  00001f12    00000004     rts430x_lc_rd_eabi.lib : _lock.c.obj (.data:_lock)
+                  00001f16    00000004                            : _lock.c.obj (.data:_unlock)
+                  00001f1a    00000001     supercap_readout.obj (.data)
+                  00001f1b    00000001     temp_sensors.obj (.data)
 
 .stack     0    00002360    000000a0     UNINITIALIZED
                   00002360    00000004     rts430x_lc_rd_eabi.lib : boot.c.obj (.stack)
@@ -248,80 +249,87 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.const     0    00004954    000000a6     
+.const     0    00004954    000000e3     
                   00004954    0000001d     general_startup.obj (.const:.string:$P$T2$3)
                   00004971    00000001     --HOLE-- [fill = 0]
                   00004972    00000019     general_startup.obj (.const:.string:$P$T1$2)
                   0000498b    00000001     --HOLE-- [fill = 0]
                   0000498c    00000017     general_startup.obj (.const:.string:$P$T0$1)
                   000049a3    00000001     --HOLE-- [fill = 0]
-                  000049a4    00000012     lander_communication.obj (.const:.string:$P$T0$3)
-                  000049b6    00000011     lander_communication_protocol.obj (.const:.string:$P$T1$2)
-                  000049c7    00000001     --HOLE-- [fill = 0]
-                  000049c8    00000010     lander_communication_protocol.obj (.const:.string:$P$T0$1)
-                  000049d8    00000010     uart_communication.obj (.const:.string:$P$T0$1)
-                  000049e8    0000000d     general_startup.obj (.const:.string:$P$T3$4)
-                  000049f5    00000001     --HOLE-- [fill = 0]
-                  000049f6    00000004     lander_communication_protocol.obj (.const:.string:$P$T2$3)
+                  000049a4    00000013     main.obj (.const:.string:$P$T1$2)
+                  000049b7    00000001     --HOLE-- [fill = 0]
+                  000049b8    00000012     lander_communication.obj (.const:.string:$P$T0$3)
+                  000049ca    00000011     lander_communication_protocol.obj (.const:.string:$P$T1$2)
+                  000049db    00000001     --HOLE-- [fill = 0]
+                  000049dc    00000010     lander_communication_protocol.obj (.const:.string:$P$T0$1)
+                  000049ec    00000010     main.obj (.const:.string:$P$T0$1)
+                  000049fc    00000010     uart_communication.obj (.const:.string:$P$T0$1)
+                  00004a0c    0000000f     main.obj (.const:.string:$P$T3$4)
+                  00004a1b    00000001     --HOLE-- [fill = 0]
+                  00004a1c    0000000b     main.obj (.const:.string:$P$T4$5)
+                  00004a27    00000001     --HOLE-- [fill = 0]
+                  00004a28    00000008     main.obj (.const:.string:$P$T2$3)
+                  00004a30    00000004     lander_communication_protocol.obj (.const:.string:$P$T2$3)
+                  00004a34    00000003     general_startup.obj (.const:.string:$P$T3$4)
 
-.text      0    00010000    00000a00     
-                  00010000    000000e2     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:free)
-                  000100e2    000000d2     uart_communication.obj (.text:_Z14read_RX_bufferjj)
-                  000101b4    000000c8     lander_communication.obj (.text:_Z11slip_encodePKhjPhPj)
-                  0001027c    000000b2     lander_communication.obj (.text:_Z21process_received_datav)
-                  0001032e    000000a8     lander_communication.obj (.text:_Z24convert_message_to_arrayPK7MessagePhS2_)
-                  000103d6    000000a2     lander_communication.obj (.text:_Z24convert_array_to_messagePKhjP7Message)
-                  00010478    00000094     lander_communication_protocol.obj (.text:_Z14handle_messagePK7Message)
-                  0001050c    00000086     general_startup.obj (.text:_Z15general_startupv)
-                  00010592    00000084     lander_communication.obj (.text:_Z11slip_decodePKhjPhPj)
-                  00010616    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  0001068c    0000005a     lander_communication_protocol.obj (.text:_Z14create_messagehPKhh)
-                  000106e6    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
-                  0001073a    00000038     lander_communication.obj (.text:_Z29send_message_and_wait_for_ACKhPKhh)
-                  00010772    00000036     lander_communication.obj (.text:_Z19send_message_structPK7Message)
-                  000107a8    00000032     uart_communication.obj (.text:_Z9uart_initv)
-                  000107da    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
-                  00010806    0000002c     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:free_list_insert)
-                  00010832    0000002a                            : memory.c.obj (.text:free_list_remove)
-                  0001085c    00000028     general_startup.obj (.text:_Z33send_transit_mode_request_messagev)
-                  00010884    00000026     uart_communication.obj (.text:_Z11setup_SMCLKv)
-                  000108aa    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  000108ce    00000020     main.obj (.text:main)
-                  000108ee    0000001e     uart_communication.obj (.text:_Z10uart_writePhj)
-                  0001090c    0000001c     lander_communication.obj (.text:_Z12send_messagehPKhh)
-                  00010928    00000018     temp_sensors.obj (.text:_Z21startTimeoutTimer_TA2v)
-                  00010940    00000016     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:heap_start)
-                  00010956    00000016                            : memset.c.obj (.text:memset)
-                  0001096c    00000014     lander_communication_protocol.obj (.text:_Z18calculate_checksumPK7Message)
-                  00010980    00000014     lander_communication_protocol.obj (.text:_Z25calculate_checksum_helperhhPKh)
-                  00010994    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
-                  000109a8    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  000109ba    0000000e                            : strlen.c.obj (.text:strlen)
-                  000109c8    0000000a     uart_communication.obj (.text:_Z14uart_configurev)
-                  000109d2    0000000a     umbilical_cord.obj (.text:_Z34initialize_umbilicalcord_pin_roverv)
-                  000109dc    0000000a     rts430x_lc_rd_eabi.lib : new.cpp.obj (.text:_ZdlPv)
-                  000109e6    00000008     umbilical_cord.obj (.text:_Z28read_umbilicalcord_pin_roverv)
-                  000109ee    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  000109f4    00000004                            : new.cpp.obj (.text:_ZdlPvj)
-                  000109f8    00000004                            : pre_init.c.obj (.text:_system_pre_init)
-                  000109fc    00000002                            : _lock.c.obj (.text:_nop)
-                  000109fe    00000002                            : startup.c.obj (.text:_system_post_cinit)
+.text      0    00010000    00000b9e     
+                  00010000    0000012c     main.obj (.text:main)
+                  0001012c    00000110     lander_communication_protocol.obj (.text:_Z14handle_messagePK7Message)
+                  0001023c    000000e2     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:free)
+                  0001031e    000000d2     uart_communication.obj (.text:_Z14read_RX_bufferjj)
+                  000103f0    000000c8     lander_communication.obj (.text:_Z11slip_encodePKhjPhPj)
+                  000104b8    000000b2     lander_communication.obj (.text:_Z21process_received_datav)
+                  0001056a    000000a8     lander_communication.obj (.text:_Z24convert_message_to_arrayPK7MessagePhS2_)
+                  00010612    000000a2     lander_communication.obj (.text:_Z24convert_array_to_messagePKhjP7Message)
+                  000106b4    00000098     general_startup.obj (.text:_Z15general_startupv)
+                  0001074c    00000084     lander_communication.obj (.text:_Z11slip_decodePKhjPhPj)
+                  000107d0    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00010846    0000005a     lander_communication_protocol.obj (.text:_Z14create_messagehPKhh)
+                  000108a0    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
+                  000108f4    00000038     lander_communication.obj (.text:_Z29send_message_and_wait_for_ACKhPKhh)
+                  0001092c    00000036     lander_communication.obj (.text:_Z19send_message_structPK7Message)
+                  00010962    00000032     uart_communication.obj (.text:_Z9uart_initv)
+                  00010994    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
+                  000109c0    0000002c     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:free_list_insert)
+                  000109ec    0000002a                            : memory.c.obj (.text:free_list_remove)
+                  00010a16    00000028     general_startup.obj (.text:_Z33send_transit_mode_request_messagev)
+                  00010a3e    00000026     uart_communication.obj (.text:_Z11setup_SMCLKv)
+                  00010a64    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00010a88    0000001e     uart_communication.obj (.text:_Z10uart_writePhj)
+                  00010aa6    0000001c     lander_communication.obj (.text:_Z12send_messagehPKhh)
+                  00010ac2    00000018     temp_sensors.obj (.text:_Z21startTimeoutTimer_TA2v)
+                  00010ada    00000016     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:heap_start)
+                  00010af0    00000016                            : memset.c.obj (.text:memset)
+                  00010b06    00000014     lander_communication_protocol.obj (.text:_Z18calculate_checksumPK7Message)
+                  00010b1a    00000014     lander_communication_protocol.obj (.text:_Z25calculate_checksum_helperhhPKh)
+                  00010b2e    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
+                  00010b42    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00010b54    0000000e     uart_communication.obj (.text:_Z14uart_configurev)
+                  00010b62    0000000e     rts430x_lc_rd_eabi.lib : strlen.c.obj (.text:strlen)
+                  00010b70    0000000a     umbilical_cord.obj (.text:_Z34initialize_umbilicalcord_pin_roverv)
+                  00010b7a    0000000a     rts430x_lc_rd_eabi.lib : new.cpp.obj (.text:_ZdlPv)
+                  00010b84    00000008     umbilical_cord.obj (.text:_Z28read_umbilicalcord_pin_roverv)
+                  00010b8c    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
+                  00010b92    00000004                            : new.cpp.obj (.text:_ZdlPvj)
+                  00010b96    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  00010b9a    00000002                            : _lock.c.obj (.text:_nop)
+                  00010b9c    00000002                            : startup.c.obj (.text:_system_post_cinit)
 
 MODULE SUMMARY
 
        Module                              code   ro data   rw data
        ------                              ----   -------   -------
     .\src\
-       main.obj                            32     0         0      
+       main.obj                            300    69        0      
     +--+-----------------------------------+------+---------+---------+
-       Total:                              32     0         0      
+       Total:                              300    69        0      
                                                                    
     .\src\lander_communication\
        lander_communication.obj            978    18        513    
-       uart_communication.obj              606    20        267    
-       lander_communication_protocol.obj   278    37        0      
+       uart_communication.obj              610    20        267    
+       lander_communication_protocol.obj   402    37        2      
     +--+-----------------------------------+------+---------+---------+
-       Total:                              1862   75        780    
+       Total:                              1990   75        782    
                                                                    
     .\src\system_health\
        temp_sensors.obj                    40     2         1      
@@ -331,9 +339,9 @@ MODULE SUMMARY
        Total:                              74     4         2      
                                                                    
     .\src\transit_modes\
-       general_startup.obj                 174    90        0      
+       general_startup.obj                 192    80        0      
     +--+-----------------------------------+------+---------+---------+
-       Total:                              174    90        0      
+       Total:                              192    80        0      
                                                                    
     C:\ti\ccs1271\ccs\ccs_base\msp430\lib\FR59xx\MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib
        mpu_init.o                          44     0         0      
@@ -384,19 +392,19 @@ MODULE SUMMARY
        Stack:                              0      0         160    
        Linker Generated:                   0      49        0      
     +--+-----------------------------------+------+---------+---------+
-       Grand Total:                        2900   262       1114   
+       Grand Total:                        3314   321       1116   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00004a1c records: 2, size/record: 8, table size: 16
-	.data: load addr=000049fa, load size=0000000f bytes, run addr=00001f08, run size=00000012 bytes, compression=lzss
-	.bss: load addr=00004a16, load size=00000006 bytes, run addr=00001c00, run size=00000308 bytes, compression=zero_init
+__TI_cinit_table @ 00004a5a records: 2, size/record: 8, table size: 16
+	.data: load addr=00004a38, load size=0000000f bytes, run addr=00001f0a, run size=00000012 bytes, compression=lzss
+	.bss: load addr=00004a54, load size=00000006 bytes, run addr=00001c00, run size=0000030a bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004a0a records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00004a48 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -663,7 +671,7 @@ address   name
 000009ce  AESAXIN_L                                  
 000004be  BCD2BIN                                    
 000004bc  BIN2BCD                                    
-000109ee  C$$EXIT                                    
+00010b8c  C$$EXIT                                    
 0000043e  CAPTIO0CTL                                 
 0000043f  CAPTIO0CTL_H                               
 0000043e  CAPTIO0CTL_L                               
@@ -982,8 +990,8 @@ address   name
 000004b7  RTCYEAR_H                                  
 000004b6  RTCYEAR_L                                  
 00001e00  RX_buffer                                  
-00001f0a  RX_end                                     
-00001f08  RX_start                                   
+00001f0c  RX_end                                     
+00001f0a  RX_start                                   
 00000100  SFRIE1                                     
 00000101  SFRIE1_H                                   
 00000100  SFRIE1_L                                   
@@ -1190,47 +1198,47 @@ address   name
 0000015c  WDTCTL                                     
 0000015d  WDTCTL_H                                   
 0000015c  WDTCTL_L                                   
-000108ee  _Z10uart_writePhj                          
+00010a88  _Z10uart_writePhj                          
 00004800  _Z11USCI_A1_ISRv                           
-00010884  _Z11setup_SMCLKv                           
-00010592  _Z11slip_decodePKhjPhPj                    
-000101b4  _Z11slip_encodePKhjPhPj                    
+00010a3e  _Z11setup_SMCLKv                           
+0001074c  _Z11slip_decodePKhjPhPj                    
+000103f0  _Z11slip_encodePKhjPhPj                    
 0000491c  _Z12Timer_A2_ISRv                          
-0001090c  _Z12send_messagehPKhh                      
+00010aa6  _Z12send_messagehPKhh                      
 0000492c  _Z13Timer3_A0_ISRv                         
-0001068c  _Z14create_messagehPKhh                    
-00010478  _Z14handle_messagePK7Message               
-000100e2  _Z14read_RX_bufferjj                       
-000109c8  _Z14uart_configurev                        
-0001050c  _Z15general_startupv                       
-0001096c  _Z18calculate_checksumPK7Message           
-00010772  _Z19send_message_structPK7Message          
-0001027c  _Z21process_received_datav                 
-00010928  _Z21startTimeoutTimer_TA2v                 
-000103d6  _Z24convert_array_to_messagePKhjP7Message  
-0001032e  _Z24convert_message_to_arrayPK7MessagePhS2_
-00010980  _Z25calculate_checksum_helperhhPKh         
-000109e6  _Z28read_umbilicalcord_pin_roverv          
-0001073a  _Z29send_message_and_wait_for_ACKhPKhh     
-0001085c  _Z33send_transit_mode_request_messagev     
-000109d2  _Z34initialize_umbilicalcord_pin_roverv    
+00010846  _Z14create_messagehPKhh                    
+0001012c  _Z14handle_messagePK7Message               
+0001031e  _Z14read_RX_bufferjj                       
+00010b54  _Z14uart_configurev                        
+000106b4  _Z15general_startupv                       
+00010b06  _Z18calculate_checksumPK7Message           
+0001092c  _Z19send_message_structPK7Message          
+000104b8  _Z21process_received_datav                 
+00010ac2  _Z21startTimeoutTimer_TA2v                 
+00010612  _Z24convert_array_to_messagePKhjP7Message  
+0001056a  _Z24convert_message_to_arrayPK7MessagePhS2_
+00010b1a  _Z25calculate_checksum_helperhhPKh         
+00010b84  _Z28read_umbilicalcord_pin_roverv          
+000108f4  _Z29send_message_and_wait_for_ACKhPKhh     
+00010a16  _Z33send_transit_mode_request_messagev     
+00010b70  _Z34initialize_umbilicalcord_pin_roverv    
 0000493c  _Z9ADC12_ISRv                              
-000107a8  _Z9uart_initv                              
-000109ee  _ZSt17__throw_bad_allocv                   
-000109dc  _ZdlPv                                     
-000109f4  _ZdlPvj                                    
+00010962  _Z9uart_initv                              
+00010b8c  _ZSt17__throw_bad_allocv                   
+00010b7a  _ZdlPv                                     
+00010b92  _ZdlPvj                                    
 00002400  __STACK_END                                
 000000a0  __STACK_SIZE                               
 000000a0  __SYSMEM_SIZE                              
-00004a1c  __TI_CINIT_Base                            
-00004a2c  __TI_CINIT_Limit                           
-00004a2c  __TI_CINIT_Warm                            
-00004a0a  __TI_Handler_Table_Base                    
-00004a16  __TI_Handler_Table_Limit                   
+00004a5a  __TI_CINIT_Base                            
+00004a6a  __TI_CINIT_Limit                           
+00004a6a  __TI_CINIT_Warm                            
+00004a48  __TI_Handler_Table_Base                    
+00004a54  __TI_Handler_Table_Limit                   
 0000494c  __TI_ISR_TRAP                              
-000106e6  __TI_auto_init_nobinit_nopinit_hold_wdt    
-00010616  __TI_decompress_lzss                       
-000109a8  __TI_decompress_none                       
+000108a0  __TI_auto_init_nobinit_nopinit_hold_wdt    
+000107d0  __TI_decompress_lzss                       
+00010b42  __TI_decompress_none                       
 0000ffcc  __TI_int30                                 
 0000ffce  __TI_int31                                 
 0000ffd0  __TI_int32                                 
@@ -1259,40 +1267,41 @@ address   name
 ffffffff  __TI_pprof_out_hndl                        
 ffffffff  __TI_prof_data_size                        
 ffffffff  __TI_prof_data_start                       
-000108aa  __TI_zero_init_nomemset                    
+00010a64  __TI_zero_init_nomemset                    
 ffffffff  __c_args__                                 
 00000001  __mpu_enable                               
-000107da  __mpu_init                                 
+00010994  __mpu_init                                 
 000048fc  _c_int00_noargs_mpu                        
-00001f10  _lock                                      
-000109fc  _nop                                       
+00001f12  _lock                                      
+00010b9a  _nop                                       
 0000fffe  _reset_vector                              
 00002360  _stack                                     
 00004400  _sys_memory                                
-000109fe  _system_post_cinit                         
-000109f8  _system_pre_init                           
-00001f14  _unlock                                    
-000109ee  abort                                      
-00001f0f  ack_received                               
-00001f18  adc_conversion_fail                        
-00001f0c  buffer_full_state                          
-00001f0d  error_state                                
+00010b9c  _system_post_cinit                         
+00010b96  _system_pre_init                           
+00001f16  _unlock                                    
+00010b8c  abort                                      
+00001f11  ack_received                               
+00001f1a  adc_conversion_fail                        
+00001f0e  buffer_full_state                          
+00001f0f  error_state                                
 00004800  fram_ipe_end                               
 00004800  fram_ipe_start                             
 00004400  fram_rw_start                              
 00004800  fram_rx_start                              
-00010000  free                                       
-000108ce  main                                       
-00010994  memcpy                                     
-00010956  memset                                     
+0001023c  free                                       
+00010000  main                                       
+00010b2e  memcpy                                     
+00010af0  memset                                     
 00001f06  message_pointer                            
 0000a501  mpu_ctl0_value                             
 00001513  mpu_sam_value                              
 00000480  mpu_segment_border1                        
 00000480  mpu_segment_border2                        
-000109ba  strlen                                     
-00001f19  timeoutOccurred                            
-00001f0e  timeout_state                              
+00010b62  strlen                                     
+00001f1b  timeoutOccurred                            
+00001f10  timeout_state                              
+00001f08  transit_state                              
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -2087,16 +2096,17 @@ address   name
 00001e00  RX_buffer                                  
 00001f04  UART_state                                 
 00001f06  message_pointer                            
-00001f08  RX_start                                   
-00001f0a  RX_end                                     
-00001f0c  buffer_full_state                          
-00001f0d  error_state                                
-00001f0e  timeout_state                              
-00001f0f  ack_received                               
-00001f10  _lock                                      
-00001f14  _unlock                                    
-00001f18  adc_conversion_fail                        
-00001f19  timeoutOccurred                            
+00001f08  transit_state                              
+00001f0a  RX_start                                   
+00001f0c  RX_end                                     
+00001f0e  buffer_full_state                          
+00001f0f  error_state                                
+00001f10  timeout_state                              
+00001f11  ack_received                               
+00001f12  _lock                                      
+00001f16  _unlock                                    
+00001f1a  adc_conversion_fail                        
+00001f1b  timeoutOccurred                            
 00002360  _stack                                     
 00002400  __STACK_END                                
 00004400  _sys_memory                                
@@ -2110,11 +2120,11 @@ address   name
 0000492c  _Z13Timer3_A0_ISRv                         
 0000493c  _Z9ADC12_ISRv                              
 0000494c  __TI_ISR_TRAP                              
-00004a0a  __TI_Handler_Table_Base                    
-00004a16  __TI_Handler_Table_Limit                   
-00004a1c  __TI_CINIT_Base                            
-00004a2c  __TI_CINIT_Limit                           
-00004a2c  __TI_CINIT_Warm                            
+00004a48  __TI_Handler_Table_Base                    
+00004a54  __TI_Handler_Table_Limit                   
+00004a5a  __TI_CINIT_Base                            
+00004a6a  __TI_CINIT_Limit                           
+00004a6a  __TI_CINIT_Warm                            
 0000a501  mpu_ctl0_value                             
 0000ffcc  __TI_int30                                 
 0000ffce  __TI_int31                                 
@@ -2142,49 +2152,49 @@ address   name
 0000fffa  __TI_int53                                 
 0000fffc  __TI_int54                                 
 0000fffe  _reset_vector                              
-00010000  free                                       
-000100e2  _Z14read_RX_bufferjj                       
-000101b4  _Z11slip_encodePKhjPhPj                    
-0001027c  _Z21process_received_datav                 
-0001032e  _Z24convert_message_to_arrayPK7MessagePhS2_
-000103d6  _Z24convert_array_to_messagePKhjP7Message  
-00010478  _Z14handle_messagePK7Message               
-0001050c  _Z15general_startupv                       
-00010592  _Z11slip_decodePKhjPhPj                    
-00010616  __TI_decompress_lzss                       
-0001068c  _Z14create_messagehPKhh                    
-000106e6  __TI_auto_init_nobinit_nopinit_hold_wdt    
-0001073a  _Z29send_message_and_wait_for_ACKhPKhh     
-00010772  _Z19send_message_structPK7Message          
-000107a8  _Z9uart_initv                              
-000107da  __mpu_init                                 
-0001085c  _Z33send_transit_mode_request_messagev     
-00010884  _Z11setup_SMCLKv                           
-000108aa  __TI_zero_init_nomemset                    
-000108ce  main                                       
-000108ee  _Z10uart_writePhj                          
-0001090c  _Z12send_messagehPKhh                      
-00010928  _Z21startTimeoutTimer_TA2v                 
-00010956  memset                                     
-0001096c  _Z18calculate_checksumPK7Message           
-00010980  _Z25calculate_checksum_helperhhPKh         
-00010994  memcpy                                     
-000109a8  __TI_decompress_none                       
-000109ba  strlen                                     
-000109c8  _Z14uart_configurev                        
-000109d2  _Z34initialize_umbilicalcord_pin_roverv    
-000109dc  _ZdlPv                                     
-000109e6  _Z28read_umbilicalcord_pin_roverv          
-000109ee  C$$EXIT                                    
-000109ee  _ZSt17__throw_bad_allocv                   
-000109ee  abort                                      
-000109f4  _ZdlPvj                                    
-000109f8  _system_pre_init                           
-000109fc  _nop                                       
-000109fe  _system_post_cinit                         
+00010000  main                                       
+0001012c  _Z14handle_messagePK7Message               
+0001023c  free                                       
+0001031e  _Z14read_RX_bufferjj                       
+000103f0  _Z11slip_encodePKhjPhPj                    
+000104b8  _Z21process_received_datav                 
+0001056a  _Z24convert_message_to_arrayPK7MessagePhS2_
+00010612  _Z24convert_array_to_messagePKhjP7Message  
+000106b4  _Z15general_startupv                       
+0001074c  _Z11slip_decodePKhjPhPj                    
+000107d0  __TI_decompress_lzss                       
+00010846  _Z14create_messagehPKhh                    
+000108a0  __TI_auto_init_nobinit_nopinit_hold_wdt    
+000108f4  _Z29send_message_and_wait_for_ACKhPKhh     
+0001092c  _Z19send_message_structPK7Message          
+00010962  _Z9uart_initv                              
+00010994  __mpu_init                                 
+00010a16  _Z33send_transit_mode_request_messagev     
+00010a3e  _Z11setup_SMCLKv                           
+00010a64  __TI_zero_init_nomemset                    
+00010a88  _Z10uart_writePhj                          
+00010aa6  _Z12send_messagehPKhh                      
+00010ac2  _Z21startTimeoutTimer_TA2v                 
+00010af0  memset                                     
+00010b06  _Z18calculate_checksumPK7Message           
+00010b1a  _Z25calculate_checksum_helperhhPKh         
+00010b2e  memcpy                                     
+00010b42  __TI_decompress_none                       
+00010b54  _Z14uart_configurev                        
+00010b62  strlen                                     
+00010b70  _Z34initialize_umbilicalcord_pin_roverv    
+00010b7a  _ZdlPv                                     
+00010b84  _Z28read_umbilicalcord_pin_roverv          
+00010b8c  C$$EXIT                                    
+00010b8c  _ZSt17__throw_bad_allocv                   
+00010b8c  abort                                      
+00010b92  _ZdlPvj                                    
+00010b96  _system_pre_init                           
+00010b9a  _nop                                       
+00010b9c  _system_post_cinit                         
 ffffffff  __TI_pprof_out_hndl                        
 ffffffff  __TI_prof_data_size                        
 ffffffff  __TI_prof_data_start                       
 ffffffff  __c_args__                                 
 
-[887 symbols]
+[888 symbols]

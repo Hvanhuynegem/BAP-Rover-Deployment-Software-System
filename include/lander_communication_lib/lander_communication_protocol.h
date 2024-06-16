@@ -41,6 +41,20 @@ typedef struct {
     uint8_t end_byte;
 } Message;
 
+/**
+ * enumerate object that will be used for the different transit states
+ */
+typedef enum {
+    GENERAL_STARTUP,
+    LAUNCH_INTEGRATION,
+    TRANSIT,
+    PRE_DEPLOYMENT,
+    DEPLOYMENT
+} transit_states;
+
+/* Tracks the current transit state */
+extern volatile transit_states transit_state;
+
 /*
  * Creates a message and returns the Message struct.
  *

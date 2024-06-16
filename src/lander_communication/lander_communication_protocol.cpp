@@ -12,7 +12,10 @@
 #include <lander_communication_lib/lander_communication.h>
 #include <lander_communication_lib/lander_communication_protocol.h>
 #include <cstring>
-//#include <msp430.h>
+#include <msp430.h>
+
+/* transit state definition */
+volatile transit_states transit_state;
 
 // Helper function to calculate checksum
 uint8_t calculate_checksum_helper(uint8_t msg_type, uint8_t length, const uint8_t *payload) {
@@ -68,6 +71,7 @@ void handle_message(const Message *msg) {
             break;
         case MSG_TYPE_ACK:
             // Handle acknowledgment
+            ack_received = true;
             break;
         case MSG_TYPE_REQUEST:
             // Handle request
@@ -79,10 +83,23 @@ void handle_message(const Message *msg) {
             // Handle response
             break;
         case MSG_TYPE_DEPLOY:
-            // Handle deployment
+            transit_state = DEPLOYMENT;
             break;
         case MSG_TYPE_TRANSIT_MODE:
-            // Handle mode
+            if (msg->payload[0] == 'G' && msg->payload[1] == 'S') { // general startup (GS)
+                transit_state = GENERAL_STARTUP;
+            } else if (msg->payload[0] == 'L' && msg->payload[1] == 'I') { // Launch Integration (LI)
+                transit_state = LAUNCH_INTEGRATION;
+            } else if (msg->payload[0] == 'T') { // Transit (T)
+                transit_state = TRANSIT;
+            } else if (msg->payload[0] == 'P' && msg->payload[1] == 'D') { // Pre-Deployment (PD)
+                transit_state = PRE_DEPLOYMENT;
+            } else if (msg->payload[0] == 'D') { // Deployment (D)
+                transit_state = DEPLOYMENT;
+            } else {
+                // Handle unknown state or do nothing
+            }
+
             break;
         case MSG_TYPE_ERROR:
             // Handle mode

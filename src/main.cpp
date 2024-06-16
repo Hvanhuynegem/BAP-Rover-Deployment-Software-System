@@ -15,6 +15,8 @@
 #include "lander_communication_lib/lander_communication_protocol.h"
 #include "lander_communication_lib/uart_communication.h"
 
+void goto_general_startup(void);
+
 int main(void) {
     // Stop watchdog timer
     WDTCTL = WDTPW | WDTHOLD;
@@ -33,9 +35,37 @@ int main(void) {
 
     // Main loop (not used in this example)
     while (1) {
-        general_startup();
+        switch (transit_state){
+        case GENERAL_STARTUP:
+            // process RX buffer
+            process_received_data();
+            uint8_t payload0[] = "GENERAL_STARTUP";
+            send_message(MSG_TYPE_RESPONSE, payload0, strlen((const char*)payload0));
+            general_startup();
+            break;
+        case LAUNCH_INTEGRATION:
+            uint8_t payload1[] = "LAUNCH_INTEGRATION";
+            send_message(MSG_TYPE_RESPONSE, payload1, strlen((const char*)payload1));
+            break;
+        case TRANSIT:
+            uint8_t payload2[] = "TRANSIT";
+            send_message(MSG_TYPE_RESPONSE, payload2, strlen((const char*)payload2));
+            break;
+        case PRE_DEPLOYMENT:
+            uint8_t payload3[] = "PRE_DEPLOYMENT";
+            send_message(MSG_TYPE_RESPONSE, payload3, strlen((const char*)payload3));
+            break;
+        case DEPLOYMENT:
+            uint8_t payload4[] = "DEPLOYMENT";
+            send_message(MSG_TYPE_RESPONSE, payload4, strlen((const char*)payload4));
+            break;
+        default:
+            // process RX buffer
+            process_received_data();
+            general_startup();
+            break;
+        }
     }
 }
-
 
 

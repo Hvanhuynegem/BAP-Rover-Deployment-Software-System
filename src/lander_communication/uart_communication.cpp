@@ -223,6 +223,7 @@ void uart_init(void)
 void uart_configure(void)
 {
     UART_state = IDLE;
+    transit_state = GENERAL_STARTUP;
     uart_init();
 }
 

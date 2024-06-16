@@ -220,6 +220,7 @@ void send_message_and_wait_for_ACK(uint8_t msg_type, const uint8_t *payload, uin
         startTimeoutTimer_TA2();
         // wait until timeout is done
         while(!timeoutOccurred){}
+
         // check whether the response is an ACK
         process_received_data();
         if(ack_received){

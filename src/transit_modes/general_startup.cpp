@@ -29,9 +29,15 @@ void general_startup(void){
     // request the transit status from the lander
     send_transit_mode_request_message();
 
+    // process RX buffer
+    process_received_data();
+
     // is umbilical cord of the rover connected?
     initialize_umbilicalcord_pin_rover();
     bool status_umbilical_cord_rover = read_umbilicalcord_pin_rover();
+
+    // process RX buffer
+    process_received_data();
 
     // based on whether the umbilical cord is connected it sends either a correct connection or an error msg
     if(status_umbilical_cord_rover){
@@ -43,16 +49,17 @@ void general_startup(void){
         send_message(MSG_TYPE_ERROR, payload_false, strlen((const char*)payload_false));
     }
 
+    // process RX buffer
+    process_received_data();
+
     // set up a connection with the rover
 
     // perform the RDS electronics checkup
-
-
 }
 
 
 void send_transit_mode_request_message(void) {
     // Create a transit mode request message
-    uint8_t payload[] = "TRANSIT_MODE";
+    uint8_t payload[] = "TM";
     send_message(MSG_TYPE_REQUEST, payload, strlen((const char*)payload));
 }
