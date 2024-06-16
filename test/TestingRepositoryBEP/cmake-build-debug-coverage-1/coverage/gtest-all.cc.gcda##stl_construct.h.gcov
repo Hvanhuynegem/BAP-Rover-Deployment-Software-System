@@ -388,14 +388,14 @@ call    7 never executed
         -:  143:   */
         -:  144:  template<typename _Tp>
         -:  145:    _GLIBCXX14_CONSTEXPR inline void
-     482*:  146:    _Destroy(_Tp* __pointer)
+     656*:  146:    _Destroy(_Tp* __pointer)
         -:  147:    {
         -:  148:#if __cplusplus > 201703L
         -:  149:      std::destroy_at(__pointer);
         -:  150:#else
-     482*:  151:      __pointer->~_Tp();
+     656*:  151:      __pointer->~_Tp();
         -:  152:#endif
-     482*:  153:    }
+     656*:  153:    }
 ------------------
 _ZSt8_DestroyIN7testing8internal9TraceInfoEEvPT_:
 function _ZSt8_DestroyIN7testing8internal9TraceInfoEEvPT_ called 0 returned 0% blocks executed 0%
@@ -476,17 +476,17 @@ call    0 never executed
     #####:  153:    }
 ------------------
 _ZSt8_DestroyINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvPT_:
-function _ZSt8_DestroyINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvPT_ called 482 returned 100% blocks executed 100%
-      482:  146:    _Destroy(_Tp* __pointer)
+function _ZSt8_DestroyINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvPT_ called 656 returned 100% blocks executed 100%
+      656:  146:    _Destroy(_Tp* __pointer)
         -:  147:    {
         -:  148:#if __cplusplus > 201703L
         -:  149:      std::destroy_at(__pointer);
         -:  150:#else
-      482:  151:      __pointer->~_Tp();
-      482:  151-block  0
-call    0 returned 482
+      656:  151:      __pointer->~_Tp();
+      656:  151-block  0
+call    0 returned 656
         -:  152:#endif
-      482:  153:    }
+      656:  153:    }
 ------------------
         -:  154:
         -:  155:  template<bool>
@@ -494,11 +494,11 @@ call    0 returned 482
         -:  157:    {
         -:  158:      template<typename _ForwardIterator>
         -:  159:	static _GLIBCXX20_CONSTEXPR void
-      25*:  160:	__destroy(_ForwardIterator __first, _ForwardIterator __last)
+      34*:  160:	__destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  161:	{
-     507*:  162:	  for (; __first != __last; ++__first)
-     482*:  163:	    std::_Destroy(std::__addressof(*__first));
-      25*:  164:	}
+     690*:  162:	  for (; __first != __last; ++__first)
+     656*:  163:	    std::_Destroy(std::__addressof(*__first));
+      34*:  164:	}
 ------------------
 _ZNSt12_Destroy_auxILb0EE9__destroyIPN7testing8internal9TraceInfoEEEvT_S6_:
 function _ZNSt12_Destroy_auxILb0EE9__destroyIPN7testing8internal9TraceInfoEEEvT_S6_ called 0 returned 0% blocks executed 0%
@@ -591,19 +591,19 @@ call    1 never executed
     #####:  164:	}
 ------------------
 _ZNSt12_Destroy_auxILb0EE9__destroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvT_S9_:
-function _ZNSt12_Destroy_auxILb0EE9__destroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvT_S9_ called 25 returned 100% blocks executed 100%
-       25:  160:	__destroy(_ForwardIterator __first, _ForwardIterator __last)
+function _ZNSt12_Destroy_auxILb0EE9__destroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvT_S9_ called 34 returned 100% blocks executed 100%
+       34:  160:	__destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  161:	{
-      507:  162:	  for (; __first != __last; ++__first)
-       25:  162-block  0
-      507:  162-block  1
-branch  0 taken 482
-branch  1 taken 25 (fallthrough)
-      482:  163:	    std::_Destroy(std::__addressof(*__first));
-      482:  163-block  0
-call    0 returned 482
-call    1 returned 482
-       25:  164:	}
+      690:  162:	  for (; __first != __last; ++__first)
+       34:  162-block  0
+      690:  162-block  1
+branch  0 taken 656
+branch  1 taken 34 (fallthrough)
+      656:  163:	    std::_Destroy(std::__addressof(*__first));
+      656:  163-block  0
+call    0 returned 656
+call    1 returned 656
+       34:  164:	}
 ------------------
         -:  165:    };
         -:  166:
@@ -612,7 +612,7 @@ call    1 returned 482
         -:  169:    {
         -:  170:      template<typename _ForwardIterator>
         -:  171:        static void
-       4*:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
+       7*:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing9TestSuiteEEEvT_S6_:
 function _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing9TestSuiteEEEvT_S6_ called 0 returned 0% blocks executed 0%
@@ -631,8 +631,8 @@ function _ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_ called 0 returned 0% blo
     #####:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing8TestInfoEEEvT_S6_:
-function _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing8TestInfoEEEvT_S6_ called 4 returned 100% blocks executed 100%
-        4:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
+function _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing8TestInfoEEEvT_S6_ called 7 returned 100% blocks executed 100%
+        7:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPyEEvT_S3_:
 function _ZNSt12_Destroy_auxILb1EE9__destroyIPyEEvT_S3_ called 0 returned 0% blocks executed 0%
@@ -659,7 +659,7 @@ function _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing8internal30Parameterized
         -:  179:   */
         -:  180:  template<typename _ForwardIterator>
         -:  181:    _GLIBCXX20_CONSTEXPR inline void
-      29*:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+      41*:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -673,8 +673,8 @@ function _ZNSt12_Destroy_auxILb1EE9__destroyIPPN7testing8internal30Parameterized
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-      29*:  196:	__destroy(__first, __last);
-      29*:  197:    }
+      41*:  196:	__destroy(__first, __last);
+      41*:  197:    }
 ------------------
 _ZSt8_DestroyIPN7testing8internal9TraceInfoEEvT_S4_:
 function _ZSt8_DestroyIPN7testing8internal9TraceInfoEEvT_S4_ called 0 returned 0% blocks executed 0%
@@ -782,8 +782,8 @@ call    0 never executed
     #####:  197:    }
 ------------------
 _ZSt8_DestroyIPPN7testing8TestInfoEEvT_S4_:
-function _ZSt8_DestroyIPPN7testing8TestInfoEEvT_S4_ called 4 returned 100% blocks executed 100%
-        4:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+function _ZSt8_DestroyIPPN7testing8TestInfoEEvT_S4_ called 7 returned 100% blocks executed 100%
+        7:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -797,10 +797,10 @@ function _ZSt8_DestroyIPPN7testing8TestInfoEEvT_S4_ called 4 returned 100% block
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-        4:  196:	__destroy(__first, __last);
-        4:  196-block  0
-call    0 returned 4
-        4:  197:    }
+        7:  196:	__destroy(__first, __last);
+        7:  196-block  0
+call    0 returned 7
+        7:  197:    }
 ------------------
 _ZSt8_DestroyIPN7testing12TestPropertyEEvT_S3_:
 function _ZSt8_DestroyIPN7testing12TestPropertyEEvT_S3_ called 0 returned 0% blocks executed 0%
@@ -971,8 +971,8 @@ call    0 never executed
     #####:  197:    }
 ------------------
 _ZSt8_DestroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvT_S7_:
-function _ZSt8_DestroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvT_S7_ called 25 returned 100% blocks executed 100%
-       25:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+function _ZSt8_DestroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvT_S7_ called 34 returned 100% blocks executed 100%
+       34:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -986,10 +986,10 @@ function _ZSt8_DestroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvT_
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-       25:  196:	__destroy(__first, __last);
-       25:  196-block  0
-call    0 returned 25
-       25:  197:    }
+       34:  196:	__destroy(__first, __last);
+       34:  196-block  0
+call    0 returned 34
+       34:  197:    }
 ------------------
 _ZSt8_DestroyIPPN7testing8internal30ParameterizedTestSuiteInfoBaseEEvT_S5_:
 function _ZSt8_DestroyIPPN7testing8internal30ParameterizedTestSuiteInfoBaseEEvT_S5_ called 0 returned 0% blocks executed 0%

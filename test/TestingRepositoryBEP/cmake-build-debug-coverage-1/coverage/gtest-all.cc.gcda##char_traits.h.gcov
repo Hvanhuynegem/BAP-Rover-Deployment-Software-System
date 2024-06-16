@@ -385,13 +385,13 @@
         -:  381:      }
         -:  382:
         -:  383:      static _GLIBCXX17_CONSTEXPR int
-function _ZNSt11char_traitsIcE7compareEPKcS2_y called 127 returned 100% blocks executed 75%
-      127:  384:      compare(const char_type* __s1, const char_type* __s2, size_t __n)
+function _ZNSt11char_traitsIcE7compareEPKcS2_y called 150 returned 100% blocks executed 75%
+      150:  384:      compare(const char_type* __s1, const char_type* __s2, size_t __n)
         -:  385:      {
-      127:  386:	if (__n == 0)
-      127:  386-block  0
+      150:  386:	if (__n == 0)
+      150:  386-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 127
+branch  1 taken 150
     #####:  387:	  return 0;
     %%%%%:  387-block  0
         -:  388:#if __cplusplus >= 201703L
@@ -405,20 +405,20 @@ branch  1 taken 127
         -:  396:	    return 0;
         -:  397:	  }
         -:  398:#endif
-      127:  399:	return __builtin_memcmp(__s1, __s2, __n);
-      127:  399-block  0
+      150:  399:	return __builtin_memcmp(__s1, __s2, __n);
+      150:  399-block  0
         -:  400:      }
         -:  401:
         -:  402:      static _GLIBCXX17_CONSTEXPR size_t
-function _ZNSt11char_traitsIcE6lengthEPKc called 53 returned 100% blocks executed 100%
-       53:  403:      length(const char_type* __s)
+function _ZNSt11char_traitsIcE6lengthEPKc called 71 returned 100% blocks executed 100%
+       71:  403:      length(const char_type* __s)
         -:  404:      {
         -:  405:#if __cplusplus >= 201703L
         -:  406:	if (std::__is_constant_evaluated())
         -:  407:	  return __gnu_cxx::char_traits<char_type>::length(__s);
         -:  408:#endif
-       53:  409:	return __builtin_strlen(__s);
-       53:  409-block  0
+       71:  409:	return __builtin_strlen(__s);
+       71:  409-block  0
         -:  410:      }
         -:  411:
         -:  412:      static _GLIBCXX17_CONSTEXPR const char_type*

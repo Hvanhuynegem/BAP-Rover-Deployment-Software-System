@@ -375,21 +375,21 @@ call    0 never executed
         -:  368:
         -:  369:__mingw_ovr
         -:  370:__attribute__((__format__ (gnu_printf, 1, 2))) __MINGW_ATTRIB_NONNULL(1)
-function _ZL6printfPKcz called 223 returned 100% blocks executed 100%
-      223:  371:int printf (const char *__format, ...)
+function _ZL6printfPKcz called 304 returned 100% blocks executed 100%
+      304:  371:int printf (const char *__format, ...)
         -:  372:{
         -:  373:  int __retval;
-      223:  374:  __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
-      223:  375:  __retval = __mingw_vfprintf( stdout, __format, __local_argv );
-      223:  375-block  0
-call    0 returned 223
-branch  1 taken 223 (fallthrough)
+      304:  374:  __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+      304:  375:  __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+      304:  375-block  0
+call    0 returned 304
+branch  1 taken 304 (fallthrough)
 branch  2 taken 0 (throw)
-      223:  375-block  1
-call    3 returned 223
-      223:  376:  __builtin_va_end( __local_argv );
-      223:  377:  return __retval;
-      223:  377-block  0
+      304:  375-block  1
+call    3 returned 304
+      304:  376:  __builtin_va_end( __local_argv );
+      304:  377:  return __retval;
+      304:  377-block  0
         -:  378:}
         -:  379:
         -:  380:#if __MINGW_FORTIFY_VA_ARG
@@ -433,13 +433,13 @@ call    3 returned 223
         -:  418:
         -:  419:__mingw_ovr
         -:  420:__attribute__((__format__ (gnu_printf, 1, 0))) __MINGW_ATTRIB_NONNULL(1)
-function _ZL7vprintfPKcPc called 116 returned 100% blocks executed 100%
-      116:  421:int vprintf (const char *__format, __builtin_va_list __local_argv)
+function _ZL7vprintfPKcPc called 158 returned 100% blocks executed 100%
+      158:  421:int vprintf (const char *__format, __builtin_va_list __local_argv)
         -:  422:{
-      116:  423:  return __mingw_vfprintf( stdout, __format, __local_argv );
-      116:  423-block  0
-call    0 returned 116
-call    1 returned 116
+      158:  423:  return __mingw_vfprintf( stdout, __format, __local_argv );
+      158:  423-block  0
+call    0 returned 158
+call    1 returned 158
         -:  424:}
         -:  425:
         -:  426:__mingw_bos_ovr

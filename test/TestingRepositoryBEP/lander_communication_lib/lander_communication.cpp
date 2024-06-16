@@ -162,6 +162,8 @@ bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *ou
                 c = END;
             } else if (c == ESC_ESC) {
                 c = ESC;
+            } else {
+                return false;
             }
             is_escaped = false;
         } else if (c == ESC) {
@@ -176,27 +178,27 @@ bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *ou
 
 
 
-void send_message_struct(const Message* msg) {
-    // Static buffer to hold serialized and encoded data
-    static uint8_t buffer[UART_BUFFER_SIZE];
-    static uint8_t temp_buffer[UART_BUFFER_SIZE];
-    uint8_t serialized_length;
-    uint16_t encoded_length;
-    bool result;
-
-    // Serialize the message into the first part of the buffer
-    convert_message_to_array(msg, temp_buffer, &serialized_length);
-
-    // Encode the message using SLIP into the second part of the buffer
-    result = slip_encode(temp_buffer, serialized_length, buffer, &encoded_length);
-    if (!result) {
-        // Handle encoding failure
-        return;
-    }
+//void send_message_struct(const Message* msg) {
+//    // Static buffer to hold serialized and encoded data
+//    static uint8_t buffer[UART_BUFFER_SIZE];
+//    static uint8_t temp_buffer[UART_BUFFER_SIZE];
+//    uint8_t serialized_length;
+//    uint16_t encoded_length;
+//    bool result;
+//
+//    // Serialize the message into the first part of the buffer
+//    convert_message_to_array(msg, temp_buffer, &serialized_length);
+//
+//    // Encode the message using SLIP into the second part of the buffer
+//    result = slip_encode(temp_buffer, serialized_length, buffer, &encoded_length);
+//    if (!result) {
+//        // Handle encoding failure
+//        return;
+//    }
 
     // Send the encoded message
 //    uart_write(buffer, encoded_length);
-}
+//}
 //
 //
 //void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){

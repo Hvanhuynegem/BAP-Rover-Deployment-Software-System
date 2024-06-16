@@ -74,18 +74,18 @@
         -:   70:  {
         -:   71:    template<typename _Tp>
         -:   72:      inline void
-function _ZNSt8__detail25__return_temporary_bufferIPN7testing8TestInfoEEEvPT_y called 4 returned 100% blocks executed 100%
-        4:   73:      __return_temporary_buffer(_Tp* __p,
+function _ZNSt8__detail25__return_temporary_bufferIPN7testing8TestInfoEEEvPT_y called 7 returned 100% blocks executed 100%
+        7:   73:      __return_temporary_buffer(_Tp* __p,
         -:   74:				size_t __len __attribute__((__unused__)))
         -:   75:      {
         -:   76:#if __cpp_sized_deallocation
-        4:   77:	::operator delete(__p, __len * sizeof(_Tp));
-        4:   77-block  0
-call    0 returned 4
+        7:   77:	::operator delete(__p, __len * sizeof(_Tp));
+        7:   77-block  0
+call    0 returned 7
         -:   78:#else
         -:   79:	::operator delete(__p);
         -:   80:#endif
-        4:   81:      }
+        7:   81:      }
         -:   82:  }
         -:   83:
         -:   84:  /**
@@ -108,34 +108,34 @@ call    0 returned 4
         -:  101:  template<typename _Tp>
         -:  102:    _GLIBCXX17_DEPRECATED
         -:  103:    pair<_Tp*, ptrdiff_t>
-function _ZSt20get_temporary_bufferIPN7testing8TestInfoEESt4pairIPT_xEx called 4 returned 100% blocks executed 53%
-        4:  104:    get_temporary_buffer(ptrdiff_t __len) _GLIBCXX_NOEXCEPT
+function _ZSt20get_temporary_bufferIPN7testing8TestInfoEESt4pairIPT_xEx called 7 returned 100% blocks executed 53%
+        7:  104:    get_temporary_buffer(ptrdiff_t __len) _GLIBCXX_NOEXCEPT
         -:  105:    {
-        4:  106:      const ptrdiff_t __max =
+        7:  106:      const ptrdiff_t __max =
         -:  107:	__gnu_cxx::__numeric_traits<ptrdiff_t>::__max / sizeof(_Tp);
-        4:  108:      if (__len > __max)
-        4:  108-block  0
+        7:  108:      if (__len > __max)
+        7:  108-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     #####:  109:	__len = __max;
     %%%%%:  109-block  0
         -:  110:
-        4:  111:      while (__len > 0)
-        4:  111-block  0
-        4:  111-block  1
-branch  0 taken 4
+        7:  111:      while (__len > 0)
+        7:  111-block  0
+        7:  111-block  1
+branch  0 taken 7
 branch  1 taken 0 (fallthrough)
         -:  112:	{
-        4:  113:	  _Tp* __tmp = static_cast<_Tp*>(::operator new(__len * sizeof(_Tp),
-        4:  113-block  0
-call    0 returned 4
+        7:  113:	  _Tp* __tmp = static_cast<_Tp*>(::operator new(__len * sizeof(_Tp),
+        7:  113-block  0
+call    0 returned 7
         -:  114:							std::nothrow));
-        4:  115:	  if (__tmp != 0)
-branch  0 taken 4 (fallthrough)
+        7:  115:	  if (__tmp != 0)
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
-        4:  116:	    return std::pair<_Tp*, ptrdiff_t>(__tmp, __len);
-        4:  116-block  0
-call    0 returned 4
+        7:  116:	    return std::pair<_Tp*, ptrdiff_t>(__tmp, __len);
+        7:  116-block  0
+call    0 returned 7
     #####:  117:	  __len = __len == 1 ? 0 : ((__len + 1) / 2);
     %%%%%:  117-block  0
 branch  0 never executed (fallthrough)
@@ -186,24 +186,24 @@ call    0 never executed
         -:  156:    public:
         -:  157:      /// As per Table mumble.
         -:  158:      size_type
-function _ZNKSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_E4sizeEv called 8 returned 100% blocks executed 100%
-        8:  159:      size() const
-        8:  160:      { return _M_len; }
-        8:  160-block  0
+function _ZNKSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_E4sizeEv called 14 returned 100% blocks executed 100%
+       14:  159:      size() const
+       14:  160:      { return _M_len; }
+       14:  160-block  0
         -:  161:
         -:  162:      /// Returns the size requested by the constructor; may be >size().
         -:  163:      size_type
-function _ZNKSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_E14requested_sizeEv called 4 returned 100% blocks executed 100%
-        4:  164:      requested_size() const
-        4:  165:      { return _M_original_len; }
-        4:  165-block  0
+function _ZNKSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_E14requested_sizeEv called 7 returned 100% blocks executed 100%
+        7:  164:      requested_size() const
+        7:  165:      { return _M_original_len; }
+        7:  165-block  0
         -:  166:
         -:  167:      /// As per Table mumble.
         -:  168:      iterator
-function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_E5beginEv called 4 returned 100% blocks executed 100%
-        4:  169:      begin()
-        4:  170:      { return _M_buffer; }
-        4:  170-block  0
+function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_E5beginEv called 7 returned 100% blocks executed 100%
+        7:  169:      begin()
+        7:  170:      { return _M_buffer; }
+        7:  170-block  0
         -:  171:
         -:  172:      /// As per Table mumble.
         -:  173:      iterator
@@ -216,15 +216,15 @@ function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8Tes
         -:  180:       */
         -:  181:      _Temporary_buffer(_ForwardIterator __seed, size_type __original_len);
         -:  182:
-function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_ED1Ev called 4 returned 100% blocks executed 100%
-        4:  183:      ~_Temporary_buffer()
+function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_ED1Ev called 7 returned 100% blocks executed 100%
+        7:  183:      ~_Temporary_buffer()
         -:  184:      {
-        4:  185:	std::_Destroy(_M_buffer, _M_buffer + _M_len);
-        4:  185-block  0
-call    0 returned 4
-        4:  186:	std::__detail::__return_temporary_buffer(_M_buffer, _M_len);
-call    0 returned 4
-        4:  187:      }
+        7:  185:	std::_Destroy(_M_buffer, _M_buffer + _M_len);
+        7:  185-block  0
+call    0 returned 7
+        7:  186:	std::__detail::__return_temporary_buffer(_M_buffer, _M_len);
+call    0 returned 7
+        7:  187:      }
         -:  188:
         -:  189:    private:
         -:  190:      // Disable copy constructor and assignment operator.
@@ -271,8 +271,8 @@ call    0 returned 4
         -:  231:    {
         -:  232:      template<typename _Pointer, typename _ForwardIterator>
         -:  233:        static void
-function _ZNSt38__uninitialized_construct_buf_dispatchILb1EE5__ucrIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS5_St6vectorIS4_SaIS4_EEEEEEvT_SC_T0_ called 4 returned 100% blocks executed 100%
-        4:  234:        __ucr(_Pointer, _Pointer, _ForwardIterator) { }
+function _ZNSt38__uninitialized_construct_buf_dispatchILb1EE5__ucrIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS5_St6vectorIS4_SaIS4_EEEEEEvT_SC_T0_ called 7 returned 100% blocks executed 100%
+        7:  234:        __ucr(_Pointer, _Pointer, _ForwardIterator) { }
         -:  235:    };
         -:  236:
         -:  237:  // Constructs objects in the range [first, last).
@@ -287,8 +287,8 @@ function _ZNSt38__uninitialized_construct_buf_dispatchILb1EE5__ucrIPPN7testing8T
         -:  246:  // Requirements: _Pointer::value_type(_Tp&&) is valid.
         -:  247:  template<typename _Pointer, typename _ForwardIterator>
         -:  248:    inline void
-function _ZSt29__uninitialized_construct_bufIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEEvT_SA_T0_ called 4 returned 100% blocks executed 100%
-        4:  249:    __uninitialized_construct_buf(_Pointer __first, _Pointer __last,
+function _ZSt29__uninitialized_construct_bufIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEEvT_SA_T0_ called 7 returned 100% blocks executed 100%
+        7:  249:    __uninitialized_construct_buf(_Pointer __first, _Pointer __last,
         -:  250:				  _ForwardIterator __seed)
         -:  251:    {
         -:  252:      typedef typename std::iterator_traits<_Pointer>::value_type
@@ -296,39 +296,39 @@ function _ZSt29__uninitialized_construct_bufIPPN7testing8TestInfoEN9__gnu_cxx17_
         -:  254:
         -:  255:      std::__uninitialized_construct_buf_dispatch<
         -:  256:        __has_trivial_constructor(_ValueType)>::
-        4:  257:	  __ucr(__first, __last, __seed);
-        4:  257-block  0
-call    0 returned 4
-        4:  258:    }
+        7:  257:	  __ucr(__first, __last, __seed);
+        7:  257-block  0
+call    0 returned 7
+        7:  258:    }
         -:  259:
         -:  260:#pragma GCC diagnostic push
         -:  261:#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         -:  262:  template<typename _ForwardIterator, typename _Tp>
-function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_EC1ES9_x called 4 returned 100% blocks executed 50%
-        4:  263:    _Temporary_buffer<_ForwardIterator, _Tp>::
+function _ZNSt17_Temporary_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES4_EC1ES9_x called 7 returned 100% blocks executed 50%
+        7:  263:    _Temporary_buffer<_ForwardIterator, _Tp>::
         -:  264:    _Temporary_buffer(_ForwardIterator __seed, size_type __original_len)
-        4:  265:    : _M_original_len(__original_len), _M_len(0), _M_buffer(0)
+        7:  265:    : _M_original_len(__original_len), _M_len(0), _M_buffer(0)
         -:  266:    {
         -:  267:      std::pair<pointer, size_type> __p(
-        4:  268:		std::get_temporary_buffer<value_type>(_M_original_len));
-        4:  268-block  0
-call    0 returned 4
+        7:  268:		std::get_temporary_buffer<value_type>(_M_original_len));
+        7:  268-block  0
+call    0 returned 7
         -:  269:
-        4:  270:      if (__p.first)
-branch  0 taken 4 (fallthrough)
+        7:  270:      if (__p.first)
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
         -:  271:	{
         -:  272:	  __try
         -:  273:	    {
-        4:  274:	      std::__uninitialized_construct_buf(__p.first, __p.first + __p.second,
-        4:  274-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7:  274:	      std::__uninitialized_construct_buf(__p.first, __p.first + __p.second,
+        7:  274-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -:  275:						 __seed);
-        4:  276:	      _M_buffer = __p.first;
-        4:  277:	      _M_len = __p.second;
-        4:  277-block  0
+        7:  276:	      _M_buffer = __p.first;
+        7:  277:	      _M_len = __p.second;
+        7:  277-block  0
         -:  278:	    }
     =====:  279:	  __catch(...)
     $$$$$:  279-block  0
@@ -343,8 +343,8 @@ call    0 never executed
 call    0 never executed
         -:  283:	    }
         -:  284:	}
-        4:  285:    }
-        4:  285-block  0
+        7:  285:    }
+        7:  285-block  0
         -:  286:#pragma GCC diagnostic pop
         -:  287:
         -:  288:_GLIBCXX_END_NAMESPACE_VERSION

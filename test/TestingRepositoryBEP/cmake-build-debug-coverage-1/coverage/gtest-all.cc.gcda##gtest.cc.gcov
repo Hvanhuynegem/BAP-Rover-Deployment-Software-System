@@ -588,21 +588,21 @@ function _ZN7testing8internalL20SumOverTestSuiteListERKSt6vectorIPNS_9TestSuiteE
         5:  429:static int SumOverTestSuiteList(const std::vector<TestSuite*>& case_list,
         -:  430:                                int (TestSuite::*method)() const) {
         5:  431:  int sum = 0;
-       25:  432:  for (size_t i = 0; i < case_list.size(); i++) {
+       40:  432:  for (size_t i = 0; i < case_list.size(); i++) {
         5:  432-block  0
-       25:  432-block  1
-call    0 returned 25
-branch  1 taken 20
+       40:  432-block  1
+call    0 returned 40
+branch  1 taken 35
 branch  2 taken 5 (fallthrough)
-      20*:  433:    sum += (case_list[i]->*method)();
-       20:  433-block  0
-call    0 returned 20
+      35*:  433:    sum += (case_list[i]->*method)();
+       35:  433-block  0
+call    0 returned 35
 branch  1 taken 0 (fallthrough)
-branch  2 taken 20
+branch  2 taken 35
     %%%%%:  433-block  1
-       20:  433-block  2
-       20:  433-block  3
-call    3 returned 20
+       35:  433-block  2
+       35:  433-block  3
+call    3 returned 35
         -:  434:  }
         5:  435:  return sum;
         5:  435-block  0
@@ -626,29 +626,29 @@ branch  5 never executed
         -:  441:}
         -:  442:
         -:  443:// Returns true if and only if the test suite failed.
-function _ZN7testing8internalL15TestSuiteFailedEPKNS_9TestSuiteE called 8 returned 100% blocks executed 88%
-        8:  444:static bool TestSuiteFailed(const TestSuite* test_suite) {
-       8*:  445:  return test_suite->should_run() && test_suite->Failed();
-        8:  445-block  0
-call    0 returned 8
-branch  1 taken 8 (fallthrough)
+function _ZN7testing8internalL15TestSuiteFailedEPKNS_9TestSuiteE called 14 returned 100% blocks executed 88%
+       14:  444:static bool TestSuiteFailed(const TestSuite* test_suite) {
+      14*:  445:  return test_suite->should_run() && test_suite->Failed();
+       14:  445-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
 branch  2 taken 0
-        8:  445-block  1
-call    3 returned 8
+       14:  445-block  1
+call    3 returned 14
 branch  4 taken 0 (fallthrough)
-branch  5 taken 8
+branch  5 taken 14
     %%%%%:  445-block  2
-        8:  445-block  3
-        8:  445-block  4
+       14:  445-block  3
+       14:  445-block  4
         -:  446:}
         -:  447:
         -:  448:// Returns true if and only if test_suite contains at least one test that
         -:  449:// should run.
-function _ZN7testing8internalL18ShouldRunTestSuiteEPKNS_9TestSuiteE called 8 returned 100% blocks executed 100%
-        8:  450:static bool ShouldRunTestSuite(const TestSuite* test_suite) {
-        8:  451:  return test_suite->should_run();
-        8:  451-block  0
-call    0 returned 8
+function _ZN7testing8internalL18ShouldRunTestSuiteEPKNS_9TestSuiteE called 14 returned 100% blocks executed 100%
+       14:  450:static bool ShouldRunTestSuite(const TestSuite* test_suite) {
+       14:  451:  return test_suite->should_run();
+       14:  451-block  0
+call    0 returned 14
         -:  452:}
         -:  453:
         -:  454:namespace {
@@ -1686,50 +1686,50 @@ call    7 never executed
         -:  723://
         -:  724:// This function implements a linear-time string globbing algorithm based on
         -:  725:// https://research.swtch.com/glob.
-function _ZN7testing8internalL20PatternMatchesStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcSA_ called 212 returned 100% blocks executed 74%
-      212:  726:static bool PatternMatchesString(const std::string& name_str,
+function _ZN7testing8internalL20PatternMatchesStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcSA_ called 290 returned 100% blocks executed 74%
+      290:  726:static bool PatternMatchesString(const std::string& name_str,
         -:  727:                                 const char* pattern, const char* pattern_end) {
-      212:  728:  const char* name = name_str.c_str();
-      212:  728-block  0
-call    0 returned 212
-      212:  729:  const char* const name_begin = name;
-      212:  730:  const char* const name_end = name + name_str.size();
-call    0 returned 212
+      290:  728:  const char* name = name_str.c_str();
+      290:  728-block  0
+call    0 returned 290
+      290:  729:  const char* const name_begin = name;
+      290:  730:  const char* const name_end = name + name_str.size();
+call    0 returned 290
         -:  731:
-      212:  732:  const char* pattern_next = pattern;
-      212:  733:  const char* name_next = name;
+      290:  732:  const char* pattern_next = pattern;
+      290:  733:  const char* name_next = name;
         -:  734:
-    5532*:  735:  while (pattern < pattern_end || name < name_end) {
-     5532:  735-block  0
-branch  0 taken 5532
+    7216*:  735:  while (pattern < pattern_end || name < name_end) {
+     7216:  735-block  0
+branch  0 taken 7216
 branch  1 taken 0 (fallthrough)
     %%%%%:  735-block  1
 branch  2 never executed
 branch  3 never executed (fallthrough)
-     5532:  736:    if (pattern < pattern_end) {
-     5532:  736-block  0
-branch  0 taken 5532 (fallthrough)
+     7216:  736:    if (pattern < pattern_end) {
+     7216:  736-block  0
+branch  0 taken 7216 (fallthrough)
 branch  1 taken 0
-     5532:  737:      switch (*pattern) {
-     5532:  737-block  0
-branch  0 taken 2817
+     7216:  737:      switch (*pattern) {
+     7216:  737-block  0
+branch  0 taken 3677
 branch  1 taken 0
-branch  2 taken 2715
-     2817:  738:        default:  // Match an ordinary character.
-    2817*:  739:          if (name < name_end && *name == *pattern) {
-     2817:  739-block  0
-branch  0 taken 2707 (fallthrough)
-branch  1 taken 110
-     2707:  739-block  1
+branch  2 taken 3539
+     3677:  738:        default:  // Match an ordinary character.
+    3677*:  739:          if (name < name_end && *name == *pattern) {
+     3677:  739-block  0
+branch  0 taken 3525 (fallthrough)
+branch  1 taken 152
+     3525:  739-block  1
 branch  2 taken 0 (fallthrough)
-branch  3 taken 2707
+branch  3 taken 3525
     #####:  740:            ++pattern;
     #####:  741:            ++name;
     #####:  742:            continue;
     %%%%%:  742-block  0
         -:  743:          }
-     2817:  744:          break;
-     2817:  744-block  0
+     3677:  744:          break;
+     3677:  744-block  0
     #####:  745:        case '?':  // Match any single character.
     #####:  746:          if (name < name_end) {
     %%%%%:  746-block  0
@@ -1742,32 +1742,32 @@ branch  1 never executed
         -:  750:          }
     #####:  751:          break;
     %%%%%:  751-block  0
-     2715:  752:        case '*':
+     3539:  752:        case '*':
         -:  753:          // Match zero or more characters. Start by skipping over the wildcard
         -:  754:          // and matching zero characters from name. If that fails, restart and
         -:  755:          // match one more character than the last attempt.
-     2715:  756:          pattern_next = pattern;
-     2715:  757:          name_next = name + 1;
-     2715:  758:          ++pattern;
-     2715:  759:          continue;
-     2715:  759-block  0
+     3539:  756:          pattern_next = pattern;
+     3539:  757:          name_next = name + 1;
+     3539:  758:          ++pattern;
+     3539:  759:          continue;
+     3539:  759-block  0
         -:  760:      }
         -:  761:    }
         -:  762:    // Failed to match a character. Restart if possible.
-     2817:  763:    if (name_begin < name_next && name_next <= name_end) {
-     2817:  763-block  0
-branch  0 taken 2715 (fallthrough)
-branch  1 taken 102
-     2715:  763-block  1
-branch  2 taken 2605 (fallthrough)
-branch  3 taken 110
-     2605:  764:      pattern = pattern_next;
-     2605:  765:      name = name_next;
-     2605:  766:      continue;
-     2605:  766-block  0
+     3677:  763:    if (name_begin < name_next && name_next <= name_end) {
+     3677:  763-block  0
+branch  0 taken 3539 (fallthrough)
+branch  1 taken 138
+     3539:  763-block  1
+branch  2 taken 3387 (fallthrough)
+branch  3 taken 152
+     3387:  764:      pattern = pattern_next;
+     3387:  765:      name = name_next;
+     3387:  766:      continue;
+     3387:  766-block  0
         -:  767:    }
-      212:  768:    return false;
-      212:  768-block  0
+      290:  768:    return false;
+      290:  768-block  0
         -:  769:  }
     #####:  770:  return true;
     %%%%%:  770-block  0
@@ -1775,24 +1775,24 @@ branch  3 taken 110
         -:  772:
         -:  773:namespace {
         -:  774:
-function _ZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 265 returned 100% blocks executed 100%
-      265:  775:bool IsGlobPattern(const std::string& pattern) {
-      265:  776:  return std::any_of(pattern.begin(), pattern.end(),
-      265:  776-block  0
-call    0 returned 265
-call    1 returned 265
-call    2 returned 265
-function _ZZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlcE_clEc called 6555 returned 100% blocks executed 100%
-     6820:  777:                     [](const char c) { return c == '?' || c == '*'; });
-     6555:  777-block  0
-branch  0 taken 6555 (fallthrough)
+function _ZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 361 returned 100% blocks executed 100%
+      361:  775:bool IsGlobPattern(const std::string& pattern) {
+      361:  776:  return std::any_of(pattern.begin(), pattern.end(),
+      361:  776-block  0
+call    0 returned 361
+call    1 returned 361
+call    2 returned 361
+function _ZZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlcE_clEc called 8403 returned 100% blocks executed 100%
+     8764:  777:                     [](const char c) { return c == '?' || c == '*'; });
+     8403:  777-block  0
+branch  0 taken 8403 (fallthrough)
 branch  1 taken 0
-     6555:  777-block  1
-branch  2 taken 214 (fallthrough)
-branch  3 taken 6341
-      214:  777-block  2
-     6341:  777-block  3
-     6555:  777-block  4
+     8403:  777-block  1
+branch  2 taken 292 (fallthrough)
+branch  3 taken 8111
+      292:  777-block  2
+     8111:  777-block  3
+     8403:  777-block  4
         -:  778:}
         -:  779:
         -:  780:class UnitTestFilter {
@@ -1804,65 +1804,65 @@ call    0 returned 2
 call    1 returned 2
         -:  783:
         -:  784:  // Constructs a filter from a string of patterns separated by `:`.
-function _ZN7testing8internal12_GLOBAL__N_114UnitTestFilterC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 76%
-        6:  785:  explicit UnitTestFilter(const std::string& filter) {
-        6:  785-block  0
-call    0 returned 6
-call    1 returned 6
+function _ZN7testing8internal12_GLOBAL__N_114UnitTestFilterC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 9 returned 100% blocks executed 76%
+        9:  785:  explicit UnitTestFilter(const std::string& filter) {
+        9:  785-block  0
+call    0 returned 9
+call    1 returned 9
         -:  786:    // By design "" filter matches "" string.
-        6:  787:    std::vector<std::string> all_patterns;
-call    0 returned 6
-        6:  788:    SplitString(filter, ':', &all_patterns);
-call    0 returned 6
-branch  1 taken 6 (fallthrough)
+        9:  787:    std::vector<std::string> all_patterns;
+call    0 returned 9
+        9:  788:    SplitString(filter, ':', &all_patterns);
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
 branch  2 taken 0 (throw)
-        6:  789:    const auto exact_match_patterns_begin = std::partition(
-        6:  789-block  0
-call    0 returned 6
-call    1 returned 6
-call    2 returned 6
-branch  3 taken 6 (fallthrough)
+        9:  789:    const auto exact_match_patterns_begin = std::partition(
+        9:  789-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 9 (fallthrough)
 branch  4 taken 0 (throw)
         -:  790:        all_patterns.begin(), all_patterns.end(), &IsGlobPattern);
         -:  791:
-       12:  792:    glob_patterns_.reserve(static_cast<size_t>(
-       12:  793:        std::distance(all_patterns.begin(), exact_match_patterns_begin)));
-        6:  793-block  0
-call    0 returned 6
-        6:  793-block  1
-call    1 returned 6
-branch  2 taken 6 (fallthrough)
+       18:  792:    glob_patterns_.reserve(static_cast<size_t>(
+       18:  793:        std::distance(all_patterns.begin(), exact_match_patterns_begin)));
+        9:  793-block  0
+call    0 returned 9
+        9:  793-block  1
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
 branch  3 taken 0 (throw)
-       12:  794:    std::move(all_patterns.begin(), exact_match_patterns_begin,
-        6:  794-block  0
-call    0 returned 6
-        6:  794-block  1
-call    1 returned 6
-call    2 returned 6
-branch  3 taken 6 (fallthrough)
+       18:  794:    std::move(all_patterns.begin(), exact_match_patterns_begin,
+        9:  794-block  0
+call    0 returned 9
+        9:  794-block  1
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 9 (fallthrough)
 branch  4 taken 0 (throw)
     $$$$$:  794-block  2
-        6:  795:              std::inserter(glob_patterns_, glob_patterns_.begin()));
-call    0 returned 6
-branch  1 taken 6 (fallthrough)
+        9:  795:              std::inserter(glob_patterns_, glob_patterns_.begin()));
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
 branch  2 taken 0 (throw)
-       12:  796:    std::move(
-        6:  796-block  0
-call    0 returned 6
-        6:  796-block  1
-call    1 returned 6
-call    2 returned 6
-branch  3 taken 6 (fallthrough)
+       18:  796:    std::move(
+        9:  796-block  0
+call    0 returned 9
+        9:  796-block  1
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 9 (fallthrough)
 branch  4 taken 0 (throw)
     $$$$$:  796-block  2
         -:  797:        exact_match_patterns_begin, all_patterns.end(),
-        6:  798:        std::inserter(exact_match_patterns_, exact_match_patterns_.begin()));
-call    0 returned 6
-branch  1 taken 6 (fallthrough)
+        9:  798:        std::inserter(exact_match_patterns_, exact_match_patterns_.begin()));
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
 branch  2 taken 0 (throw)
-        6:  799:  }
-        6:  799-block  0
-call    0 returned 6
+        9:  799:  }
+        9:  799-block  0
+call    0 returned 9
     $$$$$:  799-block  1
 call    1 never executed
     $$$$$:  799-block  2
@@ -1872,44 +1872,44 @@ call    3 never executed
         -:  800:
         -:  801:  // Returns true if and only if name matches at least one of the patterns in
         -:  802:  // the filter.
-function _ZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 208 returned 100% blocks executed 93%
-      208:  803:  bool MatchesName(const std::string& name) const {
-      365:  804:    return exact_match_patterns_.find(name) != exact_match_patterns_.end() ||
-      208:  804-block  0
-call    0 returned 208
-call    1 returned 208
-branch  2 taken 208 (fallthrough)
+function _ZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 283 returned 100% blocks executed 93%
+      283:  803:  bool MatchesName(const std::string& name) const {
+      497:  804:    return exact_match_patterns_.find(name) != exact_match_patterns_.end() ||
+      283:  804-block  0
+call    0 returned 283
+call    1 returned 283
+branch  2 taken 283 (fallthrough)
 branch  3 taken 0 (throw)
-      208:  804-block  1
-call    4 returned 208
-branch  5 taken 157 (fallthrough)
-branch  6 taken 51
-       51:  804-block  2
-      157:  804-block  3
+      283:  804-block  1
+call    4 returned 283
+branch  5 taken 214 (fallthrough)
+branch  6 taken 69
+       69:  804-block  2
+      214:  804-block  3
     $$$$$:  804-block  4
-      157:  805:           std::any_of(glob_patterns_.begin(), glob_patterns_.end(),
-      157:  805-block  0
-call    0 returned 157
-call    1 returned 157
-call    2 returned 157
-branch  3 taken 157 (fallthrough)
+      214:  805:           std::any_of(glob_patterns_.begin(), glob_patterns_.end(),
+      214:  805-block  0
+call    0 returned 214
+call    1 returned 214
+call    2 returned 214
+branch  3 taken 214 (fallthrough)
 branch  4 taken 0 (throw)
-      157:  805-block  1
+      214:  805-block  1
 branch  5 taken 0 (fallthrough)
-branch  6 taken 157
-function _ZZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlSA_E_clESA_ called 212 returned 100% blocks executed 100%
-      212:  806:                       [&name](const std::string& pattern) {
-      212:  807:                         return PatternMatchesString(
-call    0 returned 212
-call    1 returned 212
+branch  6 taken 214
+function _ZZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlSA_E_clESA_ called 290 returned 100% blocks executed 100%
+      290:  806:                       [&name](const std::string& pattern) {
+      290:  807:                         return PatternMatchesString(
+call    0 returned 290
+call    1 returned 290
         -:  808:                             name, pattern.c_str(),
-      424:  809:                             pattern.c_str() + pattern.size());
-      212:  809-block  0
-call    0 returned 212
-call    1 returned 212
-      208:  810:                       });
-      208:  810-block  0
-      208:  810-block  1
+      580:  809:                             pattern.c_str() + pattern.size());
+      290:  809-block  0
+call    0 returned 290
+call    1 returned 290
+      283:  810:                       });
+      283:  810-block  0
+      283:  810-block  1
         -:  811:  }
         -:  812:
         -:  813: private:
@@ -2051,27 +2051,27 @@ call    3 never executed
         -:  852:  // Returns true if and only if test name (this is generated by appending test
         -:  853:  // suit name and test name via a '.' character) matches the positive filter
         -:  854:  // and does not match the negative filter.
-function _ZNK7testing8internal12_GLOBAL__N_133PositiveAndNegativeUnitTestFilter11MatchesTestERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_ called 51 returned 100% blocks executed 64%
-       51:  855:  bool MatchesTest(const std::string& test_suite_name,
+function _ZNK7testing8internal12_GLOBAL__N_133PositiveAndNegativeUnitTestFilter11MatchesTestERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_ called 69 returned 100% blocks executed 64%
+       69:  855:  bool MatchesTest(const std::string& test_suite_name,
         -:  856:                   const std::string& test_name) const {
-       51:  857:    return MatchesName(test_suite_name + "." + test_name);
-       51:  857-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69:  857:    return MatchesName(test_suite_name + "." + test_name);
+       69:  857-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  857-block  1
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69:  857-block  1
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
-       51:  857-block  2
-call    6 returned 51
-branch  7 taken 51 (fallthrough)
+       69:  857-block  2
+call    6 returned 69
+branch  7 taken 69 (fallthrough)
 branch  8 taken 0 (throw)
-       51:  857-block  3
-       51:  857-block  4
-call    9 returned 51
-call   10 returned 51
-       51:  857-block  5
+       69:  857-block  3
+       69:  857-block  4
+call    9 returned 69
+call   10 returned 69
+       69:  857-block  5
     $$$$$:  857-block  6
 call   11 never executed
     $$$$$:  857-block  7
@@ -2081,21 +2081,21 @@ call   12 never executed
         -:  859:
         -:  860:  // Returns true if and only if name matches the positive filter and does not
         -:  861:  // match the negative filter.
-function _ZNK7testing8internal12_GLOBAL__N_133PositiveAndNegativeUnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 51 returned 100% blocks executed 88%
-       51:  862:  bool MatchesName(const std::string& name) const {
-     102*:  863:    return positive_filter_.MatchesName(name) &&
-       51:  863-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZNK7testing8internal12_GLOBAL__N_133PositiveAndNegativeUnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 69 returned 100% blocks executed 88%
+       69:  862:  bool MatchesName(const std::string& name) const {
+     138*:  863:    return positive_filter_.MatchesName(name) &&
+       69:  863-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0
-       51:  863-block  1
+       69:  863-block  1
     %%%%%:  863-block  2
-      102:  864:           !negative_filter_.MatchesName(name);
-       51:  864-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+      138:  864:           !negative_filter_.MatchesName(name);
+       69:  864-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0
-       51:  864-block  1
+       69:  864-block  1
         -:  865:  }
         -:  866:
         -:  867: private:
@@ -2324,10 +2324,10 @@ call    0 never executed
         -:  982:// from user test code.  GetTestTypeId() is guaranteed to always
         -:  983:// return the same value, as it always calls GetTypeId<>() from the
         -:  984:// gtest.cc, which is within the Google Test framework.
-function _ZN7testing8internal13GetTestTypeIdEv called 52 returned 100% blocks executed 100%
-       52:  985:TypeId GetTestTypeId() { return GetTypeId<Test>(); }
-       52:  985-block  0
-call    0 returned 52
+function _ZN7testing8internal13GetTestTypeIdEv called 70 returned 100% blocks executed 100%
+       70:  985:TypeId GetTestTypeId() { return GetTypeId<Test>(); }
+       70:  985-block  0
+call    0 returned 70
         -:  986:
         -:  987:// The value of GetTestTypeId() as seen from within the Google Test
         -:  988:// library.  This is solely for testing GetTestTypeId().
@@ -2686,11 +2686,11 @@ call    0 returned 2
         -: 1099:}
         -: 1100:
         -: 1101:// Gets the number of all test suites.
-function _ZNK7testing8internal12UnitTestImpl22total_test_suite_countEv called 5 returned 100% blocks executed 100%
-        5: 1102:int UnitTestImpl::total_test_suite_count() const {
-        5: 1103:  return static_cast<int>(test_suites_.size());
-        5: 1103-block  0
-call    0 returned 5
+function _ZNK7testing8internal12UnitTestImpl22total_test_suite_countEv called 8 returned 100% blocks executed 100%
+        8: 1102:int UnitTestImpl::total_test_suite_count() const {
+        8: 1103:  return static_cast<int>(test_suites_.size());
+        8: 1103-block  0
+call    0 returned 8
         -: 1104:}
         -: 1105:
         -: 1106:// Gets the number of all test suites that contain at least one test
@@ -2792,31 +2792,31 @@ call    0 never executed
         -: 1171:// A helper class for measuring elapsed times.
         -: 1172:class Timer {
         -: 1173: public:
-function _ZN7testing8internal5TimerC1Ev called 56 returned 100% blocks executed 100%
-       56: 1174:  Timer() : start_(clock::now()) {}
-       56: 1174-block  0
-call    0 returned 56
+function _ZN7testing8internal5TimerC1Ev called 77 returned 100% blocks executed 100%
+       77: 1174:  Timer() : start_(clock::now()) {}
+       77: 1174-block  0
+call    0 returned 77
         -: 1175:
         -: 1176:  // Return time elapsed in milliseconds since the timer was created.
-function _ZN7testing8internal5Timer7ElapsedEv called 56 returned 100% blocks executed 78%
-       56: 1177:  TimeInMillis Elapsed() {
-      112: 1178:    return std::chrono::duration_cast<std::chrono::milliseconds>(clock::now() -
-       56: 1178-block  0
-call    0 returned 56
-branch  1 taken 56 (fallthrough)
+function _ZN7testing8internal5Timer7ElapsedEv called 77 returned 100% blocks executed 78%
+       77: 1177:  TimeInMillis Elapsed() {
+      154: 1178:    return std::chrono::duration_cast<std::chrono::milliseconds>(clock::now() -
+       77: 1178-block  0
+call    0 returned 77
+branch  1 taken 77 (fallthrough)
 branch  2 taken 0 (throw)
     $$$$$: 1178-block  1
     $$$$$: 1178-block  2
-       56: 1179:                                                                 start_)
-       56: 1179-block  0
-call    0 returned 56
-call    1 returned 56
-branch  2 taken 56 (fallthrough)
+       77: 1179:                                                                 start_)
+       77: 1179-block  0
+call    0 returned 77
+call    1 returned 77
+branch  2 taken 77 (fallthrough)
 branch  3 taken 0 (throw)
-      112: 1180:        .count();
-       56: 1180-block  0
-call    0 returned 56
-       56: 1180-block  1
+      154: 1180:        .count();
+       77: 1180-block  0
+call    0 returned 77
+       77: 1180-block  1
         -: 1181:  }
         -: 1182:
         -: 1183: private:
@@ -2833,28 +2833,28 @@ call    0 returned 56
         -: 1194:// Returns a timestamp as milliseconds since the epoch. Note this time may jump
         -: 1195:// around subject to adjustments by the system, to measure elapsed time use
         -: 1196:// Timer instead.
-function _ZN7testing8internal15GetTimeInMillisEv called 57 returned 100% blocks executed 73%
-       57: 1197:TimeInMillis GetTimeInMillis() {
-       57: 1198:  return std::chrono::duration_cast<std::chrono::milliseconds>(
-       57: 1198-block  0
-call    0 returned 57
-branch  1 taken 57 (fallthrough)
+function _ZN7testing8internal15GetTimeInMillisEv called 78 returned 100% blocks executed 73%
+       78: 1197:TimeInMillis GetTimeInMillis() {
+       78: 1198:  return std::chrono::duration_cast<std::chrono::milliseconds>(
+       78: 1198-block  0
+call    0 returned 78
+branch  1 taken 78 (fallthrough)
 branch  2 taken 0 (throw)
-       57: 1199:             std::chrono::system_clock::now() -
-call    0 returned 57
+       78: 1199:             std::chrono::system_clock::now() -
+call    0 returned 78
     $$$$$: 1199-block  0
     $$$$$: 1199-block  1
-      171: 1200:             std::chrono::system_clock::from_time_t(0))
-       57: 1200-block  0
-call    0 returned 57
-call    1 returned 57
-branch  2 taken 57 (fallthrough)
+      234: 1200:             std::chrono::system_clock::from_time_t(0))
+       78: 1200-block  0
+call    0 returned 78
+call    1 returned 78
+branch  2 taken 78 (fallthrough)
 branch  3 taken 0 (throw)
     $$$$$: 1200-block  1
-      114: 1201:      .count();
-       57: 1201-block  0
-call    0 returned 57
-       57: 1201-block  1
+      156: 1201:      .count();
+       78: 1201-block  0
+call    0 returned 78
+       78: 1201-block  1
         -: 1202:}
         -: 1203:
         -: 1204:// Utilities
@@ -2972,65 +2972,65 @@ branch  2 never executed (throw)
         -: 1271:
         -: 1272:#endif  // GTEST_HAS_STD_WSTRING
         -: 1273:
-function _ZN7testing8internal11SplitStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEcPSt6vectorIS6_SaIS6_EE called 7 returned 100% blocks executed 69%
-        7: 1274:void SplitString(const ::std::string& str, char delimiter,
+function _ZN7testing8internal11SplitStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEcPSt6vectorIS6_SaIS6_EE called 10 returned 100% blocks executed 69%
+       10: 1274:void SplitString(const ::std::string& str, char delimiter,
         -: 1275:                 ::std::vector< ::std::string>* dest) {
-        7: 1276:  ::std::vector< ::std::string> parsed;
-        7: 1276-block  0
-call    0 returned 7
-        7: 1277:  ::std::string::size_type pos = 0;
-      266: 1278:  while (::testing::internal::AlwaysTrue()) {
-      266: 1278-block  0
-call    0 returned 266
-branch  1 taken 266 (fallthrough)
+       10: 1276:  ::std::vector< ::std::string> parsed;
+       10: 1276-block  0
+call    0 returned 10
+       10: 1277:  ::std::string::size_type pos = 0;
+      362: 1278:  while (::testing::internal::AlwaysTrue()) {
+      362: 1278-block  0
+call    0 returned 362
+branch  1 taken 362 (fallthrough)
 branch  2 taken 0 (throw)
-      266: 1278-block  1
-branch  3 taken 266
+      362: 1278-block  1
+branch  3 taken 362
 branch  4 taken 0 (fallthrough)
-      266: 1279:    const ::std::string::size_type colon = str.find(delimiter, pos);
-      266: 1279-block  0
-call    0 returned 266
-      266: 1280:    if (colon == ::std::string::npos) {
-branch  0 taken 7 (fallthrough)
-branch  1 taken 259
-        7: 1281:      parsed.push_back(str.substr(pos));
-        7: 1281-block  0
-call    0 returned 7
-branch  1 taken 7 (fallthrough)
+      362: 1279:    const ::std::string::size_type colon = str.find(delimiter, pos);
+      362: 1279-block  0
+call    0 returned 362
+      362: 1280:    if (colon == ::std::string::npos) {
+branch  0 taken 10 (fallthrough)
+branch  1 taken 352
+       10: 1281:      parsed.push_back(str.substr(pos));
+       10: 1281-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
 branch  2 taken 0 (throw)
-        7: 1281-block  1
-call    3 returned 7
-branch  4 taken 7 (fallthrough)
+       10: 1281-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
 branch  5 taken 0 (throw)
-        7: 1281-block  2
-call    6 returned 7
+       10: 1281-block  2
+call    6 returned 10
     $$$$$: 1281-block  3
 call    7 never executed
     $$$$$: 1281-block  4
-        7: 1282:      break;
+       10: 1282:      break;
         -: 1283:    } else {
-      259: 1284:      parsed.push_back(str.substr(pos, colon - pos));
-      259: 1284-block  0
-call    0 returned 259
-branch  1 taken 259 (fallthrough)
+      352: 1284:      parsed.push_back(str.substr(pos, colon - pos));
+      352: 1284-block  0
+call    0 returned 352
+branch  1 taken 352 (fallthrough)
 branch  2 taken 0 (throw)
-      259: 1284-block  1
-call    3 returned 259
-branch  4 taken 259 (fallthrough)
+      352: 1284-block  1
+call    3 returned 352
+branch  4 taken 352 (fallthrough)
 branch  5 taken 0 (throw)
-      259: 1284-block  2
-call    6 returned 259
+      352: 1284-block  2
+call    6 returned 352
     $$$$$: 1284-block  3
 call    7 never executed
     $$$$$: 1284-block  4
-      259: 1285:      pos = colon + 1;
+      352: 1285:      pos = colon + 1;
         -: 1286:    }
         -: 1287:  }
-        7: 1288:  dest->swap(parsed);
-        7: 1288-block  0
-call    0 returned 7
-        7: 1289:}
-call    0 returned 7
+       10: 1288:  dest->swap(parsed);
+       10: 1288-block  0
+call    0 returned 10
+       10: 1289:}
+call    0 returned 10
     $$$$$: 1289-block  0
 call    1 never executed
         -: 1290:
@@ -3041,15 +3041,15 @@ call    1 never executed
         -: 1295:// ASSERT/EXPECT in a procedure adds over 200 bytes to the procedure's
         -: 1296:// stack frame leading to huge stack frames in some cases; gcc does not reuse
         -: 1297:// the stack space.
-function _ZN7testing7MessageC2Ev called 114 returned 100% blocks executed 80%
-      114: 1298:Message::Message() : ss_(new ::std::stringstream) {
-      114: 1298-block  0
-call    0 returned 114
-call    1 returned 114
-branch  2 taken 114 (fallthrough)
+function _ZN7testing7MessageC2Ev called 141 returned 100% blocks executed 80%
+      141: 1298:Message::Message() : ss_(new ::std::stringstream) {
+      141: 1298-block  0
+call    0 returned 141
+call    1 returned 141
+branch  2 taken 141 (fallthrough)
 branch  3 taken 0 (throw)
-      114: 1298-block  1
-call    4 returned 114
+      141: 1298-block  1
+call    4 returned 141
     $$$$$: 1298-block  2
 branch  5 never executed (fallthrough)
 branch  6 never executed
@@ -3057,11 +3057,11 @@ branch  6 never executed
 call    7 never executed
         -: 1299:  // By default, we want there to be enough precision when printing
         -: 1300:  // a double to a Message.
-      114: 1301:  *ss_ << std::setprecision(std::numeric_limits<double>::digits10 + 2);
-call    0 returned 114
-call    1 returned 114
-call    2 returned 114
-      114: 1302:}
+      141: 1301:  *ss_ << std::setprecision(std::numeric_limits<double>::digits10 + 2);
+call    0 returned 141
+call    1 returned 141
+call    2 returned 141
+      141: 1302:}
         -: 1303:
         -: 1304:// These two overloads allow streaming a wide C string to a Message
         -: 1305:// using the UTF-8 encoding.
@@ -3118,12 +3118,12 @@ call    2 never executed
         -: 1321:
         -: 1322:// Gets the text streamed to this object so far as an std::string.
         -: 1323:// Each '\0' character in the buffer is replaced with "\\0".
-function _ZNK7testing7Message9GetStringB5cxx11Ev called 114 returned 100% blocks executed 100%
-      114: 1324:std::string Message::GetString() const {
-      114: 1325:  return internal::StringStreamToString(ss_.get());
-      114: 1325-block  0
-call    0 returned 114
-call    1 returned 114
+function _ZNK7testing7Message9GetStringB5cxx11Ev called 141 returned 100% blocks executed 100%
+      141: 1324:std::string Message::GetString() const {
+      141: 1325:  return internal::StringStreamToString(ss_.get());
+      141: 1325-block  0
+call    0 returned 141
+call    1 returned 141
         -: 1326:}
         -: 1327:
         -: 1328:namespace internal {
@@ -4204,20 +4204,20 @@ call    0 never executed
 call    1 never executed
         -: 1659:
         -: 1660:// Helper function for implementing ASSERT_NEAR.
-function _ZN7testing8internal20DoubleNearPredFormatEPKcS2_S2_ddd called 0 returned 0% blocks executed 0%
-    #####: 1661:AssertionResult DoubleNearPredFormat(const char* expr1, const char* expr2,
+function _ZN7testing8internal20DoubleNearPredFormatEPKcS2_S2_ddd called 3 returned 100% blocks executed 8%
+        3: 1661:AssertionResult DoubleNearPredFormat(const char* expr1, const char* expr2,
         -: 1662:                                     const char* abs_error_expr, double val1,
         -: 1663:                                     double val2, double abs_error) {
-    #####: 1664:  const double diff = fabs(val1 - val2);
-    #####: 1665:  if (diff <= abs_error) return AssertionSuccess();
-    %%%%%: 1665-block  0
-branch  0 never executed (fallthrough)
-branch  1 never executed
-    %%%%%: 1665-block  1
-call    2 never executed
-branch  3 never executed (fallthrough)
-branch  4 never executed (throw)
-    %%%%%: 1665-block  2
+        3: 1664:  const double diff = fabs(val1 - val2);
+        3: 1665:  if (diff <= abs_error) return AssertionSuccess();
+        3: 1665-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3: 1665-block  1
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3: 1665-block  2
         -: 1666:
         -: 1667:  // Find the value which is closest to zero.
     #####: 1668:  const double min_abs = std::min(fabs(val1), fabs(val2));
@@ -6446,55 +6446,55 @@ call    1 never executed
         -: 2236:
         -: 2237:// Converts the buffer in a stringstream to an std::string, converting NUL
         -: 2238:// bytes to "\\0" along the way.
-function _ZN7testing8internal20StringStreamToStringEPNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEE called 114 returned 100% blocks executed 75%
-      114: 2239:std::string StringStreamToString(::std::stringstream* ss) {
-      114: 2240:  const ::std::string& str = ss->str();
-      114: 2240-block  0
-call    0 returned 114
-branch  1 taken 114 (fallthrough)
+function _ZN7testing8internal20StringStreamToStringEPNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEE called 141 returned 100% blocks executed 75%
+      141: 2239:std::string StringStreamToString(::std::stringstream* ss) {
+      141: 2240:  const ::std::string& str = ss->str();
+      141: 2240-block  0
+call    0 returned 141
+branch  1 taken 141 (fallthrough)
 branch  2 taken 0 (throw)
-      114: 2241:  const char* const start = str.c_str();
-      114: 2241-block  0
-call    0 returned 114
-      114: 2242:  const char* const end = start + str.length();
-call    0 returned 114
+      141: 2241:  const char* const start = str.c_str();
+      141: 2241-block  0
+call    0 returned 141
+      141: 2242:  const char* const end = start + str.length();
+call    0 returned 141
         -: 2243:
-      114: 2244:  std::string result;
-call    0 returned 114
-      114: 2245:  result.reserve(static_cast<size_t>(2 * (end - start)));
-call    0 returned 114
-branch  1 taken 114 (fallthrough)
+      141: 2244:  std::string result;
+call    0 returned 141
+      141: 2245:  result.reserve(static_cast<size_t>(2 * (end - start)));
+call    0 returned 141
+branch  1 taken 141 (fallthrough)
 branch  2 taken 0 (throw)
-     1212: 2246:  for (const char* ch = start; ch != end; ++ch) {
-      114: 2246-block  0
-     1098: 2246-block  1
-     1212: 2246-block  2
-branch  0 taken 1098
-branch  1 taken 114 (fallthrough)
-     1098: 2247:    if (*ch == '\0') {
-     1098: 2247-block  0
+     1265: 2246:  for (const char* ch = start; ch != end; ++ch) {
+      141: 2246-block  0
+     1124: 2246-block  1
+     1265: 2246-block  2
+branch  0 taken 1124
+branch  1 taken 141 (fallthrough)
+     1124: 2247:    if (*ch == '\0') {
+     1124: 2247-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 1098
+branch  1 taken 1124
     #####: 2248:      result += "\\0";  // Replaces NUL with "\\0";
     %%%%%: 2248-block  0
 call    0 never executed
 branch  1 never executed (fallthrough)
 branch  2 never executed (throw)
         -: 2249:    } else {
-     1098: 2250:      result += *ch;
-     1098: 2250-block  0
-call    0 returned 1098
-branch  1 taken 1098 (fallthrough)
+     1124: 2250:      result += *ch;
+     1124: 2250-block  0
+call    0 returned 1124
+branch  1 taken 1124 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2251:    }
         -: 2252:  }
         -: 2253:
-      228: 2254:  return result;
-      114: 2254-block  0
-      114: 2254-block  1
-      114: 2255:}
-      114: 2255-block  0
-call    0 returned 114
+      282: 2254:  return result;
+      141: 2254-block  0
+      141: 2254-block  1
+      141: 2255:}
+      141: 2255-block  0
+call    0 returned 141
     $$$$$: 2255-block  1
 call    1 never executed
     $$$$$: 2255-block  2
@@ -6558,13 +6558,13 @@ call    1 never executed
         -: 2273:// class TestResult
         -: 2274:
         -: 2275:// Creates an empty TestResult.
-function _ZN7testing10TestResultC2Ev called 56 returned 100% blocks executed 100%
-       56: 2276:TestResult::TestResult()
-       56: 2277:    : death_test_count_(0), start_timestamp_(0), elapsed_time_(0) {}
-       56: 2277-block  0
-call    0 returned 56
-call    1 returned 56
-call    2 returned 56
+function _ZN7testing10TestResultC2Ev called 77 returned 100% blocks executed 100%
+       77: 2276:TestResult::TestResult()
+       77: 2277:    : death_test_count_(0), start_timestamp_(0), elapsed_time_(0) {}
+       77: 2277-block  0
+call    0 returned 77
+call    1 returned 77
+call    2 returned 77
         -: 2278:
         -: 2279:// D'tor.
 function _ZN7testing10TestResultD2Ev called 0 returned 0% blocks executed 0%
@@ -7097,16 +7097,16 @@ call    4 never executed
         -: 2420:}
         -: 2421:
         -: 2422:// Clears the object.
-function _ZN7testing10TestResult5ClearEv called 55 returned 100% blocks executed 100%
-       55: 2423:void TestResult::Clear() {
-       55: 2424:  test_part_results_.clear();
-       55: 2424-block  0
-call    0 returned 55
-       55: 2425:  test_properties_.clear();
-call    0 returned 55
-       55: 2426:  death_test_count_ = 0;
-       55: 2427:  elapsed_time_ = 0;
-       55: 2428:}
+function _ZN7testing10TestResult5ClearEv called 76 returned 100% blocks executed 100%
+       76: 2423:void TestResult::Clear() {
+       76: 2424:  test_part_results_.clear();
+       76: 2424-block  0
+call    0 returned 76
+       76: 2425:  test_properties_.clear();
+call    0 returned 76
+       76: 2426:  death_test_count_ = 0;
+       76: 2427:  elapsed_time_ = 0;
+       76: 2428:}
         -: 2429:
         -: 2430:// Returns true off the test part was skipped.
 function _ZN7testingL15TestPartSkippedERKNS_14TestPartResultE called 0 returned 0% blocks executed 0%
@@ -7117,32 +7117,32 @@ call    0 never executed
         -: 2433:}
         -: 2434:
         -: 2435:// Returns true if and only if the test was skipped.
-function _ZNK7testing10TestResult7SkippedEv called 260 returned 100% blocks executed 88%
-      260: 2436:bool TestResult::Skipped() const {
-     260*: 2437:  return !Failed() && CountIf(test_part_results_, TestPartSkipped) > 0;
-      260: 2437-block  0
-call    0 returned 260
-branch  1 taken 260 (fallthrough)
+function _ZNK7testing10TestResult7SkippedEv called 353 returned 100% blocks executed 88%
+      353: 2436:bool TestResult::Skipped() const {
+     353*: 2437:  return !Failed() && CountIf(test_part_results_, TestPartSkipped) > 0;
+      353: 2437-block  0
+call    0 returned 353
+branch  1 taken 353 (fallthrough)
 branch  2 taken 0
-      260: 2437-block  1
-call    3 returned 260
+      353: 2437-block  1
+call    3 returned 353
 branch  4 taken 0 (fallthrough)
-branch  5 taken 260
+branch  5 taken 353
     %%%%%: 2437-block  2
-      260: 2437-block  3
-      260: 2437-block  4
+      353: 2437-block  3
+      353: 2437-block  4
         -: 2438:}
         -: 2439:
         -: 2440:// Returns true if and only if the test failed.
-function _ZNK7testing10TestResult6FailedEv called 529 returned 100% blocks executed 50%
-      529: 2441:bool TestResult::Failed() const {
-     529*: 2442:  for (int i = 0; i < total_part_count(); ++i) {
-      529: 2442-block  0
+function _ZNK7testing10TestResult6FailedEv called 721 returned 100% blocks executed 50%
+      721: 2441:bool TestResult::Failed() const {
+     721*: 2442:  for (int i = 0; i < total_part_count(); ++i) {
+      721: 2442-block  0
     %%%%%: 2442-block  1
-      529: 2442-block  2
-call    0 returned 529
+      721: 2442-block  2
+call    0 returned 721
 branch  1 taken 0
-branch  2 taken 529 (fallthrough)
+branch  2 taken 721 (fallthrough)
     #####: 2443:    if (GetTestPartResult(i).failed()) return true;
     %%%%%: 2443-block  0
 call    0 never executed
@@ -7151,8 +7151,8 @@ branch  2 never executed (fallthrough)
 branch  3 never executed
     %%%%%: 2443-block  1
         -: 2444:  }
-      529: 2445:  return false;
-      529: 2445-block  0
+      721: 2445:  return false;
+      721: 2445-block  0
         -: 2446:}
         -: 2447:
         -: 2448:// Returns true if and only if the test part fatally failed.
@@ -7164,11 +7164,11 @@ call    0 never executed
         -: 2451:}
         -: 2452:
         -: 2453:// Returns true if and only if the test fatally failed.
-function _ZNK7testing10TestResult15HasFatalFailureEv called 103 returned 100% blocks executed 100%
-      103: 2454:bool TestResult::HasFatalFailure() const {
-      103: 2455:  return CountIf(test_part_results_, TestPartFatallyFailed) > 0;
-      103: 2455-block  0
-call    0 returned 103
+function _ZNK7testing10TestResult15HasFatalFailureEv called 139 returned 100% blocks executed 100%
+      139: 2454:bool TestResult::HasFatalFailure() const {
+      139: 2455:  return CountIf(test_part_results_, TestPartFatallyFailed) > 0;
+      139: 2455-block  0
+call    0 returned 139
         -: 2456:}
         -: 2457:
         -: 2458:// Returns true if and only if the test part non-fatally failed.
@@ -7189,11 +7189,11 @@ call    0 never executed
         -: 2467:
         -: 2468:// Gets the number of all test parts.  This is the sum of the number
         -: 2469:// of successful test parts and the number of failed test parts.
-function _ZNK7testing10TestResult16total_part_countEv called 529 returned 100% blocks executed 100%
-      529: 2470:int TestResult::total_part_count() const {
-      529: 2471:  return static_cast<int>(test_part_results_.size());
-      529: 2471-block  0
-call    0 returned 529
+function _ZNK7testing10TestResult16total_part_countEv called 721 returned 100% blocks executed 100%
+      721: 2470:int TestResult::total_part_count() const {
+      721: 2471:  return static_cast<int>(test_part_results_.size());
+      721: 2471-block  0
+call    0 returned 721
         -: 2472:}
         -: 2473:
         -: 2474:// Returns the number of the test properties.
@@ -7209,15 +7209,15 @@ call    0 never executed
         -: 2481:// Creates a Test object.
         -: 2482:
         -: 2483:// The c'tor saves the states of all flags.
-function _ZN7testing4TestC2Ev called 51 returned 100% blocks executed 71%
-       51: 2484:Test::Test() : gtest_flag_saver_(new GTEST_FLAG_SAVER_) {}
-       51: 2484-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+function _ZN7testing4TestC2Ev called 69 returned 100% blocks executed 71%
+       69: 2484:Test::Test() : gtest_flag_saver_(new GTEST_FLAG_SAVER_) {}
+       69: 2484-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0 (throw)
-       51: 2484-block  1
-call    4 returned 51
+       69: 2484-block  1
+call    4 returned 69
     $$$$$: 2484-block  2
 branch  5 never executed (fallthrough)
 branch  6 never executed
@@ -7227,7 +7227,7 @@ call    7 never executed
         -: 2486:// The d'tor restores the states of all flags.  The actual work is
         -: 2487:// done by the d'tor of the gtest_flag_saver_ field, and thus not
         -: 2488:// visible here.
-      51*: 2489:Test::~Test() = default;
+      69*: 2489:Test::~Test() = default;
 ------------------
 _ZN7testing4TestD0Ev:
 function _ZN7testing4TestD0Ev called 0 returned 0% blocks executed 0%
@@ -7237,23 +7237,23 @@ call    0 never executed
 call    1 never executed
 ------------------
 _ZN7testing4TestD2Ev:
-function _ZN7testing4TestD2Ev called 51 returned 100% blocks executed 100%
-       51: 2489:Test::~Test() = default;
-       51: 2489-block  0
-call    0 returned 51
+function _ZN7testing4TestD2Ev called 69 returned 100% blocks executed 100%
+       69: 2489:Test::~Test() = default;
+       69: 2489-block  0
+call    0 returned 69
 ------------------
         -: 2490:
         -: 2491:// Sets up the test fixture.
         -: 2492://
         -: 2493:// A sub-class may override this.
-function _ZN7testing4Test5SetUpEv called 51 returned 100% blocks executed 100%
-       51: 2494:void Test::SetUp() {}
+function _ZN7testing4Test5SetUpEv called 69 returned 100% blocks executed 100%
+       69: 2494:void Test::SetUp() {}
         -: 2495:
         -: 2496:// Tears down the test fixture.
         -: 2497://
         -: 2498:// A sub-class may override this.
-function _ZN7testing4Test8TearDownEv called 51 returned 100% blocks executed 100%
-       51: 2499:void Test::TearDown() {}
+function _ZN7testing4Test8TearDownEv called 69 returned 100% blocks executed 100%
+       69: 2499:void Test::TearDown() {}
         -: 2500:
         -: 2501:// Allows user supplied key value pairs to be recorded for later output.
 function _ZN7testing4Test14RecordPropertyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_ called 0 returned 0% blocks executed 0%
@@ -7301,35 +7301,35 @@ call    8 never executed
         -: 2524:// same fixture class as the first test in the current test suite.  If
         -: 2525:// yes, it returns true; otherwise it generates a Google Test failure and
         -: 2526:// returns false.
-function _ZN7testing4Test19HasSameFixtureClassEv called 51 returned 100% blocks executed 15%
-       51: 2527:bool Test::HasSameFixtureClass() {
-       51: 2528:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
-       51: 2528-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN7testing4Test19HasSameFixtureClassEv called 69 returned 100% blocks executed 15%
+       69: 2527:bool Test::HasSameFixtureClass() {
+       69: 2528:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
+       69: 2528-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2529:  const TestSuite* const test_suite = impl->current_test_suite();
-       51: 2529-block  0
-call    0 returned 51
+       69: 2529:  const TestSuite* const test_suite = impl->current_test_suite();
+       69: 2529-block  0
+call    0 returned 69
         -: 2530:
         -: 2531:  // Info about the first test in the current test suite.
-       51: 2532:  const TestInfo* const first_test_info = test_suite->test_info_list()[0];
-call    0 returned 51
-call    1 returned 51
-       51: 2533:  const internal::TypeId first_fixture_id = first_test_info->fixture_class_id_;
-       51: 2534:  const char* const first_test_name = first_test_info->name();
-call    0 returned 51
+       69: 2532:  const TestInfo* const first_test_info = test_suite->test_info_list()[0];
+call    0 returned 69
+call    1 returned 69
+       69: 2533:  const internal::TypeId first_fixture_id = first_test_info->fixture_class_id_;
+       69: 2534:  const char* const first_test_name = first_test_info->name();
+call    0 returned 69
         -: 2535:
         -: 2536:  // Info about the current test.
-       51: 2537:  const TestInfo* const this_test_info = impl->current_test_info();
-call    0 returned 51
-       51: 2538:  const internal::TypeId this_fixture_id = this_test_info->fixture_class_id_;
-       51: 2539:  const char* const this_test_name = this_test_info->name();
-call    0 returned 51
+       69: 2537:  const TestInfo* const this_test_info = impl->current_test_info();
+call    0 returned 69
+       69: 2538:  const internal::TypeId this_fixture_id = this_test_info->fixture_class_id_;
+       69: 2539:  const char* const this_test_name = this_test_info->name();
+call    0 returned 69
         -: 2540:
-       51: 2541:  if (this_fixture_id != first_fixture_id) {
+       69: 2541:  if (this_fixture_id != first_fixture_id) {
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
         -: 2542:    // Is the first test defined using TEST?
     #####: 2543:    const bool first_is_TEST = first_fixture_id == internal::GetTestTypeId();
     %%%%%: 2543-block  0
@@ -7548,8 +7548,8 @@ branch  5 never executed (throw)
     %%%%%: 2582-block  0
         -: 2583:  }
         -: 2584:
-       51: 2585:  return true;
-       51: 2585-block  0
+       69: 2585:  return true;
+       69: 2585-block  0
         -: 2586:}
         -: 2587:
         -: 2588:namespace internal {
@@ -7647,7 +7647,7 @@ call    8 never executed
         -: 2621:// exceptions in the same function.  Therefore, we provide a separate
         -: 2622:// wrapper function for handling SEH exceptions.)
         -: 2623:template <class T, typename Result>
-      264: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+      360: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2625:                                              const char* location) {
         -: 2626:#if GTEST_HAS_SEH
         -: 2627:  __try {
@@ -7658,7 +7658,7 @@ call    8 never executed
         -: 2632:  }
         -: 2633:#else
         -: 2634:  (void)location;
-     264*: 2635:  return (object->*method)();
+     360*: 2635:  return (object->*method)();
         -: 2636:#endif  // GTEST_HAS_SEH
         -: 2637:}
 ------------------
@@ -7687,8 +7687,8 @@ call    2 returned 1
         -: 2637:}
 ------------------
 _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_9TestSuiteEvEET0_PT_MS4_FS3_vEPKc:
-function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_9TestSuiteEvEET0_PT_MS4_FS3_vEPKc called 8 returned 100% blocks executed 80%
-        8: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_9TestSuiteEvEET0_PT_MS4_FS3_vEPKc called 14 returned 100% blocks executed 80%
+       14: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2625:                                              const char* location) {
         -: 2626:#if GTEST_HAS_SEH
         -: 2627:  __try {
@@ -7699,20 +7699,20 @@ function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_9TestSu
         -: 2632:  }
         -: 2633:#else
         -: 2634:  (void)location;
-       8*: 2635:  return (object->*method)();
-        8: 2635-block  0
+      14*: 2635:  return (object->*method)();
+       14: 2635-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 8
+branch  1 taken 14
     %%%%%: 2635-block  1
-        8: 2635-block  2
-        8: 2635-block  3
-call    2 returned 8
+       14: 2635-block  2
+       14: 2635-block  3
+call    2 returned 14
         -: 2636:#endif  // GTEST_HAS_SEH
         -: 2637:}
 ------------------
 _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc:
-function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc called 51 returned 100% blocks executed 83%
-       51: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc called 69 returned 100% blocks executed 83%
+       69: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2625:                                              const char* location) {
         -: 2626:#if GTEST_HAS_SEH
         -: 2627:  __try {
@@ -7723,20 +7723,20 @@ function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS0_15Test
         -: 2632:  }
         -: 2633:#else
         -: 2634:  (void)location;
-      51*: 2635:  return (object->*method)();
-       51: 2635-block  0
-branch  0 taken 51 (fallthrough)
+      69*: 2635:  return (object->*method)();
+       69: 2635-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 2635-block  1
+       69: 2635-block  1
     %%%%%: 2635-block  2
-       51: 2635-block  3
-call    2 returned 51
+       69: 2635-block  3
+call    2 returned 69
         -: 2636:#endif  // GTEST_HAS_SEH
         -: 2637:}
 ------------------
 _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc:
-function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc called 204 returned 100% blocks executed 100%
-      204: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc called 276 returned 100% blocks executed 100%
+      276: 2624:Result HandleSehExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2625:                                              const char* location) {
         -: 2626:#if GTEST_HAS_SEH
         -: 2627:  __try {
@@ -7747,14 +7747,14 @@ function _ZN7testing8internal38HandleSehExceptionsInMethodIfSupportedINS_4TestEv
         -: 2632:  }
         -: 2633:#else
         -: 2634:  (void)location;
-      204: 2635:  return (object->*method)();
-      204: 2635-block  0
-branch  0 taken 153 (fallthrough)
-branch  1 taken 51
-      153: 2635-block  1
-       51: 2635-block  2
-      204: 2635-block  3
-call    2 returned 204
+      276: 2635:  return (object->*method)();
+      276: 2635-block  0
+branch  0 taken 207 (fallthrough)
+branch  1 taken 69
+      207: 2635-block  1
+       69: 2635-block  2
+      276: 2635-block  3
+call    2 returned 276
         -: 2636:#endif  // GTEST_HAS_SEH
         -: 2637:}
 ------------------
@@ -7763,7 +7763,7 @@ call    2 returned 204
         -: 2640:// exceptions, if they are supported; returns the 0-value for type
         -: 2641:// Result in case of an SEH exception.
         -: 2642:template <class T, typename Result>
-      264: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+      360: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2644:                                           const char* location) {
         -: 2645:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2646:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -7788,10 +7788,10 @@ call    2 returned 204
         -: 2665:  // throw statement in the code under test.  For this reason, we perform
         -: 2666:  // the check early, sacrificing the ability to affect Google Test's
         -: 2667:  // exception handling in the method where the exception is thrown.
-      264: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+      360: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
         -: 2669:#if GTEST_HAS_EXCEPTIONS
         -: 2670:    try {
-      264: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+      360: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
     =====: 2672:    } catch (const AssertionException&) {  // NOLINT
         -: 2673:      // This failure was reported already.
     =====: 2674:    } catch (const internal::GoogleTestFailureException&) {  // NOLINT
@@ -7940,8 +7940,8 @@ call    2 never executed
         -: 2695:}
 ------------------
 _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_9TestSuiteEvEET0_PT_MS4_FS3_vEPKc:
-function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_9TestSuiteEvEET0_PT_MS4_FS3_vEPKc called 8 returned 100% blocks executed 18%
-        8: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_9TestSuiteEvEET0_PT_MS4_FS3_vEPKc called 14 returned 100% blocks executed 18%
+       14: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2644:                                           const char* location) {
         -: 2645:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2646:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -7966,20 +7966,20 @@ function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_9TestSuite
         -: 2665:  // throw statement in the code under test.  For this reason, we perform
         -: 2666:  // the check early, sacrificing the ability to affect Google Test's
         -: 2667:  // exception handling in the method where the exception is thrown.
-        8: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
-        8: 2668-block  0
-call    0 returned 8
-call    1 returned 8
-branch  2 taken 8 (fallthrough)
+       14: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+       14: 2668-block  0
+call    0 returned 14
+call    1 returned 14
+branch  2 taken 14 (fallthrough)
 branch  3 taken 0
         -: 2669:#if GTEST_HAS_EXCEPTIONS
         -: 2670:    try {
-        8: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
-        8: 2671-block  0
-call    0 returned 8
-branch  1 taken 8 (fallthrough)
+       14: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+       14: 2671-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
 branch  2 taken 0 (throw)
-        8: 2671-block  1
+       14: 2671-block  1
     =====: 2672:    } catch (const AssertionException&) {  // NOLINT
     $$$$$: 2672-block  0
 branch  0 never executed
@@ -8062,8 +8062,8 @@ call    2 never executed
         -: 2695:}
 ------------------
 _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc:
-function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc called 51 returned 100% blocks executed 18%
-       51: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFactoryBaseEPNS_4TestEEET0_PT_MS6_FS5_vEPKc called 69 returned 100% blocks executed 18%
+       69: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2644:                                           const char* location) {
         -: 2645:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2646:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -8088,20 +8088,20 @@ function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS0_15TestFac
         -: 2665:  // throw statement in the code under test.  For this reason, we perform
         -: 2666:  // the check early, sacrificing the ability to affect Google Test's
         -: 2667:  // exception handling in the method where the exception is thrown.
-       51: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
-       51: 2668-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+       69: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+       69: 2668-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0
         -: 2669:#if GTEST_HAS_EXCEPTIONS
         -: 2670:    try {
-       51: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
-       51: 2671-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+       69: 2671-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2671-block  1
+       69: 2671-block  1
     =====: 2672:    } catch (const AssertionException&) {  // NOLINT
     $$$$$: 2672-block  0
 branch  0 never executed
@@ -8184,8 +8184,8 @@ call    2 never executed
         -: 2695:}
 ------------------
 _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc:
-function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc called 204 returned 100% blocks executed 18%
-      204: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
+function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET0_PT_MS4_FS3_vEPKc called 276 returned 100% blocks executed 18%
+      276: 2643:Result HandleExceptionsInMethodIfSupported(T* object, Result (T::*method)(),
         -: 2644:                                           const char* location) {
         -: 2645:  // NOTE: The user code can affect the way in which Google Test handles
         -: 2646:  // exceptions by setting GTEST_FLAG(catch_exceptions), but only before
@@ -8210,20 +8210,20 @@ function _ZN7testing8internal35HandleExceptionsInMethodIfSupportedINS_4TestEvEET
         -: 2665:  // throw statement in the code under test.  For this reason, we perform
         -: 2666:  // the check early, sacrificing the ability to affect Google Test's
         -: 2667:  // exception handling in the method where the exception is thrown.
-      204: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
-      204: 2668-block  0
-call    0 returned 204
-call    1 returned 204
-branch  2 taken 204 (fallthrough)
+      276: 2668:  if (internal::GetUnitTestImpl()->catch_exceptions()) {
+      276: 2668-block  0
+call    0 returned 276
+call    1 returned 276
+branch  2 taken 276 (fallthrough)
 branch  3 taken 0
         -: 2669:#if GTEST_HAS_EXCEPTIONS
         -: 2670:    try {
-      204: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
-      204: 2671-block  0
-call    0 returned 204
-branch  1 taken 204 (fallthrough)
+      276: 2671:      return HandleSehExceptionsInMethodIfSupported(object, method, location);
+      276: 2671-block  0
+call    0 returned 276
+branch  1 taken 276 (fallthrough)
 branch  2 taken 0 (throw)
-      204: 2671-block  1
+      276: 2671-block  1
     =====: 2672:    } catch (const AssertionException&) {  // NOLINT
     $$$$$: 2672-block  0
 branch  0 never executed
@@ -8309,67 +8309,67 @@ call    2 never executed
         -: 2697:}  // namespace internal
         -: 2698:
         -: 2699:// Runs the test and updates the test result.
-function _ZN7testing4Test3RunEv called 51 returned 100% blocks executed 90%
-       51: 2700:void Test::Run() {
-      51*: 2701:  if (!HasSameFixtureClass()) return;
-       51: 2701-block  0
-call    0 returned 51
+function _ZN7testing4Test3RunEv called 69 returned 100% blocks executed 90%
+       69: 2700:void Test::Run() {
+      69*: 2701:  if (!HasSameFixtureClass()) return;
+       69: 2701-block  0
+call    0 returned 69
 branch  1 taken 0 (fallthrough)
-branch  2 taken 51
+branch  2 taken 69
     %%%%%: 2701-block  1
         -: 2702:
-       51: 2703:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
-       51: 2703-block  0
-call    0 returned 51
-       51: 2704:  impl->os_stack_trace_getter()->UponLeavingGTest();
-call    0 returned 51
-call    1 returned 51
-       51: 2705:  internal::HandleExceptionsInMethodIfSupported(this, &Test::SetUp, "SetUp()");
-call    0 returned 51
+       69: 2703:  internal::UnitTestImpl* const impl = internal::GetUnitTestImpl();
+       69: 2703-block  0
+call    0 returned 69
+       69: 2704:  impl->os_stack_trace_getter()->UponLeavingGTest();
+call    0 returned 69
+call    1 returned 69
+       69: 2705:  internal::HandleExceptionsInMethodIfSupported(this, &Test::SetUp, "SetUp()");
+call    0 returned 69
         -: 2706:  // We will run the test only if SetUp() was successful and didn't call
         -: 2707:  // GTEST_SKIP().
-      51*: 2708:  if (!HasFatalFailure() && !IsSkipped()) {
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+      69*: 2708:  if (!HasFatalFailure() && !IsSkipped()) {
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0
-       51: 2708-block  0
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 2708-block  0
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0
-       51: 2708-block  1
+       69: 2708-block  1
     %%%%%: 2708-block  2
-       51: 2708-block  3
-branch  6 taken 51 (fallthrough)
+       69: 2708-block  3
+branch  6 taken 69 (fallthrough)
 branch  7 taken 0
-       51: 2709:    impl->os_stack_trace_getter()->UponLeavingGTest();
-       51: 2709-block  0
-call    0 returned 51
-call    1 returned 51
-       51: 2710:    internal::HandleExceptionsInMethodIfSupported(this, &Test::TestBody,
-call    0 returned 51
+       69: 2709:    impl->os_stack_trace_getter()->UponLeavingGTest();
+       69: 2709-block  0
+call    0 returned 69
+call    1 returned 69
+       69: 2710:    internal::HandleExceptionsInMethodIfSupported(this, &Test::TestBody,
+call    0 returned 69
         -: 2711:                                                  "the test body");
         -: 2712:  }
         -: 2713:
         -: 2714:  // However, we want to clean up as much as possible.  Hence we will
         -: 2715:  // always call TearDown(), even if SetUp() or the test body has
         -: 2716:  // failed.
-       51: 2717:  impl->os_stack_trace_getter()->UponLeavingGTest();
-       51: 2717-block  0
-call    0 returned 51
-call    1 returned 51
-       51: 2718:  internal::HandleExceptionsInMethodIfSupported(this, &Test::TearDown,
-call    0 returned 51
+       69: 2717:  impl->os_stack_trace_getter()->UponLeavingGTest();
+       69: 2717-block  0
+call    0 returned 69
+call    1 returned 69
+       69: 2718:  internal::HandleExceptionsInMethodIfSupported(this, &Test::TearDown,
+call    0 returned 69
         -: 2719:                                                "TearDown()");
         -: 2720:}
         -: 2721:
         -: 2722:// Returns true if and only if the current test has a fatal failure.
-function _ZN7testing4Test15HasFatalFailureEv called 103 returned 100% blocks executed 100%
-      103: 2723:bool Test::HasFatalFailure() {
-      103: 2724:  return internal::GetUnitTestImpl()->current_test_result()->HasFatalFailure();
-      103: 2724-block  0
-call    0 returned 103
-call    1 returned 103
-call    2 returned 103
+function _ZN7testing4Test15HasFatalFailureEv called 139 returned 100% blocks executed 100%
+      139: 2723:bool Test::HasFatalFailure() {
+      139: 2724:  return internal::GetUnitTestImpl()->current_test_result()->HasFatalFailure();
+      139: 2724-block  0
+call    0 returned 139
+call    1 returned 139
+call    2 returned 139
         -: 2725:}
         -: 2726:
         -: 2727:// Returns true if and only if the current test has a non-fatal failure.
@@ -8385,35 +8385,35 @@ call    2 never executed
         -: 2732:}
         -: 2733:
         -: 2734:// Returns true if and only if the current test was skipped.
-function _ZN7testing4Test9IsSkippedEv called 103 returned 100% blocks executed 100%
-      103: 2735:bool Test::IsSkipped() {
-      103: 2736:  return internal::GetUnitTestImpl()->current_test_result()->Skipped();
-      103: 2736-block  0
-call    0 returned 103
-call    1 returned 103
-call    2 returned 103
+function _ZN7testing4Test9IsSkippedEv called 139 returned 100% blocks executed 100%
+      139: 2735:bool Test::IsSkipped() {
+      139: 2736:  return internal::GetUnitTestImpl()->current_test_result()->Skipped();
+      139: 2736-block  0
+call    0 returned 139
+call    1 returned 139
+call    2 returned 139
         -: 2737:}
         -: 2738:
         -: 2739:// class TestInfo
         -: 2740:
         -: 2741:// Constructs a TestInfo object. It assumes ownership of the test factory
         -: 2742:// object.
-function _ZN7testing8TestInfoC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_PKcS8_NS_8internal12CodeLocationEPKvPNS9_15TestFactoryBaseE called 51 returned 100% blocks executed 29%
-       51: 2743:TestInfo::TestInfo(std::string a_test_suite_name, std::string a_name,
+function _ZN7testing8TestInfoC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_PKcS8_NS_8internal12CodeLocationEPKvPNS9_15TestFactoryBaseE called 69 returned 100% blocks executed 29%
+       69: 2743:TestInfo::TestInfo(std::string a_test_suite_name, std::string a_name,
         -: 2744:                   const char* a_type_param, const char* a_value_param,
         -: 2745:                   internal::CodeLocation a_code_location,
         -: 2746:                   internal::TypeId fixture_class_id,
-       51: 2747:                   internal::TestFactoryBase* factory)
-       51: 2748:    : test_suite_name_(std::move(a_test_suite_name)),
-       51: 2748-block  0
-call    0 returned 51
-call    1 returned 51
-       51: 2749:      name_(std::move(a_name)),
-call    0 returned 51
-call    1 returned 51
-      51*: 2750:      type_param_(a_type_param ? new std::string(a_type_param) : nullptr),
+       69: 2747:                   internal::TestFactoryBase* factory)
+       69: 2748:    : test_suite_name_(std::move(a_test_suite_name)),
+       69: 2748-block  0
+call    0 returned 69
+call    1 returned 69
+       69: 2749:      name_(std::move(a_name)),
+call    0 returned 69
+call    1 returned 69
+      69*: 2750:      type_param_(a_type_param ? new std::string(a_type_param) : nullptr),
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%: 2750-block  0
 call    2 never executed
 branch  3 never executed (fallthrough)
@@ -8424,11 +8424,11 @@ call    5 never executed
 branch  6 never executed (fallthrough)
 branch  7 never executed (throw)
     %%%%%: 2750-block  3
-       51: 2750-block  4
-       51: 2750-block  5
-call    8 returned 51
+       69: 2750-block  4
+       69: 2750-block  5
+call    8 returned 69
 branch  9 taken 0 (fallthrough)
-branch 10 taken 51
+branch 10 taken 69
     $$$$$: 2750-block  6
 branch 11 never executed (fallthrough)
 branch 12 never executed
@@ -8441,10 +8441,10 @@ branch 15 never executed (fallthrough)
 branch 16 never executed
     $$$$$: 2750-block 10
 call   17 never executed
-      51*: 2751:      value_param_(a_value_param ? new std::string(a_value_param) : nullptr),
-       51: 2751-block  0
+      69*: 2751:      value_param_(a_value_param ? new std::string(a_value_param) : nullptr),
+       69: 2751-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%: 2751-block  1
 call    2 never executed
 branch  3 never executed (fallthrough)
@@ -8455,11 +8455,11 @@ call    5 never executed
 branch  6 never executed (fallthrough)
 branch  7 never executed (throw)
     %%%%%: 2751-block  4
-       51: 2751-block  5
-       51: 2751-block  6
-call    8 returned 51
+       69: 2751-block  5
+       69: 2751-block  6
+call    8 returned 69
 branch  9 taken 0 (fallthrough)
-branch 10 taken 51
+branch 10 taken 69
     $$$$$: 2751-block  7
 branch 11 never executed (fallthrough)
 branch 12 never executed
@@ -8472,21 +8472,21 @@ branch 15 never executed (fallthrough)
 branch 16 never executed
     $$$$$: 2751-block 11
 call   17 never executed
-       51: 2752:      location_(std::move(a_code_location)),
-       51: 2752-block  0
-call    0 returned 51
-call    1 returned 51
-       51: 2753:      fixture_class_id_(fixture_class_id),
-       51: 2754:      should_run_(false),
-       51: 2755:      is_disabled_(false),
-       51: 2756:      matches_filter_(false),
-       51: 2757:      is_in_another_shard_(false),
-       51: 2758:      factory_(factory),
-       51: 2759:      result_() {}
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2752:      location_(std::move(a_code_location)),
+       69: 2752-block  0
+call    0 returned 69
+call    1 returned 69
+       69: 2753:      fixture_class_id_(fixture_class_id),
+       69: 2754:      should_run_(false),
+       69: 2755:      is_disabled_(false),
+       69: 2756:      matches_filter_(false),
+       69: 2757:      is_in_another_shard_(false),
+       69: 2758:      factory_(factory),
+       69: 2759:      result_() {}
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2759-block  0
+       69: 2759-block  0
     $$$$$: 2759-block  1
 call    3 never executed
     $$$$$: 2759-block  2
@@ -8534,33 +8534,33 @@ call    8 never executed
         -: 2781://   factory:          pointer to the factory that creates a test object.
         -: 2782://                     The newly created TestInfo instance will assume
         -: 2783://                     ownership of the factory object.
-function _ZN7testing8internal23MakeAndRegisterTestInfoENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcS8_S8_NS0_12CodeLocationEPKvPFvvESD_PNS0_15TestFactoryBaseE called 51 returned 100% blocks executed 56%
-       51: 2784:TestInfo* MakeAndRegisterTestInfo(
+function _ZN7testing8internal23MakeAndRegisterTestInfoENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcS8_S8_NS0_12CodeLocationEPKvPFvvESD_PNS0_15TestFactoryBaseE called 69 returned 100% blocks executed 56%
+       69: 2784:TestInfo* MakeAndRegisterTestInfo(
         -: 2785:    std::string test_suite_name, const char* name, const char* type_param,
         -: 2786:    const char* value_param, CodeLocation code_location,
         -: 2787:    TypeId fixture_class_id, SetUpTestSuiteFunc set_up_tc,
         -: 2788:    TearDownTestSuiteFunc tear_down_tc, TestFactoryBase* factory) {
         -: 2789:  TestInfo* const test_info =
-       51: 2790:      new TestInfo(std::move(test_suite_name), name, type_param, value_param,
-       51: 2790-block  0
-call    0 returned 51
-      204: 2791:                   std::move(code_location), fixture_class_id, factory);
-       51: 2791-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-       51: 2791-block  1
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 2790:      new TestInfo(std::move(test_suite_name), name, type_param, value_param,
+       69: 2790-block  0
+call    0 returned 69
+      276: 2791:                   std::move(code_location), fixture_class_id, factory);
+       69: 2791-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+       69: 2791-block  1
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
-call    6 returned 51
-call    7 returned 51
-branch  8 taken 51 (fallthrough)
+call    6 returned 69
+call    7 returned 69
+branch  8 taken 69 (fallthrough)
 branch  9 taken 0 (throw)
-       51: 2791-block  2
-call   10 returned 51
-call   11 returned 51
-call   12 returned 51
+       69: 2791-block  2
+call   10 returned 69
+call   11 returned 69
+call   12 returned 69
     $$$$$: 2791-block  3
 call   13 never executed
     $$$$$: 2791-block  4
@@ -8576,11 +8576,11 @@ branch 16 never executed (fallthrough)
 branch 17 never executed
     $$$$$: 2791-block 11
 call   18 never executed
-       51: 2792:  GetUnitTestImpl()->AddTestInfo(set_up_tc, tear_down_tc, test_info);
-call    0 returned 51
-call    1 returned 51
-       51: 2793:  return test_info;
-       51: 2793-block  0
+       69: 2792:  GetUnitTestImpl()->AddTestInfo(set_up_tc, tear_down_tc, test_info);
+call    0 returned 69
+call    1 returned 69
+       69: 2793:  return test_info;
+       69: 2793-block  0
         -: 2794:}
         -: 2795:
 function _ZN7testing8internal26ReportInvalidTestSuiteTypeEPKcRKNS0_12CodeLocationE called 0 returned 0% blocks executed 0%
@@ -8718,19 +8718,19 @@ call    0 returned 1
         -: 2826:
         -: 2827:// Creates the test object, runs it, records its result, and then
         -: 2828:// deletes it.
-function _ZN7testing8TestInfo3RunEv called 51 returned 100% blocks executed 86%
-       51: 2829:void TestInfo::Run() {
-       51: 2830:  TestEventListener* repeater = UnitTest::GetInstance()->listeners().repeater();
-       51: 2830-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN7testing8TestInfo3RunEv called 69 returned 100% blocks executed 86%
+       69: 2829:void TestInfo::Run() {
+       69: 2830:  TestEventListener* repeater = UnitTest::GetInstance()->listeners().repeater();
+       69: 2830-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2830-block  1
-call    3 returned 51
-call    4 returned 51
-       51: 2831:  if (!should_run_) {
+       69: 2830-block  1
+call    3 returned 69
+call    4 returned 69
+       69: 2831:  if (!should_run_) {
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     #####: 2832:    if (is_disabled_ && matches_filter_) repeater->OnTestDisabled(*this);
     %%%%%: 2832-block  0
 branch  0 never executed (fallthrough)
@@ -8747,127 +8747,127 @@ branch  6 never executed (throw)
         -: 2834:  }
         -: 2835:
         -: 2836:  // Tells UnitTest where to store test result.
-       51: 2837:  UnitTest::GetInstance()->set_current_test_info(this);
-       51: 2837-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2837:  UnitTest::GetInstance()->set_current_test_info(this);
+       69: 2837-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2837-block  1
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 2837-block  1
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
         -: 2838:
         -: 2839:  // Notifies the unit test event listeners that a test is about to start.
-       51: 2840:  repeater->OnTestStart(*this);
-       51: 2840-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2840:  repeater->OnTestStart(*this);
+       69: 2840-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2841:  result_.set_start_timestamp(internal::GetTimeInMillis());
-       51: 2841-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2841:  result_.set_start_timestamp(internal::GetTimeInMillis());
+       69: 2841-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2841-block  1
-call    3 returned 51
-       51: 2842:  internal::Timer timer;
-call    0 returned 51
-       51: 2843:  UnitTest::GetInstance()->UponLeavingGTest();
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2841-block  1
+call    3 returned 69
+       69: 2842:  internal::Timer timer;
+call    0 returned 69
+       69: 2843:  UnitTest::GetInstance()->UponLeavingGTest();
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2843-block  0
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 2843-block  0
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
         -: 2844:
         -: 2845:  // Creates the test object.
-      102: 2846:  Test* const test = internal::HandleExceptionsInMethodIfSupported(
-       51: 2847:      factory_, &internal::TestFactoryBase::CreateTest,
-       51: 2847-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+      138: 2846:  Test* const test = internal::HandleExceptionsInMethodIfSupported(
+       69: 2847:      factory_, &internal::TestFactoryBase::CreateTest,
+       69: 2847-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2848:      "the test fixture's constructor");
         -: 2849:
         -: 2850:  // Runs the test if the constructor didn't generate a fatal failure or invoke
         -: 2851:  // GTEST_SKIP().
         -: 2852:  // Note that the object will not be null
-      51*: 2853:  if (!Test::HasFatalFailure() && !Test::IsSkipped()) {
-       51: 2853-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+      69*: 2853:  if (!Test::HasFatalFailure() && !Test::IsSkipped()) {
+       69: 2853-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2853-block  1
-branch  3 taken 51 (fallthrough)
+       69: 2853-block  1
+branch  3 taken 69 (fallthrough)
 branch  4 taken 0
-       51: 2853-block  2
-call    5 returned 51
-branch  6 taken 51 (fallthrough)
+       69: 2853-block  2
+call    5 returned 69
+branch  6 taken 69 (fallthrough)
 branch  7 taken 0 (throw)
-       51: 2853-block  3
-branch  8 taken 51 (fallthrough)
+       69: 2853-block  3
+branch  8 taken 69 (fallthrough)
 branch  9 taken 0
-       51: 2853-block  4
+       69: 2853-block  4
     %%%%%: 2853-block  5
-       51: 2853-block  6
-branch 10 taken 51 (fallthrough)
+       69: 2853-block  6
+branch 10 taken 69 (fallthrough)
 branch 11 taken 0
         -: 2854:    // This doesn't throw as all user code that can throw are wrapped into
         -: 2855:    // exception handling code.
-       51: 2856:    test->Run();
-       51: 2856-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2856:    test->Run();
+       69: 2856-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2857:  }
         -: 2858:
-       51: 2859:  if (test != nullptr) {
-       51: 2859-block  0
-branch  0 taken 51 (fallthrough)
+       69: 2859:  if (test != nullptr) {
+       69: 2859-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
         -: 2860:    // Deletes the test object.
-       51: 2861:    UnitTest::GetInstance()->UponLeavingGTest();
-       51: 2861-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2861:    UnitTest::GetInstance()->UponLeavingGTest();
+       69: 2861-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2861-block  1
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 2861-block  1
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
-       51: 2862:    internal::HandleExceptionsInMethodIfSupported(
-       51: 2862-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2862:    internal::HandleExceptionsInMethodIfSupported(
+       69: 2862-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2863:        test, &Test::DeleteSelf_, "the test fixture's destructor");
         -: 2864:  }
         -: 2865:
-       51: 2866:  result_.set_elapsed_time(timer.Elapsed());
-       51: 2866-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2866:  result_.set_elapsed_time(timer.Elapsed());
+       69: 2866-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2866-block  1
-call    3 returned 51
+       69: 2866-block  1
+call    3 returned 69
         -: 2867:
         -: 2868:  // Notifies the unit test event listener that a test has just finished.
-       51: 2869:  repeater->OnTestEnd(*this);
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2869:  repeater->OnTestEnd(*this);
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2870:
         -: 2871:  // Tells UnitTest to stop associating assertion results to this
         -: 2872:  // test.
-       51: 2873:  UnitTest::GetInstance()->set_current_test_info(nullptr);
-       51: 2873-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2873:  UnitTest::GetInstance()->set_current_test_info(nullptr);
+       69: 2873-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2873-block  1
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 2873-block  1
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
         -: 2874:}
         -: 2875:
@@ -8954,35 +8954,35 @@ call    1 never executed
         -: 2898:// class TestSuite
         -: 2899:
         -: 2900:// Gets the number of successful tests in this test suite.
-function _ZNK7testing9TestSuite21successful_test_countEv called 4 returned 100% blocks executed 100%
-        4: 2901:int TestSuite::successful_test_count() const {
-        4: 2902:  return CountIf(test_info_list_, TestPassed);
-        4: 2902-block  0
-call    0 returned 4
+function _ZNK7testing9TestSuite21successful_test_countEv called 7 returned 100% blocks executed 100%
+        7: 2901:int TestSuite::successful_test_count() const {
+        7: 2902:  return CountIf(test_info_list_, TestPassed);
+        7: 2902-block  0
+call    0 returned 7
         -: 2903:}
         -: 2904:
         -: 2905:// Gets the number of successful tests in this test suite.
-function _ZNK7testing9TestSuite18skipped_test_countEv called 4 returned 100% blocks executed 100%
-        4: 2906:int TestSuite::skipped_test_count() const {
-        4: 2907:  return CountIf(test_info_list_, TestSkipped);
-        4: 2907-block  0
-call    0 returned 4
+function _ZNK7testing9TestSuite18skipped_test_countEv called 7 returned 100% blocks executed 100%
+        7: 2906:int TestSuite::skipped_test_count() const {
+        7: 2907:  return CountIf(test_info_list_, TestSkipped);
+        7: 2907-block  0
+call    0 returned 7
         -: 2908:}
         -: 2909:
         -: 2910:// Gets the number of failed tests in this test suite.
-function _ZNK7testing9TestSuite17failed_test_countEv called 8 returned 100% blocks executed 100%
-        8: 2911:int TestSuite::failed_test_count() const {
-        8: 2912:  return CountIf(test_info_list_, TestFailed);
-        8: 2912-block  0
-call    0 returned 8
+function _ZNK7testing9TestSuite17failed_test_countEv called 14 returned 100% blocks executed 100%
+       14: 2911:int TestSuite::failed_test_count() const {
+       14: 2912:  return CountIf(test_info_list_, TestFailed);
+       14: 2912-block  0
+call    0 returned 14
         -: 2913:}
         -: 2914:
         -: 2915:// Gets the number of disabled tests that will be reported in the XML report.
-function _ZNK7testing9TestSuite30reportable_disabled_test_countEv called 4 returned 100% blocks executed 100%
-        4: 2916:int TestSuite::reportable_disabled_test_count() const {
-        4: 2917:  return CountIf(test_info_list_, TestReportableDisabled);
-        4: 2917-block  0
-call    0 returned 4
+function _ZNK7testing9TestSuite30reportable_disabled_test_countEv called 7 returned 100% blocks executed 100%
+        7: 2916:int TestSuite::reportable_disabled_test_count() const {
+        7: 2917:  return CountIf(test_info_list_, TestReportableDisabled);
+        7: 2917-block  0
+call    0 returned 7
         -: 2918:}
         -: 2919:
         -: 2920:// Gets the number of disabled tests in this test suite.
@@ -9002,19 +9002,19 @@ call    0 never executed
         -: 2928:}
         -: 2929:
         -: 2930:// Get the number of tests in this test suite that should run.
-function _ZNK7testing9TestSuite17test_to_run_countEv called 16 returned 100% blocks executed 100%
-       16: 2931:int TestSuite::test_to_run_count() const {
-       16: 2932:  return CountIf(test_info_list_, ShouldRunTest);
-       16: 2932-block  0
-call    0 returned 16
+function _ZNK7testing9TestSuite17test_to_run_countEv called 28 returned 100% blocks executed 100%
+       28: 2931:int TestSuite::test_to_run_count() const {
+       28: 2932:  return CountIf(test_info_list_, ShouldRunTest);
+       28: 2932-block  0
+call    0 returned 28
         -: 2933:}
         -: 2934:
         -: 2935:// Gets the number of all tests.
-function _ZNK7testing9TestSuite16total_test_countEv called 55 returned 100% blocks executed 100%
-       55: 2936:int TestSuite::total_test_count() const {
-       55: 2937:  return static_cast<int>(test_info_list_.size());
-       55: 2937-block  0
-call    0 returned 55
+function _ZNK7testing9TestSuite16total_test_countEv called 76 returned 100% blocks executed 100%
+       76: 2936:int TestSuite::total_test_count() const {
+       76: 2937:  return static_cast<int>(test_info_list_.size());
+       76: 2937-block  0
+call    0 returned 76
         -: 2938:}
         -: 2939:
         -: 2940:// Creates a TestSuite with the given name.
@@ -9026,14 +9026,14 @@ call    0 returned 55
         -: 2946://                 this is not a typed or a type-parameterized test suite.
         -: 2947://   set_up_tc:    pointer to the function that sets up the test suite
         -: 2948://   tear_down_tc: pointer to the function that tears down the test suite
-function _ZN7testing9TestSuiteC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcPFvvESC_ called 4 returned 100% blocks executed 30%
-        4: 2949:TestSuite::TestSuite(const std::string& a_name, const char* a_type_param,
+function _ZN7testing9TestSuiteC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcPFvvESC_ called 7 returned 100% blocks executed 30%
+        7: 2949:TestSuite::TestSuite(const std::string& a_name, const char* a_type_param,
         -: 2950:                     internal::SetUpTestSuiteFunc set_up_tc,
-        4: 2951:                     internal::TearDownTestSuiteFunc tear_down_tc)
-        4: 2952:    : name_(a_name),
-       4*: 2953:      type_param_(a_type_param ? new std::string(a_type_param) : nullptr),
+        7: 2951:                     internal::TearDownTestSuiteFunc tear_down_tc)
+        7: 2952:    : name_(a_name),
+       7*: 2953:      type_param_(a_type_param ? new std::string(a_type_param) : nullptr),
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     %%%%%: 2953-block  0
 call    2 never executed
 branch  3 never executed (fallthrough)
@@ -9044,11 +9044,11 @@ call    5 never executed
 branch  6 never executed (fallthrough)
 branch  7 never executed (throw)
     %%%%%: 2953-block  3
-        4: 2953-block  4
-        4: 2953-block  5
-call    8 returned 4
+        7: 2953-block  4
+        7: 2953-block  5
+call    8 returned 7
 branch  9 taken 0 (fallthrough)
-branch 10 taken 4
+branch 10 taken 7
     $$$$$: 2953-block  6
 branch 11 never executed (fallthrough)
 branch 12 never executed
@@ -9061,20 +9061,20 @@ branch 15 never executed (fallthrough)
 branch 16 never executed
     $$$$$: 2953-block 10
 call   17 never executed
-        4: 2954:      set_up_tc_(set_up_tc),
-        4: 2955:      tear_down_tc_(tear_down_tc),
-        4: 2956:      should_run_(false),
-        4: 2957:      start_timestamp_(0),
-        8: 2958:      elapsed_time_(0) {}
-        4: 2958-block  0
-call    0 returned 4
-        4: 2958-block  1
-call    1 returned 4
-call    2 returned 4
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 2954:      set_up_tc_(set_up_tc),
+        7: 2955:      tear_down_tc_(tear_down_tc),
+        7: 2956:      should_run_(false),
+        7: 2957:      start_timestamp_(0),
+       14: 2958:      elapsed_time_(0) {}
+        7: 2958-block  0
+call    0 returned 7
+        7: 2958-block  1
+call    1 returned 7
+call    2 returned 7
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 2958-block  2
+        7: 2958-block  2
     $$$$$: 2958-block  3
 call    6 never executed
     $$$$$: 2958-block  4
@@ -9133,63 +9133,63 @@ call    2 never executed
         -: 2972:
         -: 2973:// Returns the i-th test among all the tests. i can range from 0 to
         -: 2974:// total_test_count() - 1. If i is not in that range, returns NULL.
-function _ZN7testing9TestSuite18GetMutableTestInfoEi called 51 returned 100% blocks executed 86%
-       51: 2975:TestInfo* TestSuite::GetMutableTestInfo(int i) {
-       51: 2976:  const int index = GetElementOr(test_indices_, i, -1);
-       51: 2976-block  0
-call    0 returned 51
-      51*: 2977:  return index < 0 ? nullptr : test_info_list_[static_cast<size_t>(index)];
-branch  0 taken 51 (fallthrough)
+function _ZN7testing9TestSuite18GetMutableTestInfoEi called 69 returned 100% blocks executed 86%
+       69: 2975:TestInfo* TestSuite::GetMutableTestInfo(int i) {
+       69: 2976:  const int index = GetElementOr(test_indices_, i, -1);
+       69: 2976-block  0
+call    0 returned 69
+      69*: 2977:  return index < 0 ? nullptr : test_info_list_[static_cast<size_t>(index)];
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 2977-block  0
-call    2 returned 51
+       69: 2977-block  0
+call    2 returned 69
     %%%%%: 2977-block  1
-       51: 2977-block  2
+       69: 2977-block  2
         -: 2978:}
         -: 2979:
         -: 2980:// Adds a test to this test suite.  Will delete the test upon
         -: 2981:// destruction of the TestSuite object.
-function _ZN7testing9TestSuite11AddTestInfoEPNS_8TestInfoE called 51 returned 100% blocks executed 100%
-       51: 2982:void TestSuite::AddTestInfo(TestInfo* test_info) {
-       51: 2983:  test_info_list_.push_back(test_info);
-       51: 2983-block  0
-call    0 returned 51
-       51: 2984:  test_indices_.push_back(static_cast<int>(test_indices_.size()));
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+function _ZN7testing9TestSuite11AddTestInfoEPNS_8TestInfoE called 69 returned 100% blocks executed 100%
+       69: 2982:void TestSuite::AddTestInfo(TestInfo* test_info) {
+       69: 2983:  test_info_list_.push_back(test_info);
+       69: 2983-block  0
+call    0 returned 69
+       69: 2984:  test_indices_.push_back(static_cast<int>(test_indices_.size()));
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0 (throw)
-       51: 2985:}
-       51: 2985-block  0
+       69: 2985:}
+       69: 2985-block  0
         -: 2986:
         -: 2987:// Runs every test in this TestSuite.
-function _ZN7testing9TestSuite3RunEv called 4 returned 100% blocks executed 72%
-        4: 2988:void TestSuite::Run() {
-       4*: 2989:  if (!should_run_) return;
-        4: 2989-block  0
+function _ZN7testing9TestSuite3RunEv called 7 returned 100% blocks executed 72%
+        7: 2988:void TestSuite::Run() {
+       7*: 2989:  if (!should_run_) return;
+        7: 2989-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     %%%%%: 2989-block  1
     %%%%%: 2989-block  2
         -: 2990:
-        4: 2991:  UnitTest::GetInstance()->set_current_test_suite(this);
-        4: 2991-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 2991:  UnitTest::GetInstance()->set_current_test_suite(this);
+        7: 2991-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 2991-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 2991-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
         -: 2992:
-        4: 2993:  TestEventListener* repeater = UnitTest::GetInstance()->listeners().repeater();
-        4: 2993-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 2993:  TestEventListener* repeater = UnitTest::GetInstance()->listeners().repeater();
+        7: 2993-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 2993-block  1
-call    3 returned 4
-call    4 returned 4
+        7: 2993-block  1
+call    3 returned 7
+call    4 returned 7
         -: 2994:
         -: 2995:  // Ensure our tests are in a deterministic order.
         -: 2996:  //
@@ -9201,100 +9201,100 @@ call    4 returned 4
         -: 3002:  // within a translation unit. But this is not true of the manual registration
         -: 3003:  // API, and in more exotic scenarios a single file may be part of multiple
         -: 3004:  // translation units.
-        4: 3005:  std::stable_sort(test_info_list_.begin(), test_info_list_.end(),
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-branch  3 taken 4 (fallthrough)
+        7: 3005:  std::stable_sort(test_info_list_.begin(), test_info_list_.end(),
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
 branch  4 taken 0 (throw)
-function _ZZN7testing9TestSuite3RunEvENKUlPKNS_8TestInfoES3_E_clES3_S3_ called 121 returned 100% blocks executed 88%
-      121: 3006:                   [](const TestInfo* const a, const TestInfo* const b) {
-      121: 3007:                     if (const int result = std::strcmp(a->file(), b->file())) {
-      121: 3007-block  0
-call    0 returned 121
-call    1 returned 121
+function _ZZN7testing9TestSuite3RunEvENKUlPKNS_8TestInfoES3_E_clES3_S3_ called 163 returned 100% blocks executed 88%
+      163: 3006:                   [](const TestInfo* const a, const TestInfo* const b) {
+      163: 3007:                     if (const int result = std::strcmp(a->file(), b->file())) {
+      163: 3007-block  0
+call    0 returned 163
+call    1 returned 163
 branch  2 taken 0 (fallthrough)
-branch  3 taken 121
+branch  3 taken 163
     #####: 3008:                       return result < 0;
     %%%%%: 3008-block  0
         -: 3009:                     }
         -: 3010:
-      121: 3011:                     return a->line() < b->line();
-      121: 3011-block  0
-call    0 returned 121
-call    1 returned 121
+      163: 3011:                     return a->line() < b->line();
+      163: 3011-block  0
+call    0 returned 163
+call    1 returned 163
         -: 3012:                   });
         -: 3013:
         -: 3014:  // Call both legacy and the new API
-        4: 3015:  repeater->OnTestSuiteStart(*this);
-        4: 3015-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3015:  repeater->OnTestSuiteStart(*this);
+        7: 3015-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3016://  Legacy API is deprecated but still available
         -: 3017:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-        4: 3018:  repeater->OnTestCaseStart(*this);
-        4: 3018-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3018:  repeater->OnTestCaseStart(*this);
+        7: 3018-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3019:#endif  //  GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -: 3020:
-        4: 3021:  UnitTest::GetInstance()->UponLeavingGTest();
-        4: 3021-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3021:  UnitTest::GetInstance()->UponLeavingGTest();
+        7: 3021-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3021-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3021-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 3022:  internal::HandleExceptionsInMethodIfSupported(
-        4: 3022-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3022:  internal::HandleExceptionsInMethodIfSupported(
+        7: 3022-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3023:      this, &TestSuite::RunSetUpTestSuite, "SetUpTestSuite()");
         -: 3024:
         -: 3025:  const bool skip_all =
-       4*: 3026:      ad_hoc_test_result().Failed() || ad_hoc_test_result().Skipped();
-        4: 3026-block  0
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+       7*: 3026:      ad_hoc_test_result().Failed() || ad_hoc_test_result().Skipped();
+        7: 3026-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0 (throw)
-        4: 3026-block  1
-branch  4 taken 4 (fallthrough)
+        7: 3026-block  1
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0
-        4: 3026-block  2
-call    6 returned 4
-call    7 returned 4
-branch  8 taken 4 (fallthrough)
+        7: 3026-block  2
+call    6 returned 7
+call    7 returned 7
+branch  8 taken 7 (fallthrough)
 branch  9 taken 0 (throw)
-        4: 3026-block  3
+        7: 3026-block  3
 branch 10 taken 0 (fallthrough)
-branch 11 taken 4
+branch 11 taken 7
     %%%%%: 3026-block  4
-        4: 3026-block  5
+        7: 3026-block  5
         -: 3027:
-        4: 3028:  start_timestamp_ = internal::GetTimeInMillis();
-        4: 3028-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3028:  start_timestamp_ = internal::GetTimeInMillis();
+        7: 3028-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3029:  internal::Timer timer;
-        4: 3029-block  0
-call    0 returned 4
-       55: 3030:  for (int i = 0; i < total_test_count(); i++) {
-       51: 3030-block  0
-       55: 3030-block  1
-call    0 returned 55
-branch  1 taken 51
-branch  2 taken 4 (fallthrough)
-       51: 3031:    if (skip_all) {
-       51: 3031-block  0
+        7: 3029:  internal::Timer timer;
+        7: 3029-block  0
+call    0 returned 7
+       76: 3030:  for (int i = 0; i < total_test_count(); i++) {
+       69: 3030-block  0
+       76: 3030-block  1
+call    0 returned 76
+branch  1 taken 69
+branch  2 taken 7 (fallthrough)
+       69: 3031:    if (skip_all) {
+       69: 3031-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     #####: 3032:      GetMutableTestInfo(i)->Skip();
     %%%%%: 3032-block  0
 call    0 never executed
@@ -9305,25 +9305,25 @@ call    3 never executed
 branch  4 never executed (fallthrough)
 branch  5 never executed (throw)
         -: 3033:    } else {
-       51: 3034:      GetMutableTestInfo(i)->Run();
-       51: 3034-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 3034:      GetMutableTestInfo(i)->Run();
+       69: 3034-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 3034-block  1
-call    3 returned 51
-branch  4 taken 51 (fallthrough)
+       69: 3034-block  1
+call    3 returned 69
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0 (throw)
         -: 3035:    }
-      51*: 3036:    if (GTEST_FLAG_GET(fail_fast) &&
-       51: 3036-block  0
+      69*: 3036:    if (GTEST_FLAG_GET(fail_fast) &&
+       69: 3036-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%: 3036-block  1
-       51: 3036-block  2
-       51: 3036-block  3
+       69: 3036-block  2
+       69: 3036-block  3
 branch  2 taken 0 (fallthrough)
-branch  3 taken 51
+branch  3 taken 69
     #####: 3037:        GetMutableTestInfo(i)->result()->Failed()) {
     %%%%%: 3037-block  0
 call    0 never executed
@@ -9358,51 +9358,51 @@ branch  5 never executed (throw)
     %%%%%: 3041-block  0
         -: 3042:    }
         -: 3043:  }
-        4: 3044:  elapsed_time_ = timer.Elapsed();
-        4: 3044-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3044:  elapsed_time_ = timer.Elapsed();
+        7: 3044-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3045:
-        4: 3046:  UnitTest::GetInstance()->UponLeavingGTest();
-        4: 3046-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3046:  UnitTest::GetInstance()->UponLeavingGTest();
+        7: 3046-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3046-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3046-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 3047:  internal::HandleExceptionsInMethodIfSupported(
-        4: 3047-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3047:  internal::HandleExceptionsInMethodIfSupported(
+        7: 3047-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3048:      this, &TestSuite::RunTearDownTestSuite, "TearDownTestSuite()");
         -: 3049:
         -: 3050:  // Call both legacy and the new API
-        4: 3051:  repeater->OnTestSuiteEnd(*this);
-        4: 3051-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3051:  repeater->OnTestSuiteEnd(*this);
+        7: 3051-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3052://  Legacy API is deprecated but still available
         -: 3053:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-        4: 3054:  repeater->OnTestCaseEnd(*this);
-        4: 3054-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3054:  repeater->OnTestCaseEnd(*this);
+        7: 3054-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3055:#endif  //  GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -: 3056:
-        4: 3057:  UnitTest::GetInstance()->set_current_test_suite(nullptr);
-        4: 3057-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3057:  UnitTest::GetInstance()->set_current_test_suite(nullptr);
+        7: 3057-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3057-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3057-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
         -: 3058:}
         -: 3059:
@@ -9461,14 +9461,14 @@ call    1 never executed
         -: 3087:}
         -: 3088:
         -: 3089:// Clears the results of all tests in this test suite.
-function _ZN7testing9TestSuite11ClearResultEv called 4 returned 100% blocks executed 100%
-        4: 3090:void TestSuite::ClearResult() {
-        4: 3091:  ad_hoc_test_result_.Clear();
-        4: 3091-block  0
-call    0 returned 4
-        4: 3092:  ForEach(test_info_list_, TestInfo::ClearTestResult);
-call    0 returned 4
-        4: 3093:}
+function _ZN7testing9TestSuite11ClearResultEv called 7 returned 100% blocks executed 100%
+        7: 3090:void TestSuite::ClearResult() {
+        7: 3091:  ad_hoc_test_result_.Clear();
+        7: 3091-block  0
+call    0 returned 7
+        7: 3092:  ForEach(test_info_list_, TestInfo::ClearTestResult);
+call    0 returned 7
+        7: 3093:}
         -: 3094:
         -: 3095:// Shuffles the tests in this test suite.
 function _ZN7testing9TestSuite12ShuffleTestsEPNS_8internal6RandomE called 0 returned 0% blocks executed 0%
@@ -9479,56 +9479,56 @@ call    0 never executed
     #####: 3098:}
         -: 3099:
         -: 3100:// Restores the test order to before the first shuffle.
-function _ZN7testing9TestSuite14UnshuffleTestsEv called 4 returned 100% blocks executed 100%
-        4: 3101:void TestSuite::UnshuffleTests() {
-       55: 3102:  for (size_t i = 0; i < test_indices_.size(); i++) {
-        4: 3102-block  0
-       55: 3102-block  1
-call    0 returned 55
-branch  1 taken 51
-branch  2 taken 4 (fallthrough)
-       51: 3103:    test_indices_[i] = static_cast<int>(i);
-       51: 3103-block  0
-call    0 returned 51
+function _ZN7testing9TestSuite14UnshuffleTestsEv called 7 returned 100% blocks executed 100%
+        7: 3101:void TestSuite::UnshuffleTests() {
+       76: 3102:  for (size_t i = 0; i < test_indices_.size(); i++) {
+        7: 3102-block  0
+       76: 3102-block  1
+call    0 returned 76
+branch  1 taken 69
+branch  2 taken 7 (fallthrough)
+       69: 3103:    test_indices_[i] = static_cast<int>(i);
+       69: 3103-block  0
+call    0 returned 69
         -: 3104:  }
-        4: 3105:}
+        7: 3105:}
         -: 3106:
         -: 3107:// Formats a countable noun.  Depending on its quantity, either the
         -: 3108:// singular form or the plural form is used. e.g.
         -: 3109://
         -: 3110:// FormatCountableNoun(1, "formula", "formuli") returns "1 formula".
         -: 3111:// FormatCountableNoun(5, "book", "books") returns "5 books".
-function _ZN7testingL19FormatCountableNounEiPKcS1_ called 13 returned 100% blocks executed 65%
-       13: 3112:static std::string FormatCountableNoun(int count, const char* singular_form,
+function _ZN7testingL19FormatCountableNounEiPKcS1_ called 19 returned 100% blocks executed 65%
+       19: 3112:static std::string FormatCountableNoun(int count, const char* singular_form,
         -: 3113:                                       const char* plural_form) {
-       26: 3114:  return internal::StreamableToString(count) + " " +
-       13: 3114-block  0
-call    0 returned 13
-branch  1 taken 13 (fallthrough)
+       38: 3114:  return internal::StreamableToString(count) + " " +
+       19: 3114-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
 branch  2 taken 0 (throw)
-       13: 3114-block  1
-call    3 returned 13
-branch  4 taken 13 (fallthrough)
+       19: 3114-block  1
+call    3 returned 19
+branch  4 taken 19 (fallthrough)
 branch  5 taken 0 (throw)
-       13: 3114-block  2
-call    6 returned 13
-call    7 returned 13
+       19: 3114-block  2
+call    6 returned 19
+call    7 returned 19
     $$$$$: 3114-block  3
 call    8 never executed
     $$$$$: 3114-block  4
 call    9 never executed
     $$$$$: 3114-block  5
-      39*: 3115:         (count == 1 ? singular_form : plural_form);
-       13: 3115-block  0
+      57*: 3115:         (count == 1 ? singular_form : plural_form);
+       19: 3115-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 13
+branch  1 taken 19
     %%%%%: 3115-block  1
-       13: 3115-block  2
-       13: 3115-block  3
-call    2 returned 13
-branch  3 taken 13 (fallthrough)
+       19: 3115-block  2
+       19: 3115-block  3
+call    2 returned 19
+branch  3 taken 19 (fallthrough)
 branch  4 taken 0 (throw)
-       13: 3115-block  4
+       19: 3115-block  4
         -: 3116:}
         -: 3117:
         -: 3118:// Formats the count of tests.
@@ -9963,18 +9963,18 @@ call    1 never executed
         -: 3296:// that would be colored when printed, as can be done on Linux.
         -: 3297:
         -: 3298:GTEST_ATTRIBUTE_PRINTF_(2, 3)
-function _ZN7testing8internalL13ColoredPrintfENS0_12_GLOBAL__N_110GTestColorEPKcz called 116 returned 100% blocks executed 60%
-      116: 3299:static void ColoredPrintf(GTestColor color, const char* fmt, ...) {
+function _ZN7testing8internalL13ColoredPrintfENS0_12_GLOBAL__N_110GTestColorEPKcz called 158 returned 100% blocks executed 60%
+      158: 3299:static void ColoredPrintf(GTestColor color, const char* fmt, ...) {
         -: 3300:  va_list args;
-      116: 3301:  va_start(args, fmt);
+      158: 3301:  va_start(args, fmt);
         -: 3302:
         -: 3303:  static const bool in_color_mode =
         -: 3304:      // We don't condition this on GTEST_HAS_FILE_SYSTEM because we still need
         -: 3305:      // to be able to detect terminal I/O regardless.
-      116: 3306:      ShouldUseColor(posix::IsATTY(posix::FileNo(stdout)) != 0);
-      116: 3306-block  0
+      158: 3306:      ShouldUseColor(posix::IsATTY(posix::FileNo(stdout)) != 0);
+      158: 3306-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 115
+branch  1 taken 157
         1: 3306-block  1
 call    2 returned 1
 branch  3 taken 1 (fallthrough)
@@ -10003,28 +10003,28 @@ branch 19 never executed
     $$$$$: 3306-block  8
 call   20 never executed
         -: 3307:
-     116*: 3308:  const bool use_color = in_color_mode && (color != GTestColor::kDefault);
-      116: 3308-block  0
+     158*: 3308:  const bool use_color = in_color_mode && (color != GTestColor::kDefault);
+      158: 3308-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 116
+branch  1 taken 158
     %%%%%: 3308-block  1
 branch  2 never executed (fallthrough)
 branch  3 never executed
     %%%%%: 3308-block  2
-      116: 3308-block  3
+      158: 3308-block  3
         -: 3309:
-      116: 3310:  if (!use_color) {
-      116: 3310-block  0
-branch  0 taken 116 (fallthrough)
+      158: 3310:  if (!use_color) {
+      158: 3310-block  0
+branch  0 taken 158 (fallthrough)
 branch  1 taken 0
-      116: 3311:    vprintf(fmt, args);
-      116: 3311-block  0
-call    0 returned 116
-branch  1 taken 116 (fallthrough)
+      158: 3311:    vprintf(fmt, args);
+      158: 3311-block  0
+call    0 returned 158
+branch  1 taken 158 (fallthrough)
 branch  2 taken 0 (throw)
-      116: 3312:    va_end(args);
-      116: 3313:    return;
-      116: 3313-block  0
+      158: 3312:    va_end(args);
+      158: 3313:    return;
+      158: 3313-block  0
         -: 3314:  }
         -: 3315:
         -: 3316:#if defined(GTEST_OS_WINDOWS) && !defined(GTEST_OS_WINDOWS_MOBILE) &&       \
@@ -10128,12 +10128,12 @@ function _ZN7testing8internal27PrettyUnitTestResultPrinterC1Ev called 1 returned
         1: 3372:  PrettyUnitTestResultPrinter() = default;
         1: 3372-block  0
 call    0 returned 1
-function _ZN7testing8internal27PrettyUnitTestResultPrinter13PrintTestNameEPKcS3_ called 102 returned 100% blocks executed 100%
-      102: 3373:  static void PrintTestName(const char* test_suite, const char* test) {
-      102: 3374:    printf("%s.%s", test_suite, test);
-      102: 3374-block  0
-call    0 returned 102
-      102: 3375:  }
+function _ZN7testing8internal27PrettyUnitTestResultPrinter13PrintTestNameEPKcS3_ called 138 returned 100% blocks executed 100%
+      138: 3373:  static void PrintTestName(const char* test_suite, const char* test) {
+      138: 3374:    printf("%s.%s", test_suite, test);
+      138: 3374-block  0
+call    0 returned 138
+      138: 3375:  }
         -: 3376:
         -: 3377:  // The following methods override what's in the TestEventListener class.
 function _ZN7testing8internal27PrettyUnitTestResultPrinter18OnTestProgramStartERKNS_8UnitTestE called 1 returned 100% blocks executed 100%
@@ -10313,39 +10313,39 @@ call    1 returned 1
         1: 3451:}
         -: 3452:
         -: 3453:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-function _ZN7testing8internal27PrettyUnitTestResultPrinter15OnTestCaseStartERKNS_9TestSuiteE called 4 returned 100% blocks executed 78%
-        4: 3454:void PrettyUnitTestResultPrinter::OnTestCaseStart(const TestCase& test_case) {
+function _ZN7testing8internal27PrettyUnitTestResultPrinter15OnTestCaseStartERKNS_9TestSuiteE called 7 returned 100% blocks executed 78%
+        7: 3454:void PrettyUnitTestResultPrinter::OnTestCaseStart(const TestCase& test_case) {
         -: 3455:  const std::string counts =
-        4: 3456:      FormatCountableNoun(test_case.test_to_run_count(), "test", "tests");
-        4: 3456-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3456:      FormatCountableNoun(test_case.test_to_run_count(), "test", "tests");
+        7: 3456-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3456-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3456-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 3457:  ColoredPrintf(GTestColor::kGreen, "[----------] ");
-        4: 3457-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3457:  ColoredPrintf(GTestColor::kGreen, "[----------] ");
+        7: 3457-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3458:  printf("%s from %s", counts.c_str(), test_case.name());
-        4: 3458-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-branch  3 taken 4 (fallthrough)
+        7: 3458:  printf("%s from %s", counts.c_str(), test_case.name());
+        7: 3458-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
 branch  4 taken 0 (throw)
-        4: 3459:  if (test_case.type_param() == nullptr) {
-        4: 3459-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3459:  if (test_case.type_param() == nullptr) {
+        7: 3459-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0
-        4: 3460:    printf("\n");
-        4: 3460-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3460:    printf("\n");
+        7: 3460-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3461:  } else {
     #####: 3462:    printf(", where %s = %s\n", kTypeParamLabel, test_case.type_param());
@@ -10355,18 +10355,18 @@ call    1 never executed
 branch  2 never executed (fallthrough)
 branch  3 never executed (throw)
         -: 3463:  }
-        4: 3464:  fflush(stdout);
-        4: 3464-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3464:  fflush(stdout);
+        7: 3464-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3464-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3464-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 3465:}
-        4: 3465-block  0
-call    0 returned 4
+        7: 3465:}
+        7: 3465-block  0
+call    0 returned 7
     $$$$$: 3465-block  1
 call    1 never executed
         -: 3466:#else
@@ -10385,21 +10385,21 @@ call    1 never executed
         -: 3479:}
         -: 3480:#endif  // GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -: 3481:
-function _ZN7testing8internal27PrettyUnitTestResultPrinter11OnTestStartERKNS_8TestInfoE called 51 returned 100% blocks executed 100%
-       51: 3482:void PrettyUnitTestResultPrinter::OnTestStart(const TestInfo& test_info) {
-       51: 3483:  ColoredPrintf(GTestColor::kGreen, "[ RUN      ] ");
-       51: 3483-block  0
-call    0 returned 51
-       51: 3484:  PrintTestName(test_info.test_suite_name(), test_info.name());
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-       51: 3485:  printf("\n");
-call    0 returned 51
-       51: 3486:  fflush(stdout);
-call    0 returned 51
-call    1 returned 51
-       51: 3487:}
+function _ZN7testing8internal27PrettyUnitTestResultPrinter11OnTestStartERKNS_8TestInfoE called 69 returned 100% blocks executed 100%
+       69: 3482:void PrettyUnitTestResultPrinter::OnTestStart(const TestInfo& test_info) {
+       69: 3483:  ColoredPrintf(GTestColor::kGreen, "[ RUN      ] ");
+       69: 3483-block  0
+call    0 returned 69
+       69: 3484:  PrintTestName(test_info.test_suite_name(), test_info.name());
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+       69: 3485:  printf("\n");
+call    0 returned 69
+       69: 3486:  fflush(stdout);
+call    0 returned 69
+call    1 returned 69
+       69: 3487:}
         -: 3488:
 function _ZN7testing8internal27PrettyUnitTestResultPrinter14OnTestDisabledERKNS_8TestInfoE called 0 returned 0% blocks executed 0%
     #####: 3489:void PrettyUnitTestResultPrinter::OnTestDisabled(const TestInfo& test_info) {
@@ -10442,17 +10442,17 @@ call    1 never executed
         -: 3508:  }
         -: 3509:}
         -: 3510:
-function _ZN7testing8internal27PrettyUnitTestResultPrinter9OnTestEndERKNS_8TestInfoE called 51 returned 100% blocks executed 69%
-       51: 3511:void PrettyUnitTestResultPrinter::OnTestEnd(const TestInfo& test_info) {
-       51: 3512:  if (test_info.result()->Passed()) {
-       51: 3512-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+function _ZN7testing8internal27PrettyUnitTestResultPrinter9OnTestEndERKNS_8TestInfoE called 69 returned 100% blocks executed 69%
+       69: 3511:void PrettyUnitTestResultPrinter::OnTestEnd(const TestInfo& test_info) {
+       69: 3512:  if (test_info.result()->Passed()) {
+       69: 3512-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0
-       51: 3513:    ColoredPrintf(GTestColor::kGreen, "[       OK ] ");
-       51: 3513-block  0
-call    0 returned 51
+       69: 3513:    ColoredPrintf(GTestColor::kGreen, "[       OK ] ");
+       69: 3513-block  0
+call    0 returned 69
     #####: 3514:  } else if (test_info.result()->Skipped()) {
     %%%%%: 3514-block  0
 call    0 never executed
@@ -10467,38 +10467,38 @@ call    0 never executed
     %%%%%: 3517-block  0
 call    0 never executed
         -: 3518:  }
-       51: 3519:  PrintTestName(test_info.test_suite_name(), test_info.name());
-       51: 3519-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-      51*: 3520:  if (test_info.result()->Failed()) PrintFullTestCommentIfPresent(test_info);
-call    0 returned 51
-call    1 returned 51
+       69: 3519:  PrintTestName(test_info.test_suite_name(), test_info.name());
+       69: 3519-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+      69*: 3520:  if (test_info.result()->Failed()) PrintFullTestCommentIfPresent(test_info);
+call    0 returned 69
+call    1 returned 69
 branch  2 taken 0 (fallthrough)
-branch  3 taken 51
+branch  3 taken 69
     %%%%%: 3520-block  0
 call    4 never executed
         -: 3521:
-       51: 3522:  if (GTEST_FLAG_GET(print_time)) {
-       51: 3522-block  0
-branch  0 taken 51 (fallthrough)
+       69: 3522:  if (GTEST_FLAG_GET(print_time)) {
+       69: 3522-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 3523:    printf(" (%s ms)\n",
-       51: 3523-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+       69: 3523:    printf(" (%s ms)\n",
+       69: 3523-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0 (throw)
-      102: 3524:           internal::StreamableToString(test_info.result()->elapsed_time())
-       51: 3524-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-branch  3 taken 51 (fallthrough)
+      138: 3524:           internal::StreamableToString(test_info.result()->elapsed_time())
+       69: 3524-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+branch  3 taken 69 (fallthrough)
 branch  4 taken 0 (throw)
-       51: 3524-block  1
-call    5 returned 51
+       69: 3524-block  1
+call    5 returned 69
     $$$$$: 3524-block  2
 call    6 never executed
     $$$$$: 3524-block  3
@@ -10508,68 +10508,68 @@ call    6 never executed
     %%%%%: 3527-block  0
 call    0 never executed
         -: 3528:  }
-       51: 3529:  fflush(stdout);
-       51: 3529-block  0
-call    0 returned 51
-call    1 returned 51
-       51: 3530:}
+       69: 3529:  fflush(stdout);
+       69: 3529-block  0
+call    0 returned 69
+call    1 returned 69
+       69: 3530:}
         -: 3531:
         -: 3532:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-function _ZN7testing8internal27PrettyUnitTestResultPrinter13OnTestCaseEndERKNS_9TestSuiteE called 4 returned 100% blocks executed 68%
-        4: 3533:void PrettyUnitTestResultPrinter::OnTestCaseEnd(const TestCase& test_case) {
-       4*: 3534:  if (!GTEST_FLAG_GET(print_time)) return;
-        4: 3534-block  0
+function _ZN7testing8internal27PrettyUnitTestResultPrinter13OnTestCaseEndERKNS_9TestSuiteE called 7 returned 100% blocks executed 68%
+        7: 3533:void PrettyUnitTestResultPrinter::OnTestCaseEnd(const TestCase& test_case) {
+       7*: 3534:  if (!GTEST_FLAG_GET(print_time)) return;
+        7: 3534-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     %%%%%: 3534-block  1
     %%%%%: 3534-block  2
         -: 3535:
         -: 3536:  const std::string counts =
-        4: 3537:      FormatCountableNoun(test_case.test_to_run_count(), "test", "tests");
-        4: 3537-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3537:      FormatCountableNoun(test_case.test_to_run_count(), "test", "tests");
+        7: 3537-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3537-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3537-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 3538:  ColoredPrintf(GTestColor::kGreen, "[----------] ");
-        4: 3538-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3538:  ColoredPrintf(GTestColor::kGreen, "[----------] ");
+        7: 3538-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3539:  printf("%s from %s (%s ms total)\n\n", counts.c_str(), test_case.name(),
-        4: 3539-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3539:  printf("%s from %s (%s ms total)\n\n", counts.c_str(), test_case.name(),
+        7: 3539-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        8: 3540:         internal::StreamableToString(test_case.elapsed_time()).c_str());
-        4: 3540-block  0
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+       14: 3540:         internal::StreamableToString(test_case.elapsed_time()).c_str());
+        7: 3540-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0 (throw)
-        4: 3540-block  1
-call    4 returned 4
+        7: 3540-block  1
+call    4 returned 7
     $$$$$: 3540-block  2
 call    5 never executed
     $$$$$: 3540-block  3
     $$$$$: 3540-block  4
-        4: 3541:  fflush(stdout);
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 3541:  fflush(stdout);
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 3541-block  0
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 3541-block  0
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 3542:}
-        4: 3542-block  0
-call    0 returned 4
+        7: 3542:}
+        7: 3542-block  0
+call    0 returned 7
     $$$$$: 3542-block  1
 call    1 never executed
         -: 3543:#else
@@ -11442,46 +11442,46 @@ branch  5 taken 1
 branch  6 taken 1 (fallthrough)
         -: 3871://  Legacy API is deprecated but still available
         -: 3872:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-function _ZN7testing8internal17TestEventRepeater15OnTestCaseStartERKNS_9TestSuiteE called 4 returned 100% blocks executed 100%
-        8: 3873:GTEST_REPEATER_METHOD_(OnTestCaseStart, TestSuite)
-        4: 3873-block  0
-branch  0 taken 4 (fallthrough)
+function _ZN7testing8internal17TestEventRepeater15OnTestCaseStartERKNS_9TestSuiteE called 7 returned 100% blocks executed 100%
+       14: 3873:GTEST_REPEATER_METHOD_(OnTestCaseStart, TestSuite)
+        7: 3873-block  0
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
-        4: 3873-block  1
-        4: 3873-block  2
-call    2 returned 4
-call    3 returned 4
-        8: 3873-block  3
-call    4 returned 8
-branch  5 taken 4
-branch  6 taken 4 (fallthrough)
+        7: 3873-block  1
+        7: 3873-block  2
+call    2 returned 7
+call    3 returned 7
+       14: 3873-block  3
+call    4 returned 14
+branch  5 taken 7
+branch  6 taken 7 (fallthrough)
         -: 3874:#endif  //  GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-function _ZN7testing8internal17TestEventRepeater16OnTestSuiteStartERKNS_9TestSuiteE called 4 returned 100% blocks executed 100%
-        8: 3875:GTEST_REPEATER_METHOD_(OnTestSuiteStart, TestSuite)
-        4: 3875-block  0
-branch  0 taken 4 (fallthrough)
+function _ZN7testing8internal17TestEventRepeater16OnTestSuiteStartERKNS_9TestSuiteE called 7 returned 100% blocks executed 100%
+       14: 3875:GTEST_REPEATER_METHOD_(OnTestSuiteStart, TestSuite)
+        7: 3875-block  0
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
-        4: 3875-block  1
-        4: 3875-block  2
-call    2 returned 4
-call    3 returned 4
-        8: 3875-block  3
-call    4 returned 8
-branch  5 taken 4
-branch  6 taken 4 (fallthrough)
-function _ZN7testing8internal17TestEventRepeater11OnTestStartERKNS_8TestInfoE called 51 returned 100% blocks executed 100%
-      102: 3876:GTEST_REPEATER_METHOD_(OnTestStart, TestInfo)
-       51: 3876-block  0
-branch  0 taken 51 (fallthrough)
+        7: 3875-block  1
+        7: 3875-block  2
+call    2 returned 7
+call    3 returned 7
+       14: 3875-block  3
+call    4 returned 14
+branch  5 taken 7
+branch  6 taken 7 (fallthrough)
+function _ZN7testing8internal17TestEventRepeater11OnTestStartERKNS_8TestInfoE called 69 returned 100% blocks executed 100%
+      138: 3876:GTEST_REPEATER_METHOD_(OnTestStart, TestInfo)
+       69: 3876-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 3876-block  1
-       51: 3876-block  2
-call    2 returned 51
-call    3 returned 51
-      102: 3876-block  3
-call    4 returned 102
-branch  5 taken 51
-branch  6 taken 51 (fallthrough)
+       69: 3876-block  1
+       69: 3876-block  2
+call    2 returned 69
+call    3 returned 69
+      138: 3876-block  3
+call    4 returned 138
+branch  5 taken 69
+branch  6 taken 69 (fallthrough)
 function _ZN7testing8internal17TestEventRepeater14OnTestDisabledERKNS_8TestInfoE called 0 returned 0% blocks executed 0%
     #####: 3877:GTEST_REPEATER_METHOD_(OnTestDisabled, TestInfo)
     %%%%%: 3877-block  0
@@ -11547,48 +11547,48 @@ call    4 returned 1
         2: 3881-block  3
 branch  5 taken 1
 branch  6 taken 1 (fallthrough)
-function _ZN7testing8internal17TestEventRepeater9OnTestEndERKNS_8TestInfoE called 51 returned 100% blocks executed 100%
-      102: 3882:GTEST_REVERSE_REPEATER_METHOD_(OnTestEnd, TestInfo)
-       51: 3882-block  0
-branch  0 taken 51 (fallthrough)
+function _ZN7testing8internal17TestEventRepeater9OnTestEndERKNS_8TestInfoE called 69 returned 100% blocks executed 100%
+      138: 3882:GTEST_REVERSE_REPEATER_METHOD_(OnTestEnd, TestInfo)
+       69: 3882-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 3882-block  1
-call    2 returned 51
-       51: 3882-block  2
-call    3 returned 51
-call    4 returned 51
-      102: 3882-block  3
-branch  5 taken 51
-branch  6 taken 51 (fallthrough)
+       69: 3882-block  1
+call    2 returned 69
+       69: 3882-block  2
+call    3 returned 69
+call    4 returned 69
+      138: 3882-block  3
+branch  5 taken 69
+branch  6 taken 69 (fallthrough)
         -: 3883://  Legacy API is deprecated but still available
         -: 3884:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-function _ZN7testing8internal17TestEventRepeater13OnTestCaseEndERKNS_9TestSuiteE called 4 returned 100% blocks executed 100%
-        8: 3885:GTEST_REVERSE_REPEATER_METHOD_(OnTestCaseEnd, TestSuite)
-        4: 3885-block  0
-branch  0 taken 4 (fallthrough)
+function _ZN7testing8internal17TestEventRepeater13OnTestCaseEndERKNS_9TestSuiteE called 7 returned 100% blocks executed 100%
+       14: 3885:GTEST_REVERSE_REPEATER_METHOD_(OnTestCaseEnd, TestSuite)
+        7: 3885-block  0
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
-        4: 3885-block  1
-call    2 returned 4
-        4: 3885-block  2
-call    3 returned 4
-call    4 returned 4
-        8: 3885-block  3
-branch  5 taken 4
-branch  6 taken 4 (fallthrough)
+        7: 3885-block  1
+call    2 returned 7
+        7: 3885-block  2
+call    3 returned 7
+call    4 returned 7
+       14: 3885-block  3
+branch  5 taken 7
+branch  6 taken 7 (fallthrough)
         -: 3886:#endif  //  GTEST_REMOVE_LEGACY_TEST_CASEAPI_
-function _ZN7testing8internal17TestEventRepeater14OnTestSuiteEndERKNS_9TestSuiteE called 4 returned 100% blocks executed 100%
-        8: 3887:GTEST_REVERSE_REPEATER_METHOD_(OnTestSuiteEnd, TestSuite)
-        4: 3887-block  0
-branch  0 taken 4 (fallthrough)
+function _ZN7testing8internal17TestEventRepeater14OnTestSuiteEndERKNS_9TestSuiteE called 7 returned 100% blocks executed 100%
+       14: 3887:GTEST_REVERSE_REPEATER_METHOD_(OnTestSuiteEnd, TestSuite)
+        7: 3887-block  0
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
-        4: 3887-block  1
-call    2 returned 4
-        4: 3887-block  2
-call    3 returned 4
-call    4 returned 4
-        8: 3887-block  3
-branch  5 taken 4
-branch  6 taken 4 (fallthrough)
+        7: 3887-block  1
+call    2 returned 7
+        7: 3887-block  2
+call    3 returned 7
+call    4 returned 7
+       14: 3887-block  3
+branch  5 taken 7
+branch  6 taken 7 (fallthrough)
 function _ZN7testing8internal17TestEventRepeater16OnTestProgramEndERKNS_8UnitTestE called 1 returned 100% blocks executed 100%
         2: 3888:GTEST_REVERSE_REPEATER_METHOD_(OnTestProgramEnd, UnitTest)
         1: 3888-block  0
@@ -17728,8 +17728,8 @@ branch  2 never executed (throw)
         -: 5061:#endif  // GTEST_HAS_ABSL
         -: 5062:}
         -: 5063:
-function _ZN7testing8internal18OsStackTraceGetter16UponLeavingGTestEv called 263 returned 100% blocks executed 100%
-      263: 5064:void OsStackTraceGetter::UponLeavingGTest() GTEST_LOCK_EXCLUDED_(mutex_) {
+function _ZN7testing8internal18OsStackTraceGetter16UponLeavingGTestEv called 359 returned 100% blocks executed 100%
+      359: 5064:void OsStackTraceGetter::UponLeavingGTest() GTEST_LOCK_EXCLUDED_(mutex_) {
         -: 5065:#ifdef GTEST_HAS_ABSL
         -: 5066:  void* caller_frame = nullptr;
         -: 5067:  if (absl::GetStackTrace(&caller_frame, 1, 3) <= 0) {
@@ -17739,7 +17739,7 @@ function _ZN7testing8internal18OsStackTraceGetter16UponLeavingGTestEv called 263
         -: 5071:  MutexLock lock(&mutex_);
         -: 5072:  caller_frame_ = caller_frame;
         -: 5073:#endif  // GTEST_HAS_ABSL
-      263: 5074:}
+      359: 5074:}
         -: 5075:
         -: 5076:#ifdef GTEST_HAS_DEATH_TEST
         -: 5077:// A helper class that creates the premature-exit file in its
@@ -17889,9 +17889,9 @@ call    0 returned 1
         -: 5145:
         -: 5146:// Returns repeater that broadcasts the TestEventListener events to all
         -: 5147:// subscribers.
-function _ZN7testing18TestEventListeners8repeaterEv called 56 returned 100% blocks executed 100%
-       56: 5148:TestEventListener* TestEventListeners::repeater() { return repeater_; }
-       56: 5148-block  0
+function _ZN7testing18TestEventListeners8repeaterEv called 77 returned 100% blocks executed 100%
+       77: 5148:TestEventListener* TestEventListeners::repeater() { return repeater_; }
+       77: 5148-block  0
         -: 5149:
         -: 5150:// Sets the default_result_printer attribute to the provided listener.
         -: 5151:// The listener is also added to the listener list and previous
@@ -17978,8 +17978,8 @@ call    0 never executed
         -: 5196:// We don't protect this under mutex_ as a user is not supposed to
         -: 5197:// call this before main() starts, from which point on the return
         -: 5198:// value will never change.
-function _ZN7testing8UnitTest11GetInstanceEv called 901 returned 100% blocks executed 82%
-      901: 5199:UnitTest* UnitTest::GetInstance() {
+function _ZN7testing8UnitTest11GetInstanceEv called 1228 returned 100% blocks executed 82%
+     1228: 5199:UnitTest* UnitTest::GetInstance() {
         -: 5200:  // CodeGear C++Builder insists on a public destructor for the
         -: 5201:  // default implementation.  Use this implementation to keep good OO
         -: 5202:  // design with private destructor.
@@ -17988,10 +17988,10 @@ function _ZN7testing8UnitTest11GetInstanceEv called 901 returned 100% blocks exe
         -: 5205:  static UnitTest* const instance = new UnitTest;
         -: 5206:  return instance;
         -: 5207:#else
-      901: 5208:  static UnitTest instance;
-      901: 5208-block  0
+     1228: 5208:  static UnitTest instance;
+     1228: 5208-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 900
+branch  1 taken 1227
         1: 5208-block  1
 call    2 returned 1
 branch  3 taken 1 (fallthrough)
@@ -18008,9 +18008,9 @@ branch 10 never executed (fallthrough)
 branch 11 never executed
     $$$$$: 5208-block  5
 call   12 never executed
-      901: 5209:  return &instance;
-      901: 5209-block  0
-      901: 5209-block  1
+     1228: 5209:  return &instance;
+     1228: 5209-block  0
+     1228: 5209-block  1
         -: 5210:#endif  // defined(__BORLANDC__)
         -: 5211:}
         -: 5212:
@@ -18225,50 +18225,50 @@ call    0 never executed
 call    1 never executed
         -: 5326:}
         -: 5327:
-function _ZN7testing8UnitTest16UponLeavingGTestEv called 110 returned 100% blocks executed 100%
-      110: 5328:void UnitTest::UponLeavingGTest() {
-      110: 5329:  impl()->os_stack_trace_getter()->UponLeavingGTest();
-      110: 5329-block  0
-call    0 returned 110
-call    1 returned 110
-call    2 returned 110
-      110: 5330:}
+function _ZN7testing8UnitTest16UponLeavingGTestEv called 152 returned 100% blocks executed 100%
+      152: 5328:void UnitTest::UponLeavingGTest() {
+      152: 5329:  impl()->os_stack_trace_getter()->UponLeavingGTest();
+      152: 5329-block  0
+call    0 returned 152
+call    1 returned 152
+call    2 returned 152
+      152: 5330:}
         -: 5331:
         -: 5332:// Sets the TestSuite object for the test that's currently running.
-function _ZN7testing8UnitTest22set_current_test_suiteEPNS_9TestSuiteE called 8 returned 100% blocks executed 100%
-        8: 5333:void UnitTest::set_current_test_suite(TestSuite* a_current_test_suite) {
-        8: 5334:  internal::MutexLock lock(&mutex_);
-        8: 5334-block  0
-call    0 returned 8
-branch  1 taken 8 (fallthrough)
+function _ZN7testing8UnitTest22set_current_test_suiteEPNS_9TestSuiteE called 14 returned 100% blocks executed 100%
+       14: 5333:void UnitTest::set_current_test_suite(TestSuite* a_current_test_suite) {
+       14: 5334:  internal::MutexLock lock(&mutex_);
+       14: 5334-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
 branch  2 taken 0 (throw)
-        8: 5335:  impl_->set_current_test_suite(a_current_test_suite);
-        8: 5335-block  0
-call    0 returned 8
-        8: 5336:}
-call    0 returned 8
+       14: 5335:  impl_->set_current_test_suite(a_current_test_suite);
+       14: 5335-block  0
+call    0 returned 14
+       14: 5336:}
+call    0 returned 14
         -: 5337:
         -: 5338:// Sets the TestInfo object for the test that's currently running.
-function _ZN7testing8UnitTest21set_current_test_infoEPNS_8TestInfoE called 102 returned 100% blocks executed 100%
-      102: 5339:void UnitTest::set_current_test_info(TestInfo* a_current_test_info) {
-      102: 5340:  internal::MutexLock lock(&mutex_);
-      102: 5340-block  0
-call    0 returned 102
-branch  1 taken 102 (fallthrough)
+function _ZN7testing8UnitTest21set_current_test_infoEPNS_8TestInfoE called 138 returned 100% blocks executed 100%
+      138: 5339:void UnitTest::set_current_test_info(TestInfo* a_current_test_info) {
+      138: 5340:  internal::MutexLock lock(&mutex_);
+      138: 5340-block  0
+call    0 returned 138
+branch  1 taken 138 (fallthrough)
 branch  2 taken 0 (throw)
-      102: 5341:  impl_->set_current_test_info(a_current_test_info);
-      102: 5341-block  0
-call    0 returned 102
-      102: 5342:}
-call    0 returned 102
+      138: 5341:  impl_->set_current_test_info(a_current_test_info);
+      138: 5341-block  0
+call    0 returned 138
+      138: 5342:}
+call    0 returned 138
         -: 5343:
         -: 5344:// Returns the list of event listeners that can be used to track events
         -: 5345:// inside Google Test.
-function _ZN7testing8UnitTest9listenersEv called 55 returned 100% blocks executed 100%
-       55: 5346:TestEventListeners& UnitTest::listeners() { return *impl()->listeners(); }
-       55: 5346-block  0
-call    0 returned 55
-call    1 returned 55
+function _ZN7testing8UnitTest9listenersEv called 76 returned 100% blocks executed 100%
+       76: 5346:TestEventListeners& UnitTest::listeners() { return *impl()->listeners(); }
+       76: 5346-block  0
+call    0 returned 76
+call    1 returned 76
         -: 5347:
         -: 5348:// Registers and returns a global test environment.  When a test
         -: 5349:// program is run, all global test environments will be set-up in the
@@ -19340,50 +19340,50 @@ call    8 never executed
         -: 5782://                    this is not a typed or a type-parameterized test suite.
         -: 5783://   set_up_tc:       pointer to the function that sets up the test suite
         -: 5784://   tear_down_tc:    pointer to the function that tears down the test suite
-function _ZN7testing8internal12UnitTestImpl12GetTestSuiteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcPFvvESD_ called 51 returned 100% blocks executed 60%
-       51: 5785:TestSuite* UnitTestImpl::GetTestSuite(
+function _ZN7testing8internal12UnitTestImpl12GetTestSuiteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPKcPFvvESD_ called 69 returned 100% blocks executed 60%
+       69: 5785:TestSuite* UnitTestImpl::GetTestSuite(
         -: 5786:    const std::string& test_suite_name, const char* type_param,
         -: 5787:    internal::SetUpTestSuiteFunc set_up_tc,
         -: 5788:    internal::TearDownTestSuiteFunc tear_down_tc) {
         -: 5789:  // During initialization, all TestInfos for a given suite are added in
         -: 5790:  // sequence. To optimize this case, see if the most recently added suite is
         -: 5791:  // the one being requested now.
-      101: 5792:  if (!test_suites_.empty() &&
-       51: 5792-block  0
-call    0 returned 51
-branch  1 taken 50 (fallthrough)
+      137: 5792:  if (!test_suites_.empty() &&
+       69: 5792-block  0
+call    0 returned 69
+branch  1 taken 68 (fallthrough)
 branch  2 taken 1
-branch  3 taken 47 (fallthrough)
-branch  4 taken 3
-       47: 5792-block  1
-        4: 5792-block  2
-      101: 5793:      (*test_suites_.rbegin())->name_ == test_suite_name) {
-       50: 5793-block  0
-call    0 returned 50
-call    1 returned 50
-call    2 returned 50
-       51: 5793-block  1
-branch  3 taken 47 (fallthrough)
-branch  4 taken 4
-       47: 5794:    return *test_suites_.rbegin();
-       47: 5794-block  0
-call    0 returned 47
-call    1 returned 47
-       47: 5794-block  1
+branch  3 taken 62 (fallthrough)
+branch  4 taken 6
+       62: 5792-block  1
+        7: 5792-block  2
+      137: 5793:      (*test_suites_.rbegin())->name_ == test_suite_name) {
+       68: 5793-block  0
+call    0 returned 68
+call    1 returned 68
+call    2 returned 68
+       69: 5793-block  1
+branch  3 taken 62 (fallthrough)
+branch  4 taken 7
+       62: 5794:    return *test_suites_.rbegin();
+       62: 5794-block  0
+call    0 returned 62
+call    1 returned 62
+       62: 5794-block  1
         -: 5795:  }
         -: 5796:
         -: 5797:  // Fall back to searching the collection.
-        4: 5798:  auto item_it = test_suites_by_name_.find(test_suite_name);
-        4: 5798-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5798:  auto item_it = test_suites_by_name_.find(test_suite_name);
+        7: 5798-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 5799:  if (item_it != test_suites_by_name_.end()) {
-        4: 5799-block  0
-call    0 returned 4
-call    1 returned 4
+        7: 5799:  if (item_it != test_suites_by_name_.end()) {
+        7: 5799-block  0
+call    0 returned 7
+call    1 returned 7
 branch  2 taken 0 (fallthrough)
-branch  3 taken 4
+branch  3 taken 7
     #####: 5800:    return item_it->second;
     %%%%%: 5800-block  0
 call    0 never executed
@@ -19391,51 +19391,51 @@ call    0 never executed
         -: 5802:
         -: 5803:  // Not found. Create a new instance.
         -: 5804:  auto* const new_test_suite =
-        4: 5805:      new TestSuite(test_suite_name, type_param, set_up_tc, tear_down_tc);
-        4: 5805-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5805:      new TestSuite(test_suite_name, type_param, set_up_tc, tear_down_tc);
+        7: 5805-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 5805-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 5805-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
     $$$$$: 5805-block  2
 branch  6 never executed (fallthrough)
 branch  7 never executed
     $$$$$: 5805-block  3
 call    8 never executed
-        4: 5806:  test_suites_by_name_.emplace(test_suite_name, new_test_suite);
-        4: 5806-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5806:  test_suites_by_name_.emplace(test_suite_name, new_test_suite);
+        7: 5806-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 5806-block  1
+        7: 5806-block  1
     $$$$$: 5806-block  2
         -: 5807:
-        4: 5808:  const UnitTestFilter death_test_suite_filter(kDeathTestSuiteFilter);
-        4: 5808-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5808:  const UnitTestFilter death_test_suite_filter(kDeathTestSuiteFilter);
+        7: 5808-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 5808-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 5808-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-        4: 5808-block  2
-call    6 returned 4
+        7: 5808-block  2
+call    6 returned 7
     $$$$$: 5808-block  3
 call    7 never executed
     $$$$$: 5808-block  4
     $$$$$: 5808-block  5
         -: 5809:  // Is this a death test suite?
-        4: 5810:  if (death_test_suite_filter.MatchesName(test_suite_name)) {
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5810:  if (death_test_suite_filter.MatchesName(test_suite_name)) {
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 5810-block  0
+        7: 5810-block  0
 branch  3 taken 0 (fallthrough)
-branch  4 taken 4
+branch  4 taken 7
         -: 5811:    // Yes.  Inserts the test suite after the last death test suite
         -: 5812:    // defined so far.  This only works when the test suites haven't
         -: 5813:    // been shuffled.  Otherwise we may end up running a death test
@@ -19456,24 +19456,24 @@ branch  5 never executed (throw)
         -: 5817:                        new_test_suite);
         -: 5818:  } else {
         -: 5819:    // No.  Appends to the end of the list.
-        4: 5820:    test_suites_.push_back(new_test_suite);
-        4: 5820-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5820:    test_suites_.push_back(new_test_suite);
+        7: 5820-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
         -: 5821:  }
         -: 5822:
-        4: 5823:  test_suite_indices_.push_back(static_cast<int>(test_suite_indices_.size()));
-        4: 5823-block  0
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+        7: 5823:  test_suite_indices_.push_back(static_cast<int>(test_suite_indices_.size()));
+        7: 5823-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0 (throw)
     $$$$$: 5823-block  1
-        4: 5824:  return new_test_suite;
-        4: 5825:}
-        4: 5825-block  0
-call    0 returned 4
+        7: 5824:  return new_test_suite;
+        7: 5825:}
+        7: 5825-block  0
+call    0 returned 7
     $$$$$: 5825-block  1
 call    1 never executed
         -: 5826:
@@ -19764,32 +19764,32 @@ branch  2 taken 0 (throw)
         1: 5961-block  1
 branch  3 taken 1 (fallthrough)
 branch  4 taken 0
-        5: 5962:        for (int test_index = 0; test_index < total_test_suite_count();
+        8: 5962:        for (int test_index = 0; test_index < total_test_suite_count();
         1: 5962-block  0
-        4: 5962-block  1
-        5: 5962-block  2
-call    0 returned 5
-branch  1 taken 4
+        7: 5962-block  1
+        8: 5962-block  2
+call    0 returned 8
+branch  1 taken 7
 branch  2 taken 1 (fallthrough)
         -: 5963:             test_index++) {
-        4: 5964:          GetMutableSuiteCase(test_index)->Run();
-        4: 5964-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 5964:          GetMutableSuiteCase(test_index)->Run();
+        7: 5964-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 5964-block  1
-call    3 returned 4
-branch  4 taken 4 (fallthrough)
+        7: 5964-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
 branch  5 taken 0 (throw)
-       4*: 5965:          if (GTEST_FLAG_GET(fail_fast) &&
-        4: 5965-block  0
+       7*: 5965:          if (GTEST_FLAG_GET(fail_fast) &&
+        7: 5965-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     %%%%%: 5965-block  1
-        4: 5965-block  2
-        4: 5965-block  3
+        7: 5965-block  2
+        7: 5965-block  3
 branch  2 taken 0 (fallthrough)
-branch  3 taken 4
+branch  3 taken 7
     #####: 5966:              GetMutableSuiteCase(test_index)->Failed()) {
     %%%%%: 5966-block  0
 call    0 never executed
@@ -20433,117 +20433,117 @@ call    7 never executed
         -: 6154:  // this shard.
         1: 6155:  int num_runnable_tests = 0;
         1: 6156:  int num_selected_tests = 0;
-        5: 6157:  for (auto* test_suite : test_suites_) {
+        8: 6157:  for (auto* test_suite : test_suites_) {
 call    0 returned 1
 call    1 returned 1
-        4: 6157-block  0
-call    2 returned 4
-        4: 6157-block  1
-call    3 returned 4
-        5: 6157-block  2
-call    4 returned 5
-branch  5 taken 4
+        7: 6157-block  0
+call    2 returned 7
+        7: 6157-block  1
+call    3 returned 7
+        8: 6157-block  2
+call    4 returned 8
+branch  5 taken 7
 branch  6 taken 1 (fallthrough)
-        4: 6158:    const std::string& test_suite_name = test_suite->name_;
-        4: 6159:    test_suite->set_should_run(false);
-call    0 returned 4
+        7: 6158:    const std::string& test_suite_name = test_suite->name_;
+        7: 6159:    test_suite->set_should_run(false);
+call    0 returned 7
         -: 6160:
-       55: 6161:    for (TestInfo* test_info : test_suite->test_info_list()) {
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-       51: 6161-block  0
-call    3 returned 51
-call    4 returned 51
-       55: 6161-block  1
-call    5 returned 55
-branch  6 taken 51
-branch  7 taken 4 (fallthrough)
-       51: 6162:      const std::string& test_name = test_info->name_;
+       76: 6161:    for (TestInfo* test_info : test_suite->test_info_list()) {
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+       69: 6161-block  0
+call    3 returned 69
+call    4 returned 69
+       76: 6161-block  1
+call    5 returned 76
+branch  6 taken 69
+branch  7 taken 7 (fallthrough)
+       69: 6162:      const std::string& test_name = test_info->name_;
         -: 6163:      // A test is disabled if test suite name or test name matches
         -: 6164:      // kDisableTestFilter.
         -: 6165:      const bool is_disabled =
-     102*: 6166:          disable_test_filter.MatchesName(test_suite_name) ||
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+     138*: 6166:          disable_test_filter.MatchesName(test_suite_name) ||
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 6166-block  0
-branch  3 taken 51 (fallthrough)
+       69: 6166-block  0
+branch  3 taken 69 (fallthrough)
 branch  4 taken 0
     %%%%%: 6166-block  1
-       51: 6166-block  2
-       51: 6167:          disable_test_filter.MatchesName(test_name);
-       51: 6167-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 6166-block  2
+       69: 6167:          disable_test_filter.MatchesName(test_name);
+       69: 6167-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 6167-block  1
+       69: 6167-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 51
-       51: 6168:      test_info->is_disabled_ = is_disabled;
+branch  4 taken 69
+       69: 6168:      test_info->is_disabled_ = is_disabled;
         -: 6169:
         -: 6170:      const bool matches_filter =
-       51: 6171:          gtest_flag_filter.MatchesTest(test_suite_name, test_name);
-       51: 6171-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 6171:          gtest_flag_filter.MatchesTest(test_suite_name, test_name);
+       69: 6171-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 6172:      test_info->matches_filter_ = matches_filter;
+       69: 6172:      test_info->matches_filter_ = matches_filter;
         -: 6173:
-       51: 6174:      const bool is_runnable =
-      51*: 6175:          (GTEST_FLAG_GET(also_run_disabled_tests) || !is_disabled) &&
-       51: 6175-block  0
-branch  0 taken 51 (fallthrough)
+       69: 6174:      const bool is_runnable =
+      69*: 6175:          (GTEST_FLAG_GET(also_run_disabled_tests) || !is_disabled) &&
+       69: 6175-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 6175-block  1
-branch  2 taken 51 (fallthrough)
+       69: 6175-block  1
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0
-       51: 6175-block  2
-branch  4 taken 51 (fallthrough)
+       69: 6175-block  2
+branch  4 taken 69 (fallthrough)
 branch  5 taken 0
-       51: 6175-block  3
+       69: 6175-block  3
     %%%%%: 6175-block  4
         -: 6176:          matches_filter;
         -: 6177:
         -: 6178:      const bool is_in_another_shard =
-      51*: 6179:          shard_tests != IGNORE_SHARDING_PROTOCOL &&
-       51: 6179-block  0
+      69*: 6179:          shard_tests != IGNORE_SHARDING_PROTOCOL &&
+       69: 6179-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%: 6179-block  1
-       51: 6179-block  2
+       69: 6179-block  2
     #####: 6180:          !ShouldRunTestOnShard(total_shards, shard_index, num_runnable_tests);
     %%%%%: 6180-block  0
 call    0 never executed
 branch  1 never executed (fallthrough)
 branch  2 never executed
-       51: 6181:      test_info->is_in_another_shard_ = is_in_another_shard;
-      51*: 6182:      const bool is_selected = is_runnable && !is_in_another_shard;
-       51: 6182-block  0
-branch  0 taken 51 (fallthrough)
+       69: 6181:      test_info->is_in_another_shard_ = is_in_another_shard;
+      69*: 6182:      const bool is_selected = is_runnable && !is_in_another_shard;
+       69: 6182-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51: 6182-block  1
-branch  2 taken 51 (fallthrough)
+       69: 6182-block  1
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0
-       51: 6182-block  2
+       69: 6182-block  2
     %%%%%: 6182-block  3
         -: 6183:
-       51: 6184:      num_runnable_tests += is_runnable;
-       51: 6185:      num_selected_tests += is_selected;
+       69: 6184:      num_runnable_tests += is_runnable;
+       69: 6185:      num_selected_tests += is_selected;
         -: 6186:
-       51: 6187:      test_info->should_run_ = is_selected;
-      51*: 6188:      test_suite->set_should_run(test_suite->should_run() || is_selected);
-       51: 6188-block  0
-call    0 returned 51
-branch  1 taken 4 (fallthrough)
-branch  2 taken 47
-        4: 6188-block  1
-branch  3 taken 4 (fallthrough)
+       69: 6187:      test_info->should_run_ = is_selected;
+      69*: 6188:      test_suite->set_should_run(test_suite->should_run() || is_selected);
+       69: 6188-block  0
+call    0 returned 69
+branch  1 taken 7 (fallthrough)
+branch  2 taken 62
+        7: 6188-block  1
+branch  3 taken 7 (fallthrough)
 branch  4 taken 0
-       51: 6188-block  2
+       69: 6188-block  2
     %%%%%: 6188-block  3
-       51: 6188-block  4
-call    5 returned 51
+       69: 6188-block  4
+call    5 returned 69
         -: 6189:    }
         -: 6190:  }
         1: 6191:  return num_selected_tests;
@@ -20864,12 +20864,12 @@ call    2 never executed
         -: 6284:// Returns the current OS stack trace getter if it is not NULL;
         -: 6285:// otherwise, creates an OsStackTraceGetter, makes it the current
         -: 6286:// getter, and returns it.
-function _ZN7testing8internal12UnitTestImpl21os_stack_trace_getterEv called 263 returned 100% blocks executed 100%
-      263: 6287:OsStackTraceGetterInterface* UnitTestImpl::os_stack_trace_getter() {
-      263: 6288:  if (os_stack_trace_getter_ == nullptr) {
-      263: 6288-block  0
+function _ZN7testing8internal12UnitTestImpl21os_stack_trace_getterEv called 359 returned 100% blocks executed 100%
+      359: 6287:OsStackTraceGetterInterface* UnitTestImpl::os_stack_trace_getter() {
+      359: 6288:  if (os_stack_trace_getter_ == nullptr) {
+      359: 6288-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 262
+branch  1 taken 358
         -: 6289:#ifdef GTEST_OS_STACK_TRACE_GETTER_
         -: 6290:    os_stack_trace_getter_ = new GTEST_OS_STACK_TRACE_GETTER_;
         -: 6291:#else
@@ -20880,19 +20880,19 @@ call    1 returned 1
         -: 6293:#endif  // GTEST_OS_STACK_TRACE_GETTER_
         -: 6294:  }
         -: 6295:
-      263: 6296:  return os_stack_trace_getter_;
-      263: 6296-block  0
+      359: 6296:  return os_stack_trace_getter_;
+      359: 6296-block  0
         -: 6297:}
         -: 6298:
         -: 6299:// Returns the most specific TestResult currently running.
-function _ZN7testing8internal12UnitTestImpl19current_test_resultEv called 206 returned 100% blocks executed 83%
-      206: 6300:TestResult* UnitTestImpl::current_test_result() {
-      206: 6301:  if (current_test_info_ != nullptr) {
-      206: 6301-block  0
-branch  0 taken 204 (fallthrough)
+function _ZN7testing8internal12UnitTestImpl19current_test_resultEv called 278 returned 100% blocks executed 83%
+      278: 6300:TestResult* UnitTestImpl::current_test_result() {
+      278: 6301:  if (current_test_info_ != nullptr) {
+      278: 6301-block  0
+branch  0 taken 276 (fallthrough)
 branch  1 taken 2
-      204: 6302:    return &current_test_info_->result_;
-      204: 6302-block  0
+      276: 6302:    return &current_test_info_->result_;
+      276: 6302-block  0
         -: 6303:  }
         2: 6304:  if (current_test_suite_ != nullptr) {
         2: 6304-block  0
@@ -20946,20 +20946,20 @@ branch  3 never executed (throw)
         -: 6326:// Restores the test suites and tests to their order before the first shuffle.
 function _ZN7testing8internal12UnitTestImpl14UnshuffleTestsEv called 1 returned 100% blocks executed 100%
         1: 6327:void UnitTestImpl::UnshuffleTests() {
-        5: 6328:  for (size_t i = 0; i < test_suites_.size(); i++) {
+        8: 6328:  for (size_t i = 0; i < test_suites_.size(); i++) {
         1: 6328-block  0
-        5: 6328-block  1
-call    0 returned 5
-branch  1 taken 4
+        8: 6328-block  1
+call    0 returned 8
+branch  1 taken 7
 branch  2 taken 1 (fallthrough)
         -: 6329:    // Unshuffles the tests in each test suite.
-        4: 6330:    test_suites_[i]->UnshuffleTests();
-        4: 6330-block  0
-call    0 returned 4
-call    1 returned 4
+        7: 6330:    test_suites_[i]->UnshuffleTests();
+        7: 6330-block  0
+call    0 returned 7
+call    1 returned 7
         -: 6331:    // Resets the index of each test suite.
-        4: 6332:    test_suite_indices_[i] = static_cast<int>(i);
-call    0 returned 4
+        7: 6332:    test_suite_indices_[i] = static_cast<int>(i);
+call    0 returned 7
         -: 6333:  }
         1: 6334:}
         -: 6335:
@@ -20990,26 +20990,26 @@ call    1 never executed
         -: 6356:class ClassUniqueToAlwaysTrue {};
         -: 6357:}  // namespace
         -: 6358:
-function _ZN7testing8internal6IsTrueEb called 369 returned 100% blocks executed 100%
-      369: 6359:bool IsTrue(bool condition) { return condition; }
-      369: 6359-block  0
+function _ZN7testing8internal6IsTrueEb called 501 returned 100% blocks executed 100%
+      501: 6359:bool IsTrue(bool condition) { return condition; }
+      501: 6359-block  0
         -: 6360:
-function _ZN7testing8internal10AlwaysTrueEv called 266 returned 100% blocks executed 67%
-      266: 6361:bool AlwaysTrue() {
+function _ZN7testing8internal10AlwaysTrueEv called 362 returned 100% blocks executed 67%
+      362: 6361:bool AlwaysTrue() {
         -: 6362:#if GTEST_HAS_EXCEPTIONS
         -: 6363:  // This condition is always false so AlwaysTrue() never actually throws,
         -: 6364:  // but it makes the compiler think that it may throw.
-     266*: 6365:  if (IsTrue(false)) throw ClassUniqueToAlwaysTrue();
-      266: 6365-block  0
-call    0 returned 266
+     362*: 6365:  if (IsTrue(false)) throw ClassUniqueToAlwaysTrue();
+      362: 6365-block  0
+call    0 returned 362
 branch  1 taken 0 (fallthrough)
-branch  2 taken 266
+branch  2 taken 362
     %%%%%: 6365-block  1
 call    3 never executed
 call    4 never executed
         -: 6366:#endif  // GTEST_HAS_EXCEPTIONS
-      266: 6367:  return true;
-      266: 6367-block  0
+      362: 6367:  return true;
+      362: 6367-block  0
         -: 6368:}
         -: 6369:
         -: 6370:// If *pstr starts with the given prefix, modifies *pstr to be right

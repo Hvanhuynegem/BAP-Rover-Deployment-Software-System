@@ -1508,15 +1508,15 @@ function _ZN7testing8internal5MutexC1ENS1_25StaticConstructorSelectorE called 2 
         -: 1469:// "MutexLock l(&mu)".  Hence the typedef trick below.
         -: 1470:class GTestMutexLock {
         -: 1471: public:
-function _ZN7testing8internal14GTestMutexLockC1EPNS0_5MutexE called 110 returned 100% blocks executed 100%
-      110: 1472:  explicit GTestMutexLock(Mutex* mutex) : mutex_(mutex) { mutex_->Lock(); }
-      110: 1472-block  0
-call    0 returned 110
+function _ZN7testing8internal14GTestMutexLockC1EPNS0_5MutexE called 152 returned 100% blocks executed 100%
+      152: 1472:  explicit GTestMutexLock(Mutex* mutex) : mutex_(mutex) { mutex_->Lock(); }
+      152: 1472-block  0
+call    0 returned 152
         -: 1473:
-function _ZN7testing8internal14GTestMutexLockD1Ev called 110 returned 100% blocks executed 100%
-      110: 1474:  ~GTestMutexLock() { mutex_->Unlock(); }
-      110: 1474-block  0
-call    0 returned 110
+function _ZN7testing8internal14GTestMutexLockD1Ev called 152 returned 100% blocks executed 100%
+      152: 1474:  ~GTestMutexLock() { mutex_->Unlock(); }
+      152: 1474-block  0
+call    0 returned 152
         -: 1475:
         -: 1476: private:
         -: 1477:  Mutex* const mutex_;

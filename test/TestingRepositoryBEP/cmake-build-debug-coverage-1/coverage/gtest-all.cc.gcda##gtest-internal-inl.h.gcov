@@ -206,62 +206,62 @@ branch  1 never executed
         -:  141:class GTestFlagSaver {
         -:  142: public:
         -:  143:  // The c'tor.
-function _ZN7testing8internal14GTestFlagSaverC1Ev called 51 returned 100% blocks executed 56%
-       51:  144:  GTestFlagSaver() {
-       51:  144-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-call    3 returned 51
-call    4 returned 51
-call    5 returned 51
-       51:  145:    also_run_disabled_tests_ = GTEST_FLAG_GET(also_run_disabled_tests);
-       51:  146:    break_on_failure_ = GTEST_FLAG_GET(break_on_failure);
-       51:  147:    catch_exceptions_ = GTEST_FLAG_GET(catch_exceptions);
-       51:  148:    color_ = GTEST_FLAG_GET(color);
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN7testing8internal14GTestFlagSaverC1Ev called 69 returned 100% blocks executed 56%
+       69:  144:  GTestFlagSaver() {
+       69:  144-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+call    3 returned 69
+call    4 returned 69
+call    5 returned 69
+       69:  145:    also_run_disabled_tests_ = GTEST_FLAG_GET(also_run_disabled_tests);
+       69:  146:    break_on_failure_ = GTEST_FLAG_GET(break_on_failure);
+       69:  147:    catch_exceptions_ = GTEST_FLAG_GET(catch_exceptions);
+       69:  148:    color_ = GTEST_FLAG_GET(color);
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  149:    death_test_style_ = GTEST_FLAG_GET(death_test_style);
-       51:  149-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69:  149:    death_test_style_ = GTEST_FLAG_GET(death_test_style);
+       69:  149-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  150:    death_test_use_fork_ = GTEST_FLAG_GET(death_test_use_fork);
-       51:  151:    fail_fast_ = GTEST_FLAG_GET(fail_fast);
-       51:  152:    filter_ = GTEST_FLAG_GET(filter);
-       51:  152-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69:  150:    death_test_use_fork_ = GTEST_FLAG_GET(death_test_use_fork);
+       69:  151:    fail_fast_ = GTEST_FLAG_GET(fail_fast);
+       69:  152:    filter_ = GTEST_FLAG_GET(filter);
+       69:  152-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  153:    internal_run_death_test_ = GTEST_FLAG_GET(internal_run_death_test);
-       51:  153-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69:  153:    internal_run_death_test_ = GTEST_FLAG_GET(internal_run_death_test);
+       69:  153-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  154:    list_tests_ = GTEST_FLAG_GET(list_tests);
-       51:  155:    output_ = GTEST_FLAG_GET(output);
-       51:  155-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69:  154:    list_tests_ = GTEST_FLAG_GET(list_tests);
+       69:  155:    output_ = GTEST_FLAG_GET(output);
+       69:  155-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  156:    brief_ = GTEST_FLAG_GET(brief);
-       51:  157:    print_time_ = GTEST_FLAG_GET(print_time);
-       51:  158:    print_utf8_ = GTEST_FLAG_GET(print_utf8);
-       51:  159:    random_seed_ = GTEST_FLAG_GET(random_seed);
-       51:  160:    repeat_ = GTEST_FLAG_GET(repeat);
-       51:  161:    recreate_environments_when_repeating_ =
+       69:  156:    brief_ = GTEST_FLAG_GET(brief);
+       69:  157:    print_time_ = GTEST_FLAG_GET(print_time);
+       69:  158:    print_utf8_ = GTEST_FLAG_GET(print_utf8);
+       69:  159:    random_seed_ = GTEST_FLAG_GET(random_seed);
+       69:  160:    repeat_ = GTEST_FLAG_GET(repeat);
+       69:  161:    recreate_environments_when_repeating_ =
         -:  162:        GTEST_FLAG_GET(recreate_environments_when_repeating);
-       51:  163:    shuffle_ = GTEST_FLAG_GET(shuffle);
-       51:  164:    stack_trace_depth_ = GTEST_FLAG_GET(stack_trace_depth);
-       51:  165:    stream_result_to_ = GTEST_FLAG_GET(stream_result_to);
-       51:  165-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69:  163:    shuffle_ = GTEST_FLAG_GET(shuffle);
+       69:  164:    stack_trace_depth_ = GTEST_FLAG_GET(stack_trace_depth);
+       69:  165:    stream_result_to_ = GTEST_FLAG_GET(stream_result_to);
+       69:  165-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51:  166:    throw_on_failure_ = GTEST_FLAG_GET(throw_on_failure);
-       51:  167:  }
-       51:  167-block  0
+       69:  166:    throw_on_failure_ = GTEST_FLAG_GET(throw_on_failure);
+       69:  167:  }
+       69:  167-block  0
     $$$$$:  167-block  1
 call    0 never executed
     $$$$$:  167-block  2
@@ -276,44 +276,44 @@ call    4 never executed
 call    5 never executed
         -:  168:
         -:  169:  // The d'tor is not virtual.  DO NOT INHERIT FROM THIS CLASS.
-function _ZN7testing8internal14GTestFlagSaverD1Ev called 51 returned 100% blocks executed 100%
-       51:  170:  ~GTestFlagSaver() {
-       51:  171:    GTEST_FLAG_SET(also_run_disabled_tests, also_run_disabled_tests_);
-       51:  172:    GTEST_FLAG_SET(break_on_failure, break_on_failure_);
-       51:  173:    GTEST_FLAG_SET(catch_exceptions, catch_exceptions_);
-       51:  174:    GTEST_FLAG_SET(color, color_);
-       51:  174-block  0
-call    0 returned 51
-       51:  175:    GTEST_FLAG_SET(death_test_style, death_test_style_);
-call    0 returned 51
-       51:  176:    GTEST_FLAG_SET(death_test_use_fork, death_test_use_fork_);
-       51:  177:    GTEST_FLAG_SET(filter, filter_);
-call    0 returned 51
-       51:  178:    GTEST_FLAG_SET(fail_fast, fail_fast_);
-       51:  179:    GTEST_FLAG_SET(internal_run_death_test, internal_run_death_test_);
-call    0 returned 51
-       51:  180:    GTEST_FLAG_SET(list_tests, list_tests_);
-       51:  181:    GTEST_FLAG_SET(output, output_);
-call    0 returned 51
-       51:  182:    GTEST_FLAG_SET(brief, brief_);
-       51:  183:    GTEST_FLAG_SET(print_time, print_time_);
-       51:  184:    GTEST_FLAG_SET(print_utf8, print_utf8_);
-       51:  185:    GTEST_FLAG_SET(random_seed, random_seed_);
-       51:  186:    GTEST_FLAG_SET(repeat, repeat_);
-       51:  187:    GTEST_FLAG_SET(recreate_environments_when_repeating,
+function _ZN7testing8internal14GTestFlagSaverD1Ev called 69 returned 100% blocks executed 100%
+       69:  170:  ~GTestFlagSaver() {
+       69:  171:    GTEST_FLAG_SET(also_run_disabled_tests, also_run_disabled_tests_);
+       69:  172:    GTEST_FLAG_SET(break_on_failure, break_on_failure_);
+       69:  173:    GTEST_FLAG_SET(catch_exceptions, catch_exceptions_);
+       69:  174:    GTEST_FLAG_SET(color, color_);
+       69:  174-block  0
+call    0 returned 69
+       69:  175:    GTEST_FLAG_SET(death_test_style, death_test_style_);
+call    0 returned 69
+       69:  176:    GTEST_FLAG_SET(death_test_use_fork, death_test_use_fork_);
+       69:  177:    GTEST_FLAG_SET(filter, filter_);
+call    0 returned 69
+       69:  178:    GTEST_FLAG_SET(fail_fast, fail_fast_);
+       69:  179:    GTEST_FLAG_SET(internal_run_death_test, internal_run_death_test_);
+call    0 returned 69
+       69:  180:    GTEST_FLAG_SET(list_tests, list_tests_);
+       69:  181:    GTEST_FLAG_SET(output, output_);
+call    0 returned 69
+       69:  182:    GTEST_FLAG_SET(brief, brief_);
+       69:  183:    GTEST_FLAG_SET(print_time, print_time_);
+       69:  184:    GTEST_FLAG_SET(print_utf8, print_utf8_);
+       69:  185:    GTEST_FLAG_SET(random_seed, random_seed_);
+       69:  186:    GTEST_FLAG_SET(repeat, repeat_);
+       69:  187:    GTEST_FLAG_SET(recreate_environments_when_repeating,
         -:  188:                   recreate_environments_when_repeating_);
-       51:  189:    GTEST_FLAG_SET(shuffle, shuffle_);
-       51:  190:    GTEST_FLAG_SET(stack_trace_depth, stack_trace_depth_);
-       51:  191:    GTEST_FLAG_SET(stream_result_to, stream_result_to_);
-call    0 returned 51
-       51:  192:    GTEST_FLAG_SET(throw_on_failure, throw_on_failure_);
-       51:  193:  }
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-call    3 returned 51
-call    4 returned 51
-call    5 returned 51
+       69:  189:    GTEST_FLAG_SET(shuffle, shuffle_);
+       69:  190:    GTEST_FLAG_SET(stack_trace_depth, stack_trace_depth_);
+       69:  191:    GTEST_FLAG_SET(stream_result_to, stream_result_to_);
+call    0 returned 69
+       69:  192:    GTEST_FLAG_SET(throw_on_failure, throw_on_failure_);
+       69:  193:  }
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+call    3 returned 69
+call    4 returned 69
+call    5 returned 69
         -:  194:
         -:  195: private:
         -:  196:  // Fields for saving the original values of flags.
@@ -396,64 +396,64 @@ call    5 returned 51
         -:  273:// Returns the number of elements in the given container that satisfy
         -:  274:// the given predicate.
         -:  275:template <class Container, typename Predicate>
-      403:  276:inline int CountIf(const Container& c, Predicate predicate) {
+      559:  276:inline int CountIf(const Container& c, Predicate predicate) {
         -:  277:  // Implemented as an explicit loop since std::count_if() in libCstd on
         -:  278:  // Solaris has a non-standard signature.
-      403:  279:  int count = 0;
-     878*:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
-     475*:  281:    if (predicate(*it)) ++count;
+      559:  279:  int count = 0;
+    1208*:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
+     649*:  281:    if (predicate(*it)) ++count;
         -:  282:  }
-      403:  283:  return count;
+      559:  283:  return count;
         -:  284:}
 ------------------
 _ZN7testing8internal7CountIfISt6vectorIPNS_8TestInfoESaIS4_EEPFbPKS3_EEEiRKT_T0_:
-function _ZN7testing8internal7CountIfISt6vectorIPNS_8TestInfoESaIS4_EEPFbPKS3_EEEiRKT_T0_ called 36 returned 100% blocks executed 100%
-       36:  276:inline int CountIf(const Container& c, Predicate predicate) {
+function _ZN7testing8internal7CountIfISt6vectorIPNS_8TestInfoESaIS4_EEPFbPKS3_EEEiRKT_T0_ called 63 returned 100% blocks executed 100%
+       63:  276:inline int CountIf(const Container& c, Predicate predicate) {
         -:  277:  // Implemented as an explicit loop since std::count_if() in libCstd on
         -:  278:  // Solaris has a non-standard signature.
-       36:  279:  int count = 0;
-      495:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
-       36:  280-block  0
-call    0 returned 36
-      459:  280-block  1
-call    1 returned 459
-      495:  280-block  2
-call    2 returned 495
-call    3 returned 495
-branch  4 taken 459
-branch  5 taken 36 (fallthrough)
-      459:  281:    if (predicate(*it)) ++count;
-      459:  281-block  0
-call    0 returned 459
-call    1 returned 459
-branch  2 taken 459 (fallthrough)
+       63:  279:  int count = 0;
+      684:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
+       63:  280-block  0
+call    0 returned 63
+      621:  280-block  1
+call    1 returned 621
+      684:  280-block  2
+call    2 returned 684
+call    3 returned 684
+branch  4 taken 621
+branch  5 taken 63 (fallthrough)
+      621:  281:    if (predicate(*it)) ++count;
+      621:  281-block  0
+call    0 returned 621
+call    1 returned 621
+branch  2 taken 621 (fallthrough)
 branch  3 taken 0 (throw)
-      459:  281-block  1
-branch  4 taken 255 (fallthrough)
-branch  5 taken 204
-      255:  281-block  2
+      621:  281-block  1
+branch  4 taken 345 (fallthrough)
+branch  5 taken 276
+      345:  281-block  2
         -:  282:  }
-       36:  283:  return count;
-       36:  283-block  0
-       36:  283-block  1
+       63:  283:  return count;
+       63:  283-block  0
+       63:  283-block  1
         -:  284:}
 ------------------
 _ZN7testing8internal7CountIfISt6vectorINS_14TestPartResultESaIS3_EEPFbRKS3_EEEiRKT_T0_:
-function _ZN7testing8internal7CountIfISt6vectorINS_14TestPartResultESaIS3_EEPFbRKS3_EEEiRKT_T0_ called 363 returned 100% blocks executed 58%
-      363:  276:inline int CountIf(const Container& c, Predicate predicate) {
+function _ZN7testing8internal7CountIfISt6vectorINS_14TestPartResultESaIS3_EEPFbRKS3_EEEiRKT_T0_ called 492 returned 100% blocks executed 58%
+      492:  276:inline int CountIf(const Container& c, Predicate predicate) {
         -:  277:  // Implemented as an explicit loop since std::count_if() in libCstd on
         -:  278:  // Solaris has a non-standard signature.
-      363:  279:  int count = 0;
-     363*:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
-      363:  280-block  0
-call    0 returned 363
+      492:  279:  int count = 0;
+     492*:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
+      492:  280-block  0
+call    0 returned 492
     %%%%%:  280-block  1
 call    1 never executed
-      363:  280-block  2
-call    2 returned 363
-call    3 returned 363
+      492:  280-block  2
+call    2 returned 492
+call    3 returned 492
 branch  4 taken 0
-branch  5 taken 363 (fallthrough)
+branch  5 taken 492 (fallthrough)
     #####:  281:    if (predicate(*it)) ++count;
     %%%%%:  281-block  0
 call    0 never executed
@@ -465,9 +465,9 @@ branch  4 never executed (fallthrough)
 branch  5 never executed
     %%%%%:  281-block  2
         -:  282:  }
-      363:  283:  return count;
-      363:  283-block  0
-      363:  283-block  1
+      492:  283:  return count;
+      492:  283-block  0
+      492:  283-block  1
         -:  284:}
 ------------------
 _ZN7testing8internal7CountIfISt6vectorIPNS_9TestSuiteESaIS4_EEPFbPKS3_EEEiRKT_T0_:
@@ -476,26 +476,26 @@ function _ZN7testing8internal7CountIfISt6vectorIPNS_9TestSuiteESaIS4_EEPFbPKS3_E
         -:  277:  // Implemented as an explicit loop since std::count_if() in libCstd on
         -:  278:  // Solaris has a non-standard signature.
         4:  279:  int count = 0;
-       20:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
+       32:  280:  for (auto it = c.begin(); it != c.end(); ++it) {
         4:  280-block  0
 call    0 returned 4
-       16:  280-block  1
-call    1 returned 16
-       20:  280-block  2
-call    2 returned 20
-call    3 returned 20
-branch  4 taken 16
+       28:  280-block  1
+call    1 returned 28
+       32:  280-block  2
+call    2 returned 32
+call    3 returned 32
+branch  4 taken 28
 branch  5 taken 4 (fallthrough)
-       16:  281:    if (predicate(*it)) ++count;
-       16:  281-block  0
-call    0 returned 16
-call    1 returned 16
-branch  2 taken 16 (fallthrough)
+       28:  281:    if (predicate(*it)) ++count;
+       28:  281-block  0
+call    0 returned 28
+call    1 returned 28
+branch  2 taken 28 (fallthrough)
 branch  3 taken 0 (throw)
-       16:  281-block  1
-branch  4 taken 8 (fallthrough)
-branch  5 taken 8
-        8:  281-block  2
+       28:  281-block  1
+branch  4 taken 14 (fallthrough)
+branch  5 taken 14
+       14:  281-block  2
         -:  282:  }
         4:  283:  return count;
         4:  283-block  0
@@ -505,9 +505,9 @@ branch  5 taken 8
         -:  285:
         -:  286:// Applies a function/functor to each element in the container.
         -:  287:template <class Container, typename Functor>
-       7*:  288:void ForEach(const Container& c, Functor functor) {
-       7*:  289:  std::for_each(c.begin(), c.end(), functor);
-       7*:  290:}
+      10*:  288:void ForEach(const Container& c, Functor functor) {
+      10*:  289:  std::for_each(c.begin(), c.end(), functor);
+      10*:  290:}
 ------------------
 _ZN7testing8internal7ForEachISt6vectorIPNS_11EnvironmentESaIS4_EEPFvS4_EEEvRKT_T0_:
 function _ZN7testing8internal7ForEachISt6vectorIPNS_11EnvironmentESaIS4_EEPFvS4_EEEvRKT_T0_ called 2 returned 100% blocks executed 100%
@@ -530,14 +530,14 @@ call    2 never executed
     #####:  290:}
 ------------------
 _ZN7testing8internal7ForEachISt6vectorIPNS_8TestInfoESaIS4_EEPFvS4_EEEvRKT_T0_:
-function _ZN7testing8internal7ForEachISt6vectorIPNS_8TestInfoESaIS4_EEPFvS4_EEEvRKT_T0_ called 4 returned 100% blocks executed 100%
-        4:  288:void ForEach(const Container& c, Functor functor) {
-        4:  289:  std::for_each(c.begin(), c.end(), functor);
-        4:  289-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-        4:  290:}
+function _ZN7testing8internal7ForEachISt6vectorIPNS_8TestInfoESaIS4_EEPFvS4_EEEvRKT_T0_ called 7 returned 100% blocks executed 100%
+        7:  288:void ForEach(const Container& c, Functor functor) {
+        7:  289:  std::for_each(c.begin(), c.end(), functor);
+        7:  289-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+        7:  290:}
 ------------------
 _ZN7testing8internal7ForEachISt6vectorIPNS_9TestSuiteESaIS4_EEPFvS4_EEEvRKT_T0_:
 function _ZN7testing8internal7ForEachISt6vectorIPNS_9TestSuiteESaIS4_EEPFvS4_EEEvRKT_T0_ called 1 returned 100% blocks executed 100%
@@ -553,21 +553,21 @@ call    2 returned 1
         -:  292:// Returns the i-th element of the vector, or default_value if i is not
         -:  293:// in range [0, v.size()).
         -:  294:template <typename E>
-function _ZN7testing8internal12GetElementOrIiEET_RKSt6vectorIS2_SaIS2_EEiS2_ called 55 returned 100% blocks executed 88%
-       55:  295:inline E GetElementOr(const std::vector<E>& v, int i, E default_value) {
-     110*:  296:  return (i < 0 || i >= static_cast<int>(v.size())) ? default_value
-       55:  296-block  0
-branch  0 taken 55 (fallthrough)
+function _ZN7testing8internal12GetElementOrIiEET_RKSt6vectorIS2_SaIS2_EEiS2_ called 76 returned 100% blocks executed 88%
+       76:  295:inline E GetElementOr(const std::vector<E>& v, int i, E default_value) {
+     152*:  296:  return (i < 0 || i >= static_cast<int>(v.size())) ? default_value
+       76:  296-block  0
+branch  0 taken 76 (fallthrough)
 branch  1 taken 0
-       55:  296-block  1
-call    2 returned 55
+       76:  296-block  1
+call    2 returned 76
 branch  3 taken 0 (fallthrough)
-branch  4 taken 55
+branch  4 taken 76
     %%%%%:  296-block  2
-      110:  297:                                                    : v[static_cast<size_t>(i)];
-       55:  297-block  0
-call    0 returned 55
-       55:  297-block  1
+      152:  297:                                                    : v[static_cast<size_t>(i)];
+       76:  297-block  0
+call    0 returned 76
+       76:  297-block  1
         -:  298:}
         -:  299:
         -:  300:// Performs an in-place shuffle of a range of the vector's elements.
@@ -1079,24 +1079,24 @@ call    0 never executed
         -:  600:
         -:  601:  // Gets the i-th test suite among all the test suites. i can range from 0 to
         -:  602:  // total_test_suite_count() - 1. If i is not in that range, returns NULL.
-function _ZN7testing8internal12UnitTestImpl19GetMutableSuiteCaseEi called 4 returned 100% blocks executed 86%
-        4:  603:  TestSuite* GetMutableSuiteCase(int i) {
-        4:  604:    const int index = GetElementOr(test_suite_indices_, i, -1);
-        4:  604-block  0
-call    0 returned 4
-       4*:  605:    return index < 0 ? nullptr : test_suites_[static_cast<size_t>(index)];
-branch  0 taken 4 (fallthrough)
+function _ZN7testing8internal12UnitTestImpl19GetMutableSuiteCaseEi called 7 returned 100% blocks executed 86%
+        7:  603:  TestSuite* GetMutableSuiteCase(int i) {
+        7:  604:    const int index = GetElementOr(test_suite_indices_, i, -1);
+        7:  604-block  0
+call    0 returned 7
+       7*:  605:    return index < 0 ? nullptr : test_suites_[static_cast<size_t>(index)];
+branch  0 taken 7 (fallthrough)
 branch  1 taken 0
-        4:  605-block  0
-call    2 returned 4
+        7:  605-block  0
+call    2 returned 7
     %%%%%:  605-block  1
-        4:  605-block  2
+        7:  605-block  2
         -:  606:  }
         -:  607:
         -:  608:  // Provides access to the event listener list.
-function _ZN7testing8internal12UnitTestImpl9listenersEv called 57 returned 100% blocks executed 100%
-       57:  609:  TestEventListeners* listeners() { return &listeners_; }
-       57:  609-block  0
+function _ZN7testing8internal12UnitTestImpl9listenersEv called 78 returned 100% blocks executed 100%
+       78:  609:  TestEventListeners* listeners() { return &listeners_; }
+       78:  609-block  0
         -:  610:
         -:  611:  // Returns the TestResult for the test that's currently running, or
         -:  612:  // the TestResult for the ad hoc test if no test is running.
@@ -1164,8 +1164,8 @@ function _ZNK7testing8internal12UnitTestImpl18ad_hoc_test_resultEv called 2 retu
         -:  672:  //   set_up_tc:    pointer to the function that sets up the test suite
         -:  673:  //   tear_down_tc: pointer to the function that tears down the test suite
         -:  674:  //   test_info:    the TestInfo object
-function _ZN7testing8internal12UnitTestImpl11AddTestInfoEPFvvES3_PNS_8TestInfoE called 51 returned 100% blocks executed 59%
-       51:  675:  void AddTestInfo(internal::SetUpTestSuiteFunc set_up_tc,
+function _ZN7testing8internal12UnitTestImpl11AddTestInfoEPFvvES3_PNS_8TestInfoE called 69 returned 100% blocks executed 59%
+       69:  675:  void AddTestInfo(internal::SetUpTestSuiteFunc set_up_tc,
         -:  676:                   internal::TearDownTestSuiteFunc tear_down_tc,
         -:  677:                   TestInfo* test_info) {
         -:  678:#if GTEST_HAS_FILE_SYSTEM
@@ -1176,11 +1176,11 @@ function _ZN7testing8internal12UnitTestImpl11AddTestInfoEPFvvES3_PNS_8TestInfoE 
         -:  683:    // RUN_ALL_TESTS().  Therefore we capture the current directory in
         -:  684:    // AddTestInfo(), which is called to register a TEST or TEST_F
         -:  685:    // before main() is reached.
-       51:  686:    if (original_working_dir_.IsEmpty()) {
-       51:  686-block  0
-call    0 returned 51
+       69:  686:    if (original_working_dir_.IsEmpty()) {
+       69:  686-block  0
+call    0 returned 69
 branch  1 taken 1 (fallthrough)
-branch  2 taken 50
+branch  2 taken 68
         1:  687:      original_working_dir_ = FilePath::GetCurrentDir();
         1:  687-block  0
 call    0 returned 1
@@ -1217,14 +1217,14 @@ branch  5 never executed (throw)
         -:  690:    }
         -:  691:#endif  // GTEST_HAS_FILE_SYSTEM
         -:  692:
-       51:  693:    GetTestSuite(test_info->test_suite_name_, test_info->type_param(),
+       69:  693:    GetTestSuite(test_info->test_suite_name_, test_info->type_param(),
         -:  694:                 set_up_tc, tear_down_tc)
-       51:  695:        ->AddTestInfo(test_info);
-       51:  695-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-       51:  696:  }
+       69:  695:        ->AddTestInfo(test_info);
+       69:  695-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+       69:  696:  }
         -:  697:
         -:  698:  // Returns ParameterizedTestSuiteRegistry object used to keep track of
         -:  699:  // value-parameterized tests and instantiate and register them.
@@ -1293,12 +1293,12 @@ call    0 returned 1
         -:  753:  // Prints the names of the tests matching the user-specified filter flag.
         -:  754:  void ListTestsMatchingFilter();
         -:  755:
-function _ZNK7testing8internal12UnitTestImpl18current_test_suiteEv called 51 returned 100% blocks executed 100%
-       51:  756:  const TestSuite* current_test_suite() const { return current_test_suite_; }
-       51:  756-block  0
-function _ZN7testing8internal12UnitTestImpl17current_test_infoEv called 51 returned 100% blocks executed 100%
-       51:  757:  TestInfo* current_test_info() { return current_test_info_; }
-       51:  757-block  0
+function _ZNK7testing8internal12UnitTestImpl18current_test_suiteEv called 69 returned 100% blocks executed 100%
+       69:  756:  const TestSuite* current_test_suite() const { return current_test_suite_; }
+       69:  756-block  0
+function _ZN7testing8internal12UnitTestImpl17current_test_infoEv called 69 returned 100% blocks executed 100%
+       69:  757:  TestInfo* current_test_info() { return current_test_info_; }
+       69:  757-block  0
 function _ZNK7testing8internal12UnitTestImpl17current_test_infoEv called 0 returned 0% blocks executed 0%
     #####:  758:  const TestInfo* current_test_info() const { return current_test_info_; }
     %%%%%:  758-block  0
@@ -1388,9 +1388,9 @@ function _ZN7testing8internal12UnitTestImpl6randomEv called 0 returned 0% blocks
         -:  823:
         -:  824:  // Returns the value of GTEST_FLAG(catch_exceptions) at the moment
         -:  825:  // UnitTest::Run() starts.
-function _ZNK7testing8internal12UnitTestImpl16catch_exceptionsEv called 265 returned 100% blocks executed 100%
-      265:  826:  bool catch_exceptions() const { return catch_exceptions_; }
-      265:  826-block  0
+function _ZNK7testing8internal12UnitTestImpl16catch_exceptionsEv called 361 returned 100% blocks executed 100%
+      361:  826:  bool catch_exceptions() const { return catch_exceptions_; }
+      361:  826-block  0
         -:  827:
         -:  828: private:
         -:  829:  struct CompareTestSuitesByPointer {
@@ -1407,18 +1407,18 @@ function _ZN7testing8internal12UnitTestImpl20set_catch_exceptionsEb called 1 ret
         1:  839:  void set_catch_exceptions(bool value) { catch_exceptions_ = value; }
         -:  840:
         -:  841:  // Sets the TestSuite object for the test that's currently running.
-function _ZN7testing8internal12UnitTestImpl22set_current_test_suiteEPNS_9TestSuiteE called 8 returned 100% blocks executed 100%
-        8:  842:  void set_current_test_suite(TestSuite* a_current_test_suite) {
-        8:  843:    current_test_suite_ = a_current_test_suite;
-        8:  844:  }
+function _ZN7testing8internal12UnitTestImpl22set_current_test_suiteEPNS_9TestSuiteE called 14 returned 100% blocks executed 100%
+       14:  842:  void set_current_test_suite(TestSuite* a_current_test_suite) {
+       14:  843:    current_test_suite_ = a_current_test_suite;
+       14:  844:  }
         -:  845:
         -:  846:  // Sets the TestInfo object for the test that's currently running.  If
         -:  847:  // current_test_info is NULL, the assertion results will be stored in
         -:  848:  // ad_hoc_test_result_.
-function _ZN7testing8internal12UnitTestImpl21set_current_test_infoEPNS_8TestInfoE called 102 returned 100% blocks executed 100%
-      102:  849:  void set_current_test_info(TestInfo* a_current_test_info) {
-      102:  850:    current_test_info_ = a_current_test_info;
-      102:  851:  }
+function _ZN7testing8internal12UnitTestImpl21set_current_test_infoEPNS_8TestInfoE called 138 returned 100% blocks executed 100%
+      138:  849:  void set_current_test_info(TestInfo* a_current_test_info) {
+      138:  850:    current_test_info_ = a_current_test_info;
+      138:  851:  }
         -:  852:
         -:  853:  // The UnitTest object that owns this implementation object.
         -:  854:  UnitTest* const parent_;
@@ -1545,12 +1545,12 @@ function _ZN7testing8internal12UnitTestImpl21set_current_test_infoEPNS_8TestInfo
         -:  975:
         -:  976:// Convenience function for accessing the global UnitTest
         -:  977:// implementation object.
-function _ZN7testing8internal15GetUnitTestImplEv called 624 returned 100% blocks executed 100%
-      624:  978:inline UnitTestImpl* GetUnitTestImpl() {
-      624:  979:  return UnitTest::GetInstance()->impl();
-      624:  979-block  0
-call    0 returned 624
-call    1 returned 624
+function _ZN7testing8internal15GetUnitTestImplEv called 846 returned 100% blocks executed 100%
+      846:  978:inline UnitTestImpl* GetUnitTestImpl() {
+      846:  979:  return UnitTest::GetInstance()->impl();
+      846:  979-block  0
+call    0 returned 846
+call    1 returned 846
         -:  980:}
         -:  981:
         -:  982:#ifdef GTEST_USES_SIMPLE_RE

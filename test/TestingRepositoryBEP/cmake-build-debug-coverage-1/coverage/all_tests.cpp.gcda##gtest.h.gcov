@@ -1774,6 +1774,77 @@ call    0 never executed
         -: 1412:                                 const T2& rhs) {
       930: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
         -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareItiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareItiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 2 returned 100% blocks executed 100%
+        2: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+        2: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+        2: 1413-block  0
+call    0 returned 2
+        -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareIttLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareIttLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 18 returned 100% blocks executed 100%
+       18: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+       18: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       18: 1413-block  0
+call    0 returned 18
+        -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareIbbLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareIbbLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 29 returned 100% blocks executed 100%
+       29: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+       29: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+       29: 1413-block  0
+call    0 returned 29
+        -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareIhiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareIhiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 5 returned 100% blocks executed 100%
+        5: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+        5: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+        5: 1413-block  0
+call    0 returned 5
+        -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareIihLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareIihLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 5 returned 100% blocks executed 100%
+        5: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+        5: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+        5: 1413-block  0
+call    0 returned 5
+        -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareIiiLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 1 returned 100% blocks executed 100%
+        1: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+        1: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+        1: 1413-block  0
+call    0 returned 1
+        -: 1414:  }
+------------------
+_ZN7testing8internal8EqHelper7CompareIhhLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_:
+function _ZN7testing8internal8EqHelper7CompareIhhLPv0EEENS_15AssertionResultEPKcS6_RKT_RKT0_ called 870 returned 100% blocks executed 100%
+      870: 1410:  static AssertionResult Compare(const char* lhs_expression,
+        -: 1411:                                 const char* rhs_expression, const T1& lhs,
+        -: 1412:                                 const T2& rhs) {
+      870: 1413:    return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      870: 1413-block  0
+call    0 returned 870
+        -: 1414:  }
+------------------
         -: 1415:
         -: 1416:  // With this overloaded version, we allow anonymous enums to be used
         -: 1417:  // in {ASSERT|EXPECT}_EQ when compiled with gcc 4, as anonymous
@@ -1941,27 +2012,86 @@ call    0 never executed
         -: 1579://
         -: 1580:// INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
         -: 1581:template <typename RawType>
-        -: 1582:AssertionResult CmpHelperFloatingPointEQ(const char* lhs_expression,
+function _ZN7testing8internal24CmpHelperFloatingPointEQIfEENS_15AssertionResultEPKcS4_T_S5_ called 12 returned 100% blocks executed 28%
+       12: 1582:AssertionResult CmpHelperFloatingPointEQ(const char* lhs_expression,
         -: 1583:                                         const char* rhs_expression,
         -: 1584:                                         RawType lhs_value, RawType rhs_value) {
-        -: 1585:  const FloatingPoint<RawType> lhs(lhs_value), rhs(rhs_value);
+       12: 1585:  const FloatingPoint<RawType> lhs(lhs_value), rhs(rhs_value);
+       12: 1585-block  0
+call    0 returned 12
+call    1 returned 12
         -: 1586:
-        -: 1587:  if (lhs.AlmostEquals(rhs)) {
-        -: 1588:    return AssertionSuccess();
+       12: 1587:  if (lhs.AlmostEquals(rhs)) {
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12: 1587-block  0
+branch  3 taken 12 (fallthrough)
+branch  4 taken 0
+       12: 1588:    return AssertionSuccess();
+       12: 1588-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
         -: 1589:  }
         -: 1590:
-        -: 1591:  ::std::stringstream lhs_ss;
-        -: 1592:  lhs_ss.precision(std::numeric_limits<RawType>::digits10 + 2);
-        -: 1593:  lhs_ss << lhs_value;
+    #####: 1591:  ::std::stringstream lhs_ss;
+    %%%%%: 1591-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####: 1592:  lhs_ss.precision(std::numeric_limits<RawType>::digits10 + 2);
+    %%%%%: 1592-block  0
+call    0 never executed
+    #####: 1593:  lhs_ss << lhs_value;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
         -: 1594:
-        -: 1595:  ::std::stringstream rhs_ss;
-        -: 1596:  rhs_ss.precision(std::numeric_limits<RawType>::digits10 + 2);
-        -: 1597:  rhs_ss << rhs_value;
+    #####: 1595:  ::std::stringstream rhs_ss;
+    %%%%%: 1595-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####: 1596:  rhs_ss.precision(std::numeric_limits<RawType>::digits10 + 2);
+    %%%%%: 1596-block  0
+call    0 never executed
+    #####: 1597:  rhs_ss << rhs_value;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
         -: 1598:
         -: 1599:  return EqFailure(lhs_expression, rhs_expression,
         -: 1600:                   StringStreamToString(&lhs_ss), StringStreamToString(&rhs_ss),
-        -: 1601:                   false);
-        -: 1602:}
+    #####: 1601:                   false);
+    %%%%%: 1601-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%: 1601-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%: 1601-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%: 1601-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$: 1601-block  4
+call   11 never executed
+    $$$$$: 1601-block  5
+    $$$$$: 1601-block  6
+call   12 never executed
+    $$$$$: 1601-block  7
+    #####: 1602:}
+call    0 never executed
+call    1 never executed
+    $$$$$: 1602-block  0
+call    2 never executed
+    $$$$$: 1602-block  1
+call    3 never executed
         -: 1603:
         -: 1604:// Helper function for implementing ASSERT_NEAR.
         -: 1605://

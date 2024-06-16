@@ -101,8 +101,8 @@
         -:   97:	__new_allocator(const __new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
         -:   98:
         -:   99:#if __cplusplus <= 201703L
-function _ZNSt15__new_allocatorIcED2Ev called 276 returned 100% blocks executed 100%
-      276:  100:      ~__new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+function _ZNSt15__new_allocatorIcED2Ev called 369 returned 100% blocks executed 100%
+      369:  100:      ~__new_allocator() _GLIBCXX_USE_NOEXCEPT { }
         -:  101:
         -:  102:      pointer
         -:  103:      address(reference __x) const _GLIBCXX_NOEXCEPT

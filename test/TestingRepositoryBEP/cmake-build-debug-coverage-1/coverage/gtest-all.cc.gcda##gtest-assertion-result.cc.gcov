@@ -112,10 +112,10 @@ branch  6 never executed (throw)
 call    0 never executed
         -:   64:
         -:   65:// Makes a successful assertion result.
-function _ZN7testing16AssertionSuccessEv called 930 returned 100% blocks executed 100%
-      930:   66:AssertionResult AssertionSuccess() { return AssertionResult(true); }
-      930:   66-block  0
-call    0 returned 930
+function _ZN7testing16AssertionSuccessEv called 945 returned 100% blocks executed 100%
+      945:   66:AssertionResult AssertionSuccess() { return AssertionResult(true); }
+      945:   66-block  0
+call    0 returned 945
         -:   67:
         -:   68:// Makes a failed assertion result.
 function _ZN7testing16AssertionFailureEv called 0 returned 0% blocks executed 0%

@@ -568,15 +568,15 @@ call    4 never executed
         -:  555:	                 && _PCCP::template
         -:  556:			   _ImplicitlyConvertiblePair<_U1, _U2>(),
         -:  557:                         bool>::type=true>
-       4*:  558:      constexpr pair(const _T1& __a, const _T2& __b)
-       4*:  559:      : first(__a), second(__b) { }
+       7*:  558:      constexpr pair(const _T1& __a, const _T2& __b)
+       7*:  559:      : first(__a), second(__b) { }
 ------------------
 _ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEC1IS6_S9_Lb1EEERS6_RKS9_:
-function _ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEC1IS6_S9_Lb1EEERS6_RKS9_ called 4 returned 100% blocks executed 100%
-        4:  558:      constexpr pair(const _T1& __a, const _T2& __b)
-        4:  559:      : first(__a), second(__b) { }
-        4:  559-block  0
-call    0 returned 4
+function _ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEC1IS6_S9_Lb1EEERS6_RKS9_ called 7 returned 100% blocks executed 100%
+        7:  558:      constexpr pair(const _T1& __a, const _T2& __b)
+        7:  559:      : first(__a), second(__b) { }
+        7:  559-block  0
+call    0 returned 7
 ------------------
 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IS1_S1_Lb1EEERKS1_S5_:
 function _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IS1_S1_Lb1EEERKS1_S5_ called 0 returned 0% blocks executed 0%
@@ -710,9 +710,9 @@ function _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IS1_S1_Lb1EEERKS1_S5_ called 0 
         -:  684:			  && _PCCP::template
         -:  685:			   _ImplicitlyMoveConvertiblePair<_U1, _U2>(),
         -:  686:                         bool>::type=true>
-      59*:  687:	constexpr pair(_U1&& __x, _U2&& __y)
-      59*:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
-      59*:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
+      83*:  687:	constexpr pair(_U1&& __x, _U2&& __y)
+      83*:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
+      83*:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IRPSt13_Rb_tree_nodeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEERS1_Lb1EEEOT_OT0_:
 function _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IRPSt13_Rb_tree_nodeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEERS1_Lb1EEEOT_OT0_ called 0 returned 0% blocks executed 0%
@@ -844,13 +844,13 @@ call    1 never executed
     #####:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
 _ZNSt4pairINSt8__detail14_Node_iteratorIS_IKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb0ELb1EEEbEC1IRSD_bLb1EEEOT_OT0_:
-function _ZNSt4pairINSt8__detail14_Node_iteratorIS_IKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb0ELb1EEEbEC1IRSD_bLb1EEEOT_OT0_ called 4 returned 100% blocks executed 100%
-        4:  687:	constexpr pair(_U1&& __x, _U2&& __y)
-        4:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
-        4:  688-block  0
-call    0 returned 4
-call    1 returned 4
-        4:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
+function _ZNSt4pairINSt8__detail14_Node_iteratorIS_IKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb0ELb1EEEbEC1IRSD_bLb1EEEOT_OT0_ called 7 returned 100% blocks executed 100%
+        7:  687:	constexpr pair(_U1&& __x, _U2&& __y)
+        7:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
+        7:  688-block  0
+call    0 returned 7
+call    1 returned 7
+        7:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
 _ZNSt4pairINSt8__detail14_Node_iteratorIS_IKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb0ELb1EEEbEC1ISD_bLb1EEEOT_OT0_:
 function _ZNSt4pairINSt8__detail14_Node_iteratorIS_IKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb0ELb1EEEbEC1ISD_bLb1EEEOT_OT0_ called 0 returned 0% blocks executed 0%
@@ -871,13 +871,13 @@ call    1 never executed
     #####:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
 _ZNSt4pairIPPN7testing8TestInfoExEC1IRS3_RxLb1EEEOT_OT0_:
-function _ZNSt4pairIPPN7testing8TestInfoExEC1IRS3_RxLb1EEEOT_OT0_ called 4 returned 100% blocks executed 100%
-        4:  687:	constexpr pair(_U1&& __x, _U2&& __y)
-        4:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
-        4:  688-block  0
-call    0 returned 4
-call    1 returned 4
-        4:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
+function _ZNSt4pairIPPN7testing8TestInfoExEC1IRS3_RxLb1EEEOT_OT0_ called 7 returned 100% blocks executed 100%
+        7:  687:	constexpr pair(_U1&& __x, _U2&& __y)
+        7:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
+        7:  688-block  0
+call    0 returned 7
+call    1 returned 7
+        7:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
 _ZNSt4pairIPPN7testing8TestInfoExEC1IS3_iLb1EEEOT_OT0_:
 function _ZNSt4pairIPPN7testing8TestInfoExEC1IS3_iLb1EEEOT_OT0_ called 0 returned 0% blocks executed 0%
@@ -900,13 +900,13 @@ call    3 never executed
     #####:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
 _ZNSt4pairINSt8__detail14_Node_iteratorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb1ELb1EEEbEC1IRS8_bLb1EEEOT_OT0_:
-function _ZNSt4pairINSt8__detail14_Node_iteratorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb1ELb1EEEbEC1IRS8_bLb1EEEOT_OT0_ called 51 returned 100% blocks executed 100%
-       51:  687:	constexpr pair(_U1&& __x, _U2&& __y)
-       51:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
-       51:  688-block  0
-call    0 returned 51
-call    1 returned 51
-       51:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
+function _ZNSt4pairINSt8__detail14_Node_iteratorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb1ELb1EEEbEC1IRS8_bLb1EEEOT_OT0_ called 69 returned 100% blocks executed 100%
+       69:  687:	constexpr pair(_U1&& __x, _U2&& __y)
+       69:  688:	: first(std::forward<_U1>(__x)), second(std::forward<_U2>(__y))
+       69:  688-block  0
+call    0 returned 69
+call    1 returned 69
+       69:  689:	{ __glibcxx_no_dangling_refs(_U1&&, _U2&&); }
 ------------------
         -:  690:
         -:  691:      template<typename _U1, typename _U2, typename

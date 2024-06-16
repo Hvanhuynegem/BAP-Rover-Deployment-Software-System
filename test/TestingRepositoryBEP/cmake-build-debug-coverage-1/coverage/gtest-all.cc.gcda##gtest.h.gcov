@@ -340,13 +340,13 @@ function _ZN7testing4Test13SetUpTestCaseEv called 0 returned 0% blocks executed 
         -:  332:
         -:  333:  // Deletes self.  We deliberately pick an unusual name for this
         -:  334:  // internal method to avoid clashing with names used in user TESTs.
-function _ZN7testing4Test11DeleteSelf_Ev called 51 returned 100% blocks executed 100%
-       51:  335:  void DeleteSelf_() { delete this; }
-       51:  335-block  0
-branch  0 taken 51 (fallthrough)
+function _ZN7testing4Test11DeleteSelf_Ev called 69 returned 100% blocks executed 100%
+       69:  335:  void DeleteSelf_() { delete this; }
+       69:  335-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51:  335-block  1
-call    2 returned 51
+       69:  335-block  1
+call    2 returned 69
         -:  336:
         -:  337:  const std::unique_ptr<GTEST_FLAG_SAVER_> gtest_flag_saver_;
         -:  338:
@@ -446,19 +446,19 @@ call    0 never executed
         -:  412:  int test_property_count() const;
         -:  413:
         -:  414:  // Returns true if and only if the test passed (i.e. no test part failed).
-function _ZNK7testing10TestResult6PassedEv called 102 returned 100% blocks executed 88%
-     102*:  415:  bool Passed() const { return !Skipped() && !Failed(); }
-      102:  415-block  0
-call    0 returned 102
-branch  1 taken 102 (fallthrough)
+function _ZNK7testing10TestResult6PassedEv called 138 returned 100% blocks executed 88%
+     138*:  415:  bool Passed() const { return !Skipped() && !Failed(); }
+      138:  415-block  0
+call    0 returned 138
+branch  1 taken 138 (fallthrough)
 branch  2 taken 0
-      102:  415-block  1
-call    3 returned 102
-branch  4 taken 102 (fallthrough)
+      138:  415-block  1
+call    3 returned 138
+branch  4 taken 138 (fallthrough)
 branch  5 taken 0
-      102:  415-block  2
+      138:  415-block  2
     %%%%%:  415-block  3
-      102:  415-block  4
+      138:  415-block  4
         -:  416:
         -:  417:  // Returns true if and only if the test was skipped.
         -:  418:  bool Skipped() const;
@@ -473,9 +473,9 @@ branch  5 taken 0
         -:  427:  bool HasNonfatalFailure() const;
         -:  428:
         -:  429:  // Returns the elapsed time, in milliseconds.
-function _ZNK7testing10TestResult12elapsed_timeEv called 51 returned 100% blocks executed 100%
-       51:  430:  TimeInMillis elapsed_time() const { return elapsed_time_; }
-       51:  430-block  0
+function _ZNK7testing10TestResult12elapsed_timeEv called 69 returned 100% blocks executed 100%
+       69:  430:  TimeInMillis elapsed_time() const { return elapsed_time_; }
+       69:  430-block  0
         -:  431:
         -:  432:  // Gets the time of the test case start, in ms from the start of the
         -:  433:  // UNIX epoch.
@@ -514,12 +514,12 @@ function _ZNK7testing10TestResult15start_timestampEv called 0 returned 0% blocks
         -:  464:  }
         -:  465:
         -:  466:  // Sets the start time.
-function _ZN7testing10TestResult19set_start_timestampEx called 51 returned 100% blocks executed 100%
-       51:  467:  void set_start_timestamp(TimeInMillis start) { start_timestamp_ = start; }
+function _ZN7testing10TestResult19set_start_timestampEx called 69 returned 100% blocks executed 100%
+       69:  467:  void set_start_timestamp(TimeInMillis start) { start_timestamp_ = start; }
         -:  468:
         -:  469:  // Sets the elapsed time.
-function _ZN7testing10TestResult16set_elapsed_timeEx called 51 returned 100% blocks executed 100%
-       51:  470:  void set_elapsed_time(TimeInMillis elapsed) { elapsed_time_ = elapsed; }
+function _ZN7testing10TestResult16set_elapsed_timeEx called 69 returned 100% blocks executed 100%
+       69:  470:  void set_elapsed_time(TimeInMillis elapsed) { elapsed_time_ = elapsed; }
         -:  471:
         -:  472:  // Adds a test property to the list. The property is validated and may add
         -:  473:  // a non-fatal failure if invalid (e.g., if it conflicts with reserved
@@ -593,10 +593,10 @@ function _ZN7testing10TestResult26increment_death_test_countEv called 0 returned
         -:  537:  ~TestInfo();
         -:  538:
         -:  539:  // Returns the test suite name.
-function _ZNK7testing8TestInfo15test_suite_nameEv called 102 returned 100% blocks executed 100%
-      102:  540:  const char* test_suite_name() const { return test_suite_name_.c_str(); }
-      102:  540-block  0
-call    0 returned 102
+function _ZNK7testing8TestInfo15test_suite_nameEv called 138 returned 100% blocks executed 100%
+      138:  540:  const char* test_suite_name() const { return test_suite_name_.c_str(); }
+      138:  540-block  0
+call    0 returned 138
         -:  541:
         -:  542:// Legacy API is deprecated but still available
         -:  543:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
@@ -604,25 +604,25 @@ call    0 returned 102
         -:  545:#endif  // GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  546:
         -:  547:  // Returns the test name.
-function _ZNK7testing8TestInfo4nameEv called 204 returned 100% blocks executed 100%
-      204:  548:  const char* name() const { return name_.c_str(); }
-      204:  548-block  0
-call    0 returned 204
+function _ZNK7testing8TestInfo4nameEv called 276 returned 100% blocks executed 100%
+      276:  548:  const char* name() const { return name_.c_str(); }
+      276:  548-block  0
+call    0 returned 276
         -:  549:
         -:  550:  // Returns the name of the parameter type, or NULL if this is not a typed
         -:  551:  // or a type-parameterized test.
-function _ZNK7testing8TestInfo10type_paramEv called 51 returned 100% blocks executed 67%
-       51:  552:  const char* type_param() const {
-      51*:  553:    if (type_param_ != nullptr) return type_param_->c_str();
-       51:  553-block  0
-call    0 returned 51
+function _ZNK7testing8TestInfo10type_paramEv called 69 returned 100% blocks executed 67%
+       69:  552:  const char* type_param() const {
+      69*:  553:    if (type_param_ != nullptr) return type_param_->c_str();
+       69:  553-block  0
+call    0 returned 69
 branch  1 taken 0 (fallthrough)
-branch  2 taken 51
+branch  2 taken 69
     %%%%%:  553-block  1
 call    3 never executed
 call    4 never executed
-       51:  554:    return nullptr;
-       51:  554-block  0
+       69:  554:    return nullptr;
+       69:  554-block  0
         -:  555:  }
         -:  556:
         -:  557:  // Returns the text representation of the value parameter, or NULL if this
@@ -642,15 +642,15 @@ call    4 never executed
         -:  562:  }
         -:  563:
         -:  564:  // Returns the file name where this test is defined.
-function _ZNK7testing8TestInfo4fileEv called 242 returned 100% blocks executed 100%
-      242:  565:  const char* file() const { return location_.file.c_str(); }
-      242:  565-block  0
-call    0 returned 242
+function _ZNK7testing8TestInfo4fileEv called 326 returned 100% blocks executed 100%
+      326:  565:  const char* file() const { return location_.file.c_str(); }
+      326:  565-block  0
+call    0 returned 326
         -:  566:
         -:  567:  // Returns the line where this test is defined.
-function _ZNK7testing8TestInfo4lineEv called 242 returned 100% blocks executed 100%
-      242:  568:  int line() const { return location_.line; }
-      242:  568-block  0
+function _ZNK7testing8TestInfo4lineEv called 326 returned 100% blocks executed 100%
+      326:  568:  int line() const { return location_.line; }
+      326:  568-block  0
         -:  569:
         -:  570:  // Return true if this test should not be run because it's in another shard.
 function _ZNK7testing8TestInfo19is_in_another_shardEv called 0 returned 0% blocks executed 0%
@@ -673,31 +673,31 @@ function _ZNK7testing8TestInfo19is_in_another_shardEv called 0 returned 0% block
         -:  586:  //
         -:  587:  // For example, *A*:Foo.* is a filter that matches any string that
         -:  588:  // contains the character 'A' or starts with "Foo.".
-function _ZNK7testing8TestInfo10should_runEv called 408 returned 100% blocks executed 100%
-      408:  589:  bool should_run() const { return should_run_; }
-      408:  589-block  0
+function _ZNK7testing8TestInfo10should_runEv called 552 returned 100% blocks executed 100%
+      552:  589:  bool should_run() const { return should_run_; }
+      552:  589-block  0
         -:  590:
         -:  591:  // Returns true if and only if this test will appear in the XML report.
-function _ZNK7testing8TestInfo13is_reportableEv called 51 returned 100% blocks executed 83%
-       51:  592:  bool is_reportable() const {
+function _ZNK7testing8TestInfo13is_reportableEv called 69 returned 100% blocks executed 83%
+       69:  592:  bool is_reportable() const {
         -:  593:    // The XML report includes tests matching the filter, excluding those
         -:  594:    // run in other shards.
-      51*:  595:    return matches_filter_ && !is_in_another_shard_;
-       51:  595-block  0
-branch  0 taken 51 (fallthrough)
+      69*:  595:    return matches_filter_ && !is_in_another_shard_;
+       69:  595-block  0
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51:  595-block  1
-branch  2 taken 51 (fallthrough)
+       69:  595-block  1
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0
-       51:  595-block  2
+       69:  595-block  2
     %%%%%:  595-block  3
-       51:  595-block  4
+       69:  595-block  4
         -:  596:  }
         -:  597:
         -:  598:  // Returns the result of the test.
-function _ZNK7testing8TestInfo6resultEv called 357 returned 100% blocks executed 100%
-      357:  599:  const TestResult* result() const { return &result_; }
-      357:  599-block  0
+function _ZNK7testing8TestInfo6resultEv called 483 returned 100% blocks executed 100%
+      483:  599:  const TestResult* result() const { return &result_; }
+      483:  599-block  0
         -:  600:
         -:  601: private:
         -:  602:#ifdef GTEST_HAS_DEATH_TEST
@@ -739,12 +739,12 @@ call    0 never executed
         -:  635:  // Skip and records the test result for this object.
         -:  636:  void Skip();
         -:  637:
-function _ZN7testing8TestInfo15ClearTestResultEPS0_ called 51 returned 100% blocks executed 100%
-       51:  638:  static void ClearTestResult(TestInfo* test_info) {
-       51:  639:    test_info->result_.Clear();
-       51:  639-block  0
-call    0 returned 51
-       51:  640:  }
+function _ZN7testing8TestInfo15ClearTestResultEPS0_ called 69 returned 100% blocks executed 100%
+       69:  638:  static void ClearTestResult(TestInfo* test_info) {
+       69:  639:    test_info->result_.Clear();
+       69:  639-block  0
+call    0 returned 69
+       69:  640:  }
         -:  641:
         -:  642:  // These fields are immutable properties of the test.
         -:  643:  const std::string test_suite_name_;  // test suite name
@@ -798,31 +798,31 @@ call    0 returned 51
         -:  691:  virtual ~TestSuite();
         -:  692:
         -:  693:  // Gets the name of the TestSuite.
-function _ZNK7testing9TestSuite4nameEv called 8 returned 100% blocks executed 100%
-        8:  694:  const char* name() const { return name_.c_str(); }
-        8:  694-block  0
-call    0 returned 8
+function _ZNK7testing9TestSuite4nameEv called 14 returned 100% blocks executed 100%
+       14:  694:  const char* name() const { return name_.c_str(); }
+       14:  694-block  0
+call    0 returned 14
         -:  695:
         -:  696:  // Returns the name of the parameter type, or NULL if this is not a
         -:  697:  // type-parameterized test suite.
-function _ZNK7testing9TestSuite10type_paramEv called 4 returned 100% blocks executed 67%
-        4:  698:  const char* type_param() const {
-       4*:  699:    if (type_param_ != nullptr) return type_param_->c_str();
-        4:  699-block  0
-call    0 returned 4
+function _ZNK7testing9TestSuite10type_paramEv called 7 returned 100% blocks executed 67%
+        7:  698:  const char* type_param() const {
+       7*:  699:    if (type_param_ != nullptr) return type_param_->c_str();
+        7:  699-block  0
+call    0 returned 7
 branch  1 taken 0 (fallthrough)
-branch  2 taken 4
+branch  2 taken 7
     %%%%%:  699-block  1
 call    3 never executed
 call    4 never executed
-        4:  700:    return nullptr;
-        4:  700-block  0
+        7:  700:    return nullptr;
+        7:  700-block  0
         -:  701:  }
         -:  702:
         -:  703:  // Returns true if any test in this test suite should run.
-function _ZNK7testing9TestSuite10should_runEv called 67 returned 100% blocks executed 100%
-       67:  704:  bool should_run() const { return should_run_; }
-       67:  704-block  0
+function _ZNK7testing9TestSuite10should_runEv called 97 returned 100% blocks executed 100%
+       97:  704:  bool should_run() const { return should_run_; }
+       97:  704-block  0
         -:  705:
         -:  706:  // Gets the number of successful tests in this test suite.
         -:  707:  int successful_test_count() const;
@@ -855,27 +855,27 @@ function _ZNK7testing9TestSuite6PassedEv called 0 returned 0% blocks executed 0%
 call    0 never executed
         -:  732:
         -:  733:  // Returns true if and only if the test suite failed.
-function _ZNK7testing9TestSuite6FailedEv called 8 returned 100% blocks executed 89%
-        8:  734:  bool Failed() const {
-       8*:  735:    return failed_test_count() > 0 || ad_hoc_test_result().Failed();
-        8:  735-block  0
-call    0 returned 8
-branch  1 taken 8 (fallthrough)
+function _ZNK7testing9TestSuite6FailedEv called 14 returned 100% blocks executed 89%
+       14:  734:  bool Failed() const {
+      14*:  735:    return failed_test_count() > 0 || ad_hoc_test_result().Failed();
+       14:  735-block  0
+call    0 returned 14
+branch  1 taken 14 (fallthrough)
 branch  2 taken 0
-        8:  735-block  1
-call    3 returned 8
-call    4 returned 8
+       14:  735-block  1
+call    3 returned 14
+call    4 returned 14
 branch  5 taken 0 (fallthrough)
-branch  6 taken 8
+branch  6 taken 14
     %%%%%:  735-block  2
-        8:  735-block  3
-        8:  735-block  4
+       14:  735-block  3
+       14:  735-block  4
         -:  736:  }
         -:  737:
         -:  738:  // Returns the elapsed time, in milliseconds.
-function _ZNK7testing9TestSuite12elapsed_timeEv called 4 returned 100% blocks executed 100%
-        4:  739:  TimeInMillis elapsed_time() const { return elapsed_time_; }
-        4:  739-block  0
+function _ZNK7testing9TestSuite12elapsed_timeEv called 7 returned 100% blocks executed 100%
+        7:  739:  TimeInMillis elapsed_time() const { return elapsed_time_; }
+        7:  739-block  0
         -:  740:
         -:  741:  // Gets the time of the test suite start, in ms from the start of the
         -:  742:  // UNIX epoch.
@@ -889,24 +889,24 @@ function _ZNK7testing9TestSuite15start_timestampEv called 0 returned 0% blocks e
         -:  748:
         -:  749:  // Returns the TestResult that holds test properties recorded during
         -:  750:  // execution of SetUpTestSuite and TearDownTestSuite.
-function _ZNK7testing9TestSuite18ad_hoc_test_resultEv called 16 returned 100% blocks executed 100%
-       16:  751:  const TestResult& ad_hoc_test_result() const { return ad_hoc_test_result_; }
-       16:  751-block  0
+function _ZNK7testing9TestSuite18ad_hoc_test_resultEv called 28 returned 100% blocks executed 100%
+       28:  751:  const TestResult& ad_hoc_test_result() const { return ad_hoc_test_result_; }
+       28:  751-block  0
         -:  752:
         -:  753: private:
         -:  754:  friend class Test;
         -:  755:  friend class internal::UnitTestImpl;
         -:  756:
         -:  757:  // Gets the (mutable) vector of TestInfos in this TestSuite.
-function _ZN7testing9TestSuite14test_info_listEv called 4 returned 100% blocks executed 100%
-        4:  758:  std::vector<TestInfo*>& test_info_list() { return test_info_list_; }
-        4:  758-block  0
+function _ZN7testing9TestSuite14test_info_listEv called 7 returned 100% blocks executed 100%
+        7:  758:  std::vector<TestInfo*>& test_info_list() { return test_info_list_; }
+        7:  758-block  0
         -:  759:
         -:  760:  // Gets the (immutable) vector of TestInfos in this TestSuite.
-function _ZNK7testing9TestSuite14test_info_listEv called 51 returned 100% blocks executed 100%
-       51:  761:  const std::vector<TestInfo*>& test_info_list() const {
-       51:  762:    return test_info_list_;
-       51:  762-block  0
+function _ZNK7testing9TestSuite14test_info_listEv called 69 returned 100% blocks executed 100%
+       69:  761:  const std::vector<TestInfo*>& test_info_list() const {
+       69:  762:    return test_info_list_;
+       69:  762-block  0
         -:  763:  }
         -:  764:
         -:  765:  // Returns the i-th test among all the tests. i can range from 0 to
@@ -914,8 +914,8 @@ function _ZNK7testing9TestSuite14test_info_listEv called 51 returned 100% blocks
         -:  767:  TestInfo* GetMutableTestInfo(int i);
         -:  768:
         -:  769:  // Sets the should_run member.
-function _ZN7testing9TestSuite14set_should_runEb called 55 returned 100% blocks executed 100%
-       55:  770:  void set_should_run(bool should) { should_run_ = should; }
+function _ZN7testing9TestSuite14set_should_runEb called 76 returned 100% blocks executed 100%
+       76:  770:  void set_should_run(bool should) { should_run_ = should; }
         -:  771:
         -:  772:  // Adds a TestInfo to this test suite.  Will delete the TestInfo upon
         -:  773:  // destruction of the TestSuite object.
@@ -925,12 +925,12 @@ function _ZN7testing9TestSuite14set_should_runEb called 55 returned 100% blocks 
         -:  777:  void ClearResult();
         -:  778:
         -:  779:  // Clears the results of all tests in the given test suite.
-function _ZN7testing9TestSuite20ClearTestSuiteResultEPS0_ called 4 returned 100% blocks executed 100%
-        4:  780:  static void ClearTestSuiteResult(TestSuite* test_suite) {
-        4:  781:    test_suite->ClearResult();
-        4:  781-block  0
-call    0 returned 4
-        4:  782:  }
+function _ZN7testing9TestSuite20ClearTestSuiteResultEPS0_ called 7 returned 100% blocks executed 100%
+        7:  780:  static void ClearTestSuiteResult(TestSuite* test_suite) {
+        7:  781:    test_suite->ClearResult();
+        7:  781-block  0
+call    0 returned 7
+        7:  782:  }
         -:  783:
         -:  784:  // Runs every test in this TestSuite.
         -:  785:  void Run();
@@ -940,101 +940,101 @@ call    0 returned 4
         -:  789:
         -:  790:  // Runs SetUpTestSuite() for this TestSuite.  This wrapper is needed
         -:  791:  // for catching exceptions thrown from SetUpTestSuite().
-function _ZN7testing9TestSuite17RunSetUpTestSuiteEv called 4 returned 100% blocks executed 67%
-        4:  792:  void RunSetUpTestSuite() {
-        4:  793:    if (set_up_tc_ != nullptr) {
-        4:  793-block  0
+function _ZN7testing9TestSuite17RunSetUpTestSuiteEv called 7 returned 100% blocks executed 67%
+        7:  792:  void RunSetUpTestSuite() {
+        7:  793:    if (set_up_tc_ != nullptr) {
+        7:  793-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     #####:  794:      (*set_up_tc_)();
     %%%%%:  794-block  0
 call    0 never executed
         -:  795:    }
-        4:  796:  }
+        7:  796:  }
         -:  797:
         -:  798:  // Runs TearDownTestSuite() for this TestSuite.  This wrapper is
         -:  799:  // needed for catching exceptions thrown from TearDownTestSuite().
-function _ZN7testing9TestSuite20RunTearDownTestSuiteEv called 4 returned 100% blocks executed 67%
-        4:  800:  void RunTearDownTestSuite() {
-        4:  801:    if (tear_down_tc_ != nullptr) {
-        4:  801-block  0
+function _ZN7testing9TestSuite20RunTearDownTestSuiteEv called 7 returned 100% blocks executed 67%
+        7:  800:  void RunTearDownTestSuite() {
+        7:  801:    if (tear_down_tc_ != nullptr) {
+        7:  801-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     #####:  802:      (*tear_down_tc_)();
     %%%%%:  802-block  0
 call    0 never executed
         -:  803:    }
-        4:  804:  }
+        7:  804:  }
         -:  805:
         -:  806:  // Returns true if and only if test passed.
-function _ZN7testing9TestSuite10TestPassedEPKNS_8TestInfoE called 51 returned 100% blocks executed 89%
-       51:  807:  static bool TestPassed(const TestInfo* test_info) {
-      51*:  808:    return test_info->should_run() && test_info->result()->Passed();
-       51:  808-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN7testing9TestSuite10TestPassedEPKNS_8TestInfoE called 69 returned 100% blocks executed 89%
+       69:  807:  static bool TestPassed(const TestInfo* test_info) {
+      69*:  808:    return test_info->should_run() && test_info->result()->Passed();
+       69:  808-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0
-       51:  808-block  1
-call    3 returned 51
-call    4 returned 51
-branch  5 taken 51 (fallthrough)
+       69:  808-block  1
+call    3 returned 69
+call    4 returned 69
+branch  5 taken 69 (fallthrough)
 branch  6 taken 0
-       51:  808-block  2
+       69:  808-block  2
     %%%%%:  808-block  3
-       51:  808-block  4
+       69:  808-block  4
         -:  809:  }
         -:  810:
         -:  811:  // Returns true if and only if test skipped.
-function _ZN7testing9TestSuite11TestSkippedEPKNS_8TestInfoE called 51 returned 100% blocks executed 89%
-       51:  812:  static bool TestSkipped(const TestInfo* test_info) {
-      51*:  813:    return test_info->should_run() && test_info->result()->Skipped();
-       51:  813-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN7testing9TestSuite11TestSkippedEPKNS_8TestInfoE called 69 returned 100% blocks executed 89%
+       69:  812:  static bool TestSkipped(const TestInfo* test_info) {
+      69*:  813:    return test_info->should_run() && test_info->result()->Skipped();
+       69:  813-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0
-       51:  813-block  1
-call    3 returned 51
-call    4 returned 51
+       69:  813-block  1
+call    3 returned 69
+call    4 returned 69
 branch  5 taken 0 (fallthrough)
-branch  6 taken 51
+branch  6 taken 69
     %%%%%:  813-block  2
-       51:  813-block  3
-       51:  813-block  4
+       69:  813-block  3
+       69:  813-block  4
         -:  814:  }
         -:  815:
         -:  816:  // Returns true if and only if test failed.
-function _ZN7testing9TestSuite10TestFailedEPKNS_8TestInfoE called 102 returned 100% blocks executed 89%
-      102:  817:  static bool TestFailed(const TestInfo* test_info) {
-     102*:  818:    return test_info->should_run() && test_info->result()->Failed();
-      102:  818-block  0
-call    0 returned 102
-branch  1 taken 102 (fallthrough)
+function _ZN7testing9TestSuite10TestFailedEPKNS_8TestInfoE called 138 returned 100% blocks executed 89%
+      138:  817:  static bool TestFailed(const TestInfo* test_info) {
+     138*:  818:    return test_info->should_run() && test_info->result()->Failed();
+      138:  818-block  0
+call    0 returned 138
+branch  1 taken 138 (fallthrough)
 branch  2 taken 0
-      102:  818-block  1
-call    3 returned 102
-call    4 returned 102
+      138:  818-block  1
+call    3 returned 138
+call    4 returned 138
 branch  5 taken 0 (fallthrough)
-branch  6 taken 102
+branch  6 taken 138
     %%%%%:  818-block  2
-      102:  818-block  3
-      102:  818-block  4
+      138:  818-block  3
+      138:  818-block  4
         -:  819:  }
         -:  820:
         -:  821:  // Returns true if and only if the test is disabled and will be reported in
         -:  822:  // the XML report.
-function _ZN7testing9TestSuite22TestReportableDisabledEPKNS_8TestInfoE called 51 returned 100% blocks executed 86%
-       51:  823:  static bool TestReportableDisabled(const TestInfo* test_info) {
-      51*:  824:    return test_info->is_reportable() && test_info->is_disabled_;
-       51:  824-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+function _ZN7testing9TestSuite22TestReportableDisabledEPKNS_8TestInfoE called 69 returned 100% blocks executed 86%
+       69:  823:  static bool TestReportableDisabled(const TestInfo* test_info) {
+      69*:  824:    return test_info->is_reportable() && test_info->is_disabled_;
+       69:  824-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0
-       51:  824-block  1
+       69:  824-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 51
+branch  4 taken 69
     %%%%%:  824-block  2
-       51:  824-block  3
-       51:  824-block  4
+       69:  824-block  3
+       69:  824-block  4
         -:  825:  }
         -:  826:
         -:  827:  // Returns true if and only if test is disabled.
@@ -1053,11 +1053,11 @@ call    0 never executed
         -:  835:  }
         -:  836:
         -:  837:  // Returns true if the given test should run.
-function _ZN7testing9TestSuite13ShouldRunTestEPKNS_8TestInfoE called 204 returned 100% blocks executed 100%
-      204:  838:  static bool ShouldRunTest(const TestInfo* test_info) {
-      204:  839:    return test_info->should_run();
-      204:  839-block  0
-call    0 returned 204
+function _ZN7testing9TestSuite13ShouldRunTestEPKNS_8TestInfoE called 276 returned 100% blocks executed 100%
+      276:  838:  static bool ShouldRunTest(const TestInfo* test_info) {
+      276:  839:    return test_info->should_run();
+      276:  839-block  0
+call    0 returned 276
         -:  840:  }
         -:  841:
         -:  842:  // Shuffles the tests in this test suite.
@@ -1164,8 +1164,8 @@ function _ZN7testing17TestEventListenerD2Ev called 0 returned 0% blocks executed
         -:  942:  virtual void OnEnvironmentsSetUpEnd(const UnitTest& unit_test) = 0;
         -:  943:
         -:  944:  // Fired before the test suite starts.
-function _ZN7testing17TestEventListener16OnTestSuiteStartERKNS_9TestSuiteE called 4 returned 100% blocks executed 100%
-        4:  945:  virtual void OnTestSuiteStart(const TestSuite& /*test_suite*/) {}
+function _ZN7testing17TestEventListener16OnTestSuiteStartERKNS_9TestSuiteE called 7 returned 100% blocks executed 100%
+        7:  945:  virtual void OnTestSuiteStart(const TestSuite& /*test_suite*/) {}
         -:  946:
         -:  947:  //  Legacy API is deprecated but still available
         -:  948:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
@@ -1189,8 +1189,8 @@ function _ZN7testing17TestEventListener14OnTestDisabledERKNS_8TestInfoE called 0
         -:  964:  virtual void OnTestEnd(const TestInfo& test_info) = 0;
         -:  965:
         -:  966:  // Fired after the test suite ends.
-function _ZN7testing17TestEventListener14OnTestSuiteEndERKNS_9TestSuiteE called 4 returned 100% blocks executed 100%
-        4:  967:  virtual void OnTestSuiteEnd(const TestSuite& /*test_suite*/) {}
+function _ZN7testing17TestEventListener14OnTestSuiteEndERKNS_9TestSuiteE called 7 returned 100% blocks executed 100%
+        7:  967:  virtual void OnTestSuiteEnd(const TestSuite& /*test_suite*/) {}
         -:  968:
         -:  969://  Legacy API is deprecated but still available
         -:  970:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
@@ -1520,9 +1520,9 @@ function _ZN7testing22EmptyTestEventListener16OnTestProgramEndERKNS_8UnitTestE c
         -: 1277:      GTEST_LOCK_EXCLUDED_(mutex_);
         -: 1278:
         -: 1279:  // Accessors for the implementation object.
-function _ZN7testing8UnitTest4implEv called 793 returned 100% blocks executed 100%
-      793: 1280:  internal::UnitTestImpl* impl() { return impl_; }
-      793: 1280-block  0
+function _ZN7testing8UnitTest4implEv called 1078 returned 100% blocks executed 100%
+     1078: 1280:  internal::UnitTestImpl* impl() { return impl_; }
+     1078: 1280-block  0
 function _ZNK7testing8UnitTest4implEv called 9 returned 100% blocks executed 100%
         9: 1281:  const internal::UnitTestImpl* impl() const { return impl_; }
         9: 1281-block  0

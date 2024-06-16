@@ -165,6 +165,8 @@ bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *ou
                 c = END;
             } else if (c == ESC_ESC) {
                 c = ESC;
+            } else {
+                return false;
             }
             is_escaped = false;
         } else if (c == ESC) {

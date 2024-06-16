@@ -412,20 +412,6 @@ build Google_tests/CMakeFiles/Google_Tests_run.dir/all_tests.cpp.obj: CXX_COMPIL
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/temp_sensors_test.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/temp_sensors_test.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\temp_sensors_test.cpp.obj.d
-  FLAGS = --coverage -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-
-build Google_tests/CMakeFiles/Google_Tests_run.dir/supercap_readout_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/supercap_readout_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\supercap_readout_tests.cpp.obj.d
-  FLAGS = --coverage -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib -IC:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/lander_communication_lib -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest/include -isystem C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Google_Tests_run
@@ -434,7 +420,7 @@ build Google_tests/CMakeFiles/Google_Tests_run.dir/supercap_readout_tests.cpp.ob
 #############################################
 # Link the executable Google_tests\Google_Tests_run.exe
 
-build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/all_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/temp_sensors_test.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/supercap_readout_tests.cpp.obj | lander_communication_lib/liblander_communication_lib.a electronics_components_control_system_lib/libelectronics_components_control_system_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || electronics_components_control_system_lib/libelectronics_components_control_system_lib.a lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a
+build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/all_tests.cpp.obj | lander_communication_lib/liblander_communication_lib.a electronics_components_control_system_lib/libelectronics_components_control_system_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || electronics_components_control_system_lib/libelectronics_components_control_system_lib.a lander_communication_lib/liblander_communication_lib.a lib/libgtest.a lib/libgtest_main.a
   FLAGS = --coverage -g
   LINK_LIBRARIES = lander_communication_lib/liblander_communication_lib.a  electronics_components_control_system_lib/libelectronics_components_control_system_lib.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir

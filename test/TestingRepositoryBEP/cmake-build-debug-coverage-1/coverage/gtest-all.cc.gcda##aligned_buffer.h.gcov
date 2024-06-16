@@ -278,17 +278,17 @@ call    0 never executed
         -:  101:      __aligned_buffer(std::nullptr_t) { }
         -:  102:
         -:  103:      void*
-     110*:  104:      _M_addr() noexcept
+     152*:  104:      _M_addr() noexcept
         -:  105:      {
-     110*:  106:        return static_cast<void*>(&_M_storage);
+     152*:  106:        return static_cast<void*>(&_M_storage);
         -:  107:      }
 ------------------
 _ZN9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7_M_addrEv:
-function _ZN9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7_M_addrEv called 102 returned 100% blocks executed 100%
-      102:  104:      _M_addr() noexcept
+function _ZN9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7_M_addrEv called 138 returned 100% blocks executed 100%
+      138:  104:      _M_addr() noexcept
         -:  105:      {
-      102:  106:        return static_cast<void*>(&_M_storage);
-      102:  106-block  0
+      138:  106:        return static_cast<void*>(&_M_storage);
+      138:  106-block  0
         -:  107:      }
 ------------------
 _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEyEE7_M_addrEv:
@@ -300,47 +300,47 @@ function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt1
         -:  107:      }
 ------------------
 _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE7_M_addrEv:
-function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE7_M_addrEv called 8 returned 100% blocks executed 100%
-        8:  104:      _M_addr() noexcept
+function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE7_M_addrEv called 14 returned 100% blocks executed 100%
+       14:  104:      _M_addr() noexcept
         -:  105:      {
-        8:  106:        return static_cast<void*>(&_M_storage);
-        8:  106-block  0
+       14:  106:        return static_cast<void*>(&_M_storage);
+       14:  106-block  0
         -:  107:      }
 ------------------
         -:  108:
         -:  109:      const void*
-      273:  110:      _M_addr() const noexcept
+      321:  110:      _M_addr() const noexcept
         -:  111:      {
-      273:  112:        return static_cast<const void*>(&_M_storage);
+      321:  112:        return static_cast<const void*>(&_M_storage);
         -:  113:      }
 ------------------
 _ZNK9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE7_M_addrEv:
-function _ZNK9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE7_M_addrEv called 12 returned 100% blocks executed 100%
-       12:  110:      _M_addr() const noexcept
+function _ZNK9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE7_M_addrEv called 42 returned 100% blocks executed 100%
+       42:  110:      _M_addr() const noexcept
         -:  111:      {
-       12:  112:        return static_cast<const void*>(&_M_storage);
-       12:  112-block  0
+       42:  112:        return static_cast<const void*>(&_M_storage);
+       42:  112-block  0
         -:  113:      }
 ------------------
 _ZNK9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7_M_addrEv:
-function _ZNK9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7_M_addrEv called 261 returned 100% blocks executed 100%
-      261:  110:      _M_addr() const noexcept
+function _ZNK9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE7_M_addrEv called 279 returned 100% blocks executed 100%
+      279:  110:      _M_addr() const noexcept
         -:  111:      {
-      261:  112:        return static_cast<const void*>(&_M_storage);
-      261:  112-block  0
+      279:  112:        return static_cast<const void*>(&_M_storage);
+      279:  112-block  0
         -:  113:      }
 ------------------
         -:  114:
         -:  115:      _Tp*
-     110*:  116:      _M_ptr() noexcept
-     110*:  117:      { return static_cast<_Tp*>(_M_addr()); }
+     152*:  116:      _M_ptr() noexcept
+     152*:  117:      { return static_cast<_Tp*>(_M_addr()); }
 ------------------
 _ZN9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6_M_ptrEv:
-function _ZN9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6_M_ptrEv called 102 returned 100% blocks executed 100%
-      102:  116:      _M_ptr() noexcept
-      102:  117:      { return static_cast<_Tp*>(_M_addr()); }
-      102:  117-block  0
-call    0 returned 102
+function _ZN9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6_M_ptrEv called 138 returned 100% blocks executed 100%
+      138:  116:      _M_ptr() noexcept
+      138:  117:      { return static_cast<_Tp*>(_M_addr()); }
+      138:  117-block  0
+call    0 returned 138
 ------------------
 _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEyEE6_M_ptrEv:
 function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEyEE6_M_ptrEv called 0 returned 0% blocks executed 0%
@@ -350,30 +350,30 @@ function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt1
 call    0 never executed
 ------------------
 _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE6_M_ptrEv:
-function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE6_M_ptrEv called 8 returned 100% blocks executed 100%
-        8:  116:      _M_ptr() noexcept
-        8:  117:      { return static_cast<_Tp*>(_M_addr()); }
-        8:  117-block  0
-call    0 returned 8
+function _ZN9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE6_M_ptrEv called 14 returned 100% blocks executed 100%
+       14:  116:      _M_ptr() noexcept
+       14:  117:      { return static_cast<_Tp*>(_M_addr()); }
+       14:  117-block  0
+call    0 returned 14
 ------------------
         -:  118:
         -:  119:      const _Tp*
-      273:  120:      _M_ptr() const noexcept
-      273:  121:      { return static_cast<const _Tp*>(_M_addr()); }
+      321:  120:      _M_ptr() const noexcept
+      321:  121:      { return static_cast<const _Tp*>(_M_addr()); }
 ------------------
 _ZNK9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE6_M_ptrEv:
-function _ZNK9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE6_M_ptrEv called 12 returned 100% blocks executed 100%
-       12:  120:      _M_ptr() const noexcept
-       12:  121:      { return static_cast<const _Tp*>(_M_addr()); }
-       12:  121-block  0
-call    0 returned 12
+function _ZNK9__gnu_cxx16__aligned_bufferISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEEE6_M_ptrEv called 42 returned 100% blocks executed 100%
+       42:  120:      _M_ptr() const noexcept
+       42:  121:      { return static_cast<const _Tp*>(_M_addr()); }
+       42:  121-block  0
+call    0 returned 42
 ------------------
 _ZNK9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6_M_ptrEv:
-function _ZNK9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6_M_ptrEv called 261 returned 100% blocks executed 100%
-      261:  120:      _M_ptr() const noexcept
-      261:  121:      { return static_cast<const _Tp*>(_M_addr()); }
-      261:  121-block  0
-call    0 returned 261
+function _ZNK9__gnu_cxx16__aligned_bufferINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6_M_ptrEv called 279 returned 100% blocks executed 100%
+      279:  120:      _M_ptr() const noexcept
+      279:  121:      { return static_cast<const _Tp*>(_M_addr()); }
+      279:  121-block  0
+call    0 returned 279
 ------------------
         -:  122:    };
         -:  123:#pragma GCC diagnostic pop

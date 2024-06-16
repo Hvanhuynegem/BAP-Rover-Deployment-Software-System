@@ -151,18 +151,18 @@
         -:  147:      _Compare _M_comp;
         -:  148:
         -:  149:      explicit _GLIBCXX14_CONSTEXPR
-function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EC2ES7_ called 4 returned 100% blocks executed 100%
-        4:  150:      _Iter_comp_iter(_Compare __comp)
-        4:  151:	: _M_comp(_GLIBCXX_MOVE(__comp))
-        4:  151-block  0
-call    0 returned 4
-        4:  152:      { }
+function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EC2ES7_ called 7 returned 100% blocks executed 100%
+        7:  150:      _Iter_comp_iter(_Compare __comp)
+        7:  151:	: _M_comp(_GLIBCXX_MOVE(__comp))
+        7:  151-block  0
+call    0 returned 7
+        7:  152:      { }
         -:  153:
         -:  154:      template<typename _Iterator1, typename _Iterator2>
         -:  155:        _GLIBCXX14_CONSTEXPR
         -:  156:        bool
-      80*:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
-      80*:  158:        { return bool(_M_comp(*__it1, *__it2)); }
+     112*:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
+     112*:  158:        { return bool(_M_comp(*__it1, *__it2)); }
 ------------------
 _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPPS4_SB_EEbT_T0_:
 function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPPS4_SB_EEbT_T0_ called 0 returned 0% blocks executed 0%
@@ -172,41 +172,41 @@ function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2
 call    0 never executed
 ------------------
 _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPPS4_NS_17__normal_iteratorISB_St6vectorISA_SaISA_EEEEEEbT_T0_:
-function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPPS4_NS_17__normal_iteratorISB_St6vectorISA_SaISA_EEEEEEbT_T0_ called 5 returned 100% blocks executed 100%
-        5:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
-        5:  158:        { return bool(_M_comp(*__it1, *__it2)); }
-        5:  158-block  0
-call    0 returned 5
-call    1 returned 5
+function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPPS4_NS_17__normal_iteratorISB_St6vectorISA_SaISA_EEEEEEbT_T0_ called 14 returned 100% blocks executed 100%
+       14:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
+       14:  158:        { return bool(_M_comp(*__it1, *__it2)); }
+       14:  158-block  0
+call    0 returned 14
+call    1 returned 14
 ------------------
 _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclINS_17__normal_iteratorIPPS4_St6vectorISB_SaISB_EEEESC_EEbT_T0_:
-function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclINS_17__normal_iteratorIPPS4_St6vectorISB_SaISB_EEEESC_EEbT_T0_ called 20 returned 100% blocks executed 100%
-       20:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
-       20:  158:        { return bool(_M_comp(*__it1, *__it2)); }
-       20:  158-block  0
-call    0 returned 20
-call    1 returned 20
+function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclINS_17__normal_iteratorIPPS4_St6vectorISB_SaISB_EEEESC_EEbT_T0_ called 19 returned 100% blocks executed 100%
+       19:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
+       19:  158:        { return bool(_M_comp(*__it1, *__it2)); }
+       19:  158-block  0
+call    0 returned 19
+call    1 returned 19
 ------------------
 _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclINS_17__normal_iteratorIPPS4_St6vectorISB_SaISB_EEEESG_EEbT_T0_:
-function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclINS_17__normal_iteratorIPPS4_St6vectorISB_SaISB_EEEESG_EEbT_T0_ called 55 returned 100% blocks executed 100%
-       55:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
-       55:  158:        { return bool(_M_comp(*__it1, *__it2)); }
-       55:  158-block  0
-call    0 returned 55
-call    1 returned 55
-call    2 returned 55
+function _ZN9__gnu_cxx5__ops15_Iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclINS_17__normal_iteratorIPPS4_St6vectorISB_SaISB_EEEESG_EEbT_T0_ called 79 returned 100% blocks executed 100%
+       79:  157:        operator()(_Iterator1 __it1, _Iterator2 __it2)
+       79:  158:        { return bool(_M_comp(*__it1, *__it2)); }
+       79:  158-block  0
+call    0 returned 79
+call    1 returned 79
+call    2 returned 79
 ------------------
         -:  159:    };
         -:  160:
         -:  161:  template<typename _Compare>
         -:  162:    _GLIBCXX14_CONSTEXPR
         -:  163:    inline _Iter_comp_iter<_Compare>
-function _ZN9__gnu_cxx5__ops16__iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EENS0_15_Iter_comp_iterIT_EES9_ called 4 returned 100% blocks executed 100%
-        4:  164:    __iter_comp_iter(_Compare __comp)
-        4:  165:    { return _Iter_comp_iter<_Compare>(_GLIBCXX_MOVE(__comp)); }
-        4:  165-block  0
-call    0 returned 4
-call    1 returned 4
+function _ZN9__gnu_cxx5__ops16__iter_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EENS0_15_Iter_comp_iterIT_EES9_ called 7 returned 100% blocks executed 100%
+        7:  164:    __iter_comp_iter(_Compare __comp)
+        7:  165:    { return _Iter_comp_iter<_Compare>(_GLIBCXX_MOVE(__comp)); }
+        7:  165-block  0
+call    0 returned 7
+call    1 returned 7
         -:  166:
         -:  167:  template<typename _Compare>
         -:  168:    struct _Iter_comp_val
@@ -283,19 +283,19 @@ call    1 never executed
         -:  228:#if __cplusplus >= 201103L
         -:  229:      _GLIBCXX20_CONSTEXPR
         -:  230:      explicit
-function _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EC2EONS0_15_Iter_comp_iterIS7_EE called 41 returned 100% blocks executed 100%
-       41:  231:      _Val_comp_iter(_Iter_comp_iter<_Compare>&& __comp)
-       41:  232:	: _M_comp(std::move(__comp._M_comp))
-       41:  232-block  0
-call    0 returned 41
-       41:  233:      { }
+function _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EC2EONS0_15_Iter_comp_iterIS7_EE called 51 returned 100% blocks executed 100%
+       51:  231:      _Val_comp_iter(_Iter_comp_iter<_Compare>&& __comp)
+       51:  232:	: _M_comp(std::move(__comp._M_comp))
+       51:  232-block  0
+call    0 returned 51
+       51:  233:      { }
         -:  234:#endif
         -:  235:
         -:  236:      template<typename _Value, typename _Iterator>
         -:  237:	_GLIBCXX20_CONSTEXPR
         -:  238:	bool
-      41*:  239:	operator()(_Value& __val, _Iterator __it)
-      41*:  240:	{ return bool(_M_comp(__val, *__it)); }
+      51*:  239:	operator()(_Value& __val, _Iterator __it)
+      51*:  240:	{ return bool(_M_comp(__val, *__it)); }
 ------------------
 _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIKPS4_NS_17__normal_iteratorIPSA_St6vectorISA_SaISA_EEEEEEbRT_T0_:
 function _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIKPS4_NS_17__normal_iteratorIPSA_St6vectorISA_SaISA_EEEEEEbRT_T0_ called 0 returned 0% blocks executed 0%
@@ -306,12 +306,12 @@ call    0 never executed
 call    1 never executed
 ------------------
 _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPS4_NS_17__normal_iteratorIPSA_St6vectorISA_SaISA_EEEEEEbRT_T0_:
-function _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPS4_NS_17__normal_iteratorIPSA_St6vectorISA_SaISA_EEEEEEbRT_T0_ called 41 returned 100% blocks executed 100%
-       41:  239:	operator()(_Value& __val, _Iterator __it)
-       41:  240:	{ return bool(_M_comp(__val, *__it)); }
-       41:  240-block  0
-call    0 returned 41
-call    1 returned 41
+function _ZN9__gnu_cxx5__ops14_Val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EclIPS4_NS_17__normal_iteratorIPSA_St6vectorISA_SaISA_EEEEEEbRT_T0_ called 51 returned 100% blocks executed 100%
+       51:  239:	operator()(_Value& __val, _Iterator __it)
+       51:  240:	{ return bool(_M_comp(__val, *__it)); }
+       51:  240-block  0
+call    0 returned 51
+call    1 returned 51
 ------------------
         -:  241:    };
         -:  242:
@@ -324,12 +324,12 @@ call    1 returned 41
         -:  249:  template<typename _Compare>
         -:  250:    _GLIBCXX20_CONSTEXPR
         -:  251:    inline _Val_comp_iter<_Compare>
-function _ZN9__gnu_cxx5__ops15__val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EENS0_14_Val_comp_iterIT_EENS0_15_Iter_comp_iterIS9_EE called 41 returned 100% blocks executed 100%
-       41:  252:    __val_comp_iter(_Iter_comp_iter<_Compare> __comp)
-       41:  253:    { return _Val_comp_iter<_Compare>(_GLIBCXX_MOVE(__comp)); }
-       41:  253-block  0
-call    0 returned 41
-call    1 returned 41
+function _ZN9__gnu_cxx5__ops15__val_comp_iterIZN7testing9TestSuite3RunEvEUlPKNS2_8TestInfoES6_E_EENS0_14_Val_comp_iterIT_EENS0_15_Iter_comp_iterIS9_EE called 51 returned 100% blocks executed 100%
+       51:  252:    __val_comp_iter(_Iter_comp_iter<_Compare> __comp)
+       51:  253:    { return _Val_comp_iter<_Compare>(_GLIBCXX_MOVE(__comp)); }
+       51:  253-block  0
+call    0 returned 51
+call    1 returned 51
         -:  254:
         -:  255:  template<typename _Value>
         -:  256:    struct _Iter_equals_val
@@ -395,25 +395,25 @@ call    0 never executed
         -:  307:
         -:  308:      _GLIBCXX20_CONSTEXPR
         -:  309:      explicit
-     422*:  310:      _Iter_pred(_Predicate __pred)
-     422*:  311:	: _M_pred(_GLIBCXX_MOVE(__pred))
-     422*:  312:      { }
+     575*:  310:      _Iter_pred(_Predicate __pred)
+     575*:  311:	: _M_pred(_GLIBCXX_MOVE(__pred))
+     575*:  312:      { }
 ------------------
 _ZN9__gnu_cxx5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EC2ESE_:
-function _ZN9__gnu_cxx5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EC2ESE_ called 157 returned 100% blocks executed 100%
-      157:  310:      _Iter_pred(_Predicate __pred)
-      157:  311:	: _M_pred(_GLIBCXX_MOVE(__pred))
-      157:  311-block  0
-call    0 returned 157
-      157:  312:      { }
+function _ZN9__gnu_cxx5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EC2ESE_ called 214 returned 100% blocks executed 100%
+      214:  310:      _Iter_pred(_Predicate __pred)
+      214:  311:	: _M_pred(_GLIBCXX_MOVE(__pred))
+      214:  311-block  0
+call    0 returned 214
+      214:  312:      { }
 ------------------
 _ZN9__gnu_cxx5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EC2ESD_:
-function _ZN9__gnu_cxx5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EC2ESD_ called 265 returned 100% blocks executed 100%
-      265:  310:      _Iter_pred(_Predicate __pred)
-      265:  311:	: _M_pred(_GLIBCXX_MOVE(__pred))
-      265:  311-block  0
-call    0 returned 265
-      265:  312:      { }
+function _ZN9__gnu_cxx5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EC2ESD_ called 361 returned 100% blocks executed 100%
+      361:  310:      _Iter_pred(_Predicate __pred)
+      361:  311:	: _M_pred(_GLIBCXX_MOVE(__pred))
+      361:  311-block  0
+call    0 returned 361
+      361:  312:      { }
 ------------------
 _ZN9__gnu_cxx5__ops10_Iter_predIN7testing8internal17TestPropertyKeyIsEEC1ES4_:
 function _ZN9__gnu_cxx5__ops10_Iter_predIN7testing8internal17TestPropertyKeyIsEEC1ES4_ called 0 returned 0% blocks executed 0%
@@ -428,24 +428,24 @@ call    1 never executed
         -:  314:      template<typename _Iterator>
         -:  315:	_GLIBCXX20_CONSTEXPR
         -:  316:	bool
-    6767*:  317:	operator()(_Iterator __it)
-    6767*:  318:	{ return bool(_M_pred(*__it)); }
+    8693*:  317:	operator()(_Iterator __it)
+    8693*:  318:	{ return bool(_M_pred(*__it)); }
 ------------------
 _ZN9__gnu_cxx5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EclINS_17__normal_iteratorIPSC_St6vectorISB_SaISB_EEEEEEbT_:
-function _ZN9__gnu_cxx5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EclINS_17__normal_iteratorIPSC_St6vectorISB_SaISB_EEEEEEbT_ called 212 returned 100% blocks executed 100%
-      212:  317:	operator()(_Iterator __it)
-      212:  318:	{ return bool(_M_pred(*__it)); }
-      212:  318-block  0
-call    0 returned 212
-call    1 returned 212
+function _ZN9__gnu_cxx5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EclINS_17__normal_iteratorIPSC_St6vectorISB_SaISB_EEEEEEbT_ called 290 returned 100% blocks executed 100%
+      290:  317:	operator()(_Iterator __it)
+      290:  318:	{ return bool(_M_pred(*__it)); }
+      290:  318-block  0
+call    0 returned 290
+call    1 returned 290
 ------------------
 _ZN9__gnu_cxx5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EclINS_17__normal_iteratorIPKcSA_EEEEbT_:
-function _ZN9__gnu_cxx5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EclINS_17__normal_iteratorIPKcSA_EEEEbT_ called 6555 returned 100% blocks executed 100%
-     6555:  317:	operator()(_Iterator __it)
-     6555:  318:	{ return bool(_M_pred(*__it)); }
-     6555:  318-block  0
-call    0 returned 6555
-call    1 returned 6555
+function _ZN9__gnu_cxx5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EclINS_17__normal_iteratorIPKcSA_EEEEbT_ called 8403 returned 100% blocks executed 100%
+     8403:  317:	operator()(_Iterator __it)
+     8403:  318:	{ return bool(_M_pred(*__it)); }
+     8403:  318-block  0
+call    0 returned 8403
+call    1 returned 8403
 ------------------
 _ZN9__gnu_cxx5__ops10_Iter_predIN7testing8internal17TestPropertyKeyIsEEclINS_17__normal_iteratorIPNS2_12TestPropertyESt6vectorIS8_SaIS8_EEEEEEbT_:
 function _ZN9__gnu_cxx5__ops10_Iter_predIN7testing8internal17TestPropertyKeyIsEEclINS_17__normal_iteratorIPNS2_12TestPropertyESt6vectorIS8_SaIS8_EEEEEEbT_ called 0 returned 0% blocks executed 0%
@@ -460,25 +460,25 @@ call    1 never executed
         -:  321:  template<typename _Predicate>
         -:  322:    _GLIBCXX20_CONSTEXPR
         -:  323:    inline _Iter_pred<_Predicate>
-     422*:  324:    __pred_iter(_Predicate __pred)
-     422*:  325:    { return _Iter_pred<_Predicate>(_GLIBCXX_MOVE(__pred)); }
+     575*:  324:    __pred_iter(_Predicate __pred)
+     575*:  325:    { return _Iter_pred<_Predicate>(_GLIBCXX_MOVE(__pred)); }
 ------------------
 _ZN9__gnu_cxx5__ops11__pred_iterIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EENS0_10_Iter_predIT_EESG_:
-function _ZN9__gnu_cxx5__ops11__pred_iterIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EENS0_10_Iter_predIT_EESG_ called 157 returned 100% blocks executed 100%
-      157:  324:    __pred_iter(_Predicate __pred)
-      157:  325:    { return _Iter_pred<_Predicate>(_GLIBCXX_MOVE(__pred)); }
-      157:  325-block  0
-call    0 returned 157
-call    1 returned 157
-      157:  325-block  1
+function _ZN9__gnu_cxx5__ops11__pred_iterIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlSD_E_EENS0_10_Iter_predIT_EESG_ called 214 returned 100% blocks executed 100%
+      214:  324:    __pred_iter(_Predicate __pred)
+      214:  325:    { return _Iter_pred<_Predicate>(_GLIBCXX_MOVE(__pred)); }
+      214:  325-block  0
+call    0 returned 214
+call    1 returned 214
+      214:  325-block  1
 ------------------
 _ZN9__gnu_cxx5__ops11__pred_iterIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EENS0_10_Iter_predIT_EESF_:
-function _ZN9__gnu_cxx5__ops11__pred_iterIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EENS0_10_Iter_predIT_EESF_ called 265 returned 100% blocks executed 100%
-      265:  324:    __pred_iter(_Predicate __pred)
-      265:  325:    { return _Iter_pred<_Predicate>(_GLIBCXX_MOVE(__pred)); }
-      265:  325-block  0
-call    0 returned 265
-call    1 returned 265
+function _ZN9__gnu_cxx5__ops11__pred_iterIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlcE_EENS0_10_Iter_predIT_EESF_ called 361 returned 100% blocks executed 100%
+      361:  324:    __pred_iter(_Predicate __pred)
+      361:  325:    { return _Iter_pred<_Predicate>(_GLIBCXX_MOVE(__pred)); }
+      361:  325-block  0
+call    0 returned 361
+call    1 returned 361
 ------------------
 _ZN9__gnu_cxx5__ops11__pred_iterIN7testing8internal17TestPropertyKeyIsEEENS0_10_Iter_predIT_EES6_:
 function _ZN9__gnu_cxx5__ops11__pred_iterIN7testing8internal17TestPropertyKeyIsEEENS0_10_Iter_predIT_EES6_ called 0 returned 0% blocks executed 0%

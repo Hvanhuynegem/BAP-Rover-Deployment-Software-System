@@ -75,7 +75,7 @@ bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *ou
  * parameters:
  *  const Message* msg: message to be sent via UART TXD pin
  */
-void send_message_struct(const Message* msg);
+//void send_message_struct(const Message* msg);
 
 ///*
 // * Send a message using UART TX

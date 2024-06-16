@@ -105,8 +105,8 @@
         -:  101:  template<typename _Tp>
         -:  102:    _GLIBCXX_NODISCARD
         -:  103:    constexpr typename std::remove_reference<_Tp>::type&&
-    2045*:  104:    move(_Tp&& __t) noexcept
-    2045*:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+    2931*:  104:    move(_Tp&& __t) noexcept
+    2931*:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 ------------------
 _ZSt4moveIRPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS9_:
 function _ZSt4moveIRPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS9_ called 0 returned 0% blocks executed 0%
@@ -115,10 +115,10 @@ function _ZSt4moveIRPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16
     %%%%%:  105-block  0
 ------------------
 _ZSt4moveIRPNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS9_:
-function _ZSt4moveIRPNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS9_ called 114 returned 100% blocks executed 100%
-      114:  104:    move(_Tp&& __t) noexcept
-      114:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
-      114:  105-block  0
+function _ZSt4moveIRPNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS9_ called 141 returned 100% blocks executed 100%
+      141:  104:    move(_Tp&& __t) noexcept
+      141:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+      141:  105-block  0
 ------------------
 _ZSt4moveIRSaIcEEONSt16remove_referenceIT_E4typeEOS3_:
 function _ZSt4moveIRSaIcEEONSt16remove_referenceIT_E4typeEOS3_ called 0 returned 0% blocks executed 0%
@@ -127,10 +127,10 @@ function _ZSt4moveIRSaIcEEONSt16remove_referenceIT_E4typeEOS3_ called 0 returned
     %%%%%:  105-block  0
 ------------------
 _ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_:
-function _ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_ called 1931 returned 100% blocks executed 100%
-     1931:  104:    move(_Tp&& __t) noexcept
-     1931:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
-     1931:  105-block  0
+function _ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_ called 2790 returned 100% blocks executed 100%
+     2790:  104:    move(_Tp&& __t) noexcept
+     2790:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+     2790:  105-block  0
 ------------------
         -:  106:
         -:  107:

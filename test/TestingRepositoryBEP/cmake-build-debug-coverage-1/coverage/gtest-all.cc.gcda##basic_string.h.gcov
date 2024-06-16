@@ -3587,9 +3587,9 @@ call    0 never executed
         -: 3524:  template<typename _Str>
         -: 3525:    _GLIBCXX20_CONSTEXPR
         -: 3526:    inline _Str
-function _ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE called 51 returned 100% blocks executed 93%
-       51: 3527:    __str_concat(typename _Str::value_type const* __lhs,
-       51: 3527-block  0
+function _ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE called 69 returned 100% blocks executed 93%
+       69: 3527:    __str_concat(typename _Str::value_type const* __lhs,
+       69: 3527-block  0
         -: 3528:		 typename _Str::size_type __lhs_len,
         -: 3529:		 typename _Str::value_type const* __rhs,
         -: 3530:		 typename _Str::size_type __rhs_len,
@@ -3597,26 +3597,26 @@ function _ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
         -: 3532:    {
         -: 3533:      typedef typename _Str::allocator_type allocator_type;
         -: 3534:      typedef __gnu_cxx::__alloc_traits<allocator_type> _Alloc_traits;
-       51: 3535:      _Str __str(_Alloc_traits::_S_select_on_copy(__a));
-       51: 3535-block  0
-call    0 returned 51
-       51: 3536:      __str.reserve(__lhs_len + __rhs_len);
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 3535:      _Str __str(_Alloc_traits::_S_select_on_copy(__a));
+       69: 3535-block  0
+call    0 returned 69
+       69: 3536:      __str.reserve(__lhs_len + __rhs_len);
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 3537:      __str.append(__lhs, __lhs_len);
-       51: 3537-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 3537:      __str.append(__lhs, __lhs_len);
+       69: 3537-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 3538:      __str.append(__rhs, __rhs_len);
-       51: 3538-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 3538:      __str.append(__rhs, __rhs_len);
+       69: 3538-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 3539:      return __str;
-       51: 3539-block  0
-       51: 3539-block  1
+       69: 3539:      return __str;
+       69: 3539-block  0
+       69: 3539-block  1
     =====: 3540:    }
     $$$$$: 3540-block  0
 call    0 never executed
@@ -3695,24 +3695,24 @@ branch  6 never executed (throw)
         -: 3603:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3604:    _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
         -: 3605:    inline basic_string<_CharT, _Traits, _Alloc>
-function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_PKS5_ called 51 returned 100% blocks executed 82%
-       51: 3606:    operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_PKS5_ called 69 returned 100% blocks executed 82%
+       69: 3606:    operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
         -: 3607:	      const _CharT* __rhs)
         -: 3608:    {
         -: 3609:      __glibcxx_requires_string(__rhs);
         -: 3610:      typedef basic_string<_CharT, _Traits, _Alloc> _Str;
         -: 3611:      return std::__str_concat<_Str>(__lhs.c_str(), __lhs.size(),
         -: 3612:				     __rhs, _Traits::length(__rhs),
-      102: 3613:				     __lhs.get_allocator());
-       51: 3613-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-call    3 returned 51
-call    4 returned 51
-branch  5 taken 51 (fallthrough)
+      138: 3613:				     __lhs.get_allocator());
+       69: 3613-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+call    3 returned 69
+call    4 returned 69
+branch  5 taken 69 (fallthrough)
 branch  6 taken 0 (throw)
-       51: 3613-block  1
+       69: 3613-block  1
         -: 3614:    }
         -: 3615:  /**
         -: 3616:   *  @brief  Concatenate string and character.
@@ -3744,14 +3744,14 @@ branch  5 never executed (throw)
         -: 3633:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3634:    _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
         -: 3635:    inline basic_string<_CharT, _Traits, _Alloc>
-function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_ called 51 returned 100% blocks executed 100%
-       51: 3636:    operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_ called 69 returned 100% blocks executed 100%
+       69: 3636:    operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
         -: 3637:	      const basic_string<_CharT, _Traits, _Alloc>& __rhs)
-       51: 3638:    { return std::move(__lhs.append(__rhs)); }
-       51: 3638-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
+       69: 3638:    { return std::move(__lhs.append(__rhs)); }
+       69: 3638-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
         -: 3639:
         -: 3640:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3641:    _GLIBCXX20_CONSTEXPR
@@ -3846,14 +3846,14 @@ call    2 never executed
         -: 3684:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3685:    _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
         -: 3686:    inline basic_string<_CharT, _Traits, _Alloc>
-function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_ called 34 returned 100% blocks executed 100%
-       34: 3687:    operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_ called 46 returned 100% blocks executed 100%
+       46: 3687:    operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
         -: 3688:	      const _CharT* __rhs)
-       34: 3689:    { return std::move(__lhs.append(__rhs)); }
-       34: 3689-block  0
-call    0 returned 34
-call    1 returned 34
-call    2 returned 34
+       46: 3689:    { return std::move(__lhs.append(__rhs)); }
+       46: 3689-block  0
+call    0 returned 46
+call    1 returned 46
+call    2 returned 46
         -: 3690:
         -: 3691:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3692:    _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
@@ -3873,28 +3873,28 @@ call    2 returned 34
         -: 3706:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3707:    _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
         -: 3708:    inline bool
-function _ZSteqIcSt11char_traitsIcESaIcEEbRKNSt7__cxx1112basic_stringIT_T0_T1_EESA_ called 323 returned 100% blocks executed 100%
-      323: 3709:    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+function _ZSteqIcSt11char_traitsIcESaIcEEbRKNSt7__cxx1112basic_stringIT_T0_T1_EESA_ called 389 returned 100% blocks executed 100%
+      389: 3709:    operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
         -: 3710:	       const basic_string<_CharT, _Traits, _Alloc>& __rhs)
         -: 3711:    _GLIBCXX_NOEXCEPT
         -: 3712:    {
-      323: 3713:      return __lhs.size() == __rhs.size()
-      323: 3713-block  0
-call    0 returned 323
-call    1 returned 323
-      323: 3714:	       && !_Traits::compare(__lhs.data(), __rhs.data(), __lhs.size());
-branch  0 taken 127 (fallthrough)
-branch  1 taken 196
-      127: 3714-block  0
-call    2 returned 127
-call    3 returned 127
-call    4 returned 127
-call    5 returned 127
-branch  6 taken 98 (fallthrough)
-branch  7 taken 29
-       98: 3714-block  1
-      225: 3714-block  2
-      323: 3714-block  3
+      389: 3713:      return __lhs.size() == __rhs.size()
+      389: 3713-block  0
+call    0 returned 389
+call    1 returned 389
+      389: 3714:	       && !_Traits::compare(__lhs.data(), __rhs.data(), __lhs.size());
+branch  0 taken 150 (fallthrough)
+branch  1 taken 239
+      150: 3714-block  0
+call    2 returned 150
+call    3 returned 150
+call    4 returned 150
+call    5 returned 150
+branch  6 taken 131 (fallthrough)
+branch  7 taken 19
+      131: 3714-block  1
+      258: 3714-block  2
+      389: 3714-block  3
         -: 3715:    }
         -: 3716:
         -: 3717:  /**
@@ -4197,13 +4197,13 @@ call    0 never executed
         -: 3990:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 3991:    _GLIBCXX20_CONSTEXPR
         -: 3992:    inline void
-function _ZSt4swapIcSt11char_traitsIcESaIcEEvRNSt7__cxx1112basic_stringIT_T0_T1_EES9_ called 41 returned 100% blocks executed 100%
-       41: 3993:    swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+function _ZSt4swapIcSt11char_traitsIcESaIcEEvRNSt7__cxx1112basic_stringIT_T0_T1_EES9_ called 56 returned 100% blocks executed 100%
+       56: 3993:    swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
         -: 3994:	 basic_string<_CharT, _Traits, _Alloc>& __rhs)
         -: 3995:    _GLIBCXX_NOEXCEPT_IF(noexcept(__lhs.swap(__rhs)))
-       41: 3996:    { __lhs.swap(__rhs); }
-       41: 3996-block  0
-call    0 returned 41
+       56: 3996:    { __lhs.swap(__rhs); }
+       56: 3996-block  0
+call    0 returned 56
         -: 3997:
         -: 3998:
         -: 3999:  /**
@@ -4613,13 +4613,13 @@ call    0 returned 41
         -: 4403:    {
         -: 4404:      [[__nodiscard__]]
         -: 4405:      size_t
-function _ZNKSt15__str_hash_baseIcSaIcENSt7__cxx1112basic_stringIcSt11char_traitsIcES0_EEEclERKS5_ called 106 returned 100% blocks executed 100%
-      106: 4406:      operator()(const _StrT& __s) const noexcept
-      106: 4407:      { return _Hash_impl::hash(__s.data(), __s.length() * sizeof(_CharT)); }
-      106: 4407-block  0
-call    0 returned 106
-call    1 returned 106
-call    2 returned 106
+function _ZNKSt15__str_hash_baseIcSaIcENSt7__cxx1112basic_stringIcSt11char_traitsIcES0_EEEclERKS5_ called 145 returned 100% blocks executed 100%
+      145: 4406:      operator()(const _StrT& __s) const noexcept
+      145: 4407:      { return _Hash_impl::hash(__s.data(), __s.length() * sizeof(_CharT)); }
+      145: 4407-block  0
+call    0 returned 145
+call    1 returned 145
+call    2 returned 145
         -: 4408:    };
         -: 4409:
         -: 4410:#ifndef _GLIBCXX_COMPATIBILITY_CXX0X

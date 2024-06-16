@@ -142,8 +142,8 @@
         -:  138:       *  @return `addressof(__r)`
         -:  139:      */
         -:  140:      static _GLIBCXX20_CONSTEXPR pointer
-      54*:  141:      pointer_to(element_type& __r) noexcept
-      54*:  142:      { return std::addressof(__r); }
+      73*:  141:      pointer_to(element_type& __r) noexcept
+      73*:  142:      { return std::addressof(__r); }
 ------------------
 _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb1EEESE_Lb0EE10pointer_toERSE_:
 function _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteEELb1EEESE_Lb0EE10pointer_toERSE_ called 0 returned 0% blocks executed 0%
@@ -153,11 +153,11 @@ function _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeISt4pairIKNSt7__cxx
 call    0 never executed
 ------------------
 _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb1EEES8_Lb0EE10pointer_toERS8_:
-function _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb1EEES8_Lb0EE10pointer_toERS8_ called 51 returned 100% blocks executed 100%
-       51:  141:      pointer_to(element_type& __r) noexcept
-       51:  142:      { return std::addressof(__r); }
-       51:  142-block  0
-call    0 returned 51
+function _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb1EEES8_Lb0EE10pointer_toERS8_ called 69 returned 100% blocks executed 100%
+       69:  141:      pointer_to(element_type& __r) noexcept
+       69:  142:      { return std::addressof(__r); }
+       69:  142-block  0
+call    0 returned 69
 ------------------
 _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEyELb1EEESB_Lb0EE10pointer_toERSB_:
 function _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEyELb1EEESB_Lb0EE10pointer_toERSB_ called 0 returned 0% blocks executed 0%
@@ -167,11 +167,11 @@ function _ZNSt19__ptr_traits_ptr_toIPNSt8__detail10_Hash_nodeISt4pairIKNSt7__cxx
 call    0 never executed
 ------------------
 _ZNSt19__ptr_traits_ptr_toIPPNSt8__detail15_Hash_node_baseES2_Lb0EE10pointer_toERS2_:
-function _ZNSt19__ptr_traits_ptr_toIPPNSt8__detail15_Hash_node_baseES2_Lb0EE10pointer_toERS2_ called 3 returned 100% blocks executed 100%
-        3:  141:      pointer_to(element_type& __r) noexcept
-        3:  142:      { return std::addressof(__r); }
-        3:  142-block  0
-call    0 returned 3
+function _ZNSt19__ptr_traits_ptr_toIPPNSt8__detail15_Hash_node_baseES2_Lb0EE10pointer_toERS2_ called 4 returned 100% blocks executed 100%
+        4:  141:      pointer_to(element_type& __r) noexcept
+        4:  142:      { return std::addressof(__r); }
+        4:  142-block  0
+call    0 returned 4
 ------------------
         -:  143:    };
         -:  144:
@@ -242,10 +242,10 @@ call    0 returned 3
         -:  209:
         -:  210:  template<typename _Tp>
         -:  211:    constexpr _Tp*
-       59:  212:    __to_address(_Tp* __ptr) noexcept
+       81:  212:    __to_address(_Tp* __ptr) noexcept
         -:  213:    {
         -:  214:      static_assert(!std::is_function<_Tp>::value, "not a function pointer");
-       59:  215:      return __ptr;
+       81:  215:      return __ptr;
         -:  216:    }
         -:  217:
         -:  218:#if __cplusplus <= 201703L

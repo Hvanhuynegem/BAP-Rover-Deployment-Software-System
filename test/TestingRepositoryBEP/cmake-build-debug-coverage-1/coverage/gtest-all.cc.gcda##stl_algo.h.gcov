@@ -477,32 +477,32 @@
         -:  473:  template<typename _InputIterator, typename _Predicate>
         -:  474:    _GLIBCXX20_CONSTEXPR
         -:  475:    inline bool
-      422:  476:    none_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-      422:  477:    { return __last == _GLIBCXX_STD_A::find_if(__first, __last, __pred); }
+      575:  476:    none_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+      575:  477:    { return __last == _GLIBCXX_STD_A::find_if(__first, __last, __pred); }
 ------------------
 _ZSt7none_ofIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_EbT_SK_T0_:
-function _ZSt7none_ofIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_EbT_SK_T0_ called 157 returned 100% blocks executed 100%
-      157:  476:    none_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-      157:  477:    { return __last == _GLIBCXX_STD_A::find_if(__first, __last, __pred); }
-      157:  477-block  0
-call    0 returned 157
-branch  1 taken 157 (fallthrough)
+function _ZSt7none_ofIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_EbT_SK_T0_ called 214 returned 100% blocks executed 100%
+      214:  476:    none_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+      214:  477:    { return __last == _GLIBCXX_STD_A::find_if(__first, __last, __pred); }
+      214:  477-block  0
+call    0 returned 214
+branch  1 taken 214 (fallthrough)
 branch  2 taken 0 (throw)
-      157:  477-block  1
-call    3 returned 157
-      157:  477-block  2
+      214:  477-block  1
+call    3 returned 214
+      214:  477-block  2
 ------------------
 _ZSt7none_ofIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EbT_SH_T0_:
-function _ZSt7none_ofIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EbT_SH_T0_ called 265 returned 100% blocks executed 100%
-      265:  476:    none_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-      265:  477:    { return __last == _GLIBCXX_STD_A::find_if(__first, __last, __pred); }
-      265:  477-block  0
-call    0 returned 265
-branch  1 taken 265 (fallthrough)
+function _ZSt7none_ofIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EbT_SH_T0_ called 361 returned 100% blocks executed 100%
+      361:  476:    none_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+      361:  477:    { return __last == _GLIBCXX_STD_A::find_if(__first, __last, __pred); }
+      361:  477-block  0
+call    0 returned 361
+branch  1 taken 361 (fallthrough)
 branch  2 taken 0 (throw)
-      265:  477-block  1
-call    3 returned 265
-      265:  477-block  2
+      361:  477-block  1
+call    3 returned 361
+      361:  477-block  2
 ------------------
         -:  478:
         -:  479:  /**
@@ -521,22 +521,22 @@ call    3 returned 265
         -:  492:  template<typename _InputIterator, typename _Predicate>
         -:  493:    _GLIBCXX20_CONSTEXPR
         -:  494:    inline bool
-      422:  495:    any_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-      422:  496:    { return !std::none_of(__first, __last, __pred); }
+      575:  495:    any_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+      575:  496:    { return !std::none_of(__first, __last, __pred); }
 ------------------
 _ZSt6any_ofIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_EbT_SK_T0_:
-function _ZSt6any_ofIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_EbT_SK_T0_ called 157 returned 100% blocks executed 100%
-      157:  495:    any_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-      157:  496:    { return !std::none_of(__first, __last, __pred); }
-      157:  496-block  0
-call    0 returned 157
+function _ZSt6any_ofIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_EbT_SK_T0_ called 214 returned 100% blocks executed 100%
+      214:  495:    any_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+      214:  496:    { return !std::none_of(__first, __last, __pred); }
+      214:  496-block  0
+call    0 returned 214
 ------------------
 _ZSt6any_ofIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EbT_SH_T0_:
-function _ZSt6any_ofIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EbT_SH_T0_ called 265 returned 100% blocks executed 100%
-      265:  495:    any_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-      265:  496:    { return !std::none_of(__first, __last, __pred); }
-      265:  496-block  0
-call    0 returned 265
+function _ZSt6any_ofIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EbT_SH_T0_ called 361 returned 100% blocks executed 100%
+      361:  495:    any_of(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+      361:  496:    { return !std::none_of(__first, __last, __pred); }
+      361:  496-block  0
+call    0 returned 361
 ------------------
         -:  497:
         -:  498:  /**
@@ -1627,61 +1627,61 @@ call    0 never executed
         -: 1469:  template<typename _BidirectionalIterator, typename _Predicate>
         -: 1470:    _GLIBCXX20_CONSTEXPR
         -: 1471:    _BidirectionalIterator
-function _ZSt11__partitionIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEPFbRKS7_EET_SH_SH_T0_St26bidirectional_iterator_tag called 6 returned 100% blocks executed 96%
-        6: 1472:    __partition(_BidirectionalIterator __first, _BidirectionalIterator __last,
-        6: 1472-block  0
+function _ZSt11__partitionIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEPFbRKS7_EET_SH_SH_T0_St26bidirectional_iterator_tag called 9 returned 100% blocks executed 96%
+        9: 1472:    __partition(_BidirectionalIterator __first, _BidirectionalIterator __last,
+        9: 1472-block  0
         -: 1473:		_Predicate __pred, bidirectional_iterator_tag)
         -: 1474:    {
-       41: 1475:      while (true)
+       56: 1475:      while (true)
         -: 1476:	{
         -: 1477:	  while (true)
-      393: 1478:	    if (__first == __last)
-      220: 1478-block  0
-call    0 returned 220
-branch  1 taken 6 (fallthrough)
-branch  2 taken 214
-        6: 1479:	      return __first;
-        6: 1479-block  0
-      214: 1480:	    else if (__pred(*__first))
-      214: 1480-block  0
-call    0 returned 214
-call    1 returned 214
-branch  2 taken 173 (fallthrough)
-branch  3 taken 41
-      173: 1481:	      ++__first;
-      173: 1481-block  0
-call    0 returned 173
+      537: 1478:	    if (__first == __last)
+      301: 1478-block  0
+call    0 returned 301
+branch  1 taken 9 (fallthrough)
+branch  2 taken 292
+        9: 1479:	      return __first;
+        9: 1479-block  0
+      292: 1480:	    else if (__pred(*__first))
+      292: 1480-block  0
+call    0 returned 292
+call    1 returned 292
+branch  2 taken 236 (fallthrough)
+branch  3 taken 56
+      236: 1481:	      ++__first;
+      236: 1481-block  0
+call    0 returned 236
         -: 1482:	    else
-       41: 1483:	      break;
-       41: 1483-block  0
-       41: 1484:	  --__last;
-       41: 1484-block  0
-call    0 returned 41
+       56: 1483:	      break;
+       56: 1483-block  0
+       56: 1484:	  --__last;
+       56: 1484-block  0
+call    0 returned 56
         -: 1485:	  while (true)
-       51: 1486:	    if (__first == __last)
-       51: 1486-block  0
-call    0 returned 51
+       69: 1486:	    if (__first == __last)
+       69: 1486-block  0
+call    0 returned 69
 branch  1 taken 0 (fallthrough)
-branch  2 taken 51
+branch  2 taken 69
     #####: 1487:	      return __first;
     %%%%%: 1487-block  0
-       51: 1488:	    else if (!bool(__pred(*__last)))
-       51: 1488-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 10 (fallthrough)
-branch  3 taken 41
-       10: 1489:	      --__last;
-       10: 1489-block  0
-call    0 returned 10
+       69: 1488:	    else if (!bool(__pred(*__last)))
+       69: 1488-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 13 (fallthrough)
+branch  3 taken 56
+       13: 1489:	      --__last;
+       13: 1489-block  0
+call    0 returned 13
         -: 1490:	    else
-       41: 1491:	      break;
-       41: 1491-block  0
-       41: 1492:	  std::iter_swap(__first, __last);
-       41: 1492-block  0
-call    0 returned 41
-       41: 1493:	  ++__first;
-call    0 returned 41
+       56: 1491:	      break;
+       56: 1491-block  0
+       56: 1492:	  std::iter_swap(__first, __last);
+       56: 1492-block  0
+call    0 returned 56
+       56: 1493:	  ++__first;
+call    0 returned 56
         -: 1494:	}
         -: 1495:    }
         -: 1496:
@@ -1980,23 +1980,23 @@ call    0 returned 41
         -: 1789:  template<typename _RandomAccessIterator, typename _Compare>
         -: 1790:    _GLIBCXX20_CONSTEXPR
         -: 1791:    void
-function _ZSt25__unguarded_linear_insertIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEENS0_5__ops14_Val_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_T0_ called 41 returned 100% blocks executed 69%
-       41: 1792:    __unguarded_linear_insert(_RandomAccessIterator __last,
+function _ZSt25__unguarded_linear_insertIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEENS0_5__ops14_Val_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_T0_ called 51 returned 100% blocks executed 69%
+       51: 1792:    __unguarded_linear_insert(_RandomAccessIterator __last,
         -: 1793:			      _Compare __comp)
         -: 1794:    {
         -: 1795:      typename iterator_traits<_RandomAccessIterator>::value_type
-       41: 1796:	__val = _GLIBCXX_MOVE(*__last);
-       41: 1796-block  0
-call    0 returned 41
-call    1 returned 41
-       41: 1797:      _RandomAccessIterator __next = __last;
-       41: 1798:      --__next;
-call    0 returned 41
-       41: 1799:      while (__comp(__val, __next))
-       41: 1799-block  0
-call    0 returned 41
+       51: 1796:	__val = _GLIBCXX_MOVE(*__last);
+       51: 1796-block  0
+call    0 returned 51
+call    1 returned 51
+       51: 1797:      _RandomAccessIterator __next = __last;
+       51: 1798:      --__next;
+call    0 returned 51
+       51: 1799:      while (__comp(__val, __next))
+       51: 1799-block  0
+call    0 returned 51
 branch  1 taken 0
-branch  2 taken 41 (fallthrough)
+branch  2 taken 51 (fallthrough)
         -: 1800:	{
     #####: 1801:	  *__last = _GLIBCXX_MOVE(*__next);
     %%%%%: 1801-block  0
@@ -2007,42 +2007,42 @@ call    2 never executed
     #####: 1803:	  --__next;
 call    0 never executed
         -: 1804:	}
-       41: 1805:      *__last = _GLIBCXX_MOVE(__val);
-       41: 1805-block  0
-call    0 returned 41
-call    1 returned 41
-       41: 1806:    }
+       51: 1805:      *__last = _GLIBCXX_MOVE(__val);
+       51: 1805-block  0
+call    0 returned 51
+call    1 returned 51
+       51: 1806:    }
         -: 1807:
         -: 1808:  /// This is a helper function for the sort routine.
         -: 1809:  template<typename _RandomAccessIterator, typename _Compare>
         -: 1810:    _GLIBCXX20_CONSTEXPR
         -: 1811:    void
-function _ZSt16__insertion_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEENS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_ called 12 returned 100% blocks executed 64%
-       12: 1812:    __insertion_sort(_RandomAccessIterator __first,
+function _ZSt16__insertion_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEENS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_ called 18 returned 100% blocks executed 59%
+       18: 1812:    __insertion_sort(_RandomAccessIterator __first,
         -: 1813:		     _RandomAccessIterator __last, _Compare __comp)
         -: 1814:    {
-       12: 1815:      if (__first == __last) return;
-       12: 1815-block  0
-call    0 returned 12
-branch  1 taken 2 (fallthrough)
-branch  2 taken 10
-        2: 1815-block  1
-        -: 1816:
-       51: 1817:      for (_RandomAccessIterator __i = __first + 1; __i != __last; ++__i)
-       10: 1817-block  0
-call    0 returned 10
-       41: 1817-block  1
-call    1 returned 41
-       51: 1817-block  2
-call    2 returned 51
-branch  3 taken 41
-branch  4 taken 10 (fallthrough)
-        -: 1818:	{
-       41: 1819:	  if (__comp(__i, __first))
-       41: 1819-block  0
-call    0 returned 41
+      18*: 1815:      if (__first == __last) return;
+       18: 1815-block  0
+call    0 returned 18
 branch  1 taken 0 (fallthrough)
-branch  2 taken 41
+branch  2 taken 18
+    %%%%%: 1815-block  1
+        -: 1816:
+       69: 1817:      for (_RandomAccessIterator __i = __first + 1; __i != __last; ++__i)
+       18: 1817-block  0
+call    0 returned 18
+       51: 1817-block  1
+call    1 returned 51
+       69: 1817-block  2
+call    2 returned 69
+branch  3 taken 51
+branch  4 taken 18 (fallthrough)
+        -: 1818:	{
+       51: 1819:	  if (__comp(__i, __first))
+       51: 1819-block  0
+call    0 returned 51
+branch  1 taken 0 (fallthrough)
+branch  2 taken 51
         -: 1820:	    {
         -: 1821:	      typename iterator_traits<_RandomAccessIterator>::value_type
     #####: 1822:		__val = _GLIBCXX_MOVE(*__i);
@@ -2060,14 +2060,14 @@ call    0 never executed
 call    1 never executed
         -: 1825:	    }
         -: 1826:	  else
-       41: 1827:	    std::__unguarded_linear_insert(__i,
-       41: 1827-block  0
-call    0 returned 41
-branch  1 taken 41 (fallthrough)
+       51: 1827:	    std::__unguarded_linear_insert(__i,
+       51: 1827-block  0
+call    0 returned 51
+branch  1 taken 51 (fallthrough)
 branch  2 taken 0 (throw)
-       41: 1827-block  1
-call    3 returned 41
-branch  4 taken 41 (fallthrough)
+       51: 1827-block  1
+call    3 returned 51
+branch  4 taken 51 (fallthrough)
 branch  5 taken 0 (throw)
         -: 1828:				__gnu_cxx::__ops::__val_comp_iter(__comp));
         -: 1829:	}
@@ -2550,31 +2550,31 @@ call    0 never executed
         -: 2291:  template<typename _InputIterator1, typename _InputIterator2,
         -: 2292:	   typename _OutputIterator, typename _Compare>
         -: 2293:    void
-function _ZSt21__move_merge_adaptiveIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEES9_NS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEEvT_SH_T0_SI_T1_T2_ called 3 returned 100% blocks executed 75%
-        3: 2294:    __move_merge_adaptive(_InputIterator1 __first1, _InputIterator1 __last1,
+function _ZSt21__move_merge_adaptiveIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEES9_NS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEEvT_SH_T0_SI_T1_T2_ called 4 returned 100% blocks executed 75%
+        4: 2294:    __move_merge_adaptive(_InputIterator1 __first1, _InputIterator1 __last1,
         -: 2295:			  _InputIterator2 __first2, _InputIterator2 __last2,
         -: 2296:			  _OutputIterator __result, _Compare __comp)
         -: 2297:    {
        23: 2298:      while (__first1 != __last1 && __first2 != __last2)
-        3: 2298-block  0
+        4: 2298-block  0
        23: 2298-block  1
-branch  0 taken 20 (fallthrough)
-branch  1 taken 3
-       20: 2298-block  2
-call    2 returned 20
-branch  3 taken 20 (fallthrough)
+branch  0 taken 19 (fallthrough)
+branch  1 taken 4
+       19: 2298-block  2
+call    2 returned 19
+branch  3 taken 19 (fallthrough)
 branch  4 taken 0
-       20: 2298-block  3
-        3: 2298-block  4
+       19: 2298-block  3
+        4: 2298-block  4
        23: 2298-block  5
-branch  5 taken 20
-branch  6 taken 3 (fallthrough)
+branch  5 taken 19
+branch  6 taken 4 (fallthrough)
         -: 2299:	{
-       20: 2300:	  if (__comp(__first2, __first1))
-       20: 2300-block  0
-call    0 returned 20
+       19: 2300:	  if (__comp(__first2, __first1))
+       19: 2300-block  0
+call    0 returned 19
 branch  1 taken 0 (fallthrough)
-branch  2 taken 20
+branch  2 taken 19
         -: 2301:	    {
     #####: 2302:	      *__result = _GLIBCXX_MOVE(*__first2);
     %%%%%: 2302-block  0
@@ -2586,67 +2586,67 @@ call    0 never executed
         -: 2304:	    }
         -: 2305:	  else
         -: 2306:	    {
-       20: 2307:	      *__result = _GLIBCXX_MOVE(*__first1);
-       20: 2307-block  0
-call    0 returned 20
-call    1 returned 20
-       20: 2308:	      ++__first1;
+       19: 2307:	      *__result = _GLIBCXX_MOVE(*__first1);
+       19: 2307-block  0
+call    0 returned 19
+call    1 returned 19
+       19: 2308:	      ++__first1;
         -: 2309:	    }
-       20: 2310:	  ++__result;
-       20: 2310-block  0
-call    0 returned 20
+       19: 2310:	  ++__result;
+       19: 2310-block  0
+call    0 returned 19
         -: 2311:	}
-        3: 2312:      if (__first1 != __last1)
-        3: 2312-block  0
+        4: 2312:      if (__first1 != __last1)
+        4: 2312-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 3
+branch  1 taken 4
     #####: 2313:	_GLIBCXX_MOVE3(__first1, __last1, __result);
     %%%%%: 2313-block  0
 call    0 never executed
-        3: 2314:    }
+        4: 2314:    }
         -: 2315:
         -: 2316:  /// This is a helper function for the __merge_adaptive routines.
         -: 2317:  template<typename _BidirectionalIterator1, typename _BidirectionalIterator2,
         -: 2318:	   typename _BidirectionalIterator3, typename _Compare>
         -: 2319:    void
-function _ZSt30__move_merge_adaptive_backwardIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_S9_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_SI_T1_T2_ called 1 returned 100% blocks executed 56%
-        1: 2320:    __move_merge_adaptive_backward(_BidirectionalIterator1 __first1,
+function _ZSt30__move_merge_adaptive_backwardIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_S9_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_SI_T1_T2_ called 3 returned 100% blocks executed 56%
+        3: 2320:    __move_merge_adaptive_backward(_BidirectionalIterator1 __first1,
         -: 2321:				   _BidirectionalIterator1 __last1,
         -: 2322:				   _BidirectionalIterator2 __first2,
         -: 2323:				   _BidirectionalIterator2 __last2,
         -: 2324:				   _BidirectionalIterator3 __result,
         -: 2325:				   _Compare __comp)
         -: 2326:    {
-        1: 2327:      if (__first1 == __last1)
-        1: 2327-block  0
-call    0 returned 1
+        3: 2327:      if (__first1 == __last1)
+        3: 2327-block  0
+call    0 returned 3
 branch  1 taken 0 (fallthrough)
-branch  2 taken 1
+branch  2 taken 3
         -: 2328:	{
     #####: 2329:	  _GLIBCXX_MOVE_BACKWARD3(__first2, __last2, __result);
     %%%%%: 2329-block  0
 call    0 never executed
     #####: 2330:	  return;
         -: 2331:	}
-        1: 2332:      else if (__first2 == __last2)
-        1: 2332-block  0
+        3: 2332:      else if (__first2 == __last2)
+        3: 2332-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 1
+branch  1 taken 3
     #####: 2333:	return;
     %%%%%: 2333-block  0
         -: 2334:
-        1: 2335:      --__last1;
-        1: 2335-block  0
-call    0 returned 1
-        1: 2336:      --__last2;
+        3: 2335:      --__last1;
+        3: 2335-block  0
+call    0 returned 3
+        3: 2336:      --__last2;
         -: 2337:      while (true)
         -: 2338:	{
-        5: 2339:	  if (__comp(__last2, __last1))
-        5: 2339-block  0
-call    0 returned 5
+       14: 2339:	  if (__comp(__last2, __last1))
+       14: 2339-block  0
+call    0 returned 14
 branch  1 taken 0 (fallthrough)
-branch  2 taken 5
-        4: 2339-block  1
+branch  2 taken 14
+       11: 2339-block  1
         -: 2340:	    {
     #####: 2341:	      *--__result = _GLIBCXX_MOVE(*__last1);
     %%%%%: 2341-block  0
@@ -2670,18 +2670,18 @@ call    0 never executed
         -: 2348:	    }
         -: 2349:	  else
         -: 2350:	    {
-        5: 2351:	      *--__result = _GLIBCXX_MOVE(*__last2);
-        5: 2351-block  0
-call    0 returned 5
-call    1 returned 5
-call    2 returned 5
-        5: 2352:	      if (__first2 == __last2)
-branch  0 taken 1 (fallthrough)
-branch  1 taken 4
-        1: 2353:		return;
-        1: 2353-block  0
-        4: 2354:	      --__last2;
-        4: 2354-block  0
+       14: 2351:	      *--__result = _GLIBCXX_MOVE(*__last2);
+       14: 2351-block  0
+call    0 returned 14
+call    1 returned 14
+call    2 returned 14
+       14: 2352:	      if (__first2 == __last2)
+branch  0 taken 3 (fallthrough)
+branch  1 taken 11
+        3: 2353:		return;
+        3: 2353-block  0
+       11: 2354:	      --__last2;
+       11: 2354-block  0
         -: 2355:	    }
         -: 2356:	}
         -: 2357:    }
@@ -2756,35 +2756,35 @@ call    0 never executed
         -: 2398:  template<typename _BidirectionalIterator, typename _Distance,
         -: 2399:	   typename _Pointer, typename _Compare>
         -: 2400:    void
-function _ZSt16__merge_adaptiveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEExS5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_SH_T0_SI_T1_T2_ called 4 returned 100% blocks executed 100%
-        4: 2401:    __merge_adaptive(_BidirectionalIterator __first,
+function _ZSt16__merge_adaptiveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEExS5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_SH_T0_SI_T1_T2_ called 7 returned 100% blocks executed 100%
+        7: 2401:    __merge_adaptive(_BidirectionalIterator __first,
         -: 2402:		     _BidirectionalIterator __middle,
         -: 2403:		     _BidirectionalIterator __last,
         -: 2404:		     _Distance __len1, _Distance __len2,
         -: 2405:		     _Pointer __buffer, _Compare __comp)
         -: 2406:    {
-        4: 2407:      if (__len1 <= __len2)
-        4: 2407-block  0
-branch  0 taken 3 (fallthrough)
-branch  1 taken 1
+        7: 2407:      if (__len1 <= __len2)
+        7: 2407-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 3
         -: 2408:	{
-        3: 2409:	  _Pointer __buffer_end = _GLIBCXX_MOVE3(__first, __middle, __buffer);
-        3: 2409-block  0
-call    0 returned 3
-        3: 2410:	  std::__move_merge_adaptive(__buffer, __buffer_end, __middle, __last,
-call    0 returned 3
+        4: 2409:	  _Pointer __buffer_end = _GLIBCXX_MOVE3(__first, __middle, __buffer);
+        4: 2409-block  0
+call    0 returned 4
+        4: 2410:	  std::__move_merge_adaptive(__buffer, __buffer_end, __middle, __last,
+call    0 returned 4
         -: 2411:				     __first, __comp);
         -: 2412:	}
         -: 2413:      else
         -: 2414:	{
-        1: 2415:	  _Pointer __buffer_end = _GLIBCXX_MOVE3(__middle, __last, __buffer);
-        1: 2415-block  0
-call    0 returned 1
-        1: 2416:	  std::__move_merge_adaptive_backward(__first, __middle, __buffer,
-call    0 returned 1
+        3: 2415:	  _Pointer __buffer_end = _GLIBCXX_MOVE3(__middle, __last, __buffer);
+        3: 2415-block  0
+call    0 returned 3
+        3: 2416:	  std::__move_merge_adaptive_backward(__first, __middle, __buffer,
+call    0 returned 3
         -: 2417:					      __buffer_end, __last, __comp);
         -: 2418:	}
-        4: 2419:    }
+        7: 2419:    }
         -: 2420:
         -: 2421:  template<typename _BidirectionalIterator, typename _Distance,
         -: 2422:	   typename _Pointer, typename _Compare>
@@ -3117,43 +3117,43 @@ branch  2 never executed (throw)
         -: 2646:  template<typename _InputIterator, typename _OutputIterator,
         -: 2647:	   typename _Compare>
         -: 2648:    _OutputIterator
-        4: 2649:    __move_merge(_InputIterator __first1, _InputIterator __last1,
+        8: 2649:    __move_merge(_InputIterator __first1, _InputIterator __last1,
         -: 2650:		 _InputIterator __first2, _InputIterator __last2,
         -: 2651:		 _OutputIterator __result, _Compare __comp)
         -: 2652:    {
-       18: 2653:      while (__first1 != __last1 && __first2 != __last2)
+       36: 2653:      while (__first1 != __last1 && __first2 != __last2)
         -: 2654:	{
-      14*: 2655:	  if (__comp(__first2, __first1))
+      28*: 2655:	  if (__comp(__first2, __first1))
         -: 2656:	    {
     #####: 2657:	      *__result = _GLIBCXX_MOVE(*__first2);
     #####: 2658:	      ++__first2;
         -: 2659:	    }
         -: 2660:	  else
         -: 2661:	    {
-      14*: 2662:	      *__result = _GLIBCXX_MOVE(*__first1);
-      14*: 2663:	      ++__first1;
+      28*: 2662:	      *__result = _GLIBCXX_MOVE(*__first1);
+      28*: 2663:	      ++__first1;
         -: 2664:	    }
-      14*: 2665:	  ++__result;
+      28*: 2665:	  ++__result;
         -: 2666:	}
-        4: 2667:      return _GLIBCXX_MOVE3(__first2, __last2,
+        8: 2667:      return _GLIBCXX_MOVE3(__first2, __last2,
         -: 2668:			    _GLIBCXX_MOVE3(__first1, __last1,
         -: 2669:					   __result));
         -: 2670:    }
 ------------------
 _ZSt12__move_mergeIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEENS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEET0_T_SI_SI_SI_SH_T1_:
-function _ZSt12__move_mergeIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEENS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEET0_T_SI_SI_SI_SH_T1_ called 2 returned 100% blocks executed 40%
-        2: 2649:    __move_merge(_InputIterator __first1, _InputIterator __last1,
+function _ZSt12__move_mergeIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEENS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEET0_T_SI_SI_SI_SH_T1_ called 4 returned 100% blocks executed 40%
+        4: 2649:    __move_merge(_InputIterator __first1, _InputIterator __last1,
         -: 2650:		 _InputIterator __first2, _InputIterator __last2,
         -: 2651:		 _OutputIterator __result, _Compare __comp)
         -: 2652:    {
-        2: 2653:      while (__first1 != __last1 && __first2 != __last2)
-        2: 2653-block  0
-        2: 2653-block  1
-branch  0 taken 2 (fallthrough)
+        4: 2653:      while (__first1 != __last1 && __first2 != __last2)
+        4: 2653-block  0
+        4: 2653-block  1
+branch  0 taken 4 (fallthrough)
 branch  1 taken 0
-        2: 2653-block  2
+        4: 2653-block  2
 branch  2 taken 0
-branch  3 taken 2 (fallthrough)
+branch  3 taken 4 (fallthrough)
         -: 2654:	{
     #####: 2655:	  if (__comp(__first2, __first1))
     %%%%%: 2655-block  0
@@ -3179,41 +3179,41 @@ call    1 never executed
     %%%%%: 2665-block  0
 call    0 never executed
         -: 2666:	}
-        2: 2667:      return _GLIBCXX_MOVE3(__first2, __last2,
-        2: 2667-block  0
-call    0 returned 2
-call    1 returned 2
+        4: 2667:      return _GLIBCXX_MOVE3(__first2, __last2,
+        4: 2667-block  0
+call    0 returned 4
+call    1 returned 4
         -: 2668:			    _GLIBCXX_MOVE3(__first1, __last1,
         -: 2669:					   __result));
         -: 2670:    }
 ------------------
 _ZSt12__move_mergeIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEET0_T_SI_SI_SI_SH_T1_:
-function _ZSt12__move_mergeIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEET0_T_SI_SI_SI_SH_T1_ called 2 returned 100% blocks executed 86%
-        2: 2649:    __move_merge(_InputIterator __first1, _InputIterator __last1,
+function _ZSt12__move_mergeIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEET0_T_SI_SI_SI_SH_T1_ called 4 returned 100% blocks executed 86%
+        4: 2649:    __move_merge(_InputIterator __first1, _InputIterator __last1,
         -: 2650:		 _InputIterator __first2, _InputIterator __last2,
         -: 2651:		 _OutputIterator __result, _Compare __comp)
         -: 2652:    {
-       16: 2653:      while (__first1 != __last1 && __first2 != __last2)
-        2: 2653-block  0
-       16: 2653-block  1
-call    0 returned 16
-branch  1 taken 14 (fallthrough)
-branch  2 taken 2
-       14: 2653-block  2
-call    3 returned 14
-branch  4 taken 14 (fallthrough)
+       32: 2653:      while (__first1 != __last1 && __first2 != __last2)
+        4: 2653-block  0
+       32: 2653-block  1
+call    0 returned 32
+branch  1 taken 28 (fallthrough)
+branch  2 taken 4
+       28: 2653-block  2
+call    3 returned 28
+branch  4 taken 28 (fallthrough)
 branch  5 taken 0
-       14: 2653-block  3
-        2: 2653-block  4
-       16: 2653-block  5
-branch  6 taken 14
-branch  7 taken 2 (fallthrough)
+       28: 2653-block  3
+        4: 2653-block  4
+       32: 2653-block  5
+branch  6 taken 28
+branch  7 taken 4 (fallthrough)
         -: 2654:	{
-       14: 2655:	  if (__comp(__first2, __first1))
-       14: 2655-block  0
-call    0 returned 14
+       28: 2655:	  if (__comp(__first2, __first1))
+       28: 2655-block  0
+call    0 returned 28
 branch  1 taken 0 (fallthrough)
-branch  2 taken 14
+branch  2 taken 28
         -: 2656:	    {
     #####: 2657:	      *__result = _GLIBCXX_MOVE(*__first2);
     %%%%%: 2657-block  0
@@ -3224,20 +3224,20 @@ call    0 never executed
         -: 2659:	    }
         -: 2660:	  else
         -: 2661:	    {
-       14: 2662:	      *__result = _GLIBCXX_MOVE(*__first1);
-       14: 2662-block  0
-call    0 returned 14
-call    1 returned 14
-       14: 2663:	      ++__first1;
-call    0 returned 14
+       28: 2662:	      *__result = _GLIBCXX_MOVE(*__first1);
+       28: 2662-block  0
+call    0 returned 28
+call    1 returned 28
+       28: 2663:	      ++__first1;
+call    0 returned 28
         -: 2664:	    }
-       14: 2665:	  ++__result;
-       14: 2665-block  0
+       28: 2665:	  ++__result;
+       28: 2665-block  0
         -: 2666:	}
-        2: 2667:      return _GLIBCXX_MOVE3(__first2, __last2,
-        2: 2667-block  0
-call    0 returned 2
-call    1 returned 2
+        4: 2667:      return _GLIBCXX_MOVE3(__first2, __last2,
+        4: 2667-block  0
+call    0 returned 4
+call    1 returned 4
         -: 2668:			    _GLIBCXX_MOVE3(__first1, __last1,
         -: 2669:					   __result));
         -: 2670:    }
@@ -3246,6 +3246,29 @@ call    1 returned 2
         -: 2672:  template<typename _RandomAccessIterator1, typename _RandomAccessIterator2,
         -: 2673:	   typename _Distance, typename _Compare>
         -: 2674:    void
+        8: 2675:    __merge_sort_loop(_RandomAccessIterator1 __first,
+        -: 2676:		      _RandomAccessIterator1 __last,
+        -: 2677:		      _RandomAccessIterator2 __result, _Distance __step_size,
+        -: 2678:		      _Compare __comp)
+        -: 2679:    {
+        8: 2680:      const _Distance __two_step = 2 * __step_size;
+        -: 2681:
+        8: 2682:      while (__last - __first >= __two_step)
+        -: 2683:	{
+    #####: 2684:	  __result = std::__move_merge(__first, __first + __step_size,
+    #####: 2685:				       __first + __step_size,
+    #####: 2686:				       __first + __two_step,
+        -: 2687:				       __result, __comp);
+    #####: 2688:	  __first += __two_step;
+        -: 2689:	}
+        8: 2690:      __step_size = std::min(_Distance(__last - __first), __step_size);
+        -: 2691:
+        8: 2692:      std::__move_merge(__first, __first + __step_size,
+        4: 2693:			__first + __step_size, __last, __result, __comp);
+        8: 2694:    }
+------------------
+_ZSt17__merge_sort_loopIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEExNS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEEvT_SH_T0_T1_T2_:
+function _ZSt17__merge_sort_loopIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEExNS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEEvT_SH_T0_T1_T2_ called 4 returned 100% blocks executed 71%
         4: 2675:    __merge_sort_loop(_RandomAccessIterator1 __first,
         -: 2676:		      _RandomAccessIterator1 __last,
         -: 2677:		      _RandomAccessIterator2 __result, _Distance __step_size,
@@ -3254,33 +3277,10 @@ call    1 returned 2
         4: 2680:      const _Distance __two_step = 2 * __step_size;
         -: 2681:
         4: 2682:      while (__last - __first >= __two_step)
-        -: 2683:	{
-    #####: 2684:	  __result = std::__move_merge(__first, __first + __step_size,
-    #####: 2685:				       __first + __step_size,
-    #####: 2686:				       __first + __two_step,
-        -: 2687:				       __result, __comp);
-    #####: 2688:	  __first += __two_step;
-        -: 2689:	}
-        4: 2690:      __step_size = std::min(_Distance(__last - __first), __step_size);
-        -: 2691:
-        4: 2692:      std::__move_merge(__first, __first + __step_size,
-        2: 2693:			__first + __step_size, __last, __result, __comp);
-        4: 2694:    }
-------------------
-_ZSt17__merge_sort_loopIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEExNS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEEvT_SH_T0_T1_T2_:
-function _ZSt17__merge_sort_loopIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEExNS4_5__ops15_Iter_comp_iterIZNS0_9TestSuite3RunEvEUlPKS1_SE_E_EEEvT_SH_T0_T1_T2_ called 2 returned 100% blocks executed 71%
-        2: 2675:    __merge_sort_loop(_RandomAccessIterator1 __first,
-        -: 2676:		      _RandomAccessIterator1 __last,
-        -: 2677:		      _RandomAccessIterator2 __result, _Distance __step_size,
-        -: 2678:		      _Compare __comp)
-        -: 2679:    {
-        2: 2680:      const _Distance __two_step = 2 * __step_size;
-        -: 2681:
-        2: 2682:      while (__last - __first >= __two_step)
-        2: 2682-block  0
-        2: 2682-block  1
+        4: 2682-block  0
+        4: 2682-block  1
 branch  0 taken 0
-branch  1 taken 2 (fallthrough)
+branch  1 taken 4 (fallthrough)
         -: 2683:	{
     #####: 2684:	  __result = std::__move_merge(__first, __first + __step_size,
     #####: 2685:				       __first + __step_size,
@@ -3290,30 +3290,30 @@ call    0 never executed
         -: 2687:				       __result, __comp);
     #####: 2688:	  __first += __two_step;
         -: 2689:	}
-        2: 2690:      __step_size = std::min(_Distance(__last - __first), __step_size);
-        2: 2690-block  0
-call    0 returned 2
+        4: 2690:      __step_size = std::min(_Distance(__last - __first), __step_size);
+        4: 2690-block  0
+call    0 returned 4
         -: 2691:
-        2: 2692:      std::__move_merge(__first, __first + __step_size,
-        2: 2693:			__first + __step_size, __last, __result, __comp);
-call    0 returned 2
-        2: 2694:    }
+        4: 2692:      std::__move_merge(__first, __first + __step_size,
+        4: 2693:			__first + __step_size, __last, __result, __comp);
+call    0 returned 4
+        4: 2694:    }
 ------------------
 _ZSt17__merge_sort_loopIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_xNS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_T2_:
-function _ZSt17__merge_sort_loopIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_xNS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_T2_ called 2 returned 100% blocks executed 64%
-        2: 2675:    __merge_sort_loop(_RandomAccessIterator1 __first,
+function _ZSt17__merge_sort_loopIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_xNS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_T2_ called 4 returned 100% blocks executed 64%
+        4: 2675:    __merge_sort_loop(_RandomAccessIterator1 __first,
         -: 2676:		      _RandomAccessIterator1 __last,
         -: 2677:		      _RandomAccessIterator2 __result, _Distance __step_size,
         -: 2678:		      _Compare __comp)
         -: 2679:    {
-        2: 2680:      const _Distance __two_step = 2 * __step_size;
+        4: 2680:      const _Distance __two_step = 2 * __step_size;
         -: 2681:
-        2: 2682:      while (__last - __first >= __two_step)
-        2: 2682-block  0
-        2: 2682-block  1
-call    0 returned 2
+        4: 2682:      while (__last - __first >= __two_step)
+        4: 2682-block  0
+        4: 2682-block  1
+call    0 returned 4
 branch  1 taken 0
-branch  2 taken 2 (fallthrough)
+branch  2 taken 4 (fallthrough)
         -: 2683:	{
     #####: 2684:	  __result = std::__move_merge(__first, __first + __step_size,
     %%%%%: 2684-block  0
@@ -3327,34 +3327,34 @@ call    3 never executed
     #####: 2688:	  __first += __two_step;
 call    0 never executed
         -: 2689:	}
-        2: 2690:      __step_size = std::min(_Distance(__last - __first), __step_size);
-        2: 2690-block  0
-call    0 returned 2
-call    1 returned 2
+        4: 2690:      __step_size = std::min(_Distance(__last - __first), __step_size);
+        4: 2690-block  0
+call    0 returned 4
+call    1 returned 4
         -: 2691:
-        2: 2692:      std::__move_merge(__first, __first + __step_size,
-call    0 returned 2
-call    1 returned 2
-call    2 returned 2
+        4: 2692:      std::__move_merge(__first, __first + __step_size,
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
         -: 2693:			__first + __step_size, __last, __result, __comp);
-        2: 2694:    }
+        4: 2694:    }
 ------------------
         -: 2695:
         -: 2696:  template<typename _RandomAccessIterator, typename _Distance,
         -: 2697:	   typename _Compare>
         -: 2698:    _GLIBCXX20_CONSTEXPR
         -: 2699:    void
-function _ZSt22__chunk_insertion_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEExNS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_ called 8 returned 100% blocks executed 100%
-        8: 2700:    __chunk_insertion_sort(_RandomAccessIterator __first,
+function _ZSt22__chunk_insertion_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEExNS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_ called 14 returned 100% blocks executed 100%
+       14: 2700:    __chunk_insertion_sort(_RandomAccessIterator __first,
         -: 2701:			   _RandomAccessIterator __last,
         -: 2702:			   _Distance __chunk_size, _Compare __comp)
         -: 2703:    {
-       12: 2704:      while (__last - __first >= __chunk_size)
-        8: 2704-block  0
-       12: 2704-block  1
-call    0 returned 12
+       18: 2704:      while (__last - __first >= __chunk_size)
+       14: 2704-block  0
+       18: 2704-block  1
+call    0 returned 18
 branch  1 taken 4
-branch  2 taken 8 (fallthrough)
+branch  2 taken 14 (fallthrough)
         -: 2705:	{
         4: 2706:	  std::__insertion_sort(__first, __first + __chunk_size, __comp);
         4: 2706-block  0
@@ -3363,70 +3363,70 @@ call    1 returned 4
         4: 2707:	  __first += __chunk_size;
 call    0 returned 4
         -: 2708:	}
-        8: 2709:      std::__insertion_sort(__first, __last, __comp);
-        8: 2709-block  0
-call    0 returned 8
-        8: 2710:    }
+       14: 2709:      std::__insertion_sort(__first, __last, __comp);
+       14: 2709-block  0
+call    0 returned 14
+       14: 2710:    }
         -: 2711:
         -: 2712:  enum { _S_chunk_size = 7 };
         -: 2713:
         -: 2714:  template<typename _RandomAccessIterator, typename _Pointer, typename _Compare>
         -: 2715:    void
-function _ZSt24__merge_sort_with_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_ called 8 returned 100% blocks executed 100%
-        8: 2716:    __merge_sort_with_buffer(_RandomAccessIterator __first,
+function _ZSt24__merge_sort_with_bufferIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_T1_ called 14 returned 100% blocks executed 100%
+       14: 2716:    __merge_sort_with_buffer(_RandomAccessIterator __first,
         -: 2717:			     _RandomAccessIterator __last,
         -: 2718:			     _Pointer __buffer, _Compare __comp)
         -: 2719:    {
         -: 2720:      typedef typename iterator_traits<_RandomAccessIterator>::difference_type
         -: 2721:	_Distance;
         -: 2722:
-        8: 2723:      const _Distance __len = __last - __first;
-        8: 2723-block  0
-call    0 returned 8
-        8: 2724:      const _Pointer __buffer_last = __buffer + __len;
+       14: 2723:      const _Distance __len = __last - __first;
+       14: 2723-block  0
+call    0 returned 14
+       14: 2724:      const _Pointer __buffer_last = __buffer + __len;
         -: 2725:
-        8: 2726:      _Distance __step_size = _S_chunk_size;
-        8: 2727:      std::__chunk_insertion_sort(__first, __last, __step_size, __comp);
-call    0 returned 8
+       14: 2726:      _Distance __step_size = _S_chunk_size;
+       14: 2727:      std::__chunk_insertion_sort(__first, __last, __step_size, __comp);
+call    0 returned 14
         -: 2728:
-       10: 2729:      while (__step_size < __len)
-       10: 2729-block  0
-branch  0 taken 2
-branch  1 taken 8 (fallthrough)
+       18: 2729:      while (__step_size < __len)
+       18: 2729-block  0
+branch  0 taken 4
+branch  1 taken 14 (fallthrough)
         -: 2730:	{
-        2: 2731:	  std::__merge_sort_loop(__first, __last, __buffer,
-        2: 2731-block  0
-call    0 returned 2
+        4: 2731:	  std::__merge_sort_loop(__first, __last, __buffer,
+        4: 2731-block  0
+call    0 returned 4
         -: 2732:				 __step_size, __comp);
-        2: 2733:	  __step_size *= 2;
-        2: 2734:	  std::__merge_sort_loop(__buffer, __buffer_last, __first,
-call    0 returned 2
+        4: 2733:	  __step_size *= 2;
+        4: 2734:	  std::__merge_sort_loop(__buffer, __buffer_last, __first,
+call    0 returned 4
         -: 2735:				 __step_size, __comp);
-        2: 2736:	  __step_size *= 2;
+        4: 2736:	  __step_size *= 2;
         -: 2737:	}
-        8: 2738:    }
+       14: 2738:    }
         -: 2739:
         -: 2740:  template<typename _RandomAccessIterator, typename _Pointer, typename _Compare>
         -: 2741:    void
-function _ZSt22__stable_sort_adaptiveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_SH_T0_T1_ called 4 returned 100% blocks executed 100%
-        4: 2742:    __stable_sort_adaptive(_RandomAccessIterator __first,
+function _ZSt22__stable_sort_adaptiveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_NS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_SH_T0_T1_ called 7 returned 100% blocks executed 100%
+        7: 2742:    __stable_sort_adaptive(_RandomAccessIterator __first,
         -: 2743:			   _RandomAccessIterator __middle,
         -: 2744:			   _RandomAccessIterator __last,
         -: 2745:			   _Pointer __buffer, _Compare __comp)
         -: 2746:    {
-        4: 2747:      std::__merge_sort_with_buffer(__first, __middle, __buffer, __comp);
-        4: 2747-block  0
-call    0 returned 4
-        4: 2748:      std::__merge_sort_with_buffer(__middle, __last, __buffer, __comp);
-call    0 returned 4
+        7: 2747:      std::__merge_sort_with_buffer(__first, __middle, __buffer, __comp);
+        7: 2747-block  0
+call    0 returned 7
+        7: 2748:      std::__merge_sort_with_buffer(__middle, __last, __buffer, __comp);
+call    0 returned 7
         -: 2749:
-        4: 2750:      std::__merge_adaptive(__first, __middle, __last,
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
+        7: 2750:      std::__merge_adaptive(__first, __middle, __last,
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
         -: 2751:			    __middle - __first, __last - __middle,
         -: 2752:			    __buffer, __comp);
-        4: 2753:    }
+        7: 2753:    }
         -: 2754:
         -: 2755:  template<typename _RandomAccessIterator, typename _Pointer,
         -: 2756:	   typename _Distance, typename _Compare>
@@ -4551,14 +4551,14 @@ branch  4 never executed (throw)
         -: 3824:  template<typename _InputIterator, typename _Function>
         -: 3825:    _GLIBCXX20_CONSTEXPR
         -: 3826:    _Function
-       8*: 3827:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
+      11*: 3827:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
         -: 3828:    {
         -: 3829:      // concept requirements
         -: 3830:      __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
         -: 3831:      __glibcxx_requires_valid_range(__first, __last);
-      63*: 3832:      for (; __first != __last; ++__first)
-      55*: 3833:	__f(*__first);
-       8*: 3834:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
+      87*: 3832:      for (; __first != __last; ++__first)
+      76*: 3833:	__f(*__first);
+      11*: 3834:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
         -: 3835:    }
 ------------------
 _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing11EnvironmentESt6vectorIS4_SaIS4_EEEEPFvS4_EET0_T_SE_SD_:
@@ -4606,25 +4606,25 @@ call    1 never executed
         -: 3835:    }
 ------------------
 _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEPFvS4_EET0_T_SE_SD_:
-function _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEPFvS4_EET0_T_SE_SD_ called 4 returned 100% blocks executed 100%
-        4: 3827:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
+function _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEPFvS4_EET0_T_SE_SD_ called 7 returned 100% blocks executed 100%
+        7: 3827:    for_each(_InputIterator __first, _InputIterator __last, _Function __f)
         -: 3828:    {
         -: 3829:      // concept requirements
         -: 3830:      __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
         -: 3831:      __glibcxx_requires_valid_range(__first, __last);
-       55: 3832:      for (; __first != __last; ++__first)
-        4: 3832-block  0
-call    0 returned 51
-       55: 3832-block  1
-call    1 returned 55
-branch  2 taken 51
-branch  3 taken 4 (fallthrough)
-       51: 3833:	__f(*__first);
-       51: 3833-block  0
-call    0 returned 51
-call    1 returned 51
-        4: 3834:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
-        4: 3834-block  0
+       76: 3832:      for (; __first != __last; ++__first)
+        7: 3832-block  0
+call    0 returned 69
+       76: 3832-block  1
+call    1 returned 76
+branch  2 taken 69
+branch  3 taken 7 (fallthrough)
+       69: 3833:	__f(*__first);
+       69: 3833-block  0
+call    0 returned 69
+call    1 returned 69
+        7: 3834:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
+        7: 3834-block  0
         -: 3835:    }
 ------------------
 _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing9TestSuiteESt6vectorIS4_SaIS4_EEEEPFvS4_EET0_T_SE_SD_:
@@ -4634,17 +4634,17 @@ function _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPKPN7testing9TestSuiteESt6
         -: 3829:      // concept requirements
         -: 3830:      __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
         -: 3831:      __glibcxx_requires_valid_range(__first, __last);
-        5: 3832:      for (; __first != __last; ++__first)
+        8: 3832:      for (; __first != __last; ++__first)
         1: 3832-block  0
-call    0 returned 4
-        5: 3832-block  1
-call    1 returned 5
-branch  2 taken 4
+call    0 returned 7
+        8: 3832-block  1
+call    1 returned 8
+branch  2 taken 7
 branch  3 taken 1 (fallthrough)
-        4: 3833:	__f(*__first);
-        4: 3833-block  0
-call    0 returned 4
-call    1 returned 4
+        7: 3833:	__f(*__first);
+        7: 3833-block  0
+call    0 returned 7
+call    1 returned 7
         1: 3834:      return __f; // N.B. [alg.foreach] says std::move(f) but it's redundant.
         1: 3834-block  0
         -: 3835:    }
@@ -4753,7 +4753,7 @@ call    1 never executed
         -: 3911:  template<typename _InputIterator, typename _Predicate>
         -: 3912:    _GLIBCXX20_CONSTEXPR
         -: 3913:    inline _InputIterator
-     422*: 3914:    find_if(_InputIterator __first, _InputIterator __last,
+     575*: 3914:    find_if(_InputIterator __first, _InputIterator __last,
         -: 3915:	    _Predicate __pred)
         -: 3916:    {
         -: 3917:      // concept requirements
@@ -4762,13 +4762,13 @@ call    1 never executed
         -: 3920:	      typename iterator_traits<_InputIterator>::value_type>)
         -: 3921:      __glibcxx_requires_valid_range(__first, __last);
         -: 3922:
-     422*: 3923:      return std::__find_if(__first, __last,
-     422*: 3924:			    __gnu_cxx::__ops::__pred_iter(__pred));
+     575*: 3923:      return std::__find_if(__first, __last,
+     575*: 3924:			    __gnu_cxx::__ops::__pred_iter(__pred));
         -: 3925:    }
 ------------------
 _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_ET_SK_SK_T0_:
-function _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_ET_SK_SK_T0_ called 157 returned 100% blocks executed 100%
-      157: 3914:    find_if(_InputIterator __first, _InputIterator __last,
+function _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSI_E_ET_SK_SK_T0_ called 214 returned 100% blocks executed 100%
+      214: 3914:    find_if(_InputIterator __first, _InputIterator __last,
         -: 3915:	    _Predicate __pred)
         -: 3916:    {
         -: 3917:      // concept requirements
@@ -4777,16 +4777,16 @@ function _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_string
         -: 3920:	      typename iterator_traits<_InputIterator>::value_type>)
         -: 3921:      __glibcxx_requires_valid_range(__first, __last);
         -: 3922:
-      157: 3923:      return std::__find_if(__first, __last,
-      157: 3923-block  0
-call    0 returned 157
-call    1 returned 157
-      157: 3924:			    __gnu_cxx::__ops::__pred_iter(__pred));
+      214: 3923:      return std::__find_if(__first, __last,
+      214: 3923-block  0
+call    0 returned 214
+call    1 returned 214
+      214: 3924:			    __gnu_cxx::__ops::__pred_iter(__pred));
         -: 3925:    }
 ------------------
 _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_ET_SH_SH_T0_:
-function _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_ET_SH_SH_T0_ called 265 returned 100% blocks executed 100%
-      265: 3914:    find_if(_InputIterator __first, _InputIterator __last,
+function _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_ET_SH_SH_T0_ called 361 returned 100% blocks executed 100%
+      361: 3914:    find_if(_InputIterator __first, _InputIterator __last,
         -: 3915:	    _Predicate __pred)
         -: 3916:    {
         -: 3917:      // concept requirements
@@ -4795,11 +4795,11 @@ function _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_strin
         -: 3920:	      typename iterator_traits<_InputIterator>::value_type>)
         -: 3921:      __glibcxx_requires_valid_range(__first, __last);
         -: 3922:
-      265: 3923:      return std::__find_if(__first, __last,
-      265: 3923-block  0
-call    0 returned 265
-call    1 returned 265
-      265: 3924:			    __gnu_cxx::__ops::__pred_iter(__pred));
+      361: 3923:      return std::__find_if(__first, __last,
+      361: 3923-block  0
+call    0 returned 361
+call    1 returned 361
+      361: 3924:			    __gnu_cxx::__ops::__pred_iter(__pred));
         -: 3925:    }
 ------------------
 _ZSt7find_ifIN9__gnu_cxx17__normal_iteratorIPN7testing12TestPropertyESt6vectorIS3_SaIS3_EEEENS2_8internal17TestPropertyKeyIsEET_SB_SB_T0_:
@@ -5575,9 +5575,9 @@ call   12 never executed
         -: 4659:  template<typename _ForwardIterator, typename _Predicate>
         -: 4660:    _GLIBCXX20_CONSTEXPR
         -: 4661:    inline _ForwardIterator
-function _ZSt9partitionIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEPFbRKS7_EET_SH_SH_T0_ called 6 returned 100% blocks executed 100%
-        6: 4662:    partition(_ForwardIterator __first, _ForwardIterator __last,
-        6: 4662-block  0
+function _ZSt9partitionIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEPFbRKS7_EET_SH_SH_T0_ called 9 returned 100% blocks executed 100%
+        9: 4662:    partition(_ForwardIterator __first, _ForwardIterator __last,
+        9: 4662-block  0
         -: 4663:	      _Predicate   __pred)
         -: 4664:    {
         -: 4665:      // concept requirements
@@ -5587,15 +5587,15 @@ function _ZSt9partitionIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_strin
         -: 4669:	    typename iterator_traits<_ForwardIterator>::value_type>)
         -: 4670:      __glibcxx_requires_valid_range(__first, __last);
         -: 4671:
-        6: 4672:      return std::__partition(__first, __last, __pred,
-        6: 4673:			      std::__iterator_category(__first));
-        6: 4673-block  0
-call    0 returned 6
-branch  1 taken 6 (fallthrough)
+        9: 4672:      return std::__partition(__first, __last, __pred,
+        9: 4673:			      std::__iterator_category(__first));
+        9: 4673-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
 branch  2 taken 0 (throw)
-        6: 4673-block  1
-        6: 4673-block  2
-        6: 4673-block  3
+        9: 4673-block  1
+        9: 4673-block  2
+        9: 4673-block  3
         -: 4674:    }
         -: 4675:
         -: 4676:
@@ -5945,8 +5945,8 @@ branch  2 taken 0 (throw)
         -: 5020:
         -: 5021:  template<typename _RandomAccessIterator, typename _Compare>
         -: 5022:    inline void
-function _ZSt13__stable_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEENS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_ called 4 returned 100% blocks executed 62%
-        4: 5023:    __stable_sort(_RandomAccessIterator __first, _RandomAccessIterator __last,
+function _ZSt13__stable_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEENS0_5__ops15_Iter_comp_iterIZNS2_9TestSuite3RunEvEUlPKS3_SE_E_EEEvT_SH_T0_ called 7 returned 100% blocks executed 62%
+        7: 5023:    __stable_sort(_RandomAccessIterator __first, _RandomAccessIterator __last,
         -: 5024:		  _Compare __comp)
         -: 5025:    {
         -: 5026:      typedef typename iterator_traits<_RandomAccessIterator>::value_type
@@ -5954,11 +5954,11 @@ function _ZSt13__stable_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfo
         -: 5028:      typedef typename iterator_traits<_RandomAccessIterator>::difference_type
         -: 5029:	_DistanceType;
         -: 5030:
-        4: 5031:      if (__first == __last)
-        4: 5031-block  0
-call    0 returned 4
+        7: 5031:      if (__first == __last)
+        7: 5031-block  0
+call    0 returned 7
 branch  1 taken 0 (fallthrough)
-branch  2 taken 4
+branch  2 taken 7
     #####: 5032:	return;
     %%%%%: 5032-block  0
         -: 5033:
@@ -5966,28 +5966,28 @@ branch  2 taken 4
         -: 5035:      typedef _Temporary_buffer<_RandomAccessIterator, _ValueType> _TmpBuf;
         -: 5036:      // __stable_sort_adaptive sorts the range in two halves,
         -: 5037:      // so the buffer only needs to fit half the range at once.
-        4: 5038:      _TmpBuf __buf(__first, (__last - __first + 1) / 2);
-        4: 5038-block  0
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+        7: 5038:      _TmpBuf __buf(__first, (__last - __first + 1) / 2);
+        7: 5038-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0 (throw)
         -: 5039:
-        4: 5040:      if (__builtin_expect(__buf.requested_size() == __buf.size(), true))
-        4: 5040-block  0
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+        7: 5040:      if (__builtin_expect(__buf.requested_size() == __buf.size(), true))
+        7: 5040-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0
-        8: 5041:	std::__stable_sort_adaptive(__first,
-        4: 5041-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-branch  3 taken 4 (fallthrough)
+       14: 5041:	std::__stable_sort_adaptive(__first,
+        7: 5041-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
 branch  4 taken 0 (throw)
-        4: 5042:				    __first + _DistanceType(__buf.size()),
-call    0 returned 4
+        7: 5042:				    __first + _DistanceType(__buf.size()),
+call    0 returned 7
         -: 5043:				    __last, __buf.begin(), __comp);
     #####: 5044:      else if (__builtin_expect(__buf.begin() == 0, false))
     %%%%%: 5044-block  0
@@ -6011,9 +6011,9 @@ call    0 never executed
         -: 5049:#else
         -: 5050:      std::__inplace_stable_sort(__first, __last, __comp);
         -: 5051:#endif
-        4: 5052:    }
-        4: 5052-block  0
-call    0 returned 4
+        7: 5052:    }
+        7: 5052-block  0
+call    0 returned 7
     $$$$$: 5052-block  1
 call    1 never executed
         -: 5053:
@@ -6070,8 +6070,8 @@ call    1 never executed
         -: 5104:  */
         -: 5105:  template<typename _RandomAccessIterator, typename _Compare>
         -: 5106:    inline void
-function _ZSt11stable_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEZNS2_9TestSuite3RunEvEUlPKS3_SC_E_EvT_SE_T0_ called 4 returned 100% blocks executed 100%
-        4: 5107:    stable_sort(_RandomAccessIterator __first, _RandomAccessIterator __last,
+function _ZSt11stable_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEZNS2_9TestSuite3RunEvEUlPKS3_SC_E_EvT_SE_T0_ called 7 returned 100% blocks executed 100%
+        7: 5107:    stable_sort(_RandomAccessIterator __first, _RandomAccessIterator __last,
         -: 5108:		_Compare __comp)
         -: 5109:    {
         -: 5110:      // concept requirements
@@ -6083,12 +6083,12 @@ function _ZSt11stable_sortIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoES
         -: 5116:      __glibcxx_requires_valid_range(__first, __last);
         -: 5117:      __glibcxx_requires_irreflexive_pred(__first, __last, __comp);
         -: 5118:
-        4: 5119:      _GLIBCXX_STD_A::__stable_sort(__first, __last,
-        4: 5119-block  0
-call    0 returned 4
-call    1 returned 4
+        7: 5119:      _GLIBCXX_STD_A::__stable_sort(__first, __last,
+        7: 5119-block  0
+call    0 returned 7
+call    1 returned 7
         -: 5120:				    __gnu_cxx::__ops::__iter_comp_iter(__comp));
-        4: 5121:    }
+        7: 5121:    }
         -: 5122:
         -: 5123:  template<typename _InputIterator1, typename _InputIterator2,
         -: 5124:	   typename _OutputIterator,

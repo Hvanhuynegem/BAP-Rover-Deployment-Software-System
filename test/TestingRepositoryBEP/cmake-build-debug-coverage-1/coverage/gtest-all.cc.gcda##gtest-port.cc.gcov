@@ -362,17 +362,17 @@ branch  3 never executed
     %%%%%:  302-block  4
         -:  303:}
         -:  304:
-function _ZN7testing8internal5MutexC2Ev called 58 returned 100% blocks executed 100%
-       58:  305:Mutex::Mutex()
-       58:  306:    : owner_thread_id_(0),
-       58:  307:      type_(kDynamic),
-       58:  308:      critical_section_init_phase_(0),
-       58:  309:      critical_section_(new CRITICAL_SECTION) {
-       58:  309-block  0
-call    0 returned 58
-       58:  310:  ::InitializeCriticalSection(critical_section_);
-call    0 returned 58
-       58:  311:}
+function _ZN7testing8internal5MutexC2Ev called 79 returned 100% blocks executed 100%
+       79:  305:Mutex::Mutex()
+       79:  306:    : owner_thread_id_(0),
+       79:  307:      type_(kDynamic),
+       79:  308:      critical_section_init_phase_(0),
+       79:  309:      critical_section_(new CRITICAL_SECTION) {
+       79:  309-block  0
+call    0 returned 79
+       79:  310:  ::InitializeCriticalSection(critical_section_);
+call    0 returned 79
+       79:  311:}
         -:  312:
 function _ZN7testing8internal5MutexD2Ev called 0 returned 0% blocks executed 0%
     #####:  313:Mutex::~Mutex() {
@@ -395,29 +395,29 @@ call    2 never executed
         -:  320:  }
     #####:  321:}
         -:  322:
-function _ZN7testing8internal5Mutex4LockEv called 110 returned 100% blocks executed 100%
-      110:  323:void Mutex::Lock() {
-      110:  324:  ThreadSafeLazyInit();
-      110:  324-block  0
-call    0 returned 110
-      110:  325:  ::EnterCriticalSection(critical_section_);
-call    0 returned 110
-      110:  326:  owner_thread_id_ = ::GetCurrentThreadId();
-call    0 returned 110
-      110:  327:}
+function _ZN7testing8internal5Mutex4LockEv called 152 returned 100% blocks executed 100%
+      152:  323:void Mutex::Lock() {
+      152:  324:  ThreadSafeLazyInit();
+      152:  324-block  0
+call    0 returned 152
+      152:  325:  ::EnterCriticalSection(critical_section_);
+call    0 returned 152
+      152:  326:  owner_thread_id_ = ::GetCurrentThreadId();
+call    0 returned 152
+      152:  327:}
         -:  328:
-function _ZN7testing8internal5Mutex6UnlockEv called 110 returned 100% blocks executed 100%
-      110:  329:void Mutex::Unlock() {
-      110:  330:  ThreadSafeLazyInit();
-      110:  330-block  0
-call    0 returned 110
+function _ZN7testing8internal5Mutex6UnlockEv called 152 returned 100% blocks executed 100%
+      152:  329:void Mutex::Unlock() {
+      152:  330:  ThreadSafeLazyInit();
+      152:  330-block  0
+call    0 returned 152
         -:  331:  // We don't protect writing to owner_thread_id_ here, as it's the
         -:  332:  // caller's responsibility to ensure that the current thread holds the
         -:  333:  // mutex when this is called.
-      110:  334:  owner_thread_id_ = 0;
-      110:  335:  ::LeaveCriticalSection(critical_section_);
-call    0 returned 110
-      110:  336:}
+      152:  334:  owner_thread_id_ = 0;
+      152:  335:  ::LeaveCriticalSection(critical_section_);
+call    0 returned 152
+      152:  336:}
         -:  337:
         -:  338:// Does nothing if the current thread holds the mutex. Otherwise, crashes
         -:  339:// with high probability.
@@ -492,13 +492,13 @@ branch  8 never executed (throw)
         -:  379:}  // namespace
         -:  380:
         -:  381:// Initializes owner_thread_id_ and critical_section_ in static mutexes.
-function _ZN7testing8internal5Mutex18ThreadSafeLazyInitEv called 220 returned 100% blocks executed 8%
-      220:  382:void Mutex::ThreadSafeLazyInit() {
+function _ZN7testing8internal5Mutex18ThreadSafeLazyInitEv called 304 returned 100% blocks executed 8%
+      304:  382:void Mutex::ThreadSafeLazyInit() {
         -:  383:  // Dynamic mutexes are initialized in the constructor.
-      220:  384:  if (type_ == kStatic) {
-      220:  384-block  0
+      304:  384:  if (type_ == kStatic) {
+      304:  384-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 220
+branch  1 taken 304
     #####:  385:    switch (
     #####:  386:        ::InterlockedCompareExchange(&critical_section_init_phase_, 1L, 0L)) {
     %%%%%:  386-block  0
@@ -601,8 +601,8 @@ branch  7 never executed (fallthrough)
 branch  8 never executed (throw)
         -:  422:    }
         -:  423:  }
-      220:  424:}
-      220:  424-block  0
+      304:  424:}
+      304:  424-block  0
         -:  425:
         -:  426:namespace {
         -:  427:

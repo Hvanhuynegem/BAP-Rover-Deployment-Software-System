@@ -828,6 +828,54 @@ TEST(slip_decoding_testsSuite, StartOrEndByteNotENDTest){
     // Assertions
     EXPECT_EQ(result, expected_result);
 }
+TEST(slip_decoding_testsSuite, testFirstCharacter){
+    // input buffer with all four special characters
+    uint8_t input_buffer[UART_BUFFER_SIZE] = {0xDB, 0xDC, 0xDB, 0xDD, 0xDC, 0xDD, 0xC0};
+    uint16_t input_length = 8;
+    // output buffer after decoding
+    uint8_t output_buffer[UART_BUFFER_SIZE];
+    uint16_t output_length;
+    bool result;
+
+    // decoding
+    result = slip_decode(input_buffer, input_length, output_buffer, &output_length);
+
+    // Assertions
+    EXPECT_FALSE(result);
+}
+
+TEST(slip_decoding_testsSuite, testlastCharacter){
+    // input buffer with all four special characters
+    uint8_t input_buffer[UART_BUFFER_SIZE] = {0xC0, 0xDB, 0xDC, 0xDB, 0xDD, 0xDC, 0xDD};
+    uint16_t input_length = 8;
+    // output buffer after decoding
+    uint8_t output_buffer[UART_BUFFER_SIZE];
+    uint16_t output_length;
+    bool result;
+
+    // decoding
+    result = slip_decode(input_buffer, input_length, output_buffer, &output_length);
+
+    // Assertions
+    EXPECT_FALSE(result);
+}
+
+TEST(slip_decoding_testsSuite, isEscapedTest){
+    // input buffer with all four special characters
+    uint8_t input_buffer[UART_BUFFER_SIZE] = {0xC0, 0xDB, 0xDD, 0xDB, 0x02, 0xC0};
+    uint16_t input_length = 6;
+    // output buffer after decoding
+    uint8_t output_buffer[UART_BUFFER_SIZE];
+    uint16_t output_length;
+    bool result;
+
+    // decoding
+    result = slip_decode(input_buffer, input_length, output_buffer, &output_length);
+
+    // Assertions
+    // Assertions
+    EXPECT_FALSE(result);
+}
 
 /*
  * slip_encoding_tests.cpp file
@@ -1235,4 +1283,147 @@ TEST(slip_encoding_testsSuite, MixedSpecialCharactersTest) {
         EXPECT_EQ(output_buffer[i], expected_buffer[i]);
     }
 }
+
+/*
+ * supercap_readout_test.cpp file
+ *
+ * Testing file for ADC to voltage conversion function. Multiple tests are executed here to demonstrate that the method behaves as expected. Below is a list of all tested functionalities and situations.
+ * Created by Henri Vanhuynegem on 16/06/2024.
+ * Last edited: 16/06/2024.
+ *
+ * Tests for convert_adc_to_voltage function:
+ * - Zero value test: This test checks whether the function correctly converts an ADC value of 0 to 0.0 V.
+ * - Max value test: This test checks whether the function correctly converts the maximum ADC value (4095) to the maximum voltage (3.64 V).
+ * - Mid value test: This test verifies the conversion when the ADC value is half of the maximum value.
+ * - Quarter value test: This test verifies the conversion when the ADC value is a quarter of the maximum value.
+ * - Three-quarters value test: This test verifies the conversion when the ADC value is three-quarters of the maximum value.
+ * - Arbitrary value test: This test verifies the conversion for an arbitrary ADC value (2048).
+ */
+
+#include "supercap_readout.h"
+
+// Constants
+#define ADC_MAX_VALUE        4095      // 12-bit ADC resolution (2^12 - 1)
+#define MAX_VOLTAGE          3.64      // Reference voltage for ADC (measured 3.64 V)
+
+
+
+// Test cases for convert_adc_to_voltage function
+TEST(AdcConversionTest, ZeroValue) {
+    volatile unsigned int adc_value = 0;
+    float expected_voltage = 0.0;
+    EXPECT_FLOAT_EQ(convert_adc_to_voltage(adc_value), expected_voltage);
+}
+
+TEST(AdcConversionTest, MaxValue) {
+    volatile unsigned int adc_value = ADC_MAX_VALUE;
+    float expected_voltage = MAX_VOLTAGE;
+    EXPECT_FLOAT_EQ(convert_adc_to_voltage(adc_value), expected_voltage);
+}
+
+TEST(AdcConversionTest, MidValue) {
+    volatile unsigned int adc_value = ADC_MAX_VALUE / 2;
+    float expected_voltage = MAX_VOLTAGE / 2;
+    EXPECT_NEAR(convert_adc_to_voltage(adc_value), expected_voltage, 0.01);
+
+}
+
+TEST(AdcConversionTest, QuarterValue) {
+    volatile unsigned int adc_value = ADC_MAX_VALUE / 4;
+    float expected_voltage = MAX_VOLTAGE / 4;
+    EXPECT_NEAR(convert_adc_to_voltage(adc_value), expected_voltage, 0.01);
+}
+
+TEST(AdcConversionTest, ThreeQuartersValue) {
+    volatile unsigned int adc_value = 3 * (ADC_MAX_VALUE / 4);
+    float expected_voltage = 3 * (MAX_VOLTAGE / 4);
+    EXPECT_NEAR(convert_adc_to_voltage(adc_value), expected_voltage, 0.01);
+}
+
+TEST(AdcConversionTest, ArbitraryValue) {
+    volatile unsigned int adc_value = 2048; // Arbitrary value
+    float expected_voltage = (2048 * (float)MAX_VOLTAGE) / (float)ADC_MAX_VALUE;
+    EXPECT_FLOAT_EQ(convert_adc_to_voltage(adc_value), expected_voltage);
+}
+
+/*
+ * temp_sensors_test.cpp file
+ *
+ * Testing file for frequency calculation method and frequency to temperature conversion. Multiple tests are executed here to demonstrate that the methods behave as expected. Below is a list of all tested functionalities and situations.
+ * Created by Henri Vanhuynegem on 16/06/2024.
+ * Last edited: 16/06/2024.
+ *
+ * calculateFrequency Tests:
+ * - Zero period test: This test checks whether the function returns zero if the period is zero.
+ * - Positive period test: This test checks whether the function correctly calculates the frequency for a given positive period.
+ * - Small period test: This test verifies the function with a non-zero, small period.
+ *
+ * frequency_to_temperature Tests:
+ * - Zero frequency test: This test ensures that a default error value is returned if the frequency is zero.
+ * - Positive frequency test: This test verifies the temperature conversion for a given positive frequency.
+ * - Small frequency test: This test verifies the function with a small frequency.
+ * - Frequency in range test: This test checks the temperature conversion for a frequency within the expected range.
+ * - Frequency in range test 2: This test checks the temperature conversion for another frequency within the expected range.
+ * - Frequency in range test 3: This test checks the temperature conversion for yet another frequency within the expected range.
+ */
+
+
+#include "temp_sensors.h"
+
+// Test cases for calculateFrequency function
+TEST(FrequencyCalculationTest, ZeroPeriod) {
+    float period = 0.0;
+    float expected_frequency = 0.0;
+    EXPECT_FLOAT_EQ(calculateFrequency(period), expected_frequency);
+}
+
+TEST(FrequencyCalculationTest, PositivePeriod) {
+    float period = 2.0;
+    float expected_frequency = 2000000.0;
+    EXPECT_FLOAT_EQ(calculateFrequency(period), expected_frequency);
+}
+
+TEST(FrequencyCalculationTest, SmallPeriod) {
+    float period = 12;
+    float expected_frequency = 333333.333333;
+    EXPECT_FLOAT_EQ(calculateFrequency(period), expected_frequency);
+}
+
+// Test cases for frequency_to_temperature function
+TEST(FrequencyToTemperatureTest, ZeroFrequency) {
+    float frequency = 0.0;
+    float expected_temperature = -99.0; // result from (1/0 - 1000) / 3.85, where 1/0 is theoretically infinite
+    EXPECT_FLOAT_EQ(frequency_to_temperature(frequency), expected_temperature);
+}
+
+TEST(FrequencyToTemperatureTest, PositiveFrequency) {
+    float frequency = 2000000.0;
+    float expected_temperature = -99.0;
+    EXPECT_FLOAT_EQ(frequency_to_temperature(frequency), expected_temperature);
+}
+
+TEST(FrequencyToTemperatureTest, SmallFrequency) {
+    float frequency = 1.0;
+    float expected_temperature = -99.0;
+    EXPECT_FLOAT_EQ(frequency_to_temperature(frequency), expected_temperature);
+}
+
+TEST(FrequencyToTemperatureTest, FrequencyInRange) {
+    float frequency = 150;
+    float expected_temperature = 710.77972;
+    EXPECT_FLOAT_EQ(frequency_to_temperature(frequency), expected_temperature);
+}
+
+TEST(FrequencyToTemperatureTest, FrequencyInRange2) {
+    float frequency = 600;
+    float expected_temperature = -17.110262;
+    EXPECT_FLOAT_EQ(frequency_to_temperature(frequency), expected_temperature);
+}
+
+TEST(FrequencyToTemperatureTest, FrequencyInRange3) {
+    float frequency = 800;
+    float expected_temperature = -77.767761;
+    EXPECT_FLOAT_EQ(frequency_to_temperature(frequency), expected_temperature);
+}
+
 

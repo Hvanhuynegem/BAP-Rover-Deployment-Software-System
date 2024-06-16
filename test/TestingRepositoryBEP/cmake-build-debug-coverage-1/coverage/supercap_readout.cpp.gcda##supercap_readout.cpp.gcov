@@ -1,0 +1,20 @@
+        -:    0:Source:C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/test/TestingRepositoryBEP/electronics_components_control_system_lib/supercap_readout.cpp
+        -:    0:Graph:C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage-1\electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir\supercap_readout.cpp.gcno
+        -:    0:Data:C:\Users\henri\Documents\GitHub\BAP-Rover-Deployment-Software-System\test\TestingRepositoryBEP\cmake-build-debug-coverage-1\electronics_components_control_system_lib\CMakeFiles\electronics_components_control_system_lib.dir\supercap_readout.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by henri on 16/06/2024.
+        -:    3://
+        -:    4:
+        -:    5:#include "supercap_readout.h"
+        -:    6:
+        -:    7:// Constants
+        -:    8:#define ADC_MAX_VALUE        4095      // 12-bit ADC resolution (2^12 - 1)
+        -:    9:#define MAX_VOLTAGE          3.64      // Reference voltage for ADC (measured 3.64 V)
+        -:   10:
+        -:   11:// Function to convert ADC value to voltage
+function _Z22convert_adc_to_voltagej called 6 returned 100% blocks executed 100%
+        6:   12:float convert_adc_to_voltage(volatile unsigned int adc_value) {
+        6:   13:    return (adc_value * (float)MAX_VOLTAGE) / (float)ADC_MAX_VALUE;
+        6:   13-block  0
+        -:   14:}

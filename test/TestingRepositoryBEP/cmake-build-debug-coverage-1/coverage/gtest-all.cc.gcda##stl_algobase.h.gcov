@@ -156,7 +156,7 @@
         -:  152:  template<typename _ForwardIterator1, typename _ForwardIterator2>
         -:  153:    _GLIBCXX20_CONSTEXPR
         -:  154:    inline void
-      41*:  155:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
+      56*:  155:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
         -:  156:    {
         -:  157:      // concept requirements
         -:  158:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
@@ -186,9 +186,9 @@
         -:  182:#else
         -:  183:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  184:      // 187. iter_swap underspecified
-      41*:  185:      swap(*__a, *__b);
+      56*:  185:      swap(*__a, *__b);
         -:  186:#endif
-      41*:  187:    }
+      56*:  187:    }
 ------------------
 _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES9_EvT_T0_:
 function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES9_EvT_T0_ called 0 returned 0% blocks executed 0%
@@ -271,8 +271,8 @@ call    2 never executed
     #####:  187:    }
 ------------------
 _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESC_EvT_T0_:
-function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESC_EvT_T0_ called 41 returned 100% blocks executed 100%
-       41:  155:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
+function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESC_EvT_T0_ called 56 returned 100% blocks executed 100%
+       56:  155:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
         -:  156:    {
         -:  157:      // concept requirements
         -:  158:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
@@ -302,13 +302,13 @@ function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_strin
         -:  182:#else
         -:  183:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  184:      // 187. iter_swap underspecified
-       41:  185:      swap(*__a, *__b);
-       41:  185-block  0
-call    0 returned 41
-call    1 returned 41
-call    2 returned 41
+       56:  185:      swap(*__a, *__b);
+       56:  185-block  0
+call    0 returned 56
+call    1 returned 56
+call    2 returned 56
         -:  186:#endif
-       41:  187:    }
+       56:  187:    }
 ------------------
         -:  188:
         -:  189:  /**
@@ -366,31 +366,31 @@ call    0 never executed
         -:  230:  template<typename _Tp>
         -:  231:    _GLIBCXX14_CONSTEXPR
         -:  232:    inline const _Tp&
-     148*:  233:    min(const _Tp& __a, const _Tp& __b)
+     221*:  233:    min(const _Tp& __a, const _Tp& __b)
         -:  234:    {
         -:  235:      // concept requirements
         -:  236:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  237:      //return __b < __a ? __b : __a;
-     148*:  238:      if (__b < __a)
-       2*:  239:	return __b;
-     146*:  240:      return __a;
+     221*:  238:      if (__b < __a)
+       4*:  239:	return __b;
+     217*:  240:      return __a;
         -:  241:    }
 ------------------
 _ZSt3minIxERKT_S2_S2_:
-function _ZSt3minIxERKT_S2_S2_ called 4 returned 100% blocks executed 100%
-        4:  233:    min(const _Tp& __a, const _Tp& __b)
+function _ZSt3minIxERKT_S2_S2_ called 8 returned 100% blocks executed 100%
+        8:  233:    min(const _Tp& __a, const _Tp& __b)
         -:  234:    {
         -:  235:      // concept requirements
         -:  236:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  237:      //return __b < __a ? __b : __a;
-        4:  238:      if (__b < __a)
-        4:  238-block  0
-branch  0 taken 2 (fallthrough)
-branch  1 taken 2
-        2:  239:	return __b;
-        2:  239-block  0
-        2:  240:      return __a;
-        2:  240-block  0
+        8:  238:      if (__b < __a)
+        8:  238-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+        4:  239:	return __b;
+        4:  239-block  0
+        4:  240:      return __a;
+        4:  240-block  0
         -:  241:    }
 ------------------
 _ZSt3minIdERKT_S2_S2_:
@@ -411,20 +411,20 @@ branch  1 never executed
         -:  241:    }
 ------------------
 _ZSt3minIyERKT_S2_S2_:
-function _ZSt3minIyERKT_S2_S2_ called 144 returned 100% blocks executed 75%
-      144:  233:    min(const _Tp& __a, const _Tp& __b)
+function _ZSt3minIyERKT_S2_S2_ called 213 returned 100% blocks executed 75%
+      213:  233:    min(const _Tp& __a, const _Tp& __b)
         -:  234:    {
         -:  235:      // concept requirements
         -:  236:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  237:      //return __b < __a ? __b : __a;
-      144:  238:      if (__b < __a)
-      144:  238-block  0
+      213:  238:      if (__b < __a)
+      213:  238-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 144
+branch  1 taken 213
     #####:  239:	return __b;
     %%%%%:  239-block  0
-      144:  240:      return __a;
-      144:  240-block  0
+      213:  240:      return __a;
+      213:  240-block  0
         -:  241:    }
 ------------------
         -:  242:
@@ -442,20 +442,20 @@ branch  1 taken 144
         -:  254:  template<typename _Tp>
         -:  255:    _GLIBCXX14_CONSTEXPR
         -:  256:    inline const _Tp&
-function _ZSt3maxIyERKT_S2_S2_ called 69 returned 100% blocks executed 100%
-       69:  257:    max(const _Tp& __a, const _Tp& __b)
+function _ZSt3maxIyERKT_S2_S2_ called 102 returned 100% blocks executed 100%
+      102:  257:    max(const _Tp& __a, const _Tp& __b)
         -:  258:    {
         -:  259:      // concept requirements
         -:  260:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  261:      //return  __a < __b ? __b : __a;
-       69:  262:      if (__a < __b)
-       69:  262-block  0
-branch  0 taken 19 (fallthrough)
-branch  1 taken 50
-       19:  263:	return __b;
-       19:  263-block  0
-       50:  264:      return __a;
-       50:  264-block  0
+      102:  262:      if (__a < __b)
+      102:  262-block  0
+branch  0 taken 28 (fallthrough)
+branch  1 taken 74
+       28:  263:	return __b;
+       28:  263-block  0
+       74:  264:      return __a;
+       74:  264-block  0
         -:  265:    }
         -:  266:
         -:  267:  /**
@@ -507,9 +507,9 @@ branch  1 taken 50
         -:  313:  template<typename _Iterator>
         -:  314:    _GLIBCXX20_CONSTEXPR
         -:  315:    inline _Iterator
-     460*:  316:    __niter_base(_Iterator __it)
+     688*:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-     460*:  318:    { return __it; }
+     688*:  318:    { return __it; }
 ------------------
 _ZSt12__niter_baseIPdET_S1_:
 function _ZSt12__niter_baseIPdET_S1_ called 0 returned 0% blocks executed 0%
@@ -519,11 +519,11 @@ function _ZSt12__niter_baseIPdET_S1_ called 0 returned 0% blocks executed 0%
     %%%%%:  318-block  0
 ------------------
 _ZSt12__niter_baseIPiET_S1_:
-function _ZSt12__niter_baseIPiET_S1_ called 138 returned 100% blocks executed 100%
-      138:  316:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseIPiET_S1_ called 216 returned 100% blocks executed 100%
+      216:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-      138:  318:    { return __it; }
-      138:  318-block  0
+      216:  318:    { return __it; }
+      216:  318-block  0
 ------------------
 _ZSt12__niter_baseIPyET_S1_:
 function _ZSt12__niter_baseIPyET_S1_ called 0 returned 0% blocks executed 0%
@@ -554,11 +554,11 @@ function _ZSt12__niter_baseIPPN7testing17TestEventListenerEET_S4_ called 6 retur
         6:  318-block  0
 ------------------
 _ZSt12__niter_baseIPPN7testing8TestInfoEET_S4_:
-function _ZSt12__niter_baseIPPN7testing8TestInfoEET_S4_ called 136 returned 100% blocks executed 100%
-      136:  316:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseIPPN7testing8TestInfoEET_S4_ called 223 returned 100% blocks executed 100%
+      223:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-      136:  318:    { return __it; }
-      136:  318-block  0
+      223:  318:    { return __it; }
+      223:  318-block  0
 ------------------
 _ZSt12__niter_baseIPN7testing12TestPropertyEET_S3_:
 function _ZSt12__niter_baseIPN7testing12TestPropertyEET_S3_ called 0 returned 0% blocks executed 0%
@@ -589,32 +589,32 @@ function _ZSt12__niter_baseIPSt10shared_ptrIN7testing8internal26ThreadLocalValue
     %%%%%:  318-block  0
 ------------------
 _ZSt12__niter_baseIPPN7testing9TestSuiteEET_S4_:
-function _ZSt12__niter_baseIPPN7testing9TestSuiteEET_S4_ called 18 returned 100% blocks executed 100%
-       18:  316:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseIPPN7testing9TestSuiteEET_S4_ called 24 returned 100% blocks executed 100%
+       24:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-       18:  318:    { return __it; }
-       18:  318-block  0
+       24:  318:    { return __it; }
+       24:  318-block  0
 ------------------
 _ZSt12__niter_baseIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_S7_:
-function _ZSt12__niter_baseIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_S7_ called 150 returned 100% blocks executed 100%
-      150:  316:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_S7_ called 201 returned 100% blocks executed 100%
+      201:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-      150:  318:    { return __it; }
-      150:  318-block  0
+      201:  318:    { return __it; }
+      201:  318-block  0
 ------------------
 _ZSt12__niter_baseISt15insert_iteratorISt13unordered_setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4hashIS7_ESt8equal_toIS7_ESaIS7_EEEET_SF_:
-function _ZSt12__niter_baseISt15insert_iteratorISt13unordered_setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4hashIS7_ESt8equal_toIS7_ESaIS7_EEEET_SF_ called 6 returned 100% blocks executed 100%
-        6:  316:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseISt15insert_iteratorISt13unordered_setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4hashIS7_ESt8equal_toIS7_ESaIS7_EEEET_SF_ called 9 returned 100% blocks executed 100%
+        9:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-        6:  318:    { return __it; }
-        6:  318-block  0
+        9:  318:    { return __it; }
+        9:  318-block  0
 ------------------
 _ZSt12__niter_baseISt15insert_iteratorISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EEEET_SB_:
-function _ZSt12__niter_baseISt15insert_iteratorISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EEEET_SB_ called 6 returned 100% blocks executed 100%
-        6:  316:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseISt15insert_iteratorISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EEEET_SB_ called 9 returned 100% blocks executed 100%
+        9:  316:    __niter_base(_Iterator __it)
         -:  317:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-        6:  318:    { return __it; }
-        6:  318-block  0
+        9:  318:    { return __it; }
+        9:  318-block  0
 ------------------
         -:  319:
         -:  320:  template<typename _Ite, typename _Seq>
@@ -628,16 +628,16 @@ function _ZSt12__niter_baseISt15insert_iteratorISt6vectorINSt7__cxx1112basic_str
         -:  328:  template<typename _From, typename _To>
         -:  329:    _GLIBCXX20_CONSTEXPR
         -:  330:    inline _From
-       4*:  331:    __niter_wrap(_From __from, _To __res)
-       4*:  332:    { return __from + (__res - std::__niter_base(__from)); }
+       8*:  331:    __niter_wrap(_From __from, _To __res)
+       8*:  332:    { return __from + (__res - std::__niter_base(__from)); }
 ------------------
 _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET_SA_T0_:
-function _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET_SA_T0_ called 4 returned 100% blocks executed 100%
-        4:  331:    __niter_wrap(_From __from, _To __res)
-        4:  332:    { return __from + (__res - std::__niter_base(__from)); }
-        4:  332-block  0
-call    0 returned 4
-call    1 returned 4
+function _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET_SA_T0_ called 8 returned 100% blocks executed 100%
+        8:  331:    __niter_wrap(_From __from, _To __res)
+        8:  332:    { return __from + (__res - std::__niter_base(__from)); }
+        8:  332-block  0
+call    0 returned 8
+call    1 returned 8
 ------------------
 _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIPPN7testing17TestEventListenerESt6vectorIS4_SaIS4_EEEES5_ET_SA_T0_:
 function _ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIPPN7testing17TestEventListenerESt6vectorIS4_SaIS4_EEEES5_ET_SA_T0_ called 0 returned 0% blocks executed 0%
@@ -652,8 +652,8 @@ call    1 never executed
         -:  335:  template<typename _Iterator>
         -:  336:    _GLIBCXX20_CONSTEXPR
         -:  337:    inline _Iterator
-      20*:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
-      20*:  339:    { return __res; }
+      33*:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
+      33*:  339:    { return __res; }
 ------------------
 _ZSt12__niter_wrapIPdET_RKS1_S1_:
 function _ZSt12__niter_wrapIPdET_RKS1_S1_ called 0 returned 0% blocks executed 0%
@@ -698,10 +698,10 @@ function _ZSt12__niter_wrapIPN7testing8internal13edit_distance8EditTypeEET_RKS5_
     %%%%%:  339-block  0
 ------------------
 _ZSt12__niter_wrapIPPN7testing8TestInfoEET_RKS4_S4_:
-function _ZSt12__niter_wrapIPPN7testing8TestInfoEET_RKS4_S4_ called 8 returned 100% blocks executed 100%
-        8:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
-        8:  339:    { return __res; }
-        8:  339-block  0
+function _ZSt12__niter_wrapIPPN7testing8TestInfoEET_RKS4_S4_ called 15 returned 100% blocks executed 100%
+       15:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
+       15:  339:    { return __res; }
+       15:  339-block  0
 ------------------
 _ZSt12__niter_wrapIPPN7testing9TestSuiteEET_RKS4_S4_:
 function _ZSt12__niter_wrapIPPN7testing9TestSuiteEET_RKS4_S4_ called 0 returned 0% blocks executed 0%
@@ -710,16 +710,16 @@ function _ZSt12__niter_wrapIPPN7testing9TestSuiteEET_RKS4_S4_ called 0 returned 
     %%%%%:  339-block  0
 ------------------
 _ZSt12__niter_wrapISt15insert_iteratorISt13unordered_setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4hashIS7_ESt8equal_toIS7_ESaIS7_EEEET_RKSF_SF_:
-function _ZSt12__niter_wrapISt15insert_iteratorISt13unordered_setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4hashIS7_ESt8equal_toIS7_ESaIS7_EEEET_RKSF_SF_ called 6 returned 100% blocks executed 100%
-        6:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
-        6:  339:    { return __res; }
-        6:  339-block  0
+function _ZSt12__niter_wrapISt15insert_iteratorISt13unordered_setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4hashIS7_ESt8equal_toIS7_ESaIS7_EEEET_RKSF_SF_ called 9 returned 100% blocks executed 100%
+        9:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
+        9:  339:    { return __res; }
+        9:  339-block  0
 ------------------
 _ZSt12__niter_wrapISt15insert_iteratorISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EEEET_RKSB_SB_:
-function _ZSt12__niter_wrapISt15insert_iteratorISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EEEET_RKSB_SB_ called 6 returned 100% blocks executed 100%
-        6:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
-        6:  339:    { return __res; }
-        6:  339-block  0
+function _ZSt12__niter_wrapISt15insert_iteratorISt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EEEET_RKSB_SB_ called 9 returned 100% blocks executed 100%
+        9:  338:    __niter_wrap(const _Iterator&, _Iterator __res)
+        9:  339:    { return __res; }
+        9:  339-block  0
 ------------------
         -:  340:
         -:  341:  // All of these auxiliary structs serve two purposes.  (1) Replace
@@ -800,71 +800,71 @@ function _ZNSt11__copy_moveILb0ELb0ESt26random_access_iterator_tagE12__assign_on
         -:  405:      template<typename _II, typename _OI>
         -:  406:	_GLIBCXX20_CONSTEXPR
         -:  407:	static _OI
-       12:  408:	__copy_m(_II __first, _II __last, _OI __result)
+       18:  408:	__copy_m(_II __first, _II __last, _OI __result)
         -:  409:	{
         -:  410:	  typedef typename iterator_traits<_II>::difference_type _Distance;
-      277:  411:	  for(_Distance __n = __last - __first; __n > 0; --__n)
+      379:  411:	  for(_Distance __n = __last - __first; __n > 0; --__n)
         -:  412:	    {
-      265:  413:	      *__result = std::move(*__first);
-      265:  414:	      ++__first;
-      265:  415:	      ++__result;
+      361:  413:	      *__result = std::move(*__first);
+      361:  414:	      ++__first;
+      361:  415:	      ++__result;
         -:  416:	    }
-       12:  417:	  return __result;
+       18:  417:	  return __result;
         -:  418:	}
 ------------------
 _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE8__copy_mIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS8_St4hashIS8_ESt8equal_toIS8_ESaIS8_EEEEET0_T_SK_SJ_:
-function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE8__copy_mIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS8_St4hashIS8_ESt8equal_toIS8_ESaIS8_EEEEET0_T_SK_SJ_ called 6 returned 100% blocks executed 100%
-        6:  408:	__copy_m(_II __first, _II __last, _OI __result)
+function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE8__copy_mIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS8_St4hashIS8_ESt8equal_toIS8_ESaIS8_EEEEET0_T_SK_SJ_ called 9 returned 100% blocks executed 100%
+        9:  408:	__copy_m(_II __first, _II __last, _OI __result)
         -:  409:	{
         -:  410:	  typedef typename iterator_traits<_II>::difference_type _Distance;
-       57:  411:	  for(_Distance __n = __last - __first; __n > 0; --__n)
-        6:  411-block  0
-       57:  411-block  1
-branch  0 taken 51
-branch  1 taken 6 (fallthrough)
+       78:  411:	  for(_Distance __n = __last - __first; __n > 0; --__n)
+        9:  411-block  0
+       78:  411-block  1
+branch  0 taken 69
+branch  1 taken 9 (fallthrough)
         -:  412:	    {
-       51:  413:	      *__result = std::move(*__first);
-       51:  413-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-       51:  414:	      ++__first;
-       51:  415:	      ++__result;
-call    0 returned 51
+       69:  413:	      *__result = std::move(*__first);
+       69:  413-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+       69:  414:	      ++__first;
+       69:  415:	      ++__result;
+call    0 returned 69
         -:  416:	    }
-        6:  417:	  return __result;
-        6:  417-block  0
+        9:  417:	  return __result;
+        9:  417-block  0
         -:  418:	}
 ------------------
 _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE8__copy_mIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS8_SaIS8_EEEEET0_T_SG_SF_:
-function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE8__copy_mIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS8_SaIS8_EEEEET0_T_SG_SF_ called 6 returned 100% blocks executed 100%
-        6:  408:	__copy_m(_II __first, _II __last, _OI __result)
+function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE8__copy_mIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS8_SaIS8_EEEEET0_T_SG_SF_ called 9 returned 100% blocks executed 100%
+        9:  408:	__copy_m(_II __first, _II __last, _OI __result)
         -:  409:	{
         -:  410:	  typedef typename iterator_traits<_II>::difference_type _Distance;
-      220:  411:	  for(_Distance __n = __last - __first; __n > 0; --__n)
-        6:  411-block  0
-      220:  411-block  1
-branch  0 taken 214
-branch  1 taken 6 (fallthrough)
+      301:  411:	  for(_Distance __n = __last - __first; __n > 0; --__n)
+        9:  411-block  0
+      301:  411-block  1
+branch  0 taken 292
+branch  1 taken 9 (fallthrough)
         -:  412:	    {
-      214:  413:	      *__result = std::move(*__first);
-      214:  413-block  0
-call    0 returned 214
-call    1 returned 214
-call    2 returned 214
-      214:  414:	      ++__first;
-      214:  415:	      ++__result;
-call    0 returned 214
+      292:  413:	      *__result = std::move(*__first);
+      292:  413-block  0
+call    0 returned 292
+call    1 returned 292
+call    2 returned 292
+      292:  414:	      ++__first;
+      292:  415:	      ++__result;
+call    0 returned 292
         -:  416:	    }
-        6:  417:	  return __result;
-        6:  417-block  0
+        9:  417:	  return __result;
+        9:  417-block  0
         -:  418:	}
 ------------------
         -:  419:
         -:  420:      template<typename _Tp, typename _Up>
         -:  421:	static void
-       2*:  422:	__assign_one(_Tp* __to, _Up* __from)
-       2*:  423:	{ *__to = std::move(*__from); }
+       4*:  422:	__assign_one(_Tp* __to, _Up* __from)
+       4*:  423:	{ *__to = std::move(*__from); }
 ------------------
 _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIiiEEvPT_PT0_:
 function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIiiEEvPT_PT0_ called 0 returned 0% blocks executed 0%
@@ -895,11 +895,11 @@ function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_on
 call    0 never executed
 ------------------
 _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIPN7testing8TestInfoES5_EEvPT_PT0_:
-function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIPN7testing8TestInfoES5_EEvPT_PT0_ called 2 returned 100% blocks executed 100%
-        2:  422:	__assign_one(_Tp* __to, _Up* __from)
-        2:  423:	{ *__to = std::move(*__from); }
-        2:  423-block  0
-call    0 returned 2
+function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIPN7testing8TestInfoES5_EEvPT_PT0_ called 4 returned 100% blocks executed 100%
+        4:  422:	__assign_one(_Tp* __to, _Up* __from)
+        4:  423:	{ *__to = std::move(*__from); }
+        4:  423-block  0
+call    0 returned 4
 ------------------
 _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIPN7testing9TestSuiteES5_EEvPT_PT0_:
 function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIPN7testing9TestSuiteES5_EEvPT_PT0_ called 0 returned 0% blocks executed 0%
@@ -924,15 +924,15 @@ call    0 never executed
         -:  430:      template<typename _Tp, typename _Up>
         -:  431:	_GLIBCXX20_CONSTEXPR
         -:  432:	static _Up*
-      12*:  433:	__copy_m(_Tp* __first, _Tp* __last, _Up* __result)
+      23*:  433:	__copy_m(_Tp* __first, _Tp* __last, _Up* __result)
         -:  434:	{
-      12*:  435:	  const ptrdiff_t _Num = __last - __first;
-      12*:  436:	  if (__builtin_expect(_Num > 1, true))
-       6*:  437:	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
-       6*:  438:	  else if (_Num == 1)
+      23*:  435:	  const ptrdiff_t _Num = __last - __first;
+      23*:  436:	  if (__builtin_expect(_Num > 1, true))
+      11*:  437:	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
+      12*:  438:	  else if (_Num == 1)
         -:  439:	    std::__copy_move<_IsMove, false, random_access_iterator_tag>::
-       2*:  440:	      __assign_one(__result, __first);
-      12*:  441:	  return __result + _Num;
+       4*:  440:	      __assign_one(__result, __first);
+      23*:  441:	  return __result + _Num;
         -:  442:	}
 ------------------
 _ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIKN7testing8internal13edit_distance8EditTypeES6_EEPT0_PT_SB_S9_:
@@ -1097,26 +1097,26 @@ call    0 never executed
         -:  442:	}
 ------------------
 _ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIPN7testing8TestInfoES5_EEPT0_PT_S9_S7_:
-function _ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIPN7testing8TestInfoES5_EEPT0_PT_S9_S7_ called 12 returned 100% blocks executed 100%
-       12:  433:	__copy_m(_Tp* __first, _Tp* __last, _Up* __result)
+function _ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIPN7testing8TestInfoES5_EEPT0_PT_S9_S7_ called 23 returned 100% blocks executed 100%
+       23:  433:	__copy_m(_Tp* __first, _Tp* __last, _Up* __result)
         -:  434:	{
-       12:  435:	  const ptrdiff_t _Num = __last - __first;
-       12:  436:	  if (__builtin_expect(_Num > 1, true))
-       12:  436-block  0
-branch  0 taken 6 (fallthrough)
-branch  1 taken 6
-        6:  437:	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
-        6:  437-block  0
-        6:  438:	  else if (_Num == 1)
-        6:  438-block  0
-branch  0 taken 2 (fallthrough)
-branch  1 taken 4
+       23:  435:	  const ptrdiff_t _Num = __last - __first;
+       23:  436:	  if (__builtin_expect(_Num > 1, true))
+       23:  436-block  0
+branch  0 taken 11 (fallthrough)
+branch  1 taken 12
+       11:  437:	    __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
+       11:  437-block  0
+       12:  438:	  else if (_Num == 1)
+       12:  438-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 8
         -:  439:	    std::__copy_move<_IsMove, false, random_access_iterator_tag>::
-        2:  440:	      __assign_one(__result, __first);
-        2:  440-block  0
-call    0 returned 2
-       12:  441:	  return __result + _Num;
-       12:  441-block  0
+        4:  440:	      __assign_one(__result, __first);
+        4:  440-block  0
+call    0 returned 4
+       23:  441:	  return __result + _Num;
+       23:  441-block  0
         -:  442:	}
 ------------------
 _ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIPN7testing17TestEventListenerES5_EEPT0_PT_S9_S7_:
@@ -1196,7 +1196,7 @@ call    0 never executed
         -:  494:  template<bool _IsMove, typename _II, typename _OI>
         -:  495:    _GLIBCXX20_CONSTEXPR
         -:  496:    inline _OI
-      24*:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
+      41*:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  498:    {
         -:  499:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  500:#ifdef __cpp_lib_is_constant_evaluated
@@ -1205,7 +1205,7 @@ call    0 never executed
         -:  503:	  __copy_m(__first, __last, __result);
         -:  504:#endif
         -:  505:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
-      24*:  506:			      _Category>::__copy_m(__first, __last, __result);
+      41*:  506:			      _Category>::__copy_m(__first, __last, __result);
         -:  507:    }
 ------------------
 _ZSt14__copy_move_a2ILb0EPKN7testing8internal13edit_distance8EditTypeEPS3_ET1_T0_S8_S7_:
@@ -1321,8 +1321,8 @@ call    0 never executed
         -:  507:    }
 ------------------
 _ZSt14__copy_move_a2ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_:
-function _ZSt14__copy_move_a2ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_ called 12 returned 100% blocks executed 100%
-       12:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
+function _ZSt14__copy_move_a2ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_ called 23 returned 100% blocks executed 100%
+       23:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  498:    {
         -:  499:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  500:#ifdef __cpp_lib_is_constant_evaluated
@@ -1331,9 +1331,9 @@ function _ZSt14__copy_move_a2ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_ called 1
         -:  503:	  __copy_m(__first, __last, __result);
         -:  504:#endif
         -:  505:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
-       12:  506:			      _Category>::__copy_m(__first, __last, __result);
-       12:  506-block  0
-call    0 returned 12
+       23:  506:			      _Category>::__copy_m(__first, __last, __result);
+       23:  506-block  0
+call    0 returned 23
         -:  507:    }
 ------------------
 _ZSt14__copy_move_a2ILb1EPPN7testing17TestEventListenerES3_ET1_T0_S5_S4_:
@@ -1353,8 +1353,8 @@ call    0 never executed
         -:  507:    }
 ------------------
 _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS5_St4hashIS5_ESt8equal_toIS5_ESaIS5_EEEET1_T0_SH_SG_:
-function _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS5_St4hashIS5_ESt8equal_toIS5_ESaIS5_EEEET1_T0_SH_SG_ called 6 returned 100% blocks executed 100%
-        6:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
+function _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS5_St4hashIS5_ESt8equal_toIS5_ESaIS5_EEEET1_T0_SH_SG_ called 9 returned 100% blocks executed 100%
+        9:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  498:    {
         -:  499:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  500:#ifdef __cpp_lib_is_constant_evaluated
@@ -1363,14 +1363,14 @@ function _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcE
         -:  503:	  __copy_m(__first, __last, __result);
         -:  504:#endif
         -:  505:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
-        6:  506:			      _Category>::__copy_m(__first, __last, __result);
-        6:  506-block  0
-call    0 returned 6
+        9:  506:			      _Category>::__copy_m(__first, __last, __result);
+        9:  506-block  0
+call    0 returned 9
         -:  507:    }
 ------------------
 _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS5_SaIS5_EEEET1_T0_SD_SC_:
-function _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS5_SaIS5_EEEET1_T0_SD_SC_ called 6 returned 100% blocks executed 100%
-        6:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
+function _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS5_SaIS5_EEEET1_T0_SD_SC_ called 9 returned 100% blocks executed 100%
+        9:  497:    __copy_move_a2(_II __first, _II __last, _OI __result)
         -:  498:    {
         -:  499:      typedef typename iterator_traits<_II>::iterator_category _Category;
         -:  500:#ifdef __cpp_lib_is_constant_evaluated
@@ -1379,9 +1379,9 @@ function _ZSt14__copy_move_a2ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcE
         -:  503:	  __copy_m(__first, __last, __result);
         -:  504:#endif
         -:  505:      return std::__copy_move<_IsMove, __memcpyable<_OI, _II>::__value,
-        6:  506:			      _Category>::__copy_m(__first, __last, __result);
-        6:  506-block  0
-call    0 returned 6
+        9:  506:			      _Category>::__copy_m(__first, __last, __result);
+        9:  506-block  0
+call    0 returned 9
         -:  507:    }
 ------------------
         -:  508:
@@ -1408,8 +1408,8 @@ call    0 returned 6
         -:  529:  template<bool _IsMove, typename _II, typename _OI>
         -:  530:    _GLIBCXX20_CONSTEXPR
         -:  531:    inline _OI
-      24*:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
-      24*:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+      41*:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
+      41*:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
 ------------------
 _ZSt14__copy_move_a1ILb0EPKN7testing8internal13edit_distance8EditTypeEPS3_ET1_T0_S8_S7_:
 function _ZSt14__copy_move_a1ILb0EPKN7testing8internal13edit_distance8EditTypeEPS3_ET1_T0_S8_S7_ called 0 returned 0% blocks executed 0%
@@ -1461,11 +1461,11 @@ function _ZSt14__copy_move_a1ILb1EPN7testing8internal13edit_distance8EditTypeES4
 call    0 never executed
 ------------------
 _ZSt14__copy_move_a1ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_:
-function _ZSt14__copy_move_a1ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_ called 12 returned 100% blocks executed 100%
-       12:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
-       12:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
-       12:  533-block  0
-call    0 returned 12
+function _ZSt14__copy_move_a1ILb1EPPN7testing8TestInfoES3_ET1_T0_S5_S4_ called 23 returned 100% blocks executed 100%
+       23:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
+       23:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+       23:  533-block  0
+call    0 returned 23
 ------------------
 _ZSt14__copy_move_a1ILb1EPPN7testing17TestEventListenerES3_ET1_T0_S5_S4_:
 function _ZSt14__copy_move_a1ILb1EPPN7testing17TestEventListenerES3_ET1_T0_S5_S4_ called 0 returned 0% blocks executed 0%
@@ -1475,29 +1475,29 @@ function _ZSt14__copy_move_a1ILb1EPPN7testing17TestEventListenerES3_ET1_T0_S5_S4
 call    0 never executed
 ------------------
 _ZSt14__copy_move_a1ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS5_St4hashIS5_ESt8equal_toIS5_ESaIS5_EEEET1_T0_SH_SG_:
-function _ZSt14__copy_move_a1ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS5_St4hashIS5_ESt8equal_toIS5_ESaIS5_EEEET1_T0_SH_SG_ called 6 returned 100% blocks executed 100%
-        6:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
-        6:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
-        6:  533-block  0
-call    0 returned 6
+function _ZSt14__copy_move_a1ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt13unordered_setIS5_St4hashIS5_ESt8equal_toIS5_ESaIS5_EEEET1_T0_SH_SG_ called 9 returned 100% blocks executed 100%
+        9:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
+        9:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+        9:  533-block  0
+call    0 returned 9
 ------------------
 _ZSt14__copy_move_a1ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS5_SaIS5_EEEET1_T0_SD_SC_:
-function _ZSt14__copy_move_a1ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS5_SaIS5_EEEET1_T0_SD_SC_ called 6 returned 100% blocks executed 100%
-        6:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
-        6:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
-        6:  533-block  0
-call    0 returned 6
+function _ZSt14__copy_move_a1ILb1EPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt15insert_iteratorISt6vectorIS5_SaIS5_EEEET1_T0_SD_SC_ called 9 returned 100% blocks executed 100%
+        9:  532:    __copy_move_a1(_II __first, _II __last, _OI __result)
+        9:  533:    { return std::__copy_move_a2<_IsMove>(__first, __last, __result); }
+        9:  533-block  0
+call    0 returned 9
 ------------------
         -:  534:
         -:  535:  template<bool _IsMove, typename _II, typename _OI>
         -:  536:    _GLIBCXX20_CONSTEXPR
         -:  537:    inline _OI
-      24*:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
+      41*:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  539:    {
-      24*:  540:      return std::__niter_wrap(__result,
+      41*:  540:      return std::__niter_wrap(__result,
         -:  541:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  542:					     std::__niter_base(__last),
-      24*:  543:					     std::__niter_base(__result)));
+      41*:  543:					     std::__niter_base(__result)));
         -:  544:    }
 ------------------
 _ZSt13__copy_move_aILb0EN9__gnu_cxx17__normal_iteratorIPKN7testing8internal13edit_distance8EditTypeESt6vectorIS5_SaIS5_EEEEPS5_ET1_T0_SE_SD_:
@@ -1661,23 +1661,7 @@ call    4 never executed
         -:  544:    }
 ------------------
 _ZSt13__copy_move_aILb1EPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEET1_T0_SB_SA_:
-function _ZSt13__copy_move_aILb1EPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEET1_T0_SB_SA_ called 4 returned 100% blocks executed 100%
-        4:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
-        -:  539:    {
-        4:  540:      return std::__niter_wrap(__result,
-        4:  540-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-call    3 returned 4
-call    4 returned 4
-        -:  541:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
-        -:  542:					     std::__niter_base(__last),
-        4:  543:					     std::__niter_base(__result)));
-        -:  544:    }
-------------------
-_ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET1_T0_SB_SA_:
-function _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET1_T0_SB_SA_ called 8 returned 100% blocks executed 100%
+function _ZSt13__copy_move_aILb1EPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEET1_T0_SB_SA_ called 8 returned 100% blocks executed 100%
         8:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  539:    {
         8:  540:      return std::__niter_wrap(__result,
@@ -1690,6 +1674,22 @@ call    4 returned 8
         -:  541:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  542:					     std::__niter_base(__last),
         8:  543:					     std::__niter_base(__result)));
+        -:  544:    }
+------------------
+_ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET1_T0_SB_SA_:
+function _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET1_T0_SB_SA_ called 15 returned 100% blocks executed 100%
+       15:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
+        -:  539:    {
+       15:  540:      return std::__niter_wrap(__result,
+       15:  540-block  0
+call    0 returned 15
+call    1 returned 15
+call    2 returned 15
+call    3 returned 15
+call    4 returned 15
+        -:  541:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
+        -:  542:					     std::__niter_base(__last),
+       15:  543:					     std::__niter_base(__result)));
         -:  544:    }
 ------------------
 _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPPN7testing17TestEventListenerESt6vectorIS4_SaIS4_EEEES9_ET1_T0_SB_SA_:
@@ -1709,35 +1709,35 @@ call    4 never executed
         -:  544:    }
 ------------------
 _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISt13unordered_setIS7_St4hashIS7_ESt8equal_toIS7_ESA_EEET1_T0_SM_SL_:
-function _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISt13unordered_setIS7_St4hashIS7_ESt8equal_toIS7_ESA_EEET1_T0_SM_SL_ called 6 returned 100% blocks executed 100%
-        6:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
+function _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISt13unordered_setIS7_St4hashIS7_ESt8equal_toIS7_ESA_EEET1_T0_SM_SL_ called 9 returned 100% blocks executed 100%
+        9:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  539:    {
-        6:  540:      return std::__niter_wrap(__result,
-        6:  540-block  0
-call    0 returned 6
-call    1 returned 6
-call    2 returned 6
-call    3 returned 6
-call    4 returned 6
+        9:  540:      return std::__niter_wrap(__result,
+        9:  540-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+call    4 returned 9
         -:  541:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  542:					     std::__niter_base(__last),
-        6:  543:					     std::__niter_base(__result)));
+        9:  543:					     std::__niter_base(__result)));
         -:  544:    }
 ------------------
 _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISB_EET1_T0_SG_SF_:
-function _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISB_EET1_T0_SG_SF_ called 6 returned 100% blocks executed 100%
-        6:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
+function _ZSt13__copy_move_aILb1EN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISB_EET1_T0_SG_SF_ called 9 returned 100% blocks executed 100%
+        9:  538:    __copy_move_a(_II __first, _II __last, _OI __result)
         -:  539:    {
-        6:  540:      return std::__niter_wrap(__result,
-        6:  540-block  0
-call    0 returned 6
-call    1 returned 6
-call    2 returned 6
-call    3 returned 6
-call    4 returned 6
+        9:  540:      return std::__niter_wrap(__result,
+        9:  540-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+call    4 returned 9
         -:  541:		std::__copy_move_a1<_IsMove>(std::__niter_base(__first),
         -:  542:					     std::__niter_base(__last),
-        6:  543:					     std::__niter_base(__result)));
+        9:  543:					     std::__niter_base(__result)));
         -:  544:    }
 ------------------
         -:  545:
@@ -2015,7 +2015,7 @@ call    2 never executed
         -:  654:  template<typename _II, typename _OI>
         -:  655:    _GLIBCXX20_CONSTEXPR
         -:  656:    inline _OI
-      24*:  657:    move(_II __first, _II __last, _OI __result)
+      41*:  657:    move(_II __first, _II __last, _OI __result)
         -:  658:    {
         -:  659:      // concept requirements
         -:  660:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
@@ -2023,8 +2023,8 @@ call    2 never executed
         -:  662:	    typename iterator_traits<_II>::value_type&&>)
         -:  663:      __glibcxx_requires_can_increment_range(__first, __last, __result);
         -:  664:
-      24*:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
-      24*:  666:				      std::__miter_base(__last), __result);
+      41*:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
+      41*:  666:				      std::__miter_base(__last), __result);
         -:  667:    }
 ------------------
 _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES9_ET0_T_SB_SA_:
@@ -2046,25 +2046,7 @@ call    2 never executed
         -:  667:    }
 ------------------
 _ZSt4moveIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEET0_T_SB_SA_:
-function _ZSt4moveIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEET0_T_SB_SA_ called 4 returned 100% blocks executed 100%
-        4:  657:    move(_II __first, _II __last, _OI __result)
-        -:  658:    {
-        -:  659:      // concept requirements
-        -:  660:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
-        -:  661:      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
-        -:  662:	    typename iterator_traits<_II>::value_type&&>)
-        -:  663:      __glibcxx_requires_can_increment_range(__first, __last, __result);
-        -:  664:
-        4:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
-        4:  665-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-        4:  666:				      std::__miter_base(__last), __result);
-        -:  667:    }
-------------------
-_ZSt4moveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET0_T_SB_SA_:
-function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET0_T_SB_SA_ called 8 returned 100% blocks executed 100%
+function _ZSt4moveIPPN7testing8TestInfoEN9__gnu_cxx17__normal_iteratorIS3_St6vectorIS2_SaIS2_EEEEET0_T_SB_SA_ called 8 returned 100% blocks executed 100%
         8:  657:    move(_II __first, _II __last, _OI __result)
         -:  658:    {
         -:  659:      // concept requirements
@@ -2079,6 +2061,24 @@ call    0 returned 8
 call    1 returned 8
 call    2 returned 8
         8:  666:				      std::__miter_base(__last), __result);
+        -:  667:    }
+------------------
+_ZSt4moveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET0_T_SB_SA_:
+function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEES5_ET0_T_SB_SA_ called 15 returned 100% blocks executed 100%
+       15:  657:    move(_II __first, _II __last, _OI __result)
+        -:  658:    {
+        -:  659:      // concept requirements
+        -:  660:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
+        -:  661:      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
+        -:  662:	    typename iterator_traits<_II>::value_type&&>)
+        -:  663:      __glibcxx_requires_can_increment_range(__first, __last, __result);
+        -:  664:
+       15:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
+       15:  665-block  0
+call    0 returned 15
+call    1 returned 15
+call    2 returned 15
+       15:  666:				      std::__miter_base(__last), __result);
         -:  667:    }
 ------------------
 _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPPN7testing17TestEventListenerESt6vectorIS4_SaIS4_EEEES9_ET0_T_SB_SA_:
@@ -2100,8 +2100,8 @@ call    2 never executed
         -:  667:    }
 ------------------
 _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISt13unordered_setIS7_St4hashIS7_ESt8equal_toIS7_ESA_EEET0_T_SM_SL_:
-function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISt13unordered_setIS7_St4hashIS7_ESt8equal_toIS7_ESA_EEET0_T_SM_SL_ called 6 returned 100% blocks executed 100%
-        6:  657:    move(_II __first, _II __last, _OI __result)
+function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISt13unordered_setIS7_St4hashIS7_ESt8equal_toIS7_ESA_EEET0_T_SM_SL_ called 9 returned 100% blocks executed 100%
+        9:  657:    move(_II __first, _II __last, _OI __result)
         -:  658:    {
         -:  659:      // concept requirements
         -:  660:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
@@ -2109,17 +2109,17 @@ function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt
         -:  662:	    typename iterator_traits<_II>::value_type&&>)
         -:  663:      __glibcxx_requires_can_increment_range(__first, __last, __result);
         -:  664:
-        6:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
-        6:  665-block  0
-call    0 returned 6
-call    1 returned 6
-call    2 returned 6
-        6:  666:				      std::__miter_base(__last), __result);
+        9:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
+        9:  665-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        9:  666:				      std::__miter_base(__last), __result);
         -:  667:    }
 ------------------
 _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISB_EET0_T_SG_SF_:
-function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISB_EET0_T_SG_SF_ called 6 returned 100% blocks executed 100%
-        6:  657:    move(_II __first, _II __last, _OI __result)
+function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESt15insert_iteratorISB_EET0_T_SG_SF_ called 9 returned 100% blocks executed 100%
+        9:  657:    move(_II __first, _II __last, _OI __result)
         -:  658:    {
         -:  659:      // concept requirements
         -:  660:      __glibcxx_function_requires(_InputIteratorConcept<_II>)
@@ -2127,12 +2127,12 @@ function _ZSt4moveIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt
         -:  662:	    typename iterator_traits<_II>::value_type&&>)
         -:  663:      __glibcxx_requires_can_increment_range(__first, __last, __result);
         -:  664:
-        6:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
-        6:  665-block  0
-call    0 returned 6
-call    1 returned 6
-call    2 returned 6
-        6:  666:				      std::__miter_base(__last), __result);
+        9:  665:      return std::__copy_move_a<true>(std::__miter_base(__first),
+        9:  665-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        9:  666:				      std::__miter_base(__last), __result);
         -:  667:    }
 ------------------
         -:  668:
@@ -3935,68 +3935,68 @@ call    0 never executed
         -: 2061:  template<typename _RandomAccessIterator, typename _Predicate>
         -: 2062:    _GLIBCXX20_CONSTEXPR
         -: 2063:    _RandomAccessIterator
-     422*: 2064:    __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,
+     575*: 2064:    __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,
         -: 2065:	      _Predicate __pred, random_access_iterator_tag)
         -: 2066:    {
         -: 2067:      typename iterator_traits<_RandomAccessIterator>::difference_type
-     422*: 2068:	__trip_count = (__last - __first) >> 2;
+     575*: 2068:	__trip_count = (__last - __first) >> 2;
         -: 2069:
-    1946*: 2070:      for (; __trip_count > 0; --__trip_count)
+    2520*: 2070:      for (; __trip_count > 0; --__trip_count)
         -: 2071:	{
-    1697*: 2072:	  if (__pred(__first))
-     111*: 2073:	    return __first;
-    1586*: 2074:	  ++__first;
+    2183*: 2072:	  if (__pred(__first))
+     153*: 2073:	    return __first;
+    2030*: 2074:	  ++__first;
         -: 2075:
-    1586*: 2076:	  if (__pred(__first))
-      30*: 2077:	    return __first;
-    1556*: 2078:	  ++__first;
+    2030*: 2076:	  if (__pred(__first))
+      36*: 2077:	    return __first;
+    1994*: 2078:	  ++__first;
         -: 2079:
-    1556*: 2080:	  if (__pred(__first))
-    #####: 2081:	    return __first;
-    1556*: 2082:	  ++__first;
+    1994*: 2080:	  if (__pred(__first))
+       6*: 2081:	    return __first;
+    1988*: 2082:	  ++__first;
         -: 2083:
-    1556*: 2084:	  if (__pred(__first))
-      32*: 2085:	    return __first;
-    1524*: 2086:	  ++__first;
+    1988*: 2084:	  if (__pred(__first))
+      43*: 2085:	    return __first;
+    1945*: 2086:	  ++__first;
         -: 2087:	}
         -: 2088:
-     249*: 2089:      switch (__last - __first)
+     337*: 2089:      switch (__last - __first)
         -: 2090:	{
-      28*: 2091:	case 3:
-      28*: 2092:	  if (__pred(__first))
+      34*: 2091:	case 3:
+      34*: 2092:	  if (__pred(__first))
     #####: 2093:	    return __first;
-      28*: 2094:	  ++__first;
+      34*: 2094:	  ++__first;
         -: 2095:	  // FALLTHRU
-     158*: 2096:	case 2:
-     158*: 2097:	  if (__pred(__first))
+     215*: 2096:	case 2:
+     215*: 2097:	  if (__pred(__first))
     #####: 2098:	    return __first;
-     158*: 2099:	  ++__first;
+     215*: 2099:	  ++__first;
         -: 2100:	  // FALLTHRU
-     186*: 2101:	case 1:
-     186*: 2102:	  if (__pred(__first))
-      41*: 2103:	    return __first;
-     145*: 2104:	  ++__first;
+     249*: 2101:	case 1:
+     249*: 2102:	  if (__pred(__first))
+      54*: 2103:	    return __first;
+     195*: 2104:	  ++__first;
         -: 2105:	  // FALLTHRU
-     208*: 2106:	case 0:
+     283*: 2106:	case 0:
         -: 2107:	default:
-     208*: 2108:	  return __last;
+     283*: 2108:	  return __last;
         -: 2109:	}
         -: 2110:    }
 ------------------
 _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEENS0_5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSK_E_EEET_SN_SN_T0_St26random_access_iterator_tag:
-function _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEENS0_5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSK_E_EEET_SN_SN_T0_St26random_access_iterator_tag called 157 returned 100% blocks executed 36%
-      157: 2064:    __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,
+function _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEENS0_5__ops10_Iter_predIZNK7testing8internal12_GLOBAL__N_114UnitTestFilter11MatchesNameERS8_EUlSK_E_EEET_SN_SN_T0_St26random_access_iterator_tag called 214 returned 100% blocks executed 36%
+      214: 2064:    __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,
         -: 2065:	      _Predicate __pred, random_access_iterator_tag)
         -: 2066:    {
         -: 2067:      typename iterator_traits<_RandomAccessIterator>::difference_type
-      157: 2068:	__trip_count = (__last - __first) >> 2;
-      157: 2068-block  0
-call    0 returned 157
+      214: 2068:	__trip_count = (__last - __first) >> 2;
+      214: 2068-block  0
+call    0 returned 214
         -: 2069:
-     157*: 2070:      for (; __trip_count > 0; --__trip_count)
-      157: 2070-block  0
+     214*: 2070:      for (; __trip_count > 0; --__trip_count)
+      214: 2070-block  0
 branch  0 taken 0
-branch  1 taken 157 (fallthrough)
+branch  1 taken 214 (fallthrough)
         -: 2071:	{
     #####: 2072:	  if (__pred(__first))
     %%%%%: 2072-block  0
@@ -4040,13 +4040,13 @@ branch  2 never executed
 call    0 never executed
         -: 2087:	}
         -: 2088:
-      157: 2089:      switch (__last - __first)
-      157: 2089-block  0
-call    0 returned 157
+      214: 2089:      switch (__last - __first)
+      214: 2089-block  0
+call    0 returned 214
 branch  1 taken 0
-branch  2 taken 106
+branch  2 taken 145
 branch  3 taken 0
-branch  4 taken 51
+branch  4 taken 69
         -: 2090:	{
     #####: 2091:	case 3:
     #####: 2092:	  if (__pred(__first))
@@ -4060,142 +4060,142 @@ branch  2 never executed
     %%%%%: 2094-block  0
 call    0 never executed
         -: 2095:	  // FALLTHRU
-      106: 2096:	case 2:
-      106: 2097:	  if (__pred(__first))
-      106: 2097-block  0
-call    0 returned 106
+      145: 2096:	case 2:
+      145: 2097:	  if (__pred(__first))
+      145: 2097-block  0
+call    0 returned 145
 branch  1 taken 0 (fallthrough)
-branch  2 taken 106
+branch  2 taken 145
     #####: 2098:	    return __first;
     %%%%%: 2098-block  0
-      106: 2099:	  ++__first;
-      106: 2099-block  0
-call    0 returned 106
+      145: 2099:	  ++__first;
+      145: 2099-block  0
+call    0 returned 145
         -: 2100:	  // FALLTHRU
-      106: 2101:	case 1:
-      106: 2102:	  if (__pred(__first))
-      106: 2102-block  0
-call    0 returned 106
+      145: 2101:	case 1:
+      145: 2102:	  if (__pred(__first))
+      145: 2102-block  0
+call    0 returned 145
 branch  1 taken 0 (fallthrough)
-branch  2 taken 106
+branch  2 taken 145
     #####: 2103:	    return __first;
     %%%%%: 2103-block  0
-      106: 2104:	  ++__first;
-      106: 2104-block  0
-call    0 returned 106
+      145: 2104:	  ++__first;
+      145: 2104-block  0
+call    0 returned 145
         -: 2105:	  // FALLTHRU
-      157: 2106:	case 0:
+      214: 2106:	case 0:
         -: 2107:	default:
-      157: 2108:	  return __last;
-      157: 2108-block  0
+      214: 2108:	  return __last;
+      214: 2108-block  0
         -: 2109:	}
         -: 2110:    }
 ------------------
 _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EEET_SK_SK_T0_St26random_access_iterator_tag:
-function _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EEET_SK_SK_T0_St26random_access_iterator_tag called 265 returned 100% blocks executed 92%
-      265: 2064:    __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,
+function _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops10_Iter_predIZN7testing8internal12_GLOBAL__N_113IsGlobPatternERKS9_EUlcE_EEET_SK_SK_T0_St26random_access_iterator_tag called 361 returned 100% blocks executed 94%
+      361: 2064:    __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,
         -: 2065:	      _Predicate __pred, random_access_iterator_tag)
         -: 2066:    {
         -: 2067:      typename iterator_traits<_RandomAccessIterator>::difference_type
-      265: 2068:	__trip_count = (__last - __first) >> 2;
-      265: 2068-block  0
-call    0 returned 265
+      361: 2068:	__trip_count = (__last - __first) >> 2;
+      361: 2068-block  0
+call    0 returned 361
         -: 2069:
-     1789: 2070:      for (; __trip_count > 0; --__trip_count)
-     1789: 2070-block  0
-branch  0 taken 1697
-branch  1 taken 92 (fallthrough)
+     2306: 2070:      for (; __trip_count > 0; --__trip_count)
+     2306: 2070-block  0
+branch  0 taken 2183
+branch  1 taken 123 (fallthrough)
         -: 2071:	{
-     1697: 2072:	  if (__pred(__first))
-     1697: 2072-block  0
-call    0 returned 1697
-branch  1 taken 111 (fallthrough)
-branch  2 taken 1586
-      111: 2073:	    return __first;
-      111: 2073-block  0
-     1586: 2074:	  ++__first;
-     1586: 2074-block  0
-call    0 returned 1586
+     2183: 2072:	  if (__pred(__first))
+     2183: 2072-block  0
+call    0 returned 2183
+branch  1 taken 153 (fallthrough)
+branch  2 taken 2030
+      153: 2073:	    return __first;
+      153: 2073-block  0
+     2030: 2074:	  ++__first;
+     2030: 2074-block  0
+call    0 returned 2030
         -: 2075:
-     1586: 2076:	  if (__pred(__first))
-call    0 returned 1586
-branch  1 taken 30 (fallthrough)
-branch  2 taken 1556
-       30: 2077:	    return __first;
-       30: 2077-block  0
-     1556: 2078:	  ++__first;
-     1556: 2078-block  0
-call    0 returned 1556
+     2030: 2076:	  if (__pred(__first))
+call    0 returned 2030
+branch  1 taken 36 (fallthrough)
+branch  2 taken 1994
+       36: 2077:	    return __first;
+       36: 2077-block  0
+     1994: 2078:	  ++__first;
+     1994: 2078-block  0
+call    0 returned 1994
         -: 2079:
-     1556: 2080:	  if (__pred(__first))
-call    0 returned 1556
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1556
-    #####: 2081:	    return __first;
-    %%%%%: 2081-block  0
-     1556: 2082:	  ++__first;
-     1556: 2082-block  0
-call    0 returned 1556
+     1994: 2080:	  if (__pred(__first))
+call    0 returned 1994
+branch  1 taken 6 (fallthrough)
+branch  2 taken 1988
+        6: 2081:	    return __first;
+        6: 2081-block  0
+     1988: 2082:	  ++__first;
+     1988: 2082-block  0
+call    0 returned 1988
         -: 2083:
-     1556: 2084:	  if (__pred(__first))
-call    0 returned 1556
-branch  1 taken 32 (fallthrough)
-branch  2 taken 1524
-       32: 2085:	    return __first;
-       32: 2085-block  0
-     1524: 2086:	  ++__first;
-     1524: 2086-block  0
-call    0 returned 1524
+     1988: 2084:	  if (__pred(__first))
+call    0 returned 1988
+branch  1 taken 43 (fallthrough)
+branch  2 taken 1945
+       43: 2085:	    return __first;
+       43: 2085-block  0
+     1945: 2086:	  ++__first;
+     1945: 2086-block  0
+call    0 returned 1945
         -: 2087:	}
         -: 2088:
-       92: 2089:      switch (__last - __first)
-       92: 2089-block  0
-call    0 returned 92
-branch  1 taken 28
-branch  2 taken 24
-branch  3 taken 28
-branch  4 taken 12
+      123: 2089:      switch (__last - __first)
+      123: 2089-block  0
+call    0 returned 123
+branch  1 taken 34
+branch  2 taken 36
+branch  3 taken 34
+branch  4 taken 19
         -: 2090:	{
-       28: 2091:	case 3:
-       28: 2092:	  if (__pred(__first))
-       28: 2092-block  0
-call    0 returned 28
+       34: 2091:	case 3:
+       34: 2092:	  if (__pred(__first))
+       34: 2092-block  0
+call    0 returned 34
 branch  1 taken 0 (fallthrough)
-branch  2 taken 28
+branch  2 taken 34
     #####: 2093:	    return __first;
     %%%%%: 2093-block  0
-       28: 2094:	  ++__first;
-       28: 2094-block  0
-call    0 returned 28
+       34: 2094:	  ++__first;
+       34: 2094-block  0
+call    0 returned 34
         -: 2095:	  // FALLTHRU
-       52: 2096:	case 2:
-       52: 2097:	  if (__pred(__first))
-       52: 2097-block  0
-call    0 returned 52
+       70: 2096:	case 2:
+       70: 2097:	  if (__pred(__first))
+       70: 2097-block  0
+call    0 returned 70
 branch  1 taken 0 (fallthrough)
-branch  2 taken 52
+branch  2 taken 70
     #####: 2098:	    return __first;
     %%%%%: 2098-block  0
-       52: 2099:	  ++__first;
-       52: 2099-block  0
-call    0 returned 52
+       70: 2099:	  ++__first;
+       70: 2099-block  0
+call    0 returned 70
         -: 2100:	  // FALLTHRU
-       80: 2101:	case 1:
-       80: 2102:	  if (__pred(__first))
-       80: 2102-block  0
-call    0 returned 80
-branch  1 taken 41 (fallthrough)
-branch  2 taken 39
-       41: 2103:	    return __first;
-       41: 2103-block  0
-       39: 2104:	  ++__first;
-       39: 2104-block  0
-call    0 returned 39
+      104: 2101:	case 1:
+      104: 2102:	  if (__pred(__first))
+      104: 2102-block  0
+call    0 returned 104
+branch  1 taken 54 (fallthrough)
+branch  2 taken 50
+       54: 2103:	    return __first;
+       54: 2103-block  0
+       50: 2104:	  ++__first;
+       50: 2104-block  0
+call    0 returned 50
         -: 2105:	  // FALLTHRU
-       51: 2106:	case 0:
+       69: 2106:	case 0:
         -: 2107:	default:
-       51: 2108:	  return __last;
-       51: 2108-block  0
+       69: 2108:	  return __last;
+       69: 2108-block  0
         -: 2109:	}
         -: 2110:    }
 ------------------
@@ -4419,10 +4419,10 @@ call    0 never executed
         -: 2112:  template<typename _Iterator, typename _Predicate>
         -: 2113:    _GLIBCXX20_CONSTEXPR
         -: 2114:    inline _Iterator
-     422*: 2115:    __find_if(_Iterator __first, _Iterator __last, _Predicate __pred)
+     575*: 2115:    __find_if(_Iterator __first, _Iterator __last, _Predicate __pred)
         -: 2116:    {
-     422*: 2117:      return __find_if(__first, __last, __pred,
-     422*: 2118:		       std::__iterator_category(__first));
+     575*: 2117:      return __find_if(__first, __last, __pred,
+     575*: 2118:		       std::__iterator_category(__first));
         -: 2119:    }
         -: 2120:
         -: 2121:  template<typename _InputIterator, typename _Predicate>

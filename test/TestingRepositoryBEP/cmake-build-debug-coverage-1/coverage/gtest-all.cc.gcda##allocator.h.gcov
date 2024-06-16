@@ -164,7 +164,7 @@
         -:  160:      // 3035. std::allocator's constructors should be constexpr
         -:  161:      __attribute__((__always_inline__))
         -:  162:      _GLIBCXX20_CONSTEXPR
-     225*:  163:      allocator() _GLIBCXX_NOTHROW { }
+     306*:  163:      allocator() _GLIBCXX_NOTHROW { }
     %%%%%:  163-block  0
     %%%%%:  163-block  1
         1:  163-block  2
@@ -174,17 +174,17 @@
         1:  163-block  6
         1:  163-block  7
         1:  163-block  8
-        5:  163-block  9
-        4:  163-block 10
+        8:  163-block  9
+        7:  163-block 10
     %%%%%:  163-block 11
     %%%%%:  163-block 12
-       56:  163-block 13
-       56:  163-block 14
+       77:  163-block 13
+       77:  163-block 14
     %%%%%:  163-block 15
     %%%%%:  163-block 16
     %%%%%:  163-block 17
     %%%%%:  163-block 18
-        8:  163-block 19
+       11:  163-block 19
     %%%%%:  163-block 20
     %%%%%:  163-block 21
     %%%%%:  163-block 22
@@ -193,7 +193,7 @@
     %%%%%:  163-block 25
     %%%%%:  163-block 26
     %%%%%:  163-block 27
-       23:  163-block 28
+       32:  163-block 28
     %%%%%:  163-block 29
     %%%%%:  163-block 30
     %%%%%:  163-block 31
@@ -201,7 +201,7 @@
         4:  163-block 33
         1:  163-block 34
     %%%%%:  163-block 35
-        4:  163-block 36
+        7:  163-block 36
         1:  163-block 37
     %%%%%:  163-block 38
     %%%%%:  163-block 39
@@ -375,7 +375,7 @@
     %%%%%:  163-block 207
     %%%%%:  163-block 208
     %%%%%:  163-block 209
-       51:  163-block 210
+       69:  163-block 210
     %%%%%:  163-block 211
     %%%%%:  163-block 212
     %%%%%:  163-block 213
@@ -446,7 +446,7 @@
         -:  165:      __attribute__((__always_inline__))
         -:  166:      _GLIBCXX20_CONSTEXPR
         -:  167:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
-      57*:  168:      : __allocator_base<_Tp>(__a) { }
+      75*:  168:      : __allocator_base<_Tp>(__a) { }
     %%%%%:  168-block  0
     %%%%%:  168-block  1
     %%%%%:  168-block  2
@@ -460,7 +460,7 @@
     %%%%%:  168-block 10
     %%%%%:  168-block 11
     %%%%%:  168-block 12
-       51:  168-block 13
+       69:  168-block 13
         2:  168-block 14
     %%%%%:  168-block 15
         -:  169:
@@ -472,19 +472,19 @@
         -:  175:      template<typename _Tp1>
         -:  176:	__attribute__((__always_inline__))
         -:  177:	_GLIBCXX20_CONSTEXPR
-       7*:  178:	allocator(const allocator<_Tp1>&) _GLIBCXX_NOTHROW { }
-        3:  178-block  0
+       9*:  178:	allocator(const allocator<_Tp1>&) _GLIBCXX_NOTHROW { }
+        4:  178-block  0
         1:  178-block  1
     %%%%%:  178-block  2
-        3:  178-block  3
+        4:  178-block  3
     %%%%%:  178-block  4
         -:  179:
         -:  180:      __attribute__((__always_inline__))
         -:  181:#if __cpp_constexpr_dynamic_alloc
         -:  182:      constexpr
         -:  183:#endif
-     177*:  184:      ~allocator() _GLIBCXX_NOTHROW { }
-call    0 returned 3
+     236*:  184:      ~allocator() _GLIBCXX_NOTHROW { }
+call    0 returned 4
     $$$$$:  184-block  0
 call    1 never executed
 call    2 returned 1
@@ -503,7 +503,7 @@ call    8 never executed
     $$$$$:  184-block  7
 call    9 never executed
 call   10 never executed
-call   11 returned 3
+call   11 returned 4
 call   12 never executed
 call   13 never executed
 call   14 never executed
@@ -511,7 +511,7 @@ call   15 never executed
 call   16 never executed
 call   17 never executed
 call   18 returned 1
-call   19 returned 51
+call   19 returned 69
     %%%%%:  184-block  8
 call   20 never executed
     $$$$$:  184-block  9
@@ -547,8 +547,8 @@ call   37 never executed
     %%%%%:  184-block 22
 call   38 never executed
 call   39 never executed
-       51:  184-block 23
-call   40 returned 51
+       69:  184-block 23
+call   40 returned 69
     $$$$$:  184-block 24
 call   41 never executed
 call   42 never executed
@@ -575,7 +575,7 @@ call   53 never executed
 call   54 never executed
     $$$$$:  184-block 34
 call   55 never executed
-call   56 returned 4
+call   56 returned 7
     $$$$$:  184-block 35
 call   57 never executed
         1:  184-block 36
@@ -1117,7 +1117,7 @@ call   401 never executed
 call   402 never executed
     $$$$$:  184-block 228
 call   403 never executed
-call   404 returned 51
+call   404 returned 69
     $$$$$:  184-block 229
 call   405 never executed
     %%%%%:  184-block 230

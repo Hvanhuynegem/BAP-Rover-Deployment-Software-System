@@ -182,120 +182,116 @@ branch  1 taken 770
         -:  135:}
         -:  136:
         -:  137:
-function _Z11slip_decodePKhtPhPt called 14 returned 100% blocks executed 100%
-       14:  138:bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *output_buffer, uint16_t *output_length) {
+function _Z11slip_decodePKhtPhPt called 17 returned 100% blocks executed 100%
+       17:  138:bool slip_decode(const uint8_t *input_buffer, uint16_t input_length, uint8_t *output_buffer, uint16_t *output_length) {
         -:  139:    // Check input length and start/end bytes
-       14:  140:    if (input_length < 2 || input_buffer[0] != 0xC0 || input_buffer[input_length - 1] != 0xC0) {
-       14:  140-block  0
-branch  0 taken 13 (fallthrough)
+       17:  140:    if (input_length < 2 || input_buffer[0] != 0xC0 || input_buffer[input_length - 1] != 0xC0) {
+       17:  140-block  0
+branch  0 taken 16 (fallthrough)
 branch  1 taken 1
-       13:  140-block  1
-branch  2 taken 12 (fallthrough)
-branch  3 taken 1
-       12:  140-block  2
-branch  4 taken 0 (fallthrough)
-branch  5 taken 12
-        2:  141:        return false;
-        2:  141-block  0
+       16:  140-block  1
+branch  2 taken 14 (fallthrough)
+branch  3 taken 2
+       14:  140-block  2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 13
+        4:  141:        return false;
+        4:  141-block  0
         -:  142:    }
         -:  143:    // check if data is within acceptable buffer size
-       12:  144:    if (input_length > UART_BUFFER_SIZE){
-       12:  144-block  0
+       13:  144:    if (input_length > UART_BUFFER_SIZE){
+       13:  144-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 11
+branch  1 taken 12
         1:  145:        return false;
         1:  145-block  0
         -:  146:    }
         -:  147:    // Definition of slip encoding characters
-       11:  148:    const uint8_t END = 0xC0;
-       11:  149:    const uint8_t ESC = 0xDB;
-       11:  150:    const uint8_t ESC_END = 0xDC;
-       11:  151:    const uint8_t ESC_ESC = 0xDD;
+       12:  148:    const uint8_t END = 0xC0;
+       12:  149:    const uint8_t ESC = 0xDB;
+       12:  150:    const uint8_t ESC_END = 0xDC;
+       12:  151:    const uint8_t ESC_ESC = 0xDD;
         -:  152:
-       11:  153:    bool is_escaped = false;
-       11:  154:    *output_length = 0;
+       12:  153:    bool is_escaped = false;
+       12:  154:    *output_length = 0;
         -:  155:
         -:  156:    // Run through buffer to replace potential END and ESC
-      297:  157:    for (uint16_t i = 1; i < input_length - 1; i++) {
-       11:  157-block  0
-      286:  157-block  1
-      297:  157-block  2
-branch  0 taken 286
+      301:  157:    for (uint16_t i = 1; i < input_length - 1; i++) {
+       12:  157-block  0
+      289:  157-block  1
+      301:  157-block  2
+branch  0 taken 290
 branch  1 taken 11 (fallthrough)
-      286:  158:        uint8_t c = input_buffer[i];
+      290:  158:        uint8_t c = input_buffer[i];
         -:  159:
-      286:  160:        if (is_escaped) {
-      286:  160-block  0
-branch  0 taken 12 (fallthrough)
-branch  1 taken 274
-       12:  161:            if (c == ESC_END) {
-       12:  161-block  0
+      290:  160:        if (is_escaped) {
+      290:  160-block  0
+branch  0 taken 14 (fallthrough)
+branch  1 taken 276
+       14:  161:            if (c == ESC_END) {
+       14:  161-block  0
 branch  0 taken 6 (fallthrough)
-branch  1 taken 6
+branch  1 taken 8
         6:  162:                c = END;
         6:  162-block  0
-        6:  163:            } else if (c == ESC_ESC) {
-        6:  163-block  0
-branch  0 taken 6 (fallthrough)
-branch  1 taken 0
-        6:  164:                c = ESC;
-        6:  164-block  0
-        -:  165:            }
-       12:  166:            is_escaped = false;
-       12:  166-block  0
-      274:  167:        } else if (c == ESC) {
-      274:  167-block  0
-branch  0 taken 12 (fallthrough)
+        8:  163:            } else if (c == ESC_ESC) {
+        8:  163-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 1
+        7:  164:                c = ESC;
+        7:  164-block  0
+        -:  165:            } else {
+        1:  166:                return false;
+        1:  166-block  0
+        -:  167:            }
+       13:  168:            is_escaped = false;
+       13:  168-block  0
+      276:  169:        } else if (c == ESC) {
+      276:  169-block  0
+branch  0 taken 14 (fallthrough)
 branch  1 taken 262
-       12:  168:            is_escaped = true;
-       12:  169:            continue;
-       12:  169-block  0
-        -:  170:        }
-        -:  171:
-      274:  172:        output_buffer[(*output_length)++] = c;
-      274:  172-block  0
-        -:  173:    }
-       11:  174:    return true;
-       11:  174-block  0
-        -:  175:}
-        -:  176:
-        -:  177:
+       14:  170:            is_escaped = true;
+       14:  171:            continue;
+       14:  171-block  0
+        -:  172:        }
+        -:  173:
+      275:  174:        output_buffer[(*output_length)++] = c;
+      275:  174-block  0
+        -:  175:    }
+       11:  176:    return true;
+       11:  176-block  0
+        -:  177:}
         -:  178:
-function _Z19send_message_structPK7Message called 0 returned 0% blocks executed 0%
-    #####:  179:void send_message_struct(const Message* msg) {
-        -:  180:    // Static buffer to hold serialized and encoded data
-        -:  181:    static uint8_t buffer[UART_BUFFER_SIZE];
-        -:  182:    static uint8_t temp_buffer[UART_BUFFER_SIZE];
-        -:  183:    uint8_t serialized_length;
-        -:  184:    uint16_t encoded_length;
-        -:  185:    bool result;
-        -:  186:
-        -:  187:    // Serialize the message into the first part of the buffer
-    #####:  188:    convert_message_to_array(msg, temp_buffer, &serialized_length);
-    %%%%%:  188-block  0
-call    0 never executed
-        -:  189:
-        -:  190:    // Encode the message using SLIP into the second part of the buffer
-    #####:  191:    result = slip_encode(temp_buffer, serialized_length, buffer, &encoded_length);
-call    0 never executed
-    #####:  192:    if (!result) {
-branch  0 never executed (fallthrough)
-branch  1 never executed
-        -:  193:        // Handle encoding failure
-    #####:  194:        return;
-    %%%%%:  194-block  0
-        -:  195:    }
-        -:  196:
-        -:  197:    // Send the encoded message
-        -:  198://    uart_write(buffer, encoded_length);
-        -:  199:}
-        -:  200://
-        -:  201://
-        -:  202://void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){
-        -:  203://    // Create a message structure
-        -:  204://    Message msg = create_message(msg_type, payload, length);
-        -:  205://
-        -:  206://    // Send the message
-        -:  207://    send_message_struct(&msg);
-        -:  208://}
-        -:  209:
+        -:  179:
+        -:  180:
+        -:  181://void send_message_struct(const Message* msg) {
+        -:  182://    // Static buffer to hold serialized and encoded data
+        -:  183://    static uint8_t buffer[UART_BUFFER_SIZE];
+        -:  184://    static uint8_t temp_buffer[UART_BUFFER_SIZE];
+        -:  185://    uint8_t serialized_length;
+        -:  186://    uint16_t encoded_length;
+        -:  187://    bool result;
+        -:  188://
+        -:  189://    // Serialize the message into the first part of the buffer
+        -:  190://    convert_message_to_array(msg, temp_buffer, &serialized_length);
+        -:  191://
+        -:  192://    // Encode the message using SLIP into the second part of the buffer
+        -:  193://    result = slip_encode(temp_buffer, serialized_length, buffer, &encoded_length);
+        -:  194://    if (!result) {
+        -:  195://        // Handle encoding failure
+        -:  196://        return;
+        -:  197://    }
+        -:  198:
+        -:  199:    // Send the encoded message
+        -:  200://    uart_write(buffer, encoded_length);
+        -:  201://}
+        -:  202://
+        -:  203://
+        -:  204://void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length){
+        -:  205://    // Create a message structure
+        -:  206://    Message msg = create_message(msg_type, payload, length);
+        -:  207://
+        -:  208://    // Send the message
+        -:  209://    send_message_struct(&msg);
+        -:  210://}
+        -:  211:

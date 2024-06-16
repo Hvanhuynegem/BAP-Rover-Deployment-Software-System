@@ -161,7 +161,7 @@ call    0 never executed
         -:  129:                              int>::type = 0
         -:  130:#endif  // GTEST_HAS_ABSL
         -:  131:      >
-     504*:  132:  inline Message& operator<<(const T& val) {
+     531*:  132:  inline Message& operator<<(const T& val) {
         -:  133:        // Some libraries overload << for STL containers.  These
         -:  134:    // overloads are defined in the global namespace instead of ::std.
         -:  135:    //
@@ -177,8 +177,8 @@ call    0 never executed
         -:  145:    // overloads of << defined in the global namespace and those
         -:  146:    // visible via Koenig lookup are both exposed in this function.
         -:  147:    using ::operator<<;
-     504*:  148:    *ss_ << val;
-     504*:  149:    return *this;
+     531*:  148:    *ss_ << val;
+     531*:  149:    return *this;
         -:  150:  }
 ------------------
 _ZN7testing7MessagelsIA30_cEERS0_RKT_:
@@ -857,8 +857,8 @@ call    1 never executed
         -:  150:  }
 ------------------
 _ZN7testing7MessagelsIiEERS0_RKT_:
-function _ZN7testing7MessagelsIiEERS0_RKT_ called 13 returned 100% blocks executed 100%
-       13:  132:  inline Message& operator<<(const T& val) {
+function _ZN7testing7MessagelsIiEERS0_RKT_ called 19 returned 100% blocks executed 100%
+       19:  132:  inline Message& operator<<(const T& val) {
         -:  133:        // Some libraries overload << for STL containers.  These
         -:  134:    // overloads are defined in the global namespace instead of ::std.
         -:  135:    //
@@ -874,11 +874,11 @@ function _ZN7testing7MessagelsIiEERS0_RKT_ called 13 returned 100% blocks execut
         -:  145:    // overloads of << defined in the global namespace and those
         -:  146:    // visible via Koenig lookup are both exposed in this function.
         -:  147:    using ::operator<<;
-       13:  148:    *ss_ << val;
-       13:  148-block  0
-call    0 returned 13
-call    1 returned 13
-       13:  149:    return *this;
+       19:  148:    *ss_ << val;
+       19:  148-block  0
+call    0 returned 19
+call    1 returned 19
+       19:  149:    return *this;
         -:  150:  }
 ------------------
 _ZN7testing7MessagelsIA25_cEERS0_RKT_:
@@ -1257,8 +1257,8 @@ call    1 never executed
         -:  150:  }
 ------------------
 _ZN7testing7MessagelsIxEERS0_RKT_:
-function _ZN7testing7MessagelsIxEERS0_RKT_ called 56 returned 100% blocks executed 100%
-       56:  132:  inline Message& operator<<(const T& val) {
+function _ZN7testing7MessagelsIxEERS0_RKT_ called 77 returned 100% blocks executed 100%
+       77:  132:  inline Message& operator<<(const T& val) {
         -:  133:        // Some libraries overload << for STL containers.  These
         -:  134:    // overloads are defined in the global namespace instead of ::std.
         -:  135:    //
@@ -1274,11 +1274,11 @@ function _ZN7testing7MessagelsIxEERS0_RKT_ called 56 returned 100% blocks execut
         -:  145:    // overloads of << defined in the global namespace and those
         -:  146:    // visible via Koenig lookup are both exposed in this function.
         -:  147:    using ::operator<<;
-       56:  148:    *ss_ << val;
-       56:  148-block  0
-call    0 returned 56
-call    1 returned 56
-       56:  149:    return *this;
+       77:  148:    *ss_ << val;
+       77:  148-block  0
+call    0 returned 77
+call    1 returned 77
+       77:  149:    return *this;
         -:  150:  }
 ------------------
 _ZN7testing7MessagelsIA41_cEERS0_RKT_:
@@ -1755,8 +1755,8 @@ call    7 never executed
         -:  239:// ::std::string, ::wstring, or ::std::wstring object, each NUL
         -:  240:// character in it is replaced with "\\0".
         -:  241:template <typename T>
-      72*:  242:std::string StreamableToString(const T& streamable) {
-      72*:  243:  return (Message() << streamable).GetString();
+      99*:  242:std::string StreamableToString(const T& streamable) {
+      99*:  243:  return (Message() << streamable).GetString();
         -:  244:}
         -:  245:
         -:  246:}  // namespace internal

@@ -20,6 +20,9 @@
  * - Maximum buffer size test: Verify decoding with the maximum allowable input buffer size.
  * - Check all four different characters for decoding: Verify decoding for all special character sequences.
  * - Length zero test: Correctly return false if the input length is smaller than 2 or if the start or end byte is not equal to END.
+ * - No first slip encoding character: returns false if there is no slip encoding character in the first position of the array
+ * - No last slip encoding character: returns false if there is no slip encoding character in the last position of the array
+ * - First ESC character and then no ESC_ESC OR ESC_END: ensure this returns false since this is invalid encoding.
  */
 
 #include "gtest/gtest.h"
@@ -363,5 +366,54 @@ TEST(slip_decoding_testsSuite, StartOrEndByteNotENDTest){
 
     // Assertions
     EXPECT_EQ(result, expected_result);
+}
+
+TEST(slip_decoding_testsSuite, testFirstCharacter){
+    // input buffer with all four special characters
+    uint8_t input_buffer[UART_BUFFER_SIZE] = {0xDB, 0xDC, 0xDB, 0xDD, 0xDC, 0xDD, 0xC0};
+    uint16_t input_length = 8;
+    // output buffer after decoding
+    uint8_t output_buffer[UART_BUFFER_SIZE];
+    uint16_t output_length;
+    bool result;
+
+    // decoding
+    result = slip_decode(input_buffer, input_length, output_buffer, &output_length);
+
+    // Assertions
+    EXPECT_FALSE(result);
+}
+
+TEST(slip_decoding_testsSuite, testlastCharacter){
+    // input buffer with all four special characters
+    uint8_t input_buffer[UART_BUFFER_SIZE] = {0xC0, 0xDB, 0xDC, 0xDB, 0xDD, 0xDC, 0xDD};
+    uint16_t input_length = 8;
+    // output buffer after decoding
+    uint8_t output_buffer[UART_BUFFER_SIZE];
+    uint16_t output_length;
+    bool result;
+
+    // decoding
+    result = slip_decode(input_buffer, input_length, output_buffer, &output_length);
+
+    // Assertions
+    EXPECT_FALSE(result);
+}
+
+TEST(slip_decoding_testsSuite, isEscapedTest){
+    // input buffer with all four special characters
+    uint8_t input_buffer[UART_BUFFER_SIZE] = {0xC0, 0xDB, 0xDD, 0xDB, 0x02, 0xC0};
+    uint16_t input_length = 6;
+    // output buffer after decoding
+    uint8_t output_buffer[UART_BUFFER_SIZE];
+    uint16_t output_length;
+    bool result;
+
+    // decoding
+    result = slip_decode(input_buffer, input_length, output_buffer, &output_length);
+
+    // Assertions
+    // Assertions
+    EXPECT_FALSE(result);
 }
 

@@ -294,7 +294,8 @@
         -:  290:  // around may change its bits, although the new value is guaranteed
         -:  291:  // to be also a NAN.  Therefore, don't expect this constructor to
         -:  292:  // preserve the bits in x when x is a NAN.
-        -:  293:  explicit FloatingPoint(const RawType& x) { u_.value_ = x; }
+function _ZN7testing8internal13FloatingPointIfEC1ERKf called 24 returned 100% blocks executed 100%
+       24:  293:  explicit FloatingPoint(const RawType& x) { u_.value_ = x; }
         -:  294:
         -:  295:  // Static methods
         -:  296:
@@ -316,19 +317,35 @@
         -:  312:  const Bits& bits() const { return u_.bits_; }
         -:  313:
         -:  314:  // Returns the exponent bits of this number.
-        -:  315:  Bits exponent_bits() const { return kExponentBitMask & u_.bits_; }
+function _ZNK7testing8internal13FloatingPointIfE13exponent_bitsEv called 24 returned 100% blocks executed 100%
+       24:  315:  Bits exponent_bits() const { return kExponentBitMask & u_.bits_; }
+       24:  315-block  0
         -:  316:
         -:  317:  // Returns the fraction bits of this number.
-        -:  318:  Bits fraction_bits() const { return kFractionBitMask & u_.bits_; }
+function _ZNK7testing8internal13FloatingPointIfE13fraction_bitsEv called 0 returned 0% blocks executed 0%
+    #####:  318:  Bits fraction_bits() const { return kFractionBitMask & u_.bits_; }
+    %%%%%:  318-block  0
         -:  319:
         -:  320:  // Returns the sign bit of this number.
         -:  321:  Bits sign_bit() const { return kSignBitMask & u_.bits_; }
         -:  322:
         -:  323:  // Returns true if and only if this is NAN (not a number).
-        -:  324:  bool is_nan() const {
+function _ZNK7testing8internal13FloatingPointIfE6is_nanEv called 24 returned 100% blocks executed 62%
+       24:  324:  bool is_nan() const {
         -:  325:    // It's a NAN if the exponent bits are all ones and the fraction
         -:  326:    // bits are not entirely zeros.
-        -:  327:    return (exponent_bits() == kExponentBitMask) && (fraction_bits() != 0);
+      24*:  327:    return (exponent_bits() == kExponentBitMask) && (fraction_bits() != 0);
+       24:  327-block  0
+call    0 returned 24
+branch  1 taken 0 (fallthrough)
+branch  2 taken 24
+    %%%%%:  327-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    %%%%%:  327-block  2
+       24:  327-block  3
+       24:  327-block  4
         -:  328:  }
         -:  329:
         -:  330:  // Returns true if and only if this number is at most kMaxUlps ULP's away
@@ -337,13 +354,30 @@
         -:  333:  //   - returns false if either number is (or both are) NAN.
         -:  334:  //   - treats really large numbers as almost equal to infinity.
         -:  335:  //   - thinks +0.0 and -0.0 are 0 DLP's apart.
-        -:  336:  bool AlmostEquals(const FloatingPoint& rhs) const {
+function _ZNK7testing8internal13FloatingPointIfE12AlmostEqualsERKS2_ called 12 returned 100% blocks executed 82%
+       12:  336:  bool AlmostEquals(const FloatingPoint& rhs) const {
         -:  337:    // The IEEE standard says that any comparison operation involving
         -:  338:    // a NAN must return false.
-        -:  339:    if (is_nan() || rhs.is_nan()) return false;
+      12*:  339:    if (is_nan() || rhs.is_nan()) return false;
+       12:  339-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0
+       12:  339-block  1
+call    3 returned 12
+branch  4 taken 0 (fallthrough)
+branch  5 taken 12
+    %%%%%:  339-block  2
+       12:  339-block  3
+       12:  339-block  4
+branch  6 taken 0 (fallthrough)
+branch  7 taken 12
+    %%%%%:  339-block  5
         -:  340:
-        -:  341:    return DistanceBetweenSignAndMagnitudeNumbers(u_.bits_, rhs.u_.bits_) <=
-        -:  342:           kMaxUlps;
+       12:  341:    return DistanceBetweenSignAndMagnitudeNumbers(u_.bits_, rhs.u_.bits_) <=
+       12:  341-block  0
+call    0 returned 12
+       12:  342:           kMaxUlps;
         -:  343:  }
         -:  344:
         -:  345: private:
@@ -368,23 +402,38 @@
         -:  364:  //
         -:  365:  // Read https://en.wikipedia.org/wiki/Signed_number_representations
         -:  366:  // for more details on signed number representations.
-        -:  367:  static Bits SignAndMagnitudeToBiased(const Bits& sam) {
-        -:  368:    if (kSignBitMask & sam) {
+function _ZN7testing8internal13FloatingPointIfE24SignAndMagnitudeToBiasedERKj called 24 returned 100% blocks executed 100%
+       24:  367:  static Bits SignAndMagnitudeToBiased(const Bits& sam) {
+       24:  368:    if (kSignBitMask & sam) {
+       24:  368-block  0
+branch  0 taken 10 (fallthrough)
+branch  1 taken 14
         -:  369:      // sam represents a negative number.
-        -:  370:      return ~sam + 1;
+       10:  370:      return ~sam + 1;
+       10:  370-block  0
         -:  371:    } else {
         -:  372:      // sam represents a positive number.
-        -:  373:      return kSignBitMask | sam;
+       14:  373:      return kSignBitMask | sam;
+       14:  373-block  0
         -:  374:    }
         -:  375:  }
         -:  376:
         -:  377:  // Given two numbers in the sign-and-magnitude representation,
         -:  378:  // returns the distance between them as an unsigned number.
-        -:  379:  static Bits DistanceBetweenSignAndMagnitudeNumbers(const Bits& sam1,
+function _ZN7testing8internal13FloatingPointIfE38DistanceBetweenSignAndMagnitudeNumbersERKjS4_ called 12 returned 100% blocks executed 86%
+       12:  379:  static Bits DistanceBetweenSignAndMagnitudeNumbers(const Bits& sam1,
         -:  380:                                                     const Bits& sam2) {
-        -:  381:    const Bits biased1 = SignAndMagnitudeToBiased(sam1);
-        -:  382:    const Bits biased2 = SignAndMagnitudeToBiased(sam2);
-        -:  383:    return (biased1 >= biased2) ? (biased1 - biased2) : (biased2 - biased1);
+       12:  381:    const Bits biased1 = SignAndMagnitudeToBiased(sam1);
+       12:  381-block  0
+call    0 returned 12
+       12:  382:    const Bits biased2 = SignAndMagnitudeToBiased(sam2);
+call    0 returned 12
+      12*:  383:    return (biased1 >= biased2) ? (biased1 - biased2) : (biased2 - biased1);
+branch  0 taken 12 (fallthrough)
+branch  1 taken 0
+       12:  383-block  0
+    %%%%%:  383-block  1
+       12:  383-block  2
         -:  384:  }
         -:  385:
         -:  386:  FloatingPointUnion u_;
@@ -446,8 +495,8 @@ function _ZN7testing8internal15TestFactoryBaseD2Ev called 0 returned 0% blocks e
         -:  441:  virtual Test* CreateTest() = 0;
         -:  442:
         -:  443: protected:
-function _ZN7testing8internal15TestFactoryBaseC2Ev called 51 returned 100% blocks executed 100%
-       51:  444:  TestFactoryBase() {}
+function _ZN7testing8internal15TestFactoryBaseC2Ev called 69 returned 100% blocks executed 100%
+       69:  444:  TestFactoryBase() {}
         -:  445:
         -:  446: private:
         -:  447:  TestFactoryBase(const TestFactoryBase&) = delete;
@@ -459,362 +508,10 @@ function _ZN7testing8internal15TestFactoryBaseC2Ev called 51 returned 100% block
         -:  453:template <class TestClass>
         -:  454:class TestFactoryImpl : public TestFactoryBase {
         -:  455: public:
-       51:  456:  Test* CreateTest() override { return new TestClass; }
-------------------
-_ZN7testing8internal15TestFactoryImplI45slip_encoding_testsSuite_EmptyBufferTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI45slip_encoding_testsSuite_EmptyBufferTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ENDReplacementTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ENDReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ESCReplacementTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ESCReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI61slip_decoding_testsSuite_MixedESC_ENDAndESC_ESCBytesTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI61slip_decoding_testsSuite_MixedESC_ENDAndESC_ESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI59slip_decoding_testsSuite_CheckAllFourSpecialCharacters_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI59slip_decoding_testsSuite_CheckAllFourSpecialCharacters_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_LengthZeroTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_LengthZeroTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI54slip_decoding_testsSuite_StartOrEndByteNotENDTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI54slip_decoding_testsSuite_StartOrEndByteNotENDTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI44slip_encoding_testsSuite_NormalDataTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI44slip_encoding_testsSuite_NormalDataTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI43slip_encoding_testsSuite_StartByteTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI43slip_encoding_testsSuite_StartByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI41slip_encoding_testsSuite_EndByteTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI41slip_encoding_testsSuite_EndByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI65slip_decoding_testsSuite_InputLengthLargerThanUARTBufferTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI65slip_decoding_testsSuite_InputLengthLargerThanUARTBufferTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI60slip_encoding_testsSuite_BufferLargerThanUARTBufferTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI60slip_encoding_testsSuite_BufferLargerThanUARTBufferTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
+       69:  456:  Test* CreateTest() override { return new TestClass; }
 ------------------
 _ZN7testing8internal15TestFactoryImplI75slip_encoding_testsSuite_BufferSmallerThanUARTBufferBeforeEncodingTest_TestE10CreateTestEv:
 function _ZN7testing8internal15TestFactoryImplI75slip_encoding_testsSuite_BufferSmallerThanUARTBufferBeforeEncodingTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ENDReplacementTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ENDReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ESCReplacementTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ESCReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI53slip_encoding_testsSuite_MixedENDandESCBytesTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI53slip_encoding_testsSuite_MixedENDandESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_BufferOverflowTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_BufferOverflowTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -845,8 +542,504 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
+_ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_BufferOverflowTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_BufferOverflowTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI53slip_encoding_testsSuite_MixedENDandESCBytesTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI53slip_encoding_testsSuite_MixedENDandESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_encoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ESCReplacementTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ESCReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ENDReplacementTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI48slip_encoding_testsSuite_ENDReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
 _ZN7testing8internal15TestFactoryImplI54slip_encoding_testsSuite_MaximumEncodableDataTest_TestE10CreateTestEv:
 function _ZN7testing8internal15TestFactoryImplI54slip_encoding_testsSuite_MaximumEncodableDataTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI60slip_encoding_testsSuite_BufferLargerThanUARTBufferTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI60slip_encoding_testsSuite_BufferLargerThanUARTBufferTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI45slip_encoding_testsSuite_EmptyBufferTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI45slip_encoding_testsSuite_EmptyBufferTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI41slip_encoding_testsSuite_EndByteTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI41slip_encoding_testsSuite_EndByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI43slip_encoding_testsSuite_StartByteTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI43slip_encoding_testsSuite_StartByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI44slip_encoding_testsSuite_NormalDataTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI44slip_encoding_testsSuite_NormalDataTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI43slip_decoding_testsSuite_isEscapedTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI43slip_decoding_testsSuite_isEscapedTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI47slip_decoding_testsSuite_testlastCharacter_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI47slip_decoding_testsSuite_testlastCharacter_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI48slip_decoding_testsSuite_testFirstCharacter_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI48slip_decoding_testsSuite_testFirstCharacter_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI40FrequencyCalculationTest_ZeroPeriod_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI40FrequencyCalculationTest_ZeroPeriod_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI49FrequencyToTemperatureTest_FrequencyInRange3_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI49FrequencyToTemperatureTest_FrequencyInRange3_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI49FrequencyToTemperatureTest_FrequencyInRange2_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI49FrequencyToTemperatureTest_FrequencyInRange2_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI48FrequencyToTemperatureTest_FrequencyInRange_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI48FrequencyToTemperatureTest_FrequencyInRange_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI46FrequencyToTemperatureTest_SmallFrequency_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI46FrequencyToTemperatureTest_SmallFrequency_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI49FrequencyToTemperatureTest_PositiveFrequency_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI49FrequencyToTemperatureTest_PositiveFrequency_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI45FrequencyToTemperatureTest_ZeroFrequency_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI45FrequencyToTemperatureTest_ZeroFrequency_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI41FrequencyCalculationTest_SmallPeriod_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI41FrequencyCalculationTest_SmallPeriod_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI44FrequencyCalculationTest_PositivePeriod_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI44FrequencyCalculationTest_PositivePeriod_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI54slip_decoding_testsSuite_StartOrEndByteNotENDTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI54slip_decoding_testsSuite_StartOrEndByteNotENDTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI37AdcConversionTest_ArbitraryValue_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI37AdcConversionTest_ArbitraryValue_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI41AdcConversionTest_ThreeQuartersValue_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI41AdcConversionTest_ThreeQuartersValue_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI35AdcConversionTest_QuarterValue_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI35AdcConversionTest_QuarterValue_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI31AdcConversionTest_MidValue_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI31AdcConversionTest_MidValue_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI31AdcConversionTest_MaxValue_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI31AdcConversionTest_MaxValue_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI32AdcConversionTest_ZeroValue_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI32AdcConversionTest_ZeroValue_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -877,248 +1070,8 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_messageTypeTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_messageTypeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI61convertArrayToMessageTestSuite_lengthSmallerThanFiveTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI61convertArrayToMessageTestSuite_lengthSmallerThanFiveTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI49convertArrayToMessageTestSuite_startByteTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI49convertArrayToMessageTestSuite_startByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI51convertArrayToMessageTestSuite_messageTypeTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI51convertArrayToMessageTestSuite_messageTypeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI53convertArrayToMessageTestSuite_messageLengthTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI53convertArrayToMessageTestSuite_messageLengthTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI77convertArrayToMessageTestSuite_messageLengthLongerThanMaxPayloadSizeTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI77convertArrayToMessageTestSuite_messageLengthLongerThanMaxPayloadSizeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI68convertArrayToMessageTestSuite_messageLengthSmallerThanZeroTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI68convertArrayToMessageTestSuite_messageLengthSmallerThanZeroTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52convertArrayToMessageTestSuite_emptyPayloadTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52convertArrayToMessageTestSuite_emptyPayloadTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
 _ZN7testing8internal15TestFactoryImplI48convertArrayToMessageTestSuite_checksumTest_TestE10CreateTestEv:
 function _ZN7testing8internal15TestFactoryImplI48convertArrayToMessageTestSuite_checksumTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI47convertArrayToMessageTestSuite_endByteTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI47convertArrayToMessageTestSuite_endByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI60convertArrayToMessageTestSuite_checksumVerificationTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI60convertArrayToMessageTestSuite_checksumVerificationTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI67convertMessageToArrayTestSuite_convertNormalMessageToArrayTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI67convertMessageToArrayTestSuite_convertNormalMessageToArrayTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI49convertMessageToArrayTestSuite_startByteTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI49convertMessageToArrayTestSuite_startByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI46convertArrayToMessageTestSuite_normalTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI46convertArrayToMessageTestSuite_normalTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI53convertMessageToArrayTestSuite_messageLengthTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI53convertMessageToArrayTestSuite_messageLengthTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
-        1:  456:  Test* CreateTest() override { return new TestClass; }
-        1:  456-block  0
-call    0 returned 1
-call    1 returned 1
-branch  2 taken 1 (fallthrough)
-branch  3 taken 0 (throw)
-        1:  456-block  1
-        1:  456-block  2
-    $$$$$:  456-block  3
-branch  4 never executed (fallthrough)
-branch  5 never executed
-    $$$$$:  456-block  4
-call    6 never executed
-------------------
-_ZN7testing8internal15TestFactoryImplI52convertMessageToArrayTestSuite_emptyPayloadTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI52convertMessageToArrayTestSuite_emptyPayloadTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1149,6 +1102,118 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
+_ZN7testing8internal15TestFactoryImplI52convertMessageToArrayTestSuite_emptyPayloadTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52convertMessageToArrayTestSuite_emptyPayloadTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI53convertMessageToArrayTestSuite_messageLengthTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI53convertMessageToArrayTestSuite_messageLengthTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_messageTypeTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_messageTypeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI49convertMessageToArrayTestSuite_startByteTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI49convertMessageToArrayTestSuite_startByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI67convertMessageToArrayTestSuite_convertNormalMessageToArrayTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI67convertMessageToArrayTestSuite_convertNormalMessageToArrayTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI60convertArrayToMessageTestSuite_checksumVerificationTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI60convertArrayToMessageTestSuite_checksumVerificationTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI47convertArrayToMessageTestSuite_endByteTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI47convertArrayToMessageTestSuite_endByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
 _ZN7testing8internal15TestFactoryImplI48convertMessageToArrayTestSuite_checksumTest_TestE10CreateTestEv:
 function _ZN7testing8internal15TestFactoryImplI48convertMessageToArrayTestSuite_checksumTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
@@ -1165,8 +1230,8 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI47convertMessageToArrayTestSuite_endByteTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI47convertMessageToArrayTestSuite_endByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+_ZN7testing8internal15TestFactoryImplI52convertArrayToMessageTestSuite_emptyPayloadTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52convertArrayToMessageTestSuite_emptyPayloadTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1181,8 +1246,8 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_bufferCheckTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_bufferCheckTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+_ZN7testing8internal15TestFactoryImplI68convertArrayToMessageTestSuite_messageLengthSmallerThanZeroTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI68convertArrayToMessageTestSuite_messageLengthSmallerThanZeroTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1197,8 +1262,8 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_lengthCheckTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_lengthCheckTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+_ZN7testing8internal15TestFactoryImplI77convertArrayToMessageTestSuite_messageLengthLongerThanMaxPayloadSizeTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI77convertArrayToMessageTestSuite_messageLengthLongerThanMaxPayloadSizeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1213,8 +1278,8 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_NormalDataTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_NormalDataTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+_ZN7testing8internal15TestFactoryImplI53convertArrayToMessageTestSuite_messageLengthTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI53convertArrayToMessageTestSuite_messageLengthTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1229,8 +1294,216 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI50slip_decoding_testsSuite_StartByteRemovedTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI50slip_decoding_testsSuite_StartByteRemovedTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+_ZN7testing8internal15TestFactoryImplI51convertArrayToMessageTestSuite_messageTypeTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI51convertArrayToMessageTestSuite_messageTypeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI49convertArrayToMessageTestSuite_startByteTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI49convertArrayToMessageTestSuite_startByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI61convertArrayToMessageTestSuite_lengthSmallerThanFiveTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI61convertArrayToMessageTestSuite_lengthSmallerThanFiveTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI65slip_decoding_testsSuite_InputLengthLargerThanUARTBufferTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI65slip_decoding_testsSuite_InputLengthLargerThanUARTBufferTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_LengthZeroTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_LengthZeroTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI59slip_decoding_testsSuite_CheckAllFourSpecialCharacters_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI59slip_decoding_testsSuite_CheckAllFourSpecialCharacters_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_MaximumPayloadSizeTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI61slip_decoding_testsSuite_MixedESC_ENDAndESC_ESCBytesTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI61slip_decoding_testsSuite_MixedESC_ENDAndESC_ESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialESCBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_SequentialENDBytesTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ESCReplacementTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ESCReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ENDReplacementTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI52slip_decoding_testsSuite_ESC_ENDReplacementTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI46convertArrayToMessageTestSuite_normalTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI46convertArrayToMessageTestSuite_normalTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI46slip_decoding_testsSuite_EmptyPayloadTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI46slip_decoding_testsSuite_EmptyPayloadTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1261,8 +1534,72 @@ branch  5 never executed
     $$$$$:  456-block  4
 call    6 never executed
 ------------------
-_ZN7testing8internal15TestFactoryImplI46slip_decoding_testsSuite_EmptyPayloadTest_TestE10CreateTestEv:
-function _ZN7testing8internal15TestFactoryImplI46slip_decoding_testsSuite_EmptyPayloadTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+_ZN7testing8internal15TestFactoryImplI50slip_decoding_testsSuite_StartByteRemovedTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI50slip_decoding_testsSuite_StartByteRemovedTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_NormalDataTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI44slip_decoding_testsSuite_NormalDataTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_lengthCheckTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_lengthCheckTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_bufferCheckTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI51convertMessageToArrayTestSuite_bufferCheckTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
+        1:  456:  Test* CreateTest() override { return new TestClass; }
+        1:  456-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  456-block  1
+        1:  456-block  2
+    $$$$$:  456-block  3
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:  456-block  4
+call    6 never executed
+------------------
+_ZN7testing8internal15TestFactoryImplI47convertMessageToArrayTestSuite_endByteTest_TestE10CreateTestEv:
+function _ZN7testing8internal15TestFactoryImplI47convertMessageToArrayTestSuite_endByteTest_TestE10CreateTestEv called 1 returned 100% blocks executed 71%
         1:  456:  Test* CreateTest() override { return new TestClass; }
         1:  456-block  0
 call    0 returned 1
@@ -1297,12 +1634,12 @@ call    6 never executed
         -:  474:using TearDownTestSuiteFunc = void (*)();
         -:  475:
         -:  476:struct CodeLocation {
-function _ZN7testing8internal12CodeLocationC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 51 returned 100% blocks executed 100%
-       51:  477:  CodeLocation(std::string a_file, int a_line)
-       51:  478:      : file(std::move(a_file)), line(a_line) {}
-       51:  478-block  0
-call    0 returned 51
-call    1 returned 51
+function _ZN7testing8internal12CodeLocationC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 69 returned 100% blocks executed 100%
+       69:  477:  CodeLocation(std::string a_file, int a_line)
+       69:  478:      : file(std::move(a_file)), line(a_line) {}
+       69:  478-block  0
+call    0 returned 69
+call    1 returned 69
         -:  479:
         -:  480:  std::string file;
         -:  481:  int line;
@@ -1314,16 +1651,16 @@ call    1 returned 51
         -:  487:// Utility functions to help SuiteApiResolver
         -:  488:using SetUpTearDownSuiteFuncType = void (*)();
         -:  489:
-function _ZN7testing8internal19GetNotDefaultOrNullEPFvvES2_ called 204 returned 100% blocks executed 80%
-      204:  490:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
+function _ZN7testing8internal19GetNotDefaultOrNullEPFvvES2_ called 276 returned 100% blocks executed 80%
+      276:  490:inline SetUpTearDownSuiteFuncType GetNotDefaultOrNull(
         -:  491:    SetUpTearDownSuiteFuncType a, SetUpTearDownSuiteFuncType def) {
-     204*:  492:  return a == def ? nullptr : a;
-      204:  492-block  0
+     276*:  492:  return a == def ? nullptr : a;
+      276:  492-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 204
+branch  1 taken 276
     %%%%%:  492-block  1
-      204:  492-block  2
-      204:  492-block  3
+      276:  492-block  2
+      276:  492-block  3
         -:  493:}
         -:  494:
         -:  495:template <typename T>
@@ -1336,30 +1673,30 @@ branch  1 taken 204
         -:  502:  using Test =
         -:  503:      typename std::conditional<sizeof(T) != 0, ::testing::Test, void>::type;
         -:  504:
-function _ZN7testing8internal16SuiteApiResolverINS_4TestEE19GetSetUpCaseOrSuiteEPKci called 51 returned 100% blocks executed 44%
-       51:  505:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
+function _ZN7testing8internal16SuiteApiResolverINS_4TestEE19GetSetUpCaseOrSuiteEPKci called 69 returned 100% blocks executed 44%
+       69:  505:  static SetUpTearDownSuiteFuncType GetSetUpCaseOrSuite(const char* filename,
         -:  506:                                                        int line_num) {
         -:  507:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  508:    SetUpTearDownSuiteFuncType test_case_fp =
-       51:  509:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
-       51:  509-block  0
-call    0 returned 51
+       69:  509:        GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+       69:  509-block  0
+call    0 returned 69
         -:  510:    SetUpTearDownSuiteFuncType test_suite_fp =
-       51:  511:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
-call    0 returned 51
+       69:  511:        GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+call    0 returned 69
         -:  512:
-      51*:  513:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      69*:  513:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%:  513-block  0
 branch  2 never executed (fallthrough)
 branch  3 never executed
-       51:  513-block  1
+       69:  513-block  1
     %%%%%:  513-block  2
-       51:  513-block  3
-call    4 returned 51
+       69:  513-block  3
+call    4 returned 69
 branch  5 taken 0 (fallthrough)
-branch  6 taken 51
+branch  6 taken 69
     %%%%%:  513-block  4
 call    7 never executed
 branch  8 never executed (fallthrough)
@@ -1393,14 +1730,14 @@ call   12 never executed
 branch 13 never executed (fallthrough)
 branch 14 never executed (throw)
         -:  517:
-      51*:  518:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
-       51:  518-block  0
+      69*:  518:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+       69:  518-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%:  518-block  1
-       51:  518-block  2
-       51:  518-block  3
-       51:  518-block  4
+       69:  518-block  2
+       69:  518-block  3
+       69:  518-block  4
         -:  519:#else
         -:  520:    (void)(filename);
         -:  521:    (void)(line_num);
@@ -1408,30 +1745,30 @@ branch  1 taken 51
         -:  523:#endif
         -:  524:  }
         -:  525:
-function _ZN7testing8internal16SuiteApiResolverINS_4TestEE22GetTearDownCaseOrSuiteEPKci called 51 returned 100% blocks executed 44%
-       51:  526:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
+function _ZN7testing8internal16SuiteApiResolverINS_4TestEE22GetTearDownCaseOrSuiteEPKci called 69 returned 100% blocks executed 44%
+       69:  526:  static SetUpTearDownSuiteFuncType GetTearDownCaseOrSuite(const char* filename,
         -:  527:                                                           int line_num) {
         -:  528:#ifndef GTEST_REMOVE_LEGACY_TEST_CASEAPI_
         -:  529:    SetUpTearDownSuiteFuncType test_case_fp =
-       51:  530:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
-       51:  530-block  0
-call    0 returned 51
+       69:  530:        GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+       69:  530-block  0
+call    0 returned 69
         -:  531:    SetUpTearDownSuiteFuncType test_suite_fp =
-       51:  532:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
-call    0 returned 51
+       69:  532:        GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+call    0 returned 69
         -:  533:
-      51*:  534:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
+      69*:  534:    GTEST_CHECK_(!test_case_fp || !test_suite_fp)
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%:  534-block  0
 branch  2 never executed (fallthrough)
 branch  3 never executed
-       51:  534-block  1
+       69:  534-block  1
     %%%%%:  534-block  2
-       51:  534-block  3
-call    4 returned 51
+       69:  534-block  3
+call    4 returned 69
 branch  5 taken 0 (fallthrough)
-branch  6 taken 51
+branch  6 taken 69
     %%%%%:  534-block  4
 call    7 never executed
 branch  8 never executed (fallthrough)
@@ -1465,14 +1802,14 @@ call   12 never executed
 branch 13 never executed (fallthrough)
 branch 14 never executed (throw)
         -:  538:
-      51*:  539:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
-       51:  539-block  0
+      69*:  539:    return test_case_fp != nullptr ? test_case_fp : test_suite_fp;
+       69:  539-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%:  539-block  1
-       51:  539-block  2
-       51:  539-block  3
-       51:  539-block  4
+       69:  539-block  2
+       69:  539-block  3
+       69:  539-block  4
         -:  540:#else
         -:  541:    (void)(filename);
         -:  542:    (void)(line_num);

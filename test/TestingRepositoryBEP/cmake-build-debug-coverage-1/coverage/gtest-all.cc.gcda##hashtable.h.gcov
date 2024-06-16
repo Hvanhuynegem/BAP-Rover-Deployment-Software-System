@@ -301,40 +301,40 @@
         -:  297:      struct _Scoped_node
         -:  298:      {
         -:  299:	// Take ownership of a node with a constructed element.
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_Scoped_nodeC1EPNS7_10_Hash_nodeIS5_Lb1EEEPNS7_16_Hashtable_allocISaISL_EEE called 51 returned 100% blocks executed 100%
-       51:  300:	_Scoped_node(__node_ptr __n, __hashtable_alloc* __h)
-       51:  301:	: _M_h(__h), _M_node(__n) { }
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_Scoped_nodeC1EPNS7_10_Hash_nodeIS5_Lb1EEEPNS7_16_Hashtable_allocISaISL_EEE called 69 returned 100% blocks executed 100%
+       69:  300:	_Scoped_node(__node_ptr __n, __hashtable_alloc* __h)
+       69:  301:	: _M_h(__h), _M_node(__n) { }
         -:  302:
         -:  303:	// Allocate a node and construct an element within it.
         -:  304:	template<typename... _Args>
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE12_Scoped_nodeC1IJRS7_RKSA_EEEPNSD_16_Hashtable_allocISaINSD_10_Hash_nodeISB_Lb1EEEEEEDpOT_ called 4 returned 100% blocks executed 100%
-        4:  305:	  _Scoped_node(__hashtable_alloc* __h, _Args&&... __args)
-        4:  306:	  : _M_h(__h),
-        4:  307:	    _M_node(__h->_M_allocate_node(std::forward<_Args>(__args)...))
-        4:  307-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-        4:  308:	  { }
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE12_Scoped_nodeC1IJRS7_RKSA_EEEPNSD_16_Hashtable_allocISaINSD_10_Hash_nodeISB_Lb1EEEEEEDpOT_ called 7 returned 100% blocks executed 100%
+        7:  305:	  _Scoped_node(__hashtable_alloc* __h, _Args&&... __args)
+        7:  306:	  : _M_h(__h),
+        7:  307:	    _M_node(__h->_M_allocate_node(std::forward<_Args>(__args)...))
+        7:  307-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+        7:  308:	  { }
         -:  309:
         -:  310:	// Destroy element and deallocate node.
-      55*:  311:	~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
+      76*:  311:	~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_Scoped_nodeD1Ev:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_Scoped_nodeD1Ev called 51 returned 100% blocks executed 67%
-      51*:  311:	~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
-       51:  311-block  0
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_Scoped_nodeD1Ev called 69 returned 100% blocks executed 67%
+      69*:  311:	~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
+       69:  311-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     %%%%%:  311-block  1
 call    2 never executed
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE12_Scoped_nodeD1Ev:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE12_Scoped_nodeD1Ev called 4 returned 100% blocks executed 67%
-       4*:  311:	~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
-        4:  311-block  0
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE12_Scoped_nodeD1Ev called 7 returned 100% blocks executed 67%
+       7*:  311:	~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
+        7:  311-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+branch  1 taken 7
     %%%%%:  311-block  1
 call    2 never executed
 ------------------
@@ -450,8 +450,8 @@ call    1 returned 1
         -:  413:      }
         -:  414:
         -:  415:      bool
-      14*:  416:      _M_uses_single_bucket(__buckets_ptr __bkts) const
-      14*:  417:      { return __builtin_expect(__bkts == &_M_single_bucket, false); }
+      18*:  416:      _M_uses_single_bucket(__buckets_ptr __bkts) const
+      18*:  417:      { return __builtin_expect(__bkts == &_M_single_bucket, false); }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_uses_single_bucketEPPNSD_15_Hash_node_baseE:
 function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_uses_single_bucketEPPNSD_15_Hash_node_baseE called 1 returned 100% blocks executed 100%
@@ -460,10 +460,10 @@ function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
         1:  417-block  0
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_uses_single_bucketEPPNS7_15_Hash_node_baseE:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_uses_single_bucketEPPNS7_15_Hash_node_baseE called 13 returned 100% blocks executed 100%
-       13:  416:      _M_uses_single_bucket(__buckets_ptr __bkts) const
-       13:  417:      { return __builtin_expect(__bkts == &_M_single_bucket, false); }
-       13:  417-block  0
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_uses_single_bucketEPPNS7_15_Hash_node_baseE called 17 returned 100% blocks executed 100%
+       17:  416:      _M_uses_single_bucket(__buckets_ptr __bkts) const
+       17:  417:      { return __builtin_expect(__bkts == &_M_single_bucket, false); }
+       17:  417-block  0
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_uses_single_bucketEPPNSA_15_Hash_node_baseE:
 function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_uses_single_bucketEPPNSA_15_Hash_node_baseE called 0 returned 0% blocks executed 0%
@@ -480,30 +480,30 @@ function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 call    0 returned 1
         -:  422:
         -:  423:      static constexpr size_t
-      322:  424:      __small_size_threshold() noexcept
+      442:  424:      __small_size_threshold() noexcept
         -:  425:      {
         -:  426:	return
-      322:  427:	  __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
+      442:  427:	  __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
         -:  428:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE22__small_size_thresholdEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE22__small_size_thresholdEv called 12 returned 100% blocks executed 100%
-       12:  424:      __small_size_threshold() noexcept
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE22__small_size_thresholdEv called 21 returned 100% blocks executed 100%
+       21:  424:      __small_size_threshold() noexcept
         -:  425:      {
         -:  426:	return
-       12:  427:	  __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
-       12:  427-block  0
-call    0 returned 12
+       21:  427:	  __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
+       21:  427-block  0
+call    0 returned 21
         -:  428:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22__small_size_thresholdEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22__small_size_thresholdEv called 310 returned 100% blocks executed 100%
-      310:  424:      __small_size_threshold() noexcept
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22__small_size_thresholdEv called 421 returned 100% blocks executed 100%
+      421:  424:      __small_size_threshold() noexcept
         -:  425:      {
         -:  426:	return
-      310:  427:	  __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
-      310:  427-block  0
-call    0 returned 310
+      421:  427:	  __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
+      421:  427-block  0
+call    0 returned 421
         -:  428:      }
 ------------------
         -:  429:
@@ -511,34 +511,34 @@ call    0 returned 310
         -:  431:      _M_base_alloc() { return *this; }
         -:  432:
         -:  433:      __buckets_ptr
-        4:  434:      _M_allocate_buckets(size_type __bkt_count)
+        5:  434:      _M_allocate_buckets(size_type __bkt_count)
         -:  435:      {
-        4:  436:	if (__builtin_expect(__bkt_count == 1, false))
+        5:  436:	if (__builtin_expect(__bkt_count == 1, false))
         -:  437:	  {
     #####:  438:	    _M_single_bucket = nullptr;
     #####:  439:	    return &_M_single_bucket;
         -:  440:	  }
         -:  441:
-        4:  442:	return __hashtable_alloc::_M_allocate_buckets(__bkt_count);
+        5:  442:	return __hashtable_alloc::_M_allocate_buckets(__bkt_count);
         -:  443:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE19_M_allocate_bucketsEy:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE19_M_allocate_bucketsEy called 3 returned 100% blocks executed 80%
-        3:  434:      _M_allocate_buckets(size_type __bkt_count)
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE19_M_allocate_bucketsEy called 4 returned 100% blocks executed 80%
+        4:  434:      _M_allocate_buckets(size_type __bkt_count)
         -:  435:      {
-        3:  436:	if (__builtin_expect(__bkt_count == 1, false))
-        3:  436-block  0
+        4:  436:	if (__builtin_expect(__bkt_count == 1, false))
+        4:  436-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 3
+branch  1 taken 4
         -:  437:	  {
     #####:  438:	    _M_single_bucket = nullptr;
     #####:  439:	    return &_M_single_bucket;
     %%%%%:  439-block  0
         -:  440:	  }
         -:  441:
-        3:  442:	return __hashtable_alloc::_M_allocate_buckets(__bkt_count);
-        3:  442-block  0
-call    0 returned 3
+        4:  442:	return __hashtable_alloc::_M_allocate_buckets(__bkt_count);
+        4:  442-block  0
+call    0 returned 4
         -:  443:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE19_M_allocate_bucketsEy:
@@ -562,12 +562,12 @@ call    0 returned 1
 ------------------
         -:  444:
         -:  445:      void
-      13*:  446:      _M_deallocate_buckets(__buckets_ptr __bkts, size_type __bkt_count)
+      17*:  446:      _M_deallocate_buckets(__buckets_ptr __bkts, size_type __bkt_count)
         -:  447:      {
-      13*:  448:	if (_M_uses_single_bucket(__bkts))
-      10*:  449:	  return;
+      17*:  448:	if (_M_uses_single_bucket(__bkts))
+      13*:  449:	  return;
         -:  450:
-       3*:  451:	__hashtable_alloc::_M_deallocate_buckets(__bkts, __bkt_count);
+       4*:  451:	__hashtable_alloc::_M_deallocate_buckets(__bkts, __bkt_count);
         -:  452:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_deallocate_bucketsEPPNSD_15_Hash_node_baseEy:
@@ -588,20 +588,20 @@ call    0 never executed
         -:  452:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_deallocate_bucketsEPPNS7_15_Hash_node_baseEy:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_deallocate_bucketsEPPNS7_15_Hash_node_baseEy called 12 returned 100% blocks executed 100%
-       12:  446:      _M_deallocate_buckets(__buckets_ptr __bkts, size_type __bkt_count)
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_deallocate_bucketsEPPNS7_15_Hash_node_baseEy called 16 returned 100% blocks executed 100%
+       16:  446:      _M_deallocate_buckets(__buckets_ptr __bkts, size_type __bkt_count)
         -:  447:      {
-       12:  448:	if (_M_uses_single_bucket(__bkts))
-       12:  448-block  0
-call    0 returned 12
-branch  1 taken 9 (fallthrough)
-branch  2 taken 3
-        9:  449:	  return;
-        9:  449-block  0
+       16:  448:	if (_M_uses_single_bucket(__bkts))
+       16:  448-block  0
+call    0 returned 16
+branch  1 taken 12 (fallthrough)
+branch  2 taken 4
+       12:  449:	  return;
+       12:  449-block  0
         -:  450:
-        3:  451:	__hashtable_alloc::_M_deallocate_buckets(__bkts, __bkt_count);
-        3:  451-block  0
-call    0 returned 3
+        4:  451:	__hashtable_alloc::_M_deallocate_buckets(__bkts, __bkt_count);
+        4:  451-block  0
+call    0 returned 4
         -:  452:      }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_deallocate_bucketsEPPNSA_15_Hash_node_baseEy:
@@ -623,8 +623,8 @@ call    0 never executed
 ------------------
         -:  453:
         -:  454:      void
-      13*:  455:      _M_deallocate_buckets()
-      13*:  456:      { _M_deallocate_buckets(_M_buckets, _M_bucket_count); }
+      17*:  455:      _M_deallocate_buckets()
+      17*:  456:      { _M_deallocate_buckets(_M_buckets, _M_bucket_count); }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_deallocate_bucketsEv:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_deallocate_bucketsEv called 1 returned 100% blocks executed 100%
@@ -634,11 +634,11 @@ function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES
 call    0 returned 1
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_deallocate_bucketsEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_deallocate_bucketsEv called 12 returned 100% blocks executed 100%
-       12:  455:      _M_deallocate_buckets()
-       12:  456:      { _M_deallocate_buckets(_M_buckets, _M_bucket_count); }
-       12:  456-block  0
-call    0 returned 12
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_deallocate_bucketsEv called 16 returned 100% blocks executed 100%
+       16:  455:      _M_deallocate_buckets()
+       16:  456:      { _M_deallocate_buckets(_M_buckets, _M_bucket_count); }
+       16:  456-block  0
+call    0 returned 16
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_deallocate_bucketsEv:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_deallocate_bucketsEv called 0 returned 0% blocks executed 0%
@@ -654,20 +654,20 @@ call    0 never executed
         -:  461:      _M_bucket_begin(size_type __bkt) const;
         -:  462:
         -:  463:      __node_ptr
-     207*:  464:      _M_begin() const
-     207*:  465:      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
+     277*:  464:      _M_begin() const
+     277*:  465:      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_beginEv:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_beginEv called 9 returned 100% blocks executed 100%
-        9:  464:      _M_begin() const
-        9:  465:      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
-        9:  465-block  0
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_beginEv called 15 returned 100% blocks executed 100%
+       15:  464:      _M_begin() const
+       15:  465:      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
+       15:  465-block  0
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE8_M_beginEv:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE8_M_beginEv called 198 returned 100% blocks executed 100%
-      198:  464:      _M_begin() const
-      198:  465:      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
-      198:  465-block  0
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE8_M_beginEv called 262 returned 100% blocks executed 100%
+      262:  464:      _M_begin() const
+      262:  465:      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
+      262:  465-block  0
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_beginEv:
 function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_beginEv called 0 returned 0% blocks executed 0%
@@ -739,7 +739,7 @@ function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
         -:  527:
         -:  528:    public:
         -:  529:      // Constructor, destructor, assignment, swap
-       10:  530:      _Hashtable() = default;
+       13:  530:      _Hashtable() = default;
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEEC1Ev:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEEC1Ev called 1 returned 100% blocks executed 100%
@@ -760,13 +760,13 @@ call    2 returned 1
 call    3 returned 1
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEEC1Ev:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEEC1Ev called 8 returned 100% blocks executed 100%
-        8:  530:      _Hashtable() = default;
-        8:  530-block  0
-call    0 returned 8
-call    1 returned 8
-call    2 returned 8
-call    3 returned 8
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEEC1Ev called 11 returned 100% blocks executed 100%
+       11:  530:      _Hashtable() = default;
+       11:  530-block  0
+call    0 returned 11
+call    1 returned 11
+call    2 returned 11
+call    3 returned 11
 ------------------
         -:  531:
         -:  532:      _Hashtable(const _Hashtable&);
@@ -864,40 +864,40 @@ call    1 returned 1
         -:  620:
         -:  621:      // Basic container operations
         -:  622:      iterator
-       35:  623:      begin() noexcept
-       35:  624:      { return iterator(_M_begin()); }
+       44:  623:      begin() noexcept
+       44:  624:      { return iterator(_M_begin()); }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE5beginEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE5beginEv called 8 returned 100% blocks executed 100%
-        8:  623:      begin() noexcept
-        8:  624:      { return iterator(_M_begin()); }
-        8:  624-block  0
-call    0 returned 8
-call    1 returned 8
-        8:  624-block  1
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE5beginEv called 14 returned 100% blocks executed 100%
+       14:  623:      begin() noexcept
+       14:  624:      { return iterator(_M_begin()); }
+       14:  624-block  0
+call    0 returned 14
+call    1 returned 14
+       14:  624-block  1
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5beginEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5beginEv called 27 returned 100% blocks executed 100%
-       27:  623:      begin() noexcept
-       27:  624:      { return iterator(_M_begin()); }
-       27:  624-block  0
-call    0 returned 27
-call    1 returned 27
-       27:  624-block  1
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5beginEv called 30 returned 100% blocks executed 100%
+       30:  623:      begin() noexcept
+       30:  624:      { return iterator(_M_begin()); }
+       30:  624-block  0
+call    0 returned 30
+call    1 returned 30
+       30:  624-block  1
 ------------------
         -:  625:
         -:  626:      const_iterator
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5beginEv called 157 returned 100% blocks executed 100%
-      157:  627:      begin() const noexcept
-      157:  628:      { return const_iterator(_M_begin()); }
-      157:  628-block  0
-call    0 returned 157
-call    1 returned 157
-      157:  628-block  1
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5beginEv called 214 returned 100% blocks executed 100%
+      214:  627:      begin() const noexcept
+      214:  628:      { return const_iterator(_M_begin()); }
+      214:  628-block  0
+call    0 returned 214
+call    1 returned 214
+      214:  628-block  1
         -:  629:
         -:  630:      iterator
-      259:  631:      end() noexcept
-      259:  632:      { return iterator(nullptr); }
+      301:  631:      end() noexcept
+      301:  632:      { return iterator(nullptr); }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE3endEv:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE3endEv called 231 returned 100% blocks executed 100%
@@ -908,21 +908,21 @@ call    0 returned 231
       231:  632-block  1
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE3endEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE3endEv called 28 returned 100% blocks executed 100%
-       28:  631:      end() noexcept
-       28:  632:      { return iterator(nullptr); }
-       28:  632-block  0
-call    0 returned 28
-       28:  632-block  1
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE3endEv called 70 returned 100% blocks executed 100%
+       70:  631:      end() noexcept
+       70:  632:      { return iterator(nullptr); }
+       70:  632-block  0
+call    0 returned 70
+       70:  632-block  1
 ------------------
         -:  633:
         -:  634:      const_iterator
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE3endEv called 522 returned 100% blocks executed 100%
-      522:  635:      end() const noexcept
-      522:  636:      { return const_iterator(nullptr); }
-      522:  636-block  0
-call    0 returned 522
-      522:  636-block  1
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE3endEv called 711 returned 100% blocks executed 100%
+      711:  635:      end() const noexcept
+      711:  636:      { return const_iterator(nullptr); }
+      711:  636-block  0
+call    0 returned 711
+      711:  636-block  1
         -:  637:
         -:  638:      const_iterator
         -:  639:      cbegin() const noexcept
@@ -933,20 +933,20 @@ call    0 returned 522
         -:  644:      { return const_iterator(nullptr); }
         -:  645:
         -:  646:      size_type
-      322:  647:      size() const noexcept
-      322:  648:      { return _M_element_count; }
+      442:  647:      size() const noexcept
+      442:  648:      { return _M_element_count; }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE4sizeEv:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE4sizeEv called 12 returned 100% blocks executed 100%
-       12:  647:      size() const noexcept
-       12:  648:      { return _M_element_count; }
-       12:  648-block  0
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE4sizeEv called 21 returned 100% blocks executed 100%
+       21:  647:      size() const noexcept
+       21:  648:      { return _M_element_count; }
+       21:  648-block  0
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE4sizeEv:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE4sizeEv called 310 returned 100% blocks executed 100%
-      310:  647:      size() const noexcept
-      310:  648:      { return _M_element_count; }
-      310:  648-block  0
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE4sizeEv called 421 returned 100% blocks executed 100%
+      421:  647:      size() const noexcept
+      421:  648:      { return _M_element_count; }
+      421:  648-block  0
 ------------------
         -:  649:
         -:  650:      _GLIBCXX_NODISCARD bool
@@ -1091,41 +1091,41 @@ function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
         -:  789:    private:
         -:  790:      // Bucket index computation helpers.
         -:  791:      size_type
-       67:  792:      _M_bucket_index(const __node_value_type& __n) const noexcept
-       67:  793:      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
+       91:  792:      _M_bucket_index(const __node_value_type& __n) const noexcept
+       91:  793:      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE15_M_bucket_indexERKNSD_16_Hash_node_valueISB_Lb1EEE:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE15_M_bucket_indexERKNSD_16_Hash_node_valueISB_Lb1EEE called 3 returned 100% blocks executed 100%
-        3:  792:      _M_bucket_index(const __node_value_type& __n) const noexcept
-        3:  793:      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
-        3:  793-block  0
-call    0 returned 3
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE15_M_bucket_indexERKNSD_16_Hash_node_valueISB_Lb1EEE called 4 returned 100% blocks executed 100%
+        4:  792:      _M_bucket_index(const __node_value_type& __n) const noexcept
+        4:  793:      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
+        4:  793-block  0
+call    0 returned 4
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_bucket_indexERKNS7_16_Hash_node_valueIS5_Lb1EEE:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_bucket_indexERKNS7_16_Hash_node_valueIS5_Lb1EEE called 64 returned 100% blocks executed 100%
-       64:  792:      _M_bucket_index(const __node_value_type& __n) const noexcept
-       64:  793:      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
-       64:  793-block  0
-call    0 returned 64
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_bucket_indexERKNS7_16_Hash_node_valueIS5_Lb1EEE called 87 returned 100% blocks executed 100%
+       87:  792:      _M_bucket_index(const __node_value_type& __n) const noexcept
+       87:  793:      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
+       87:  793-block  0
+call    0 returned 87
 ------------------
         -:  794:
         -:  795:      size_type
-      110:  796:      _M_bucket_index(__hash_code __c) const
-      110:  797:      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
+      150:  796:      _M_bucket_index(__hash_code __c) const
+      150:  797:      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE15_M_bucket_indexEy:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE15_M_bucket_indexEy called 5 returned 100% blocks executed 100%
-        5:  796:      _M_bucket_index(__hash_code __c) const
-        5:  797:      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
-        5:  797-block  0
-call    0 returned 5
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE15_M_bucket_indexEy called 8 returned 100% blocks executed 100%
+        8:  796:      _M_bucket_index(__hash_code __c) const
+        8:  797:      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
+        8:  797-block  0
+call    0 returned 8
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_bucket_indexEy:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_bucket_indexEy called 105 returned 100% blocks executed 100%
-      105:  796:      _M_bucket_index(__hash_code __c) const
-      105:  797:      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
-      105:  797-block  0
-call    0 returned 105
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_bucket_indexEy called 142 returned 100% blocks executed 100%
+      142:  796:      _M_bucket_index(__hash_code __c) const
+      142:  797:      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
+      142:  797-block  0
+call    0 returned 142
 ------------------
         -:  798:
         -:  799:      __node_base_ptr
@@ -1141,12 +1141,12 @@ call    0 returned 105
         -:  809:	_M_find_before_node_tr(size_type, const _Kt&, __hash_code) const;
         -:  810:
         -:  811:      __node_ptr
-      51*:  812:      _M_find_node(size_type __bkt, const key_type& __key,
+      69*:  812:      _M_find_node(size_type __bkt, const key_type& __key,
         -:  813:		   __hash_code __c) const
         -:  814:      {
-      51*:  815:	__node_base_ptr __before_n = _M_find_before_node(__bkt, __key, __c);
-      51*:  816:	if (__before_n)
-      51*:  817:	  return static_cast<__node_ptr>(__before_n->_M_nxt);
+      69*:  815:	__node_base_ptr __before_n = _M_find_before_node(__bkt, __key, __c);
+      69*:  816:	if (__before_n)
+      69*:  817:	  return static_cast<__node_ptr>(__before_n->_M_nxt);
     #####:  818:	return nullptr;
         -:  819:      }
 ------------------
@@ -1168,18 +1168,18 @@ branch  1 never executed
         -:  819:      }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_M_find_nodeEyRKS5_y:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_M_find_nodeEyRKS5_y called 51 returned 100% blocks executed 80%
-       51:  812:      _M_find_node(size_type __bkt, const key_type& __key,
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE12_M_find_nodeEyRKS5_y called 69 returned 100% blocks executed 80%
+       69:  812:      _M_find_node(size_type __bkt, const key_type& __key,
         -:  813:		   __hash_code __c) const
         -:  814:      {
-       51:  815:	__node_base_ptr __before_n = _M_find_before_node(__bkt, __key, __c);
-       51:  815-block  0
-call    0 returned 51
-       51:  816:	if (__before_n)
-branch  0 taken 51 (fallthrough)
+       69:  815:	__node_base_ptr __before_n = _M_find_before_node(__bkt, __key, __c);
+       69:  815-block  0
+call    0 returned 69
+       69:  816:	if (__before_n)
+branch  0 taken 69 (fallthrough)
 branch  1 taken 0
-       51:  817:	  return static_cast<__node_ptr>(__before_n->_M_nxt);
-       51:  817-block  0
+       69:  817:	  return static_cast<__node_ptr>(__before_n->_M_nxt);
+       69:  817-block  0
     #####:  818:	return nullptr;
     %%%%%:  818-block  0
         -:  819:      }
@@ -1187,20 +1187,20 @@ branch  1 taken 0
         -:  820:
         -:  821:      template<typename _Kt>
         -:  822:	__node_ptr
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_find_node_trIS5_EEPNS7_10_Hash_nodeIS5_Lb1EEEyRKT_y called 30 returned 100% blocks executed 80%
-       30:  823:	_M_find_node_tr(size_type __bkt, const _Kt& __key,
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE15_M_find_node_trIS5_EEPNS7_10_Hash_nodeIS5_Lb1EEEyRKT_y called 48 returned 100% blocks executed 80%
+       48:  823:	_M_find_node_tr(size_type __bkt, const _Kt& __key,
         -:  824:			__hash_code __c) const
         -:  825:	{
-       30:  826:	  auto __before_n = _M_find_before_node_tr(__bkt, __key, __c);
-       30:  826-block  0
-call    0 returned 30
-       30:  827:	  if (__before_n)
+       48:  826:	  auto __before_n = _M_find_before_node_tr(__bkt, __key, __c);
+       48:  826-block  0
+call    0 returned 48
+       48:  827:	  if (__before_n)
 branch  0 taken 0 (fallthrough)
-branch  1 taken 30
+branch  1 taken 48
     #####:  828:	    return static_cast<__node_ptr>(__before_n->_M_nxt);
     %%%%%:  828-block  0
-       30:  829:	  return nullptr;
-       30:  829-block  0
+       48:  829:	  return nullptr;
+       48:  829-block  0
         -:  830:	}
         -:  831:
         -:  832:      // Insert a node at the beginning of a bucket.
@@ -1268,52 +1268,52 @@ branch  1 taken 30
         -:  894:      { return __k; }
         -:  895:
         -:  896:      static key_type&&
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE14_S_forward_keyEOS5_ called 51 returned 100% blocks executed 100%
-       51:  897:      _S_forward_key(key_type&& __k)
-       51:  898:      { return std::move(__k); }
-       51:  898-block  0
-call    0 returned 51
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE14_S_forward_keyEOS5_ called 69 returned 100% blocks executed 100%
+       69:  897:      _S_forward_key(key_type&& __k)
+       69:  898:      { return std::move(__k); }
+       69:  898-block  0
+call    0 returned 69
         -:  899:
         -:  900:      template<typename _Arg, typename _NodeGenerator>
         -:  901:	std::pair<iterator, bool>
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE20_M_insert_unique_auxIS5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEESt4pairINS7_14_Node_iteratorIS5_Lb1ELb1EEEbEOT_RKT0_ called 51 returned 100% blocks executed 100%
-       51:  902:	_M_insert_unique_aux(_Arg&& __arg, const _NodeGenerator& __node_gen)
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE20_M_insert_unique_auxIS5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEESt4pairINS7_14_Node_iteratorIS5_Lb1ELb1EEEbEOT_RKT0_ called 69 returned 100% blocks executed 100%
+       69:  902:	_M_insert_unique_aux(_Arg&& __arg, const _NodeGenerator& __node_gen)
         -:  903:	{
-      102:  904:	  return _M_insert_unique(
-       51:  904-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+      138:  904:	  return _M_insert_unique(
+       69:  904-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0 (throw)
-      102:  905:	    _S_forward_key(_ExtractKey{}(std::forward<_Arg>(__arg))),
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-       51:  905-block  0
-      102:  906:	    std::forward<_Arg>(__arg), __node_gen);
-       51:  906-block  0
-       51:  906-block  1
+      138:  905:	    _S_forward_key(_ExtractKey{}(std::forward<_Arg>(__arg))),
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+       69:  905-block  0
+      138:  906:	    std::forward<_Arg>(__arg), __node_gen);
+       69:  906-block  0
+       69:  906-block  1
         -:  907:	}
         -:  908:
         -:  909:      template<typename _Arg, typename _NodeGenerator>
         -:  910:	std::pair<iterator, bool>
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_insertIS5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEESt4pairINS7_14_Node_iteratorIS5_Lb1ELb1EEEbEOT_RKT0_St17integral_constantIbLb1EE called 51 returned 100% blocks executed 100%
-       51:  911:	_M_insert(_Arg&& __arg, const _NodeGenerator& __node_gen,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_insertIS5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEESt4pairINS7_14_Node_iteratorIS5_Lb1ELb1EEEbEOT_RKT0_St17integral_constantIbLb1EE called 69 returned 100% blocks executed 100%
+       69:  911:	_M_insert(_Arg&& __arg, const _NodeGenerator& __node_gen,
         -:  912:		  true_type /* __uks */)
         -:  913:	{
         -:  914:	  using __to_value
         -:  915:	    = __detail::_ConvertToValueType<_ExtractKey, value_type>;
-      102:  916:	  return _M_insert_unique_aux(
-       51:  916-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-branch  3 taken 51 (fallthrough)
+      138:  916:	  return _M_insert_unique_aux(
+       69:  916-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+branch  3 taken 69 (fallthrough)
 branch  4 taken 0 (throw)
-       51:  916-block  1
-      102:  917:	    __to_value{}(std::forward<_Arg>(__arg)), __node_gen);
-       51:  917-block  0
-       51:  917-block  1
+       69:  916-block  1
+      138:  917:	    __to_value{}(std::forward<_Arg>(__arg)), __node_gen);
+       69:  917-block  0
+       69:  917-block  1
         -:  918:	}
         -:  919:
         -:  920:      template<typename _Arg, typename _NodeGenerator>
@@ -1330,20 +1330,20 @@ branch  4 taken 0 (throw)
         -:  931:      // Insert with hint, not used when keys are unique.
         -:  932:      template<typename _Arg, typename _NodeGenerator>
         -:  933:	iterator
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_insertIS5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEENS7_14_Node_iteratorIS5_Lb1ELb1EEENS7_20_Node_const_iteratorIS5_Lb1ELb1EEEOT_RKT0_St17integral_constantIbLb1EE called 51 returned 100% blocks executed 100%
-       51:  934:	_M_insert(const_iterator, _Arg&& __arg,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_insertIS5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEENS7_14_Node_iteratorIS5_Lb1ELb1EEENS7_20_Node_const_iteratorIS5_Lb1ELb1EEEOT_RKT0_St17integral_constantIbLb1EE called 69 returned 100% blocks executed 100%
+       69:  934:	_M_insert(const_iterator, _Arg&& __arg,
         -:  935:		  const _NodeGenerator& __node_gen, true_type __uks)
         -:  936:	{
         -:  937:	  return
-       51:  938:	    _M_insert(std::forward<_Arg>(__arg), __node_gen, __uks).first;
-       51:  938-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 51 (fallthrough)
+       69:  938:	    _M_insert(std::forward<_Arg>(__arg), __node_gen, __uks).first;
+       69:  938-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 69 (fallthrough)
 branch  3 taken 0 (throw)
-       51:  938-block  1
-       51:  938-block  2
-       51:  938-block  3
+       69:  938-block  1
+       69:  938-block  2
+       69:  938-block  3
         -:  939:	}
         -:  940:
         -:  941:      // Insert with hint when keys are not unique.
@@ -1365,13 +1365,13 @@ branch  3 taken 0 (throw)
         -:  957:      // Emplace
         -:  958:      template<typename... _Args>
         -:  959:	__ireturn_type
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE7emplaceIJRS7_RKSA_EEES6_INSD_14_Node_iteratorISB_Lb0ELb1EEEbEDpOT_ called 4 returned 100% blocks executed 100%
-        4:  960:	emplace(_Args&&... __args)
-        4:  961:	{ return _M_emplace(__unique_keys{}, std::forward<_Args>(__args)...); }
-        4:  961-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE7emplaceIJRS7_RKSA_EEES6_INSD_14_Node_iteratorISB_Lb0ELb1EEEbEDpOT_ called 7 returned 100% blocks executed 100%
+        7:  960:	emplace(_Args&&... __args)
+        7:  961:	{ return _M_emplace(__unique_keys{}, std::forward<_Args>(__args)...); }
+        7:  961-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
         -:  962:
         -:  963:      template<typename... _Args>
         -:  964:	iterator
@@ -2016,7 +2016,7 @@ call    0 returned 1
         -: 1577:	   typename _ExtractKey, typename _Equal,
         -: 1578:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 1579:	   typename _RehashPolicy, typename _Traits>
-       8*: 1580:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+      11*: 1580:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1581:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1582:    ~_Hashtable() noexcept
         -: 1583:    {
@@ -2029,9 +2029,9 @@ call    0 returned 1
         -: 1590:		    "Cache the hash code or qualify your functors involved"
         -: 1591:		    " in hash code and bucket index computation with noexcept");
         -: 1592:
-       8*: 1593:      clear();
-       8*: 1594:      _M_deallocate_buckets();
-       8*: 1595:    }
+      11*: 1593:      clear();
+      11*: 1594:      _M_deallocate_buckets();
+      11*: 1595:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEED1Ev:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEED1Ev called 0 returned 0% blocks executed 0%
@@ -2057,8 +2057,8 @@ call    0 never executed
 call    0 never executed
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEED1Ev:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEED1Ev called 8 returned 100% blocks executed 100%
-        8: 1580:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEED1Ev called 11 returned 100% blocks executed 100%
+       11: 1580:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1581:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1582:    ~_Hashtable() noexcept
         -: 1583:    {
@@ -2071,13 +2071,13 @@ function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES
         -: 1590:		    "Cache the hash code or qualify your functors involved"
         -: 1591:		    " in hash code and bucket index computation with noexcept");
         -: 1592:
-        8: 1593:      clear();
-        8: 1593-block  0
-call    0 returned 8
-        8: 1594:      _M_deallocate_buckets();
-call    0 returned 8
-        8: 1595:    }
-call    0 returned 8
+       11: 1593:      clear();
+       11: 1593-block  0
+call    0 returned 11
+       11: 1594:      _M_deallocate_buckets();
+call    0 returned 11
+       11: 1595:    }
+call    0 returned 11
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEED1Ev:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEED1Ev called 0 returned 0% blocks executed 0%
@@ -2155,42 +2155,42 @@ call    0 never executed
         -: 1646:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 1647:	   typename _RehashPolicy, typename _Traits>
         -: 1648:    auto
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE4findERS7_ called 4 returned 100% blocks executed 62%
-        4: 1649:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE4findERS7_ called 7 returned 100% blocks executed 62%
+        7: 1649:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1650:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1651:    find(const key_type& __k)
         -: 1652:    -> iterator
         -: 1653:    {
-        4: 1654:      if (size() <= __small_size_threshold())
-        4: 1654-block  0
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+        7: 1654:      if (size() <= __small_size_threshold())
+        7: 1654-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0
         -: 1655:	{
-       10: 1656:	  for (auto __it = begin(); __it != end(); ++__it)
-        4: 1656-block  0
-call    0 returned 4
-        6: 1656-block  1
-call    1 returned 6
-       10: 1656-block  2
-call    2 returned 10
-call    3 returned 10
-branch  4 taken 6
-branch  5 taken 4 (fallthrough)
-        6: 1657:	    if (this->_M_key_equals(__k, *__it._M_cur))
-        6: 1657-block  0
-call    0 returned 6
-branch  1 taken 6 (fallthrough)
+       28: 1656:	  for (auto __it = begin(); __it != end(); ++__it)
+        7: 1656-block  0
+call    0 returned 7
+       21: 1656-block  1
+call    1 returned 21
+       28: 1656-block  2
+call    2 returned 28
+call    3 returned 28
+branch  4 taken 21
+branch  5 taken 7 (fallthrough)
+       21: 1657:	    if (this->_M_key_equals(__k, *__it._M_cur))
+       21: 1657-block  0
+call    0 returned 21
+branch  1 taken 21 (fallthrough)
 branch  2 taken 0 (throw)
-        6: 1657-block  1
+       21: 1657-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 6
+branch  4 taken 21
     #####: 1658:	      return __it;
     %%%%%: 1658-block  0
-        4: 1659:	  return end();
-        4: 1659-block  0
-call    0 returned 4
+        7: 1659:	  return end();
+        7: 1659-block  0
+call    0 returned 7
         -: 1660:	}
         -: 1661:
     #####: 1662:      __hash_code __code = this->_M_hash_code(__k);
@@ -2212,29 +2212,29 @@ call    3 never executed
         -: 1669:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 1670:	   typename _RehashPolicy, typename _Traits>
         -: 1671:    auto
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE4findERKS5_ called 208 returned 100% blocks executed 76%
-      208: 1672:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE4findERKS5_ called 283 returned 100% blocks executed 76%
+      283: 1672:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1673:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1674:    find(const key_type& __k) const
         -: 1675:    -> const_iterator
         -: 1676:    {
-      208: 1677:      if (size() <= __small_size_threshold())
-      208: 1677-block  0
-call    0 returned 208
-call    1 returned 208
-branch  2 taken 157 (fallthrough)
-branch  3 taken 51
+      283: 1677:      if (size() <= __small_size_threshold())
+      283: 1677-block  0
+call    0 returned 283
+call    1 returned 283
+branch  2 taken 214 (fallthrough)
+branch  3 taken 69
         -: 1678:	{
-     157*: 1679:	  for (auto __it = begin(); __it != end(); ++__it)
-      157: 1679-block  0
-call    0 returned 157
+     214*: 1679:	  for (auto __it = begin(); __it != end(); ++__it)
+      214: 1679-block  0
+call    0 returned 214
     %%%%%: 1679-block  1
 call    1 never executed
-      157: 1679-block  2
-call    2 returned 157
-call    3 returned 157
+      214: 1679-block  2
+call    2 returned 214
+call    3 returned 214
 branch  4 taken 0
-branch  5 taken 157 (fallthrough)
+branch  5 taken 214 (fallthrough)
     #####: 1680:	    if (this->_M_key_equals(__k, *__it._M_cur))
     %%%%%: 1680-block  0
 call    0 never executed
@@ -2245,23 +2245,23 @@ branch  3 never executed (fallthrough)
 branch  4 never executed
     #####: 1681:	      return __it;
     %%%%%: 1681-block  0
-      157: 1682:	  return end();
-      157: 1682-block  0
-call    0 returned 157
+      214: 1682:	  return end();
+      214: 1682-block  0
+call    0 returned 214
         -: 1683:	}
         -: 1684:
-       51: 1685:      __hash_code __code = this->_M_hash_code(__k);
-       51: 1685-block  0
-call    0 returned 51
-       51: 1686:      std::size_t __bkt = _M_bucket_index(__code);
-call    0 returned 51
-       51: 1687:      return const_iterator(_M_find_node(__bkt, __k, __code));
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 1685:      __hash_code __code = this->_M_hash_code(__k);
+       69: 1685-block  0
+call    0 returned 69
+       69: 1686:      std::size_t __bkt = _M_bucket_index(__code);
+call    0 returned 69
+       69: 1687:      return const_iterator(_M_find_node(__bkt, __k, __code));
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 1687-block  0
-call    3 returned 51
-       51: 1687-block  1
+       69: 1687-block  0
+call    3 returned 69
+       69: 1687-block  1
         -: 1688:    }
         -: 1689:
         -: 1690:#if __cplusplus > 201703L
@@ -2507,25 +2507,25 @@ call    3 returned 51
         -: 1930:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 1931:	   typename _RehashPolicy, typename _Traits>
         -: 1932:    auto
-      51*: 1933:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+      69*: 1933:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1934:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1935:    _M_find_before_node(size_type __bkt, const key_type& __k,
         -: 1936:			__hash_code __code) const
         -: 1937:    -> __node_base_ptr
         -: 1938:    {
-      51*: 1939:      __node_base_ptr __prev_p = _M_buckets[__bkt];
-      51*: 1940:      if (!__prev_p)
+      69*: 1939:      __node_base_ptr __prev_p = _M_buckets[__bkt];
+      69*: 1940:      if (!__prev_p)
     #####: 1941:	return nullptr;
         -: 1942:
-      51*: 1943:      for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
-      18*: 1944:	   __p = __p->_M_next())
+      69*: 1943:      for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
+      21*: 1944:	   __p = __p->_M_next())
         -: 1945:	{
-      69*: 1946:	  if (this->_M_equals(__k, __code, *__p))
-      51*: 1947:	    return __prev_p;
+      90*: 1946:	  if (this->_M_equals(__k, __code, *__p))
+      69*: 1947:	    return __prev_p;
         -: 1948:
-      18*: 1949:	  if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
+      21*: 1949:	  if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
     #####: 1950:	    break;
-      18*: 1951:	  __prev_p = __p;
+      21*: 1951:	  __prev_p = __p;
         -: 1952:	}
         -: 1953:
     #####: 1954:      return nullptr;
@@ -2585,52 +2585,52 @@ call    0 never executed
         -: 1955:    }
 ------------------
 _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE19_M_find_before_nodeEyRKS5_y:
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE19_M_find_before_nodeEyRKS5_y called 51 returned 100% blocks executed 78%
-       51: 1933:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE19_M_find_before_nodeEyRKS5_y called 69 returned 100% blocks executed 78%
+       69: 1933:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1934:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1935:    _M_find_before_node(size_type __bkt, const key_type& __k,
         -: 1936:			__hash_code __code) const
         -: 1937:    -> __node_base_ptr
         -: 1938:    {
-       51: 1939:      __node_base_ptr __prev_p = _M_buckets[__bkt];
-       51: 1940:      if (!__prev_p)
-       51: 1940-block  0
+       69: 1939:      __node_base_ptr __prev_p = _M_buckets[__bkt];
+       69: 1940:      if (!__prev_p)
+       69: 1940-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 51
+branch  1 taken 69
     #####: 1941:	return nullptr;
     %%%%%: 1941-block  0
         -: 1942:
-       51: 1943:      for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
-       51: 1943-block  0
-       18: 1944:	   __p = __p->_M_next())
+       69: 1943:      for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
+       69: 1943-block  0
+       21: 1944:	   __p = __p->_M_next())
         -: 1945:	{
-       69: 1946:	  if (this->_M_equals(__k, __code, *__p))
-       69: 1946-block  0
-call    0 returned 69
-branch  1 taken 51 (fallthrough)
-branch  2 taken 18
-       51: 1947:	    return __prev_p;
-       51: 1947-block  0
+       90: 1946:	  if (this->_M_equals(__k, __code, *__p))
+       90: 1946-block  0
+call    0 returned 90
+branch  1 taken 69 (fallthrough)
+branch  2 taken 21
+       69: 1947:	    return __prev_p;
+       69: 1947-block  0
         -: 1948:
-      18*: 1949:	  if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
-       18: 1949-block  0
-branch  0 taken 18 (fallthrough)
+      21*: 1949:	  if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
+       21: 1949-block  0
+branch  0 taken 21 (fallthrough)
 branch  1 taken 0
-       18: 1949-block  1
-call    2 returned 18
-call    3 returned 18
+       21: 1949-block  1
+call    2 returned 21
+call    3 returned 21
 branch  4 taken 0 (fallthrough)
-branch  5 taken 18
+branch  5 taken 21
     %%%%%: 1949-block  2
-       18: 1949-block  3
-       18: 1949-block  4
+       21: 1949-block  3
+       21: 1949-block  4
 branch  6 taken 0 (fallthrough)
-branch  7 taken 18
+branch  7 taken 21
     #####: 1950:	    break;
     %%%%%: 1950-block  0
-       18: 1951:	  __prev_p = __p;
-       18: 1951-block  0
-call    0 returned 18
+       21: 1951:	  __prev_p = __p;
+       21: 1951-block  0
+call    0 returned 21
         -: 1952:	}
         -: 1953:
     #####: 1954:      return nullptr;
@@ -2644,56 +2644,56 @@ call    0 returned 18
         -: 1960:	   typename _RehashPolicy, typename _Traits>
         -: 1961:    template<typename _Kt>
         -: 1962:      auto
-function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22_M_find_before_node_trIS5_EEPNS7_15_Hash_node_baseEyRKT_y called 30 returned 100% blocks executed 94%
-       30: 1963:      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNKSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22_M_find_before_node_trIS5_EEPNS7_15_Hash_node_baseEyRKT_y called 48 returned 100% blocks executed 94%
+       48: 1963:      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1964:		 _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1965:      _M_find_before_node_tr(size_type __bkt, const _Kt& __k,
         -: 1966:			     __hash_code __code) const
         -: 1967:      -> __node_base_ptr
         -: 1968:      {
-       30: 1969:	__node_base_ptr __prev_p = _M_buckets[__bkt];
-       30: 1970:	if (!__prev_p)
-       30: 1970-block  0
-branch  0 taken 15 (fallthrough)
-branch  1 taken 15
-       15: 1971:	  return nullptr;
-       15: 1971-block  0
+       48: 1969:	__node_base_ptr __prev_p = _M_buckets[__bkt];
+       48: 1970:	if (!__prev_p)
+       48: 1970-block  0
+branch  0 taken 25 (fallthrough)
+branch  1 taken 23
+       25: 1971:	  return nullptr;
+       25: 1971-block  0
         -: 1972:
-       15: 1973:	for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
-       15: 1973-block  0
-        7: 1974:	     __p = __p->_M_next())
+       23: 1973:	for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
+       23: 1973-block  0
+        4: 1974:	     __p = __p->_M_next())
         -: 1975:	  {
-       22: 1976:	    if (this->_M_equals_tr(__k, __code, *__p))
-       22: 1976-block  0
-call    0 returned 22
+       27: 1976:	    if (this->_M_equals_tr(__k, __code, *__p))
+       27: 1976-block  0
+call    0 returned 27
 branch  1 taken 0 (fallthrough)
-branch  2 taken 22
+branch  2 taken 27
     #####: 1977:	      return __prev_p;
     %%%%%: 1977-block  0
         -: 1978:
-       22: 1979:	    if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
-       22: 1979-block  0
-branch  0 taken 19 (fallthrough)
-branch  1 taken 3
-       19: 1979-block  1
-call    2 returned 19
-call    3 returned 19
-branch  4 taken 12 (fallthrough)
-branch  5 taken 7
-       15: 1979-block  2
-        7: 1979-block  3
-       22: 1979-block  4
-branch  6 taken 15 (fallthrough)
-branch  7 taken 7
-       15: 1980:	      break;
-       15: 1980-block  0
-        7: 1981:	    __prev_p = __p;
-        7: 1981-block  0
-call    0 returned 7
+       27: 1979:	    if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
+       27: 1979-block  0
+branch  0 taken 26 (fallthrough)
+branch  1 taken 1
+       26: 1979-block  1
+call    2 returned 26
+call    3 returned 26
+branch  4 taken 22 (fallthrough)
+branch  5 taken 4
+       23: 1979-block  2
+        4: 1979-block  3
+       27: 1979-block  4
+branch  6 taken 23 (fallthrough)
+branch  7 taken 4
+       23: 1980:	      break;
+       23: 1980-block  0
+        4: 1981:	    __prev_p = __p;
+        4: 1981-block  0
+call    0 returned 4
         -: 1982:	  }
         -: 1983:
-       15: 1984:	return nullptr;
-       15: 1984-block  0
+       23: 1984:	return nullptr;
+       23: 1984-block  0
         -: 1985:      }
         -: 1986:
         -: 1987:  template<typename _Key, typename _Value, typename _Alloc,
@@ -2701,115 +2701,115 @@ call    0 returned 7
         -: 1989:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 1990:	   typename _RehashPolicy, typename _Traits>
         -: 1991:    void
-       55: 1992:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+       76: 1992:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1993:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1994:    _M_insert_bucket_begin(size_type __bkt, __node_ptr __node)
         -: 1995:    {
-       55: 1996:      if (_M_buckets[__bkt])
+       76: 1996:      if (_M_buckets[__bkt])
         -: 1997:	{
         -: 1998:	  // Bucket is not empty, we just need to insert the new node
         -: 1999:	  // after the bucket before begin.
-      24*: 2000:	  __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
-      24*: 2001:	  _M_buckets[__bkt]->_M_nxt = __node;
+       31: 2000:	  __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
+       31: 2001:	  _M_buckets[__bkt]->_M_nxt = __node;
         -: 2002:	}
         -: 2003:      else
         -: 2004:	{
         -: 2005:	  // The bucket is empty, the new node is inserted at the
         -: 2006:	  // beginning of the singly-linked list and the bucket will
         -: 2007:	  // contain _M_before_begin pointer.
-       31: 2008:	  __node->_M_nxt = _M_before_begin._M_nxt;
-       31: 2009:	  _M_before_begin._M_nxt = __node;
+       45: 2008:	  __node->_M_nxt = _M_before_begin._M_nxt;
+       45: 2009:	  _M_before_begin._M_nxt = __node;
         -: 2010:
-       31: 2011:	  if (__node->_M_nxt)
+       45: 2011:	  if (__node->_M_nxt)
         -: 2012:	    // We must update former begin bucket that is pointing to
         -: 2013:	    // _M_before_begin.
-       29: 2014:	    _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
+       43: 2014:	    _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
         -: 2015:
-       31: 2016:	  _M_buckets[__bkt] = &_M_before_begin;
+       45: 2016:	  _M_buckets[__bkt] = &_M_before_begin;
         -: 2017:	}
-       55: 2018:    }
+       76: 2018:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22_M_insert_bucket_beginEyPNS7_10_Hash_nodeIS5_Lb1EEE:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22_M_insert_bucket_beginEyPNS7_10_Hash_nodeIS5_Lb1EEE called 51 returned 100% blocks executed 100%
-       51: 1992:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE22_M_insert_bucket_beginEyPNS7_10_Hash_nodeIS5_Lb1EEE called 69 returned 100% blocks executed 100%
+       69: 1992:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1993:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1994:    _M_insert_bucket_begin(size_type __bkt, __node_ptr __node)
         -: 1995:    {
-       51: 1996:      if (_M_buckets[__bkt])
-       51: 1996-block  0
-branch  0 taken 24 (fallthrough)
-branch  1 taken 27
+       69: 1996:      if (_M_buckets[__bkt])
+       69: 1996-block  0
+branch  0 taken 29 (fallthrough)
+branch  1 taken 40
         -: 1997:	{
         -: 1998:	  // Bucket is not empty, we just need to insert the new node
         -: 1999:	  // after the bucket before begin.
-       24: 2000:	  __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
-       24: 2001:	  _M_buckets[__bkt]->_M_nxt = __node;
-       24: 2001-block  0
+       29: 2000:	  __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
+       29: 2001:	  _M_buckets[__bkt]->_M_nxt = __node;
+       29: 2001-block  0
         -: 2002:	}
         -: 2003:      else
         -: 2004:	{
         -: 2005:	  // The bucket is empty, the new node is inserted at the
         -: 2006:	  // beginning of the singly-linked list and the bucket will
         -: 2007:	  // contain _M_before_begin pointer.
-       27: 2008:	  __node->_M_nxt = _M_before_begin._M_nxt;
-       27: 2009:	  _M_before_begin._M_nxt = __node;
+       40: 2008:	  __node->_M_nxt = _M_before_begin._M_nxt;
+       40: 2009:	  _M_before_begin._M_nxt = __node;
         -: 2010:
-       27: 2011:	  if (__node->_M_nxt)
-       27: 2011-block  0
-branch  0 taken 26 (fallthrough)
+       40: 2011:	  if (__node->_M_nxt)
+       40: 2011-block  0
+branch  0 taken 39 (fallthrough)
 branch  1 taken 1
         -: 2012:	    // We must update former begin bucket that is pointing to
         -: 2013:	    // _M_before_begin.
-       26: 2014:	    _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
-       26: 2014-block  0
-call    0 returned 26
-call    1 returned 26
+       39: 2014:	    _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
+       39: 2014-block  0
+call    0 returned 39
+call    1 returned 39
         -: 2015:
-       27: 2016:	  _M_buckets[__bkt] = &_M_before_begin;
-       27: 2016-block  0
+       40: 2016:	  _M_buckets[__bkt] = &_M_before_begin;
+       40: 2016-block  0
         -: 2017:	}
-       51: 2018:    }
+       69: 2018:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE22_M_insert_bucket_beginEyPNSD_10_Hash_nodeISB_Lb1EEE:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE22_M_insert_bucket_beginEyPNSD_10_Hash_nodeISB_Lb1EEE called 4 returned 100% blocks executed 88%
-        4: 1992:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE22_M_insert_bucket_beginEyPNSD_10_Hash_nodeISB_Lb1EEE called 7 returned 100% blocks executed 100%
+        7: 1992:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 1993:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 1994:    _M_insert_bucket_begin(size_type __bkt, __node_ptr __node)
         -: 1995:    {
-        4: 1996:      if (_M_buckets[__bkt])
-        4: 1996-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 4
+        7: 1996:      if (_M_buckets[__bkt])
+        7: 1996-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 5
         -: 1997:	{
         -: 1998:	  // Bucket is not empty, we just need to insert the new node
         -: 1999:	  // after the bucket before begin.
-    #####: 2000:	  __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
-    #####: 2001:	  _M_buckets[__bkt]->_M_nxt = __node;
-    %%%%%: 2001-block  0
+        2: 2000:	  __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
+        2: 2001:	  _M_buckets[__bkt]->_M_nxt = __node;
+        2: 2001-block  0
         -: 2002:	}
         -: 2003:      else
         -: 2004:	{
         -: 2005:	  // The bucket is empty, the new node is inserted at the
         -: 2006:	  // beginning of the singly-linked list and the bucket will
         -: 2007:	  // contain _M_before_begin pointer.
-        4: 2008:	  __node->_M_nxt = _M_before_begin._M_nxt;
-        4: 2009:	  _M_before_begin._M_nxt = __node;
+        5: 2008:	  __node->_M_nxt = _M_before_begin._M_nxt;
+        5: 2009:	  _M_before_begin._M_nxt = __node;
         -: 2010:
-        4: 2011:	  if (__node->_M_nxt)
-        4: 2011-block  0
-branch  0 taken 3 (fallthrough)
+        5: 2011:	  if (__node->_M_nxt)
+        5: 2011-block  0
+branch  0 taken 4 (fallthrough)
 branch  1 taken 1
         -: 2012:	    // We must update former begin bucket that is pointing to
         -: 2013:	    // _M_before_begin.
-        3: 2014:	    _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
-        3: 2014-block  0
-call    0 returned 3
-call    1 returned 3
+        4: 2014:	    _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
+        4: 2014-block  0
+call    0 returned 4
+call    1 returned 4
         -: 2015:
-        4: 2016:	  _M_buckets[__bkt] = &_M_before_begin;
-        4: 2016-block  0
+        5: 2016:	  _M_buckets[__bkt] = &_M_before_begin;
+        5: 2016-block  0
         -: 2017:	}
-        4: 2018:    }
+        7: 2018:    }
 ------------------
         -: 2019:
         -: 2020:  template<typename _Key, typename _Value, typename _Alloc,
@@ -2858,70 +2858,70 @@ call    1 returned 3
         -: 2063:	   typename _RehashPolicy, typename _Traits>
         -: 2064:    template<typename... _Args>
         -: 2065:      auto
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE10_M_emplaceIJRS7_RKSA_EEES6_INSD_14_Node_iteratorISB_Lb0ELb1EEEbESt17integral_constantIbLb1EEDpOT_ called 4 returned 100% blocks executed 74%
-        4: 2066:      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE10_M_emplaceIJRS7_RKSA_EEES6_INSD_14_Node_iteratorISB_Lb0ELb1EEEbESt17integral_constantIbLb1EEDpOT_ called 7 returned 100% blocks executed 74%
+        7: 2066:      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2067:		 _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2068:      _M_emplace(true_type /* __uks */, _Args&&... __args)
         -: 2069:      -> pair<iterator, bool>
         -: 2070:      {
         -: 2071:	// First build the node to get access to the hash code
-        4: 2072:	_Scoped_node __node { this, std::forward<_Args>(__args)...  };
-        4: 2072-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
-branch  3 taken 4 (fallthrough)
+        7: 2072:	_Scoped_node __node { this, std::forward<_Args>(__args)...  };
+        7: 2072-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
 branch  4 taken 0 (throw)
-        4: 2073:	const key_type& __k = _ExtractKey{}(__node._M_node->_M_v());
-        4: 2073-block  0
-call    0 returned 4
-call    1 returned 4
-        4: 2074:	if (size() <= __small_size_threshold())
-call    0 returned 4
-call    1 returned 4
-branch  2 taken 4 (fallthrough)
+        7: 2073:	const key_type& __k = _ExtractKey{}(__node._M_node->_M_v());
+        7: 2073-block  0
+call    0 returned 7
+call    1 returned 7
+        7: 2074:	if (size() <= __small_size_threshold())
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
 branch  3 taken 0
         -: 2075:	  {
-       10: 2076:	    for (auto __it = begin(); __it != end(); ++__it)
-        4: 2076-block  0
-call    0 returned 4
-        6: 2076-block  1
-call    1 returned 6
-       10: 2076-block  2
-call    2 returned 10
-call    3 returned 10
-branch  4 taken 6
-branch  5 taken 4 (fallthrough)
-        6: 2077:	      if (this->_M_key_equals(__k, *__it._M_cur))
-        6: 2077-block  0
-call    0 returned 6
-branch  1 taken 6 (fallthrough)
+       28: 2076:	    for (auto __it = begin(); __it != end(); ++__it)
+        7: 2076-block  0
+call    0 returned 7
+       21: 2076-block  1
+call    1 returned 21
+       28: 2076-block  2
+call    2 returned 28
+call    3 returned 28
+branch  4 taken 21
+branch  5 taken 7 (fallthrough)
+       21: 2077:	      if (this->_M_key_equals(__k, *__it._M_cur))
+       21: 2077-block  0
+call    0 returned 21
+branch  1 taken 21 (fallthrough)
 branch  2 taken 0 (throw)
-        6: 2077-block  1
+       21: 2077-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 6
+branch  4 taken 21
         -: 2078:		// There is already an equivalent node, no insertion
     #####: 2079:		return { __it, false };
     %%%%%: 2079-block  0
 call    0 never executed
         -: 2080:	  }
         -: 2081:
-        4: 2082:	__hash_code __code = this->_M_hash_code(__k);
-        4: 2082-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 2082:	__hash_code __code = this->_M_hash_code(__k);
+        7: 2082-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 2083:	size_type __bkt = _M_bucket_index(__code);
-        4: 2083-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 2083:	size_type __bkt = _M_bucket_index(__code);
+        7: 2083-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 2084:	if (size() > __small_size_threshold())
-        4: 2084-block  0
-call    0 returned 4
-call    1 returned 4
+        7: 2084:	if (size() > __small_size_threshold())
+        7: 2084-block  0
+call    0 returned 7
+call    1 returned 7
 branch  2 taken 0 (fallthrough)
-branch  3 taken 4
+branch  3 taken 7
     #####: 2085:	  if (__node_ptr __p = _M_find_node(__bkt, __k, __code))
     %%%%%: 2085-block  0
 call    0 never executed
@@ -2937,18 +2937,18 @@ call    0 never executed
 call    1 never executed
         -: 2088:
         -: 2089:	// Insert the node
-        4: 2090:	auto __pos = _M_insert_unique_node(__bkt, __code, __node._M_node);
-        4: 2090-block  0
-call    0 returned 4
-branch  1 taken 4 (fallthrough)
+        7: 2090:	auto __pos = _M_insert_unique_node(__bkt, __code, __node._M_node);
+        7: 2090-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
 branch  2 taken 0 (throw)
-        4: 2091:	__node._M_node = nullptr;
-        4: 2092:	return { __pos, true };
-        4: 2092-block  0
-call    0 returned 4
-        4: 2093:      }
-        4: 2093-block  0
-call    0 returned 4
+        7: 2091:	__node._M_node = nullptr;
+        7: 2092:	return { __pos, true };
+        7: 2092-block  0
+call    0 returned 7
+        7: 2093:      }
+        7: 2093-block  0
+call    0 returned 7
     $$$$$: 2093-block  1
 call    1 never executed
         -: 2094:
@@ -3008,103 +3008,103 @@ call    1 never executed
         -: 2148:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 2149:	   typename _RehashPolicy, typename _Traits>
         -: 2150:    auto
-       55: 2151:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+       76: 2151:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2152:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2153:    _M_insert_unique_node(size_type __bkt, __hash_code __code,
         -: 2154:			  __node_ptr __node, size_type __n_elt)
         -: 2155:    -> iterator
         -: 2156:    {
-       55: 2157:      const __rehash_state& __saved_state = _M_rehash_policy._M_state();
+       76: 2157:      const __rehash_state& __saved_state = _M_rehash_policy._M_state();
         -: 2158:      std::pair<bool, std::size_t> __do_rehash
-       55: 2159:	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
+       76: 2159:	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
         -: 2160:					  __n_elt);
         -: 2161:
-       55: 2162:      if (__do_rehash.first)
+       76: 2162:      if (__do_rehash.first)
         -: 2163:	{
-        4: 2164:	  _M_rehash(__do_rehash.second, __saved_state);
-        4: 2165:	  __bkt = _M_bucket_index(__code);
+        5: 2164:	  _M_rehash(__do_rehash.second, __saved_state);
+        5: 2165:	  __bkt = _M_bucket_index(__code);
         -: 2166:	}
         -: 2167:
-       55: 2168:      this->_M_store_code(*__node, __code);
+       76: 2168:      this->_M_store_code(*__node, __code);
         -: 2169:
         -: 2170:      // Always insert at the beginning of the bucket.
-       55: 2171:      _M_insert_bucket_begin(__bkt, __node);
-       55: 2172:      ++_M_element_count;
-       55: 2173:      return iterator(__node);
+       76: 2171:      _M_insert_bucket_begin(__bkt, __node);
+       76: 2172:      ++_M_element_count;
+       76: 2173:      return iterator(__node);
         -: 2174:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_insert_unique_nodeEyyPNS7_10_Hash_nodeIS5_Lb1EEEy:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_insert_unique_nodeEyyPNS7_10_Hash_nodeIS5_Lb1EEEy called 51 returned 100% blocks executed 100%
-       51: 2151:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE21_M_insert_unique_nodeEyyPNS7_10_Hash_nodeIS5_Lb1EEEy called 69 returned 100% blocks executed 100%
+       69: 2151:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2152:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2153:    _M_insert_unique_node(size_type __bkt, __hash_code __code,
         -: 2154:			  __node_ptr __node, size_type __n_elt)
         -: 2155:    -> iterator
         -: 2156:    {
-       51: 2157:      const __rehash_state& __saved_state = _M_rehash_policy._M_state();
-       51: 2157-block  0
-call    0 returned 51
+       69: 2157:      const __rehash_state& __saved_state = _M_rehash_policy._M_state();
+       69: 2157-block  0
+call    0 returned 69
         -: 2158:      std::pair<bool, std::size_t> __do_rehash
-       51: 2159:	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2159:	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2160:					  __n_elt);
         -: 2161:
-       51: 2162:      if (__do_rehash.first)
-       51: 2162-block  0
-branch  0 taken 3 (fallthrough)
-branch  1 taken 48
+       69: 2162:      if (__do_rehash.first)
+       69: 2162-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 65
         -: 2163:	{
-        3: 2164:	  _M_rehash(__do_rehash.second, __saved_state);
-        3: 2164-block  0
-call    0 returned 3
-branch  1 taken 3 (fallthrough)
-branch  2 taken 0 (throw)
-        3: 2165:	  __bkt = _M_bucket_index(__code);
-        3: 2165-block  0
-call    0 returned 3
-branch  1 taken 3 (fallthrough)
-branch  2 taken 0 (throw)
-        3: 2165-block  1
-        -: 2166:	}
-        -: 2167:
-       51: 2168:      this->_M_store_code(*__node, __code);
-       51: 2168-block  0
-call    0 returned 51
-        -: 2169:
-        -: 2170:      // Always insert at the beginning of the bucket.
-       51: 2171:      _M_insert_bucket_begin(__bkt, __node);
-call    0 returned 51
-       51: 2172:      ++_M_element_count;
-       51: 2173:      return iterator(__node);
-call    0 returned 51
-       51: 2173-block  0
-       51: 2173-block  1
-        -: 2174:    }
-------------------
-_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_insert_unique_nodeEyyPNSD_10_Hash_nodeISB_Lb1EEEy:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_insert_unique_nodeEyyPNSD_10_Hash_nodeISB_Lb1EEEy called 4 returned 100% blocks executed 100%
-        4: 2151:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        -: 2152:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-        -: 2153:    _M_insert_unique_node(size_type __bkt, __hash_code __code,
-        -: 2154:			  __node_ptr __node, size_type __n_elt)
-        -: 2155:    -> iterator
-        -: 2156:    {
-        4: 2157:      const __rehash_state& __saved_state = _M_rehash_policy._M_state();
-        4: 2157-block  0
-call    0 returned 4
-        -: 2158:      std::pair<bool, std::size_t> __do_rehash
-        4: 2159:	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
+        4: 2164:	  _M_rehash(__do_rehash.second, __saved_state);
+        4: 2164-block  0
 call    0 returned 4
 branch  1 taken 4 (fallthrough)
 branch  2 taken 0 (throw)
+        4: 2165:	  __bkt = _M_bucket_index(__code);
+        4: 2165-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4: 2165-block  1
+        -: 2166:	}
+        -: 2167:
+       69: 2168:      this->_M_store_code(*__node, __code);
+       69: 2168-block  0
+call    0 returned 69
+        -: 2169:
+        -: 2170:      // Always insert at the beginning of the bucket.
+       69: 2171:      _M_insert_bucket_begin(__bkt, __node);
+call    0 returned 69
+       69: 2172:      ++_M_element_count;
+       69: 2173:      return iterator(__node);
+call    0 returned 69
+       69: 2173-block  0
+       69: 2173-block  1
+        -: 2174:    }
+------------------
+_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_insert_unique_nodeEyyPNSD_10_Hash_nodeISB_Lb1EEEy:
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE21_M_insert_unique_nodeEyyPNSD_10_Hash_nodeISB_Lb1EEEy called 7 returned 100% blocks executed 100%
+        7: 2151:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+        -: 2152:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+        -: 2153:    _M_insert_unique_node(size_type __bkt, __hash_code __code,
+        -: 2154:			  __node_ptr __node, size_type __n_elt)
+        -: 2155:    -> iterator
+        -: 2156:    {
+        7: 2157:      const __rehash_state& __saved_state = _M_rehash_policy._M_state();
+        7: 2157-block  0
+call    0 returned 7
+        -: 2158:      std::pair<bool, std::size_t> __do_rehash
+        7: 2159:	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
         -: 2160:					  __n_elt);
         -: 2161:
-        4: 2162:      if (__do_rehash.first)
-        4: 2162-block  0
+        7: 2162:      if (__do_rehash.first)
+        7: 2162-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 3
+branch  1 taken 6
         -: 2163:	{
         1: 2164:	  _M_rehash(__do_rehash.second, __saved_state);
         1: 2164-block  0
@@ -3119,18 +3119,18 @@ branch  2 taken 0 (throw)
         1: 2165-block  1
         -: 2166:	}
         -: 2167:
-        4: 2168:      this->_M_store_code(*__node, __code);
-        4: 2168-block  0
-call    0 returned 4
+        7: 2168:      this->_M_store_code(*__node, __code);
+        7: 2168-block  0
+call    0 returned 7
         -: 2169:
         -: 2170:      // Always insert at the beginning of the bucket.
-        4: 2171:      _M_insert_bucket_begin(__bkt, __node);
-call    0 returned 4
-        4: 2172:      ++_M_element_count;
-        4: 2173:      return iterator(__node);
-call    0 returned 4
-        4: 2173-block  0
-        4: 2173-block  1
+        7: 2171:      _M_insert_bucket_begin(__bkt, __node);
+call    0 returned 7
+        7: 2172:      ++_M_element_count;
+        7: 2173:      return iterator(__node);
+call    0 returned 7
+        7: 2173-block  0
+        7: 2173-block  1
         -: 2174:    }
 ------------------
         -: 2175:
@@ -3196,19 +3196,19 @@ call    0 returned 4
         -: 2235:	   typename _RehashPolicy, typename _Traits>
         -: 2236:    template<typename _Kt, typename _Arg, typename _NodeGenerator>
         -: 2237:      auto
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE16_M_insert_uniqueIS5_S5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEESt4pairINS7_14_Node_iteratorIS5_Lb1ELb1EEEbEOT_OT0_RKT1_ called 51 returned 100% blocks executed 78%
-       51: 2238:      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE16_M_insert_uniqueIS5_S5_NS7_10_AllocNodeISaINS7_10_Hash_nodeIS5_Lb1EEEEEEEESt4pairINS7_14_Node_iteratorIS5_Lb1ELb1EEEbEOT_OT0_RKT1_ called 69 returned 100% blocks executed 78%
+       69: 2238:      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2239:		 _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2240:      _M_insert_unique(_Kt&& __k, _Arg&& __v,
         -: 2241:		       const _NodeGenerator& __node_gen)
         -: 2242:      -> pair<iterator, bool>
         -: 2243:      {
-       51: 2244:	if (size() <= __small_size_threshold())
-       51: 2244-block  0
-call    0 returned 51
-call    1 returned 51
+       69: 2244:	if (size() <= __small_size_threshold())
+       69: 2244-block  0
+call    0 returned 69
+call    1 returned 69
 branch  2 taken 21 (fallthrough)
-branch  3 taken 30
+branch  3 taken 48
       231: 2245:	  for (auto __it = begin(); __it != end(); ++__it)
        21: 2245-block  0
 call    0 returned 21
@@ -3231,61 +3231,61 @@ branch  4 taken 210
     %%%%%: 2247-block  0
 call    0 never executed
         -: 2248:
-       51: 2249:	__hash_code __code = this->_M_hash_code_tr(__k);
-       51: 2249-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2249:	__hash_code __code = this->_M_hash_code_tr(__k);
+       69: 2249-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2250:	size_type __bkt = _M_bucket_index(__code);
-       51: 2250-block  0
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2250:	size_type __bkt = _M_bucket_index(__code);
+       69: 2250-block  0
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2251:
-       51: 2252:	if (size() > __small_size_threshold())
-       51: 2252-block  0
-call    0 returned 51
-call    1 returned 51
-branch  2 taken 30 (fallthrough)
+       69: 2252:	if (size() > __small_size_threshold())
+       69: 2252-block  0
+call    0 returned 69
+call    1 returned 69
+branch  2 taken 48 (fallthrough)
 branch  3 taken 21
-       30: 2253:	  if (__node_ptr __node = _M_find_node_tr(__bkt, __k, __code))
-       30: 2253-block  0
-call    0 returned 30
-branch  1 taken 30 (fallthrough)
+       48: 2253:	  if (__node_ptr __node = _M_find_node_tr(__bkt, __k, __code))
+       48: 2253-block  0
+call    0 returned 48
+branch  1 taken 48 (fallthrough)
 branch  2 taken 0 (throw)
-       30: 2253-block  1
+       48: 2253-block  1
 branch  3 taken 0 (fallthrough)
-branch  4 taken 30
+branch  4 taken 48
     #####: 2254:	    return { iterator(__node), false };
     %%%%%: 2254-block  0
 call    0 never executed
 call    1 never executed
         -: 2255:
-       51: 2256:	_Scoped_node __node {
-       51: 2256-block  0
-call    0 returned 51
-call    1 returned 51
-call    2 returned 51
-branch  3 taken 51 (fallthrough)
+       69: 2256:	_Scoped_node __node {
+       69: 2256-block  0
+call    0 returned 69
+call    1 returned 69
+call    2 returned 69
+branch  3 taken 69 (fallthrough)
 branch  4 taken 0 (throw)
-       51: 2256-block  1
-call    5 returned 51
+       69: 2256-block  1
+call    5 returned 69
         -: 2257:	  __node_builder_t::_S_build(std::forward<_Kt>(__k),
         -: 2258:				     std::forward<_Arg>(__v),
         -: 2259:				     __node_gen),
         -: 2260:	  this
         -: 2261:	};
         -: 2262:	auto __pos
-       51: 2263:	  = _M_insert_unique_node(__bkt, __code, __node._M_node);
-call    0 returned 51
-branch  1 taken 51 (fallthrough)
+       69: 2263:	  = _M_insert_unique_node(__bkt, __code, __node._M_node);
+call    0 returned 69
+branch  1 taken 69 (fallthrough)
 branch  2 taken 0 (throw)
-       51: 2264:	__node._M_node = nullptr;
-       51: 2265:	return { __pos, true };
-       51: 2265-block  0
-call    0 returned 51
-       51: 2266:      }
-call    0 returned 51
+       69: 2264:	__node._M_node = nullptr;
+       69: 2265:	return { __pos, true };
+       69: 2265-block  0
+call    0 returned 69
+       69: 2266:      }
+call    0 returned 69
     $$$$$: 2266-block  0
 call    1 never executed
         -: 2267:
@@ -3526,16 +3526,16 @@ call    1 never executed
         -: 2502:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 2503:	   typename _RehashPolicy, typename _Traits>
         -: 2504:    void
-       8*: 2505:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+      11*: 2505:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2506:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2507:    clear() noexcept
         -: 2508:    {
-       8*: 2509:      this->_M_deallocate_nodes(_M_begin());
-       8*: 2510:      __builtin_memset(_M_buckets, 0,
-       8*: 2511:		       _M_bucket_count * sizeof(__node_base_ptr));
-       8*: 2512:      _M_element_count = 0;
-       8*: 2513:      _M_before_begin._M_nxt = nullptr;
-       8*: 2514:    }
+      11*: 2509:      this->_M_deallocate_nodes(_M_begin());
+      11*: 2510:      __builtin_memset(_M_buckets, 0,
+      11*: 2511:		       _M_bucket_count * sizeof(__node_base_ptr));
+      11*: 2512:      _M_element_count = 0;
+      11*: 2513:      _M_before_begin._M_nxt = nullptr;
+      11*: 2514:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv called 0 returned 0% blocks executed 0%
@@ -3554,20 +3554,20 @@ call    1 never executed
     #####: 2514:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5clearEv:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5clearEv called 8 returned 100% blocks executed 100%
-        8: 2505:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE5clearEv called 11 returned 100% blocks executed 100%
+       11: 2505:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2506:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2507:    clear() noexcept
         -: 2508:    {
-        8: 2509:      this->_M_deallocate_nodes(_M_begin());
-        8: 2509-block  0
-call    0 returned 8
-call    1 returned 8
-        8: 2510:      __builtin_memset(_M_buckets, 0,
-        8: 2511:		       _M_bucket_count * sizeof(__node_base_ptr));
-        8: 2512:      _M_element_count = 0;
-        8: 2513:      _M_before_begin._M_nxt = nullptr;
-        8: 2514:    }
+       11: 2509:      this->_M_deallocate_nodes(_M_begin());
+       11: 2509-block  0
+call    0 returned 11
+call    1 returned 11
+       11: 2510:      __builtin_memset(_M_buckets, 0,
+       11: 2511:		       _M_bucket_count * sizeof(__node_base_ptr));
+       11: 2512:      _M_element_count = 0;
+       11: 2513:      _M_before_begin._M_nxt = nullptr;
+       11: 2514:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_yESaIS8_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSA_18_Mod_range_hashingENSA_20_Default_ranged_hashENSA_20_Prime_rehash_policyENSA_17_Hashtable_traitsILb1ELb0ELb1EEEE5clearEv called 0 returned 0% blocks executed 0%
@@ -3614,13 +3614,13 @@ call    1 never executed
         -: 2541:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 2542:	   typename _RehashPolicy, typename _Traits>
         -: 2543:    void
-        4: 2544:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+        5: 2544:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2545:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2546:    _M_rehash(size_type __bkt_count, const __rehash_state& __state)
         -: 2547:    {
         -: 2548:      __try
         -: 2549:	{
-        4: 2550:	  _M_rehash_aux(__bkt_count, __unique_keys{});
+        5: 2550:	  _M_rehash_aux(__bkt_count, __unique_keys{});
         -: 2551:	}
     =====: 2552:      __catch(...)
         -: 2553:	{
@@ -3629,20 +3629,20 @@ call    1 never executed
     =====: 2556:	  _M_rehash_policy._M_reset(__state);
     =====: 2557:	  __throw_exception_again;
         -: 2558:	}
-        4: 2559:    }
+        5: 2559:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_rehashEyRKy:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_rehashEyRKy called 3 returned 100% blocks executed 38%
-        3: 2544:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE9_M_rehashEyRKy called 4 returned 100% blocks executed 38%
+        4: 2544:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2545:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2546:    _M_rehash(size_type __bkt_count, const __rehash_state& __state)
         -: 2547:    {
         -: 2548:      __try
         -: 2549:	{
-        3: 2550:	  _M_rehash_aux(__bkt_count, __unique_keys{});
-        3: 2550-block  0
-call    0 returned 3
-branch  1 taken 3 (fallthrough)
+        4: 2550:	  _M_rehash_aux(__bkt_count, __unique_keys{});
+        4: 2550-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
 branch  2 taken 0 (throw)
         -: 2551:	}
     =====: 2552:      __catch(...)
@@ -3659,8 +3659,8 @@ call    0 never executed
     =====: 2557:	  __throw_exception_again;
 call    0 never executed
         -: 2558:	}
-        3: 2559:    }
-        3: 2559-block  0
+        4: 2559:    }
+        4: 2559-block  0
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE9_M_rehashEyRKy:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE9_M_rehashEyRKy called 1 returned 100% blocks executed 38%
@@ -3700,99 +3700,99 @@ call    0 never executed
         -: 2564:	   typename _Hash, typename _RangeHash, typename _Unused,
         -: 2565:	   typename _RehashPolicy, typename _Traits>
         -: 2566:    void
+        5: 2567:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+        -: 2568:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+        -: 2569:    _M_rehash_aux(size_type __bkt_count, true_type /* __uks */)
+        -: 2570:    {
+        5: 2571:      __buckets_ptr __new_buckets = _M_allocate_buckets(__bkt_count);
+        5: 2572:      __node_ptr __p = _M_begin();
+        5: 2573:      _M_before_begin._M_nxt = nullptr;
+        5: 2574:      std::size_t __bbegin_bkt = 0;
+      106: 2575:      while (__p)
+        -: 2576:	{
+     101*: 2577:	  __node_ptr __next = __p->_M_next();
+        -: 2578:	  std::size_t __bkt
+     101*: 2579:	    = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
+     101*: 2580:	  if (!__new_buckets[__bkt])
+        -: 2581:	    {
+      79*: 2582:	      __p->_M_nxt = _M_before_begin._M_nxt;
+      79*: 2583:	      _M_before_begin._M_nxt = __p;
+      79*: 2584:	      __new_buckets[__bkt] = &_M_before_begin;
+      79*: 2585:	      if (__p->_M_nxt)
+      76*: 2586:		__new_buckets[__bbegin_bkt] = __p;
+      79*: 2587:	      __bbegin_bkt = __bkt;
+        -: 2588:	    }
+        -: 2589:	  else
+        -: 2590:	    {
+      22*: 2591:	      __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
+      22*: 2592:	      __new_buckets[__bkt]->_M_nxt = __p;
+        -: 2593:	    }
+        -: 2594:
+     101*: 2595:	  __p = __next;
+        -: 2596:	}
+        -: 2597:
+        5: 2598:      _M_deallocate_buckets();
+        5: 2599:      _M_bucket_count = __bkt_count;
+        5: 2600:      _M_buckets = __new_buckets;
+        5: 2601:    }
+------------------
+_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE13_M_rehash_auxEySt17integral_constantIbLb1EE:
+function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE13_M_rehash_auxEySt17integral_constantIbLb1EE called 4 returned 100% blocks executed 100%
         4: 2567:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
         -: 2568:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
         -: 2569:    _M_rehash_aux(size_type __bkt_count, true_type /* __uks */)
         -: 2570:    {
         4: 2571:      __buckets_ptr __new_buckets = _M_allocate_buckets(__bkt_count);
+        4: 2571-block  0
+call    0 returned 4
         4: 2572:      __node_ptr __p = _M_begin();
+call    0 returned 4
         4: 2573:      _M_before_begin._M_nxt = nullptr;
         4: 2574:      std::size_t __bbegin_bkt = 0;
-       46: 2575:      while (__p)
+      105: 2575:      while (__p)
+      105: 2575-block  0
+branch  0 taken 101
+branch  1 taken 4 (fallthrough)
         -: 2576:	{
-      42*: 2577:	  __node_ptr __next = __p->_M_next();
+      101: 2577:	  __node_ptr __next = __p->_M_next();
+      101: 2577-block  0
+call    0 returned 101
         -: 2578:	  std::size_t __bkt
-      42*: 2579:	    = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
-      42*: 2580:	  if (!__new_buckets[__bkt])
+      101: 2579:	    = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
+call    0 returned 101
+      101: 2580:	  if (!__new_buckets[__bkt])
+branch  0 taken 79 (fallthrough)
+branch  1 taken 22
         -: 2581:	    {
-      35*: 2582:	      __p->_M_nxt = _M_before_begin._M_nxt;
-      35*: 2583:	      _M_before_begin._M_nxt = __p;
-      35*: 2584:	      __new_buckets[__bkt] = &_M_before_begin;
-      35*: 2585:	      if (__p->_M_nxt)
-      33*: 2586:		__new_buckets[__bbegin_bkt] = __p;
-      35*: 2587:	      __bbegin_bkt = __bkt;
+       79: 2582:	      __p->_M_nxt = _M_before_begin._M_nxt;
+       79: 2583:	      _M_before_begin._M_nxt = __p;
+       79: 2584:	      __new_buckets[__bkt] = &_M_before_begin;
+       79: 2585:	      if (__p->_M_nxt)
+       79: 2585-block  0
+branch  0 taken 76 (fallthrough)
+branch  1 taken 3
+       76: 2586:		__new_buckets[__bbegin_bkt] = __p;
+       76: 2586-block  0
+       79: 2587:	      __bbegin_bkt = __bkt;
+       79: 2587-block  0
         -: 2588:	    }
         -: 2589:	  else
         -: 2590:	    {
-       7*: 2591:	      __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
-       7*: 2592:	      __new_buckets[__bkt]->_M_nxt = __p;
+       22: 2591:	      __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
+       22: 2592:	      __new_buckets[__bkt]->_M_nxt = __p;
+       22: 2592-block  0
         -: 2593:	    }
         -: 2594:
-      42*: 2595:	  __p = __next;
+      101: 2595:	  __p = __next;
+      101: 2595-block  0
         -: 2596:	}
         -: 2597:
         4: 2598:      _M_deallocate_buckets();
+        4: 2598-block  0
+call    0 returned 4
         4: 2599:      _M_bucket_count = __bkt_count;
         4: 2600:      _M_buckets = __new_buckets;
         4: 2601:    }
-------------------
-_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE13_M_rehash_auxEySt17integral_constantIbLb1EE:
-function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_SaIS5_ENSt8__detail9_IdentityESt8equal_toIS5_ESt4hashIS5_ENS7_18_Mod_range_hashingENS7_20_Default_ranged_hashENS7_20_Prime_rehash_policyENS7_17_Hashtable_traitsILb1ELb1ELb1EEEE13_M_rehash_auxEySt17integral_constantIbLb1EE called 3 returned 100% blocks executed 100%
-        3: 2567:    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        -: 2568:	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-        -: 2569:    _M_rehash_aux(size_type __bkt_count, true_type /* __uks */)
-        -: 2570:    {
-        3: 2571:      __buckets_ptr __new_buckets = _M_allocate_buckets(__bkt_count);
-        3: 2571-block  0
-call    0 returned 3
-        3: 2572:      __node_ptr __p = _M_begin();
-call    0 returned 3
-        3: 2573:      _M_before_begin._M_nxt = nullptr;
-        3: 2574:      std::size_t __bbegin_bkt = 0;
-       45: 2575:      while (__p)
-       45: 2575-block  0
-branch  0 taken 42
-branch  1 taken 3 (fallthrough)
-        -: 2576:	{
-       42: 2577:	  __node_ptr __next = __p->_M_next();
-       42: 2577-block  0
-call    0 returned 42
-        -: 2578:	  std::size_t __bkt
-       42: 2579:	    = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
-call    0 returned 42
-       42: 2580:	  if (!__new_buckets[__bkt])
-branch  0 taken 35 (fallthrough)
-branch  1 taken 7
-        -: 2581:	    {
-       35: 2582:	      __p->_M_nxt = _M_before_begin._M_nxt;
-       35: 2583:	      _M_before_begin._M_nxt = __p;
-       35: 2584:	      __new_buckets[__bkt] = &_M_before_begin;
-       35: 2585:	      if (__p->_M_nxt)
-       35: 2585-block  0
-branch  0 taken 33 (fallthrough)
-branch  1 taken 2
-       33: 2586:		__new_buckets[__bbegin_bkt] = __p;
-       33: 2586-block  0
-       35: 2587:	      __bbegin_bkt = __bkt;
-       35: 2587-block  0
-        -: 2588:	    }
-        -: 2589:	  else
-        -: 2590:	    {
-        7: 2591:	      __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
-        7: 2592:	      __new_buckets[__bkt]->_M_nxt = __p;
-        7: 2592-block  0
-        -: 2593:	    }
-        -: 2594:
-       42: 2595:	  __p = __next;
-       42: 2595-block  0
-        -: 2596:	}
-        -: 2597:
-        3: 2598:      _M_deallocate_buckets();
-        3: 2598-block  0
-call    0 returned 3
-        3: 2599:      _M_bucket_count = __bkt_count;
-        3: 2600:      _M_buckets = __new_buckets;
-        3: 2601:    }
 ------------------
 _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE13_M_rehash_auxEySt17integral_constantIbLb1EE:
 function _ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN7testing9TestSuiteEESaISB_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSD_18_Mod_range_hashingENSD_20_Default_ranged_hashENSD_20_Prime_rehash_policyENSD_17_Hashtable_traitsILb1ELb0ELb1EEEE13_M_rehash_auxEySt17integral_constantIbLb1EE called 1 returned 100% blocks executed 43%

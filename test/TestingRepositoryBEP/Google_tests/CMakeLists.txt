@@ -3,9 +3,7 @@ add_subdirectory(lib)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 
-add_executable(Google_Tests_run all_tests.cpp
-        temp_sensors_test.cpp
-        supercap_readout_tests.cpp)
+add_executable(Google_Tests_run all_tests.cpp)
 
 #slip_decoding_tests.cpp slip_encoding_tests.cpp
 #        convert_array_to_message_tests.cpp convert_message_to_array_tests.cpp

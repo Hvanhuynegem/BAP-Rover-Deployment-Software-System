@@ -366,11 +366,11 @@ call    0 returned 1
         -:  349:       *  the %unordered_map.
         -:  350:       */
         -:  351:      iterator
-function _ZNSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteESt4hashIS5_ESt8equal_toIS5_ESaISt4pairIKS5_S8_EEE3endEv called 4 returned 100% blocks executed 100%
-        4:  352:      end() noexcept
-        4:  353:      { return _M_h.end(); }
-        4:  353-block  0
-call    0 returned 4
+function _ZNSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteESt4hashIS5_ESt8equal_toIS5_ESaISt4pairIKS5_S8_EEE3endEv called 7 returned 100% blocks executed 100%
+        7:  352:      end() noexcept
+        7:  353:      { return _M_h.end(); }
+        7:  353-block  0
+call    0 returned 7
         -:  354:
         -:  355:      ///@{
         -:  356:      /**
@@ -410,13 +410,13 @@ call    0 returned 4
         -:  390:       */
         -:  391:      template<typename... _Args>
         -:  392:	std::pair<iterator, bool>
-function _ZNSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteESt4hashIS5_ESt8equal_toIS5_ESaISt4pairIKS5_S8_EEE7emplaceIJRSE_RKS8_EEESD_INSt8__detail14_Node_iteratorISF_Lb0ELb1EEEbEDpOT_ called 4 returned 100% blocks executed 100%
-        4:  393:	emplace(_Args&&... __args)
-        4:  394:	{ return _M_h.emplace(std::forward<_Args>(__args)...); }
-        4:  394-block  0
-call    0 returned 4
-call    1 returned 4
-call    2 returned 4
+function _ZNSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteESt4hashIS5_ESt8equal_toIS5_ESaISt4pairIKS5_S8_EEE7emplaceIJRSE_RKS8_EEESD_INSt8__detail14_Node_iteratorISF_Lb0ELb1EEEbEDpOT_ called 7 returned 100% blocks executed 100%
+        7:  393:	emplace(_Args&&... __args)
+        7:  394:	{ return _M_h.emplace(std::forward<_Args>(__args)...); }
+        7:  394-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
         -:  395:
         -:  396:      /**
         -:  397:       *  @brief Attempts to build and insert a std::pair into the
@@ -895,11 +895,11 @@ call    2 returned 4
         -:  870:       *  past-the-end ( @c end() ) iterator.
         -:  871:       */
         -:  872:      iterator
-function _ZNSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteESt4hashIS5_ESt8equal_toIS5_ESaISt4pairIKS5_S8_EEE4findERSE_ called 4 returned 100% blocks executed 100%
-        4:  873:      find(const key_type& __x)
-        4:  874:      { return _M_h.find(__x); }
-        4:  874-block  0
-call    0 returned 4
+function _ZNSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPN7testing9TestSuiteESt4hashIS5_ESt8equal_toIS5_ESaISt4pairIKS5_S8_EEE4findERSE_ called 7 returned 100% blocks executed 100%
+        7:  873:      find(const key_type& __x)
+        7:  874:      { return _M_h.find(__x); }
+        7:  874-block  0
+call    0 returned 7
         -:  875:
         -:  876:#if __cplusplus > 201703L
         -:  877:      template<typename _Kt>

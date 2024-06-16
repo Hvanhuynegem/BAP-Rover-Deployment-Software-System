@@ -205,12 +205,12 @@
         -:  201:  struct _Hash_impl
         -:  202:  {
         -:  203:    static size_t
-function _ZNSt10_Hash_impl4hashEPKvyy called 106 returned 100% blocks executed 100%
-      106:  204:    hash(const void* __ptr, size_t __clength,
+function _ZNSt10_Hash_impl4hashEPKvyy called 145 returned 100% blocks executed 100%
+      145:  204:    hash(const void* __ptr, size_t __clength,
         -:  205:	 size_t __seed = static_cast<size_t>(0xc70f6907UL))
-      106:  206:    { return _Hash_bytes(__ptr, __clength, __seed); }
-      106:  206-block  0
-call    0 returned 106
+      145:  206:    { return _Hash_bytes(__ptr, __clength, __seed); }
+      145:  206-block  0
+call    0 returned 145
         -:  207:
         -:  208:    template<typename _Tp>
         -:  209:      static size_t

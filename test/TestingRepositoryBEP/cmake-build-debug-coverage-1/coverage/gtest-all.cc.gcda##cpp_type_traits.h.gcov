@@ -608,8 +608,8 @@
         -:  604:  template<typename _Iterator>
         -:  605:    _GLIBCXX20_CONSTEXPR
         -:  606:    inline _Iterator
-      48*:  607:    __miter_base(_Iterator __it)
-      48*:  608:    { return __it; }
+      82*:  607:    __miter_base(_Iterator __it)
+      82*:  608:    { return __it; }
 ------------------
 _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKN7testing8internal13edit_distance8EditTypeESt6vectorIS5_SaIS5_EEEEET_SC_:
 function _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKN7testing8internal13edit_distance8EditTypeESt6vectorIS5_SaIS5_EEEEET_SC_ called 0 returned 0% blocks executed 0%
@@ -660,16 +660,16 @@ function _ZSt12__miter_baseIPN7testing8internal13edit_distance8EditTypeEET_S5_ c
     %%%%%:  608-block  0
 ------------------
 _ZSt12__miter_baseIPPN7testing8TestInfoEET_S4_:
-function _ZSt12__miter_baseIPPN7testing8TestInfoEET_S4_ called 8 returned 100% blocks executed 100%
-        8:  607:    __miter_base(_Iterator __it)
-        8:  608:    { return __it; }
-        8:  608-block  0
-------------------
-_ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEET_SA_:
-function _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEET_SA_ called 16 returned 100% blocks executed 100%
+function _ZSt12__miter_baseIPPN7testing8TestInfoEET_S4_ called 16 returned 100% blocks executed 100%
        16:  607:    __miter_base(_Iterator __it)
        16:  608:    { return __it; }
        16:  608-block  0
+------------------
+_ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEET_SA_:
+function _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPPN7testing8TestInfoESt6vectorIS4_SaIS4_EEEEET_SA_ called 30 returned 100% blocks executed 100%
+       30:  607:    __miter_base(_Iterator __it)
+       30:  608:    { return __it; }
+       30:  608-block  0
 ------------------
 _ZSt12__miter_baseIPPN7testing9TestSuiteEET_S4_:
 function _ZSt12__miter_baseIPPN7testing9TestSuiteEET_S4_ called 0 returned 0% blocks executed 0%
@@ -684,10 +684,10 @@ function _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPPN7testing17TestEven
     %%%%%:  608-block  0
 ------------------
 _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEET_SD_:
-function _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEET_SD_ called 24 returned 100% blocks executed 100%
-       24:  607:    __miter_base(_Iterator __it)
-       24:  608:    { return __it; }
-       24:  608-block  0
+function _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEET_SD_ called 36 returned 100% blocks executed 100%
+       36:  607:    __miter_base(_Iterator __it)
+       36:  608:    { return __it; }
+       36:  608-block  0
 ------------------
         -:  609:
         -:  610:_GLIBCXX_END_NAMESPACE_VERSION

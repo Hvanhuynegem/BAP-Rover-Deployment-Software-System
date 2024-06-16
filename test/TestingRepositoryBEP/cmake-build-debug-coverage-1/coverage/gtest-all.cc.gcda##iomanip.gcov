@@ -200,10 +200,10 @@ function _ZSt7setfillIcESt8_SetfillIT_ES1_ called 0 returned 0% blocks executed 
         -:  194:   *  that object.
         -:  195:  */
         -:  196:  inline _Setprecision
-function _ZSt12setprecisioni called 114 returned 100% blocks executed 100%
-      114:  197:  setprecision(int __n)
-      114:  198:  { return { __n }; }
-      114:  198-block  0
+function _ZSt12setprecisioni called 141 returned 100% blocks executed 100%
+      141:  197:  setprecision(int __n)
+      141:  198:  { return { __n }; }
+      141:  198-block  0
         -:  199:
         -:  200:  template<typename _CharT, typename _Traits>
         -:  201:    inline basic_istream<_CharT, _Traits>&

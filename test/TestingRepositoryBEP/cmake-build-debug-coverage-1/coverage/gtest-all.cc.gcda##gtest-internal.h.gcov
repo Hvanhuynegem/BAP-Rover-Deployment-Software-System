@@ -614,12 +614,12 @@ branch  1 never executed
         -:  415:// returned for different types.  Calling the function twice with the
         -:  416:// same type argument is guaranteed to return the same ID.
         -:  417:template <typename T>
-      52*:  418:TypeId GetTypeId() {
+      70*:  418:TypeId GetTypeId() {
         -:  419:  // The compiler is required to allocate a different
         -:  420:  // TypeIdHelper<T>::dummy_ variable for each T used to instantiate
         -:  421:  // the template.  Therefore, the address of dummy_ is guaranteed to
         -:  422:  // be unique.
-      52*:  423:  return &(TypeIdHelper<T>::dummy_);
+      70*:  423:  return &(TypeIdHelper<T>::dummy_);
         -:  424:}
 ------------------
 _ZN7testing8internal9GetTypeIdINS0_12_GLOBAL__N_111FailureTestEEEPKvv:
@@ -634,14 +634,14 @@ function _ZN7testing8internal9GetTypeIdINS0_12_GLOBAL__N_111FailureTestEEEPKvv c
         -:  424:}
 ------------------
 _ZN7testing8internal9GetTypeIdINS_4TestEEEPKvv:
-function _ZN7testing8internal9GetTypeIdINS_4TestEEEPKvv called 52 returned 100% blocks executed 100%
-       52:  418:TypeId GetTypeId() {
+function _ZN7testing8internal9GetTypeIdINS_4TestEEEPKvv called 70 returned 100% blocks executed 100%
+       70:  418:TypeId GetTypeId() {
         -:  419:  // The compiler is required to allocate a different
         -:  420:  // TypeIdHelper<T>::dummy_ variable for each T used to instantiate
         -:  421:  // the template.  Therefore, the address of dummy_ is guaranteed to
         -:  422:  // be unique.
-       52:  423:  return &(TypeIdHelper<T>::dummy_);
-       52:  423-block  0
+       70:  423:  return &(TypeIdHelper<T>::dummy_);
+       70:  423-block  0
         -:  424:}
 ------------------
         -:  425:
