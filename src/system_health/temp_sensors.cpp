@@ -102,7 +102,13 @@ float frequency_to_temperature(float frequency) {
 // Function to set up Timer_B0 related to the temperature pins
 void setupTimer(void) {
     TB0CTL = TBSSEL_2 | MC_2 | TBCLR | ID__4; // SMCLK, Continuous mode, clear TBR, divide the input clock by 4
+
+    //For pin 3.4
     TB0CCTL3 = CM_1 | CCIS_0 | SCS | CAP;     // Capture on rising edge, CCIxA, synchronize capture source, capture mode
+    TB0CCTL1 &= ~CCIFG;                       // Clear interrupt flag
+
+    //For pin 1.4
+    TB0CCTL1 = CM_1 | CCIS_0 | SCS | CAP;     // Capture on rising edge, CCIxA, synchronize capture source, capture mode
     TB0CCTL3 &= ~CCIFG;                       // Clear interrupt flag
 }
 
