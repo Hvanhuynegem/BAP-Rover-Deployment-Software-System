@@ -15,7 +15,6 @@
 #include "lander_communication_lib/lander_communication_protocol.h"
 #include "lander_communication_lib/uart_communication.h"
 
-void goto_general_startup(void);
 
 int main(void) {
     // Stop watchdog timer

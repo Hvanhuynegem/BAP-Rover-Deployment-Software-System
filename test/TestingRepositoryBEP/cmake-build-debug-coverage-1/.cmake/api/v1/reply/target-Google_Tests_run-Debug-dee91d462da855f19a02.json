@@ -131,11 +131,11 @@
 		},
 		{
 			"backtrace" : 4,
-			"id" : "gtest_main::@30f1f5c04acc29f5722e"
+			"id" : "gtest::@30f1f5c04acc29f5722e"
 		},
 		{
 			"backtrace" : 4,
-			"id" : "gtest::@30f1f5c04acc29f5722e"
+			"id" : "gtest_main::@30f1f5c04acc29f5722e"
 		}
 	],
 	"id" : "Google_Tests_run::@eb06d550d4862b816b8d",

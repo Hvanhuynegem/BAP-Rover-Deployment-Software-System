@@ -16,14 +16,28 @@
 #include "system_health_lib/umbilical_cord.h"
 
 
-// Function to initialize P3.0 as an input pin
+// Function to initialize P2.2 as an input pin
 void initialize_umbilicalcord_pin_rover(void) {
     // Configure GPIO
-    P3DIR &= ~BIT0;                         // Set P3.0 as input (Umbilical_cord_status_bit)
+    P2DIR &= ~BIT2;                         // Set P2.2 as input (Umbilical_cord_status_bit)
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
-// Function to read the status of P3.0 (umbilical cord rover)
-bool read_umbilicalcord_pin_rover(void) {
-    return (P3IN & BIT0) != 0;              // Return the status of P3.0
+// Function to read the status of P2.2 (umbilical cord rover)
+bool umbilicalcord_rover_connected(void) {
+    return (P2IN & BIT2) != 0;              // Return the status of P2.2
+}
+
+
+// Function to initialize P4.6 for detachment of umbilical cord
+void initialize_umbilicalcord_detach_pin(void){
+    // configure GPIO
+    P4DIR |= BIT6;                         // Set P4.6 as output (DetachUmb)
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+}
+
+// Function to set P4.6 high for detachment of umbilical cord
+void detach_umbilicalcord(void){
+    P4OUT |= BIT6;                          // Set P4.6 high
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }

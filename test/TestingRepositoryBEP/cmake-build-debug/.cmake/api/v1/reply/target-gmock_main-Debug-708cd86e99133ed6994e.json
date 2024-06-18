@@ -160,11 +160,11 @@
 	[
 		{
 			"backtrace" : 6,
-			"id" : "gtest::@30f1f5c04acc29f5722e"
+			"id" : "gmock::@8e4042a334827d542816"
 		},
 		{
 			"backtrace" : 6,
-			"id" : "gmock::@8e4042a334827d542816"
+			"id" : "gtest::@30f1f5c04acc29f5722e"
 		}
 	],
 	"id" : "gmock_main::@8e4042a334827d542816",
