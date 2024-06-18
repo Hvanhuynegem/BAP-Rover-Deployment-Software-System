@@ -34,7 +34,7 @@ void general_startup(void){
 
     // is umbilical cord of the rover connected?
     initialize_umbilicalcord_pin_rover();
-    bool status_umbilical_cord_rover = read_umbilicalcord_pin_rover();
+    bool status_umbilical_cord_rover = umbilicalcord_rover_connected();
 
     // process RX buffer
     process_received_data();

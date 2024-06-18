@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v21.6.1                     
 ******************************************************************************
->> Linked Tue Jun 18 13:21:06 2024
+>> Linked Tue Jun 18 18:11:40 2024
 
 OUTPUT FILE NAME:   <rover deployment software system.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs_mpu"  address: 000048fc
@@ -79,7 +79,7 @@ MEMORY CONFIGURATION
   INT53                 0000fffa   00000002  00000002  00000000  RWIX
   INT54                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FRAM2                 00010000   00003ff8  00000ba2  00003456  RWIX
+  FRAM2                 00010000   00003ff8  00000ba6  00003452  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -272,7 +272,7 @@ SYSNMI     0    0000fffc    00000002
                   00004a30    00000004     lander_communication_protocol.obj (.const:.string:$P$T2$3)
                   00004a34    00000003     general_startup.obj (.const:.string:$P$T3$4)
 
-.text      0    00010000    00000ba2     
+.text      0    00010000    00000ba6     
                   00010000    0000012c     main.obj (.text:main)
                   0001012c    00000110     lander_communication_protocol.obj (.text:_Z14handle_messagePK7Message)
                   0001023c    000000e2     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:free)
@@ -306,14 +306,14 @@ SYSNMI     0    0000fffc    00000002
                   00010b46    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
                   00010b58    0000000e     uart_communication.obj (.text:_Z14uart_configurev)
                   00010b66    0000000e     rts430x_lc_rd_eabi.lib : strlen.c.obj (.text:strlen)
-                  00010b74    0000000a     umbilical_cord.obj (.text:_Z34initialize_umbilicalcord_pin_roverv)
-                  00010b7e    0000000a     rts430x_lc_rd_eabi.lib : new.cpp.obj (.text:_ZdlPv)
-                  00010b88    00000008     umbilical_cord.obj (.text:_Z28read_umbilicalcord_pin_roverv)
-                  00010b90    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  00010b96    00000004                            : new.cpp.obj (.text:_ZdlPvj)
-                  00010b9a    00000004                            : pre_init.c.obj (.text:_system_pre_init)
-                  00010b9e    00000002                            : _lock.c.obj (.text:_nop)
-                  00010ba0    00000002                            : startup.c.obj (.text:_system_post_cinit)
+                  00010b74    0000000c     umbilical_cord.obj (.text:_Z29umbilicalcord_rover_connectedv)
+                  00010b80    0000000a     umbilical_cord.obj (.text:_Z34initialize_umbilicalcord_pin_roverv)
+                  00010b8a    0000000a     rts430x_lc_rd_eabi.lib : new.cpp.obj (.text:_ZdlPv)
+                  00010b94    00000006                            : exit.c.obj (.text:abort)
+                  00010b9a    00000004                            : new.cpp.obj (.text:_ZdlPvj)
+                  00010b9e    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  00010ba2    00000002                            : _lock.c.obj (.text:_nop)
+                  00010ba4    00000002                            : startup.c.obj (.text:_system_post_cinit)
 
 MODULE SUMMARY
 
@@ -333,10 +333,10 @@ MODULE SUMMARY
                                                                    
     .\src\system_health\
        temp_sensors.obj                    40     2         1      
+       umbilical_cord.obj                  22     0         0      
        supercap_readout.obj                16     2         1      
-       umbilical_cord.obj                  18     0         0      
     +--+-----------------------------------+------+---------+---------+
-       Total:                              74     4         2      
+       Total:                              78     4         2      
                                                                    
     .\src\transit_modes\
        general_startup.obj                 192    80        0      
@@ -392,7 +392,7 @@ MODULE SUMMARY
        Stack:                              0      0         160    
        Linker Generated:                   0      49        0      
     +--+-----------------------------------+------+---------+---------+
-       Grand Total:                        3318   321       1116   
+       Grand Total:                        3322   321       1116   
 
 
 LINKER GENERATED COPY TABLES
@@ -671,7 +671,7 @@ address   name
 000009ce  AESAXIN_L                                  
 000004be  BCD2BIN                                    
 000004bc  BIN2BCD                                    
-00010b90  C$$EXIT                                    
+00010b94  C$$EXIT                                    
 0000043e  CAPTIO0CTL                                 
 0000043f  CAPTIO0CTL_H                               
 0000043e  CAPTIO0CTL_L                               
@@ -1218,15 +1218,15 @@ address   name
 00010612  _Z24convert_array_to_messagePKhjP7Message  
 0001056a  _Z24convert_message_to_arrayPK7MessagePhS2_
 00010b1e  _Z25calculate_checksum_helperhhPKh         
-00010b88  _Z28read_umbilicalcord_pin_roverv          
 000108f8  _Z29send_message_and_wait_for_ACKhPKhh     
+00010b74  _Z29umbilicalcord_rover_connectedv         
 00010a1a  _Z33send_transit_mode_request_messagev     
-00010b74  _Z34initialize_umbilicalcord_pin_roverv    
+00010b80  _Z34initialize_umbilicalcord_pin_roverv    
 0000493c  _Z9ADC12_ISRv                              
 00010966  _Z9uart_initv                              
-00010b90  _ZSt17__throw_bad_allocv                   
-00010b7e  _ZdlPv                                     
-00010b96  _ZdlPvj                                    
+00010b94  _ZSt17__throw_bad_allocv                   
+00010b8a  _ZdlPv                                     
+00010b9a  _ZdlPvj                                    
 00002400  __STACK_END                                
 000000a0  __STACK_SIZE                               
 000000a0  __SYSMEM_SIZE                              
@@ -1273,14 +1273,14 @@ ffffffff  __c_args__
 00010998  __mpu_init                                 
 000048fc  _c_int00_noargs_mpu                        
 00001f12  _lock                                      
-00010b9e  _nop                                       
+00010ba2  _nop                                       
 0000fffe  _reset_vector                              
 00002360  _stack                                     
 00004400  _sys_memory                                
-00010ba0  _system_post_cinit                         
-00010b9a  _system_pre_init                           
+00010ba4  _system_post_cinit                         
+00010b9e  _system_pre_init                           
 00001f16  _unlock                                    
-00010b90  abort                                      
+00010b94  abort                                      
 00001f11  ack_received                               
 00001f1a  adc_conversion_fail                        
 00001f0e  buffer_full_state                          
@@ -2182,16 +2182,16 @@ address   name
 00010b46  __TI_decompress_none                       
 00010b58  _Z14uart_configurev                        
 00010b66  strlen                                     
-00010b74  _Z34initialize_umbilicalcord_pin_roverv    
-00010b7e  _ZdlPv                                     
-00010b88  _Z28read_umbilicalcord_pin_roverv          
-00010b90  C$$EXIT                                    
-00010b90  _ZSt17__throw_bad_allocv                   
-00010b90  abort                                      
-00010b96  _ZdlPvj                                    
-00010b9a  _system_pre_init                           
-00010b9e  _nop                                       
-00010ba0  _system_post_cinit                         
+00010b74  _Z29umbilicalcord_rover_connectedv         
+00010b80  _Z34initialize_umbilicalcord_pin_roverv    
+00010b8a  _ZdlPv                                     
+00010b94  C$$EXIT                                    
+00010b94  _ZSt17__throw_bad_allocv                   
+00010b94  abort                                      
+00010b9a  _ZdlPvj                                    
+00010b9e  _system_pre_init                           
+00010ba2  _nop                                       
+00010ba4  _system_post_cinit                         
 ffffffff  __TI_pprof_out_hndl                        
 ffffffff  __TI_prof_data_size                        
 ffffffff  __TI_prof_data_start                       
