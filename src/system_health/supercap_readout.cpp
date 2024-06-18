@@ -51,9 +51,9 @@ void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12_ISR (void)
 
 // Function to initialize the Super cap voltage pin
 void initialize_capready(void) {
-    P2DIR &= ~BIT7;               // Set P2.7 as input
-    P2SEL1 |= BIT7;               // Select P2.7 for special function
-    P2SEL0 |= BIT7;               // Select P2.7 for special function
+    P2DIR &= ~BIT4;               // Set P2.4 as input
+    P2SEL1 |= BIT4;               // Select P2.4 for special function
+    P2SEL0 |= BIT4;               // Select P2.4 for special function
     PM5CTL0 &= ~LOCKLPM5;         // Disable the GPIO power-on default high-impedance mode
 }
 
