@@ -19,7 +19,11 @@ ORDERED_OBJS += \
 "./src/lander_communication/learning to use UART/UART transmission using buffer.obj" \
 "./src/lander_communication/learning to use UART/UART transmit pin test.obj" \
 "./src/main.obj" \
+"./src/system_health/ECCS.obj" \
 "./src/system_health/NEA_readout.obj" \
+"./src/system_health/bus_current_readout.obj" \
+"./src/system_health/heat_resistor_control.obj" \
+"./src/system_health/main_system_init.obj" \
 "./src/system_health/supercap_readout.obj" \
 "./src/system_health/temp_sensors.obj" \
 "./src/system_health/umbilical_cord.obj" \
@@ -167,8 +171,8 @@ rover\ deployment\ software\ system.out: $(OBJS) $(CMD_SRCS) $(A_SRCS) $(GEN_CMD
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "src\lander_communication\lander_communication.obj" "src\lander_communication\lander_communication_protocol.obj" "src\lander_communication\uart_communication.obj" "src\lander_communication\learning to use UART\PinHigh.obj" "src\lander_communication\learning to use UART\SLIP encoding.obj" "src\lander_communication\learning to use UART\SLIP retransmission.obj" "src\lander_communication\learning to use UART\UART transmission using buffer.obj" "src\lander_communication\learning to use UART\UART transmit pin test.obj" "src\main.obj" "src\system_health\NEA_readout.obj" "src\system_health\supercap_readout.obj" "src\system_health\temp_sensors.obj" "src\system_health\umbilical_cord.obj" "src\transit_modes\deployment.obj" "src\transit_modes\general_startup.obj" 
-	-$(RM) "src\lander_communication\lander_communication.d" "src\lander_communication\lander_communication_protocol.d" "src\lander_communication\uart_communication.d" "src\lander_communication\learning to use UART\PinHigh.d" "src\lander_communication\learning to use UART\SLIP encoding.d" "src\lander_communication\learning to use UART\SLIP retransmission.d" "src\lander_communication\learning to use UART\UART transmission using buffer.d" "src\lander_communication\learning to use UART\UART transmit pin test.d" "src\main.d" "src\system_health\NEA_readout.d" "src\system_health\supercap_readout.d" "src\system_health\temp_sensors.d" "src\system_health\umbilical_cord.d" "src\transit_modes\deployment.d" "src\transit_modes\general_startup.d" 
+	-$(RM) "src\lander_communication\lander_communication.obj" "src\lander_communication\lander_communication_protocol.obj" "src\lander_communication\uart_communication.obj" "src\lander_communication\learning to use UART\PinHigh.obj" "src\lander_communication\learning to use UART\SLIP encoding.obj" "src\lander_communication\learning to use UART\SLIP retransmission.obj" "src\lander_communication\learning to use UART\UART transmission using buffer.obj" "src\lander_communication\learning to use UART\UART transmit pin test.obj" "src\main.obj" "src\system_health\ECCS.obj" "src\system_health\NEA_readout.obj" "src\system_health\bus_current_readout.obj" "src\system_health\heat_resistor_control.obj" "src\system_health\main_system_init.obj" "src\system_health\supercap_readout.obj" "src\system_health\temp_sensors.obj" "src\system_health\umbilical_cord.obj" "src\transit_modes\deployment.obj" "src\transit_modes\general_startup.obj" 
+	-$(RM) "src\lander_communication\lander_communication.d" "src\lander_communication\lander_communication_protocol.d" "src\lander_communication\uart_communication.d" "src\lander_communication\learning to use UART\PinHigh.d" "src\lander_communication\learning to use UART\SLIP encoding.d" "src\lander_communication\learning to use UART\SLIP retransmission.d" "src\lander_communication\learning to use UART\UART transmission using buffer.d" "src\lander_communication\learning to use UART\UART transmit pin test.d" "src\main.d" "src\system_health\ECCS.d" "src\system_health\NEA_readout.d" "src\system_health\bus_current_readout.d" "src\system_health\heat_resistor_control.d" "src\system_health\main_system_init.d" "src\system_health\supercap_readout.d" "src\system_health\temp_sensors.d" "src\system_health\umbilical_cord.d" "src\transit_modes\deployment.d" "src\transit_modes\general_startup.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

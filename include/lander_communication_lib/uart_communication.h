@@ -28,6 +28,7 @@
 // included packages and libraries
 #include <lander_communication_lib/lander_communication.h>
 #include <lander_communication_lib/lander_communication_protocol.h>
+#include <lander_communication_lib/payload_messages.h>
 #include <msp430.h>
 #include <cstdint>
 
@@ -113,9 +114,5 @@ inline static void uart_interrupt_handler(uint8_t character);
  */
 uint16_t read_RX_buffer(uint16_t start, uint16_t end);
 
-/*
- * setup the smclk
- */
-void setup_SMCLK(void);
 
 #endif // UART_COMM_H

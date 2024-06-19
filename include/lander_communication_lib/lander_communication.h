@@ -15,6 +15,7 @@
 
 #include <lander_communication_lib/lander_communication_protocol.h>
 #include <lander_communication_lib/uart_communication.h>
+#include <lander_communication_lib/payload_messages.h>
 #include <system_health_lib/temp_sensors.h>
 #include <msp430.h>
 #include <cstdint>

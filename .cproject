@@ -99,6 +99,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry excluding="test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-ly8q81"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/.cmake/api/v1/reply"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug-coverage/CMakeFiles/CMakeScratch/TryCompile-bcoznf"/>
@@ -106,7 +107,6 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug/.cmake/api/v1/reply"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kpbc9w"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test/TestingRepositoryBEP/cmake-build-debug/CMakeFiles/lander_communication_run.dir"/>
-						<entry excluding="src/system_health/bus_current_readout.cpp|src/system_health/heat_resistor_control.cpp|test|src/system_health/actuatorControl.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -218,4 +218,5 @@
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

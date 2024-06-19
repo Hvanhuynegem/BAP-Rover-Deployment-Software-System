@@ -23,8 +23,7 @@ void send_message_and_wait_for_ACK(uint8_t msg_type, const uint8_t *payload, uin
 void general_startup(void){
     // Initialize connection with the lander
     // Create an initialization message
-    uint8_t payload[] = "Initialization payload";
-    send_message_and_wait_for_ACK(MSG_TYPE_INIT, payload, strlen((const char*)payload));
+    send_message_and_wait_for_ACK(MSG_TYPE_INIT, PAYLOAD_INIT, sizeof(PAYLOAD_INIT) - 1);
 
     // request the transit status from the lander
     send_transit_mode_request_message();
@@ -41,25 +40,28 @@ void general_startup(void){
 
     // based on whether the umbilical cord is connected it sends either a correct connection or an error msg
     if(status_umbilical_cord_rover){
-        uint8_t payload_correct[] = "umbilical cord connected";
-        send_message(MSG_TYPE_DATA, payload_correct, strlen((const char*)payload_correct));
+        send_message(MSG_TYPE_DATA, PAYLOAD_UMBILICAL_CONNECTED, sizeof(PAYLOAD_UMBILICAL_CONNECTED) - 1);
     }
     else{
-        uint8_t payload_false[] = "umbilical cord not connected";
-        send_message(MSG_TYPE_ERROR, payload_false, strlen((const char*)payload_false));
+        send_message(MSG_TYPE_ERROR, PAYLOAD_UMBILICAL_NOT_CONNECTED, sizeof(PAYLOAD_UMBILICAL_NOT_CONNECTED) - 1);
     }
 
     // process RX buffer
     process_received_data();
 
     // set up a connection with the rover
+    /* TO BE IMPLEMENTED*/
 
+    RDS_electronics_status_check();
     // perform the RDS electronics checkup
+//    if(transit_state == GENERAL_STARTUP){
+//        RDS_electronics_status_check();
+//    }
+
 }
 
 
 void send_transit_mode_request_message(void) {
     // Create a transit mode request message
-    uint8_t payload[] = "TM";
-    send_message(MSG_TYPE_REQUEST, payload, strlen((const char*)payload));
+    send_message(MSG_TYPE_REQUEST, PAYLOAD_TRANSIT_MODE, sizeof(PAYLOAD_TRANSIT_MODE) - 1);
 }

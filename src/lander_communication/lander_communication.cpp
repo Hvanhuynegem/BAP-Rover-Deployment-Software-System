@@ -244,18 +244,15 @@ void process_received_data(void) {
         RX_start = read_RX_buffer(start, end);
     } else if (buffer_full_state){
         // Create a ERROR message
-        uint8_t payload[] = "MESSAGE_TOO_LARGE";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        send_message(MSG_TYPE_ERROR, PAYLOAD_TOO_LARGE, sizeof(PAYLOAD_TOO_LARGE) - 1);
         buffer_full_state = false;
     } else if(error_state){
         // Create a ERROR message
-        uint8_t payload[] = "";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        send_message(MSG_TYPE_ERROR, PAYLOAD_EMPTY, sizeof(PAYLOAD_EMPTY) - 1);
         error_state = false;
     } else if (timeout_state) {
         // Create a NACK message
-        uint8_t payload[] = "";
-        send_message(MSG_TYPE_NACK, payload, strlen((const char*)payload));
+        send_message(MSG_TYPE_NACK, PAYLOAD_EMPTY, sizeof(PAYLOAD_EMPTY) - 1);
         timeout_state = false;
     } else {}
 }

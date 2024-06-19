@@ -16,12 +16,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "system_health_lib/main_system_init.h"
+
 // Define the number of runs for the measurement
 #define numberOfRuns 9
-
-// External global variable to indicate if a timeout occurred
-extern volatile bool timeoutOccurred;
-
 
 /*
  * Initializes all the pins used to measure the temperature via oscillation.
@@ -33,39 +31,6 @@ extern volatile bool timeoutOccurred;
  *  void
  */
 void initialize_temperature_pins(void);
-
-/*
- * Starts the timeout timer.
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void startTimeoutTimer_TA2(void);
-
-/*
- * Stops the timeout timer.
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void stopTimeoutTimer_TA2(void);
-
-/*
- * Initializes the DCO (Digitally Controlled Oscillator).
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void initializeDCO(void);
 
 /*
  * Converts frequency to temperature.
@@ -87,7 +52,7 @@ float frequency_to_temperature(float frequency);
  * Returns:
  *  void
  */
-void setupTimer(void);
+void setupTimer_B0(void);
 
 /*
  * Calculates frequency from the period.
@@ -106,12 +71,32 @@ float calculateFrequency(float period);
  * Parameters:
  *  volatile unsigned int* TxxCCTLx : pointer to Timer B control register
  *  volatile unsigned int* TxxCCRx : pointer to Timer B capture/compare register
- *  float* temperature : pointer to store the calculated temperature
  *
  * Returns:
- *  void
+ *  float temperature: the measured temperature
  */
-void readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsigned int* TxxCCRx, float* temperature);
+float readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsigned int* TxxCCRx);
 
+/*
+ * Reads out the temperature sensor measurements from sensor 1.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  float temperature: the measured temperature
+ */
+float readout_temperature_sensor_1(void);
+
+/*
+ * Reads out the temperature sensor measurements from sensor 2.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  float temperature: the measured temperature
+ */
+float readout_temperature_sensor_2(void);
 
 #endif /* INCLUDE_SYSTEM_HEALTH_LIB_TEMP_SENSORS_H_ */

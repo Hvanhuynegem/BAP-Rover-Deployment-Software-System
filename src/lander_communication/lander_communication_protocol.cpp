@@ -51,23 +51,20 @@ uint8_t calculate_checksum(const Message *msg){
 void handle_message(const Message *msg) {
     if (msg->start_byte != MSG_START_BYTE || msg->end_byte != MSG_END_BYTE) {
         // Invalid message
-        uint8_t payload[] = "INVALID_MESSAGE";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        send_message(MSG_TYPE_ERROR, PAYLOAD_INVALID_MESSAGE, sizeof(PAYLOAD_INVALID_MESSAGE) - 1);
         return;
     }
 
     if (msg->checksum != calculate_checksum(msg)) {
         // Invalid checksum
-        uint8_t payload[] = "INVALID_CHECKSUM";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        send_message(MSG_TYPE_ERROR, PAYLOAD_INVALID_CHECKSUM, sizeof(PAYLOAD_INVALID_CHECKSUM) - 1);
         return;
     }
 
     switch (msg->msg_type) {
         case MSG_TYPE_INIT:
             // Handle initialization sequence
-            uint8_t ack_payload[] = "ACK";
-            send_message(MSG_TYPE_ACK, ack_payload, strlen((const char*)ack_payload));
+            send_message(MSG_TYPE_ACK, PAYLOAD_ACK, sizeof(PAYLOAD_ACK) - 1);
             break;
         case MSG_TYPE_ACK:
             // Handle acknowledgment

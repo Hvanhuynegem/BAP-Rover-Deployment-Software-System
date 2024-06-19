@@ -18,24 +18,6 @@
 // Define the number of runs for the measurement
 #define numberOfRuns 9
 
-// Global variable to indicate if a timeout occurred
-volatile bool timeoutOccurred = false;
-
-// Timer A2 CCR0 interrupt service routine
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = TIMER2_A0_VECTOR
-__interrupt void Timer_A2_ISR (void)
-#elif defined(__GNUC__)
-void __attribute__ ((interrupt(TIMER2_A0_VECTOR))) Timer_A2_ISR (void)
-#else
-#error Compiler not supported!
-#endif
-{
-    // Handle CCR0 interrupt
-    timeoutOccurred = true;  // Set timeout flag
-    TA2CTL = MC_0;           // Stop the timer
-    TA2CCTL0 &= ~CCIE;       // Disable interrupt
-}
 
 // Function to initialize all the pins used to measure the temperature via oscillation
 void initialize_temperature_pins(void) {
@@ -54,38 +36,13 @@ void initialize_temperature_pins(void) {
     P3DIR |= BIT5;  // Set P3.5 as output pin (control temp sensor 1)
     P3OUT &= ~BIT5; // Initially set P3.5 low
 
-    //TempOn1 = pin to put the first temperature sensor on
+    //TempOn2 = pin to put the second temperature sensor on
     P1DIR |= BIT3;  // Set P1.3 as output pin (control temp sensor 1)
     P1OUT &= ~BIT3; // Initially set P1.3 low
 
     PM5CTL0 &= ~LOCKLPM5; // Disable the GPIO power-on default high-impedance mode
 }
 
-// Function to start the timeout timer
-void startTimeoutTimer_TA2()
-{
-    timeoutOccurred = false;  // Reset timeout flag
-    TA2CTL = TASSEL_2 + MC_1 + ID__4 + TACLR; // SMCLK = 16 MHz, up mode, input divider by 4, clear TAR
-    TA2CCTL0 = CCIE;          // Enable interrupt
-    TA2CCR0 = 60000;          // Set CCR0 value for the timer
-}
-
-// Function to stop the timeout timer
-void stopTimeoutTimer_TA2()
-{
-    TA2CTL = MC_0;       // Stop the timer
-    TA2CCTL0 = ~CCIE;    // Disable interrupt
-    timeoutOccurred = false;  // Reset timeout flag
-}
-
-// Function to initialize the DCO (Digitally Controlled Oscillator)
-void initializeDCO(void) {
-    CSCTL0_H = CSKEY >> 8;      // Unlock CS registers
-    CSCTL1 = DCOFSEL_4 | DCORSEL; // Set DCO to 16 MHz
-    CSCTL2 = SELS__DCOCLK;      // Select DCO as the clock source for SMCLK
-    CSCTL3 = DIVS__1;           // Set all dividers to 1
-    CSCTL0_H = 0;               // Lock CS registers
-}
 
 // Function to convert frequency to temperature
 float frequency_to_temperature(float frequency) {
@@ -100,7 +57,7 @@ float frequency_to_temperature(float frequency) {
 }
 
 // Function to set up Timer_B0 related to the temperature pins
-void setupTimer(void) {
+void setupTimer_B0(void) {
     TB0CTL = TBSSEL_2 | MC_2 | TBCLR | ID__4; // SMCLK, Continuous mode, clear TBR, divide the input clock by 4
 
     //For pin 3.4 (Temp1Out)
@@ -122,7 +79,7 @@ float calculateFrequency(float period) {
 }
 
 // Function to read out the temperature sensor measurements
-void readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsigned int* TxxCCRx, float* temperature) {
+float readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsigned int* TxxCCRx) {
     volatile unsigned int firstCapture = 0; // First capture value
     volatile unsigned int secondCapture = 0; // Second capture value
     float singlePeriod = 0;                 // Single period measurement
@@ -185,11 +142,21 @@ void readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsi
 
     // Check if the frequency is within the valid range
     if (frequency >= 150 && frequency <= 800) {
-        *temperature = frequency_to_temperature(frequency); // Convert frequency to temperature
-        // Send message with the actual temperature
+        // return the temperature
+        return frequency_to_temperature(frequency); // Convert frequency to temperature
     } else {
-        // Send message that the temperature sensor is broken
+        // return error value
+        return -99;
     }
+}
+
+
+float readout_temperature_sensor_1(void){
+    return readout_temperature_sensor_n(&TB0CCTL3, &TB0CCR3);
+}
+
+float readout_temperature_sensor_2(void){
+    return readout_temperature_sensor_n(&TB0CCTL1, &TB0CCR1);
 }
 
 

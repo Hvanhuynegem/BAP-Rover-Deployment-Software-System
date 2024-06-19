@@ -14,16 +14,16 @@
 #include "lander_communication_lib/lander_communication.h"
 #include "lander_communication_lib/lander_communication_protocol.h"
 #include "lander_communication_lib/uart_communication.h"
+#include "lander_communication_lib/payload_messages.h"
+#include "system_health_lib/main_system_init.h"
 
 
 int main(void) {
     // Stop watchdog timer
     WDTCTL = WDTPW | WDTHOLD;
 
-    // digital clk
-    setup_SMCLK();
-    // Initialise UART
-    uart_configure();
+    // initialise everything
+    boot_up_initialisation();
 
     // Pins start in high-impedance mode on wake-up, this enables them again
     // and activates our port configurations
@@ -38,25 +38,20 @@ int main(void) {
         case GENERAL_STARTUP:
             // process RX buffer
             process_received_data();
-            uint8_t payload0[] = "GENERAL_STARTUP";
-            send_message(MSG_TYPE_RESPONSE, payload0, strlen((const char*)payload0));
+            send_message(MSG_TYPE_RESPONSE, PAYLOAD_GENERAL_STARTUP, sizeof(PAYLOAD_GENERAL_STARTUP) - 1);
             general_startup();
             break;
         case LAUNCH_INTEGRATION:
-            uint8_t payload1[] = "LAUNCH_INTEGRATION";
-            send_message(MSG_TYPE_RESPONSE, payload1, strlen((const char*)payload1));
+            send_message(MSG_TYPE_RESPONSE, PAYLOAD_LAUNCH_INTEGRATION, sizeof(PAYLOAD_LAUNCH_INTEGRATION) - 1);
             break;
         case TRANSIT:
-            uint8_t payload2[] = "TRANSIT";
-            send_message(MSG_TYPE_RESPONSE, payload2, strlen((const char*)payload2));
+            send_message(MSG_TYPE_RESPONSE, PAYLOAD_TRANSIT, sizeof(PAYLOAD_TRANSIT) - 1);
             break;
         case PRE_DEPLOYMENT:
-            uint8_t payload3[] = "PRE_DEPLOYMENT";
-            send_message(MSG_TYPE_RESPONSE, payload3, strlen((const char*)payload3));
+            send_message(MSG_TYPE_RESPONSE, PAYLOAD_PRE_DEPLOYMENT, sizeof(PAYLOAD_PRE_DEPLOYMENT) - 1);
             break;
         case DEPLOYMENT:
-            uint8_t payload4[] = "DEPLOYMENT";
-            send_message(MSG_TYPE_RESPONSE, payload4, strlen((const char*)payload4));
+            send_message(MSG_TYPE_RESPONSE, PAYLOAD_DEPLOYMENT, sizeof(PAYLOAD_DEPLOYMENT) - 1);
             break;
         default:
             // process RX buffer

@@ -1,7 +1,7 @@
 /*
  * supercap_readout.h
  *
- * This header file contains the function declarations and necessary includes for the supercap_readout.cpp file, which provides functionalities for reading an analog voltage from a pin.
+ * This header file contains the function declarations and necessary includes for the supercap_readout.cpp file, which provides functionalities for initialising capacitor pins.
  *
  * Author: Diederik Aris
  * created: 28/05/2024
@@ -25,6 +25,17 @@ extern volatile bool adc_conversion_fail;
 
 
 /*
+ * Initializes the charge and discharge cap flags
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void initialize_charge_cap_flags(void);
+
+/*
  * Initializes the Super cap voltage pin.
  *
  * Parameters:
@@ -35,16 +46,6 @@ extern volatile bool adc_conversion_fail;
  */
 void initialize_capready(void);
 
-/*
- * Initializes the general ADC settings.
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void initialize_adc_general(void);
 
 /*
  * Initializes the ADC for super capacitors.
@@ -79,15 +80,5 @@ float convert_adc_to_voltage(volatile unsigned int adc_value);
  */
 float voltage_adc_supercaps(void);
 
-/*
- * Initializes all necessary settings for supercap pins.
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void supercaps(void);
 
 #endif /* INCLUDE_SYSTEM_HEALTH_LIB_SUPERCAP_READOUT_H_ */

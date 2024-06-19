@@ -348,8 +348,7 @@ uint16_t read_RX_buffer(uint16_t start, uint16_t end){
 
     if(!result){
         // Handle error
-        uint8_t payload[] = "INVALID_MESSAGE";
-        send_message(MSG_TYPE_ERROR, payload, strlen((const char*)payload));
+        send_message(MSG_TYPE_ERROR, PAYLOAD_INVALID_MESSAGE, sizeof(PAYLOAD_INVALID_MESSAGE) - 1);
     }
 
     // Handle the message
@@ -365,16 +364,3 @@ uint16_t read_RX_buffer(uint16_t start, uint16_t end){
     return start;
 }
 
-void setup_SMCLK(void)
-{
-    // Configure one FRAM waitstate as required by the device datasheet for MCLK operation beyond 8MHz
-    FRCTL0 = FRCTLPW | NWAITS_1;
-
-    // Set DCO frequency to 16 MHz
-    CSCTL0_H = CSKEY >> 8;                      // Unlock CS registers
-    CSCTL1 = DCOFSEL_4;                         // Set DCO to 16 MHz (DCORSEL selects high range, DCOFSEL_4 sets it to 16 MHz)
-    CSCTL1 |= DCORSEL;
-    CSCTL2 = SELS__DCOCLK | SELM__DCOCLK;       // Set SMCLK and DCO source to 16MHz
-    CSCTL3 = DIVS__1 | DIVM__1;                 // SMCLK = DCO = 16MHz
-    CSCTL0_H = 0;                               // Lock CS registers
-}

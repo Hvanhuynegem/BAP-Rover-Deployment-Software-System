@@ -26,13 +26,22 @@ src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/general_startup.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication_protocol.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/payload_messages.h
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/cstdint
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/uart_communication.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/temp_sensors.h
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/stdbool.h
 src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/stdbool.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/main_system_init.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/umbilical_cord.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/ECCS.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/bus_current_readout.h
+src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/stdlib.h
+src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/stdlib.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/supercap_readout.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/NEA_readout.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/heat_resistor_control.h
 
 ../src/main.cpp:
 
@@ -86,6 +95,8 @@ C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lan
 
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/lander_communication_protocol.h:
 
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/payload_messages.h:
+
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/cstdint:
 
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/lander_communication_lib/uart_communication.h:
@@ -98,5 +109,21 @@ C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/stdbool
 
 C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/stdbool.h:
 
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/main_system_init.h:
+
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/umbilical_cord.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/ECCS.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/bus_current_readout.h:
+
+C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/libcxx/stdlib.h:
+
+C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/stdlib.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/supercap_readout.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/NEA_readout.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/heat_resistor_control.h:
 

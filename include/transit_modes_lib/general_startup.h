@@ -21,6 +21,8 @@
 #include "lander_communication_lib/uart_communication.h"
 #include "system_health_lib/temp_sensors.h"
 #include "system_health_lib/umbilical_cord.h"
+#include "system_health_lib/main_system_init.h"
+#include "system_health_lib/ECCS.h"
 
 
 /*

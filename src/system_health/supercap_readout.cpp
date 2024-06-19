@@ -1,7 +1,7 @@
 /*
  * supercap_readout.cpp
  *
- * This file includes the functions needed to read an analogue voltage from a pin
+ * This file includes the functions needed to initialise capacitor pins
  *
  *
  * Author: Diederik Aris
@@ -13,6 +13,8 @@
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>
+
+#include "system_health_lib/supercap_readout.h"
 
 // Constants
 #define ADC_MAX_VALUE        4095      // 12-bit ADC resolution (2^12 - 1)
@@ -49,6 +51,29 @@ void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12_ISR (void)
   }
 }
 
+// Function to initialize the Super cap charge cap flags and cap discharge flag
+void initialize_charge_cap_flags(void) {
+    // charge cap flag 1
+    P2DIR |= BIT7;               // Set P2.7 as output
+    P2OUT &= ~BIT7;               // sets P2.7 to low (active high pin)
+
+    // charge cap flag 2
+    P2DIR |= BIT3;               // Set P2.3 as output
+    P2OUT &= ~BIT3;               // sets P2.3 to low (active high pin)
+
+    // charge cap flag 3
+    P4DIR |= BIT4;               // Set P4.4 as output
+    P4OUT &= ~BIT4;               // sets P4.4 to low (active high pin)
+
+    // discharge cap flag
+    PJDIR |= BIT4;               // Set Pj.4 as output
+    PJOUT &= ~BIT4;               // sets Pj.4 to low (active high pin)
+
+    // Disable the GPIO power-on default high-impedance mode
+    PM5CTL0 &= ~LOCKLPM5;
+}
+
+
 // Function to initialize the Super cap voltage pin
 void initialize_capready(void) {
     P2DIR &= ~BIT4;               // Set P2.4 as input
@@ -57,16 +82,6 @@ void initialize_capready(void) {
     PM5CTL0 &= ~LOCKLPM5;         // Disable the GPIO power-on default high-impedance mode
 }
 
-// Function to initialize the general ADC settings
-void initialize_adc_general(void) {
-    ADC12CTL0 &= ~ADC12ENC;            // Disable ADC12
-    ADC12CTL0 = ADC12SHT0_2 | ADC12ON; // Set sampling time, S&H=16, ADC12 on
-    ADC12CTL1 = ADC12SHP;              // Use sampling timer
-    ADC12CTL2 |= ADC12RES_2;           // 12-bit conversion results
-    ADC12IER2 |= ADC12TOVIE | ADC12OVIE; // Enable overflow interrupts
-    ADC12CTL0 |= ADC12ENC;             // Enable conversions
-    PM5CTL0 &= ~LOCKLPM5;              // Disable the GPIO power-on default high-impedance mode
-}
 
 // Function to initialize the ADC for super capacitors
 void initialize_adc_supercaps(void) {
@@ -105,11 +120,3 @@ float voltage_adc_supercaps(void) {
     }
 }
 
-
- // This function is for all the supercap pins together
-    void supercaps(void){
-
-    initialize_adc_general(); /// dit moet al gebeuren aan het begin van alles
-
-
-    }

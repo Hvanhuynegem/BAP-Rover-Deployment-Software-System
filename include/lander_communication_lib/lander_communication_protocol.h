@@ -13,6 +13,8 @@
 #define LANDER_COMMUNICATION_PROTOCOL_H
 
 
+#include <lander_communication_lib/payload_messages.h>
+
 #include <cstdint>
 
 // Message type codes
