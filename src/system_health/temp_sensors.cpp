@@ -134,6 +134,8 @@ void readout_temperature_sensor_n(volatile unsigned int* TxxCCTLx, volatile unsi
     for (i = 0; i < numberOfRuns; i++) {
         startTimeoutTimer_TA2();  // Start the timeout timer
 
+        *TxxCCTLx &= ~CCIFG;      // Clear interrupt flag
+
         // Wait for the first capture or timeout
         while (!(*TxxCCTLx & CCIFG) && !timeoutOccurred);
 
