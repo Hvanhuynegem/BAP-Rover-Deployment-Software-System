@@ -62,17 +62,6 @@ void initialize_adc_supercaps(void);
  * Converts ADC value to voltage.
  *
  * Parameters:
- *  None
- *
- * Returns:
- *  Unsigned int : capture period
- */
-unsigned int read_ADC(void);
-
-/*
- * Converts ADC value to voltage.
- *
- * Parameters:
  *  volatile unsigned int adc_value : the ADC value to convert
  *
  * Returns:

@@ -52,11 +52,10 @@ void general_startup(void){
     // set up a connection with the rover
     /* TO BE IMPLEMENTED*/
 
-    RDS_electronics_status_check();
     // perform the RDS electronics checkup
-//    if(transit_state == GENERAL_STARTUP){
-//        RDS_electronics_status_check();
-//    }
+    if(transit_state == GENERAL_STARTUP){
+        RDS_electronics_status_check();
+    }
 
 }
 
