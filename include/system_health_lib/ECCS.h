@@ -27,6 +27,20 @@
 #include "lander_communication_lib/lander_communication.h"
 #include "lander_communication_lib/payload_messages.h"
 
+// Enumeration for task states
+typedef enum {
+    TASK_CHECK_UMBILICAL_ECCS,
+    TASK_BUS_CURRENT_SENSE,
+    TASK_TEMPERATURE_SENSORS_CHECK_1,
+    TASK_TEMPERATURE_SENSORS_CHECK_2,
+    TASK_HEAT_RESISTOR_CONTROL,
+    TASK_SUPER_CAP_CHECK,
+    TASK_NEA_CHECK,
+    TASK_DONE
+} ECCSTaskState;
+
+extern ECCSTaskState EECSTask;
+
 /*
  * Initializes all the electronic pins.
  *

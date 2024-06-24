@@ -52,28 +52,6 @@ void initialize_adc_bus_sense(void);
  */
 void initialize_bus_flag_pin(void);
 
-/*
- * switches on pin 4.2 such that current flows to rover
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void switch_on_bus_flag_pin(void);
-
-/*
- * switches off pin 4.2 such that current flows to rover
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  void
- */
-void switch_off_bus_flag_pin(void);
-
 
 /*
  * Reads the voltage from the bus current sense pin via ADC.

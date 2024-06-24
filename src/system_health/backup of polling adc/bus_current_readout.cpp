@@ -41,19 +41,9 @@ void initialize_adc_bus_sense(void) {
 void initialize_bus_flag_pin(void) {
     // Configure GPIO
     P4DIR |= BIT2;                         // Set pin 4.2 as output (bus flag pin)
-    P4OUT &= ~BIT2;                           // switch on power to rover
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
-void switch_on_bus_flag_pin(void){
-    P4OUT &= ~BIT2;                           // switch on power to rover (active low)
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-}
-
-void switch_off_bus_flag_pin(void){
-    P4OUT |= BIT2;                           // switch off power to rover (active low)
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-}
 
 float voltage_adc_bus_sense(void) {
     initialize_bus_current_sense_pin();             // Initialize the bus sense pin

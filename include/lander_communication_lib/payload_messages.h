@@ -47,6 +47,14 @@ static const uint8_t PAYLOAD_NEA3_READY[] = "NEA 3 is ready";
 static const uint8_t PAYLOAD_NEA3_NOT_READY[] = "NEA 3 is not ready";
 static const uint8_t PAYLOAD_NEA4_READY[] = "NEA 4 is ready";
 static const uint8_t PAYLOAD_NEA4_NOT_READY[] = "NEA 4 is not ready";
+static const uint8_t PAYLOAD_SUPERCAP1_READY[] = "supercapacitor 1 is ready";
+static const uint8_t PAYLOAD_SUPERCAP1_NOT_READY[] = "supercapacitor 1 is not ready";
+static const uint8_t PAYLOAD_SUPERCAP2_READY[] = "supercapacitor 2 is ready";
+static const uint8_t PAYLOAD_SUPERCAP2_NOT_READY[] = "supercapacitor 2 is not ready";
+static const uint8_t PAYLOAD_SUPERCAP3_READY[] = "supercapacitor 3 is ready";
+static const uint8_t PAYLOAD_SUPERCAP3_NOT_READY[] = "supercapacitor 3 is not ready";
+static const uint8_t PAYLOAD_POWER_ROVER_OFF[] = "Power to the rover is switched off";
+static const uint8_t PAYLOAD_DEPLOYMENT_COMPLETE[] = "Deployment is complete";
 
 // error messages
 static const uint8_t PAYLOAD_ERROR[] = "ERROR_MESSAGE";

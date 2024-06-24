@@ -51,35 +51,59 @@ bool is_heater_on(void){
     return (P3IN & BIT7) == 0; // it is an active low signal
 }
 
-void heat_resistor_control(float temperature1, float temperature2){
-    if(temperature1 == -99 && temperature2 == -99){
-        // set the heaterOff and heaterOn both low
-        MCU_heaterOff_low();
-        MCU_heaterOn_low();
-        // send an error message for sensor 1
-        send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_1_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_1_BROKEN) - 1);
-        // send an error message for sensor 2
-        send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_2_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_2_BROKEN) - 1);
-    } else if (temperature1 == -99){
-        // send an error message for sensor 1
-        send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_1_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_1_BROKEN) - 1);
-        heat_resistor_control_one_sensor(temperature2);
-    } else if(temperature2 == -99){
-        // send an error message for sensor 2
-        send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_2_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_2_BROKEN) - 1);
-        heat_resistor_control_one_sensor(temperature1);
-    } else{
-        heat_resistor_control_two_sensors(temperature1, temperature2);
-        // convert the float to the array of 5 characters and send message
-        uint8_t PAYLOAD_TEMP_SENSOR_1_WORKS[] = "      is the current temperature of sensor 1"; // the first 5 characters are blank since they will be overriden
-        float_to_uint8_array(temperature1, PAYLOAD_TEMP_SENSOR_1_WORKS, 5);
-        send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_1_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_1_WORKS) - 1);
-        // convert the float to the array of 5 characters and send message
-        uint8_t PAYLOAD_TEMP_SENSOR_2_WORKS[] = "      is the current temperature of sensor 2"; // the first 5 characters are blank since they will be overriden
-        float_to_uint8_array(temperature2, PAYLOAD_TEMP_SENSOR_2_WORKS, 5);
-        send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_2_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_2_WORKS) - 1);
+void heat_resistor_control(float temperature1, float temperature2) {
+    int condition = 0;
+    if (temperature1 == -99 && temperature2 == -99) {
+        condition = 1;
+    } else if (temperature1 == -99) {
+        condition = 2;
+    } else if (temperature2 == -99) {
+        condition = 3;
+    } else {
+        condition = 4;
+    }
+
+    switch (condition) {
+        case 1:
+            // set the heaterOff and heaterOn both low
+            MCU_heaterOff_low();
+            MCU_heaterOn_low();
+            // send an error message for sensor 1
+            send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_1_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_1_BROKEN) - 1);
+            // send an error message for sensor 2
+            send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_2_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_2_BROKEN) - 1);
+            break;
+
+        case 2:
+            // send an error message for sensor 1
+            send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_1_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_1_BROKEN) - 1);
+            heat_resistor_control_one_sensor(temperature2);
+            break;
+
+        case 3:
+            // send an error message for sensor 2
+            send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_2_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_2_BROKEN) - 1);
+            heat_resistor_control_one_sensor(temperature1);
+            break;
+
+        case 4:
+            heat_resistor_control_two_sensors(temperature1, temperature2);
+            // convert the float to the array of 5 characters and send message
+            uint8_t PAYLOAD_TEMP_SENSOR_1_WORKS[] = "      is the current temperature of sensor 1"; // the first 5 characters are blank since they will be overriden
+            float_to_uint8_array(temperature1, PAYLOAD_TEMP_SENSOR_1_WORKS, 5);
+            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_1_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_1_WORKS) - 1);
+            // convert the float to the array of 5 characters and send message
+            uint8_t PAYLOAD_TEMP_SENSOR_2_WORKS[] = "      is the current temperature of sensor 2"; // the first 5 characters are blank since they will be overriden
+            float_to_uint8_array(temperature2, PAYLOAD_TEMP_SENSOR_2_WORKS, 5);
+            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_2_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_2_WORKS) - 1);
+            break;
+
+        default:
+            // This case should never be reached
+            break;
     }
 }
+
 
 void heat_resistor_control_one_sensor(float temperature){
     // check if the heater is on

@@ -16,12 +16,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-
-#include "lander_communication_lib/lander_communication.h"
-#include "lander_communication_lib/payload_messages.h"
-
-extern bool supercap_functionality[3];
-
 // Constants
 #define ADC_MAX_VALUE        4095      // 12-bit ADC resolution (2^12 - 1)
 #define MAX_VOLTAGE          3.64      // Reference voltage for ADC (measured 3.64 V)
@@ -40,11 +34,6 @@ extern volatile bool adc_conversion_fail;
  *  void
  */
 void initialize_charge_cap_flags(void);
-
-void switch_on_charge_cap_flag(int flag);
-void switch_off_charge_cap_flag(int flag);
-void switch_on_discharge_cap_flag(void);
-void switch_off_discharge_cap_flag(void);
 
 /*
  * Initializes the Super cap voltage pin.
@@ -102,15 +91,5 @@ float convert_adc_to_voltage(volatile unsigned int adc_value);
  */
 float voltage_adc_supercaps(void);
 
-/*
- * Check the supercapacitor functionality of each supercapacitor
- *
- * Parameters:
- *  None
- *
- * Returns:
- *  None
- */
-void check_supercap_functionality(void);
 
 #endif /* INCLUDE_SYSTEM_HEALTH_LIB_SUPERCAP_READOUT_H_ */

@@ -33,6 +33,7 @@ bool umbilicalcord_rover_connected(void) {
 void initialize_umbilicalcord_detach_pin(void){
     // configure GPIO
     P4DIR |= BIT6;                         // Set P4.6 as output (DetachUmb)
+    P4OUT &= ~BIT6;
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
@@ -40,4 +41,16 @@ void initialize_umbilicalcord_detach_pin(void){
 void detach_umbilicalcord(void){
     P4OUT |= BIT6;                          // Set P4.6 high
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+    int x = 0;
+    while(umbilicalcord_rover_connected()){
+        if(x == 3){
+            return;
+        }
+        if (umbilicalcord_rover_connected()) {
+            send_message(MSG_TYPE_DATA, PAYLOAD_UMBILICAL_CONNECTED, sizeof(PAYLOAD_UMBILICAL_CONNECTED) - 1);
+        } else {
+            send_message(MSG_TYPE_ERROR, PAYLOAD_UMBILICAL_NOT_CONNECTED, sizeof(PAYLOAD_UMBILICAL_NOT_CONNECTED) - 1);
+        }
+        x++;
+    }
 }

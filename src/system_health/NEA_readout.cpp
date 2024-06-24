@@ -41,7 +41,62 @@ void initialize_all_nea_pins(void) {
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
+// Function to activate a specific NEA
+void activate_NEA_n(int nea) {
+    switch (nea) {
+        case 1:
+            P1OUT |= BIT0;                  // Activate NEA 1 (set P1.0 to high)
+            break;
+        case 2:
+            P1OUT |= BIT1;                  // Activate NEA 2 (set P1.1 to high)
+            break;
+        case 3:
+            P1OUT |= BIT2;                  // Activate NEA 3 (set P1.2 to high)
+            break;
+        case 4:
+            P3OUT |= BIT0;                  // Activate NEA 4 (set P3.0 to high)
+            break;
+        default:
+            // Handle invalid NEA number
+            break;
+    }
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+}
 
+// Function to deactivate a specific NEA
+void deactivate_NEA_n(int nea) {
+    switch (nea) {
+        case 1:
+            P1OUT &= ~BIT0;                 // Deactivate NEA 1 (set P1.0 to low)
+            break;
+        case 2:
+            P1OUT &= ~BIT1;                 // Deactivate NEA 2 (set P1.1 to low)
+            break;
+        case 3:
+            P1OUT &= ~BIT2;                 // Deactivate NEA 3 (set P1.2 to low)
+            break;
+        case 4:
+            P3OUT &= ~BIT0;                 // Deactivate NEA 4 (set P3.0 to low)
+            break;
+        default:
+            // Handle invalid NEA number
+            break;
+    }
+    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
+}
+
+void activate_NEAs(void){
+    if(supercap_functionality[0]){
+        switch_on_charge_cap_flag(0);
+    }
+    if(supercap_functionality[1]){
+        switch_on_charge_cap_flag(1);
+    }
+    if(supercap_functionality[2]){
+        switch_on_charge_cap_flag(2);
+    }
+    // CONTINUE IMPLEMENTING THIS!
+}
 
 
 // Function to read the status of the NEA ready bit

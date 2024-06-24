@@ -42,6 +42,10 @@ src/main.obj: C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/supercap_readout.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/NEA_readout.h
 src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/heat_resistor_control.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/launch_mode.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/transit_mode.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/pre_deployment_mode.h
+src/main.obj: C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/deployment_mode.h
 
 ../src/main.cpp:
 
@@ -126,4 +130,12 @@ C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/sys
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/NEA_readout.h:
 
 C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/system_health_lib/heat_resistor_control.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/launch_mode.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/transit_mode.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/pre_deployment_mode.h:
+
+C:/Users/henri/Documents/GitHub/BAP-Rover-Deployment-Software-System/include/transit_modes_lib/deployment_mode.h:
 

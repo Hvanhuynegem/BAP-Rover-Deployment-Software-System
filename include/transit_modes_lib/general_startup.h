@@ -24,6 +24,17 @@
 #include "system_health_lib/main_system_init.h"
 #include "system_health_lib/ECCS.h"
 
+// Enumeration for task states
+typedef enum {
+    TASK_SEND_TRANSIT_REQUEST,
+    TASK_CHECK_UMBILICAL,
+    TASK_SEND_CONNECTION_STATUS,
+    TASK_SETUP_ROVER_CONNECTION,
+    TASK_RDS_CHECKUP,
+    TASK_CLEAR,
+} TaskState;
+
+extern TaskState generalStartupTask;
 
 /*
  * General startup function for RDSS.

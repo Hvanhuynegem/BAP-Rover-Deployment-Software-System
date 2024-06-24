@@ -16,6 +16,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "system_health_lib/supercap_readout.h"
+
 /*
  * Initializes all 4 NEA's.
  *
@@ -26,6 +28,39 @@
  *  void
  */
 void initialize_all_nea_pins(void);
+
+/*
+ * Actuate NEA n.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void activate_NEA_n(int nea);
+
+/*
+ * stop Actuating NEA n
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void deactivate_NEA_n(int nea);
+
+/*
+ * Actuate all four NEAs.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void activate_NEAs(void);
 
 /*
  * Reads the status of the NEA ready bit.

@@ -17,6 +17,8 @@
 // include header files
 #include "system_health_lib/ECCS.h"
 
+// Global variable for current task
+ECCSTaskState EECSTask = TASK_CHECK_UMBILICAL_ECCS;
 
 void initialize_all_electronic_pins(void){
     // initialize the umbilicalcord readout pin 2.2
@@ -49,109 +51,137 @@ void initialize_all_electronic_pins(void){
     initialize_heat_resistor_pins();
 }
 
-void RDS_electronics_status_check(void){
-    // check if umbilical cord is connected
-    bool status_umbilical_cord_rover = umbilicalcord_rover_connected();
+void RDS_electronics_status_check(void) {
+    float temperature_of_sensor_1 = -99;
+    float temperature_of_sensor_2 = -99;
+    while (EECSTask != TASK_DONE) {
+        switch (EECSTask) {
+            case TASK_CHECK_UMBILICAL_ECCS: {
+                // Check if umbilical cord is connected
+                bool status_umbilical_cord_rover = umbilicalcord_rover_connected();
+                if (status_umbilical_cord_rover) {
+                    send_message(MSG_TYPE_DATA, PAYLOAD_UMBILICAL_CONNECTED, sizeof(PAYLOAD_UMBILICAL_CONNECTED) - 1);
+                } else {
+                    send_message(MSG_TYPE_ERROR, PAYLOAD_UMBILICAL_NOT_CONNECTED, sizeof(PAYLOAD_UMBILICAL_NOT_CONNECTED) - 1);
+                }
+                EECSTask = TASK_BUS_CURRENT_SENSE;
+                break;
+            }
 
-    // based on whether the umbilical cord is connected it sends either a correct connection or an error msg
-    if(status_umbilical_cord_rover){
-        send_message(MSG_TYPE_DATA, PAYLOAD_UMBILICAL_CONNECTED, sizeof(PAYLOAD_UMBILICAL_CONNECTED) - 1);
+            case TASK_BUS_CURRENT_SENSE: {
+                // Bus current sensing, read the value of the bus and send it to the earth
+                float bus_sense_voltage = voltage_adc_bus_sense();
+                if (bus_sense_voltage == 99) {
+                    send_message(MSG_TYPE_ERROR, PAYLOAD_BUS_SENSE_BROKEN, sizeof(PAYLOAD_BUS_SENSE_BROKEN) - 1);
+                } else {
+                    // Convert the float to the array of 5 characters and send message
+                    uint8_t PAYLOAD_BUS_SENSE_WORKS[] = "      is the current bus voltage"; // the first 5 characters are blank since they will be overridden
+                    float_to_uint8_array(bus_sense_voltage, PAYLOAD_BUS_SENSE_WORKS, 5);
+                    send_message(MSG_TYPE_DATA, PAYLOAD_BUS_SENSE_WORKS, sizeof(PAYLOAD_BUS_SENSE_WORKS) - 1);
+                }
+                EECSTask = TASK_TEMPERATURE_SENSORS_CHECK_1;
+                break;
+            }
+
+            case TASK_TEMPERATURE_SENSORS_CHECK_1: {
+                // Temperature sensors check
+                // Registers for temp sensor 1: TxxCCTLx = &TB0CCTL3, TxxCCRx = &TB0CCR3
+                temperature_of_sensor_1 = readout_temperature_sensor_1();
+                EECSTask = TASK_TEMPERATURE_SENSORS_CHECK_2;
+                break;
+            }
+
+            case TASK_TEMPERATURE_SENSORS_CHECK_2: {
+                // Temperature sensors check
+                // Registers for temp sensor 2: TxxCCTLx = &TB0CCTL1, TxxCCRx = &TB0CCR1
+                temperature_of_sensor_2 = readout_temperature_sensor_2();
+                EECSTask = TASK_HEAT_RESISTOR_CONTROL;
+                break;
+            }
+
+            case TASK_HEAT_RESISTOR_CONTROL: {
+                // Control the heat resistors and send an error message if a temp sensor is broken
+                heat_resistor_control(temperature_of_sensor_1, temperature_of_sensor_2);
+                EECSTask = TASK_SUPER_CAP_CHECK;
+                break;
+            }
+
+            case TASK_SUPER_CAP_CHECK: {
+                // Check the super capacitors.
+                float supercap_voltage = voltage_adc_supercaps();
+                if (supercap_voltage == 99) {
+                    // Send an error message if the supercap voltage cannot be read
+                    send_message(MSG_TYPE_ERROR, PAYLOAD_SUPERCAP_VOLTAGE_ERROR, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_ERROR) - 1);
+                } else {
+                    if (supercap_voltage == 0) {
+                        // Send a message that the voltage is 0V
+                        send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP_VOLTAGE_ZERO, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_ZERO) - 1);
+                    } else {
+                        // Convert the float to the array of 5 characters and send message
+                        uint8_t PAYLOAD_SUPERCAP_VOLTAGE_WORKS[] = "      is the current supercap voltage"; // the first 5 characters are blank since they will be overridden
+                        float_to_uint8_array(supercap_voltage, PAYLOAD_SUPERCAP_VOLTAGE_WORKS, 5);
+                        send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP_VOLTAGE_WORKS, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_WORKS) - 1);
+
+                        // Set all the chargeCap flags and dischargecap flag to low
+                        initialize_charge_cap_flags();
+                    }
+                }
+                EECSTask = TASK_NEA_CHECK;
+                break;
+            }
+
+            case TASK_NEA_CHECK: {
+                // NEA checkup
+                // Check the status of the 4 NEA's
+                bool status_NEA_1 = read_NEAready_status(&P3IN, BIT1);
+                bool status_NEA_2 = read_NEAready_status(&P3IN, BIT2);
+                bool status_NEA_3 = read_NEAready_status(&P3IN, BIT3);
+                bool status_NEA_4 = read_NEAready_status(&P4IN, BIT7);
+
+                if (status_NEA_1 && status_NEA_2 && status_NEA_3 && status_NEA_4) {
+                    // Send message that none of the NEA's is activated already
+                    send_message(MSG_TYPE_DATA, PAYLOAD_ALL_NEA_READY, sizeof(PAYLOAD_ALL_NEA_READY) - 1);
+                } else {
+                    if (status_NEA_1) {
+                        // Send message that NEA 1 is not activated yet
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA1_READY, sizeof(PAYLOAD_NEA1_READY) - 1);
+                    } else {
+                        // Send message that NEA 1 is already activated
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA1_NOT_READY, sizeof(PAYLOAD_NEA1_NOT_READY) - 1);
+                    }
+                    if (status_NEA_2) {
+                        // Send message that NEA 2 is not activated yet
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA2_READY, sizeof(PAYLOAD_NEA2_READY) - 1);
+                    } else {
+                        // Send message that NEA 2 is already activated
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA2_NOT_READY, sizeof(PAYLOAD_NEA2_NOT_READY) - 1);
+                    }
+                    if (status_NEA_3) {
+                        // Send message that NEA 3 is not activated yet
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA3_READY, sizeof(PAYLOAD_NEA3_READY) - 1);
+                    } else {
+                        // Send message that NEA 3 is already activated
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA3_NOT_READY, sizeof(PAYLOAD_NEA3_NOT_READY) - 1);
+                    }
+                    if (status_NEA_4) {
+                        // Send message that NEA 4 is not activated yet
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA4_READY, sizeof(PAYLOAD_NEA4_READY) - 1);
+                    } else {
+                        // Send message that NEA 4 is already activated
+                        send_message(MSG_TYPE_DATA, PAYLOAD_NEA4_NOT_READY, sizeof(PAYLOAD_NEA4_NOT_READY) - 1);
+                    }
+                }
+                EECSTask = TASK_DONE;
+                break;
+            }
+
+            case TASK_DONE:
+            default:
+                break;
+        }
+        // Process received messages
+        process_received_data();
     }
-    else{
-        send_message(MSG_TYPE_ERROR, PAYLOAD_UMBILICAL_NOT_CONNECTED, sizeof(PAYLOAD_UMBILICAL_NOT_CONNECTED) - 1);
-    }
-
-    // bus current sensing, read the value of the bus and send it to the earth
-    float bus_sense_voltage = voltage_adc_bus_sense();
-    if(bus_sense_voltage == 99){
-            send_message(MSG_TYPE_ERROR, PAYLOAD_BUS_SENSE_BROKEN, sizeof(PAYLOAD_BUS_SENSE_BROKEN) - 1);
-    }
-    else{
-        // convert the float to the array of 5 characters and send message
-        uint8_t PAYLOAD_BUS_SENSE_WORKS[] = "      is the current bus voltage"; // the first 5 characters are blank since they will be overriden
-        float_to_uint8_array(bus_sense_voltage, PAYLOAD_BUS_SENSE_WORKS, 5);
-        send_message(MSG_TYPE_DATA, PAYLOAD_BUS_SENSE_WORKS, sizeof(PAYLOAD_BUS_SENSE_WORKS) - 1);
-    }
-
-    // temperature sensors check
-    // registers for temp sensor 1: TxxCCTLx = &TB0CCTL3, TxxCCRx = &TB0CCR3
-    float temperature_of_sensor_1 = readout_temperature_sensor_1();
-
-    // registers for temp sensor 2: TxxCCTLx = &TB0CCTL1, TxxCCRx = &TB0CCR1
-    float temperature_of_sensor_2 = readout_temperature_sensor_2();
-
-    // control the heat resistors and send a error message if a temp sensor is broken
-    heat_resistor_control(temperature_of_sensor_1, temperature_of_sensor_2);
-
-    // check the super capacitors.
-    float supercap_voltage = voltage_adc_supercaps();
-
-    if(supercap_voltage == 99) {
-        // send an error message if the supercap voltage cannot be read
-        send_message(MSG_TYPE_ERROR, PAYLOAD_SUPERCAP_VOLTAGE_ERROR, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_ERROR) - 1);
-    } else {
-        if(supercap_voltage == 0){
-            // send a message that the voltage is 0V
-            send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP_VOLTAGE_ZERO, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_ZERO) - 1);
-        } else {
-            // convert the float to the array of 5 characters and send message
-            uint8_t PAYLOAD_SUPERCAP_VOLTAGE_WORKS[] = "      is the current supercap voltage"; // the first 5 characters are blank since they will be overriden
-            float_to_uint8_array(supercap_voltage, PAYLOAD_SUPERCAP_VOLTAGE_WORKS, 5);
-            send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP_VOLTAGE_WORKS, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_WORKS) - 1);
-
-            // set all the chargeCap flags and dischargecap flag to low
-            initialize_charge_cap_flags();
-        }
-    }
-
-    // NEA checkup
-    //Check the status of the 4 NEA's
-    bool status_NEA_1 = read_NEAready_status(&P3IN, BIT1);
-    bool status_NEA_2 = read_NEAready_status(&P3IN, BIT2);
-    bool status_NEA_3 = read_NEAready_status(&P3IN, BIT3);
-    bool status_NEA_4 = read_NEAready_status(&P4IN, BIT7);
-
-    // MOET NOG OMGESCHREVEN WORDEN -> DE NEAREADY IS NU EEN ACTIVE LOW
-
-    if (status_NEA_1 && status_NEA_2 && status_NEA_3 && status_NEA_4){
-        // Send message that non of the NEA's is activated already
-        send_message(MSG_TYPE_DATA, PAYLOAD_ALL_NEA_READY, sizeof(PAYLOAD_ALL_NEA_READY) - 1);
-    }
-    else{
-        if(status_NEA_1){
-            //Send message that NEA 1 is not activated yet
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA1_READY, sizeof(PAYLOAD_NEA1_READY) - 1);
-        }
-        else{
-            //Send message that NEA 1 is already activated
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA1_NOT_READY, sizeof(PAYLOAD_NEA1_NOT_READY) - 1);
-        }
-        if(status_NEA_2){
-            //Send message that NEA 2 is not activated yet
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA2_READY, sizeof(PAYLOAD_NEA2_READY) - 1);
-        }
-        else{
-            //Send message that NEA 2 is already activated
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA2_NOT_READY, sizeof(PAYLOAD_NEA2_NOT_READY) - 1);
-        }
-        if(status_NEA_3){
-            //Send message that NEA 3 is not activated yet
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA3_READY, sizeof(PAYLOAD_NEA3_READY) - 1);
-        }
-        else{
-            //Send message that NEA 3 is already activated
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA3_NOT_READY, sizeof(PAYLOAD_NEA3_NOT_READY) - 1);
-        }
-        if(status_NEA_4){
-            //Send message that NEA 4 is not activated yet
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA4_READY, sizeof(PAYLOAD_NEA4_READY) - 1);
-        }
-        else{
-            //Send message that NEA 4 is already activated
-            send_message(MSG_TYPE_DATA, PAYLOAD_NEA4_NOT_READY, sizeof(PAYLOAD_NEA4_NOT_READY) - 1);
-        }
-    }
-
 }
 
 

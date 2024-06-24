@@ -16,8 +16,6 @@
 
 #include "system_health_lib/supercap_readout.h"
 
-bool supercap_functionality[3]  = {false,false,false};
-
 // Constants
 #define ADC_MAX_VALUE        4095      // 12-bit ADC resolution (2^12 - 1)
 #define MAX_VOLTAGE          3.64      // Reference voltage for ADC (measured 3.64 V)
@@ -76,55 +74,6 @@ void initialize_charge_cap_flags(void) {
 
     // Disable the GPIO power-on default high-impedance mode
     PM5CTL0 &= ~LOCKLPM5;
-}
-
-// Function to switch on a specific charge cap flag
-void switch_on_charge_cap_flag(int flag) {
-    switch (flag) {
-        case 0:
-            P2OUT |= BIT7;       // sets P2.7 to high
-            break;
-        case 1:
-            P2OUT |= BIT3;       // sets P2.3 to high
-            break;
-        case 2:
-            P4OUT |= BIT4;       // sets P4.4 to high
-            break;
-        default:
-            // Handle invalid flag
-            break;
-    }
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-}
-
-// Function to switch off a specific charge cap flag
-void switch_off_charge_cap_flag(int flag) {
-    switch (flag) {
-        case 0:
-            P2OUT &= ~BIT7;      // sets P2.7 to low
-            break;
-        case 1:
-            P2OUT &= ~BIT3;      // sets P2.3 to low
-            break;
-        case 2:
-            P4OUT &= ~BIT4;      // sets P4.4 to low
-            break;
-        default:
-            // Handle invalid flag
-            break;
-    }
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-}
-
-// Functions to switch on/off discharge cap flag
-void switch_on_discharge_cap_flag(void) {
-    PJOUT |= BIT4;               // sets PJ.4 to high
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
-}
-
-void switch_off_discharge_cap_flag(void) {
-    PJOUT &= ~BIT4;              // sets PJ.4 to low
-    PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
 
@@ -189,44 +138,6 @@ float voltage_adc_supercaps(void) {
     } else {
         voltage = convert_adc_to_voltage(ADC_capture); // Convert ADC result to voltage
         return voltage;
-    }
-}
-
-// function to check the functionality of each supercapacitor
-void check_supercap_functionality(void){
-    switch_off_charge_cap_flag(0);
-    switch_off_charge_cap_flag(1);
-    switch_off_charge_cap_flag(2);
-    switch_off_discharge_cap_flag();
-
-    for(int i=0; i < 3; i++){
-        switch_on_charge_cap_flag(i);
-        switch_on_discharge_cap_flag();
-        float voltage_supercap_i = voltage_adc_supercaps();
-        if(voltage_supercap_i > 1.0){
-            supercap_functionality[i] = true;
-        } else {
-            supercap_functionality[i] = false;
-        }
-        if(i == 0) {
-            if(supercap_functionality[i] == true){
-                send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP1_READY, sizeof(PAYLOAD_SUPERCAP1_READY) - 1);
-            } else {
-                send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP1_NOT_READY, sizeof(PAYLOAD_SUPERCAP1_NOT_READY) - 1);
-            }
-        } else if(i == 1) {
-            if(supercap_functionality[i] == true){
-                send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP2_READY, sizeof(PAYLOAD_SUPERCAP2_READY) - 1);
-            } else {
-                send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP2_NOT_READY, sizeof(PAYLOAD_SUPERCAP2_NOT_READY) - 1);
-            }
-        } else if(i == 2) {
-            if(supercap_functionality[i] == true){
-                send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP3_READY, sizeof(PAYLOAD_SUPERCAP3_READY) - 1);
-            } else {
-                send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP3_NOT_READY, sizeof(PAYLOAD_SUPERCAP3_NOT_READY) - 1);
-            }
-        } else {}
     }
 }
 

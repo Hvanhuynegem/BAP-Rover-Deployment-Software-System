@@ -15,8 +15,11 @@
 "./src/system_health/supercap_readout.obj"
 "./src/system_health/temp_sensors.obj"
 "./src/system_health/umbilical_cord.obj"
-"./src/transit_modes/deployment.obj"
+"./src/transit_modes/deployment_mode.obj"
 "./src/transit_modes/general_startup.obj"
+"./src/transit_modes/launch_mode.obj"
+"./src/transit_modes/pre_deployment_mode.obj"
+"./src/transit_modes/transit_mode.obj"
 "../lnk_msp430fr5969.cmd"
 -llibmpu_init.a
 -llibmath.a

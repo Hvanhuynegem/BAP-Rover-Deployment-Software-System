@@ -16,6 +16,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "lander_communication_lib/lander_communication.h"
+#include "lander_communication_lib/payload_messages.h"
+
 /*
  * Initializes P2.2 as an input pin.
  *

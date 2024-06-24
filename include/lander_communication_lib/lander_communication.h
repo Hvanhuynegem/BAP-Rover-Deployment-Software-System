@@ -108,6 +108,19 @@ void send_message(uint8_t msg_type, const uint8_t *payload, uint8_t length);
 void send_message_and_wait_for_ACK(uint8_t msg_type, const uint8_t *payload, uint8_t length);
 
 /*
+ * Sends a message and waits for an ACK response 3 times.
+ *
+ * Parameters:
+ *  uint8_t msg_type : message type
+ *  const uint8_t *payload : pointer to array to be sent
+ *  uint8_t length : length of array to be sent
+ *
+ * Returns:
+ *  void
+ */
+void send_message_and_wait_for_ACK_3_times(uint8_t msg_type, const uint8_t *payload, uint8_t length);
+
+/*
  * process the RX_buffer
  */
 void process_received_data(void);
