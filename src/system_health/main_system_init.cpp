@@ -20,6 +20,7 @@
 
 // Global variable to indicate if a timeout occurred
 volatile bool timeoutOccurred = false;
+volatile unsigned int timeoutCounterTA3 = 0;
 
 void boot_up_initialisation(void){
     setup_SMCLK();
@@ -71,6 +72,23 @@ void stopTimeoutTimer_TA2()
     timeoutOccurred = false;  // Reset timeout flag
 }
 
+// Function to start the timeout timer with the lowest clock frequency
+void startTimeoutTimer_TA3() {
+    timeoutCounterTA3 = 0;  // Reset timeout counter
+    TA3CTL = TASSEL_2 + MC_1 + ID__8 + TACLR; // SMCLK = 16 MHz, up mode, input divider by 8, clear TAR
+    TA3EX0 = TAIDEX_7;  // Expanded divider by 8
+    TA3CCTL0 = CCIE;    // Enable interrupt
+    TA3CCR0 = 60000;    // Set CCR0 value for the timer
+}
+
+// Function to stop the timeout timer
+void stopTimeoutTimer_TA3() {
+    TA3CTL = MC_0;       // Stop the timer
+    TA3CCTL0 = 0;        // Disable interrupt (clearing the CCIE bit)
+    timeoutCounterTA3 = 0;  // Reset timeout counter
+}
+
+
 
 // Initialize LED
 void init_LED(void) {
@@ -94,4 +112,20 @@ void __attribute__ ((interrupt(TIMER2_A0_VECTOR))) Timer_A2_ISR (void)
     timeoutOccurred = true;  // Set timeout flag
     TA2CTL = MC_0;           // Stop the timer
     TA2CCTL0 &= ~CCIE;       // Disable interrupt
+}
+
+
+// Timer A3 CCR0 interrupt service routine
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = TIMER3_A0_VECTOR
+__interrupt void Timer_A3_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(TIMER3_A0_VECTOR))) Timer_A3_ISR(void)
+#else
+#error Compiler not supported!
+#endif
+{
+    // Handle CCR0 interrupt
+    TA3CCTL0 &= ~CCIFG;  // Clear interrupt flag
+    timeoutCounterTA3++;
 }

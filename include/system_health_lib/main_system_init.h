@@ -19,7 +19,7 @@
 
 // External global variable to indicate if a timeout occurred
 extern volatile bool timeoutOccurred;
-
+extern volatile unsigned int timeoutCounterTA3;
 /*
  * Initializes everything of the RDS.
  *
@@ -54,7 +54,7 @@ void initialize_adc_general(void);
 void setup_SMCLK(void);
 
 /*
- * Starts the timeout timer.
+ * Starts the timeout timer TA2.
  *
  * Parameters:
  *  None
@@ -65,7 +65,7 @@ void setup_SMCLK(void);
 void startTimeoutTimer_TA2(void);
 
 /*
- * Stops the timeout timer.
+ * Stops the timeout timer TA2.
  *
  * Parameters:
  *  None
@@ -74,6 +74,28 @@ void startTimeoutTimer_TA2(void);
  *  void
  */
 void stopTimeoutTimer_TA2(void);
+
+/*
+ * Starts the timeout timer TA3.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void startTimeoutTimer_TA3(void);
+
+/*
+ * Stops the timeout timer TA3.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void stopTimeoutTimer_TA3(void);
 
 /*
  * Setup led light when mcu turns on.
