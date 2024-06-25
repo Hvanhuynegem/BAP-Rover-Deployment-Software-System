@@ -20,6 +20,7 @@ TaskState launchModeTask = TASK_CHECK_UMBILICAL;
 
 
 void launch_mode(void){
+    launchModeTask = TASK_CHECK_UMBILICAL;
     // Initialize connection with the lander
     // Create an initialization message
     send_message_and_wait_for_ACK_3_times(MSG_TYPE_INIT, PAYLOAD_INIT, sizeof(PAYLOAD_INIT) - 1);

@@ -19,6 +19,7 @@
 TaskState preDeploymentModeTask = TASK_SETUP_ROVER_CONNECTION;
 
 void pre_deployment_mode(void){
+    preDeploymentModeTask = TASK_SETUP_ROVER_CONNECTION;
     // implement cooperative multi-tasking
     while(transit_state == PRE_DEPLOYMENT){
         switch(preDeploymentModeTask){

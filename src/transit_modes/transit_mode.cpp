@@ -19,6 +19,7 @@
 TaskState transitModeTask = TASK_SETUP_ROVER_CONNECTION;
 
 void transit_mode(void){
+    transitModeTask = TASK_SETUP_ROVER_CONNECTION;
     // implement cooperative multi-tasking
     while(transit_state == TRANSIT){
         switch(transitModeTask){

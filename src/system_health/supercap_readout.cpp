@@ -201,9 +201,11 @@ void check_supercap_functionality(void){
 
     for(int i=0; i < 3; i++){
         switch_on_charge_cap_flag(i);
+        //timer 2 min
         switch_on_discharge_cap_flag();
+
         float voltage_supercap_i = voltage_adc_supercaps();
-        if(voltage_supercap_i > 1.0){
+        if(voltage_supercap_i > 1.0){ // above 1.7V
             supercap_functionality[i] = true;
         } else {
             supercap_functionality[i] = false;

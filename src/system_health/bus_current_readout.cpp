@@ -87,3 +87,37 @@ void float_to_uint8_array(float value, uint8_t* array, size_t n) {
     array[3] = '0' + (decimal_part % 10); // Second decimal place
     array[4] = '\0';                     // Null terminator
 }
+
+#include <stdint.h>
+#include <stdbool.h>
+
+void float_to_uint8_array_2(float value, uint8_t* array) {
+    // Extract the integer and fractional parts
+    int integer_part = (int)value;
+    int decimal_part = (int)((value - integer_part) * 10000); // Four decimal places
+
+    // Handle negative values
+    bool is_negative = false;
+    if (value < 0) {
+        is_negative = true;
+        integer_part = -integer_part;
+        decimal_part = -decimal_part;
+    }
+
+    // Manually format the float into the array as "XXX.XXXX"
+    if (is_negative) {
+        array[0] = '-';
+        array[1] = '0' + ((integer_part / 100) % 10); // Hundreds digit of integer part
+    } else {
+        array[0] = '0' + ((integer_part / 100) % 10); // Hundreds digit of integer part
+    }
+    array[1] = '0' + ((integer_part / 10) % 10);  // Tens digit of integer part
+    array[2] = '0' + (integer_part % 10);         // Units digit of integer part
+    array[3] = '.';                               // Decimal point
+    array[4] = '0' + ((decimal_part / 1000) % 10); // First decimal place
+    array[5] = '0' + ((decimal_part / 100) % 10);  // Second decimal place
+    array[6] = '0' + ((decimal_part / 10) % 10);   // Third decimal place
+    array[7] = '0' + (decimal_part % 10);          // Fourth decimal place
+    array[8] = '\0';                              // Null terminator
+}
+

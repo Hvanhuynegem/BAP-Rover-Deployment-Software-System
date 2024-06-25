@@ -78,24 +78,31 @@ void heat_resistor_control(float temperature1, float temperature2) {
             // send an error message for sensor 1
             send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_1_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_1_BROKEN) - 1);
             heat_resistor_control_one_sensor(temperature2);
+            // convert the float to the array of 5 characters and send message
+            uint8_t PAYLOAD_TEMP_SENSOR_2_WORKS[] = "        is the current temperature of sensor 2"; // the first 7 characters are blank since they will be overriden
+            float_to_uint8_array_2(temperature2, PAYLOAD_TEMP_SENSOR_2_WORKS);
+            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_2_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_2_WORKS) - 1);
             break;
 
         case 3:
             // send an error message for sensor 2
             send_message(MSG_TYPE_ERROR, PAYLOAD_TEMP_SENSOR_2_BROKEN, sizeof(PAYLOAD_TEMP_SENSOR_2_BROKEN) - 1);
             heat_resistor_control_one_sensor(temperature1);
+            uint8_t PAYLOAD_TEMP_SENSOR_1_WORKS[] = "        is the current temperature of sensor 1"; // the first 7 characters are blank since they will be overriden
+            float_to_uint8_array_2(temperature1, PAYLOAD_TEMP_SENSOR_1_WORKS);
+            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_1_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_1_WORKS) - 1);
             break;
 
         case 4:
             heat_resistor_control_two_sensors(temperature1, temperature2);
             // convert the float to the array of 5 characters and send message
-            uint8_t PAYLOAD_TEMP_SENSOR_1_WORKS[] = "      is the current temperature of sensor 1"; // the first 5 characters are blank since they will be overriden
-            float_to_uint8_array(temperature1, PAYLOAD_TEMP_SENSOR_1_WORKS, 5);
-            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_1_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_1_WORKS) - 1);
+            uint8_t PAYLOAD_TEMP_SENSOR_1_WORKS_2[] = "        is the current temperature of sensor 1"; // the first 7 characters are blank since they will be overriden
+            float_to_uint8_array_2(temperature1, PAYLOAD_TEMP_SENSOR_1_WORKS_2);
+            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_1_WORKS_2, sizeof(PAYLOAD_TEMP_SENSOR_1_WORKS_2) - 1);
             // convert the float to the array of 5 characters and send message
-            uint8_t PAYLOAD_TEMP_SENSOR_2_WORKS[] = "      is the current temperature of sensor 2"; // the first 5 characters are blank since they will be overriden
-            float_to_uint8_array(temperature2, PAYLOAD_TEMP_SENSOR_2_WORKS, 5);
-            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_2_WORKS, sizeof(PAYLOAD_TEMP_SENSOR_2_WORKS) - 1);
+            uint8_t PAYLOAD_TEMP_SENSOR_2_WORKS_2[] = "        is the current temperature of sensor 2"; // the first 7 characters are blank since they will be overriden
+            float_to_uint8_array_2(temperature2, PAYLOAD_TEMP_SENSOR_2_WORKS_2);
+            send_message(MSG_TYPE_DATA, PAYLOAD_TEMP_SENSOR_2_WORKS_2, sizeof(PAYLOAD_TEMP_SENSOR_2_WORKS_2) - 1);
             break;
 
         default:

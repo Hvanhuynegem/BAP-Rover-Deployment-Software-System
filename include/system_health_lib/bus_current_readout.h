@@ -100,4 +100,16 @@ float voltage_adc_bus_sense(void);
  */
 void float_to_uint8_array(float value, uint8_t* array, size_t n);
 
+/*
+ * Converts a float to a uint8_t array with 7 digits.
+ *
+ * Parameters:
+ *  float value : the float value to convert
+ *  uint8_t* array : pointer to the array where the converted values will be stored
+ *
+ * Returns:
+ *  void
+ */
+void float_to_uint8_array_2(float value, uint8_t* array);
+
 #endif // BUS_CURRENT_READOUT_H

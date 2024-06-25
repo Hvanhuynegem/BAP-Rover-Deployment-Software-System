@@ -52,6 +52,7 @@ void initialize_all_electronic_pins(void){
 }
 
 void RDS_electronics_status_check(void) {
+    EECSTask = TASK_CHECK_UMBILICAL_ECCS;
     float temperature_of_sensor_1 = -99;
     float temperature_of_sensor_2 = -99;
     while (EECSTask != TASK_DONE) {
@@ -74,9 +75,9 @@ void RDS_electronics_status_check(void) {
                 if (bus_sense_voltage == 99) {
                     send_message(MSG_TYPE_ERROR, PAYLOAD_BUS_SENSE_BROKEN, sizeof(PAYLOAD_BUS_SENSE_BROKEN) - 1);
                 } else {
-                    // Convert the float to the array of 5 characters and send message
-                    uint8_t PAYLOAD_BUS_SENSE_WORKS[] = "      is the current bus voltage"; // the first 5 characters are blank since they will be overridden
-                    float_to_uint8_array(bus_sense_voltage, PAYLOAD_BUS_SENSE_WORKS, 5);
+                    // Convert the float to the array of 7 characters and send message
+                    uint8_t PAYLOAD_BUS_SENSE_WORKS[] = "        is the current bus voltage"; // the first 5 characters are blank since they will be overridden
+                    float_to_uint8_array_2(bus_sense_voltage, PAYLOAD_BUS_SENSE_WORKS);
                     send_message(MSG_TYPE_DATA, PAYLOAD_BUS_SENSE_WORKS, sizeof(PAYLOAD_BUS_SENSE_WORKS) - 1);
                 }
                 EECSTask = TASK_TEMPERATURE_SENSORS_CHECK_1;
@@ -117,9 +118,9 @@ void RDS_electronics_status_check(void) {
                         // Send a message that the voltage is 0V
                         send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP_VOLTAGE_ZERO, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_ZERO) - 1);
                     } else {
-                        // Convert the float to the array of 5 characters and send message
-                        uint8_t PAYLOAD_SUPERCAP_VOLTAGE_WORKS[] = "      is the current supercap voltage"; // the first 5 characters are blank since they will be overridden
-                        float_to_uint8_array(supercap_voltage, PAYLOAD_SUPERCAP_VOLTAGE_WORKS, 5);
+                        // Convert the float to the array of 7 characters and send message
+                        uint8_t PAYLOAD_SUPERCAP_VOLTAGE_WORKS[] = "        is the current supercap voltage"; // the first 5 characters are blank since they will be overridden
+                        float_to_uint8_array_2(supercap_voltage, PAYLOAD_SUPERCAP_VOLTAGE_WORKS);
                         send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP_VOLTAGE_WORKS, sizeof(PAYLOAD_SUPERCAP_VOLTAGE_WORKS) - 1);
 
                         // Set all the chargeCap flags and dischargecap flag to low

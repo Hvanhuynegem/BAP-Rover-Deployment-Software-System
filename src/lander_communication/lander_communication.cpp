@@ -221,13 +221,13 @@ void send_message_and_wait_for_ACK(uint8_t msg_type, const uint8_t *payload, uin
         // start a timeout using timer TA2
         startTimeoutTimer_TA2();
         // wait until timeout is done
-        while(!timeoutOccurred || UART_state != RECEIVED){}
-
+        while(!timeoutOccurred && UART_state != RECEIVED){}
         // check whether the response is an ACK
         process_received_data();
         if(ack_received){
             acknowledgement = true;
             ack_received = false;
+            return;
         }
     }
 }
@@ -236,20 +236,21 @@ void send_message_and_wait_for_ACK_3_times(uint8_t msg_type, const uint8_t *payl
     // Initialize connection with the lander
     bool acknowledgement = false;
     int x = 0;
-    while(!acknowledgement){
+    while(!acknowledgement && x < 3){
         // send an initialisation message to the lander
         send_message(msg_type, payload, length);
         // start a timeout using timer TA2
         startTimeoutTimer_TA2();
-        // wait until timeout is done
-        while(!timeoutOccurred || UART_state != RECEIVED){}
-        x++;
-
+        // wait until timeout is done or message is received
+        while(!timeoutOccurred && UART_state != RECEIVED){}
         // check whether the response is an ACK
         process_received_data();
-        if(ack_received || x > 2){
+        x++;
+
+        if(ack_received){
             acknowledgement = true;
             ack_received = false;
+            return;
         }
     }
 }

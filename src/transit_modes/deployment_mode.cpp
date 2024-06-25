@@ -18,6 +18,7 @@
 DeploymentTaskState deploymentModeTask = TASK_DEPLOY_SWITCH_OFF_HEATERS;
 
 void deployment_mode(void){
+    deploymentModeTask = TASK_DEPLOY_SWITCH_OFF_HEATERS;
     // Implement cooperative multi-tasking
     while(transit_state == DEPLOYMENT){
         switch(deploymentModeTask){
