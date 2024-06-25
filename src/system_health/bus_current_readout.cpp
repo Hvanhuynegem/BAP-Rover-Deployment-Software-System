@@ -26,14 +26,21 @@ void initialize_bus_current_sense_pin(void) {
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
-// Function to initialize the ADC for bus current sense
-void initialize_adc_bus_sense(void) {
-    // Turn on ADC12, set sampling time, and select clock source
-    ADC12CTL0 &= ~ADC12ENC;               // Disable ADC before configuration
-    ADC12CTL0 = ADC12SHT0_2 | ADC12ON;    // 16 ADC12CLK cycles, ADC on
-    ADC12CTL1 = ADC12SHP | ADC12CONSEQ_0 | ADC12SSEL_3; // ADCCLK = SMCLK; single-channel single-conversion
-    ADC12CTL2 = ADC12RES_2;               // 12-bit conversion results
-    ADC12MCTL0 = ADC12INCH_11;            // A11 ADC input select; Vref=AVCC
+//// Function to initialize the ADC for bus current sense for polling
+//void initialize_adc_bus_sense(void) {
+//    // Turn on ADC12, set sampling time, and select clock source
+//    ADC12CTL0 &= ~ADC12ENC;               // Disable ADC before configuration
+//    ADC12CTL0 = ADC12SHT0_2 | ADC12ON;    // 16 ADC12CLK cycles, ADC on
+//    ADC12CTL1 = ADC12SHP | ADC12CONSEQ_0 | ADC12SSEL_3; // ADCCLK = SMCLK; single-channel single-conversion
+//    ADC12CTL2 = ADC12RES_2;               // 12-bit conversion results
+//    ADC12MCTL0 = ADC12INCH_11;            // A11 ADC input select; Vref=AVCC
+//}
+
+void initialize_adc_bus_current(void) {
+    ADC12CTL0 &= ~ADC12ENC;            // Disable ADC12
+    ADC12MCTL0 |= ADC12INCH_11;         // Select channel A11 for conversion
+    ADC12CTL0 |= ADC12ENC;             // Enable conversions
+    PM5CTL0 &= ~LOCKLPM5;              // Disable the GPIO power-on default high-impedance mode
 }
 
 
@@ -55,19 +62,41 @@ void switch_off_bus_flag_pin(void){
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
 }
 
+// for polling
+//float voltage_adc_bus_sense(void) {
+//    initialize_bus_current_sense_pin();             // Initialize the bus sense pin
+//    initialize_adc_bus_sense();        // Initialize the ADC for bus sense
+//
+//    unsigned int adc_value = read_ADC();
+//
+//    if (adc_value == 0xFFFF) {
+//        // Conversion failed
+//        return 99; // Set error voltage
+//    } else {
+//        return convert_adc_to_voltage(adc_value);// return the converted ADC result to voltage
+//    }
+//}
+
+// Function to get the voltage of bus current via ADC
 float voltage_adc_bus_sense(void) {
-    initialize_bus_current_sense_pin();             // Initialize the bus sense pin
-    initialize_adc_bus_sense();        // Initialize the ADC for bus sense
+    initialize_adc_bus_current();      // Initialize the ADC for bus current sensing
+    float voltage = 0;                 // Variable to store calculated voltage
 
-    unsigned int adc_value = read_ADC();
-
-    if (adc_value == 0xFFFF) {
+    enable_interrupt_adc();
+    ADC12CTL0 |= ADC12SC;              // Start conversion - software trigger
+    while (!measurement_finished && !adc_conversion_fail);
+    disable_interrupt_adc();
+    measurement_finished = false;
+    if (adc_conversion_fail) {
         // Conversion failed
-        return 99; // Set error voltage
+        voltage = 99;                  // Set error voltage
+        return voltage;
     } else {
-        return convert_adc_to_voltage(adc_value);// return the converted ADC result to voltage
+        voltage = convert_adc_to_voltage(ADC_capture); // Convert ADC result to voltage
+        return voltage;
     }
 }
+
 
 void float_to_uint8_array(float value, uint8_t* array, size_t n) {
     // Extract the integer and fractional parts

@@ -29,6 +29,8 @@ extern bool supercap_functionality[3];
 
 // External global flag for ADC conversion failure
 extern volatile bool adc_conversion_fail;
+extern volatile bool measurement_finished;
+extern volatile unsigned int ADC_capture; // Variable to store ADC result
 
 
 /*
@@ -79,7 +81,29 @@ void initialize_adc_supercaps(void);
  * Returns:
  *  Unsigned int : capture period
  */
-unsigned int read_ADC(void);
+//unsigned int read_ADC(void);
+
+/*
+ * Initializes interrupts for the ADC for super capacitors.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void enable_interrupt_adc(void);
+
+/*
+ * Disables interrupts for the ADC for super capacitors.
+ *
+ * Parameters:
+ *  None
+ *
+ * Returns:
+ *  void
+ */
+void disable_interrupt_adc(void);
 
 /*
  * Converts ADC value to voltage.

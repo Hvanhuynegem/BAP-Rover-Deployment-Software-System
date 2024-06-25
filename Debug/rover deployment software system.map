@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v21.6.1                     
 ******************************************************************************
->> Linked Tue Jun 25 11:06:33 2024
+>> Linked Tue Jun 25 11:49:37 2024
 
 OUTPUT FILE NAME:   <rover deployment software system.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs_mpu"  address: 000048fc
+ENTRY POINT SYMBOL: "_c_int00_noargs_mpu"  address: 00004926
 
 
 MEMORY CONFIGURATION
@@ -18,8 +18,8 @@ MEMORY CONFIGURATION
   INFOC                 00001880   00000080  00000000  00000080  RWIX
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
-  RAM                   00001c00   00000800  000003ce  00000432  RWIX
-  FRAM                  00004400   0000bb80  00000b79  0000b007  RWIX
+  RAM                   00001c00   00000800  000003d2  0000042e  RWIX
+  FRAM                  00004400   0000bb80  00000ba5  0000afdb  RWIX
   JTAGSIGNATURE         0000ff80   00000004  00000004  00000000  RWIX  ffff 
   BSLSIGNATURE          0000ff84   00000004  00000004  00000000  RWIX  ffff 
   IPESIGNATURE          0000ff88   00000008  00000008  00000000  RWIX  ffff 
@@ -79,7 +79,7 @@ MEMORY CONFIGURATION
   INT53                 0000fffa   00000002  00000002  00000000  RWIX
   INT54                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FRAM2                 00010000   00003ff8  00003682  00000976  RWIX
+  FRAM2                 00010000   00003ff8  00003686  00000972  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -110,11 +110,12 @@ section   page    origin      length       input sections
 .ipe_vars 
 *          0    00004800    00000000     UNINITIALIZED
 
-.cinit     0    00004f44    00000036     
-                  00004f44    00000014     (.cinit..data.load) [load image, compression = lzss]
-                  00004f58    0000000c     (__TI_handler_table)
-                  00004f64    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  00004f6a    00000010     (__TI_cinit_table)
+.cinit     0    00004f6e    00000038     
+                  00004f6e    00000015     (.cinit..data.load) [load image, compression = lzss]
+                  00004f83    00000001     --HOLE-- [fill = 0]
+                  00004f84    0000000c     (__TI_handler_table)
+                  00004f90    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004f96    00000010     (__TI_cinit_table)
 
 .binit     0    00004400    00000000     
 
@@ -122,13 +123,14 @@ section   page    origin      length       input sections
 *          0    00004400    00000000     UNINITIALIZED
 
 .text:_isr 
-*          0    00004800    0000014e     
+*          0    00004800    00000178     
                   00004800    000000fc     uart_communication.obj (.text:_isr:_Z11USCI_A1_ISRv)
-                  000048fc    00000020     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noargs_mpu)
-                  0000491c    00000010     main_system_init.obj (.text:_isr:_Z12Timer_A2_ISRv)
-                  0000492c    00000010     uart_communication.obj (.text:_isr:_Z13Timer1_A0_ISRv)
-                  0000493c    0000000a     main_system_init.obj (.text:_isr:_Z12Timer_A3_ISRv)
-                  00004946    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+                  000048fc    0000002a     supercap_readout.obj (.text:_isr:_Z9ADC12_ISRv)
+                  00004926    00000020     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noargs_mpu)
+                  00004946    00000010     main_system_init.obj (.text:_isr:_Z12Timer_A2_ISRv)
+                  00004956    00000010     uart_communication.obj (.text:_isr:_Z13Timer1_A0_ISRv)
+                  00004966    0000000a     main_system_init.obj (.text:_isr:_Z12Timer_A3_ISRv)
+                  00004970    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
 .bss       0    00001c00    0000030a     UNINITIALIZED
                   00001c00    00000100     lander_communication.obj (.bss:buffer$1)
@@ -139,20 +141,21 @@ section   page    origin      length       input sections
                   00001f06    00000002     (.common:message_pointer)
                   00001f08    00000002     (.common:transit_state)
 
-.data      0    00001f0a    00000024     UNINITIALIZED
+.data      0    00001f0a    00000028     UNINITIALIZED
                   00001f0a    00000007     uart_communication.obj (.data)
                   00001f11    00000001     lander_communication.obj (.data)
                   00001f12    00000004     rts430x_lc_rd_eabi.lib : _lock.c.obj (.data:_lock)
                   00001f16    00000004                            : _lock.c.obj (.data:_unlock)
                   00001f1a    00000004     main_system_init.obj (.data)
-                  00001f1e    00000003     supercap_readout.obj (.data:supercap_functionality)
-                  00001f21    00000001     --HOLE--
-                  00001f22    00000002     ECCS.obj (.data)
-                  00001f24    00000002     deployment_mode.obj (.data)
-                  00001f26    00000002     general_startup.obj (.data)
-                  00001f28    00000002     launch_mode.obj (.data)
-                  00001f2a    00000002     pre_deployment_mode.obj (.data)
-                  00001f2c    00000002     transit_mode.obj (.data)
+                  00001f1e    00000004     supercap_readout.obj (.data)
+                  00001f22    00000003     supercap_readout.obj (.data:supercap_functionality)
+                  00001f25    00000001     --HOLE--
+                  00001f26    00000002     ECCS.obj (.data)
+                  00001f28    00000002     deployment_mode.obj (.data)
+                  00001f2a    00000002     general_startup.obj (.data)
+                  00001f2c    00000002     launch_mode.obj (.data)
+                  00001f2e    00000002     pre_deployment_mode.obj (.data)
+                  00001f30    00000002     transit_mode.obj (.data)
 
 .stack     0    00002360    000000a0     UNINITIALIZED
                   00002360    00000004     rts430x_lc_rd_eabi.lib : boot.c.obj (.stack)
@@ -224,7 +227,7 @@ TIMER0_A0
                   0000ffea    00000002     rts430x_lc_rd_eabi.lib : int45.asm.obj (.int45)
 
 ADC12      0    0000ffec    00000002     
-                  0000ffec    00000002     rts430x_lc_rd_eabi.lib : int46.asm.obj (.int46)
+                  0000ffec    00000002     supercap_readout.obj (.int46)
 
 USCI_B0    0    0000ffee    00000002     
                   0000ffee    00000002     rts430x_lc_rd_eabi.lib : int47.asm.obj (.int47)
@@ -255,128 +258,128 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.const     0    0000494e    000005f5     
-                  0000494e    0000002f     heat_resistor_control.obj (.const:.string:$P$T0$1)
-                  0000497d    00000001     --HOLE-- [fill = 0]
-                  0000497e    0000002f     heat_resistor_control.obj (.const:.string:$P$T1$2)
-                  000049ad    00000001     --HOLE-- [fill = 0]
-                  000049ae    0000002f     heat_resistor_control.obj (.const:.string:$P$T2$3)
-                  000049dd    00000001     --HOLE-- [fill = 0]
-                  000049de    0000002f     heat_resistor_control.obj (.const:.string:$P$T3$4)
-                  00004a0d    00000001     --HOLE-- [fill = 0]
-                  00004a0e    00000028     ECCS.obj (.const:.string:$P$T1$2)
-                  00004a36    00000024     ECCS.obj (.const:.string:PAYLOAD_SUPERCAP_VOLTAGE_ERROR)
-                  00004a5a    00000023     ECCS.obj (.const:.string:$P$T0$1)
-                  00004a7d    00000001     --HOLE-- [fill = 0]
-                  00004a7e    00000023     ECCS.obj (.const:.string:PAYLOAD_BUS_SENSE_BROKEN)
-                  00004aa1    00000001     --HOLE-- [fill = 0]
-                  00004aa2    00000023     deployment_mode.obj (.const:.string:PAYLOAD_POWER_ROVER_OFF)
-                  00004ac5    00000001     --HOLE-- [fill = 0]
-                  00004ac6    0000001f     heat_resistor_control.obj (.const:.string:PAYLOAD_TEMP_SENSOR_1_BROKEN)
-                  00004ae5    00000001     --HOLE-- [fill = 0]
-                  00004ae6    0000001f     heat_resistor_control.obj (.const:.string:PAYLOAD_TEMP_SENSOR_2_BROKEN)
-                  00004b05    00000001     --HOLE-- [fill = 0]
-                  00004b06    0000001e     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP1_NOT_READY)
-                  00004b24    0000001e     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP2_NOT_READY)
-                  00004b42    0000001e     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP3_NOT_READY)
-                  00004b60    0000001d     ECCS.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
-                  00004b7d    00000001     --HOLE-- [fill = 0]
-                  00004b7e    0000001d     general_startup.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
-                  00004b9b    00000001     --HOLE-- [fill = 0]
-                  00004b9c    0000001d     launch_mode.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
-                  00004bb9    00000001     --HOLE-- [fill = 0]
-                  00004bba    0000001d     umbilical_cord.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
-                  00004bd7    00000001     --HOLE-- [fill = 0]
-                  00004bd8    0000001b     ECCS.obj (.const:.string:PAYLOAD_SUPERCAP_VOLTAGE_ZERO)
-                  00004bf3    00000001     --HOLE-- [fill = 0]
-                  00004bf4    0000001a     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP1_READY)
-                  00004c0e    0000001a     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP2_READY)
-                  00004c28    0000001a     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP3_READY)
-                  00004c42    00000019     ECCS.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
-                  00004c5b    00000001     --HOLE-- [fill = 0]
-                  00004c5c    00000019     general_startup.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
-                  00004c75    00000001     --HOLE-- [fill = 0]
-                  00004c76    00000019     launch_mode.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
-                  00004c8f    00000001     --HOLE-- [fill = 0]
-                  00004c90    00000019     umbilical_cord.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
-                  00004ca9    00000001     --HOLE-- [fill = 0]
-                  00004caa    00000017     ECCS.obj (.const:.string:PAYLOAD_ALL_NEA_READY)
-                  00004cc1    00000001     --HOLE-- [fill = 0]
-                  00004cc2    00000017     deployment_mode.obj (.const:.string:PAYLOAD_ALL_NEA_READY)
-                  00004cd9    00000001     --HOLE-- [fill = 0]
-                  00004cda    00000017     deployment_mode.obj (.const:.string:PAYLOAD_DEPLOYMENT_COMPLETE)
-                  00004cf1    00000001     --HOLE-- [fill = 0]
-                  00004cf2    00000013     main.obj (.const:.string:PAYLOAD_LAUNCH_INTEGRATION)
-                  00004d05    00000001     --HOLE-- [fill = 0]
-                  00004d06    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA1_NOT_READY)
-                  00004d19    00000001     --HOLE-- [fill = 0]
-                  00004d1a    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA1_NOT_READY)
-                  00004d2d    00000001     --HOLE-- [fill = 0]
-                  00004d2e    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA1_NOT_READY)
-                  00004d41    00000001     --HOLE-- [fill = 0]
-                  00004d42    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA2_NOT_READY)
-                  00004d55    00000001     --HOLE-- [fill = 0]
-                  00004d56    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA2_NOT_READY)
-                  00004d69    00000001     --HOLE-- [fill = 0]
-                  00004d6a    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA2_NOT_READY)
-                  00004d7d    00000001     --HOLE-- [fill = 0]
-                  00004d7e    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA3_NOT_READY)
-                  00004d91    00000001     --HOLE-- [fill = 0]
-                  00004d92    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA3_NOT_READY)
-                  00004da5    00000001     --HOLE-- [fill = 0]
-                  00004da6    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA3_NOT_READY)
-                  00004db9    00000001     --HOLE-- [fill = 0]
-                  00004dba    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA4_NOT_READY)
-                  00004dcd    00000001     --HOLE-- [fill = 0]
-                  00004dce    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA4_NOT_READY)
-                  00004de1    00000001     --HOLE-- [fill = 0]
-                  00004de2    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA4_NOT_READY)
-                  00004df5    00000001     --HOLE-- [fill = 0]
-                  00004df6    00000012     lander_communication.obj (.const:.string:PAYLOAD_TOO_LARGE)
-                  00004e08    00000011     lander_communication_protocol.obj (.const:.string:PAYLOAD_INVALID_CHECKSUM)
-                  00004e19    00000001     --HOLE-- [fill = 0]
-                  00004e1a    00000010     main.obj (.const:.string:PAYLOAD_GENERAL_STARTUP)
-                  00004e2a    00000010     lander_communication_protocol.obj (.const:.string:PAYLOAD_INVALID_MESSAGE)
-                  00004e3a    00000010     uart_communication.obj (.const:.string:PAYLOAD_INVALID_MESSAGE)
-                  00004e4a    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA1_READY)
-                  00004e59    00000001     --HOLE-- [fill = 0]
-                  00004e5a    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA1_READY)
-                  00004e69    00000001     --HOLE-- [fill = 0]
-                  00004e6a    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA1_READY)
-                  00004e79    00000001     --HOLE-- [fill = 0]
-                  00004e7a    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA2_READY)
-                  00004e89    00000001     --HOLE-- [fill = 0]
-                  00004e8a    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA2_READY)
-                  00004e99    00000001     --HOLE-- [fill = 0]
-                  00004e9a    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA2_READY)
-                  00004ea9    00000001     --HOLE-- [fill = 0]
-                  00004eaa    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA3_READY)
-                  00004eb9    00000001     --HOLE-- [fill = 0]
-                  00004eba    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA3_READY)
-                  00004ec9    00000001     --HOLE-- [fill = 0]
-                  00004eca    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA3_READY)
-                  00004ed9    00000001     --HOLE-- [fill = 0]
-                  00004eda    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA4_READY)
-                  00004ee9    00000001     --HOLE-- [fill = 0]
-                  00004eea    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA4_READY)
-                  00004ef9    00000001     --HOLE-- [fill = 0]
-                  00004efa    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA4_READY)
-                  00004f09    00000001     --HOLE-- [fill = 0]
-                  00004f0a    0000000f     main.obj (.const:.string:PAYLOAD_PRE_DEPLOYMENT)
-                  00004f19    00000001     --HOLE-- [fill = 0]
-                  00004f1a    0000000b     main.obj (.const:.string:PAYLOAD_DEPLOYMENT)
-                  00004f25    00000001     --HOLE-- [fill = 0]
-                  00004f26    00000008     main.obj (.const:.string:PAYLOAD_TRANSIT)
-                  00004f2e    00000005     general_startup.obj (.const:.string:PAYLOAD_INIT)
+.const     0    00004978    000005f5     
+                  00004978    0000002f     heat_resistor_control.obj (.const:.string:$P$T0$1)
+                  000049a7    00000001     --HOLE-- [fill = 0]
+                  000049a8    0000002f     heat_resistor_control.obj (.const:.string:$P$T1$2)
+                  000049d7    00000001     --HOLE-- [fill = 0]
+                  000049d8    0000002f     heat_resistor_control.obj (.const:.string:$P$T2$3)
+                  00004a07    00000001     --HOLE-- [fill = 0]
+                  00004a08    0000002f     heat_resistor_control.obj (.const:.string:$P$T3$4)
+                  00004a37    00000001     --HOLE-- [fill = 0]
+                  00004a38    00000028     ECCS.obj (.const:.string:$P$T1$2)
+                  00004a60    00000024     ECCS.obj (.const:.string:PAYLOAD_SUPERCAP_VOLTAGE_ERROR)
+                  00004a84    00000023     ECCS.obj (.const:.string:$P$T0$1)
+                  00004aa7    00000001     --HOLE-- [fill = 0]
+                  00004aa8    00000023     ECCS.obj (.const:.string:PAYLOAD_BUS_SENSE_BROKEN)
+                  00004acb    00000001     --HOLE-- [fill = 0]
+                  00004acc    00000023     deployment_mode.obj (.const:.string:PAYLOAD_POWER_ROVER_OFF)
+                  00004aef    00000001     --HOLE-- [fill = 0]
+                  00004af0    0000001f     heat_resistor_control.obj (.const:.string:PAYLOAD_TEMP_SENSOR_1_BROKEN)
+                  00004b0f    00000001     --HOLE-- [fill = 0]
+                  00004b10    0000001f     heat_resistor_control.obj (.const:.string:PAYLOAD_TEMP_SENSOR_2_BROKEN)
+                  00004b2f    00000001     --HOLE-- [fill = 0]
+                  00004b30    0000001e     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP1_NOT_READY)
+                  00004b4e    0000001e     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP2_NOT_READY)
+                  00004b6c    0000001e     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP3_NOT_READY)
+                  00004b8a    0000001d     ECCS.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
+                  00004ba7    00000001     --HOLE-- [fill = 0]
+                  00004ba8    0000001d     general_startup.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
+                  00004bc5    00000001     --HOLE-- [fill = 0]
+                  00004bc6    0000001d     launch_mode.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
+                  00004be3    00000001     --HOLE-- [fill = 0]
+                  00004be4    0000001d     umbilical_cord.obj (.const:.string:PAYLOAD_UMBILICAL_NOT_CONNECTED)
+                  00004c01    00000001     --HOLE-- [fill = 0]
+                  00004c02    0000001b     ECCS.obj (.const:.string:PAYLOAD_SUPERCAP_VOLTAGE_ZERO)
+                  00004c1d    00000001     --HOLE-- [fill = 0]
+                  00004c1e    0000001a     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP1_READY)
+                  00004c38    0000001a     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP2_READY)
+                  00004c52    0000001a     supercap_readout.obj (.const:.string:PAYLOAD_SUPERCAP3_READY)
+                  00004c6c    00000019     ECCS.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
+                  00004c85    00000001     --HOLE-- [fill = 0]
+                  00004c86    00000019     general_startup.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
+                  00004c9f    00000001     --HOLE-- [fill = 0]
+                  00004ca0    00000019     launch_mode.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
+                  00004cb9    00000001     --HOLE-- [fill = 0]
+                  00004cba    00000019     umbilical_cord.obj (.const:.string:PAYLOAD_UMBILICAL_CONNECTED)
+                  00004cd3    00000001     --HOLE-- [fill = 0]
+                  00004cd4    00000017     ECCS.obj (.const:.string:PAYLOAD_ALL_NEA_READY)
+                  00004ceb    00000001     --HOLE-- [fill = 0]
+                  00004cec    00000017     deployment_mode.obj (.const:.string:PAYLOAD_ALL_NEA_READY)
+                  00004d03    00000001     --HOLE-- [fill = 0]
+                  00004d04    00000017     deployment_mode.obj (.const:.string:PAYLOAD_DEPLOYMENT_COMPLETE)
+                  00004d1b    00000001     --HOLE-- [fill = 0]
+                  00004d1c    00000013     main.obj (.const:.string:PAYLOAD_LAUNCH_INTEGRATION)
+                  00004d2f    00000001     --HOLE-- [fill = 0]
+                  00004d30    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA1_NOT_READY)
+                  00004d43    00000001     --HOLE-- [fill = 0]
+                  00004d44    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA1_NOT_READY)
+                  00004d57    00000001     --HOLE-- [fill = 0]
+                  00004d58    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA1_NOT_READY)
+                  00004d6b    00000001     --HOLE-- [fill = 0]
+                  00004d6c    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA2_NOT_READY)
+                  00004d7f    00000001     --HOLE-- [fill = 0]
+                  00004d80    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA2_NOT_READY)
+                  00004d93    00000001     --HOLE-- [fill = 0]
+                  00004d94    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA2_NOT_READY)
+                  00004da7    00000001     --HOLE-- [fill = 0]
+                  00004da8    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA3_NOT_READY)
+                  00004dbb    00000001     --HOLE-- [fill = 0]
+                  00004dbc    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA3_NOT_READY)
+                  00004dcf    00000001     --HOLE-- [fill = 0]
+                  00004dd0    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA3_NOT_READY)
+                  00004de3    00000001     --HOLE-- [fill = 0]
+                  00004de4    00000013     ECCS.obj (.const:.string:PAYLOAD_NEA4_NOT_READY)
+                  00004df7    00000001     --HOLE-- [fill = 0]
+                  00004df8    00000013     NEA_readout.obj (.const:.string:PAYLOAD_NEA4_NOT_READY)
+                  00004e0b    00000001     --HOLE-- [fill = 0]
+                  00004e0c    00000013     deployment_mode.obj (.const:.string:PAYLOAD_NEA4_NOT_READY)
+                  00004e1f    00000001     --HOLE-- [fill = 0]
+                  00004e20    00000012     lander_communication.obj (.const:.string:PAYLOAD_TOO_LARGE)
+                  00004e32    00000011     lander_communication_protocol.obj (.const:.string:PAYLOAD_INVALID_CHECKSUM)
+                  00004e43    00000001     --HOLE-- [fill = 0]
+                  00004e44    00000010     main.obj (.const:.string:PAYLOAD_GENERAL_STARTUP)
+                  00004e54    00000010     lander_communication_protocol.obj (.const:.string:PAYLOAD_INVALID_MESSAGE)
+                  00004e64    00000010     uart_communication.obj (.const:.string:PAYLOAD_INVALID_MESSAGE)
+                  00004e74    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA1_READY)
+                  00004e83    00000001     --HOLE-- [fill = 0]
+                  00004e84    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA1_READY)
+                  00004e93    00000001     --HOLE-- [fill = 0]
+                  00004e94    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA1_READY)
+                  00004ea3    00000001     --HOLE-- [fill = 0]
+                  00004ea4    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA2_READY)
+                  00004eb3    00000001     --HOLE-- [fill = 0]
+                  00004eb4    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA2_READY)
+                  00004ec3    00000001     --HOLE-- [fill = 0]
+                  00004ec4    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA2_READY)
+                  00004ed3    00000001     --HOLE-- [fill = 0]
+                  00004ed4    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA3_READY)
+                  00004ee3    00000001     --HOLE-- [fill = 0]
+                  00004ee4    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA3_READY)
+                  00004ef3    00000001     --HOLE-- [fill = 0]
+                  00004ef4    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA3_READY)
+                  00004f03    00000001     --HOLE-- [fill = 0]
+                  00004f04    0000000f     ECCS.obj (.const:.string:PAYLOAD_NEA4_READY)
+                  00004f13    00000001     --HOLE-- [fill = 0]
+                  00004f14    0000000f     NEA_readout.obj (.const:.string:PAYLOAD_NEA4_READY)
+                  00004f23    00000001     --HOLE-- [fill = 0]
+                  00004f24    0000000f     deployment_mode.obj (.const:.string:PAYLOAD_NEA4_READY)
                   00004f33    00000001     --HOLE-- [fill = 0]
-                  00004f34    00000005     launch_mode.obj (.const:.string:PAYLOAD_INIT)
-                  00004f39    00000001     --HOLE-- [fill = 0]
-                  00004f3a    00000004     lander_communication_protocol.obj (.const:.string:PAYLOAD_ACK)
-                  00004f3e    00000003     general_startup.obj (.const:.string:PAYLOAD_TRANSIT_MODE)
-                  00004f41    00000001     --HOLE-- [fill = 0]
-                  00004f42    00000001     lander_communication.obj (.const:.string:PAYLOAD_EMPTY)
+                  00004f34    0000000f     main.obj (.const:.string:PAYLOAD_PRE_DEPLOYMENT)
+                  00004f43    00000001     --HOLE-- [fill = 0]
+                  00004f44    0000000b     main.obj (.const:.string:PAYLOAD_DEPLOYMENT)
+                  00004f4f    00000001     --HOLE-- [fill = 0]
+                  00004f50    00000008     main.obj (.const:.string:PAYLOAD_TRANSIT)
+                  00004f58    00000005     general_startup.obj (.const:.string:PAYLOAD_INIT)
+                  00004f5d    00000001     --HOLE-- [fill = 0]
+                  00004f5e    00000005     launch_mode.obj (.const:.string:PAYLOAD_INIT)
+                  00004f63    00000001     --HOLE-- [fill = 0]
+                  00004f64    00000004     lander_communication_protocol.obj (.const:.string:PAYLOAD_ACK)
+                  00004f68    00000003     general_startup.obj (.const:.string:PAYLOAD_TRANSIT_MODE)
+                  00004f6b    00000001     --HOLE-- [fill = 0]
+                  00004f6c    00000001     lander_communication.obj (.const:.string:PAYLOAD_EMPTY)
 
-.text      0    00010000    00003682     
+.text      0    00010000    00003686     
                   00010000    0000072a     rts430x_lc_rd_eabi.lib : addd.c.obj (.text:__mspabi_addd)
                   0001072a    00000468                            : frcdivd.c.obj (.text:__TI_frcdivd)
                   00010b92    00000292                            : mpyd.c.obj (.text:__mspabi_mpyd)
@@ -427,77 +430,78 @@ SYSNMI     0    0000fffc    00000002
                   00012e44    0000003e     rts430x_lc_rd_eabi.lib : asr32.asm.obj (.text:l_asr_const)
                   00012e82    0000003e                            : lsl32.asm.obj (.text:l_lsl_const)
                   00012ec0    0000003e                            : lsr32.asm.obj (.text:l_lsr_const)
-                  00012efe    0000003a     ECCS.obj (.text:_Z30initialize_all_electronic_pinsv)
-                  00012f38    0000003a     rts430x_lc_rd_eabi.lib : lsl64.c.obj (.text:__mspabi_sllll)
-                  00012f72    0000003a                            : lsr64.c.obj (.text:__mspabi_srlll)
-                  00012fac    00000038     NEA_readout.obj (.text:_Z23initialize_all_nea_pinsv)
-                  00012fe4    00000036     lander_communication.obj (.text:_Z19send_message_structPK7Message)
-                  0001301a    00000036     rts430x_lc_rd_eabi.lib : fs_itof.asm.obj (.text)
-                  00013050    00000032     supercap_readout.obj (.text:_Z27initialize_charge_cap_flagsv)
-                  00013082    00000032     uart_communication.obj (.text:_Z9uart_initv)
-                  000130b4    00000032     rts430x_lc_rd_eabi.lib : subd.c.obj (.text:__mspabi_subd)
-                  000130e6    0000002c     NEA_readout.obj (.text:_Z14activate_NEA_ni)
-                  00013112    0000002c     temp_sensors.obj (.text:_Z18calculateFrequencyf)
-                  0001313e    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
-                  0001316a    0000002c     rts430x_lc_rd_eabi.lib : mult3264_f5hw.asm.obj (.text:__mpyull)
-                  00013196    0000002c                            : memory.c.obj (.text:free_list_insert)
-                  000131c2    0000002c                            : div16s.asm.obj (.text)
-                  000131ee    0000002a     supercap_readout.obj (.text:_Z21voltage_adc_supercapsv)
-                  00013218    0000002a     rts430x_lc_rd_eabi.lib : memory.c.obj (.text:free_list_remove)
-                  00013242    00000028     supercap_readout.obj (.text:_Z22convert_adc_to_voltagej)
-                  0001326a    00000028     supercap_readout.obj (.text:_Z8read_ADCv)
-                  00013292    00000026     main_system_init.obj (.text:_Z11setup_SMCLKv)
-                  000132b8    00000026     main_system_init.obj (.text:_Z22initialize_adc_generalv)
-                  000132de    00000026     supercap_readout.obj (.text:_Z25switch_on_charge_cap_flagi)
-                  00013304    00000026     supercap_readout.obj (.text:_Z26switch_off_charge_cap_flagi)
-                  0001332a    00000024     heat_resistor_control.obj (.text:_Z29initialize_heat_resistor_pinsv)
-                  0001334e    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  00013372    00000024                            : fs_utof.asm.obj (.text)
-                  00013396    00000024                            : mult32_f5hw.asm.obj (.text)
-                  000133ba    00000022     supercap_readout.obj (.text:_Z24initialize_adc_supercapsv)
-                  000133dc    0000001e     uart_communication.obj (.text:_Z10uart_writePhj)
-                  000133fa    0000001e     main_system_init.obj (.text:_Z21startTimeoutTimer_TA3v)
-                  00013418    0000001e     bus_current_readout.obj (.text:_Z21voltage_adc_bus_sensev)
-                  00013436    0000001e     bus_current_readout.obj (.text:_Z24initialize_adc_bus_sensev)
-                  00013454    0000001c     lander_communication.obj (.text:_Z12send_messagehPKhh)
-                  00013470    0000001c     temp_sensors.obj (.text:_Z13setupTimer_B0v)
-                  0001348c    00000018     supercap_readout.obj (.text:_Z19initialize_capreadyv)
-                  000134a4    00000018     main_system_init.obj (.text:_Z21startTimeoutTimer_TA2v)
-                  000134bc    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
-                  000134d4    00000016                            : memory.c.obj (.text:heap_start)
-                  000134ea    00000016                            : div16u.asm.obj (.text)
-                  00013500    00000014     lander_communication_protocol.obj (.text:_Z18calculate_checksumPK7Message)
-                  00013514    00000014     lander_communication_protocol.obj (.text:_Z25calculate_checksum_helperhhPKh)
-                  00013528    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
-                  0001353c    00000012     bus_current_readout.obj (.text:_Z32initialize_bus_current_sense_pinv)
-                  0001354e    00000012     umbilical_cord.obj (.text:_Z35initialize_umbilicalcord_detach_pinv)
-                  00013560    00000012     rts430x_lc_rd_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  00013572    00000010     main_system_init.obj (.text:_Z20stopTimeoutTimer_TA2v)
-                  00013582    0000000e     heat_resistor_control.obj (.text:_Z12is_heater_onv)
-                  00013590    0000000e     uart_communication.obj (.text:_Z14uart_configurev)
-                  0001359e    0000000e     NEA_readout.obj (.text:_Z20read_NEAready_statusPVhh)
-                  000135ac    0000000e     main_system_init.obj (.text:_Z20stopTimeoutTimer_TA3v)
-                  000135ba    0000000e     main_system_init.obj (.text:_Z22boot_up_initialisationv)
-                  000135c8    0000000e     bus_current_readout.obj (.text:_Z23initialize_bus_flag_pinv)
-                  000135d6    0000000e     temp_sensors.obj (.text:_Z28readout_temperature_sensor_1v)
-                  000135e4    0000000e     temp_sensors.obj (.text:_Z28readout_temperature_sensor_2v)
-                  000135f2    0000000e     general_startup.obj (.text:_Z33send_transit_mode_request_messagev)
-                  00013600    0000000e     main_system_init.obj (.text:_Z8init_LEDv)
-                  0001360e    0000000c     supercap_readout.obj (.text:_Z28switch_on_discharge_cap_flagv)
-                  0001361a    0000000c     supercap_readout.obj (.text:_Z29switch_off_discharge_cap_flagv)
-                  00013626    0000000c     umbilical_cord.obj (.text:_Z29umbilicalcord_rover_connectedv)
-                  00013632    0000000a     bus_current_readout.obj (.text:_Z23switch_off_bus_flag_pinv)
-                  0001363c    0000000a     umbilical_cord.obj (.text:_Z34initialize_umbilicalcord_pin_roverv)
-                  00013646    0000000a     rts430x_lc_rd_eabi.lib : new.cpp.obj (.text:_ZdlPv)
-                  00013650    00000008     heat_resistor_control.obj (.text:_Z16MCU_heaterOn_lowv)
-                  00013658    00000008     heat_resistor_control.obj (.text:_Z17MCU_heaterOff_lowv)
-                  00013660    00000008     heat_resistor_control.obj (.text:_Z17MCU_heaterOn_highv)
-                  00013668    00000008     heat_resistor_control.obj (.text:_Z18MCU_heaterOff_highv)
-                  00013670    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  00013676    00000004                            : new.cpp.obj (.text:_ZdlPvj)
-                  0001367a    00000004                            : pre_init.c.obj (.text:_system_pre_init)
-                  0001367e    00000002                            : _lock.c.obj (.text:_nop)
-                  00013680    00000002                            : startup.c.obj (.text:_system_post_cinit)
+                  00012efe    0000003a                            : lsl64.c.obj (.text:__mspabi_sllll)
+                  00012f38    0000003a                            : lsr64.c.obj (.text:__mspabi_srlll)
+                  00012f72    00000038     bus_current_readout.obj (.text:_Z21voltage_adc_bus_sensev)
+                  00012faa    00000038     supercap_readout.obj (.text:_Z21voltage_adc_supercapsv)
+                  00012fe2    00000038     NEA_readout.obj (.text:_Z23initialize_all_nea_pinsv)
+                  0001301a    00000036     lander_communication.obj (.text:_Z19send_message_structPK7Message)
+                  00013050    00000036     rts430x_lc_rd_eabi.lib : fs_itof.asm.obj (.text)
+                  00013086    00000032     supercap_readout.obj (.text:_Z27initialize_charge_cap_flagsv)
+                  000130b8    00000032     ECCS.obj (.text:_Z30initialize_all_electronic_pinsv)
+                  000130ea    00000032     uart_communication.obj (.text:_Z9uart_initv)
+                  0001311c    00000032     rts430x_lc_rd_eabi.lib : subd.c.obj (.text:__mspabi_subd)
+                  0001314e    0000002c     NEA_readout.obj (.text:_Z14activate_NEA_ni)
+                  0001317a    0000002c     temp_sensors.obj (.text:_Z18calculateFrequencyf)
+                  000131a6    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
+                  000131d2    0000002c     rts430x_lc_rd_eabi.lib : mult3264_f5hw.asm.obj (.text:__mpyull)
+                  000131fe    0000002c                            : memory.c.obj (.text:free_list_insert)
+                  0001322a    0000002c                            : div16s.asm.obj (.text)
+                  00013256    0000002a                            : memory.c.obj (.text:free_list_remove)
+                  00013280    00000028     supercap_readout.obj (.text:_Z22convert_adc_to_voltagej)
+                  000132a8    00000026     main_system_init.obj (.text:_Z11setup_SMCLKv)
+                  000132ce    00000026     main_system_init.obj (.text:_Z22initialize_adc_generalv)
+                  000132f4    00000026     supercap_readout.obj (.text:_Z25switch_on_charge_cap_flagi)
+                  0001331a    00000026     supercap_readout.obj (.text:_Z26switch_off_charge_cap_flagi)
+                  00013340    00000024     heat_resistor_control.obj (.text:_Z29initialize_heat_resistor_pinsv)
+                  00013364    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00013388    00000024                            : fs_utof.asm.obj (.text)
+                  000133ac    00000024                            : mult32_f5hw.asm.obj (.text)
+                  000133d0    0000001e     uart_communication.obj (.text:_Z10uart_writePhj)
+                  000133ee    0000001e     main_system_init.obj (.text:_Z21startTimeoutTimer_TA3v)
+                  0001340c    0000001c     lander_communication.obj (.text:_Z12send_messagehPKhh)
+                  00013428    0000001c     temp_sensors.obj (.text:_Z13setupTimer_B0v)
+                  00013444    00000018     supercap_readout.obj (.text:_Z19initialize_capreadyv)
+                  0001345c    00000018     main_system_init.obj (.text:_Z21startTimeoutTimer_TA2v)
+                  00013474    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
+                  0001348c    00000016                            : memory.c.obj (.text:heap_start)
+                  000134a2    00000016                            : div16u.asm.obj (.text)
+                  000134b8    00000014     lander_communication_protocol.obj (.text:_Z18calculate_checksumPK7Message)
+                  000134cc    00000014     supercap_readout.obj (.text:_Z24initialize_adc_supercapsv)
+                  000134e0    00000014     lander_communication_protocol.obj (.text:_Z25calculate_checksum_helperhhPKh)
+                  000134f4    00000014     bus_current_readout.obj (.text:_Z26initialize_adc_bus_currentv)
+                  00013508    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
+                  0001351c    00000012     supercap_readout.obj (.text:_Z20enable_interrupt_adcv)
+                  0001352e    00000012     supercap_readout.obj (.text:_Z21disable_interrupt_adcv)
+                  00013540    00000012     bus_current_readout.obj (.text:_Z32initialize_bus_current_sense_pinv)
+                  00013552    00000012     umbilical_cord.obj (.text:_Z35initialize_umbilicalcord_detach_pinv)
+                  00013564    00000012     rts430x_lc_rd_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00013576    00000010     main_system_init.obj (.text:_Z20stopTimeoutTimer_TA2v)
+                  00013586    0000000e     heat_resistor_control.obj (.text:_Z12is_heater_onv)
+                  00013594    0000000e     uart_communication.obj (.text:_Z14uart_configurev)
+                  000135a2    0000000e     NEA_readout.obj (.text:_Z20read_NEAready_statusPVhh)
+                  000135b0    0000000e     main_system_init.obj (.text:_Z20stopTimeoutTimer_TA3v)
+                  000135be    0000000e     main_system_init.obj (.text:_Z22boot_up_initialisationv)
+                  000135cc    0000000e     bus_current_readout.obj (.text:_Z23initialize_bus_flag_pinv)
+                  000135da    0000000e     temp_sensors.obj (.text:_Z28readout_temperature_sensor_1v)
+                  000135e8    0000000e     temp_sensors.obj (.text:_Z28readout_temperature_sensor_2v)
+                  000135f6    0000000e     general_startup.obj (.text:_Z33send_transit_mode_request_messagev)
+                  00013604    0000000e     main_system_init.obj (.text:_Z8init_LEDv)
+                  00013612    0000000c     supercap_readout.obj (.text:_Z28switch_on_discharge_cap_flagv)
+                  0001361e    0000000c     supercap_readout.obj (.text:_Z29switch_off_discharge_cap_flagv)
+                  0001362a    0000000c     umbilical_cord.obj (.text:_Z29umbilicalcord_rover_connectedv)
+                  00013636    0000000a     bus_current_readout.obj (.text:_Z23switch_off_bus_flag_pinv)
+                  00013640    0000000a     umbilical_cord.obj (.text:_Z34initialize_umbilicalcord_pin_roverv)
+                  0001364a    0000000a     rts430x_lc_rd_eabi.lib : new.cpp.obj (.text:_ZdlPv)
+                  00013654    00000008     heat_resistor_control.obj (.text:_Z16MCU_heaterOn_lowv)
+                  0001365c    00000008     heat_resistor_control.obj (.text:_Z17MCU_heaterOff_lowv)
+                  00013664    00000008     heat_resistor_control.obj (.text:_Z17MCU_heaterOn_highv)
+                  0001366c    00000008     heat_resistor_control.obj (.text:_Z18MCU_heaterOff_highv)
+                  00013674    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
+                  0001367a    00000004                            : new.cpp.obj (.text:_ZdlPvj)
+                  0001367e    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  00013682    00000002                            : _lock.c.obj (.text:_nop)
+                  00013684    00000002                            : startup.c.obj (.text:_system_post_cinit)
 
 MODULE SUMMARY
 
@@ -516,16 +520,16 @@ MODULE SUMMARY
        Total:                              1830    76        782    
                                                                     
     .\src\system_health\
-       ECCS.obj                            708     386       2      
+       ECCS.obj                            700     386       2      
        heat_resistor_control.obj           666     250       0      
-       supercap_readout.obj                588     168       3      
+       supercap_readout.obj                626     170       7      
        temp_sensors.obj                    720     0         0      
        NEA_readout.obj                     516     136       0      
-       bus_current_readout.obj             396     0         0      
+       bus_current_readout.obj             412     0         0      
        main_system_init.obj                214     4         4      
        umbilical_cord.obj                  118     54        0      
     +--+-----------------------------------+-------+---------+---------+
-       Total:                              3926    998       9      
+       Total:                              3972    1000      13     
                                                                     
     .\src\transit_modes\
        deployment_mode.obj                 424     217       2      
@@ -596,7 +600,6 @@ MODULE SUMMARY
        int42.asm.obj                       0       2         0      
        int44.asm.obj                       0       2         0      
        int45.asm.obj                       0       2         0      
-       int46.asm.obj                       0       2         0      
        int47.asm.obj                       0       2         0      
        int48.asm.obj                       0       2         0      
        int49.asm.obj                       0       2         0      
@@ -607,25 +610,25 @@ MODULE SUMMARY
        int54.asm.obj                       0       2         0      
        startup.c.obj                       2       0         0      
     +--+-----------------------------------+-------+---------+---------+
-       Total:                              7412    44        12     
+       Total:                              7412    42        12     
                                                                     
        Heap:                               0       0         160    
        Stack:                              0       0         160    
-       Linker Generated:                   0       54        0      
+       Linker Generated:                   0       55        0      
     +--+-----------------------------------+-------+---------+---------+
-       Grand Total:                        14288   1579      1133   
+       Grand Total:                        14334   1580      1137   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00004f6a records: 2, size/record: 8, table size: 16
-	.data: load addr=00004f44, load size=00000014 bytes, run addr=00001f0a, run size=00000024 bytes, compression=lzss
-	.bss: load addr=00004f64, load size=00000006 bytes, run addr=00001c00, run size=0000030a bytes, compression=zero_init
+__TI_cinit_table @ 00004f96 records: 2, size/record: 8, table size: 16
+	.data: load addr=00004f6e, load size=00000015 bytes, run addr=00001f0a, run size=00000028 bytes, compression=lzss
+	.bss: load addr=00004f90, load size=00000006 bytes, run addr=00001c00, run size=0000030a bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004f58 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00004f84 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -866,6 +869,7 @@ address   name
 00000872  ADC12MEM9                                     
 00000873  ADC12MEM9_H                                   
 00000872  ADC12MEM9_L                                   
+00001f20  ADC_capture                                   
 000009c0  AESACTL0                                      
 000009c1  AESACTL0_H                                    
 000009c0  AESACTL0_L                                    
@@ -892,7 +896,7 @@ address   name
 000009ce  AESAXIN_L                                     
 000004be  BCD2BIN                                       
 000004bc  BIN2BCD                                       
-00013670  C$$EXIT                                       
+00013674  C$$EXIT                                       
 0000043e  CAPTIO0CTL                                    
 0000043f  CAPTIO0CTL_H                                  
 0000043e  CAPTIO0CTL_L                                  
@@ -980,7 +984,7 @@ address   name
 00000506  DMACTL3                                       
 00000508  DMACTL4                                       
 0000050e  DMAIV                                         
-00001f22  EECSTask                                      
+00001f26  EECSTask                                      
 00000140  FRCTL0                                        
 00000141  FRCTL0_H                                      
 00000140  FRCTL0_L                                      
@@ -1420,99 +1424,101 @@ address   name
 0000015c  WDTCTL                                        
 0000015d  WDTCTL_H                                      
 0000015c  WDTCTL_L                                      
-000133dc  _Z10uart_writePhj                             
+000133d0  _Z10uart_writePhj                             
 00004800  _Z11USCI_A1_ISRv                              
 0001269e  _Z11launch_modev                              
-00013292  _Z11setup_SMCLKv                              
+000132a8  _Z11setup_SMCLKv                              
 000127c8  _Z11slip_decodePKhjPhPj                       
 00011fae  _Z11slip_encodePKhjPhPj                       
-0000491c  _Z12Timer_A2_ISRv                             
-0000493c  _Z12Timer_A3_ISRv                             
-00013582  _Z12is_heater_onv                             
-00013454  _Z12send_messagehPKhh                         
+00004946  _Z12Timer_A2_ISRv                             
+00004966  _Z12Timer_A3_ISRv                             
+00013586  _Z12is_heater_onv                             
+0001340c  _Z12send_messagehPKhh                         
 00012c20  _Z12transit_modev                             
-0000492c  _Z13Timer1_A0_ISRv                            
+00004956  _Z13Timer1_A0_ISRv                            
 00011d22  _Z13activate_NEAsv                            
-00013470  _Z13setupTimer_B0v                            
-000130e6  _Z14activate_NEA_ni                           
+00013428  _Z13setupTimer_B0v                            
+0001314e  _Z14activate_NEA_ni                           
 00012ad6  _Z14create_messagehPKhh                       
 00011ed8  _Z14handle_messagePK7Message                  
 000121ec  _Z14read_RX_bufferjj                          
-00013590  _Z14uart_configurev                           
+00013594  _Z14uart_configurev                           
 000112ca  _Z15deployment_modev                          
 00012558  _Z15general_startupv                          
-00013650  _Z16MCU_heaterOn_lowv                         
+00013654  _Z16MCU_heaterOn_lowv                         
 000122a2  _Z16send_NEA_messageib                        
-00013658  _Z17MCU_heaterOff_lowv                        
-00013660  _Z17MCU_heaterOn_highv                        
-00013668  _Z18MCU_heaterOff_highv                       
-00013112  _Z18calculateFrequencyf                       
-00013500  _Z18calculate_checksumPK7Message              
-0001348c  _Z19initialize_capreadyv                      
+0001365c  _Z17MCU_heaterOff_lowv                        
+00013664  _Z17MCU_heaterOn_highv                        
+0001366c  _Z18MCU_heaterOff_highv                       
+0001317a  _Z18calculateFrequencyf                       
+000134b8  _Z18calculate_checksumPK7Message              
+00013444  _Z19initialize_capreadyv                      
 00012b84  _Z19pre_deployment_modev                      
-00012fe4  _Z19send_message_structPK7Message             
+0001301a  _Z19send_message_structPK7Message             
 00012bd2  _Z20detach_umbilicalcordv                     
-0001359e  _Z20read_NEAready_statusPVhh                  
-00013572  _Z20stopTimeoutTimer_TA2v                     
-000135ac  _Z20stopTimeoutTimer_TA3v                     
+0001351c  _Z20enable_interrupt_adcv                     
+000135a2  _Z20read_NEAready_statusPVhh                  
+00013576  _Z20stopTimeoutTimer_TA2v                     
+000135b0  _Z20stopTimeoutTimer_TA3v                     
+0001352e  _Z21disable_interrupt_adcv                    
 00011472  _Z21heat_resistor_controlff                   
 00012850  _Z21process_received_datav                    
-000134a4  _Z21startTimeoutTimer_TA2v                    
-000133fa  _Z21startTimeoutTimer_TA3v                    
-00013418  _Z21voltage_adc_bus_sensev                    
-000131ee  _Z21voltage_adc_supercapsv                    
-000135ba  _Z22boot_up_initialisationv                   
-00013242  _Z22convert_adc_to_voltagej                   
+0001345c  _Z21startTimeoutTimer_TA2v                    
+000133ee  _Z21startTimeoutTimer_TA3v                    
+00012f72  _Z21voltage_adc_bus_sensev                    
+00012faa  _Z21voltage_adc_supercapsv                    
+000135be  _Z22boot_up_initialisationv                   
+00013280  _Z22convert_adc_to_voltagej                   
 00011a18  _Z22float_to_uint8_array_2fPh                 
-000132b8  _Z22initialize_adc_generalv                   
-00012fac  _Z23initialize_all_nea_pinsv                  
-000135c8  _Z23initialize_bus_flag_pinv                  
-00013632  _Z23switch_off_bus_flag_pinv                  
+000132ce  _Z22initialize_adc_generalv                   
+00012fe2  _Z23initialize_all_nea_pinsv                  
+000135cc  _Z23initialize_bus_flag_pinv                  
+00013636  _Z23switch_off_bus_flag_pinv                  
 000125fc  _Z24convert_array_to_messagePKhjP7Message     
 00012408  _Z24convert_message_to_arrayPK7MessagePhS2_   
 00012076  _Z24frequency_to_temperaturef                 
-00013436  _Z24initialize_adc_bus_sensev                 
-000133ba  _Z24initialize_adc_supercapsv                 
-00013514  _Z25calculate_checksum_helperhhPKh            
-000132de  _Z25switch_on_charge_cap_flagi                
-00013304  _Z26switch_off_charge_cap_flagi               
-00013050  _Z27initialize_charge_cap_flagsv              
+000134cc  _Z24initialize_adc_supercapsv                 
+000134e0  _Z25calculate_checksum_helperhhPKh            
+000132f4  _Z25switch_on_charge_cap_flagi                
+000134f4  _Z26initialize_adc_bus_currentv               
+0001331a  _Z26switch_off_charge_cap_flagi               
+00013086  _Z27initialize_charge_cap_flagsv              
 00012dc8  _Z27initialize_temperature_pinsv              
 00010e24  _Z28RDS_electronics_status_checkv             
 00011b3e  _Z28check_supercap_functionalityv             
-000135d6  _Z28readout_temperature_sensor_1v             
-000135e4  _Z28readout_temperature_sensor_2v             
+000135da  _Z28readout_temperature_sensor_1v             
+000135e8  _Z28readout_temperature_sensor_2v             
 00011612  _Z28readout_temperature_sensor_nPVjS0_        
-0001360e  _Z28switch_on_discharge_cap_flagv             
-0001332a  _Z29initialize_heat_resistor_pinsv            
-0001361a  _Z29switch_off_discharge_cap_flagv            
-00013626  _Z29umbilicalcord_rover_connectedv            
-00012efe  _Z30initialize_all_electronic_pinsv           
+00013612  _Z28switch_on_discharge_cap_flagv             
+00013340  _Z29initialize_heat_resistor_pinsv            
+0001361e  _Z29switch_off_discharge_cap_flagv            
+0001362a  _Z29umbilicalcord_rover_connectedv            
+000130b8  _Z30initialize_all_electronic_pinsv           
 00012e06  _Z32heat_resistor_control_one_sensorf         
-0001353c  _Z32initialize_bus_current_sense_pinv         
+00013540  _Z32initialize_bus_current_sense_pinv         
 00012944  _Z33heat_resistor_control_two_sensorsff       
-000135f2  _Z33send_transit_mode_request_messagev        
-0001363c  _Z34initialize_umbilicalcord_pin_roverv       
-0001354e  _Z35initialize_umbilicalcord_detach_pinv      
+000135f6  _Z33send_transit_mode_request_messagev        
+00013640  _Z34initialize_umbilicalcord_pin_roverv       
+00013552  _Z35initialize_umbilicalcord_detach_pinv      
 00012d44  _Z37send_message_and_wait_for_ACK_3_timeshPKhh
-00013600  _Z8init_LEDv                                  
-0001326a  _Z8read_ADCv                                  
-00013082  _Z9uart_initv                                 
-00013670  _ZSt17__throw_bad_allocv                      
-00013646  _ZdlPv                                        
-00013676  _ZdlPvj                                       
+00013604  _Z8init_LEDv                                  
+000048fc  _Z9ADC12_ISRv                                 
+000130ea  _Z9uart_initv                                 
+00013674  _ZSt17__throw_bad_allocv                      
+0001364a  _ZdlPv                                        
+0001367a  _ZdlPvj                                       
 00002400  __STACK_END                                   
 000000a0  __STACK_SIZE                                  
 000000a0  __SYSMEM_SIZE                                 
-00004f6a  __TI_CINIT_Base                               
-00004f7a  __TI_CINIT_Limit                              
-00004f7a  __TI_CINIT_Warm                               
-00004f58  __TI_Handler_Table_Base                       
-00004f64  __TI_Handler_Table_Limit                      
-00004946  __TI_ISR_TRAP                                 
+00004f96  __TI_CINIT_Base                               
+00004fa6  __TI_CINIT_Limit                              
+00004fa6  __TI_CINIT_Warm                               
+00004f84  __TI_Handler_Table_Base                       
+00004f90  __TI_Handler_Table_Limit                      
+00004970  __TI_ISR_TRAP                                 
 00012b30  __TI_auto_init_nobinit_nopinit_hold_wdt       
 000128ce  __TI_decompress_lzss                          
-00013560  __TI_decompress_none                          
+00013564  __TI_decompress_none                          
 0001072a  __TI_frcdivd                                  
 00011782  __TI_frcmpyd                                  
 0000ffcc  __TI_int30                                    
@@ -1543,10 +1549,10 @@ address   name
 ffffffff  __TI_pprof_out_hndl                           
 ffffffff  __TI_prof_data_size                           
 ffffffff  __TI_prof_data_start                          
-0001334e  __TI_zero_init_nomemset                       
+00013364  __TI_zero_init_nomemset                       
 ffffffff  __c_args__                                    
 00000001  __mpu_enable                                  
-0001313e  __mpu_init                                    
+000131a6  __mpu_init                                    
 00010000  __mspabi_addd                                 
 000118ec  __mspabi_addf                                 
 00011e00  __mspabi_cmpd                                 
@@ -1555,21 +1561,21 @@ ffffffff  __c_args__
 00012a16  __mspabi_cvtfd                                
 000110ae  __mspabi_divd                                 
 00012738  __mspabi_divf                                 
-000131c2  __mspabi_divi                                 
-000134ea  __mspabi_divu                                 
+0001322a  __mspabi_divi                                 
+000134a2  __mspabi_divu                                 
 000129ae  __mspabi_fixfi                                
 00012cfe  __mspabi_fixfu                                
-0001301a  __mspabi_fltif                                
+00013050  __mspabi_fltif                                
 00012cb4  __mspabi_fltlif                               
-00013372  __mspabi_fltuf                                
+00013388  __mspabi_fltuf                                
 00010b92  __mspabi_mpyd                                 
 00012134  __mspabi_mpyf                                 
-000134bc  __mspabi_mpyi_f5hw                            
-00013396  __mspabi_mpyl_f5hw                            
+00013474  __mspabi_mpyi_f5hw                            
+000133ac  __mspabi_mpyl_f5hw                            
 00012a7a  __mspabi_mpyll_f5hw                           
-0001316a  __mspabi_mpyull_f5hw                          
-000131c2  __mspabi_remi                                 
-000134ea  __mspabi_remu                                 
+000131d2  __mspabi_mpyull_f5hw                          
+0001322a  __mspabi_remi                                 
+000134a2  __mspabi_remu                                 
 00012eba  __mspabi_slll_1                               
 00012e96  __mspabi_slll_10                              
 00012e92  __mspabi_slll_11                              
@@ -1585,7 +1591,7 @@ ffffffff  __c_args__
 00012ea2  __mspabi_slll_7                               
 00012e9e  __mspabi_slll_8                               
 00012e9a  __mspabi_slll_9                               
-00012f38  __mspabi_sllll                                
+00012efe  __mspabi_sllll                                
 00012e7c  __mspabi_sral_1                               
 00012e58  __mspabi_sral_10                              
 00012e54  __mspabi_sral_11                              
@@ -1617,43 +1623,45 @@ ffffffff  __c_args__
 00012ee0  __mspabi_srll_7                               
 00012edc  __mspabi_srll_8                               
 00012ed8  __mspabi_srll_9                               
-00012f72  __mspabi_srlll                                
-000130b4  __mspabi_subd                                 
+00012f38  __mspabi_srlll                                
+0001311c  __mspabi_subd                                 
 000118e6  __mspabi_subf                                 
-000048fc  _c_int00_noargs_mpu                           
+00004926  _c_int00_noargs_mpu                           
 00001f12  _lock                                         
-0001367e  _nop                                          
+00013682  _nop                                          
 0000fffe  _reset_vector                                 
 00002360  _stack                                        
 00004400  _sys_memory                                   
-00013680  _system_post_cinit                            
-0001367a  _system_pre_init                              
+00013684  _system_post_cinit                            
+0001367e  _system_pre_init                              
 00001f16  _unlock                                       
-00013670  abort                                         
+00013674  abort                                         
 00001f11  ack_received                                  
+00001f1e  adc_conversion_fail                           
 00001f0e  buffer_full_state                             
-00001f24  deploymentModeTask                            
+00001f28  deploymentModeTask                            
 00001f0f  error_state                                   
 00004800  fram_ipe_end                                  
 00004800  fram_ipe_start                                
 00004400  fram_rw_start                                 
 00004800  fram_rx_start                                 
 00011c40  free                                          
-00001f26  generalStartupTask                            
-00001f28  launchModeTask                                
+00001f2a  generalStartupTask                            
+00001f2c  launchModeTask                                
 000124b0  main                                          
-00013528  memcpy                                        
+00001f1f  measurement_finished                          
+00013508  memcpy                                        
 00001f06  message_pointer                               
 0000a501  mpu_ctl0_value                                
 00001513  mpu_sam_value                                 
 00000480  mpu_segment_border1                           
 00000480  mpu_segment_border2                           
-00001f2a  preDeploymentModeTask                         
-00001f1e  supercap_functionality                        
+00001f2e  preDeploymentModeTask                         
+00001f22  supercap_functionality                        
 00001f1c  timeoutCounterTA3                             
 00001f1a  timeoutOccurred                               
 00001f10  timeout_state                                 
-00001f2c  transitModeTask                               
+00001f30  transitModeTask                               
 00001f08  transit_state                                 
 
 
@@ -2460,13 +2468,16 @@ address   name
 00001f16  _unlock                                       
 00001f1a  timeoutOccurred                               
 00001f1c  timeoutCounterTA3                             
-00001f1e  supercap_functionality                        
-00001f22  EECSTask                                      
-00001f24  deploymentModeTask                            
-00001f26  generalStartupTask                            
-00001f28  launchModeTask                                
-00001f2a  preDeploymentModeTask                         
-00001f2c  transitModeTask                               
+00001f1e  adc_conversion_fail                           
+00001f1f  measurement_finished                          
+00001f20  ADC_capture                                   
+00001f22  supercap_functionality                        
+00001f26  EECSTask                                      
+00001f28  deploymentModeTask                            
+00001f2a  generalStartupTask                            
+00001f2c  launchModeTask                                
+00001f2e  preDeploymentModeTask                         
+00001f30  transitModeTask                               
 00002360  _stack                                        
 00002400  __STACK_END                                   
 00004400  _sys_memory                                   
@@ -2475,16 +2486,17 @@ address   name
 00004800  fram_ipe_end                                  
 00004800  fram_ipe_start                                
 00004800  fram_rx_start                                 
-000048fc  _c_int00_noargs_mpu                           
-0000491c  _Z12Timer_A2_ISRv                             
-0000492c  _Z13Timer1_A0_ISRv                            
-0000493c  _Z12Timer_A3_ISRv                             
-00004946  __TI_ISR_TRAP                                 
-00004f58  __TI_Handler_Table_Base                       
-00004f64  __TI_Handler_Table_Limit                      
-00004f6a  __TI_CINIT_Base                               
-00004f7a  __TI_CINIT_Limit                              
-00004f7a  __TI_CINIT_Warm                               
+000048fc  _Z9ADC12_ISRv                                 
+00004926  _c_int00_noargs_mpu                           
+00004946  _Z12Timer_A2_ISRv                             
+00004956  _Z13Timer1_A0_ISRv                            
+00004966  _Z12Timer_A3_ISRv                             
+00004970  __TI_ISR_TRAP                                 
+00004f84  __TI_Handler_Table_Base                       
+00004f90  __TI_Handler_Table_Limit                      
+00004f96  __TI_CINIT_Base                               
+00004fa6  __TI_CINIT_Limit                              
+00004fa6  __TI_CINIT_Warm                               
 0000a501  mpu_ctl0_value                                
 0000ffcc  __TI_int30                                    
 0000ffce  __TI_int31                                    
@@ -2605,81 +2617,82 @@ address   name
 00012ef0  __mspabi_srll_3                               
 00012ef4  __mspabi_srll_2                               
 00012ef8  __mspabi_srll_1                               
-00012efe  _Z30initialize_all_electronic_pinsv           
-00012f38  __mspabi_sllll                                
-00012f72  __mspabi_srlll                                
-00012fac  _Z23initialize_all_nea_pinsv                  
-00012fe4  _Z19send_message_structPK7Message             
-0001301a  __mspabi_fltif                                
-00013050  _Z27initialize_charge_cap_flagsv              
-00013082  _Z9uart_initv                                 
-000130b4  __mspabi_subd                                 
-000130e6  _Z14activate_NEA_ni                           
-00013112  _Z18calculateFrequencyf                       
-0001313e  __mpu_init                                    
-0001316a  __mspabi_mpyull_f5hw                          
-000131c2  __mspabi_divi                                 
-000131c2  __mspabi_remi                                 
-000131ee  _Z21voltage_adc_supercapsv                    
-00013242  _Z22convert_adc_to_voltagej                   
-0001326a  _Z8read_ADCv                                  
-00013292  _Z11setup_SMCLKv                              
-000132b8  _Z22initialize_adc_generalv                   
-000132de  _Z25switch_on_charge_cap_flagi                
-00013304  _Z26switch_off_charge_cap_flagi               
-0001332a  _Z29initialize_heat_resistor_pinsv            
-0001334e  __TI_zero_init_nomemset                       
-00013372  __mspabi_fltuf                                
-00013396  __mspabi_mpyl_f5hw                            
-000133ba  _Z24initialize_adc_supercapsv                 
-000133dc  _Z10uart_writePhj                             
-000133fa  _Z21startTimeoutTimer_TA3v                    
-00013418  _Z21voltage_adc_bus_sensev                    
-00013436  _Z24initialize_adc_bus_sensev                 
-00013454  _Z12send_messagehPKhh                         
-00013470  _Z13setupTimer_B0v                            
-0001348c  _Z19initialize_capreadyv                      
-000134a4  _Z21startTimeoutTimer_TA2v                    
-000134bc  __mspabi_mpyi_f5hw                            
-000134ea  __mspabi_divu                                 
-000134ea  __mspabi_remu                                 
-00013500  _Z18calculate_checksumPK7Message              
-00013514  _Z25calculate_checksum_helperhhPKh            
-00013528  memcpy                                        
-0001353c  _Z32initialize_bus_current_sense_pinv         
-0001354e  _Z35initialize_umbilicalcord_detach_pinv      
-00013560  __TI_decompress_none                          
-00013572  _Z20stopTimeoutTimer_TA2v                     
-00013582  _Z12is_heater_onv                             
-00013590  _Z14uart_configurev                           
-0001359e  _Z20read_NEAready_statusPVhh                  
-000135ac  _Z20stopTimeoutTimer_TA3v                     
-000135ba  _Z22boot_up_initialisationv                   
-000135c8  _Z23initialize_bus_flag_pinv                  
-000135d6  _Z28readout_temperature_sensor_1v             
-000135e4  _Z28readout_temperature_sensor_2v             
-000135f2  _Z33send_transit_mode_request_messagev        
-00013600  _Z8init_LEDv                                  
-0001360e  _Z28switch_on_discharge_cap_flagv             
-0001361a  _Z29switch_off_discharge_cap_flagv            
-00013626  _Z29umbilicalcord_rover_connectedv            
-00013632  _Z23switch_off_bus_flag_pinv                  
-0001363c  _Z34initialize_umbilicalcord_pin_roverv       
-00013646  _ZdlPv                                        
-00013650  _Z16MCU_heaterOn_lowv                         
-00013658  _Z17MCU_heaterOff_lowv                        
-00013660  _Z17MCU_heaterOn_highv                        
-00013668  _Z18MCU_heaterOff_highv                       
-00013670  C$$EXIT                                       
-00013670  _ZSt17__throw_bad_allocv                      
-00013670  abort                                         
-00013676  _ZdlPvj                                       
-0001367a  _system_pre_init                              
-0001367e  _nop                                          
-00013680  _system_post_cinit                            
+00012efe  __mspabi_sllll                                
+00012f38  __mspabi_srlll                                
+00012f72  _Z21voltage_adc_bus_sensev                    
+00012faa  _Z21voltage_adc_supercapsv                    
+00012fe2  _Z23initialize_all_nea_pinsv                  
+0001301a  _Z19send_message_structPK7Message             
+00013050  __mspabi_fltif                                
+00013086  _Z27initialize_charge_cap_flagsv              
+000130b8  _Z30initialize_all_electronic_pinsv           
+000130ea  _Z9uart_initv                                 
+0001311c  __mspabi_subd                                 
+0001314e  _Z14activate_NEA_ni                           
+0001317a  _Z18calculateFrequencyf                       
+000131a6  __mpu_init                                    
+000131d2  __mspabi_mpyull_f5hw                          
+0001322a  __mspabi_divi                                 
+0001322a  __mspabi_remi                                 
+00013280  _Z22convert_adc_to_voltagej                   
+000132a8  _Z11setup_SMCLKv                              
+000132ce  _Z22initialize_adc_generalv                   
+000132f4  _Z25switch_on_charge_cap_flagi                
+0001331a  _Z26switch_off_charge_cap_flagi               
+00013340  _Z29initialize_heat_resistor_pinsv            
+00013364  __TI_zero_init_nomemset                       
+00013388  __mspabi_fltuf                                
+000133ac  __mspabi_mpyl_f5hw                            
+000133d0  _Z10uart_writePhj                             
+000133ee  _Z21startTimeoutTimer_TA3v                    
+0001340c  _Z12send_messagehPKhh                         
+00013428  _Z13setupTimer_B0v                            
+00013444  _Z19initialize_capreadyv                      
+0001345c  _Z21startTimeoutTimer_TA2v                    
+00013474  __mspabi_mpyi_f5hw                            
+000134a2  __mspabi_divu                                 
+000134a2  __mspabi_remu                                 
+000134b8  _Z18calculate_checksumPK7Message              
+000134cc  _Z24initialize_adc_supercapsv                 
+000134e0  _Z25calculate_checksum_helperhhPKh            
+000134f4  _Z26initialize_adc_bus_currentv               
+00013508  memcpy                                        
+0001351c  _Z20enable_interrupt_adcv                     
+0001352e  _Z21disable_interrupt_adcv                    
+00013540  _Z32initialize_bus_current_sense_pinv         
+00013552  _Z35initialize_umbilicalcord_detach_pinv      
+00013564  __TI_decompress_none                          
+00013576  _Z20stopTimeoutTimer_TA2v                     
+00013586  _Z12is_heater_onv                             
+00013594  _Z14uart_configurev                           
+000135a2  _Z20read_NEAready_statusPVhh                  
+000135b0  _Z20stopTimeoutTimer_TA3v                     
+000135be  _Z22boot_up_initialisationv                   
+000135cc  _Z23initialize_bus_flag_pinv                  
+000135da  _Z28readout_temperature_sensor_1v             
+000135e8  _Z28readout_temperature_sensor_2v             
+000135f6  _Z33send_transit_mode_request_messagev        
+00013604  _Z8init_LEDv                                  
+00013612  _Z28switch_on_discharge_cap_flagv             
+0001361e  _Z29switch_off_discharge_cap_flagv            
+0001362a  _Z29umbilicalcord_rover_connectedv            
+00013636  _Z23switch_off_bus_flag_pinv                  
+00013640  _Z34initialize_umbilicalcord_pin_roverv       
+0001364a  _ZdlPv                                        
+00013654  _Z16MCU_heaterOn_lowv                         
+0001365c  _Z17MCU_heaterOff_lowv                        
+00013664  _Z17MCU_heaterOn_highv                        
+0001366c  _Z18MCU_heaterOff_highv                       
+00013674  C$$EXIT                                       
+00013674  _ZSt17__throw_bad_allocv                      
+00013674  abort                                         
+0001367a  _ZdlPvj                                       
+0001367e  _system_pre_init                              
+00013682  _nop                                          
+00013684  _system_post_cinit                            
 ffffffff  __TI_pprof_out_hndl                           
 ffffffff  __TI_prof_data_size                           
 ffffffff  __TI_prof_data_start                          
 ffffffff  __c_args__                                    
 
-[1020 symbols]
+[1025 symbols]

@@ -23,38 +23,44 @@ bool supercap_functionality[3]  = {false,false,false};
 #define MAX_VOLTAGE          3.64      // Reference voltage for ADC (measured 3.64 V)
 #define ADC_TIMEOUT 100 // Define a timeout value
 
-//// Global flag for ADC conversion failure
-//volatile bool adc_conversion_fail = false;
-//
-//// ADC12 interrupt service routine
-//#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-//#pragma vector = ADC12_VECTOR
-//__interrupt void ADC12_ISR(void)
-//#elif defined(__GNUC__)
-//void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12_ISR (void)
-//#else
-//#error Compiler not supported!
-//#endif
-//{
-//  switch(__even_in_range(ADC12IV, ADC12IV_ADC12RDYIFG))
-//  {
-//    case ADC12IV_NONE:
-//        // No interrupt
-//        break;
-//    case ADC12IV_ADC12OVIFG:
-//        // ADC12MEMx Overflow (could be implemented later)
-//        break;
-//    case ADC12IV_ADC12TOVIFG:
-//        // Conversion time overflow
-//        adc_conversion_fail = true;
-//        ADC12CTL0 &= ~ADC12SC; // Stop conversion
-//        ADC12CTL0 &= ~ADC12ENC; // Disable ADC to clear interrupt flag
-//        ADC12CTL0 |= ADC12ENC; // Re-enable ADC
-//        break;
-//    default:
-//        break;
-//  }
-//}
+// Global flag for ADC conversion failure
+volatile bool adc_conversion_fail = false;
+volatile bool measurement_finished = false;
+volatile unsigned int ADC_capture = 0; // Variable to store ADC result
+
+// ADC12 interrupt service routine
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = ADC12_VECTOR
+__interrupt void ADC12_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(ADC12_VECTOR))) ADC12_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+  switch(__even_in_range(ADC12IV, ADC12IV_ADC12RDYIFG))
+  {
+    case ADC12IV_NONE:
+        // No interrupt
+        break;
+    case ADC12IV_ADC12OVIFG:
+        // ADC12MEMx Overflow (could be implemented later)
+        break;
+    case ADC12IV_ADC12TOVIFG:
+        // Conversion time overflow
+        adc_conversion_fail = true;
+        ADC12CTL0 &= ~ADC12SC; // Stop conversion
+        break;
+    case ADC12IV_ADC12IFG0:
+         ADC_capture = ADC12MEM0;           // Read conversion result
+         ADC12CTL0 &= ~ADC12SC;
+         measurement_finished = true;
+
+         break;
+    default:
+        break;
+  }
+}
 
 // Function to initialize the Super cap charge cap flags and cap discharge flag
 void initialize_charge_cap_flags(void) {
@@ -136,14 +142,35 @@ void initialize_capready(void) {
     PM5CTL0 &= ~LOCKLPM5;         // Disable the GPIO power-on default high-impedance mode
 }
 
-
 // Function to initialize the ADC for super capacitors
 void initialize_adc_supercaps(void) {
     ADC12CTL0 &= ~ADC12ENC;            // Disable ADC12
-    ADC12CTL0 = ADC12SHT0_2 | ADC12ON; // 16 ADC12CLK cycles, ADC on
-    ADC12CTL1 = ADC12SHP | ADC12CONSEQ_0 | ADC12SSEL_3; // ADCCLK = SMCLK; single-channel single-conversion
-    ADC12CTL2 = ADC12RES_2;            // 12-bit conversion results
-    ADC12MCTL0 = ADC12INCH_7;          // Select channel A7 for conversion
+    ADC12MCTL0 |= ADC12INCH_7;         // Select channel A7 for conversion
+    ADC12CTL0 |= ADC12ENC;             // Enable conversions
+    PM5CTL0 &= ~LOCKLPM5;              // Disable the GPIO power-on default high-impedance mode
+}
+
+//// Function to initialize the ADC for super capacitors for polling
+//void initialize_adc_supercaps(void) {
+//    ADC12CTL0 &= ~ADC12ENC;            // Disable ADC12
+//    ADC12CTL0 = ADC12SHT0_2 | ADC12ON; // 16 ADC12CLK cycles, ADC on
+//    ADC12CTL1 = ADC12SHP | ADC12CONSEQ_0 | ADC12SSEL_3; // ADCCLK = SMCLK; single-channel single-conversion
+//    ADC12CTL2 = ADC12RES_2;            // 12-bit conversion results
+//    ADC12MCTL0 = ADC12INCH_7;          // Select channel A7 for conversion
+//    PM5CTL0 &= ~LOCKLPM5;              // Disable the GPIO power-on default high-impedance mode
+//}
+
+void enable_interrupt_adc(void){
+    ADC12CTL0 &= ~ADC12ENC;            // Disable ADC12
+    ADC12IER0 |= ADC12IE0;             // Enable ADC conversion complete interrupt
+    ADC12CTL0 |= ADC12ENC;             // Enable conversions
+    PM5CTL0 &= ~LOCKLPM5;              // Disable the GPIO power-on default high-impedance mode
+}
+
+void disable_interrupt_adc(void){
+    ADC12CTL0 &= ~ADC12ENC;            // Disable ADC12
+    ADC12IER0 &= ~ADC12IE0;             // Enable ADC conversion complete interrupt
+    ADC12CTL0 |= ADC12ENC;             // Enable conversions
     PM5CTL0 &= ~LOCKLPM5;              // Disable the GPIO power-on default high-impedance mode
 }
 
@@ -152,45 +179,66 @@ float convert_adc_to_voltage(volatile unsigned int adc_value) {
     return (adc_value * (float)MAX_VOLTAGE) / (float)ADC_MAX_VALUE;
 }
 
-// Function to read ADC value with polling and handle timeout
-unsigned int read_ADC(void) {
-    unsigned int timeout = 0;
-
-    ADC12CTL0 |= ADC12ENC | ADC12SC;  // Enable and start conversion
-
-    // Poll for the result or handle timeout
-    while (!(ADC12IFGR0 & ADC12IFG0)) {
-        timeout++;
-        if (timeout > ADC_TIMEOUT) {
-            // Handle timeout
-            return 0xFFFF; // Return an error value (e.g., 0xFFFF)
-        }
-    }
-
-    unsigned int result = ADC12MEM0; // Read the conversion result
-    ADC12IFGR0 &= ~ADC12IFG0;        // Clear the interrupt flag
-    ADC12CTL0 &= ~ADC12ENC;          // Disable ADC to clear any pending interrupts
-
-    return result;
-}
+//// Function to read ADC value with polling and handle timeout
+//unsigned int read_ADC(void) {
+//    unsigned int timeout = 0;
+//
+//    ADC12CTL0 |= ADC12ENC | ADC12SC;  // Enable and start conversion
+//
+//    // Poll for the result or handle timeout
+//    while (!(ADC12IFGR0 & ADC12IFG0)) {
+//        timeout++;
+//        if (timeout > ADC_TIMEOUT) {
+//            // Handle timeout
+//            return 0xFFFF; // Return an error value (e.g., 0xFFFF)
+//        }
+//    }
+//
+//    unsigned int result = ADC12MEM0; // Read the conversion result
+//    ADC12IFGR0 &= ~ADC12IFG0;        // Clear the interrupt flag
+//    ADC12CTL0 &= ~ADC12ENC;          // Disable ADC to clear any pending interrupts
+//
+//    return result;
+//}
+//
+//// Function to get the voltage of super capacitors via ADC
+//float voltage_adc_supercaps(void) {
+//    initialize_capready();             // Initialize the super cap voltage pin
+//    initialize_adc_supercaps();        // Initialize the ADC for super capacitors
+//
+//    volatile unsigned int ADC_capture = read_ADC(); // Get ADC result
+//    float voltage = 0;                // Variable to store calculated voltage
+//
+//    if (ADC_capture == 0xFFFF) {
+//        // Conversion failed
+//        voltage = 99;                 // Set error voltage
+//        return voltage;
+//    } else {
+//        voltage = convert_adc_to_voltage(ADC_capture); // Convert ADC result to voltage
+//        return voltage;
+//    }
+//}
 
 // Function to get the voltage of super capacitors via ADC
 float voltage_adc_supercaps(void) {
-    initialize_capready();             // Initialize the super cap voltage pin
     initialize_adc_supercaps();        // Initialize the ADC for super capacitors
+    float voltage = 0;                 // Variable to store calculated voltage
 
-    volatile unsigned int ADC_capture = read_ADC(); // Get ADC result
-    float voltage = 0;                // Variable to store calculated voltage
-
-    if (ADC_capture == 0xFFFF) {
+    enable_interrupt_adc();
+    ADC12CTL0 |= ADC12SC;              // Start conversion - software trigger
+    while (!measurement_finished && !adc_conversion_fail);
+    disable_interrupt_adc();
+    measurement_finished = false;
+    if (adc_conversion_fail) {
         // Conversion failed
-        voltage = 99;                 // Set error voltage
+        voltage = 99;                  // Set error voltage
         return voltage;
     } else {
         voltage = convert_adc_to_voltage(ADC_capture); // Convert ADC result to voltage
         return voltage;
     }
 }
+
 
 // function to check the functionality of each supercapacitor
 void check_supercap_functionality(void){

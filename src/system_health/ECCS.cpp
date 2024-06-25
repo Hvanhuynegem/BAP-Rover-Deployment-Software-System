@@ -30,7 +30,7 @@ void initialize_all_electronic_pins(void){
     // initialize bus current readout pin 4.3
     initialize_bus_current_sense_pin();
     //initialize the adc settings for the bus current readout pin 4.3
-    initialize_adc_bus_sense();
+//    initialize_adc_bus_sense();
     // initialize bus flag pin 4.2 for conduction to the rover
     initialize_bus_flag_pin();
     // initialise temperature sensor pins
@@ -42,7 +42,7 @@ void initialize_all_electronic_pins(void){
     // initialize the supercap voltage pin 2.4
     initialize_capready();
     // initialize adc for supercaps
-    initialize_adc_supercaps();
+//    initialize_adc_supercaps();
     // initialize all nea pins for ready signals and flags
     initialize_all_nea_pins();
     // initialize the led on pin 1.5
