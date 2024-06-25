@@ -113,36 +113,36 @@ inline static void uart_interrupt_handler(uint8_t character);
 inline static void start_timeout(void)
 {
     // TACCR0 interrupt enabled
-    TA3CCTL0 = CCIE; // enable the interrupt
-    TA3CCR0 = DEFAULT_TIMEOUT_TICKS; // set timeout time
+    TA1CCTL0 = CCIE; // enable the interrupt
+    TA1CCR0 = DEFAULT_TIMEOUT_TICKS; // set timeout time
     // SMCLK, UP mode, divide the clock by 64 (8 from ID and 8 from TAIDEX)
-    TA3CTL = TASSEL__SMCLK | MC__UP | ID__8;
-    TA3EX0 |= 8; // Further divide by 8
+    TA1CTL = TASSEL__SMCLK | MC__UP | ID__8;
+    TA1EX0 |= 8; // Further divide by 8
 }
 
 inline static void reset_timeout(void)
 {
-    TA3CTL = MC__STOP | TACLR;
+    TA1CTL = MC__STOP | TACLR;
 
     // resets it again
-    TA3CCTL0 = CCIE;
-    TA3CCR0 = DEFAULT_TIMEOUT_TICKS;
-    TA3CTL = TASSEL__SMCLK | MC__UP | ID__8;
-    TA3EX0 |= 8; // Further divide by 8
+    TA1CCTL0 = CCIE;
+    TA1CCR0 = DEFAULT_TIMEOUT_TICKS;
+    TA1CTL = TASSEL__SMCLK | MC__UP | ID__8;
+    TA1EX0 |= 8; // Further divide by 8
 }
 
 inline static void stop_timeout(void)
 {
     // Stops the timer
-    TA3CTL = MC__STOP | TACLR;
+    TA1CTL = MC__STOP | TACLR;
 }
 
-// Timer A3 interrupt service routine
+// Timer A1 interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = TIMER3_A0_VECTOR
-__interrupt void Timer3_A0_ISR(void)
+#pragma vector = TIMER1_A0_VECTOR
+__interrupt void Timer1_A0_ISR(void)
 #elif defined(__GNUC__)
-void __attribute__ ((interrupt(TIMER3_A0_VECTOR))) Timer3_A0_ISR (void)
+void __attribute__ ((interrupt(TIMER1_A0_VECTOR))) Timer1_A0_ISR (void)
 #else
 #error Compiler not supported!
 #endif
@@ -150,7 +150,6 @@ void __attribute__ ((interrupt(TIMER3_A0_VECTOR))) Timer3_A0_ISR (void)
     UART_state = TIMEOUT; // should be TIMEOUT
     timeout_state = true;
     stop_timeout();
-
 }
 
 

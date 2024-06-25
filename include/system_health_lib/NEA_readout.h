@@ -63,6 +63,18 @@ void deactivate_NEA_n(int nea);
 void activate_NEAs(void);
 
 /*
+ * send a message to the Lander about nea x and its status
+ *
+ * Parameters:
+ *  int nea: nea 0,1,2,3
+ *  bool status: true or false about whether it is still deployable
+ *
+ * Returns:
+ *  void
+ */
+void send_NEA_message(int nea, bool status);
+
+/*
  * Reads the status of the NEA ready bit.
  *
  * Parameters:

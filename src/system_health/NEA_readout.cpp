@@ -86,16 +86,97 @@ void deactivate_NEA_n(int nea) {
 }
 
 void activate_NEAs(void){
-    if(supercap_functionality[0]){
-        switch_on_charge_cap_flag(0);
+    int k = 0;
+    for(int i=0; i<4 ; i++){
+        while(k < 3){
+            if(supercap_functionality[0]){
+                switch_on_charge_cap_flag(0);
+            }
+            if(supercap_functionality[1]){
+                switch_on_charge_cap_flag(1);
+            }
+            if(supercap_functionality[2]){
+                switch_on_charge_cap_flag(2);
+            }
+            //timer 3 min = 180 seconds = 180x4 = 0.25 seconds x 720
+            startTimeoutTimer_TA3();
+            while(timeoutCounterTA3 < 720){
+                process_received_data(); // read the RX buffer while waiting for timer
+            } // 720 times 0.25 seconds is 3 minutes
+            stopTimeoutTimer_TA3();
+
+            // activat NEA x
+            activate_NEA_n(i);
+
+            // timer of 0.25 seconds
+            startTimeoutTimer_TA3();
+            while(timeoutCounterTA3 < 1){
+                process_received_data(); // read the RX buffer while waiting for timer
+            } // 1 times 0.25 seconds is 0.25 seconds
+            stopTimeoutTimer_TA3();
+
+            // check if NEA x detonated
+            bool status_NEA_n = true;
+            if(i == 0){
+                status_NEA_n = read_NEAready_status(&P3IN, BIT1);
+            } else if (i == 1){
+                status_NEA_n = read_NEAready_status(&P3IN, BIT2);
+            } else if (i == 2){
+                status_NEA_n = read_NEAready_status(&P3IN, BIT3);
+            } else if (i == 3){
+                status_NEA_n = read_NEAready_status(&P4IN, BIT7);
+            } else {}
+
+            // send a message to lander
+            send_NEA_message(i, status_NEA_n);
+
+            if(status_NEA_n){
+                k++;
+            } else {
+                k = 3;
+            }
+        }
     }
-    if(supercap_functionality[1]){
-        switch_on_charge_cap_flag(1);
+
+}
+
+void send_NEA_message(int nea, bool status){
+    if (nea == 0) {
+        if(status){
+            // Send message that NEA 1 is not activated yet
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA1_READY, sizeof(PAYLOAD_NEA1_READY) - 1);
+        } else {
+            // Send message that NEA 1 is already activated
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA1_NOT_READY, sizeof(PAYLOAD_NEA1_NOT_READY) - 1);
+        }
     }
-    if(supercap_functionality[2]){
-        switch_on_charge_cap_flag(2);
+    if (nea == 1) {
+        if(status){
+            // Send message that NEA 2 is not activated yet
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA2_READY, sizeof(PAYLOAD_NEA2_READY) - 1);
+        } else {
+            // Send message that NEA 2 is already activated
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA2_NOT_READY, sizeof(PAYLOAD_NEA2_NOT_READY) - 1);
+        }
     }
-    // CONTINUE IMPLEMENTING THIS!
+    if (nea == 2) {
+        if(status){
+            // Send message that NEA 3 is not activated yet
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA3_READY, sizeof(PAYLOAD_NEA3_READY) - 1);
+        } else {
+            // Send message that NEA 3 is already activated
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA3_NOT_READY, sizeof(PAYLOAD_NEA3_NOT_READY) - 1);
+        }
+    }
+    if (nea == 3) {
+        if(status){
+            // Send message that NEA 4 is not activated yet
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA4_READY, sizeof(PAYLOAD_NEA4_READY) - 1);
+        } else {
+            // Send message that NEA 4 is already activated
+            send_message(MSG_TYPE_DATA, PAYLOAD_NEA4_NOT_READY, sizeof(PAYLOAD_NEA4_NOT_READY) - 1);
+        }
+    }
 }
 
 

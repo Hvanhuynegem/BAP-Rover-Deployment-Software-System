@@ -72,13 +72,13 @@ void stopTimeoutTimer_TA2()
     timeoutOccurred = false;  // Reset timeout flag
 }
 
-// Function to start the timeout timer with the lowest clock frequency
+// Function to start the timeout timer with the lowest clock frequency timeout occurs every 0.25 seconds
 void startTimeoutTimer_TA3() {
     timeoutCounterTA3 = 0;  // Reset timeout counter
     TA3CTL = TASSEL_2 + MC_1 + ID__8 + TACLR; // SMCLK = 16 MHz, up mode, input divider by 8, clear TAR
     TA3EX0 = TAIDEX_7;  // Expanded divider by 8
     TA3CCTL0 = CCIE;    // Enable interrupt
-    TA3CCR0 = 60000;    // Set CCR0 value for the timer
+    TA3CCR0 = 62500;    // Set CCR0 value for the timer
 }
 
 // Function to stop the timeout timer

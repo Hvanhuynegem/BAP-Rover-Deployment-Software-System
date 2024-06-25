@@ -19,6 +19,7 @@
 
 #include "lander_communication_lib/lander_communication.h"
 #include "lander_communication_lib/payload_messages.h"
+#include "system_health_lib/main_system_init.h"
 
 extern bool supercap_functionality[3];
 
