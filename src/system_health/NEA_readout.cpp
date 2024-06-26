@@ -105,7 +105,7 @@ void activate_NEAs(void){
             } // 720 times 0.25 seconds is 3 minutes
             stopTimeoutTimer_TA3();
 
-            // activat NEA x
+            // activate NEA x
             activate_NEA_n(i);
 
             // timer of 0.25 seconds
@@ -136,6 +136,7 @@ void activate_NEAs(void){
                 k = 3;
             }
         }
+        deactivate_NEA_n(i);
     }
 
 }

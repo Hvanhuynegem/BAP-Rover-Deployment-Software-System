@@ -259,7 +259,7 @@ void check_supercap_functionality(void){
         switch_on_discharge_cap_flag();
 
         float voltage_supercap_i = voltage_adc_supercaps();
-        if(voltage_supercap_i > 1.7){ // above 1.7V
+        if(voltage_supercap_i > 2.475){ // above 2.475V
             supercap_functionality[i] = true;
         } else {
             supercap_functionality[i] = false;
@@ -283,6 +283,9 @@ void check_supercap_functionality(void){
                 send_message(MSG_TYPE_DATA, PAYLOAD_SUPERCAP3_NOT_READY, sizeof(PAYLOAD_SUPERCAP3_NOT_READY) - 1);
             }
         } else {}
+        switch_off_charge_cap_flag(i);
+        switch_off_discharge_cap_flag(i);
+
     }
 }
 
